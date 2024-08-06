@@ -1,0 +1,65 @@
+PODS:
+  - Reusable (4.1.2):
+    - Reusable/Storyboard (= 4.1.2)
+    - Reusable/View (= 4.1.2)
+  - Reusable/Storyboard (4.1.2)
+  - Reusable/View (4.1.2)
+  - SFBase (0.1.0):
+    - Then (~> 3.0.0)
+  - SFBluetooth (0.1.0):
+    - SFLogger (~> 0.1.0)
+  - SFExtension (0.1.0)
+  - SFLogger (0.1.0):
+    - SFBase (~> 0.1.0)
+    - SwiftyBeaver
+  - SFUI (0.1.0):
+    - Reusable (~> 4.1.2)
+    - SFBase (~> 0.1.0)
+    - SFBluetooth (~> 0.1.0)
+    - SFExtension (~> 0.1.0)
+    - SFLogger (~> 0.1.0)
+    - SnapKit (~> 5.6.0)
+  - SnapKit (5.6.0)
+  - SwiftyBeaver (1.9.5)
+  - Then (3.0.0)
+
+DEPENDENCIES:
+  - SFBase (from `../../Basic/SFBase/`)
+  - SFBluetooth (from `../../Server/SFBluetooth/`)
+  - SFExtension (from `../../Basic/SFExtension/`)
+  - SFLogger (from `../../Server/SFLogger/`)
+  - SFUI (from `../../UI/SFUI/`)
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Reusable
+    - SnapKit
+    - SwiftyBeaver
+    - Then
+
+EXTERNAL SOURCES:
+  SFBase:
+    :path: "../../Basic/SFBase/"
+  SFBluetooth:
+    :path: "../../Server/SFBluetooth/"
+  SFExtension:
+    :path: "../../Basic/SFExtension/"
+  SFLogger:
+    :path: "../../Server/SFLogger/"
+  SFUI:
+    :path: "../../UI/SFUI/"
+
+SPEC CHECKSUMS:
+  Reusable: 6bae6a5e8aa793c9c441db0213c863a64bce9136
+  SFBase: 1eba5a746b2470d76b0fec3477288ebea87ebb53
+  SFBluetooth: 9890236c6a157b482f79b796fcfc1491b22e4ebd
+  SFExtension: db5d207c8b9cb15d09d28858aec071d51050f3c5
+  SFLogger: a0357f940aa3a0f852a3af5f8f09dd1cb961e3a4
+  SFUI: 0b75ea7ed7c17831d7bc4a6b40d5b21328d3fa7d
+  SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
+  SwiftyBeaver: 84069991dd5dca07d7069100985badaca7f0ce82
+  Then: 844265ae87834bbe1147d91d5d41a404da2ec27d
+
+PODFILE CHECKSUM: 73ebe99cc3bf2c80b5ef74f2dadf00f75ca73a90
+
+COCOAPODS: 1.12.1

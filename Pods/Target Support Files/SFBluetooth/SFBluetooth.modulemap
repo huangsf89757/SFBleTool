@@ -1,0 +1,6 @@
+framework module SFBluetooth {
+  umbrella header "SFBluetooth-umbrella.h"
+
+  export *
+  module * { export * }
+}

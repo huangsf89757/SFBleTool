@@ -1,0 +1,683 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8D2468F1EDAD1E4AB2CFD4EA /* Pods_SFBleTool.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4144B822BDD27C9242CA25FB /* Pods_SFBleTool.framework */; };
+		DDA6489D2C619F5100F01858 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA6489C2C619F5100F01858 /* AppDelegate.swift */; };
+		DDA6489F2C619F5100F01858 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA6489E2C619F5100F01858 /* SceneDelegate.swift */; };
+		DDA648A12C619F5100F01858 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA648A02C619F5100F01858 /* ViewController.swift */; };
+		DDA648A42C619F5100F01858 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = DDA648A32C619F5100F01858 /* Base */; };
+		DDA648A62C619F5200F01858 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDA648A52C619F5200F01858 /* Assets.xcassets */; };
+		DDA648A92C619F5200F01858 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = DDA648A82C619F5200F01858 /* Base */; };
+		DDA648B42C619F5200F01858 /* SFBleToolTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA648B32C619F5200F01858 /* SFBleToolTests.swift */; };
+		DDA648BE2C619F5200F01858 /* SFBleToolUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA648BD2C619F5200F01858 /* SFBleToolUITests.swift */; };
+		DDA648C02C619F5200F01858 /* SFBleToolUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA648BF2C619F5200F01858 /* SFBleToolUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DDA648B02C619F5200F01858 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DDA648912C619F5100F01858 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DDA648982C619F5100F01858;
+			remoteInfo = SFBleTool;
+		};
+		DDA648BA2C619F5200F01858 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DDA648912C619F5100F01858 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DDA648982C619F5100F01858;
+			remoteInfo = SFBleTool;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3E6EC48F39B6D2CB4288A4C5 /* Pods-SFBleTool.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SFBleTool.debug.xcconfig"; path = "Target Support Files/Pods-SFBleTool/Pods-SFBleTool.debug.xcconfig"; sourceTree = "<group>"; };
+		4144B822BDD27C9242CA25FB /* Pods_SFBleTool.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SFBleTool.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		947209E9BB09B6D52FE5980D /* Pods-SFBleTool.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SFBleTool.release.xcconfig"; path = "Target Support Files/Pods-SFBleTool/Pods-SFBleTool.release.xcconfig"; sourceTree = "<group>"; };
+		DDA648992C619F5100F01858 /* SFBleTool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SFBleTool.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DDA6489C2C619F5100F01858 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DDA6489E2C619F5100F01858 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		DDA648A02C619F5100F01858 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DDA648A32C619F5100F01858 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DDA648A52C619F5200F01858 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DDA648A82C619F5200F01858 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DDA648AA2C619F5200F01858 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DDA648AF2C619F5200F01858 /* SFBleToolTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SFBleToolTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DDA648B32C619F5200F01858 /* SFBleToolTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFBleToolTests.swift; sourceTree = "<group>"; };
+		DDA648B92C619F5200F01858 /* SFBleToolUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SFBleToolUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DDA648BD2C619F5200F01858 /* SFBleToolUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFBleToolUITests.swift; sourceTree = "<group>"; };
+		DDA648BF2C619F5200F01858 /* SFBleToolUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFBleToolUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DDA648962C619F5100F01858 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D2468F1EDAD1E4AB2CFD4EA /* Pods_SFBleTool.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DDA648AC2C619F5200F01858 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DDA648B62C619F5200F01858 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		56BF08185ED182C7CD474D48 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3E6EC48F39B6D2CB4288A4C5 /* Pods-SFBleTool.debug.xcconfig */,
+				947209E9BB09B6D52FE5980D /* Pods-SFBleTool.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		DDA648902C619F5100F01858 = {
+			isa = PBXGroup;
+			children = (
+				DDA6489B2C619F5100F01858 /* SFBleTool */,
+				DDA648B22C619F5200F01858 /* SFBleToolTests */,
+				DDA648BC2C619F5200F01858 /* SFBleToolUITests */,
+				DDA6489A2C619F5100F01858 /* Products */,
+				56BF08185ED182C7CD474D48 /* Pods */,
+				DE4ABC1000AEBE48D45A01BA /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		DDA6489A2C619F5100F01858 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DDA648992C619F5100F01858 /* SFBleTool.app */,
+				DDA648AF2C619F5200F01858 /* SFBleToolTests.xctest */,
+				DDA648B92C619F5200F01858 /* SFBleToolUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DDA6489B2C619F5100F01858 /* SFBleTool */ = {
+			isa = PBXGroup;
+			children = (
+				DDA6489C2C619F5100F01858 /* AppDelegate.swift */,
+				DDA6489E2C619F5100F01858 /* SceneDelegate.swift */,
+				DDA648A02C619F5100F01858 /* ViewController.swift */,
+				DDA648A22C619F5100F01858 /* Main.storyboard */,
+				DDA648A52C619F5200F01858 /* Assets.xcassets */,
+				DDA648A72C619F5200F01858 /* LaunchScreen.storyboard */,
+				DDA648AA2C619F5200F01858 /* Info.plist */,
+			);
+			path = SFBleTool;
+			sourceTree = "<group>";
+		};
+		DDA648B22C619F5200F01858 /* SFBleToolTests */ = {
+			isa = PBXGroup;
+			children = (
+				DDA648B32C619F5200F01858 /* SFBleToolTests.swift */,
+			);
+			path = SFBleToolTests;
+			sourceTree = "<group>";
+		};
+		DDA648BC2C619F5200F01858 /* SFBleToolUITests */ = {
+			isa = PBXGroup;
+			children = (
+				DDA648BD2C619F5200F01858 /* SFBleToolUITests.swift */,
+				DDA648BF2C619F5200F01858 /* SFBleToolUITestsLaunchTests.swift */,
+			);
+			path = SFBleToolUITests;
+			sourceTree = "<group>";
+		};
+		DE4ABC1000AEBE48D45A01BA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4144B822BDD27C9242CA25FB /* Pods_SFBleTool.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DDA648982C619F5100F01858 /* SFBleTool */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DDA648C32C619F5200F01858 /* Build configuration list for PBXNativeTarget "SFBleTool" */;
+			buildPhases = (
+				0F9E7C98EB0677A49B5BB0D5 /* [CP] Check Pods Manifest.lock */,
+				DDA648952C619F5100F01858 /* Sources */,
+				DDA648962C619F5100F01858 /* Frameworks */,
+				DDA648972C619F5100F01858 /* Resources */,
+				3030995ECB9658675ADB517F /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SFBleTool;
+			productName = SFBleTool;
+			productReference = DDA648992C619F5100F01858 /* SFBleTool.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DDA648AE2C619F5200F01858 /* SFBleToolTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DDA648C62C619F5200F01858 /* Build configuration list for PBXNativeTarget "SFBleToolTests" */;
+			buildPhases = (
+				DDA648AB2C619F5200F01858 /* Sources */,
+				DDA648AC2C619F5200F01858 /* Frameworks */,
+				DDA648AD2C619F5200F01858 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DDA648B12C619F5200F01858 /* PBXTargetDependency */,
+			);
+			name = SFBleToolTests;
+			productName = SFBleToolTests;
+			productReference = DDA648AF2C619F5200F01858 /* SFBleToolTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		DDA648B82C619F5200F01858 /* SFBleToolUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DDA648C92C619F5200F01858 /* Build configuration list for PBXNativeTarget "SFBleToolUITests" */;
+			buildPhases = (
+				DDA648B52C619F5200F01858 /* Sources */,
+				DDA648B62C619F5200F01858 /* Frameworks */,
+				DDA648B72C619F5200F01858 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DDA648BB2C619F5200F01858 /* PBXTargetDependency */,
+			);
+			name = SFBleToolUITests;
+			productName = SFBleToolUITests;
+			productReference = DDA648B92C619F5200F01858 /* SFBleToolUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DDA648912C619F5100F01858 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1530;
+				LastUpgradeCheck = 1530;
+				TargetAttributes = {
+					DDA648982C619F5100F01858 = {
+						CreatedOnToolsVersion = 15.3;
+					};
+					DDA648AE2C619F5200F01858 = {
+						CreatedOnToolsVersion = 15.3;
+						TestTargetID = DDA648982C619F5100F01858;
+					};
+					DDA648B82C619F5200F01858 = {
+						CreatedOnToolsVersion = 15.3;
+						TestTargetID = DDA648982C619F5100F01858;
+					};
+				};
+			};
+			buildConfigurationList = DDA648942C619F5100F01858 /* Build configuration list for PBXProject "SFBleTool" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DDA648902C619F5100F01858;
+			productRefGroup = DDA6489A2C619F5100F01858 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DDA648982C619F5100F01858 /* SFBleTool */,
+				DDA648AE2C619F5200F01858 /* SFBleToolTests */,
+				DDA648B82C619F5200F01858 /* SFBleToolUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DDA648972C619F5100F01858 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DDA648A62C619F5200F01858 /* Assets.xcassets in Resources */,
+				DDA648A92C619F5200F01858 /* Base in Resources */,
+				DDA648A42C619F5100F01858 /* Base in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DDA648AD2C619F5200F01858 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DDA648B72C619F5200F01858 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0F9E7C98EB0677A49B5BB0D5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SFBleTool-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3030995ECB9658675ADB517F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SFBleTool/Pods-SFBleTool-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SFBleTool/Pods-SFBleTool-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SFBleTool/Pods-SFBleTool-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DDA648952C619F5100F01858 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DDA648A12C619F5100F01858 /* ViewController.swift in Sources */,
+				DDA6489D2C619F5100F01858 /* AppDelegate.swift in Sources */,
+				DDA6489F2C619F5100F01858 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DDA648AB2C619F5200F01858 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DDA648B42C619F5200F01858 /* SFBleToolTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DDA648B52C619F5200F01858 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DDA648BE2C619F5200F01858 /* SFBleToolUITests.swift in Sources */,
+				DDA648C02C619F5200F01858 /* SFBleToolUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DDA648B12C619F5200F01858 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DDA648982C619F5100F01858 /* SFBleTool */;
+			targetProxy = DDA648B02C619F5200F01858 /* PBXContainerItemProxy */;
+		};
+		DDA648BB2C619F5200F01858 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DDA648982C619F5100F01858 /* SFBleTool */;
+			targetProxy = DDA648BA2C619F5200F01858 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DDA648A22C619F5100F01858 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DDA648A32C619F5100F01858 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		DDA648A72C619F5200F01858 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DDA648A82C619F5200F01858 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DDA648C12C619F5200F01858 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		DDA648C22C619F5200F01858 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DDA648C42C619F5200F01858 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3E6EC48F39B6D2CB4288A4C5 /* Pods-SFBleTool.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 74UR9HP896;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SFBleTool/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.SFTeammate.SFBleTool;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DDA648C52C619F5200F01858 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 947209E9BB09B6D52FE5980D /* Pods-SFBleTool.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 74UR9HP896;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SFBleTool/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.SFTeammate.SFBleTool;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		DDA648C72C619F5200F01858 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 74UR9HP896;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.SFTeammate.SFBleToolTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SFBleTool.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SFBleTool";
+			};
+			name = Debug;
+		};
+		DDA648C82C619F5200F01858 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 74UR9HP896;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.SFTeammate.SFBleToolTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SFBleTool.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SFBleTool";
+			};
+			name = Release;
+		};
+		DDA648CA2C619F5200F01858 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 74UR9HP896;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.SFTeammate.SFBleToolUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SFBleTool;
+			};
+			name = Debug;
+		};
+		DDA648CB2C619F5200F01858 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 74UR9HP896;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.SFTeammate.SFBleToolUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SFBleTool;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DDA648942C619F5100F01858 /* Build configuration list for PBXProject "SFBleTool" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DDA648C12C619F5200F01858 /* Debug */,
+				DDA648C22C619F5200F01858 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DDA648C32C619F5200F01858 /* Build configuration list for PBXNativeTarget "SFBleTool" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DDA648C42C619F5200F01858 /* Debug */,
+				DDA648C52C619F5200F01858 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DDA648C62C619F5200F01858 /* Build configuration list for PBXNativeTarget "SFBleToolTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DDA648C72C619F5200F01858 /* Debug */,
+				DDA648C82C619F5200F01858 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DDA648C92C619F5200F01858 /* Build configuration list for PBXNativeTarget "SFBleToolUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DDA648CA2C619F5200F01858 /* Debug */,
+				DDA648CB2C619F5200F01858 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DDA648912C619F5100F01858 /* Project object */;
+}
