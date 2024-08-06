@@ -10,13 +10,17 @@
 		8D2468F1EDAD1E4AB2CFD4EA /* Pods_SFBleTool.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4144B822BDD27C9242CA25FB /* Pods_SFBleTool.framework */; };
 		DDA6489D2C619F5100F01858 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA6489C2C619F5100F01858 /* AppDelegate.swift */; };
 		DDA6489F2C619F5100F01858 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA6489E2C619F5100F01858 /* SceneDelegate.swift */; };
-		DDA648A12C619F5100F01858 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA648A02C619F5100F01858 /* ViewController.swift */; };
 		DDA648A42C619F5100F01858 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = DDA648A32C619F5100F01858 /* Base */; };
 		DDA648A62C619F5200F01858 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDA648A52C619F5200F01858 /* Assets.xcassets */; };
 		DDA648A92C619F5200F01858 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = DDA648A82C619F5200F01858 /* Base */; };
 		DDA648B42C619F5200F01858 /* SFBleToolTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA648B32C619F5200F01858 /* SFBleToolTests.swift */; };
 		DDA648BE2C619F5200F01858 /* SFBleToolUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA648BD2C619F5200F01858 /* SFBleToolUITests.swift */; };
 		DDA648C02C619F5200F01858 /* SFBleToolUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA648BF2C619F5200F01858 /* SFBleToolUITestsLaunchTests.swift */; };
+		DDA648CD2C61A1E300F01858 /* SFEntranceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA648CC2C61A1E300F01858 /* SFEntranceVC.swift */; };
+		DDA648CF2C61A3DE00F01858 /* SFCentralManagerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA648CE2C61A3DE00F01858 /* SFCentralManagerVC.swift */; };
+		DDA648D12C61A3F000F01858 /* SFPeripheralManagerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA648D02C61A3F000F01858 /* SFPeripheralManagerVC.swift */; };
+		DDA648D32C61A51E00F01858 /* SFManagerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA648D22C61A51E00F01858 /* SFManagerVC.swift */; };
+		DDA648D62C61A86D00F01858 /* SFEntranceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA648D52C61A86D00F01858 /* SFEntranceView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,7 +47,6 @@
 		DDA648992C619F5100F01858 /* SFBleTool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SFBleTool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDA6489C2C619F5100F01858 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DDA6489E2C619F5100F01858 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		DDA648A02C619F5100F01858 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DDA648A32C619F5100F01858 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DDA648A52C619F5200F01858 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DDA648A82C619F5200F01858 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -53,6 +56,11 @@
 		DDA648B92C619F5200F01858 /* SFBleToolUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SFBleToolUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDA648BD2C619F5200F01858 /* SFBleToolUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFBleToolUITests.swift; sourceTree = "<group>"; };
 		DDA648BF2C619F5200F01858 /* SFBleToolUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFBleToolUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		DDA648CC2C61A1E300F01858 /* SFEntranceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFEntranceVC.swift; sourceTree = "<group>"; };
+		DDA648CE2C61A3DE00F01858 /* SFCentralManagerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFCentralManagerVC.swift; sourceTree = "<group>"; };
+		DDA648D02C61A3F000F01858 /* SFPeripheralManagerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFPeripheralManagerVC.swift; sourceTree = "<group>"; };
+		DDA648D22C61A51E00F01858 /* SFManagerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFManagerVC.swift; sourceTree = "<group>"; };
+		DDA648D52C61A86D00F01858 /* SFEntranceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFEntranceView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,7 +95,6 @@
 				3E6EC48F39B6D2CB4288A4C5 /* Pods-SFBleTool.debug.xcconfig */,
 				947209E9BB09B6D52FE5980D /* Pods-SFBleTool.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -118,7 +125,10 @@
 			children = (
 				DDA6489C2C619F5100F01858 /* AppDelegate.swift */,
 				DDA6489E2C619F5100F01858 /* SceneDelegate.swift */,
-				DDA648A02C619F5100F01858 /* ViewController.swift */,
+				DDA648D42C61A85100F01858 /* Entrance */,
+				DDA648D22C61A51E00F01858 /* SFManagerVC.swift */,
+				DDA648CE2C61A3DE00F01858 /* SFCentralManagerVC.swift */,
+				DDA648D02C61A3F000F01858 /* SFPeripheralManagerVC.swift */,
 				DDA648A22C619F5100F01858 /* Main.storyboard */,
 				DDA648A52C619F5200F01858 /* Assets.xcassets */,
 				DDA648A72C619F5200F01858 /* LaunchScreen.storyboard */,
@@ -142,6 +152,15 @@
 				DDA648BF2C619F5200F01858 /* SFBleToolUITestsLaunchTests.swift */,
 			);
 			path = SFBleToolUITests;
+			sourceTree = "<group>";
+		};
+		DDA648D42C61A85100F01858 /* Entrance */ = {
+			isa = PBXGroup;
+			children = (
+				DDA648CC2C61A1E300F01858 /* SFEntranceVC.swift */,
+				DDA648D52C61A86D00F01858 /* SFEntranceView.swift */,
+			);
+			path = Entrance;
 			sourceTree = "<group>";
 		};
 		DE4ABC1000AEBE48D45A01BA /* Frameworks */ = {
@@ -327,9 +346,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DDA648A12C619F5100F01858 /* ViewController.swift in Sources */,
+				DDA648D12C61A3F000F01858 /* SFPeripheralManagerVC.swift in Sources */,
 				DDA6489D2C619F5100F01858 /* AppDelegate.swift in Sources */,
+				DDA648CF2C61A3DE00F01858 /* SFCentralManagerVC.swift in Sources */,
+				DDA648D32C61A51E00F01858 /* SFManagerVC.swift in Sources */,
 				DDA6489F2C619F5100F01858 /* SceneDelegate.swift in Sources */,
+				DDA648CD2C61A1E300F01858 /* SFEntranceVC.swift in Sources */,
+				DDA648D62C61A86D00F01858 /* SFEntranceView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -437,7 +460,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -494,7 +517,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
