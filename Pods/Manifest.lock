@@ -1,4 +1,5 @@
 PODS:
+  - R.swift (7.3.2)
   - Reusable (4.1.2):
     - Reusable/Storyboard (= 4.1.2)
     - Reusable/View (= 4.1.2)
@@ -24,6 +25,7 @@ PODS:
   - Then (3.0.0)
 
 DEPENDENCIES:
+  - R.swift
   - SFBase (from `../../Basic/SFBase/`)
   - SFBluetooth (from `../../Server/SFBluetooth/`)
   - SFExtension (from `../../Basic/SFExtension/`)
@@ -32,6 +34,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
+    - R.swift
     - Reusable
     - SnapKit
     - SwiftyBeaver
@@ -50,6 +53,7 @@ EXTERNAL SOURCES:
     :path: "../../UI/SFUI/"
 
 SPEC CHECKSUMS:
+  R.swift: 0af0d882f49f03711415cb4e5215daa977d8a480
   Reusable: 6bae6a5e8aa793c9c441db0213c863a64bce9136
   SFBase: 1eba5a746b2470d76b0fec3477288ebea87ebb53
   SFBluetooth: 9890236c6a157b482f79b796fcfc1491b22e4ebd
@@ -60,6 +64,6 @@ SPEC CHECKSUMS:
   SwiftyBeaver: 84069991dd5dca07d7069100985badaca7f0ce82
   Then: 844265ae87834bbe1147d91d5d41a404da2ec27d
 
-PODFILE CHECKSUM: 73ebe99cc3bf2c80b5ef74f2dadf00f75ca73a90
+PODFILE CHECKSUM: ca9f99000dbfafa4931762f5f91a54e1300ded30
 
 COCOAPODS: 1.12.1

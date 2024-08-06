@@ -7,11 +7,12 @@ inhibit_all_warnings!
 platform :ios, '12.0'
 
 
-
-# === TARGET === #
-target 'SFBleTool' do
-  
-  # 依赖
+##################
+#      PODS      #
+##################
+# 私有组件
+def pods_private
+  # 本地路径
   $path = '../../'
   
   # Basic
@@ -24,5 +25,23 @@ target 'SFBleTool' do
   # Server
   pod 'SFLogger',       :path => $path + 'Server/SFLogger/'
   pod 'SFBluetooth',    :path => $path + 'Server/SFBluetooth/'
+  
+end
+
+# 第三方组件
+def pods_third
+  
+  pod 'R.swift', '7.3.2'
+  
+end
+
+
+##################
+#     TARGET     #
+##################
+target 'SFBleTool' do
+  
+  pods_private
+  pods_third
   
 end
