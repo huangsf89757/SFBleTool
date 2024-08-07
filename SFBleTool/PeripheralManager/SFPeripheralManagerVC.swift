@@ -17,5 +17,12 @@ import SFLogger
 
 // MARK: - SFPeripheralManagerVC
 class SFPeripheralManagerVC: SFManagerVC {
+    // MARK: var
     
+    
+    // MARK: life cycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        navigationItem.title = R.string.localizable.entrance_opt_peripheral_title()
+    }
 }

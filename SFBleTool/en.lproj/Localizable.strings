@@ -15,3 +15,6 @@ CFBundleDisplayName = "BleMessager";
 "entrance_opt_central_subtitle" = "手机作为中央设备来扫描和连接周围的蓝牙外设";
 "entrance_opt_peripheral_title" = "外设模式";
 "entrance_opt_peripheral_subtitle" = "手机作为外围设备广播数据";
+
+"central_sort_name" = "名称";
+"central_sort_RSSI" = "RSSI";

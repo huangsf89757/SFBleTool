@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SFUI
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -61,11 +62,9 @@ extension SceneDelegate {
     private func setRootVc() {
         if let entrance = UserDefaults.standard.object(forKey: SFUserDefaults.Key.entrance) as? Int {
             if entrance == 0 {
-                let vc = SFCentralManagerVC()
-                window?.rootViewController = vc
+                window?.rootViewController = SFNavigationController(rootViewController: SFCentralManagerVC())
             } else {
-                let vc = SFPeripheralManagerVC()
-                window?.rootViewController = vc
+                window?.rootViewController = SFNavigationController(rootViewController: SFPeripheralManagerVC())
             }
         } else {
             let vc = SFEntranceVC()

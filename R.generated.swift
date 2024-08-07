@@ -72,7 +72,7 @@ struct _R {
       let source: RswiftResources.StringResource.Source
     }
 
-    /// This `_R.string.localizable` struct is generated, and contains static references to 7 localization keys.
+    /// This `_R.string.localizable` struct is generated, and contains static references to 9 localization keys.
     struct localizable {
       let source: RswiftResources.StringResource.Source
 
@@ -82,6 +82,20 @@ struct _R {
       ///
       /// Locales: en, zh-Hans
       var cfBundleDisplayName: RswiftResources.StringResource { .init(key: "CFBundleDisplayName", tableName: "Localizable", source: source, developmentValue: "BleMessager", comment: nil) }
+
+      /// en translation: RSSI
+      ///
+      /// Key: central_sort_RSSI
+      ///
+      /// Locales: en
+      var central_sort_RSSI: RswiftResources.StringResource { .init(key: "central_sort_RSSI", tableName: "Localizable", source: source, developmentValue: "RSSI", comment: nil) }
+
+      /// en translation: 名称
+      ///
+      /// Key: central_sort_name
+      ///
+      /// Locales: en
+      var central_sort_name: RswiftResources.StringResource { .init(key: "central_sort_name", tableName: "Localizable", source: source, developmentValue: "名称", comment: nil) }
 
       /// en translation: 手机作为中央设备来扫描和连接周围的蓝牙外设
       ///
@@ -183,15 +197,25 @@ struct _R {
     }
 
 
-    /// This `_R.image.com` struct is generated, and contains static references to 1 coms, and 1 namespaces.
+    /// This `_R.image.com` struct is generated, and contains static references to 3 coms, and 2 namespaces.
     struct com {
       let bundle: Foundation.Bundle
 
+      /// Image `com/filter`.
+      var filter: RswiftResources.ImageResource { .init(name: "com/filter", path: ["com"], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
       /// Image `com/goto`.
       var goto: RswiftResources.ImageResource { .init(name: "com/goto", path: ["com"], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+      /// Image `com/search`.
+      var search: RswiftResources.ImageResource { .init(name: "com/search", path: ["com"], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
       var select: select { .init(bundle: bundle) }
+      var sort: sort { .init(bundle: bundle) }
 
       func select(bundle: Foundation.Bundle) -> select {
+        .init(bundle: bundle)
+      }
+      func sort(bundle: Foundation.Bundle) -> sort {
         .init(bundle: bundle)
       }
 
@@ -205,6 +229,17 @@ struct _R {
 
         /// Image `com/select/sel`.
         var sel: RswiftResources.ImageResource { .init(name: "com/select/sel", path: ["com", "select"], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+      }
+
+      /// This `_R.image.com.sort` struct is generated, and contains static references to 2 sorts.
+      struct sort {
+        let bundle: Foundation.Bundle
+
+        /// Image `com/sort/down`.
+        var down: RswiftResources.ImageResource { .init(name: "com/sort/down", path: ["com", "sort"], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+        /// Image `com/sort/up`.
+        var up: RswiftResources.ImageResource { .init(name: "com/sort/up", path: ["com", "sort"], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
       }
     }
   }
