@@ -12,11 +12,25 @@ let R = _R(bundle: Bundle(for: BundleFinder.self))
 
 struct _R {
   let bundle: Foundation.Bundle
+  var string: string { .init(bundle: bundle, preferredLanguages: nil, locale: nil) }
   var color: color { .init(bundle: bundle) }
+  var image: image { .init(bundle: bundle) }
   var info: info { .init(bundle: bundle) }
   var storyboard: storyboard { .init(bundle: bundle) }
 
+  func string(bundle: Foundation.Bundle) -> string {
+    .init(bundle: bundle, preferredLanguages: nil, locale: nil)
+  }
+  func string(locale: Foundation.Locale) -> string {
+    .init(bundle: bundle, preferredLanguages: nil, locale: locale)
+  }
+  func string(preferredLanguages: [String], locale: Locale? = nil) -> string {
+    .init(bundle: bundle, preferredLanguages: preferredLanguages, locale: locale)
+  }
   func color(bundle: Foundation.Bundle) -> color {
+    .init(bundle: bundle)
+  }
+  func image(bundle: Foundation.Bundle) -> image {
     .init(bundle: bundle)
   }
   func info(bundle: Foundation.Bundle) -> info {
@@ -33,12 +47,166 @@ struct _R {
     let developmentRegion = "en"
   }
 
-  /// This `_R.color` struct is generated, and contains static references to 1 colors.
+  /// This `_R.string` struct is generated, and contains static references to 3 localization tables.
+  struct string {
+    let bundle: Foundation.Bundle
+    let preferredLanguages: [String]?
+    let locale: Locale?
+    var launchScreen: launchScreen { .init(source: .init(bundle: bundle, tableName: "LaunchScreen", preferredLanguages: preferredLanguages, locale: locale)) }
+    var localizable: localizable { .init(source: .init(bundle: bundle, tableName: "Localizable", preferredLanguages: preferredLanguages, locale: locale)) }
+    var main: main { .init(source: .init(bundle: bundle, tableName: "Main", preferredLanguages: preferredLanguages, locale: locale)) }
+
+    func launchScreen(preferredLanguages: [String]) -> launchScreen {
+      .init(source: .init(bundle: bundle, tableName: "LaunchScreen", preferredLanguages: preferredLanguages, locale: locale))
+    }
+    func localizable(preferredLanguages: [String]) -> localizable {
+      .init(source: .init(bundle: bundle, tableName: "Localizable", preferredLanguages: preferredLanguages, locale: locale))
+    }
+    func main(preferredLanguages: [String]) -> main {
+      .init(source: .init(bundle: bundle, tableName: "Main", preferredLanguages: preferredLanguages, locale: locale))
+    }
+
+
+    /// This `_R.string.launchScreen` struct is generated, and contains static references to 0 localization keys.
+    struct launchScreen {
+      let source: RswiftResources.StringResource.Source
+    }
+
+    /// This `_R.string.localizable` struct is generated, and contains static references to 7 localization keys.
+    struct localizable {
+      let source: RswiftResources.StringResource.Source
+
+      /// en translation: BleMessager
+      ///
+      /// Key: CFBundleDisplayName
+      ///
+      /// Locales: en, zh-Hans
+      var cfBundleDisplayName: RswiftResources.StringResource { .init(key: "CFBundleDisplayName", tableName: "Localizable", source: source, developmentValue: "BleMessager", comment: nil) }
+
+      /// en translation: 手机作为中央设备来扫描和连接周围的蓝牙外设
+      ///
+      /// Key: entrance_opt_central_subtitle
+      ///
+      /// Locales: en, zh-Hans
+      var entrance_opt_central_subtitle: RswiftResources.StringResource { .init(key: "entrance_opt_central_subtitle", tableName: "Localizable", source: source, developmentValue: "手机作为中央设备来扫描和连接周围的蓝牙外设", comment: nil) }
+
+      /// en translation: 中心模式
+      ///
+      /// Key: entrance_opt_central_title
+      ///
+      /// Locales: en, zh-Hans
+      var entrance_opt_central_title: RswiftResources.StringResource { .init(key: "entrance_opt_central_title", tableName: "Localizable", source: source, developmentValue: "中心模式", comment: nil) }
+
+      /// en translation: 手机作为外围设备广播数据
+      ///
+      /// Key: entrance_opt_peripheral_subtitle
+      ///
+      /// Locales: en, zh-Hans
+      var entrance_opt_peripheral_subtitle: RswiftResources.StringResource { .init(key: "entrance_opt_peripheral_subtitle", tableName: "Localizable", source: source, developmentValue: "手机作为外围设备广播数据", comment: nil) }
+
+      /// en translation: 外设模式
+      ///
+      /// Key: entrance_opt_peripheral_title
+      ///
+      /// Locales: en, zh-Hans
+      var entrance_opt_peripheral_title: RswiftResources.StringResource { .init(key: "entrance_opt_peripheral_title", tableName: "Localizable", source: source, developmentValue: "外设模式", comment: nil) }
+
+      /// en translation: BleMessager
+      ///
+      /// Key: name
+      ///
+      /// Locales: en, zh-Hans
+      var name: RswiftResources.StringResource { .init(key: "name", tableName: "Localizable", source: source, developmentValue: "BleMessager", comment: nil) }
+
+      /// en translation: 蓝牙通信，畅享每一刻。
+      ///
+      /// Key: slogen
+      ///
+      /// Locales: en, zh-Hans
+      var slogen: RswiftResources.StringResource { .init(key: "slogen", tableName: "Localizable", source: source, developmentValue: "蓝牙通信，畅享每一刻。", comment: nil) }
+    }
+
+    /// This `_R.string.main` struct is generated, and contains static references to 0 localization keys.
+    struct main {
+      let source: RswiftResources.StringResource.Source
+    }
+  }
+
+  /// This `_R.color` struct is generated, and contains static references to 11 colors.
   struct color {
     let bundle: Foundation.Bundle
 
     /// Color `AccentColor`.
     var accentColor: RswiftResources.ColorResource { .init(name: "AccentColor", path: [], bundle: bundle) }
+
+    /// Color `background`.
+    var background: RswiftResources.ColorResource { .init(name: "background", path: [], bundle: bundle) }
+
+    /// Color `black`.
+    var black: RswiftResources.ColorResource { .init(name: "black", path: [], bundle: bundle) }
+
+    /// Color `container`.
+    var container: RswiftResources.ColorResource { .init(name: "container", path: [], bundle: bundle) }
+
+    /// Color `placeholder`.
+    var placeholder: RswiftResources.ColorResource { .init(name: "placeholder", path: [], bundle: bundle) }
+
+    /// Color `primary`.
+    var primary: RswiftResources.ColorResource { .init(name: "primary", path: [], bundle: bundle) }
+
+    /// Color `secondary`.
+    var secondary: RswiftResources.ColorResource { .init(name: "secondary", path: [], bundle: bundle) }
+
+    /// Color `separator`.
+    var separator: RswiftResources.ColorResource { .init(name: "separator", path: [], bundle: bundle) }
+
+    /// Color `subtitle`.
+    var subtitle: RswiftResources.ColorResource { .init(name: "subtitle", path: [], bundle: bundle) }
+
+    /// Color `title`.
+    var title: RswiftResources.ColorResource { .init(name: "title", path: [], bundle: bundle) }
+
+    /// Color `white`.
+    var white: RswiftResources.ColorResource { .init(name: "white", path: [], bundle: bundle) }
+  }
+
+  /// This `_R.image` struct is generated, and contains static references to 1 images, and 1 namespaces.
+  struct image {
+    let bundle: Foundation.Bundle
+
+    /// Image `logo`.
+    var logo: RswiftResources.ImageResource { .init(name: "logo", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+    var com: com { .init(bundle: bundle) }
+
+    func com(bundle: Foundation.Bundle) -> com {
+      .init(bundle: bundle)
+    }
+
+
+    /// This `_R.image.com` struct is generated, and contains static references to 1 coms, and 1 namespaces.
+    struct com {
+      let bundle: Foundation.Bundle
+
+      /// Image `com/goto`.
+      var goto: RswiftResources.ImageResource { .init(name: "com/goto", path: ["com"], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+      var select: select { .init(bundle: bundle) }
+
+      func select(bundle: Foundation.Bundle) -> select {
+        .init(bundle: bundle)
+      }
+
+
+      /// This `_R.image.com.select` struct is generated, and contains static references to 2 selects.
+      struct select {
+        let bundle: Foundation.Bundle
+
+        /// Image `com/select/nor`.
+        var nor: RswiftResources.ImageResource { .init(name: "com/select/nor", path: ["com", "select"], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+        /// Image `com/select/sel`.
+        var sel: RswiftResources.ImageResource { .init(name: "com/select/sel", path: ["com", "select"], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+      }
+    }
   }
 
   /// This `_R.info` struct is generated, and contains static references to 1 properties.

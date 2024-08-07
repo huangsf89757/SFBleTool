@@ -1,5 +1,5 @@
 //
-//  SFEntranceView.swift
+//  SFEntranceOptView.swift
 //  SFBleTool
 //
 //  Created by hsf on 2024/8/6.
@@ -15,15 +15,15 @@ import SFUI
 // Server
 import SFLogger
 
-// MARK: - SFEntranceView
-class SFEntranceView: SFView {
+// MARK: - SFEntranceOptView
+class SFEntranceOptView: SFView {
     // MARK: var
     var isSelected = false {
         didSet {
             updateAppearance()
         }
     }
-    var tapBlock: ((SFEntranceView) -> ())?
+    var tapBlock: ((SFEntranceOptView) -> ())?
     
     lazy var selectImgView: SFImageView = {
         return SFImageView().then { view in
@@ -32,24 +32,25 @@ class SFEntranceView: SFView {
     }()
     lazy var titleLabel: SFLabel = {
         return SFLabel().then { view in
-            view.font = .systemFont(ofSize: 30, weight: .bold)
+            view.font = .systemFont(ofSize: 20, weight: .bold)
         }
     }()
     lazy var subtitleLabel: SFLabel = {
         return SFLabel().then { view in
-            view.font = .systemFont(ofSize: 30, weight: .bold)
+            view.font = .systemFont(ofSize: 15, weight: .regular)
         }
     }()
     lazy var gotoImgView: SFImageView = {
         return SFImageView().then { view in
             view.contentMode = .scaleAspectFit
+            view.image = R.image.com.goto()
         }
     }()
     
     // MARK: life cycle
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = SFColor.container
+        backgroundColor = R.color.container()
         layer.cornerRadius = 10
         layer.borderWidth = 1
         updateAppearance()
@@ -88,21 +89,25 @@ class SFEntranceView: SFView {
         gotoImgView.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
             make.trailing.equalToSuperview().offset(-10)
-            make.size.equalTo(CGSize(width: 40, height: 40))
+            make.size.equalTo(CGSize(width: 30, height: 30))
         }
     }
     
     // MARK: appearance
     private func updateAppearance() {
         if isSelected {
-            layer.borderColor = SFColor.primary?.cgColor
+            layer.borderColor = R.color.primary()?.cgColor
+            selectImgView.image = R.image.com.select.sel()
+            backgroundColor = R.color.secondary()?.withAlphaComponent(0.5)
         } else {
-            layer.borderColor = SFColor.placeholder?.cgColor
+            layer.borderColor = R.color.placeholder()?.cgColor
+            selectImgView.image = R.image.com.select.nor()
+            backgroundColor = R.color.container()
         }
     }
 }
 
-extension SFEntranceView {
+extension SFEntranceOptView {
     @objc private func tapAction() {
         tapBlock?(self)
     }

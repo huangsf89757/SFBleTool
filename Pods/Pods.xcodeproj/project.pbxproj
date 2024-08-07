@@ -197,6 +197,7 @@
 		DCD0A755F39451D3714A78B906C9C826 /* ConstraintMakerFinalizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE5FF78B508CF7F26824BE8C6A44E7F /* ConstraintMakerFinalizable.swift */; };
 		DD90C61A7FECC180D12161D4AA76AE9C /* ConstraintOffsetTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364E27C9DC4CBBC1F625C6124751312D /* ConstraintOffsetTarget.swift */; };
 		DDC0F4786752FBF4B07E3A4D4E273DA2 /* UICollectionView+Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC5B7A559BFDBAFF906EA003B205FB8 /* UICollectionView+Reusable.swift */; };
+		DDFA63E22C631FFD002E93F3 /* SFScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFA63E12C631FFD002E93F3 /* SFScrollViewController.swift */; };
 		DEF4ACACC5A5B37535DF580680565955 /* FontResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB97EA8C0CDFC25E63E64C3F7EA4F6D /* FontResource.swift */; };
 		E158DEEF1F15CBF659DA1C31EAB478D6 /* Constraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2958B77B1A23671D455C0043C7EA7172 /* Constraint.swift */; };
 		E162A7B947AB7C904C643DBC94967131 /* ConstraintInsetTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FFD391B0A05F8DCA1342BCDEB8C8747 /* ConstraintInsetTarget.swift */; };
@@ -382,7 +383,7 @@
 
 /* Begin PBXFileReference section */
 		01B6A4DBFD561B747FA54648804D29A4 /* SFCatlogView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SFCatlogView.swift; sourceTree = "<group>"; };
-		035425C29ED4A4733B3FC3B383C79450 /* SFBase.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = SFBase.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		035425C29ED4A4733B3FC3B383C79450 /* SFBase.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = SFBase.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		0364F1C1A12321A2E15DCC1BAC3EEEAC /* SFWrapper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SFWrapper.swift; path = SFExtension/Classes/SFWrapper.swift; sourceTree = "<group>"; };
 		0412D6258FE7168435FEC53E768169CC /* DataResource+Integrations.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DataResource+Integrations.swift"; path = "Sources/RswiftResources/Integrations/DataResource+Integrations.swift"; sourceTree = "<group>"; };
 		048E1F0030FF8E2A9BC296C3269F176C /* SFAlert.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SFAlert.swift; sourceTree = "<group>"; };
@@ -461,7 +462,7 @@
 		51B4A19A6F33B112677FFC2376705D5B /* SBPlatformDestination.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SBPlatformDestination.swift; path = Sources/SBPlatformDestination.swift; sourceTree = "<group>"; };
 		53FFC51823EF988FAA5F14676B5CC44E /* StringParam+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "StringParam+Extensions.swift"; path = "Sources/RswiftResources/Shared/StringParam+Extensions.swift"; sourceTree = "<group>"; };
 		54B66ED4910BE1F67DAC2F8A86A8063A /* SFLineProgressView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SFLineProgressView.swift; sourceTree = "<group>"; };
-		5592BAF2B8452D01B3E60191E761CAFC /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		5592BAF2B8452D01B3E60191E761CAFC /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		55A0EE7CB47CD5F96397618DD6C0DF23 /* SnapKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SnapKit.release.xcconfig; sourceTree = "<group>"; };
 		56C3F404A1571918F24FF9C5CF857330 /* SFGuideView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SFGuideView.swift; sourceTree = "<group>"; };
 		56ED2145AE6EB54487E05E8AB76B129F /* StringCG.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StringCG.swift; sourceTree = "<group>"; };
@@ -478,7 +479,7 @@
 		6043358C0A98645664A76B3605A3FDB5 /* SFBluetooth.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SFBluetooth.debug.xcconfig; sourceTree = "<group>"; };
 		61D32712145598BC32A53E0F61799CEF /* SFMenuView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SFMenuView.swift; sourceTree = "<group>"; };
 		62B70B001F2FF307672FFAD57E290D03 /* StoryboardReference.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StoryboardReference.swift; path = Sources/RswiftResources/Shared/StoryboardReference.swift; sourceTree = "<group>"; };
-		641CD801EC636117E54734490FF78345 /* SFLogger.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = SFLogger.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		641CD801EC636117E54734490FF78345 /* SFLogger.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = SFLogger.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		68009B2CBA29B56BA735C8F042372435 /* ConstraintMakerRelatable+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ConstraintMakerRelatable+Extensions.swift"; path = "Sources/ConstraintMakerRelatable+Extensions.swift"; sourceTree = "<group>"; };
 		6831544FFD6876E87914AB33B8C9C7B3 /* SFWebView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SFWebView.swift; sourceTree = "<group>"; };
 		6894680159EE1027F772BCB6BF12AA6D /* ResourceBundle-SFUI-SFUI-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-SFUI-SFUI-Info.plist"; sourceTree = "<group>"; };
@@ -499,7 +500,7 @@
 		716B3529FFD577A74F31114D6A851900 /* SFExtension-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SFExtension-umbrella.h"; sourceTree = "<group>"; };
 		718674EB28DFF6A464DD5020491E2DDF /* UILayoutSupport+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UILayoutSupport+Extensions.swift"; path = "Sources/UILayoutSupport+Extensions.swift"; sourceTree = "<group>"; };
 		71F473EF1EDF01B324BB3EFAB478E700 /* SFPopManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SFPopManager.swift; sourceTree = "<group>"; };
-		72825DA1FDD525291672A5A7A4AC5AE3 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		72825DA1FDD525291672A5A7A4AC5AE3 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		730EC91CB3AFBDEC25941B7DA56AD901 /* Reusable-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Reusable-Info.plist"; sourceTree = "<group>"; };
 		73C317F2F01240B46DA44F1367553F13 /* SFBase-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SFBase-prefix.pch"; sourceTree = "<group>"; };
 		74F4ACAA305A9163140A6F43496DD18D /* Reusable-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Reusable-dummy.m"; sourceTree = "<group>"; };
@@ -511,22 +512,22 @@
 		7C036E30D14914D419805D178F0B7345 /* SFUserDefault.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SFUserDefault.swift; path = SFBase/Classes/SFUserDefault.swift; sourceTree = "<group>"; };
 		7EC88A119F51B9F2625306D0CCA7AAE3 /* SFExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SFExtension.release.xcconfig; sourceTree = "<group>"; };
 		80EB0D1D963C9B12AEEC5A6F7206E68F /* ConstraintView+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ConstraintView+Extensions.swift"; path = "Sources/ConstraintView+Extensions.swift"; sourceTree = "<group>"; };
-		81A950EFA1DC21D935FEB16532E1BDC3 /* SFUI.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = SFUI.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		81A950EFA1DC21D935FEB16532E1BDC3 /* SFUI.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = SFUI.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		8256B35C0F52C3683F965A07B27D507F /* ConstraintConfig.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintConfig.swift; path = Sources/ConstraintConfig.swift; sourceTree = "<group>"; };
 		8298066710B037299C03BDA139BBE642 /* JSON.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
-		82A03FCC5AAE5C8DB280F929A55B23A4 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		82A03FCC5AAE5C8DB280F929A55B23A4 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		8417264A009D7E778E1B0825ED17D08D /* R.swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = R.swift.release.xcconfig; sourceTree = "<group>"; };
 		845DF62E60AF991D0D484F5479580F21 /* SFCatlogCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SFCatlogCell.swift; sourceTree = "<group>"; };
 		84E6EE185792715A70B4AB70F1FD8E7D /* SFRulerView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SFRulerView.swift; sourceTree = "<group>"; };
 		84EC059030E841ED63DAA73535C1094D /* NibReference+Integrations.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NibReference+Integrations.swift"; path = "Sources/RswiftResources/Integrations/NibReference+Integrations.swift"; sourceTree = "<group>"; };
 		85252ED6CA5DCFAA7F5367FAFA8642EB /* LayoutConstraint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayoutConstraint.swift; path = Sources/LayoutConstraint.swift; sourceTree = "<group>"; };
-		853D6DAE63246F87DB9DA8B08AB58F08 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
-		860571B771B8872AB0949835FCBA5EE8 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
-		86A7EB9074613E800EC9869A0FDA4B04 /* SFExtension.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = SFExtension.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		853D6DAE63246F87DB9DA8B08AB58F08 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		860571B771B8872AB0949835FCBA5EE8 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		86A7EB9074613E800EC9869A0FDA4B04 /* SFExtension.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = SFExtension.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		874D9B55D82DF0800CBE44421149F1DB /* ConstraintMakerRelatable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMakerRelatable.swift; path = Sources/ConstraintMakerRelatable.swift; sourceTree = "<group>"; };
 		88DADF0DE8EF4CB528DBB87BA24F4AEA /* FileResource+Integrations.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "FileResource+Integrations.swift"; path = "Sources/RswiftResources/Integrations/FileResource+Integrations.swift"; sourceTree = "<group>"; };
 		8A0D97EDCA7FE3EBA07EEB29962C7369 /* SwiftyBeaver-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyBeaver-prefix.pch"; sourceTree = "<group>"; };
-		8AEB7953E22CEC0EFB60056738FA930F /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		8AEB7953E22CEC0EFB60056738FA930F /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		8AFC8150E56862ED60FAAAFEC4491212 /* String.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		8B21C925566DD985E1BDF40AC0859835 /* CALayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CALayer.swift; sourceTree = "<group>"; };
 		8C7D1200A57DB7E8296BD563F5B05451 /* CBPeripheralState.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CBPeripheralState.swift; sourceTree = "<group>"; };
@@ -542,11 +543,11 @@
 		96ECEE3EC6D390A3ACD2BB15ED39EDB8 /* SFWebViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SFWebViewController.swift; sourceTree = "<group>"; };
 		979486118B3E90C08386079D57962701 /* SnapKit */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SnapKit; path = SnapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9922548B8AD165FB276FE6413C286571 /* ConstraintLayoutGuide.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintLayoutGuide.swift; path = Sources/ConstraintLayoutGuide.swift; sourceTree = "<group>"; };
-		9A53E883DEC5F5FB1128904A7D70C6C8 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		9A53E883DEC5F5FB1128904A7D70C6C8 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		9B9A3AB56EF7FAF565690AA6DFEE03A2 /* SFColor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SFColor.swift; sourceTree = "<group>"; };
 		9C8A0B6B40289E1AAA70B5F5545CE4AA /* R.swift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "R.swift-prefix.pch"; sourceTree = "<group>"; };
 		9CC1AC27FA7C42CC9A257A8BC875B0B3 /* ConstraintViewDSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintViewDSL.swift; path = Sources/ConstraintViewDSL.swift; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9F2EAA8DDEDBB77067C84F156EECC38D /* SFOutlineCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SFOutlineCell.swift; sourceTree = "<group>"; };
 		A01827F95837C36DFE6A128471337B9E /* SFBase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SFBase.debug.xcconfig; sourceTree = "<group>"; };
 		A09DAC2A277506ADCDBE47D238014524 /* Array.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
@@ -554,7 +555,7 @@
 		A1A1919E2F9069E8E1CEC3AE935B28C1 /* ConstraintInsets.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintInsets.swift; path = Sources/ConstraintInsets.swift; sourceTree = "<group>"; };
 		A226F71F8682FA5C3B37ABE61847D3FB /* SFCollectionReusableView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SFCollectionReusableView.swift; sourceTree = "<group>"; };
 		A2EC1AEEE7824CC798FBDAB9FB030A0C /* Bundle+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Bundle+Extensions.swift"; path = "Sources/RswiftResources/Integrations/Bundle+Extensions.swift"; sourceTree = "<group>"; };
-		A3E66BCD89AF2682ACE090E8820D3085 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		A3E66BCD89AF2682ACE090E8820D3085 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		A3E743FB3AB77D008D7ADD12FEFCDE66 /* LocaleReference.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LocaleReference.swift; path = Sources/RswiftResources/Shared/LocaleReference.swift; sourceTree = "<group>"; };
 		A4A3B2289884A3437DF8A26B74E483FF /* R.swift-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "R.swift-Info.plist"; sourceTree = "<group>"; };
 		A51FE21C3021698FFC520F79C0CD8E67 /* SFBase-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SFBase-Info.plist"; sourceTree = "<group>"; };
@@ -609,7 +610,7 @@
 		CDBB99C5B8C568357564916048C6DE22 /* StringsTable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StringsTable.swift; path = Sources/RswiftResources/Shared/StringsTable.swift; sourceTree = "<group>"; };
 		CE27AA06D562D93FB2580B411998C335 /* Then-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Then-Info.plist"; sourceTree = "<group>"; };
 		CEB97EA8C0CDFC25E63E64C3F7EA4F6D /* FontResource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FontResource.swift; path = Sources/RswiftResources/FontResource.swift; sourceTree = "<group>"; };
-		CEDF17951A2FE0C672913E69E6484348 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		CEDF17951A2FE0C672913E69E6484348 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		D10533B666B69D97D364D0D25FBCC66C /* Reusable-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Reusable-umbrella.h"; sourceTree = "<group>"; };
 		D137438CC3645EA9D4797643D9932A8A /* SFExtension-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SFExtension-Info.plist"; sourceTree = "<group>"; };
 		D245E0514AAC1A2B9A6D5EA2F383E90F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -617,7 +618,7 @@
 		D3818BFF93CA10AFDE5C049E6A904E72 /* Pods-SFBleTool-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SFBleTool-Info.plist"; sourceTree = "<group>"; };
 		D41C841509A26E642391C3C685BCC97B /* SFCardTableViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SFCardTableViewCell.swift; sourceTree = "<group>"; };
 		D4D618250C565CADE9974612BE1825CA /* SFBluetooth.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SFBluetooth.release.xcconfig; sourceTree = "<group>"; };
-		D64D6DCF2808443739166F18793C02BB /* SFBluetooth.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = SFBluetooth.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		D64D6DCF2808443739166F18793C02BB /* SFBluetooth.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = SFBluetooth.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		D6F6CBBCBAC2A0B592144FF50FA9312E /* R.swift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "R.swift-dummy.m"; sourceTree = "<group>"; };
 		D7B72615BBEF7AB6619897E9D95CA1B3 /* Reusable.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Reusable.release.xcconfig; sourceTree = "<group>"; };
 		DA1D130C9FBEBF94A3523CA0ABDBDA53 /* ImageResource+Integrations.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ImageResource+Integrations.swift"; path = "Sources/RswiftResources/Integrations/ImageResource+Integrations.swift"; sourceTree = "<group>"; };
@@ -630,6 +631,7 @@
 		DC50F0F2438F516B492EF085C1E8DF4E /* StoryboardBased.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StoryboardBased.swift; path = Sources/Storyboard/StoryboardBased.swift; sourceTree = "<group>"; };
 		DCED5FC14E055DFF2FA497C59CFE0C66 /* ConstraintDSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintDSL.swift; path = Sources/ConstraintDSL.swift; sourceTree = "<group>"; };
 		DCF183C3129D691B50F8C9AC2AA6D488 /* ColorResource+Integrations.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ColorResource+Integrations.swift"; path = "Sources/RswiftResources/Integrations/ColorResource+Integrations.swift"; sourceTree = "<group>"; };
+		DDFA63E12C631FFD002E93F3 /* SFScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFScrollViewController.swift; sourceTree = "<group>"; };
 		DE63311469AB7C513B0C82C2C6F29401 /* Reusable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Reusable.swift; path = Sources/RswiftResources/Shared/Reusable.swift; sourceTree = "<group>"; };
 		DFDCF32041CCE6938B574365428F961A /* DeploymentTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DeploymentTarget.swift; path = Sources/RswiftResources/Shared/DeploymentTarget.swift; sourceTree = "<group>"; };
 		E25EA4C4061980052006C40F544C6A60 /* Then.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Then.release.xcconfig; sourceTree = "<group>"; };
@@ -652,7 +654,7 @@
 		EE985E1F0ED2129FB027C1EC3EDA3970 /* StringParam.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StringParam.swift; path = Sources/RswiftResources/Shared/StringParam.swift; sourceTree = "<group>"; };
 		EF0D1D12C059D89434C5A684918B48A4 /* UIView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		EFF455784BA76B4B2D5AC3537D6A0EC1 /* Collection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
-		F071D15BD777B2CC2C77FCEDD628DD39 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		F071D15BD777B2CC2C77FCEDD628DD39 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		F195CBE0FD2C03FC2EBD5E678E34C9F1 /* StringResource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StringResource.swift; path = Sources/RswiftResources/StringResource.swift; sourceTree = "<group>"; };
 		F1B68B1C7E21EA4A36A626D580E9FF8D /* GoogleCloudDestination.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GoogleCloudDestination.swift; path = Sources/GoogleCloudDestination.swift; sourceTree = "<group>"; };
 		F2FF7A7E307A054F38F47B85AED21CA4 /* ConstraintConstantTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintConstantTarget.swift; path = Sources/ConstraintConstantTarget.swift; sourceTree = "<group>"; };
@@ -872,7 +874,6 @@
 				718674EB28DFF6A464DD5020491E2DDF /* UILayoutSupport+Extensions.swift */,
 				01909DDA07301B7FAEA2EA9EDA640FFB /* Support Files */,
 			);
-			name = SnapKit;
 			path = SnapKit;
 			sourceTree = "<group>";
 		};
@@ -933,7 +934,6 @@
 				F78C7DE5A1857DA6E4D9015D42AA5A68 /* Then.swift */,
 				9C58C84190A25D08EEF5C9D2CDBD1DB0 /* Support Files */,
 			);
-			name = Then;
 			path = Then;
 			sourceTree = "<group>";
 		};
@@ -989,7 +989,6 @@
 				795C4F6C3DF74CB060D34EE2175C9FB4 /* SFGuide.swift */,
 				56C3F404A1571918F24FF9C5CF857330 /* SFGuideView.swift */,
 			);
-			name = Guide;
 			path = Guide;
 			sourceTree = "<group>";
 		};
@@ -1014,7 +1013,6 @@
 				6831544FFD6876E87914AB33B8C9C7B3 /* SFWebView.swift */,
 				A5ED4D3EA13F8EB78415D75D9C284502 /* SFWindow.swift */,
 			);
-			name = View;
 			path = View;
 			sourceTree = "<group>";
 		};
@@ -1050,7 +1048,6 @@
 				BACE8F0130C07E9FAC15C277698A050D /* SFOutlineItemModel.swift */,
 				2CF634747CFA97C97985A0227EDC412E /* SFOutlineView.swift */,
 			);
-			name = Outline;
 			path = Outline;
 			sourceTree = "<group>";
 		};
@@ -1080,7 +1077,6 @@
 				F34B9A724A90E0C94608166BE1DB3F5D /* SFMenuCell.swift */,
 				61D32712145598BC32A53E0F61799CEF /* SFMenuView.swift */,
 			);
-			name = Menu;
 			path = Menu;
 			sourceTree = "<group>";
 		};
@@ -1122,7 +1118,6 @@
 				2D82FD118E3FAF3DE349EDEC32D090A5 /* ValidationError.swift */,
 				0F2BE2881BF81DD9B8C74D313257D7C0 /* Support Files */,
 			);
-			name = R.swift;
 			path = R.swift;
 			sourceTree = "<group>";
 		};
@@ -1148,7 +1143,6 @@
 				586A7AAD209C47B155BC26BCAEF7F34F /* SFToast.swift */,
 				1ED4E041D26F1BACC85284695425C1CA /* SFToastView.swift */,
 			);
-			name = Toast;
 			path = Toast;
 			sourceTree = "<group>";
 		};
@@ -1194,7 +1188,6 @@
 				3A875C96B0AC73D9B0A54FD5AA7B2398 /* SFPopView.swift */,
 				1EB0867CB8AE470E1986A67262E1A2AC /* SFPopWindow.swift */,
 			);
-			name = Pop;
 			path = Pop;
 			sourceTree = "<group>";
 		};
@@ -1227,7 +1220,6 @@
 				B292918051F3D782DA37A3F20756A5A7 /* Support Files */,
 				D568102E74C44DFFA336C0A1A407B3E8 /* View */,
 			);
-			name = Reusable;
 			path = Reusable;
 			sourceTree = "<group>";
 		};
@@ -1240,7 +1232,6 @@
 				C58AD3E6E8F54ED5A7EACBB7625B679D /* SFRingProgressView.swift */,
 				DAA2CCA8E4D3291CEAB0FF24428F3C53 /* SFWaveProgressView.swift */,
 			);
-			name = Progress;
 			path = Progress;
 			sourceTree = "<group>";
 		};
@@ -1251,7 +1242,6 @@
 				76BEB24F7DF31D23EA28377D2199F55A /* SFCatlogItemModel.swift */,
 				01B6A4DBFD561B747FA54648804D29A4 /* SFCatlogView.swift */,
 			);
-			name = Catlog;
 			path = Catlog;
 			sourceTree = "<group>";
 		};
@@ -1276,7 +1266,6 @@
 				46A6462E75B663A62D5420A771235046 /* SFHud.swift */,
 				AE7018EAB86B6D3D48715CD947E2CED3 /* SFHudView.swift */,
 			);
-			name = Hud;
 			path = Hud;
 			sourceTree = "<group>";
 		};
@@ -1286,7 +1275,6 @@
 				B8841636B6E3C241218D836D7F5A402B /* SFNotify.swift */,
 				BF36A491D994027BEAF3EE20435C86A2 /* SFNotifyView.swift */,
 			);
-			name = Notify;
 			path = Notify;
 			sourceTree = "<group>";
 		};
@@ -1315,7 +1303,6 @@
 				BCE13942BC06FDDA84A411EC3825278E /* Pop */,
 				958F97F3B757B78080AA789BB56EDBC2 /* Progress */,
 			);
-			name = View;
 			path = View;
 			sourceTree = "<group>";
 		};
@@ -1406,7 +1393,6 @@
 				AE80069C7766EDEB6FCFC61A359A6C66 /* SwiftyBeaver.swift */,
 				5894112723D1CF499D5271168DB67D71 /* Support Files */,
 			);
-			name = SwiftyBeaver;
 			path = SwiftyBeaver;
 			sourceTree = "<group>";
 		};
@@ -1421,7 +1407,6 @@
 				7DCC82310601901D91A988663A7B2A46 /* Pop */,
 				6DD0637FB88BB6ED6D9E0C333966F746 /* Toast */,
 			);
-			name = Pop;
 			path = Pop;
 			sourceTree = "<group>";
 		};
@@ -1430,9 +1415,9 @@
 			children = (
 				BE186818C139FADC17A04F7B86B63DBA /* SFNavigationController.swift */,
 				E2FFEBC79F057BE0032A6EB83908FBEC /* SFViewController.swift */,
+				DDFA63E12C631FFD002E93F3 /* SFScrollViewController.swift */,
 				96ECEE3EC6D390A3ACD2BB15ED39EDB8 /* SFWebViewController.swift */,
 			);
-			name = ViewController;
 			path = ViewController;
 			sourceTree = "<group>";
 		};
@@ -1473,7 +1458,6 @@
 				D41C841509A26E642391C3C685BCC97B /* SFCardTableViewCell.swift */,
 				1C3ED377BA4229D93791876621DBE478 /* SFCardTableViewHeaderFooterView.swift */,
 			);
-			name = Card;
 			path = Card;
 			sourceTree = "<group>";
 		};
@@ -1568,7 +1552,6 @@
 				048E1F0030FF8E2A9BC296C3269F176C /* SFAlert.swift */,
 				5D98D68FD14EABD0C5670FF601DD9901 /* SFAlertView.swift */,
 			);
-			name = Alert;
 			path = Alert;
 			sourceTree = "<group>";
 		};
@@ -2167,6 +2150,7 @@
 				FC3200183BF2561B8C99B4F910139B02 /* SFCardTableView.swift in Sources */,
 				A8A9B425350C9A5E0D487084B3BCC791 /* SFCardTableViewCell.swift in Sources */,
 				A6BCBD037E9A16BE21554715638559D1 /* SFCardTableViewHeaderFooterView.swift in Sources */,
+				DDFA63E22C631FFD002E93F3 /* SFScrollViewController.swift in Sources */,
 				C7BDAABFAF7D408F5A2660EE15D30A2A /* SFCatlogCell.swift in Sources */,
 				ACBE6F7ED04F8FAB7C273ECDD510679B /* SFCatlogItemModel.swift in Sources */,
 				B1B580E938AA7D611C5A1AA60CEC4A53 /* SFCatlogView.swift in Sources */,
