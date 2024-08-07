@@ -1,5 +1,5 @@
 //
-//  SFManagerVC.swift
+//  SFPeripheralManagerVC.swift
 //  SFBleTool
 //
 //  Created by hsf on 2024/8/6.
@@ -15,7 +15,7 @@ import SFUI
 // Server
 import SFLogger
 
-// MARK: - SFManagerVC
-class SFManagerVC: SFViewController {
+// MARK: - SFPeripheralManagerVC
+class SFPeripheralManagerVC: SFManagerVC {
     
 }

@@ -18,6 +18,8 @@ import SFLogger
 // MARK: - SFEntranceVC
 class SFEntranceVC: SFScrollViewController {
     // MARK: var
+    var didChooseEntranceOptBlock: ((Int) -> ())?
+    
     private lazy var logoImgView: SFImageView = {
         return SFImageView().then { view in
             view.contentMode = .scaleAspectFit
@@ -119,5 +121,8 @@ extension SFEntranceVC {
     private func entranceOptViewTaped(_ sender: SFEntranceOptView) {
         centralEntranceOptView.isSelected = (sender === centralEntranceOptView)
         peripheralEntranceOptView.isSelected = (sender === peripheralEntranceOptView)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            self.didChooseEntranceOptBlock?(sender.tag)
+        }
     }
 }

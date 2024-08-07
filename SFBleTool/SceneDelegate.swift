@@ -22,8 +22,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         self.window = window
        
         // root
-        let entranceVc = SFEntranceVC()
-        window.rootViewController = entranceVc
+        setRootVc()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -57,3 +56,25 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 }
 
+// MARK: root
+extension SceneDelegate {
+    private func setRootVc() {
+        if let entrance = UserDefaults.standard.object(forKey: SFUserDefaults.Key.entrance) as? Int {
+            if entrance == 0 {
+                let vc = SFCentralManagerVC()
+                window?.rootViewController = vc
+            } else {
+                let vc = SFPeripheralManagerVC()
+                window?.rootViewController = vc
+            }
+        } else {
+            let vc = SFEntranceVC()
+            vc.didChooseEntranceOptBlock = {
+                [weak self] entrance in
+                UserDefaults.standard.setValue(entrance, forKey: SFUserDefaults.Key.entrance)
+                self?.setRootVc()
+            }
+            window?.rootViewController = vc
+        }
+    }
+}

@@ -46,6 +46,11 @@ class SFEntranceOptView: SFView {
             view.image = R.image.com.goto()
         }
     }()
+    lazy var clickBtn: SFButton = {
+        return SFButton().then { view in
+            view.addTarget(self, action: #selector(clickBtnAction), for: .touchUpInside)
+        }
+    }()
     
     // MARK: life cycle
     override init(frame: CGRect) {
@@ -55,9 +60,6 @@ class SFEntranceOptView: SFView {
         layer.borderWidth = 1
         updateAppearance()
         customLayoutOfEntranceView()
-        isUserInteractionEnabled = true
-        let tap = UITapGestureRecognizer(target: self, action: #selector(tapAction))
-        addGestureRecognizer(tap)
     }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -69,6 +71,7 @@ class SFEntranceOptView: SFView {
         addSubview(titleLabel)
         addSubview(subtitleLabel)
         addSubview(gotoImgView)
+        addSubview(clickBtn)
         
         selectImgView.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
@@ -91,6 +94,9 @@ class SFEntranceOptView: SFView {
             make.trailing.equalToSuperview().offset(-10)
             make.size.equalTo(CGSize(width: 30, height: 30))
         }
+        clickBtn.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
     }
     
     // MARK: appearance
@@ -108,7 +114,9 @@ class SFEntranceOptView: SFView {
 }
 
 extension SFEntranceOptView {
-    @objc private func tapAction() {
+    @objc private func clickBtnAction() {
+        isSelected = true
+        updateAppearance()
         tapBlock?(self)
     }
 }
