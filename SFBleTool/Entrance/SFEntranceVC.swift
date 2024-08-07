@@ -21,7 +21,7 @@ class SFEntranceVC: SFScrollViewController {
     private lazy var logoImgView: SFImageView = {
         return SFImageView().then { view in
             view.contentMode = .scaleAspectFit
-            view.layer.cornerRadius = 8
+            view.layer.cornerRadius = 12
             view.layer.masksToBounds = true
 //            view.layer.shadowColor = R.color.black()?.cgColor
 //            view.layer.shadowOpacity = 0.2
