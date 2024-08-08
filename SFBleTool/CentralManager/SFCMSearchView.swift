@@ -17,23 +17,27 @@ import SFLogger
 
 
 // MARK: - SFCMSearchView
-class SFCMSearchView: SFTextField {
+class SFCMSearchView: SFView {
     // MARK: var
     private lazy var searchImgView: SFImageView = {
         return SFImageView().then { view in
             view.contentMode = .scaleAspectFit
-            view.image = R.image.com.search()?.sf.resize(to: CGSize(width: 20, height: 20))
-            view.frame = CGRect(origin: .zero, size: CGSize(width: 40, height: 40))
+            view.image = R.image.com.search()
+        }
+    }()
+    private lazy var textField: SFTextField = {
+        return SFTextField().then { view in
+            view.tintColor = R.color.primary()
+            view.textColor = R.color.title()
+            view.placeholderColor = R.color.placeholder()
+            view.placeholder = R.string.localizable.central_search_ph()
         }
     }()
     
     // MARK: life cycle
     override init(frame: CGRect) {
         super.init(frame: frame)
-        leftView = searchImgView
-        tintColor = R.color.primary()
-        textColor = R.color.title()
-        placeholderColor = R.color.placeholder()
+        customLayoutOfSearchView()
     }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -44,4 +48,22 @@ class SFCMSearchView: SFTextField {
         layer.borderWidth = 1
     }
     
+    // MARK: ui
+    private func customLayoutOfSearchView() {
+        addSubview(searchImgView)
+        addSubview(textField)
+        
+        searchImgView.snp.makeConstraints { make in
+            make.leading.equalToSuperview().offset(10)
+            make.top.equalToSuperview().offset(10)
+            make.bottom.equalToSuperview().offset(-10)
+            make.size.equalTo(CGSize(width: 20, height: 20))
+        }
+        textField.snp.makeConstraints { make in
+            make.top.equalToSuperview()
+            make.bottom.equalToSuperview()
+            make.trailing.equalToSuperview().offset(-10)
+            make.leading.equalTo(searchImgView.snp.trailing).offset(8)
+        }
+    }
 }

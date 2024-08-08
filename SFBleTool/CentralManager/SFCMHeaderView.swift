@@ -49,7 +49,6 @@ class SFCMHeaderView: SFView {
         searchView.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(10)
             make.leading.equalToSuperview().offset(10)
-            make.height.equalTo(40)
         }
         filterBtn.snp.makeConstraints { make in
             make.centerY.equalTo(searchView)
@@ -58,7 +57,7 @@ class SFCMHeaderView: SFView {
             make.size.equalTo(CGSize(width: 40, height: 40))
         }
         sortView.snp.makeConstraints { make in
-            make.top.equalTo(searchView.snp.bottom)
+            make.top.equalTo(searchView.snp.bottom).offset(8)
             make.leading.equalToSuperview()
             make.trailing.equalToSuperview()
             make.bottom.equalToSuperview()
