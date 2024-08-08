@@ -25,7 +25,7 @@ PODS:
   - Then (3.0.0)
 
 DEPENDENCIES:
-  - R.swift
+  - R.swift (= 7.3.2)
   - SFBase (from `../../Basic/SFBase/`)
   - SFBluetooth (from `../../Server/SFBluetooth/`)
   - SFExtension (from `../../Basic/SFExtension/`)
@@ -64,6 +64,6 @@ SPEC CHECKSUMS:
   SwiftyBeaver: 84069991dd5dca07d7069100985badaca7f0ce82
   Then: 844265ae87834bbe1147d91d5d41a404da2ec27d
 
-PODFILE CHECKSUM: ca9f99000dbfafa4931762f5f91a54e1300ded30
+PODFILE CHECKSUM: 3c20992e386173184f5efdcae813440deb97110c
 
 COCOAPODS: 1.12.1

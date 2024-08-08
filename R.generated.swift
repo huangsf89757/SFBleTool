@@ -83,12 +83,12 @@ struct _R {
       /// Locales: en, zh-Hans
       var cfBundleDisplayName: RswiftResources.StringResource { .init(key: "CFBundleDisplayName", tableName: "Localizable", source: source, developmentValue: "BleMessager", comment: nil) }
 
-      /// en translation: 请输入设备名称...
+      /// en translation: 请输入设备名称
       ///
       /// Key: central_search_ph
       ///
       /// Locales: en
-      var central_search_ph: RswiftResources.StringResource { .init(key: "central_search_ph", tableName: "Localizable", source: source, developmentValue: "请输入设备名称...", comment: nil) }
+      var central_search_ph: RswiftResources.StringResource { .init(key: "central_search_ph", tableName: "Localizable", source: source, developmentValue: "请输入设备名称", comment: nil) }
 
       /// en translation: RSSI
       ///
@@ -204,7 +204,7 @@ struct _R {
     }
 
 
-    /// This `_R.image.com` struct is generated, and contains static references to 3 coms, and 2 namespaces.
+    /// This `_R.image.com` struct is generated, and contains static references to 3 coms, and 3 namespaces.
     struct com {
       let bundle: Foundation.Bundle
 
@@ -216,9 +216,13 @@ struct _R {
 
       /// Image `com/search`.
       var search: RswiftResources.ImageResource { .init(name: "com/search", path: ["com"], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+      var rssi: rssi { .init(bundle: bundle) }
       var select: select { .init(bundle: bundle) }
       var sort: sort { .init(bundle: bundle) }
 
+      func rssi(bundle: Foundation.Bundle) -> rssi {
+        .init(bundle: bundle)
+      }
       func select(bundle: Foundation.Bundle) -> select {
         .init(bundle: bundle)
       }
@@ -226,6 +230,29 @@ struct _R {
         .init(bundle: bundle)
       }
 
+
+      /// This `_R.image.com.rssi` struct is generated, and contains static references to 6 rssis.
+      struct rssi {
+        let bundle: Foundation.Bundle
+
+        /// Image `com/rssi/level0`.
+        var level0: RswiftResources.ImageResource { .init(name: "com/rssi/level0", path: ["com", "rssi"], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+        /// Image `com/rssi/level1`.
+        var level1: RswiftResources.ImageResource { .init(name: "com/rssi/level1", path: ["com", "rssi"], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+        /// Image `com/rssi/level2`.
+        var level2: RswiftResources.ImageResource { .init(name: "com/rssi/level2", path: ["com", "rssi"], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+        /// Image `com/rssi/level3`.
+        var level3: RswiftResources.ImageResource { .init(name: "com/rssi/level3", path: ["com", "rssi"], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+        /// Image `com/rssi/level4`.
+        var level4: RswiftResources.ImageResource { .init(name: "com/rssi/level4", path: ["com", "rssi"], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+        /// Image `com/rssi/level5`.
+        var level5: RswiftResources.ImageResource { .init(name: "com/rssi/level5", path: ["com", "rssi"], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+      }
 
       /// This `_R.image.com.select` struct is generated, and contains static references to 2 selects.
       struct select {

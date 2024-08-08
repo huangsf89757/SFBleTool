@@ -16,7 +16,7 @@ CFBundleDisplayName = "BleMessager";
 "entrance_opt_peripheral_title" = "外设模式";
 "entrance_opt_peripheral_subtitle" = "手机作为外围设备广播数据";
 
-"central_search_ph" = "请输入设备名称...";
+"central_search_ph" = "请输入设备名称";
 
 "central_sort_name" = "名称";
 "central_sort_RSSI" = "RSSI";

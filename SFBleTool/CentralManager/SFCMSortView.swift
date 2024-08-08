@@ -19,6 +19,8 @@ import SFLogger
 // MARK: - SFCMSortView
 class SFCMSortView: SFView {
     // MARK: var
+    var sortChangedBlock: ((Bool, Bool) -> ())?
+    
     private lazy var nameBtn: SFButton = {
         return SFButton().then { view in
             view.style = .right(5)
@@ -28,6 +30,7 @@ class SFCMSortView: SFView {
             view.setTitleColor(R.color.title(), for: .selected)
             view.setTitle(R.string.localizable.central_sort_name(), for: .normal)
             view.titleLabel?.font = .systemFont(ofSize: 15, weight: .regular)
+            view.addTarget(self, action: #selector(nameBtnClicked), for: .touchUpInside)
         }
     }()
     private lazy var rssiBtn: SFButton = {
@@ -39,6 +42,7 @@ class SFCMSortView: SFView {
             view.setTitleColor(R.color.title(), for: .selected)
             view.setTitle(R.string.localizable.central_sort_RSSI(), for: .normal)
             view.titleLabel?.font = .systemFont(ofSize: 15, weight: .regular)
+            view.addTarget(self, action: #selector(rssiBtnClicked), for: .touchUpInside)
         }
     }()
     private lazy var separatorView: SFView = {
@@ -83,3 +87,14 @@ class SFCMSortView: SFView {
     }
 }
 
+extension SFCMSortView {
+    @objc private func nameBtnClicked() {
+        nameBtn.toggleSelected()
+        sortChangedBlock?(nameBtn.isSelected, rssiBtn.isSelected)
+    }
+    
+    @objc private func rssiBtnClicked() {
+        rssiBtn.toggleSelected()
+        sortChangedBlock?(nameBtn.isSelected, rssiBtn.isSelected)
+    }
+}
