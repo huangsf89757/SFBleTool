@@ -18,6 +18,11 @@ import SFLogger
 // MARK: - SFCentralManagerVC
 class SFCentralManagerVC: SFManagerVC {
     // MARK: var
+    private lazy var settingBtn: SFButton = {
+        return SFButton().then { view in
+            view.setImage(R.image.com.setting(), for: .normal)
+        }
+    }()
     private lazy var headerView: SFCMHeaderView = {
         return SFCMHeaderView().then { view in
             
@@ -35,6 +40,7 @@ class SFCentralManagerVC: SFManagerVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = R.string.localizable.entrance_opt_central_title()
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: settingBtn)
         customLayoutOfCentralManagerVC()
     }
     

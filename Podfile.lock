@@ -1,4 +1,5 @@
 PODS:
+  - IQKeyboardManagerSwift (6.5.16)
   - R.swift (7.3.2)
   - Reusable (4.1.2):
     - Reusable/Storyboard (= 4.1.2)
@@ -14,31 +15,39 @@ PODS:
     - SFBase (~> 0.1.0)
     - SwiftyBeaver
   - SFUI (0.1.0):
+    - IQKeyboardManagerSwift (~> 6.5.16)
     - Reusable (~> 4.1.2)
     - SFBase (~> 0.1.0)
     - SFBluetooth (~> 0.1.0)
     - SFExtension (~> 0.1.0)
     - SFLogger (~> 0.1.0)
     - SnapKit (~> 5.6.0)
+  - SideMenu (6.5.0)
   - SnapKit (5.6.0)
   - SwiftyBeaver (1.9.5)
   - Then (3.0.0)
+  - WSTagsField (5.4.0)
 
 DEPENDENCIES:
-  - R.swift (= 7.3.2)
+  - R.swift (~> 7.3.2)
   - SFBase (from `../../Basic/SFBase/`)
   - SFBluetooth (from `../../Server/SFBluetooth/`)
   - SFExtension (from `../../Basic/SFExtension/`)
   - SFLogger (from `../../Server/SFLogger/`)
   - SFUI (from `../../UI/SFUI/`)
+  - SideMenu (~> 6.5.0)
+  - WSTagsField (~> 5.4.0)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
+    - IQKeyboardManagerSwift
     - R.swift
     - Reusable
+    - SideMenu
     - SnapKit
     - SwiftyBeaver
     - Then
+    - WSTagsField
 
 EXTERNAL SOURCES:
   SFBase:
@@ -53,17 +62,20 @@ EXTERNAL SOURCES:
     :path: "../../UI/SFUI/"
 
 SPEC CHECKSUMS:
+  IQKeyboardManagerSwift: 12d89768845bb77b55cc092ecc2b1f9370f06b76
   R.swift: 0af0d882f49f03711415cb4e5215daa977d8a480
   Reusable: 6bae6a5e8aa793c9c441db0213c863a64bce9136
   SFBase: 1eba5a746b2470d76b0fec3477288ebea87ebb53
   SFBluetooth: 9890236c6a157b482f79b796fcfc1491b22e4ebd
   SFExtension: db5d207c8b9cb15d09d28858aec071d51050f3c5
   SFLogger: a0357f940aa3a0f852a3af5f8f09dd1cb961e3a4
-  SFUI: 0b75ea7ed7c17831d7bc4a6b40d5b21328d3fa7d
+  SFUI: ed57a3702e32f5548bb71ac6746ccad63bf44bb8
+  SideMenu: f583187d21c5b1dd04c72002be544b555a2627a2
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
   SwiftyBeaver: 84069991dd5dca07d7069100985badaca7f0ce82
   Then: 844265ae87834bbe1147d91d5d41a404da2ec27d
+  WSTagsField: a4e91b7d866e8c9755332ebcf8123f42f2abd4a0
 
-PODFILE CHECKSUM: 3c20992e386173184f5efdcae813440deb97110c
+PODFILE CHECKSUM: ab6da622dbbac28df01d81a74cbbdf18b9f210f5
 
 COCOAPODS: 1.12.1

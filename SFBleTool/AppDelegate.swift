@@ -8,6 +8,8 @@
 import UIKit
 // Server
 import SFLogger
+// Third
+import IQKeyboardManagerSwift
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,6 +19,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // 日志
         SFLogger.config()
+        // 键盘
+        IQKeyboardManager.shared.enable = true
+        IQKeyboardManager.shared.enableAutoToolbar = true
+        IQKeyboardManager.shared.shouldShowToolbarPlaceholder = true
+        IQKeyboardManager.shared.shouldResignOnTouchOutside = true
         
         return true
     }

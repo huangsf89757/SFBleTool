@@ -72,7 +72,7 @@ struct _R {
       let source: RswiftResources.StringResource.Source
     }
 
-    /// This `_R.string.localizable` struct is generated, and contains static references to 10 localization keys.
+    /// This `_R.string.localizable` struct is generated, and contains static references to 12 localization keys.
     struct localizable {
       let source: RswiftResources.StringResource.Source
 
@@ -82,6 +82,20 @@ struct _R {
       ///
       /// Locales: en, zh-Hans
       var cfBundleDisplayName: RswiftResources.StringResource { .init(key: "CFBundleDisplayName", tableName: "Localizable", source: source, developmentValue: "BleMessager", comment: nil) }
+
+      /// en translation: RSSI
+      ///
+      /// Key: central_filter_RSSI
+      ///
+      /// Locales: en
+      var central_filter_RSSI: RswiftResources.StringResource { .init(key: "central_filter_RSSI", tableName: "Localizable", source: source, developmentValue: "RSSI", comment: nil) }
+
+      /// en translation: UUID
+      ///
+      /// Key: central_filter_uuid
+      ///
+      /// Locales: en
+      var central_filter_uuid: RswiftResources.StringResource { .init(key: "central_filter_uuid", tableName: "Localizable", source: source, developmentValue: "UUID", comment: nil) }
 
       /// en translation: 请输入设备名称
       ///
@@ -204,7 +218,7 @@ struct _R {
     }
 
 
-    /// This `_R.image.com` struct is generated, and contains static references to 3 coms, and 3 namespaces.
+    /// This `_R.image.com` struct is generated, and contains static references to 5 coms, and 3 namespaces.
     struct com {
       let bundle: Foundation.Bundle
 
@@ -216,6 +230,12 @@ struct _R {
 
       /// Image `com/search`.
       var search: RswiftResources.ImageResource { .init(name: "com/search", path: ["com"], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+      /// Image `com/setting`.
+      var setting: RswiftResources.ImageResource { .init(name: "com/setting", path: ["com"], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+      /// Image `com/tip`.
+      var tip: RswiftResources.ImageResource { .init(name: "com/tip", path: ["com"], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
       var rssi: rssi { .init(bundle: bundle) }
       var select: select { .init(bundle: bundle) }
       var sort: sort { .init(bundle: bundle) }

@@ -41,6 +41,7 @@ class SFCMPeripheralCell: SFTableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         customLayoutOfPeripheralCell()
+        separatorInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
     }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -60,15 +61,15 @@ class SFCMPeripheralCell: SFTableViewCell {
             make.width.equalTo(60)
         }
         nameLabel.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(10)
+            make.top.equalToSuperview().offset(15)
             make.leading.equalTo(rssiView.snp.trailing).offset(5)
             make.trailing.equalToSuperview().offset(-10)
         }
         uuidLabel.snp.makeConstraints { make in
-            make.top.equalTo(nameLabel.snp.bottom).offset(10)
+            make.top.equalTo(nameLabel.snp.bottom).offset(8)
             make.leading.equalTo(nameLabel)
             make.trailing.equalTo(nameLabel)
-            make.bottom.lessThanOrEqualToSuperview().offset(-10)
+            make.bottom.lessThanOrEqualToSuperview().offset(-15)
         }
     }
 }

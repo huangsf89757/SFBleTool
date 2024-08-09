@@ -25,6 +25,7 @@ class SFCMHeaderView: SFView {
     private lazy var filterBtn: SFButton = {
         return SFButton().then { view in
             view.setImage(R.image.com.filter(), for: .normal)
+            view.addTarget(self, action: #selector(filterBtnClicked), for: .touchUpInside)
         }
     }()
     private lazy var sortView: SFCMSortView = {
@@ -34,7 +35,7 @@ class SFCMHeaderView: SFView {
     // MARK: life cycle
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = R.color.container()
+        backgroundColor = R.color.background()
         customLayoutOfHeaderView()
     }
     required init?(coder: NSCoder) {
@@ -52,9 +53,9 @@ class SFCMHeaderView: SFView {
         }
         filterBtn.snp.makeConstraints { make in
             make.centerY.equalTo(searchView)
-            make.leading.equalTo(searchView.snp.trailing).offset(10)
-            make.trailing.equalToSuperview().offset(-10)
-            make.size.equalTo(CGSize(width: 40, height: 40))
+            make.leading.equalTo(searchView.snp.trailing).offset(5)
+            make.trailing.equalToSuperview().offset(-5)
+            make.size.equalTo(CGSize(width: 50, height: 50))
         }
         sortView.snp.makeConstraints { make in
             make.top.equalTo(searchView.snp.bottom).offset(8)
@@ -64,3 +65,16 @@ class SFCMHeaderView: SFView {
         }
     }    
 }
+
+// MARK: - click
+extension SFCMHeaderView {
+    @objc private func filterBtnClicked() {
+        guard let window = SFApp.keyWindow() else { return }
+        let frame = sortView.convert(sortView.bounds, to: window)
+        let filterView = SFCMFilterView().then { view in
+            view.baseY = frame.maxY
+        }
+        filterView.show()
+    }
+}
+ 
