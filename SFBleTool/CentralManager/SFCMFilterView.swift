@@ -114,7 +114,7 @@ class SFCMFilterView: SFPopView {
         super.init(frame: frame)
         backgroundColor = .clear
         isCustomShape = true
-        shapeLayer.fillColor = R.color.background()?.cgColor
+        shapeLayer.fillColor = R.color.content()?.cgColor
         shapeLayer.shadowOffset = CGSize(width: 0, height: 20)
         
         customLayoutOfFilterView()
@@ -253,7 +253,7 @@ extension SFCMFilterView {
             }
             tipBtn.snp.makeConstraints { make in
                 make.centerY.equalTo(titleLabel)
-                make.leading.equalTo(titleLabel.snp.trailing).offset(0)
+                make.leading.equalTo(titleLabel.snp.trailing).offset(-5)
                 make.size.equalTo(CGSize(width: 40, height: 40))
                 make.trailing.lessThanOrEqualToSuperview().offset(-10)
             }
