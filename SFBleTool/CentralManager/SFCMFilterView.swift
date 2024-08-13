@@ -21,20 +21,17 @@ import WSTagsField
 // MARK: - SFCMFilterView
 class SFCMFilterView: SFPopView {
     // MARK: var
-    var baseY: CGFloat? {
-        didSet {
-            if let baseY = baseY {
-                let rect = CGRect(origin: .zero, size: CGSize(width: UIScreen.main.bounds.width, height: baseY))
-                maskConfigeration.hollowPath = UIBezierPath(rect: rect)
-            } else {
-                maskConfigeration.hollowPath = nil
-            }
-        }
-    }
+    var uuidTipBlock: (()->())?
+    var rssiTipBlock: (()->())?
+    var resetBlock: (()->())?
+    var sureBlock: (()->())?
     
     private lazy var uuidTitleView: SFCMFilterView.TitleView = {
         return TitleView().then { view in
             view.titleLabel.text = R.string.localizable.central_filter_uuid()
+            view.tipBlock = { [weak self] in
+                self?.uuidTipBlock?()
+            }
         }
     }()
     private lazy var uuidTagsField: WSTagsField = {
@@ -45,9 +42,9 @@ class SFCMFilterView: SFPopView {
             view.spaceBetweenTags = 10.0
             view.font = .systemFont(ofSize: 12.0)
             view.backgroundColor = .clear
-            view.tintColor = R.color.container()
+            view.tintColor = R.color.content()
             view.textColor = R.color.title()
-            view.selectedColor = R.color.primary()
+            view.selectedColor = R.color.theme()
             view.selectedTextColor = R.color.white()
             view.delimiter = ","
             view.isDelimiterVisible = true
@@ -84,11 +81,31 @@ class SFCMFilterView: SFPopView {
     private lazy var rssiTitleView: SFCMFilterView.TitleView = {
         return TitleView().then { view in
             view.titleLabel.text = R.string.localizable.central_filter_RSSI()
+            view.tipBlock = { [weak self] in
+                self?.rssiTipBlock?()
+            }
         }
     }()
     private lazy var rssiRangeView: SFView = {
         return SFView().then { view in
             view.backgroundColor = R.color.placeholder()
+        }
+    }()
+    private lazy var resetBtn: SFButton = {
+        return SFButton().then { view in
+            view.backgroundColor = R.color.black()
+            view.layer.cornerRadius = 10
+            view.setTitle(R.string.localizable.central_filter_reset(), for: .normal)
+            view.addTarget(self, action: #selector(resetBtnClicked), for: .touchUpInside)
+        }
+    }()
+    private lazy var sureBtn: SFButton = {
+        return SFButton().then { view in
+            view.backgroundColor = R.color.theme()
+            view.setTitleColor(R.color.whiteAlways(), for: .normal)
+            view.layer.cornerRadius = 10
+            view.setTitle(R.string.localizable.central_filter_sure(), for: .normal)
+            view.addTarget(self, action: #selector(sureBtnClicked), for: .touchUpInside)
         }
     }()
     
@@ -108,12 +125,8 @@ class SFCMFilterView: SFPopView {
     
     // MARK: override
     override func customLayout() {
-        var y: CGFloat = 0
-        if let baseY = baseY {
-            y = baseY
-        }
         self.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(y)
+            make.top.equalToSuperview()
             make.leading.equalToSuperview()
             make.trailing.equalToSuperview()
         }
@@ -121,14 +134,21 @@ class SFCMFilterView: SFPopView {
     override func customShapePath(rect: CGRect) -> UIBezierPath? {
         return UIBezierPath(roundedRect: rect, byRoundingCorners: [.bottomLeft, .bottomRight], cornerRadii: CGSize(width: 20, height: 20))
     }
-    override func show(stay duration: TimeInterval? = nil, showAnimation: CAAnimation? = nil, dismissAnimation: CAAnimation? = nil, topLevel: Bool = true) {
-        super.show(stay: duration, 
-                   showAnimation: showAnimationOfTranslation(from: .height(false), duration: 0.24),
-                   dismissAnimation: dismissAnimation,
+    override func show(in view: UIView? = nil, stay duration: TimeInterval? = nil, showAnimations: [CAAnimation] = [], dismissAnimations: [CAAnimation] = [], topLevel: Bool = true) {
+        let animDuration: TimeInterval = 0.24
+        let showAnimationOfTranslation = animationOfTranslation(from: .top, to: .zero, duration: animDuration)
+        let showAnimationOfOpacity = animationOfOpacity(from: 0, to: 1, duration: animDuration)
+        super.show(in: view, 
+                   stay: duration,
+                   showAnimations: [showAnimationOfTranslation, showAnimationOfOpacity],
+                   dismissAnimations: dismissAnimations,
                    topLevel: topLevel)
     }
-    override func dismiss(animation: CAAnimation? = nil) {
-        super.dismiss(animation: dismissAnimationOfTranslation(to: .height(false), duration: 0.24))
+    override func dismiss(animations: [CAAnimation] = []) {
+        let animDuration: TimeInterval = 0.24
+        let dismissAnimationOfTranslation = animationOfTranslation(from: .zero, to: .top, duration: animDuration)
+        let dismissAnimationOfOpacity = animationOfOpacity(from: 1, to: 0, duration: animDuration)
+        super.dismiss(animations: [dismissAnimationOfTranslation, dismissAnimationOfOpacity])
     }
     
     // MARK: ui
@@ -168,12 +188,12 @@ class SFCMFilterView: SFPopView {
 
 // MARK: - click
 extension SFCMFilterView {
-    @objc private func uuidTipBtnClicked() {
-        
+    @objc private func resetBtnClicked() {
+        resetBlock?()
     }
     
-    @objc private func rssiTipBtnClicked() {
-        
+    @objc private func sureBtnClicked() {
+        sureBlock?()
     }
 }
 
@@ -182,9 +202,11 @@ extension SFCMFilterView {
 extension SFCMFilterView {
     class TitleView: SFView {
         // MARK: var
+        fileprivate var tipBlock: (()->())?
+        
         fileprivate lazy var indicatorView: SFView = {
             return SFView().then { view in
-                view.backgroundColor = R.color.primary()
+                view.backgroundColor = R.color.theme()
                 view.layer.cornerRadius = 2
                 view.layer.masksToBounds = true
             }
@@ -199,7 +221,7 @@ extension SFCMFilterView {
             return SFButton().then { view in
                 let image = R.image.com.tip()?.sf.resize(to: CGSize(width: 15, height: 15)).withTintColor(R.color.placeholder() ?? .gray)
                 view.setImage(image, for: .normal)
-                view.addTarget(self, action: #selector(uuidTipBtnClicked), for: .touchUpInside)
+                view.addTarget(self, action: #selector(tipBtnClicked), for: .touchUpInside)
             }
         }()
         
@@ -235,7 +257,11 @@ extension SFCMFilterView {
                 make.size.equalTo(CGSize(width: 40, height: 40))
                 make.trailing.lessThanOrEqualToSuperview().offset(-10)
             }
-            
+        }
+        
+        // MARK: func
+        @objc private func tipBtnClicked() {
+            tipBlock?()
         }
     }
 }

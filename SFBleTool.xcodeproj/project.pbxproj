@@ -24,6 +24,8 @@
 		DDA648D32C61A51E00F01858 /* SFManagerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA648D22C61A51E00F01858 /* SFManagerVC.swift */; };
 		DDA648D62C61A86D00F01858 /* SFEntranceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA648D52C61A86D00F01858 /* SFEntranceView.swift */; };
 		DDA648DF2C61FDF200F01858 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA648DE2C61FDF200F01858 /* R.generated.swift */; };
+		DDB518E92C6B433900A049DE /* SFCMSettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB518E82C6B433900A049DE /* SFCMSettingVC.swift */; };
+		DDB518EB2C6B5A2400A049DE /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB518EA2C6B5A2400A049DE /* Color.swift */; };
 		DDFA63E72C6339B8002E93F3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDA648A22C619F5100F01858 /* Main.storyboard */; };
 		DDFA63EA2C6339BE002E93F3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDA648A72C619F5200F01858 /* LaunchScreen.storyboard */; };
 		DDFA63F02C633BA2002E93F3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DDFA63EE2C633BA2002E93F3 /* Localizable.strings */; };
@@ -75,6 +77,8 @@
 		DDA648D22C61A51E00F01858 /* SFManagerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFManagerVC.swift; sourceTree = "<group>"; };
 		DDA648D52C61A86D00F01858 /* SFEntranceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFEntranceView.swift; sourceTree = "<group>"; };
 		DDA648DE2C61FDF200F01858 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
+		DDB518E82C6B433900A049DE /* SFCMSettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFCMSettingVC.swift; sourceTree = "<group>"; };
+		DDB518EA2C6B5A2400A049DE /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		DDFA63E32C633912002E93F3 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		DDFA63E42C633912002E93F3 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		DDFA63E62C6339B4002E93F3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
@@ -158,6 +162,7 @@
 				DDFA63F52C63632D002E93F3 /* PeripheralManager */,
 				DDA648A22C619F5100F01858 /* Main.storyboard */,
 				DDA648A52C619F5200F01858 /* Assets.xcassets */,
+				DDB518EA2C6B5A2400A049DE /* Color.swift */,
 				DDFA63EE2C633BA2002E93F3 /* Localizable.strings */,
 				DDA648A72C619F5200F01858 /* LaunchScreen.storyboard */,
 				DDA648AA2C619F5200F01858 /* Info.plist */,
@@ -201,6 +206,7 @@
 				DDFA63FC2C636856002E93F3 /* SFCMFilterView.swift */,
 				5175ADAF2C64FA1D00C9260A /* SFCMRssiView.swift */,
 				5175ADAD2C64F4AF00C9260A /* SFCMPeripheralCell.swift */,
+				DDB518E82C6B433900A049DE /* SFCMSettingVC.swift */,
 			);
 			path = CentralManager;
 			sourceTree = "<group>";
@@ -424,6 +430,7 @@
 				DDA648D12C61A3F000F01858 /* SFPeripheralManagerVC.swift in Sources */,
 				DDA6489D2C619F5100F01858 /* AppDelegate.swift in Sources */,
 				DDFA63FD2C636856002E93F3 /* SFCMFilterView.swift in Sources */,
+				DDB518EB2C6B5A2400A049DE /* Color.swift in Sources */,
 				5175ADB02C64FA1D00C9260A /* SFCMRssiView.swift in Sources */,
 				DDA648CF2C61A3DE00F01858 /* SFCentralManagerVC.swift in Sources */,
 				DDA648DF2C61FDF200F01858 /* R.generated.swift in Sources */,
@@ -434,6 +441,7 @@
 				DDFA63F32C635306002E93F3 /* SFUserDefaults.swift in Sources */,
 				DDFA63FB2C636804002E93F3 /* SFCMSortView.swift in Sources */,
 				DDA648CD2C61A1E300F01858 /* SFEntranceVC.swift in Sources */,
+				DDB518E92C6B433900A049DE /* SFCMSettingVC.swift in Sources */,
 				DDA648D62C61A86D00F01858 /* SFEntranceView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

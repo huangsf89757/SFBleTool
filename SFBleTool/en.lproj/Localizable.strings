@@ -23,3 +23,5 @@ CFBundleDisplayName = "BleMessager";
 
 "central_filter_uuid" = "UUID";
 "central_filter_RSSI" = "RSSI";
+"central_filter_reset" = "重置";
+"central_filter_sure" = "确认";

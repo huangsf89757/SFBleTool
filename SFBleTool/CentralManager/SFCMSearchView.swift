@@ -27,7 +27,7 @@ class SFCMSearchView: SFView {
     }()
     private lazy var textField: SFTextField = {
         return SFTextField().then { view in
-            view.tintColor = R.color.primary()
+            view.tintColor = R.color.theme()
             view.textColor = R.color.title()
             view.placeholderColor = R.color.placeholder()
             view.placeholder = R.string.localizable.central_search_ph()

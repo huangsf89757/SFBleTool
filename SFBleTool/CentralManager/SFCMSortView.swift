@@ -47,7 +47,7 @@ class SFCMSortView: SFView {
     }()
     private lazy var separatorView: SFView = {
         return SFView().then { view in
-            view.backgroundColor = R.color.separator()
+            view.backgroundColor = R.color.divider()
         }
     }()
     

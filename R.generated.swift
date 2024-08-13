@@ -72,7 +72,7 @@ struct _R {
       let source: RswiftResources.StringResource.Source
     }
 
-    /// This `_R.string.localizable` struct is generated, and contains static references to 12 localization keys.
+    /// This `_R.string.localizable` struct is generated, and contains static references to 14 localization keys.
     struct localizable {
       let source: RswiftResources.StringResource.Source
 
@@ -89,6 +89,20 @@ struct _R {
       ///
       /// Locales: en
       var central_filter_RSSI: RswiftResources.StringResource { .init(key: "central_filter_RSSI", tableName: "Localizable", source: source, developmentValue: "RSSI", comment: nil) }
+
+      /// en translation: 重置
+      ///
+      /// Key: central_filter_reset
+      ///
+      /// Locales: en
+      var central_filter_reset: RswiftResources.StringResource { .init(key: "central_filter_reset", tableName: "Localizable", source: source, developmentValue: "重置", comment: nil) }
+
+      /// en translation: 确认
+      ///
+      /// Key: central_filter_sure
+      ///
+      /// Locales: en
+      var central_filter_sure: RswiftResources.StringResource { .init(key: "central_filter_sure", tableName: "Localizable", source: source, developmentValue: "确认", comment: nil) }
 
       /// en translation: UUID
       ///
@@ -167,42 +181,69 @@ struct _R {
     }
   }
 
-  /// This `_R.color` struct is generated, and contains static references to 11 colors.
+  /// This `_R.color` struct is generated, and contains static references to 20 colors.
   struct color {
     let bundle: Foundation.Bundle
 
     /// Color `AccentColor`.
     var accentColor: RswiftResources.ColorResource { .init(name: "AccentColor", path: [], bundle: bundle) }
 
+    /// Color `auxiliary`.
+    var auxiliary: RswiftResources.ColorResource { .init(name: "auxiliary", path: [], bundle: bundle) }
+
     /// Color `background`.
     var background: RswiftResources.ColorResource { .init(name: "background", path: [], bundle: bundle) }
+
+    /// Color `balckAlways`.
+    var balckAlways: RswiftResources.ColorResource { .init(name: "balckAlways", path: [], bundle: bundle) }
 
     /// Color `black`.
     var black: RswiftResources.ColorResource { .init(name: "black", path: [], bundle: bundle) }
 
-    /// Color `container`.
-    var container: RswiftResources.ColorResource { .init(name: "container", path: [], bundle: bundle) }
+    /// Color `content`.
+    var content: RswiftResources.ColorResource { .init(name: "content", path: [], bundle: bundle) }
+
+    /// Color `detail`.
+    var detail: RswiftResources.ColorResource { .init(name: "detail", path: [], bundle: bundle) }
+
+    /// Color `disabled`.
+    var disabled: RswiftResources.ColorResource { .init(name: "disabled", path: [], bundle: bundle) }
+
+    /// Color `divider`.
+    var divider: RswiftResources.ColorResource { .init(name: "divider", path: [], bundle: bundle) }
+
+    /// Color `error`.
+    var error: RswiftResources.ColorResource { .init(name: "error", path: [], bundle: bundle) }
+
+    /// Color `highlight`.
+    var highlight: RswiftResources.ColorResource { .init(name: "highlight", path: [], bundle: bundle) }
+
+    /// Color `link`.
+    var link: RswiftResources.ColorResource { .init(name: "link", path: [], bundle: bundle) }
 
     /// Color `placeholder`.
     var placeholder: RswiftResources.ColorResource { .init(name: "placeholder", path: [], bundle: bundle) }
 
-    /// Color `primary`.
-    var primary: RswiftResources.ColorResource { .init(name: "primary", path: [], bundle: bundle) }
-
-    /// Color `secondary`.
-    var secondary: RswiftResources.ColorResource { .init(name: "secondary", path: [], bundle: bundle) }
-
-    /// Color `separator`.
-    var separator: RswiftResources.ColorResource { .init(name: "separator", path: [], bundle: bundle) }
-
     /// Color `subtitle`.
     var subtitle: RswiftResources.ColorResource { .init(name: "subtitle", path: [], bundle: bundle) }
+
+    /// Color `success`.
+    var success: RswiftResources.ColorResource { .init(name: "success", path: [], bundle: bundle) }
+
+    /// Color `theme`.
+    var theme: RswiftResources.ColorResource { .init(name: "theme", path: [], bundle: bundle) }
 
     /// Color `title`.
     var title: RswiftResources.ColorResource { .init(name: "title", path: [], bundle: bundle) }
 
+    /// Color `warning`.
+    var warning: RswiftResources.ColorResource { .init(name: "warning", path: [], bundle: bundle) }
+
     /// Color `white`.
     var white: RswiftResources.ColorResource { .init(name: "white", path: [], bundle: bundle) }
+
+    /// Color `whiteAlways`.
+    var whiteAlways: RswiftResources.ColorResource { .init(name: "whiteAlways", path: [], bundle: bundle) }
   }
 
   /// This `_R.image` struct is generated, and contains static references to 1 images, and 1 namespaces.

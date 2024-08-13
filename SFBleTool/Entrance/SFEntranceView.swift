@@ -55,7 +55,7 @@ class SFEntranceOptView: SFView {
     // MARK: life cycle
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = R.color.container()
+        backgroundColor = R.color.content()
         layer.cornerRadius = 10
         layer.borderWidth = 1
         updateAppearance()
@@ -102,13 +102,13 @@ class SFEntranceOptView: SFView {
     // MARK: appearance
     private func updateAppearance() {
         if isSelected {
-            layer.borderColor = R.color.primary()?.cgColor
+            layer.borderColor = R.color.theme()?.cgColor
             selectImgView.image = R.image.com.select.sel()
-            backgroundColor = R.color.secondary()?.withAlphaComponent(0.5)
+            backgroundColor = R.color.theme()?.withAlphaComponent(0.3)
         } else {
             layer.borderColor = R.color.placeholder()?.cgColor
             selectImgView.image = R.image.com.select.nor()
-            backgroundColor = R.color.container()
+            backgroundColor = R.color.content()
         }
     }
 }

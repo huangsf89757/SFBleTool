@@ -29,7 +29,7 @@ class SFEntranceVC: SFScrollViewController {
 //            view.layer.shadowOpacity = 0.2
 //            view.layer.shadowRadius = 10
 //            view.layer.shadowOffset = .zero
-            view.backgroundColor = R.color.container()
+            view.backgroundColor = R.color.content()
             view.image = R.image.logo()
         }
     }()

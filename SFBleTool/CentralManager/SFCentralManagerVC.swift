@@ -25,8 +25,19 @@ class SFCentralManagerVC: SFManagerVC {
     }()
     private lazy var headerView: SFCMHeaderView = {
         return SFCMHeaderView().then { view in
-            
+            view.filterBlock = {
+                [weak self] isShow in
+                if isShow {
+                    self?.filterView.show(in: self?.tableView)
+//                    self?.filterView.show(  )
+                } else {
+                    self?.filterView.dismiss()
+                }
+            }
         }
+    }()
+    private lazy var filterView: SFCMFilterView = {
+        return SFCMFilterView()
     }()
     private lazy var tableView: SFTableView = {
         return SFTableView(frame: .zero, style: .plain).then { view in
