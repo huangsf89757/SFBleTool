@@ -41,7 +41,7 @@ class SFCMPeripheralListVC: SFManagerVC {
         return SFTableView(frame: .zero, style: .plain).then { view in
             view.delegate = self
             view.dataSource = self
-            view.register(cellType: SFCMPeripheralCell.self)
+            view.register(cellType: SFCMPeripheralListCell.self)
         }
     }()
     
@@ -80,7 +80,7 @@ extension SFCMPeripheralListVC: UITableViewDelegate, UITableViewDataSource {
         return 20
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(for: indexPath, cellType: SFCMPeripheralCell.self)
+        let cell = tableView.dequeueReusableCell(for: indexPath, cellType: SFCMPeripheralListCell.self)
         cell.rssiView.rssi = -78
         cell.nameLabel.text = "AiDEX X-TEST000001"
         cell.uuidLabel.text = UUID().uuidString

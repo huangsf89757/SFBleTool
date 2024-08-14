@@ -1,5 +1,5 @@
 //
-//  SFCMPeripheralCell.swift
+//  SFCMPeripheralListCell.swift
 //  SFBleTool
 //
 //  Created by hsf on 2024/8/8.
@@ -16,8 +16,8 @@ import SFUI
 import SFLogger
 
 
-// MARK: - SFCMPeripheralCell
-class SFCMPeripheralCell: SFTableViewCell {
+// MARK: - SFCMPeripheralListCell
+class SFCMPeripheralListCell: SFTableViewCell {
     // MARK: var
     private(set) lazy var rssiView: SFCMRssiView = {
         return SFCMRssiView().then { view in
