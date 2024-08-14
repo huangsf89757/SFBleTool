@@ -64,21 +64,17 @@ class SFCMFilterView: SFPopView {
 
             // Events
             view.onDidAddTag = { field, tag in
-                print("DidAddTag", tag.text)
+                Log.debug("DidAddTag:\(tag.text)")
             }
-
             view.onDidRemoveTag = { field, tag in
-                print("DidRemoveTag", tag.text)
+                Log.debug("DidRemoveTag:\(tag.text)")
             }
-
             view.onDidChangeText = { _, text in
-                print("DidChangeText")
+                Log.debug("DidChangeText:\(text ?? "")")
             }
-
             view.onDidChangeHeightTo = { _, height in
-                print("HeightTo", height)
+                Log.debug("onDidChangeHeightTo:\(height)")
             }
-
             view.onValidateTag = { tag, tags in
                 // custom validations, called before tag is added to tags list
                 return tag.text != "#" && !tags.contains(where: { $0.text.uppercased() == tag.text.uppercased() })
