@@ -1,5 +1,5 @@
 //
-//  SFCentralManagerVC.swift
+//  SFCMPeripheralListVC.swift
 //  SFBleTool
 //
 //  Created by hsf on 2024/8/6.
@@ -17,8 +17,8 @@ import SFLogger
 // Third
 import SideMenu
 
-// MARK: - SFCentralManagerVC
-class SFCentralManagerVC: SFManagerVC {
+// MARK: - SFCMPeripheralListVC
+class SFCMPeripheralListVC: SFManagerVC {
     // MARK: var
     private lazy var settingBtn: SFButton = {
         return SFButton().then { view in
@@ -75,7 +75,7 @@ class SFCentralManagerVC: SFManagerVC {
 
 
 // MARK: - UITableViewDelegate, UITableViewDataSource
-extension SFCentralManagerVC: UITableViewDelegate, UITableViewDataSource {
+extension SFCMPeripheralListVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 20
     }
@@ -90,7 +90,7 @@ extension SFCentralManagerVC: UITableViewDelegate, UITableViewDataSource {
 
 
 // MARK: - action
-extension SFCentralManagerVC {
+extension SFCMPeripheralListVC {
     /// 点击设置
     @objc private func settingBtnClicked() {
         let vc = SFCMSettingVC()

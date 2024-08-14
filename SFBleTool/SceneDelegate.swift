@@ -62,7 +62,7 @@ extension SceneDelegate {
     private func setRootVc() {
         if let entrance = UserDefaults.standard.object(forKey: SFUserDefaults.Key.entrance) as? Int {
             if entrance == 0 {
-                window?.rootViewController = SFNavigationController(rootViewController: SFCentralManagerVC())
+                window?.rootViewController = SFNavigationController(rootViewController: SFCMPeripheralListVC())
             } else {
                 window?.rootViewController = SFNavigationController(rootViewController: SFPeripheralManagerVC())
             }

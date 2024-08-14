@@ -19,7 +19,7 @@
 		DDA648BE2C619F5200F01858 /* SFBleToolUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA648BD2C619F5200F01858 /* SFBleToolUITests.swift */; };
 		DDA648C02C619F5200F01858 /* SFBleToolUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA648BF2C619F5200F01858 /* SFBleToolUITestsLaunchTests.swift */; };
 		DDA648CD2C61A1E300F01858 /* SFEntranceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA648CC2C61A1E300F01858 /* SFEntranceVC.swift */; };
-		DDA648CF2C61A3DE00F01858 /* SFCentralManagerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA648CE2C61A3DE00F01858 /* SFCentralManagerVC.swift */; };
+		DDA648CF2C61A3DE00F01858 /* SFCMPeripheralListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA648CE2C61A3DE00F01858 /* SFCMPeripheralListVC.swift */; };
 		DDA648D12C61A3F000F01858 /* SFPeripheralManagerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA648D02C61A3F000F01858 /* SFPeripheralManagerVC.swift */; };
 		DDA648D32C61A51E00F01858 /* SFManagerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA648D22C61A51E00F01858 /* SFManagerVC.swift */; };
 		DDA648D62C61A86D00F01858 /* SFEntranceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA648D52C61A86D00F01858 /* SFEntranceView.swift */; };
@@ -72,7 +72,7 @@
 		DDA648BD2C619F5200F01858 /* SFBleToolUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFBleToolUITests.swift; sourceTree = "<group>"; };
 		DDA648BF2C619F5200F01858 /* SFBleToolUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFBleToolUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		DDA648CC2C61A1E300F01858 /* SFEntranceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFEntranceVC.swift; sourceTree = "<group>"; };
-		DDA648CE2C61A3DE00F01858 /* SFCentralManagerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFCentralManagerVC.swift; sourceTree = "<group>"; };
+		DDA648CE2C61A3DE00F01858 /* SFCMPeripheralListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFCMPeripheralListVC.swift; sourceTree = "<group>"; };
 		DDA648D02C61A3F000F01858 /* SFPeripheralManagerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFPeripheralManagerVC.swift; sourceTree = "<group>"; };
 		DDA648D22C61A51E00F01858 /* SFManagerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFManagerVC.swift; sourceTree = "<group>"; };
 		DDA648D52C61A86D00F01858 /* SFEntranceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFEntranceView.swift; sourceTree = "<group>"; };
@@ -196,17 +196,33 @@
 			path = Entrance;
 			sourceTree = "<group>";
 		};
-		DDFA63F42C636325002E93F3 /* CentralManager */ = {
+		DDB518F52C6C4AA400A049DE /* PeripheralList */ = {
 			isa = PBXGroup;
 			children = (
-				DDA648CE2C61A3DE00F01858 /* SFCentralManagerVC.swift */,
 				DDFA63F62C636688002E93F3 /* SFCMHeaderView.swift */,
 				DDFA63F82C6367F2002E93F3 /* SFCMSearchView.swift */,
 				DDFA63FA2C636804002E93F3 /* SFCMSortView.swift */,
 				DDFA63FC2C636856002E93F3 /* SFCMFilterView.swift */,
 				5175ADAF2C64FA1D00C9260A /* SFCMRssiView.swift */,
 				5175ADAD2C64F4AF00C9260A /* SFCMPeripheralCell.swift */,
+				DDA648CE2C61A3DE00F01858 /* SFCMPeripheralListVC.swift */,
+			);
+			path = PeripheralList;
+			sourceTree = "<group>";
+		};
+		DDB518F62C6C4AD200A049DE /* Setting */ = {
+			isa = PBXGroup;
+			children = (
 				DDB518E82C6B433900A049DE /* SFCMSettingVC.swift */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		DDFA63F42C636325002E93F3 /* CentralManager */ = {
+			isa = PBXGroup;
+			children = (
+				DDB518F62C6C4AD200A049DE /* Setting */,
+				DDB518F52C6C4AA400A049DE /* PeripheralList */,
 			);
 			path = CentralManager;
 			sourceTree = "<group>";
@@ -432,7 +448,7 @@
 				DDFA63FD2C636856002E93F3 /* SFCMFilterView.swift in Sources */,
 				DDB518EB2C6B5A2400A049DE /* Color.swift in Sources */,
 				5175ADB02C64FA1D00C9260A /* SFCMRssiView.swift in Sources */,
-				DDA648CF2C61A3DE00F01858 /* SFCentralManagerVC.swift in Sources */,
+				DDA648CF2C61A3DE00F01858 /* SFCMPeripheralListVC.swift in Sources */,
 				DDA648DF2C61FDF200F01858 /* R.generated.swift in Sources */,
 				5175ADAE2C64F4AF00C9260A /* SFCMPeripheralCell.swift in Sources */,
 				DDFA63F72C636688002E93F3 /* SFCMHeaderView.swift in Sources */,
