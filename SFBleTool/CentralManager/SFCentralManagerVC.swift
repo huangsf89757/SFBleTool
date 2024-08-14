@@ -14,6 +14,8 @@ import SFExtension
 import SFUI
 // Server
 import SFLogger
+// Third
+import SideMenu
 
 // MARK: - SFCentralManagerVC
 class SFCentralManagerVC: SFManagerVC {
@@ -21,14 +23,14 @@ class SFCentralManagerVC: SFManagerVC {
     private lazy var settingBtn: SFButton = {
         return SFButton().then { view in
             view.setImage(R.image.com.setting(), for: .normal)
+            view.addTarget(self, action: #selector(settingBtnClicked), for: .touchUpInside)
         }
     }()
     private lazy var headerView: SFCMHeaderView = {
         return SFCMHeaderView().then { view in
             view.filterBlock = {
                 [weak self] in
-//                    self?.filterView.show(in: self?.tableView)
-                    self?.filterView.show(  )
+                self?.filterView.show()
             }
         }
     }()
@@ -71,6 +73,7 @@ class SFCentralManagerVC: SFManagerVC {
     }
 }
 
+
 // MARK: - UITableViewDelegate, UITableViewDataSource
 extension SFCentralManagerVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -82,5 +85,18 @@ extension SFCentralManagerVC: UITableViewDelegate, UITableViewDataSource {
         cell.nameLabel.text = "AiDEX X-TEST000001"
         cell.uuidLabel.text = UUID().uuidString
         return cell
+    }
+}
+
+
+// MARK: - action
+extension SFCentralManagerVC {
+    /// 点击设置
+    @objc private func settingBtnClicked() {
+        let vc = SFCMSettingVC()
+        let menu = SideMenuNavigationController(rootViewController: vc)
+        menu.menuWidth = 300
+        menu.sf.updateBar(barTintColor: SFColor.background, tintColor: SFColor.title, titleColor: SFColor.title, titleFont: .systemFont(ofSize: 20, weight: .bold))
+        present(menu, animated: true)
     }
 }

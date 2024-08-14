@@ -247,6 +247,7 @@
 		D966AD3A331D60849C3BF46FBC4348A9 /* CBCharacteristicWriteType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1838893FD1422960A8C99D0722D746C6 /* CBCharacteristicWriteType.swift */; };
 		DAD5950A205347FCDBD3751604472431 /* Protected.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4B857D6575CFFA18F7189F0DF94170 /* Protected.swift */; };
 		DDB518F22C6C3FF600A049DE /* SFMaskButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB518F12C6C3FF600A049DE /* SFMaskButton.swift */; };
+		DDB518F42C6C490600A049DE /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB518F32C6C490600A049DE /* UINavigationController.swift */; };
 		DDC0F4786752FBF4B07E3A4D4E273DA2 /* UICollectionView+Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8D1821AA20158000643DBD7624D28A /* UICollectionView+Reusable.swift */; };
 		DDF09A8FC60CE25C07F5117625E50249 /* SBPlatformDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3C506972C037D3C87519A884A10F74 /* SBPlatformDestination.swift */; };
 		DEF4ACACC5A5B37535DF580680565955 /* FontResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C084C360D3A641AC2EF155D7E04EA713 /* FontResource.swift */; };
@@ -786,6 +787,7 @@
 		DC8DC2DA0373ABE1E3B472B1AC9C4DF7 /* Reusable-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Reusable-dummy.m"; sourceTree = "<group>"; };
 		DDB0D77FEBB668093F6DC43ADCBA74BF /* IQTextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQTextView.swift; path = IQKeyboardManagerSwift/IQTextView/IQTextView.swift; sourceTree = "<group>"; };
 		DDB518F12C6C3FF600A049DE /* SFMaskButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFMaskButton.swift; sourceTree = "<group>"; };
+		DDB518F32C6C490600A049DE /* UINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
 		DE9B2850E1DC71EC53F27016C2B2AD11 /* Reusable-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Reusable-umbrella.h"; sourceTree = "<group>"; };
 		DF8DF244E5AB19570DA37C1BDA377520 /* Then.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Then.modulemap; sourceTree = "<group>"; };
 		E0C1F32B61F11CBFD85B1F9997666A46 /* ConstraintDirectionalInsets.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintDirectionalInsets.swift; path = Sources/ConstraintDirectionalInsets.swift; sourceTree = "<group>"; };
@@ -1060,6 +1062,7 @@
 				6EE96A4ADA9C0C8B34BCAB267F7E879B /* UIFont.swift */,
 				F7A71843312793A37EE2055C07F712EB /* UIImage.swift */,
 				EF0D1D12C059D89434C5A684918B48A4 /* UIView.swift */,
+				DDB518F32C6C490600A049DE /* UINavigationController.swift */,
 			);
 			name = UIKit;
 			path = SFExtension/Classes/UIKit;
@@ -2602,6 +2605,7 @@
 				FB481909A2BEC0DBFF713D8ACBE78EA8 /* CBManagerAuthorization.swift in Sources */,
 				06358205C15A59E388B044B1CFB4DB86 /* CBManagerState.swift in Sources */,
 				9643F720656F08DF3E423758CE26A11A /* CBPeripheral.swift in Sources */,
+				DDB518F42C6C490600A049DE /* UINavigationController.swift in Sources */,
 				D6E55B0D83AC03DD7291322F41E3A573 /* CBPeripheralState.swift in Sources */,
 				1D9A2F46F9D13D6B2793EF6302FBB647 /* CBService.swift in Sources */,
 				1CBF0B917867222A67FF034039BEF773 /* CBUUID.swift in Sources */,
