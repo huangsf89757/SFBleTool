@@ -26,6 +26,14 @@ class SFCMFilterView: SFPopView {
     var resetBlock: (()->())?
     var sureBlock: (()->())?
     
+    private lazy var titleLabel: SFLabel = {
+        return SFLabel().then { view in
+            view.font = .systemFont(ofSize: 18, weight: .bold)
+            view.textColor = R.color.title()
+            view.textAlignment = .center
+            view.text = R.string.localizable.central_filter_title()
+        }
+    }()
     private lazy var uuidTitleView: SFCMFilterView.TitleView = {
         return TitleView().then { view in
             view.titleLabel.text = R.string.localizable.central_filter_uuid()
@@ -93,7 +101,8 @@ class SFCMFilterView: SFPopView {
     }()
     private lazy var resetBtn: SFButton = {
         return SFButton().then { view in
-            view.backgroundColor = R.color.black()
+            view.backgroundColor = R.color.auxiliary()
+            view.setTitleColor(R.color.whiteAlways(), for: .normal)
             view.layer.cornerRadius = 10
             view.setTitle(R.string.localizable.central_filter_reset(), for: .normal)
             view.addTarget(self, action: #selector(resetBtnClicked), for: .touchUpInside)
@@ -153,13 +162,21 @@ class SFCMFilterView: SFPopView {
     
     // MARK: ui
     private func customLayoutOfFilterView() {
+        addSubview(titleLabel)
         addSubview(uuidTitleView)
         addSubview(uuidTagsField)
         addSubview(rssiTitleView)
         addSubview(rssiRangeView)
+        addSubview(resetBtn)
+        addSubview(sureBtn)
         
+        titleLabel.snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(20)
+            make.leading.equalToSuperview().offset(20)
+            make.trailing.equalToSuperview().offset(-20)
+        }
         uuidTitleView.snp.makeConstraints { make in
-            make.top.equalToSuperview()
+            make.top.equalTo(titleLabel.snp.bottom).offset(10)
             make.leading.equalToSuperview()
             make.trailing.equalToSuperview()
         }
@@ -179,7 +196,19 @@ class SFCMFilterView: SFPopView {
             make.leading.equalToSuperview().offset(10)
             make.trailing.equalToSuperview().offset(-10)
             make.height.equalTo(40)
-            make.bottom.equalToSuperview().offset(-10)
+        }
+        resetBtn.snp.makeConstraints { make in
+            make.top.equalTo(rssiRangeView.snp.bottom).offset(20)
+            make.leading.equalToSuperview().offset(20)
+            make.bottom.equalToSuperview().offset(-20)
+            make.height.equalTo(44)
+        }
+        sureBtn.snp.makeConstraints { make in
+            make.top.equalTo(resetBtn)
+            make.leading.equalTo(resetBtn.snp.trailing).offset(20)
+            make.trailing.equalToSuperview().offset(-20)
+            make.bottom.equalTo(resetBtn)
+            make.width.equalTo(resetBtn)
         }
     }
     

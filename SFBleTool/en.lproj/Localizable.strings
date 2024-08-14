@@ -21,6 +21,7 @@ CFBundleDisplayName = "BleMessager";
 "central_sort_name" = "名称";
 "central_sort_RSSI" = "RSSI";
 
+"central_filter_title" = "过滤";
 "central_filter_uuid" = "UUID";
 "central_filter_RSSI" = "RSSI";
 "central_filter_reset" = "重置";

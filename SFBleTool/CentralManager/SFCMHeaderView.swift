@@ -19,7 +19,7 @@ import SFLogger
 // MARK: - SFCMHeaderView
 class SFCMHeaderView: SFView {
     // MARK: var
-    var filterBlock: ((Bool)->())?
+    var filterBlock: (()->())?
     
     private lazy var searchView: SFCMSearchView = {
         return SFCMSearchView()
@@ -83,8 +83,7 @@ class SFCMHeaderView: SFView {
 // MARK: - click
 extension SFCMHeaderView {
     @objc private func filterBtnClicked() {
-        filterBtn.toggleSelected()
-        filterBlock?(filterBtn.isSelected)
+        filterBlock?()
     }
 }
  
