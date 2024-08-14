@@ -50,18 +50,17 @@ class SFCMFilterView: SFPopView {
             view.spaceBetweenTags = 10.0
             view.font = .systemFont(ofSize: 12.0)
             view.backgroundColor = .clear
-            view.tintColor = R.color.content()
+            view.tintColor = R.color.background()
             view.textColor = R.color.title()
             view.selectedColor = R.color.theme()
             view.selectedTextColor = R.color.white()
-            view.delimiter = ","
-            view.isDelimiterVisible = true
+            view.placeholder = R.string.localizable.central_filter_uuid_ph()
             view.placeholderColor = R.color.placeholder()
             view.placeholderAlwaysVisible = true
-            view.keyboardAppearance = .dark
             view.textField.returnKeyType = .next
-            view.acceptTagOption = .space
+            view.acceptTagOption = [.space, .return]
             view.shouldTokenizeAfterResigningFirstResponder = true
+            view.enableScrolling = true
 
             // Events
             view.onDidAddTag = { field, tag in
@@ -171,14 +170,14 @@ class SFCMFilterView: SFPopView {
         addSubview(sureBtn)
         
         titleLabel.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(20)
-            make.leading.equalToSuperview().offset(20)
-            make.trailing.equalToSuperview().offset(-20)
+            make.top.equalToSuperview().offset(SFApp.safeAreaInsets().top + 20)
+            make.leading.equalToSuperview().offset(10)
+            make.trailing.equalToSuperview().offset(-10)
         }
         uuidTitleView.snp.makeConstraints { make in
             make.top.equalTo(titleLabel.snp.bottom).offset(10)
-            make.leading.equalToSuperview()
-            make.trailing.equalToSuperview()
+            make.leading.equalToSuperview().offset(10)
+            make.trailing.equalToSuperview().offset(-10)
         }
         uuidTagsField.snp.makeConstraints { make in
             make.top.equalTo(uuidTitleView.snp.bottom).offset(0)
@@ -188,8 +187,8 @@ class SFCMFilterView: SFPopView {
         }
         rssiTitleView.snp.makeConstraints { make in
             make.top.equalTo(uuidTagsField.snp.bottom).offset(10)
-            make.leading.equalToSuperview()
-            make.trailing.equalToSuperview()
+            make.leading.equalToSuperview().offset(10)
+            make.trailing.equalToSuperview().offset(-10)
         }
         rssiRangeView.snp.makeConstraints { make in
             make.top.equalTo(rssiTitleView.snp.bottom).offset(0)
@@ -271,7 +270,7 @@ extension SFCMFilterView {
             
             indicatorView.snp.makeConstraints { make in
                 make.centerY.equalTo(titleLabel)
-                make.leading.equalToSuperview().offset(10)
+                make.leading.equalToSuperview()
                 make.size.equalTo(CGSize(width: 4, height: 15))
             }
             titleLabel.snp.makeConstraints { make in
@@ -284,7 +283,7 @@ extension SFCMFilterView {
                 make.centerY.equalTo(titleLabel)
                 make.leading.equalTo(titleLabel.snp.trailing).offset(-5)
                 make.size.equalTo(CGSize(width: 40, height: 40))
-                make.trailing.lessThanOrEqualToSuperview().offset(-10)
+                make.trailing.lessThanOrEqualToSuperview()
             }
         }
         
