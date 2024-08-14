@@ -248,6 +248,7 @@
 		DAD5950A205347FCDBD3751604472431 /* Protected.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4B857D6575CFFA18F7189F0DF94170 /* Protected.swift */; };
 		DDB518F22C6C3FF600A049DE /* SFMaskButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB518F12C6C3FF600A049DE /* SFMaskButton.swift */; };
 		DDB518F42C6C490600A049DE /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB518F32C6C490600A049DE /* UINavigationController.swift */; };
+		DDB519062C6C82C600A049DE /* SFShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB519052C6C82C600A049DE /* SFShadowView.swift */; };
 		DDC0F4786752FBF4B07E3A4D4E273DA2 /* UICollectionView+Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8D1821AA20158000643DBD7624D28A /* UICollectionView+Reusable.swift */; };
 		DDF09A8FC60CE25C07F5117625E50249 /* SBPlatformDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3C506972C037D3C87519A884A10F74 /* SBPlatformDestination.swift */; };
 		DEF4ACACC5A5B37535DF580680565955 /* FontResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C084C360D3A641AC2EF155D7E04EA713 /* FontResource.swift */; };
@@ -788,6 +789,7 @@
 		DDB0D77FEBB668093F6DC43ADCBA74BF /* IQTextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQTextView.swift; path = IQKeyboardManagerSwift/IQTextView/IQTextView.swift; sourceTree = "<group>"; };
 		DDB518F12C6C3FF600A049DE /* SFMaskButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFMaskButton.swift; sourceTree = "<group>"; };
 		DDB518F32C6C490600A049DE /* UINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
+		DDB519052C6C82C600A049DE /* SFShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFShadowView.swift; sourceTree = "<group>"; };
 		DE9B2850E1DC71EC53F27016C2B2AD11 /* Reusable-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Reusable-umbrella.h"; sourceTree = "<group>"; };
 		DF8DF244E5AB19570DA37C1BDA377520 /* Then.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Then.modulemap; sourceTree = "<group>"; };
 		E0C1F32B61F11CBFD85B1F9997666A46 /* ConstraintDirectionalInsets.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintDirectionalInsets.swift; path = Sources/ConstraintDirectionalInsets.swift; sourceTree = "<group>"; };
@@ -1513,6 +1515,7 @@
 			isa = PBXGroup;
 			children = (
 				48B3ABEEA64CD68307A04E13D7A710A5 /* SFBadgeView.swift */,
+				DDB519052C6C82C600A049DE /* SFShadowView.swift */,
 				A521C638B119F900926C9D26DFC051FD /* SFBreathLightView.swift */,
 				A6EEAE74B85071317BFF9EB6E35BA748 /* SFFloatingView.swift */,
 				CA5A77477CDC421E5CC903EF35012D81 /* SFHollowView.swift */,
@@ -2489,6 +2492,7 @@
 				01503048052CB1C67C0D7FF05FF573EF /* SFPinCodeView.swift in Sources */,
 				C2DAFD44AC4047EA7DB628B4E7CD5F1E /* SFPopManager.swift in Sources */,
 				5C37A29258EC0A1586D3C481A0EE81C6 /* SFPopView.swift in Sources */,
+				DDB519062C6C82C600A049DE /* SFShadowView.swift in Sources */,
 				B9EDEFAAB6BF39CF27741243AFFF7590 /* SFPopWindow.swift in Sources */,
 				C89F7D695E2A0583C075F056942CBE06 /* SFProgressView.swift in Sources */,
 				AA65CC7C48A20865506808DD361759E8 /* SFResource.swift in Sources */,

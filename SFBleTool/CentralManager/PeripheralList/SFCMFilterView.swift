@@ -117,7 +117,6 @@ class SFCMFilterView: SFPopView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = .clear
-        isCustomShape = true
         shapeLayer.fillColor = R.color.content()?.cgColor
         shapeLayer.shadowOffset = CGSize(width: 0, height: 20)
         

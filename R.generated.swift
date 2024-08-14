@@ -72,7 +72,7 @@ struct _R {
       let source: RswiftResources.StringResource.Source
     }
 
-    /// This `_R.string.localizable` struct is generated, and contains static references to 16 localization keys.
+    /// This `_R.string.localizable` struct is generated, and contains static references to 19 localization keys.
     struct localizable {
       let source: RswiftResources.StringResource.Source
 
@@ -82,6 +82,27 @@ struct _R {
       ///
       /// Locales: en, zh-Hans
       var cfBundleDisplayName: RswiftResources.StringResource { .init(key: "CFBundleDisplayName", tableName: "Localizable", source: source, developmentValue: "BleMessager", comment: nil) }
+
+      /// en translation: 广播
+      ///
+      /// Key: central_bar_adv
+      ///
+      /// Locales: en
+      var central_bar_adv: RswiftResources.StringResource { .init(key: "central_bar_adv", tableName: "Localizable", source: source, developmentValue: "广播", comment: nil) }
+
+      /// en translation: 日志
+      ///
+      /// Key: central_bar_log
+      ///
+      /// Locales: en
+      var central_bar_log: RswiftResources.StringResource { .init(key: "central_bar_log", tableName: "Localizable", source: source, developmentValue: "日志", comment: nil) }
+
+      /// en translation: 服务
+      ///
+      /// Key: central_bar_service
+      ///
+      /// Locales: en
+      var central_bar_service: RswiftResources.StringResource { .init(key: "central_bar_service", tableName: "Localizable", source: source, developmentValue: "服务", comment: nil) }
 
       /// en translation: RSSI
       ///
@@ -260,18 +281,74 @@ struct _R {
     var whiteAlways: RswiftResources.ColorResource { .init(name: "whiteAlways", path: [], bundle: bundle) }
   }
 
-  /// This `_R.image` struct is generated, and contains static references to 1 images, and 1 namespaces.
+  /// This `_R.image` struct is generated, and contains static references to 1 images, and 2 namespaces.
   struct image {
     let bundle: Foundation.Bundle
 
     /// Image `logo`.
     var logo: RswiftResources.ImageResource { .init(name: "logo", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+    var bar: bar { .init(bundle: bundle) }
     var com: com { .init(bundle: bundle) }
 
+    func bar(bundle: Foundation.Bundle) -> bar {
+      .init(bundle: bundle)
+    }
     func com(bundle: Foundation.Bundle) -> com {
       .init(bundle: bundle)
     }
 
+
+    /// This `_R.image.bar` struct is generated, and contains static references to 0 bars, and 3 namespaces.
+    struct bar {
+      let bundle: Foundation.Bundle
+      var adv: adv { .init(bundle: bundle) }
+      var log: log { .init(bundle: bundle) }
+      var service: service { .init(bundle: bundle) }
+
+      func adv(bundle: Foundation.Bundle) -> adv {
+        .init(bundle: bundle)
+      }
+      func log(bundle: Foundation.Bundle) -> log {
+        .init(bundle: bundle)
+      }
+      func service(bundle: Foundation.Bundle) -> service {
+        .init(bundle: bundle)
+      }
+
+
+      /// This `_R.image.bar.adv` struct is generated, and contains static references to 2 advs.
+      struct adv {
+        let bundle: Foundation.Bundle
+
+        /// Image `bar/adv/nor`.
+        var nor: RswiftResources.ImageResource { .init(name: "bar/adv/nor", path: ["bar", "adv"], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+        /// Image `bar/adv/sel`.
+        var sel: RswiftResources.ImageResource { .init(name: "bar/adv/sel", path: ["bar", "adv"], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+      }
+
+      /// This `_R.image.bar.log` struct is generated, and contains static references to 2 logs.
+      struct log {
+        let bundle: Foundation.Bundle
+
+        /// Image `bar/log/nor`.
+        var nor: RswiftResources.ImageResource { .init(name: "bar/log/nor", path: ["bar", "log"], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+        /// Image `bar/log/sel`.
+        var sel: RswiftResources.ImageResource { .init(name: "bar/log/sel", path: ["bar", "log"], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+      }
+
+      /// This `_R.image.bar.service` struct is generated, and contains static references to 2 services.
+      struct service {
+        let bundle: Foundation.Bundle
+
+        /// Image `bar/service/nor`.
+        var nor: RswiftResources.ImageResource { .init(name: "bar/service/nor", path: ["bar", "service"], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+        /// Image `bar/service/sel`.
+        var sel: RswiftResources.ImageResource { .init(name: "bar/service/sel", path: ["bar", "service"], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+      }
+    }
 
     /// This `_R.image.com` struct is generated, and contains static references to 5 coms, and 3 namespaces.
     struct com {
