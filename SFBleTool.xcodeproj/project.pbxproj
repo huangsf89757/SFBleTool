@@ -24,6 +24,8 @@
 		DDA648D32C61A51E00F01858 /* SFManagerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA648D22C61A51E00F01858 /* SFManagerVC.swift */; };
 		DDA648D62C61A86D00F01858 /* SFEntranceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA648D52C61A86D00F01858 /* SFEntranceView.swift */; };
 		DDA648DF2C61FDF200F01858 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA648DE2C61FDF200F01858 /* R.generated.swift */; };
+		DDAC3D642C6DF66300AA87B4 /* SFCMPeripheralAdvItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDAC3D632C6DF66300AA87B4 /* SFCMPeripheralAdvItemView.swift */; };
+		DDAC3D662C6DFCD400AA87B4 /* SFCMPeripheralAdvItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDAC3D652C6DFCD400AA87B4 /* SFCMPeripheralAdvItemModel.swift */; };
 		DDB518E92C6B433900A049DE /* SFCMSettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB518E82C6B433900A049DE /* SFCMSettingVC.swift */; };
 		DDB518F92C6C526300A049DE /* SFCMPeripheralDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB518F82C6C526300A049DE /* SFCMPeripheralDetailVC.swift */; };
 		DDB518FE2C6C728300A049DE /* SFCMPeripheralAdvDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB518FD2C6C728300A049DE /* SFCMPeripheralAdvDetailVC.swift */; };
@@ -81,6 +83,8 @@
 		DDA648D22C61A51E00F01858 /* SFManagerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFManagerVC.swift; sourceTree = "<group>"; };
 		DDA648D52C61A86D00F01858 /* SFEntranceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFEntranceView.swift; sourceTree = "<group>"; };
 		DDA648DE2C61FDF200F01858 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
+		DDAC3D632C6DF66300AA87B4 /* SFCMPeripheralAdvItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFCMPeripheralAdvItemView.swift; sourceTree = "<group>"; };
+		DDAC3D652C6DFCD400AA87B4 /* SFCMPeripheralAdvItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFCMPeripheralAdvItemModel.swift; sourceTree = "<group>"; };
 		DDB518E82C6B433900A049DE /* SFCMSettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFCMSettingVC.swift; sourceTree = "<group>"; };
 		DDB518F82C6C526300A049DE /* SFCMPeripheralDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFCMPeripheralDetailVC.swift; sourceTree = "<group>"; };
 		DDB518FD2C6C728300A049DE /* SFCMPeripheralAdvDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFCMPeripheralAdvDetailVC.swift; sourceTree = "<group>"; };
@@ -241,6 +245,8 @@
 			isa = PBXGroup;
 			children = (
 				DDB518FD2C6C728300A049DE /* SFCMPeripheralAdvDetailVC.swift */,
+				DDAC3D632C6DF66300AA87B4 /* SFCMPeripheralAdvItemView.swift */,
+				DDAC3D652C6DFCD400AA87B4 /* SFCMPeripheralAdvItemModel.swift */,
 			);
 			path = Adv;
 			sourceTree = "<group>";
@@ -493,6 +499,7 @@
 				DDFA63FD2C636856002E93F3 /* SFCMFilterView.swift in Sources */,
 				5175ADB02C64FA1D00C9260A /* SFCMRssiView.swift in Sources */,
 				DDA648CF2C61A3DE00F01858 /* SFCMPeripheralListVC.swift in Sources */,
+				DDAC3D662C6DFCD400AA87B4 /* SFCMPeripheralAdvItemModel.swift in Sources */,
 				DDA648DF2C61FDF200F01858 /* R.generated.swift in Sources */,
 				DDB519042C6C751A00A049DE /* SFCMPeripheralDetailBarView.swift in Sources */,
 				DDB519022C6C72E200A049DE /* SFCMPeripheralLogDetailVC.swift in Sources */,
@@ -504,6 +511,7 @@
 				DDFA63F32C635306002E93F3 /* SFUserDefaults.swift in Sources */,
 				DDFA63FB2C636804002E93F3 /* SFCMSortView.swift in Sources */,
 				DDB519002C6C72C400A049DE /* SFCMPeripheralServiceDetailVC.swift in Sources */,
+				DDAC3D642C6DF66300AA87B4 /* SFCMPeripheralAdvItemView.swift in Sources */,
 				DDA648CD2C61A1E300F01858 /* SFEntranceVC.swift in Sources */,
 				DDB518E92C6B433900A049DE /* SFCMSettingVC.swift in Sources */,
 				DDA648D62C61A86D00F01858 /* SFEntranceView.swift in Sources */,
