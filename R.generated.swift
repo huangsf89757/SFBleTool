@@ -281,9 +281,12 @@ struct _R {
     var whiteAlways: RswiftResources.ColorResource { .init(name: "whiteAlways", path: [], bundle: bundle) }
   }
 
-  /// This `_R.image` struct is generated, and contains static references to 2 images, and 6 namespaces.
+  /// This `_R.image` struct is generated, and contains static references to 3 images, and 6 namespaces.
   struct image {
     let bundle: Foundation.Bundle
+
+    /// Image `back`.
+    var back: RswiftResources.ImageResource { .init(name: "back", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
 
     /// Image `close`.
     var close: RswiftResources.ImageResource { .init(name: "close", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
