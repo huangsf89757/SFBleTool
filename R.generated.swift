@@ -281,22 +281,58 @@ struct _R {
     var whiteAlways: RswiftResources.ColorResource { .init(name: "whiteAlways", path: [], bundle: bundle) }
   }
 
-  /// This `_R.image` struct is generated, and contains static references to 1 images, and 2 namespaces.
+  /// This `_R.image` struct is generated, and contains static references to 2 images, and 6 namespaces.
   struct image {
     let bundle: Foundation.Bundle
 
+    /// Image `close`.
+    var close: RswiftResources.ImageResource { .init(name: "close", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
     /// Image `logo`.
     var logo: RswiftResources.ImageResource { .init(name: "logo", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+    var arrow: arrow { .init(bundle: bundle) }
     var bar: bar { .init(bundle: bundle) }
     var com: com { .init(bundle: bundle) }
+    var doc: doc { .init(bundle: bundle) }
+    var hud: hud { .init(bundle: bundle) }
+    var triangle: triangle { .init(bundle: bundle) }
 
+    func arrow(bundle: Foundation.Bundle) -> arrow {
+      .init(bundle: bundle)
+    }
     func bar(bundle: Foundation.Bundle) -> bar {
       .init(bundle: bundle)
     }
     func com(bundle: Foundation.Bundle) -> com {
       .init(bundle: bundle)
     }
+    func doc(bundle: Foundation.Bundle) -> doc {
+      .init(bundle: bundle)
+    }
+    func hud(bundle: Foundation.Bundle) -> hud {
+      .init(bundle: bundle)
+    }
+    func triangle(bundle: Foundation.Bundle) -> triangle {
+      .init(bundle: bundle)
+    }
 
+
+    /// This `_R.image.arrow` struct is generated, and contains static references to 4 arrows.
+    struct arrow {
+      let bundle: Foundation.Bundle
+
+      /// Image `arrow/bottom`.
+      var bottom: RswiftResources.ImageResource { .init(name: "arrow/bottom", path: ["arrow"], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+      /// Image `arrow/left`.
+      var left: RswiftResources.ImageResource { .init(name: "arrow/left", path: ["arrow"], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+      /// Image `arrow/right`.
+      var right: RswiftResources.ImageResource { .init(name: "arrow/right", path: ["arrow"], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+      /// Image `arrow/top`.
+      var top: RswiftResources.ImageResource { .init(name: "arrow/top", path: ["arrow"], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+    }
 
     /// This `_R.image.bar` struct is generated, and contains static references to 0 bars, and 3 namespaces.
     struct bar {
@@ -427,6 +463,57 @@ struct _R {
         /// Image `com/sort/up`.
         var up: RswiftResources.ImageResource { .init(name: "com/sort/up", path: ["com", "sort"], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
       }
+    }
+
+    /// This `_R.image.doc` struct is generated, and contains static references to 2 docs.
+    struct doc {
+      let bundle: Foundation.Bundle
+
+      /// Image `doc/file`.
+      var file: RswiftResources.ImageResource { .init(name: "doc/file", path: ["doc"], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+      /// Image `doc/folder`.
+      var folder: RswiftResources.ImageResource { .init(name: "doc/folder", path: ["doc"], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+    }
+
+    /// This `_R.image.hud` struct is generated, and contains static references to 6 huds.
+    struct hud {
+      let bundle: Foundation.Bundle
+
+      /// Image `hud/ask`.
+      var ask: RswiftResources.ImageResource { .init(name: "hud/ask", path: ["hud"], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+      /// Image `hud/ban`.
+      var ban: RswiftResources.ImageResource { .init(name: "hud/ban", path: ["hud"], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+      /// Image `hud/failure`.
+      var failure: RswiftResources.ImageResource { .init(name: "hud/failure", path: ["hud"], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+      /// Image `hud/info`.
+      var info: RswiftResources.ImageResource { .init(name: "hud/info", path: ["hud"], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+      /// Image `hud/loading`.
+      var loading: RswiftResources.ImageResource { .init(name: "hud/loading", path: ["hud"], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+      /// Image `hud/success`.
+      var success: RswiftResources.ImageResource { .init(name: "hud/success", path: ["hud"], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+    }
+
+    /// This `_R.image.triangle` struct is generated, and contains static references to 4 triangles.
+    struct triangle {
+      let bundle: Foundation.Bundle
+
+      /// Image `triangle/bottom`.
+      var bottom: RswiftResources.ImageResource { .init(name: "triangle/bottom", path: ["triangle"], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+      /// Image `triangle/left`.
+      var left: RswiftResources.ImageResource { .init(name: "triangle/left", path: ["triangle"], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+      /// Image `triangle/right`.
+      var right: RswiftResources.ImageResource { .init(name: "triangle/right", path: ["triangle"], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+      /// Image `triangle/top`.
+      var top: RswiftResources.ImageResource { .init(name: "triangle/top", path: ["triangle"], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
     }
   }
 

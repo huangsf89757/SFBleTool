@@ -87,8 +87,9 @@ extension SFCMPeripheralListVC: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = SFCMPeripheralDetailVC()
-        navigationController?.pushViewController(vc, animated: true)
+//        let vc = SFCMPeripheralDetailVC()
+//        navigationController?.pushViewController(vc, animated: true)
+        SFHud.show(.loading, msg: "loading")
     }
 }
 
