@@ -246,6 +246,7 @@
 		D7C2C07839FFB8659DA74FF089DDC0A6 /* PropertyListResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4CB2C8D9A577AA3F7ACF6CD1FDD8F0 /* PropertyListResource.swift */; };
 		D966AD3A331D60849C3BF46FBC4348A9 /* CBCharacteristicWriteType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1838893FD1422960A8C99D0722D746C6 /* CBCharacteristicWriteType.swift */; };
 		DAD5950A205347FCDBD3751604472431 /* Protected.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4B857D6575CFFA18F7189F0DF94170 /* Protected.swift */; };
+		DDAC3D602C6DD17500AA87B4 /* SFBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDAC3D5F2C6DD17500AA87B4 /* SFBarView.swift */; };
 		DDB518F22C6C3FF600A049DE /* SFMaskButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB518F12C6C3FF600A049DE /* SFMaskButton.swift */; };
 		DDB518F42C6C490600A049DE /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB518F32C6C490600A049DE /* UINavigationController.swift */; };
 		DDB519062C6C82C600A049DE /* SFShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB519052C6C82C600A049DE /* SFShadowView.swift */; };
@@ -786,6 +787,7 @@
 		DBD110D4F86FC15182A0D968F8D6AE73 /* WSTagView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WSTagView.swift; path = Source/WSTagView.swift; sourceTree = "<group>"; };
 		DC78F8CC08802E190FA4C7A66EB2D7F7 /* IQKeyboardManager+Debug.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQKeyboardManager+Debug.swift"; path = "IQKeyboardManagerSwift/IQKeyboardManager+Debug.swift"; sourceTree = "<group>"; };
 		DC8DC2DA0373ABE1E3B472B1AC9C4DF7 /* Reusable-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Reusable-dummy.m"; sourceTree = "<group>"; };
+		DDAC3D5F2C6DD17500AA87B4 /* SFBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFBarView.swift; sourceTree = "<group>"; };
 		DDB0D77FEBB668093F6DC43ADCBA74BF /* IQTextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQTextView.swift; path = IQKeyboardManagerSwift/IQTextView/IQTextView.swift; sourceTree = "<group>"; };
 		DDB518F12C6C3FF600A049DE /* SFMaskButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFMaskButton.swift; sourceTree = "<group>"; };
 		DDB518F32C6C490600A049DE /* UINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
@@ -1521,6 +1523,7 @@
 				CA5A77477CDC421E5CC903EF35012D81 /* SFHollowView.swift */,
 				068E001995CFFFCF8CB140BB1B5367F6 /* SFPinCodeView.swift */,
 				84E6EE185792715A70B4AB70F1FD8E7D /* SFRulerView.swift */,
+				DDAC3D5F2C6DD17500AA87B4 /* SFBarView.swift */,
 				C697312402202127E5684D94B0484D1F /* Card */,
 				99605ECE67D27120F687EB8141C5528E /* Catlog */,
 				58E3EBBD5DEAB15AA191A22FBC131CAF /* Outline */,
@@ -2461,6 +2464,7 @@
 				9AADA1BB1D5AE718F5B0328DF1320103 /* SFCardTableViewCell.swift in Sources */,
 				1534F32510672018E6943410BB8230DE /* SFCardTableViewHeaderFooterView.swift in Sources */,
 				82375094E7A36B951A15089A6A11E318 /* SFCatlogCell.swift in Sources */,
+				DDAC3D602C6DD17500AA87B4 /* SFBarView.swift in Sources */,
 				AFE41B4B3DBB264BD22A32B4F6BCE740 /* SFCatlogItemModel.swift in Sources */,
 				52802EF58F79C75E0827D03C33B14C90 /* SFCatlogView.swift in Sources */,
 				80D013E7DF11ABD8BFFF3C46062941B1 /* SFCollectionReusableView.swift in Sources */,

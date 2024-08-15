@@ -29,17 +29,19 @@ class SFCMPeripheralDetailVC: SFViewController {
         return SFCMPeripheralLogDetailVC()
     }()
     
-    // MARK: var
-    var selectedIndex = 0
-    
     private lazy var barView: SFCMPeripheralDetailBarView = {
-        return SFCMPeripheralDetailBarView()
+        return SFCMPeripheralDetailBarView().then { view in
+            view.didSelectedBlock = {
+                [weak self] index, title in
+                self?.navigationItem.title = title
+            }
+        }
     }()
-    
     
     // MARK: life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.title = R.string.localizable.central_bar_adv()
         customLayoutOfDetailVC()
     }
     
