@@ -72,7 +72,7 @@ struct _R {
       let source: RswiftResources.StringResource.Source
     }
 
-    /// This `_R.string.localizable` struct is generated, and contains static references to 19 localization keys.
+    /// This `_R.string.localizable` struct is generated, and contains static references to 43 localization keys.
     struct localizable {
       let source: RswiftResources.StringResource.Source
 
@@ -82,6 +82,174 @@ struct _R {
       ///
       /// Locales: en, zh-Hans
       var cfBundleDisplayName: RswiftResources.StringResource { .init(key: "CFBundleDisplayName", tableName: "Localizable", source: source, developmentValue: "BleMessager", comment: nil) }
+
+      /// en translation: CBAdvertisementDataIsConnectable
+      ///
+      /// Key: central_adv_key_connectable
+      ///
+      /// Locales: en
+      var central_adv_key_connectable: RswiftResources.StringResource { .init(key: "central_adv_key_connectable", tableName: "Localizable", source: source, developmentValue: "CBAdvertisementDataIsConnectable", comment: nil) }
+
+      /// en translation: CBAdvertisementDataLocalNameKey
+      ///
+      /// Key: central_adv_key_localName
+      ///
+      /// Locales: en
+      var central_adv_key_localName: RswiftResources.StringResource { .init(key: "central_adv_key_localName", tableName: "Localizable", source: source, developmentValue: "CBAdvertisementDataLocalNameKey", comment: nil) }
+
+      /// en translation: CBAdvertisementDataManufacturerDataKey
+      ///
+      /// Key: central_adv_key_manufacturer
+      ///
+      /// Locales: en
+      var central_adv_key_manufacturer: RswiftResources.StringResource { .init(key: "central_adv_key_manufacturer", tableName: "Localizable", source: source, developmentValue: "CBAdvertisementDataManufacturerDataKey", comment: nil) }
+
+      /// en translation: CBAdvertisementDataOverflowServiceUUIDsKey
+      ///
+      /// Key: central_adv_key_overflowUuid
+      ///
+      /// Locales: en
+      var central_adv_key_overflowUuid: RswiftResources.StringResource { .init(key: "central_adv_key_overflowUuid", tableName: "Localizable", source: source, developmentValue: "CBAdvertisementDataOverflowServiceUUIDsKey", comment: nil) }
+
+      /// en translation: CBAdvertisementDataServiceUUIDsKey
+      ///
+      /// Key: central_adv_key_serviceUuid
+      ///
+      /// Locales: en
+      var central_adv_key_serviceUuid: RswiftResources.StringResource { .init(key: "central_adv_key_serviceUuid", tableName: "Localizable", source: source, developmentValue: "CBAdvertisementDataServiceUUIDsKey", comment: nil) }
+
+      /// en translation: CBAdvertisementDataSolicitedServiceUUIDsKey
+      ///
+      /// Key: central_adv_key_solicitedUuid
+      ///
+      /// Locales: en
+      var central_adv_key_solicitedUuid: RswiftResources.StringResource { .init(key: "central_adv_key_solicitedUuid", tableName: "Localizable", source: source, developmentValue: "CBAdvertisementDataSolicitedServiceUUIDsKey", comment: nil) }
+
+      /// en translation: CBAdvertisementDataServiceDataKey
+      ///
+      /// Key: central_adv_key_specificService
+      ///
+      /// Locales: en
+      var central_adv_key_specificService: RswiftResources.StringResource { .init(key: "central_adv_key_specificService", tableName: "Localizable", source: source, developmentValue: "CBAdvertisementDataServiceDataKey", comment: nil) }
+
+      /// en translation: CBAdvertisementDataTxPowerLevelKey
+      ///
+      /// Key: central_adv_key_txPower
+      ///
+      /// Locales: en
+      var central_adv_key_txPower: RswiftResources.StringResource { .init(key: "central_adv_key_txPower", tableName: "Localizable", source: source, developmentValue: "CBAdvertisementDataTxPowerLevelKey", comment: nil) }
+
+      /// en translation: A Boolean value that indicates whether the advertising event type is connectable.
+      ///
+      /// Key: central_adv_subtitle_connectable
+      ///
+      /// Locales: en
+      var central_adv_subtitle_connectable: RswiftResources.StringResource { .init(key: "central_adv_subtitle_connectable", tableName: "Localizable", source: source, developmentValue: "A Boolean value that indicates whether the advertising event type is connectable.", comment: nil) }
+
+      /// en translation: The local name of a peripheral.
+      ///
+      /// Key: central_adv_subtitle_localName
+      ///
+      /// Locales: en
+      var central_adv_subtitle_localName: RswiftResources.StringResource { .init(key: "central_adv_subtitle_localName", tableName: "Localizable", source: source, developmentValue: "The local name of a peripheral.", comment: nil) }
+
+      /// en translation: The manufacturer data of a peripheral.
+      ///
+      /// Key: central_adv_subtitle_manufacturer
+      ///
+      /// Locales: en
+      var central_adv_subtitle_manufacturer: RswiftResources.StringResource { .init(key: "central_adv_subtitle_manufacturer", tableName: "Localizable", source: source, developmentValue: "The manufacturer data of a peripheral.", comment: nil) }
+
+      /// en translation: An array of UUIDs found in the overflow area of the advertisement data.
+      ///
+      /// Key: central_adv_subtitle_overflowUuid
+      ///
+      /// Locales: en
+      var central_adv_subtitle_overflowUuid: RswiftResources.StringResource { .init(key: "central_adv_subtitle_overflowUuid", tableName: "Localizable", source: source, developmentValue: "An array of UUIDs found in the overflow area of the advertisement data.", comment: nil) }
+
+      /// en translation: An array of service UUIDs.
+      ///
+      /// Key: central_adv_subtitle_serviceUuid
+      ///
+      /// Locales: en
+      var central_adv_subtitle_serviceUuid: RswiftResources.StringResource { .init(key: "central_adv_subtitle_serviceUuid", tableName: "Localizable", source: source, developmentValue: "An array of service UUIDs.", comment: nil) }
+
+      /// en translation: An array of solicited service UUIDs.
+      ///
+      /// Key: central_adv_subtitle_solicitedUuid
+      ///
+      /// Locales: en
+      var central_adv_subtitle_solicitedUuid: RswiftResources.StringResource { .init(key: "central_adv_subtitle_solicitedUuid", tableName: "Localizable", source: source, developmentValue: "An array of solicited service UUIDs.", comment: nil) }
+
+      /// en translation: A dictionary that contains service-specific advertisement data.
+      ///
+      /// Key: central_adv_subtitle_specificService
+      ///
+      /// Locales: en
+      var central_adv_subtitle_specificService: RswiftResources.StringResource { .init(key: "central_adv_subtitle_specificService", tableName: "Localizable", source: source, developmentValue: "A dictionary that contains service-specific advertisement data.", comment: nil) }
+
+      /// en translation: The transmit power of a peripheral.
+      ///
+      /// Key: central_adv_subtitle_txPower
+      ///
+      /// Locales: en
+      var central_adv_subtitle_txPower: RswiftResources.StringResource { .init(key: "central_adv_subtitle_txPower", tableName: "Localizable", source: source, developmentValue: "The transmit power of a peripheral.", comment: nil) }
+
+      /// en translation: Connectable
+      ///
+      /// Key: central_adv_title_connectable
+      ///
+      /// Locales: en
+      var central_adv_title_connectable: RswiftResources.StringResource { .init(key: "central_adv_title_connectable", tableName: "Localizable", source: source, developmentValue: "Connectable", comment: nil) }
+
+      /// en translation: Local Name
+      ///
+      /// Key: central_adv_title_localName
+      ///
+      /// Locales: en
+      var central_adv_title_localName: RswiftResources.StringResource { .init(key: "central_adv_title_localName", tableName: "Localizable", source: source, developmentValue: "Local Name", comment: nil) }
+
+      /// en translation: Manufacturer
+      ///
+      /// Key: central_adv_title_manufacturer
+      ///
+      /// Locales: en
+      var central_adv_title_manufacturer: RswiftResources.StringResource { .init(key: "central_adv_title_manufacturer", tableName: "Localizable", source: source, developmentValue: "Manufacturer", comment: nil) }
+
+      /// en translation: Overflow Uuid
+      ///
+      /// Key: central_adv_title_overflowUuid
+      ///
+      /// Locales: en
+      var central_adv_title_overflowUuid: RswiftResources.StringResource { .init(key: "central_adv_title_overflowUuid", tableName: "Localizable", source: source, developmentValue: "Overflow Uuid", comment: nil) }
+
+      /// en translation: Service Uuid
+      ///
+      /// Key: central_adv_title_serviceUuid
+      ///
+      /// Locales: en
+      var central_adv_title_serviceUuid: RswiftResources.StringResource { .init(key: "central_adv_title_serviceUuid", tableName: "Localizable", source: source, developmentValue: "Service Uuid", comment: nil) }
+
+      /// en translation: Solicited Uuid
+      ///
+      /// Key: central_adv_title_solicitedUuid
+      ///
+      /// Locales: en
+      var central_adv_title_solicitedUuid: RswiftResources.StringResource { .init(key: "central_adv_title_solicitedUuid", tableName: "Localizable", source: source, developmentValue: "Solicited Uuid", comment: nil) }
+
+      /// en translation: Specific Service
+      ///
+      /// Key: central_adv_title_specificService
+      ///
+      /// Locales: en
+      var central_adv_title_specificService: RswiftResources.StringResource { .init(key: "central_adv_title_specificService", tableName: "Localizable", source: source, developmentValue: "Specific Service", comment: nil) }
+
+      /// en translation: Tx Power
+      ///
+      /// Key: central_adv_title_txPower
+      ///
+      /// Locales: en
+      var central_adv_title_txPower: RswiftResources.StringResource { .init(key: "central_adv_title_txPower", tableName: "Localizable", source: source, developmentValue: "Tx Power", comment: nil) }
 
       /// en translation: 广播
       ///
@@ -281,7 +449,7 @@ struct _R {
     var whiteAlways: RswiftResources.ColorResource { .init(name: "whiteAlways", path: [], bundle: bundle) }
   }
 
-  /// This `_R.image` struct is generated, and contains static references to 3 images, and 6 namespaces.
+  /// This `_R.image` struct is generated, and contains static references to 3 images, and 7 namespaces.
   struct image {
     let bundle: Foundation.Bundle
 
@@ -293,6 +461,7 @@ struct _R {
 
     /// Image `logo`.
     var logo: RswiftResources.ImageResource { .init(name: "logo", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+    var adv: adv { .init(bundle: bundle) }
     var arrow: arrow { .init(bundle: bundle) }
     var bar: bar { .init(bundle: bundle) }
     var com: com { .init(bundle: bundle) }
@@ -300,6 +469,9 @@ struct _R {
     var hud: hud { .init(bundle: bundle) }
     var triangle: triangle { .init(bundle: bundle) }
 
+    func adv(bundle: Foundation.Bundle) -> adv {
+      .init(bundle: bundle)
+    }
     func arrow(bundle: Foundation.Bundle) -> arrow {
       .init(bundle: bundle)
     }
@@ -319,6 +491,29 @@ struct _R {
       .init(bundle: bundle)
     }
 
+
+    /// This `_R.image.adv` struct is generated, and contains static references to 6 advs.
+    struct adv {
+      let bundle: Foundation.Bundle
+
+      /// Image `adv/connectable`.
+      var connectable: RswiftResources.ImageResource { .init(name: "adv/connectable", path: ["adv"], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+      /// Image `adv/localName`.
+      var localName: RswiftResources.ImageResource { .init(name: "adv/localName", path: ["adv"], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+      /// Image `adv/manufacturer`.
+      var manufacturer: RswiftResources.ImageResource { .init(name: "adv/manufacturer", path: ["adv"], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+      /// Image `adv/power`.
+      var power: RswiftResources.ImageResource { .init(name: "adv/power", path: ["adv"], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+      /// Image `adv/service`.
+      var service: RswiftResources.ImageResource { .init(name: "adv/service", path: ["adv"], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+      /// Image `adv/uuid`.
+      var uuid: RswiftResources.ImageResource { .init(name: "adv/uuid", path: ["adv"], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+    }
 
     /// This `_R.image.arrow` struct is generated, and contains static references to 4 arrows.
     struct arrow {

@@ -37,3 +37,31 @@ CFBundleDisplayName = "BleMessager";
 "central_bar_adv" = "广播";
 "central_bar_service" = "服务";
 "central_bar_log" = "日志";
+
+// adv
+"central_adv_title_localName" = "Local Name";
+"central_adv_title_manufacturer" = "Manufacturer";
+"central_adv_title_specificService" = "Specific Service";
+"central_adv_title_serviceUuid" = "Service Uuid";
+"central_adv_title_overflowUuid" = "Overflow Uuid";
+"central_adv_title_txPower" = "Tx Power";
+"central_adv_title_connectable" = "Connectable";
+"central_adv_title_solicitedUuid" = "Solicited Uuid";
+
+"central_adv_subtitle_localName" = "The local name of a peripheral.";
+"central_adv_subtitle_manufacturer" = "The manufacturer data of a peripheral.";
+"central_adv_subtitle_specificService" = "A dictionary that contains service-specific advertisement data.";
+"central_adv_subtitle_serviceUuid" = "An array of service UUIDs.";
+"central_adv_subtitle_overflowUuid" = "An array of UUIDs found in the overflow area of the advertisement data.";
+"central_adv_subtitle_txPower" = "The transmit power of a peripheral.";
+"central_adv_subtitle_connectable" = "A Boolean value that indicates whether the advertising event type is connectable.";
+"central_adv_subtitle_solicitedUuid" = "An array of solicited service UUIDs.";
+
+"central_adv_key_localName" = "CBAdvertisementDataLocalNameKey";
+"central_adv_key_manufacturer" = "CBAdvertisementDataManufacturerDataKey";
+"central_adv_key_specificService" = "CBAdvertisementDataServiceDataKey";
+"central_adv_key_serviceUuid" = "CBAdvertisementDataServiceUUIDsKey";
+"central_adv_key_overflowUuid" = "CBAdvertisementDataOverflowServiceUUIDsKey";
+"central_adv_key_txPower" = "CBAdvertisementDataTxPowerLevelKey";
+"central_adv_key_connectable" = "CBAdvertisementDataIsConnectable";
+"central_adv_key_solicitedUuid" = "CBAdvertisementDataSolicitedServiceUUIDsKey";

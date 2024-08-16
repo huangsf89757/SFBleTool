@@ -20,20 +20,36 @@ import SFLogger
 class SFCMPeripheralDetailVC: SFViewController {
     // MARK: child vc
     private lazy var advVc: SFCMPeripheralAdvDetailVC = {
-        return SFCMPeripheralAdvDetailVC()
+        return SFCMPeripheralAdvDetailVC().then { vc in
+            vc.view.isHidden = false
+            vc.changeNavTitleBlock = {
+                [weak self] title in
+                if let title = title {
+                    self?.navigationItem.title = title
+                } else {
+                    self?.navigationItem.title = "AiDEX X-TEST000001"
+                }
+            }
+        }
     }()
     private lazy var serviceVc: SFCMPeripheralServiceDetailVC = {
-        return SFCMPeripheralServiceDetailVC()
+        return SFCMPeripheralServiceDetailVC().then { vc in
+            vc.view.isHidden = true
+        }
     }()
     private lazy var logVc: SFCMPeripheralLogDetailVC = {
-        return SFCMPeripheralLogDetailVC()
+        return SFCMPeripheralLogDetailVC().then { vc in
+            vc.view.isHidden = true
+        }
     }()
     
     private lazy var barView: SFCMPeripheralDetailBarView = {
         return SFCMPeripheralDetailBarView().then { view in
             view.didSelectedBlock = {
                 [weak self] index, title in
-                self?.navigationItem.title = title
+                self?.advVc.view.isHidden = index != 0
+                self?.serviceVc.view.isHidden = index != 1
+                self?.logVc.view.isHidden = index != 2
             }
         }
     }()
@@ -41,7 +57,7 @@ class SFCMPeripheralDetailVC: SFViewController {
     // MARK: life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = R.string.localizable.central_bar_adv()
+        navigationItem.title = "AiDEX X-TEST000001"
         customLayoutOfDetailVC()
     }
     
@@ -62,21 +78,26 @@ class SFCMPeripheralDetailVC: SFViewController {
             make.top.equalToSuperview()
             make.leading.equalToSuperview()
             make.trailing.equalToSuperview()
+//            make.bottom.equalToSuperview()
             make.bottom.equalTo(barView.snp.top).offset(-20)
         }
         serviceVc.view.snp.makeConstraints { make in
             make.top.equalToSuperview()
             make.leading.equalToSuperview()
             make.trailing.equalToSuperview()
+//            make.bottom.equalToSuperview()
             make.bottom.equalTo(barView.snp.top).offset(-20)
         }
         logVc.view.snp.makeConstraints { make in
             make.top.equalToSuperview()
             make.leading.equalToSuperview()
             make.trailing.equalToSuperview()
+//            make.bottom.equalToSuperview()
             make.bottom.equalTo(barView.snp.top).offset(-20)
         }
     }
+    
+    
     
 }
 
