@@ -22,5 +22,71 @@ class SFCMPeripheralLogDetailVC: SFViewController {
     var navTitle: String?
     var navTitleDidChangedBlock: ((String?)->())?
     
+    private lazy var tableView: SFTableView = {
+        return SFTableView(frame: .zero, style: .plain).then { view in
+            view.backgroundColor = .clear
+            let titleView = SFCMPeripheralDetailTitleView()
+            titleView.titleLabel.text = R.string.localizable.central_bar_log()
+            view.tableHeaderView = titleView
+            view.delegate = self
+            view.dataSource = self
+            view.register(cellType: SFCMPeripheralLogCell.self)
+            view.rowHeight = 50
+        }
+    }()
     
+    // MARK: life cycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        customLayoutOfLogDetailVC()
+    }
+    
+    // MARK: ui
+    private func customLayoutOfLogDetailVC() {
+        view.addSubview(tableView)
+        tableView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+    }
+}
+
+// MARK: - UITableViewDelegate, UITableViewDataSource
+extension SFCMPeripheralLogDetailVC: UITableViewDelegate, UITableViewDataSource {
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 100
+    }
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(for: indexPath, cellType: SFCMPeripheralLogCell.self)
+        return cell
+    }
+    public func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 0.1
+    }
+    public func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 0.1
+    }
+    public func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        return nil
+    }
+    public func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        return nil
+    }
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+    }
+}
+
+// MARK: - UIScrollViewDelegate
+extension SFCMPeripheralLogDetailVC: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let offsetY = scrollView.contentOffset.y
+        if offsetY >= 60 {
+            navTitle = R.string.localizable.central_bar_log()
+            navTitleDidChangedBlock?(navTitle)
+        } else {
+            navTitle = nil
+            navTitleDidChangedBlock?(navTitle)
+        }
+    }
 }

@@ -114,6 +114,7 @@ class SFCMPeripheralAdvDetailVC: SFScrollViewController {
     
 }
 
+// MARK: - UIScrollViewDelegate
 extension SFCMPeripheralAdvDetailVC: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let offsetY = scrollView.contentOffset.y
