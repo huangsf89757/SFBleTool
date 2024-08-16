@@ -22,34 +22,41 @@ class SFCMPeripheralDetailVC: SFViewController {
     private lazy var advVc: SFCMPeripheralAdvDetailVC = {
         return SFCMPeripheralAdvDetailVC().then { vc in
             vc.view.isHidden = false
-            vc.changeNavTitleBlock = {
+            vc.navTitleDidChangedBlock = {
                 [weak self] title in
-                if let title = title {
-                    self?.navigationItem.title = title
-                } else {
-                    self?.navigationItem.title = "AiDEX X-TEST000001"
-                }
+                self?.changeNavTitle(to: title)
             }
         }
     }()
     private lazy var serviceVc: SFCMPeripheralServiceDetailVC = {
         return SFCMPeripheralServiceDetailVC().then { vc in
             vc.view.isHidden = true
+            vc.navTitleDidChangedBlock = {
+                [weak self] title in
+                self?.changeNavTitle(to: title)
+            }
         }
     }()
     private lazy var logVc: SFCMPeripheralLogDetailVC = {
         return SFCMPeripheralLogDetailVC().then { vc in
             vc.view.isHidden = true
+            vc.navTitleDidChangedBlock = {
+                [weak self] title in
+                self?.changeNavTitle(to: title)
+            }
         }
     }()
     
     private lazy var barView: SFCMPeripheralDetailBarView = {
         return SFCMPeripheralDetailBarView().then { view in
             view.didSelectedBlock = {
-                [weak self] index, title in
+                [weak self] index in
                 self?.advVc.view.isHidden = index != 0
                 self?.serviceVc.view.isHidden = index != 1
                 self?.logVc.view.isHidden = index != 2
+                let titles = [self?.advVc.navTitle, self?.serviceVc.navTitle, self?.logVc.navTitle]
+                let title = titles[index]
+                self?.changeNavTitle(to: title)
             }
         }
     }()
@@ -97,7 +104,14 @@ class SFCMPeripheralDetailVC: SFViewController {
         }
     }
     
-    
+    // MARK: func
+    private func changeNavTitle(to title: String?) {
+        if let title = title {
+            navigationItem.title = title
+        } else {
+            navigationItem.title = "AiDEX X-TEST000001"
+        }
+    }
     
 }
 

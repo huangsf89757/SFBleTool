@@ -18,5 +18,9 @@ import SFLogger
 
 // MARK: - SFCMPeripheralLogDetailVC
 class SFCMPeripheralLogDetailVC: SFViewController {
+    // MARK: var
+    var navTitle: String?
+    var navTitleDidChangedBlock: ((String?)->())?
+    
     
 }

@@ -19,7 +19,8 @@ import SFLogger
 // MARK: - SFCMPeripheralAdvDetailVC
 class SFCMPeripheralAdvDetailVC: SFScrollViewController {
     // MARK: var
-    var changeNavTitleBlock: ((String?)->())?
+    var navTitle: String?
+    var navTitleDidChangedBlock: ((String?)->())?
     
     private lazy var titleView: SFCMPeripheralDetailTitleView = {
         return SFCMPeripheralDetailTitleView().then { view in
@@ -117,9 +118,11 @@ extension SFCMPeripheralAdvDetailVC: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let offsetY = scrollView.contentOffset.y
         if offsetY >= 60 {
-            changeNavTitleBlock?(R.string.localizable.central_bar_adv())
+            navTitle = R.string.localizable.central_bar_adv()
+            navTitleDidChangedBlock?(navTitle)
         } else {
-            changeNavTitleBlock?(nil)
+            navTitle = nil
+            navTitleDidChangedBlock?(navTitle)
         }
     }
 }
