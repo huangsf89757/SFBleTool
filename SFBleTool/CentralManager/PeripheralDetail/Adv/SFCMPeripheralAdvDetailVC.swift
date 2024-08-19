@@ -117,13 +117,20 @@ class SFCMPeripheralAdvDetailVC: SFScrollViewController {
 // MARK: - UIScrollViewDelegate
 extension SFCMPeripheralAdvDetailVC: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let oldNavTitle: String? = navTitle
         let offsetY = scrollView.contentOffset.y
         if offsetY >= 60 {
-            navTitle = R.string.localizable.central_bar_adv()
-            navTitleDidChangedBlock?(navTitle)
+            let newNavTitle: String? = R.string.localizable.central_bar_adv()
+            if newNavTitle != oldNavTitle {
+                navTitle = newNavTitle
+                navTitleDidChangedBlock?(navTitle)
+            }
         } else {
-            navTitle = nil
-            navTitleDidChangedBlock?(navTitle)
+            let newNavTitle: String? = nil
+            if newNavTitle != oldNavTitle {
+                navTitle = nil
+                navTitleDidChangedBlock?(navTitle)
+            }
         }
     }
 }

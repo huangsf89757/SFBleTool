@@ -54,6 +54,11 @@ class SFCMPeripheralDetailVC: SFViewController {
                 self?.advVc.view.isHidden = index != 0
                 self?.serviceVc.view.isHidden = index != 1
                 self?.logVc.view.isHidden = index != 2
+                
+                self?.advVc.scrollView.stopScrolling()
+                self?.serviceVc.servicesView.tableView.stopScrolling()
+                self?.logVc.tableView.stopScrolling()
+                
                 let titles = [self?.advVc.navTitle, self?.serviceVc.navTitle, self?.logVc.navTitle]
                 let title = titles[index]
                 self?.changeNavTitle(to: title)

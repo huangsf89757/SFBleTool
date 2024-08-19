@@ -22,7 +22,7 @@ class SFCMPeripheralLogDetailVC: SFViewController {
     var navTitle: String?
     var navTitleDidChangedBlock: ((String?)->())?
     
-    private lazy var tableView: SFTableView = {
+    lazy var tableView: SFTableView = {
         return SFTableView(frame: .zero, style: .plain).then { view in
             view.backgroundColor = .clear
             let titleView = SFCMPeripheralDetailTitleView()
@@ -80,13 +80,20 @@ extension SFCMPeripheralLogDetailVC: UITableViewDelegate, UITableViewDataSource 
 // MARK: - UIScrollViewDelegate
 extension SFCMPeripheralLogDetailVC: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let oldNavTitle: String? = navTitle
         let offsetY = scrollView.contentOffset.y
         if offsetY >= 60 {
-            navTitle = R.string.localizable.central_bar_log()
-            navTitleDidChangedBlock?(navTitle)
+            let newNavTitle: String? = R.string.localizable.central_bar_log()
+            if newNavTitle != oldNavTitle {
+                navTitle = newNavTitle
+                navTitleDidChangedBlock?(navTitle)
+            }
         } else {
-            navTitle = nil
-            navTitleDidChangedBlock?(navTitle)
+            let newNavTitle: String? = nil
+            if newNavTitle != oldNavTitle {
+                navTitle = nil
+                navTitleDidChangedBlock?(navTitle)
+            }
         }
     }
 }

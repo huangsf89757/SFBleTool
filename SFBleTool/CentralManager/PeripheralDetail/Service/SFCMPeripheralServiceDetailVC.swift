@@ -22,7 +22,7 @@ class SFCMPeripheralServiceDetailVC: SFViewController {
     var navTitle: String?
     var navTitleDidChangedBlock: ((String?)->())?
     
-    private lazy var servicesView: SFOutlineView = {
+    lazy var servicesView: SFOutlineView = {
         return SFOutlineView().then { view in
             let titleView = SFCMPeripheralDetailTitleView()
             titleView.titleLabel.text = R.string.localizable.central_bar_service()
