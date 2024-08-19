@@ -85,7 +85,7 @@ class SFCMPeripheralAdvDetailVC: SFScrollViewController {
     private func customLayoutOfAdvDetailVC() {
         contentView.addSubview(titleView)
         titleView.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(20)
+            make.top.equalToSuperview()
             make.leading.equalToSuperview()
             make.trailing.equalToSuperview()
         }
@@ -102,7 +102,7 @@ class SFCMPeripheralAdvDetailVC: SFScrollViewController {
                 if let lastItemView = lastItemView {
                     make.top.equalTo(lastItemView.snp.bottom)
                 } else {
-                    make.top.equalTo(titleView.snp.bottom)
+                    make.top.equalTo(titleView.snp.bottom).offset(-20)
                 }
                 if i == models.count - 1 {
                     make.bottom.equalToSuperview().offset(-100)

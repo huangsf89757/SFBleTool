@@ -32,6 +32,7 @@ class SFCMPeripheralDetailTitleView: SFView {
             view.textColor = R.color.title()
         }
     }()
+    let titleHeight: CGFloat = 80
     
     // MARK: life cycle
     override init(frame: CGRect) {
@@ -52,8 +53,8 @@ class SFCMPeripheralDetailTitleView: SFView {
             make.size.equalTo(CGSize(width: 4, height: 20))
         }
         titleLabel.snp.makeConstraints { make in
-            make.top.equalToSuperview()
-            make.bottom.equalToSuperview()
+            make.top.equalToSuperview().offset(20)
+            make.bottom.equalToSuperview().offset(-20)
             make.leading.equalTo(indicatorView.snp.trailing).offset(10)
             make.trailing.equalToSuperview().offset(-20)
             make.height.equalTo(40)

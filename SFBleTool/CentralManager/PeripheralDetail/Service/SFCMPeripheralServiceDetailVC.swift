@@ -25,6 +25,7 @@ class SFCMPeripheralServiceDetailVC: SFViewController {
     lazy var servicesView: SFOutlineView = {
         return SFOutlineView().then { view in
             let titleView = SFCMPeripheralDetailTitleView()
+            titleView.frame = CGRect(origin: .zero, size: CGSize(width: 0, height: titleView.titleHeight))
             titleView.titleLabel.text = R.string.localizable.central_bar_service()
             view.tableView.tableHeaderView = titleView
             view.backgroundColor = .clear
