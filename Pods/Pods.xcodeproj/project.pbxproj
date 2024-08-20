@@ -190,7 +190,6 @@
 		A541F7B38239E184672A6D3EC4AEE652 /* SFDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65EF282B5A4618F6BDDE671C84C016E /* SFDevice.swift */; };
 		A5742E6EFAF36045AB3917BFBB3F06CC /* ConstraintViewDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625A3B38BD3AA3F95E5F3530FB8986DD /* ConstraintViewDSL.swift */; };
 		A58BF183F8F28DD4E372A3CF95D616C2 /* DataResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DC1D4DEF45B072A5ACADCDD119A356 /* DataResource.swift */; };
-		A660C8C52D50E808DA2DFA04BD1FEEE7 /* SFCentralManagerDelegater.swift in Sources */ = {isa = PBXBuildFile; fileRef = E864C1C3AD735222D601716E60138419 /* SFCentralManagerDelegater.swift */; };
 		A88B62F0F6C55645EE179934998FB6AC /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36E934560D457F25D76B4AA082F6A8C /* Reusable.swift */; };
 		A8A5619BF9CC4BFFA2A678AECA16D651 /* ConstraintAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C8D935D6BB196A4E5364E7A21F27CE /* ConstraintAttributes.swift */; };
 		A8C0CBBC63C39A8C10083CBCA172F7CF /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A42DBD2F42D55606EEBA514009498B87 /* QuartzCore.framework */; };
@@ -251,6 +250,7 @@
 		DDB518F42C6C490600A049DE /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB518F32C6C490600A049DE /* UINavigationController.swift */; };
 		DDB519062C6C82C600A049DE /* SFShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB519052C6C82C600A049DE /* SFShadowView.swift */; };
 		DDC0F4786752FBF4B07E3A4D4E273DA2 /* UICollectionView+Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8D1821AA20158000643DBD7624D28A /* UICollectionView+Reusable.swift */; };
+		DDE09DAA2C7468A500E456B7 /* SFCentralManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE09DA92C7468A500E456B7 /* SFCentralManager.swift */; };
 		DDF09A8FC60CE25C07F5117625E50249 /* SBPlatformDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3C506972C037D3C87519A884A10F74 /* SBPlatformDestination.swift */; };
 		DEF4ACACC5A5B37535DF580680565955 /* FontResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C084C360D3A641AC2EF155D7E04EA713 /* FontResource.swift */; };
 		DF6B8DC3BF7AF1CA2C94173CF0F47283 /* SFDebouncer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1152AF66C096006AE963B02056BC840 /* SFDebouncer.swift */; };
@@ -792,6 +792,7 @@
 		DDB518F12C6C3FF600A049DE /* SFMaskButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFMaskButton.swift; sourceTree = "<group>"; };
 		DDB518F32C6C490600A049DE /* UINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
 		DDB519052C6C82C600A049DE /* SFShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFShadowView.swift; sourceTree = "<group>"; };
+		DDE09DA92C7468A500E456B7 /* SFCentralManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFCentralManager.swift; sourceTree = "<group>"; };
 		DE9B2850E1DC71EC53F27016C2B2AD11 /* Reusable-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Reusable-umbrella.h"; sourceTree = "<group>"; };
 		DF8DF244E5AB19570DA37C1BDA377520 /* Then.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Then.modulemap; sourceTree = "<group>"; };
 		E0C1F32B61F11CBFD85B1F9997666A46 /* ConstraintDirectionalInsets.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintDirectionalInsets.swift; path = Sources/ConstraintDirectionalInsets.swift; sourceTree = "<group>"; };
@@ -804,7 +805,6 @@
 		E68E5AFB97D9EE15450B9A4535784C30 /* SwiftyBeaver.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftyBeaver.release.xcconfig; sourceTree = "<group>"; };
 		E6F78B265E3F8C8C997E8A287B072986 /* LayoutConstraintItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayoutConstraintItem.swift; path = Sources/LayoutConstraintItem.swift; sourceTree = "<group>"; };
 		E7669633F9DA6471C2A0E3E458972A51 /* Constraint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Constraint.swift; path = Sources/Constraint.swift; sourceTree = "<group>"; };
-		E864C1C3AD735222D601716E60138419 /* SFCentralManagerDelegater.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SFCentralManagerDelegater.swift; path = SFBluetooth/Classes/SFCentralManagerDelegater.swift; sourceTree = "<group>"; };
 		E8F182705DB58CAAB3B52CA67861D6E8 /* Pods-SFBleTool-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SFBleTool-umbrella.h"; sourceTree = "<group>"; };
 		E96F118B66C2ADE935785E2516A9BFC4 /* IQKeyboardManager+UIKeyboardNotification.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQKeyboardManager+UIKeyboardNotification.swift"; path = "IQKeyboardManagerSwift/IQKeyboardManager+UIKeyboardNotification.swift"; sourceTree = "<group>"; };
 		E974C9F3DC5EAB063608183F9A2E5C73 /* CBError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CBError.swift; sourceTree = "<group>"; };
@@ -1035,7 +1035,7 @@
 		0A3DBDB3FCC6E5EC89B66F30C850BEB0 /* SFBluetooth */ = {
 			isa = PBXGroup;
 			children = (
-				E864C1C3AD735222D601716E60138419 /* SFCentralManagerDelegater.swift */,
+				DDE09DA92C7468A500E456B7 /* SFCentralManager.swift */,
 				8A481911F2018AE58B1A1BEB9C30D8F4 /* Pod */,
 				C40414AB54D760A80F95DE2104682C59 /* Support Files */,
 			);
@@ -2568,7 +2568,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C421FB92516C5CDEFB44847EDC3B36CE /* SFBluetooth-dummy.m in Sources */,
-				A660C8C52D50E808DA2DFA04BD1FEEE7 /* SFCentralManagerDelegater.swift in Sources */,
+				DDE09DAA2C7468A500E456B7 /* SFCentralManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

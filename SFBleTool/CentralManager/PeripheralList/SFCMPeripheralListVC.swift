@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import CoreBluetooth
 // Basic
 import SFBase
 import SFExtension
@@ -14,6 +15,7 @@ import SFExtension
 import SFUI
 // Server
 import SFLogger
+import SFBluetooth
 
 
 // MARK: - SFCMPeripheralListVC
@@ -51,12 +53,17 @@ class SFCMPeripheralListVC: SFManagerVC {
         }
     }()
     
+    private var centralManager: SFCentralManager!
+   
+    
     // MARK: life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = R.string.localizable.entrance_opt_central_title()
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: scanBtn)
         customLayoutOfCentralManagerVC()
+        // ble
+        configCentralManager()
     }
     
     
@@ -101,7 +108,7 @@ extension SFCMPeripheralListVC: UITableViewDelegate, UITableViewDataSource {
 
 // MARK: - action
 extension SFCMPeripheralListVC {
-    /// 点击设置
+    /// 点击扫描
     @objc private func scanBtnClicked() {
         scanBtn.toggleSelected()
         if scanBtn.isSelected {
@@ -116,10 +123,92 @@ extension SFCMPeripheralListVC {
         } else {
             scanBtn.imageView?.layer.removeAllAnimations()
         }
-//        let vc = SFCMSettingVC()
-//        let menu = SideMenuNavigationController(rootViewController: vc)
-//        menu.menuWidth = 300
-//        menu.sf.updateBar(barTintColor: SFColor.background, tintColor: SFColor.title, titleColor: SFColor.title, titleFont: .systemFont(ofSize: 20, weight: .bold))
-//        present(menu, animated: true)
+    }
+}
+
+// MARK: - CBCentralManager
+extension SFCMPeripheralListVC {
+    private func configCentralManager() {
+        let options = [
+            CBCentralManagerOptionShowPowerAlertKey: true,
+            CBCentralManagerOptionRestoreIdentifierKey: SFApp.bundle,
+        ]
+        centralManager = SFCentralManager(queue: nil, options: options)
+        centralManager.isLogEnable = true
+        centralManager.didUpdateStateBlock = {
+            [weak self] centralManager in
+            self?.centralManagerDidUpdateState(centralManager)
+        }
+        centralManager.willRestoreStateBlock = {
+            [weak self] centralManager, dict in
+            self?.centralManager(centralManager, willRestoreState: dict)
+        }
+        centralManager.didDiscoverPeripheralBlock = {
+            [weak self] centralManager, peripheral, dict, rssi in
+            self?.centralManager(centralManager, didDiscover: peripheral, advertisementData: dict, rssi: rssi)
+        }
+        centralManager.didConnectPeripheralBlock = {
+            [weak self] centralManager, peripheral in
+            self?.centralManager(centralManager, didConnect: peripheral)
+        }
+        centralManager.didFailToConnectPeripheralBlock = {
+            [weak self] centralManager, peripheral, error in
+            self?.centralManager(centralManager, didFailToConnect: peripheral, error: error)
+        }
+        centralManager.didDisconnectPeripheralBlock = {
+            [weak self] centralManager, peripheral, error in
+            self?.centralManager(centralManager, didDisconnectPeripheral: peripheral, error: error)
+        }
+        centralManager.didDisconnectPeripheralAutoReconnectBlock = {
+            [weak self] centralManager, peripheral, timestamp, isReconnecting, error in
+            self?.centralManager(centralManager, didDisconnectPeripheral: peripheral, timestamp: timestamp, isReconnecting: isReconnecting, error: error)
+        }
+        centralManager.connectionEventDidOccurBlock = {
+            [weak self] centralManager, event, peripheral in
+            self?.centralManager(centralManager, connectionEventDidOccur: event, for: peripheral)
+        }
+        centralManager.didUpdateANCSAuthorizationForPeripheralBlock = {
+            [weak self] centralManager, peripheral in
+            self?.centralManager(centralManager, didUpdateANCSAuthorizationFor: peripheral)
+        }
+    }
+}
+
+// MARK: - SFCentralManagerDelegater
+extension SFCMPeripheralListVC {
+    private func centralManagerDidUpdateState(_ central: CBCentralManager) {
+        
+    }
+    
+    private func centralManager(_ central: CBCentralManager, willRestoreState dict: [String : Any]) {
+        
+    }
+
+    private func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
+        
+    }
+
+    private func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {
+        
+    }
+ 
+    private func centralManager(_ central: CBCentralManager, didFailToConnect peripheral: CBPeripheral, error: (any Error)?) {
+        
+    }
+
+    private func centralManager(_ central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, error: (any Error)?) {
+       
+    }
+
+    private func centralManager(_ central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, timestamp: CFAbsoluteTime, isReconnecting: Bool, error: (any Error)?) {
+        
+    }
+   
+    private func centralManager(_ central: CBCentralManager, connectionEventDidOccur event: CBConnectionEvent, for peripheral: CBPeripheral) {
+        
+    }
+
+    private func centralManager(_ central: CBCentralManager, didUpdateANCSAuthorizationFor peripheral: CBPeripheral) {
+        
     }
 }
