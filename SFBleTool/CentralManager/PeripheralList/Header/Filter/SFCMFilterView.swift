@@ -20,12 +20,63 @@ import WSTagsField
 
 // MARK: - SFCMFilterView
 class SFCMFilterView: SFPopView {
-    // MARK: var
+    // MARK: block
     var uuidTipBlock: (()->())?
     var rssiTipBlock: (()->())?
     var resetBlock: (()->())?
     var sureBlock: (()->())?
     
+    // MARK: var
+    
+    // MARK: data
+    var model: SFCMFilterModel? {
+        didSet {
+            guard let model = model else { return }
+            
+        }
+    }
+    
+    // MARK: life cycle
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        backgroundColor = .clear
+        shapeLayer.fillColor = R.color.content()?.cgColor
+        shapeLayer.shadowOffset = CGSize(width: 0, height: 20)
+        customLayoutOfFilterView()
+    }
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    // MARK: override
+    override func customLayout() {
+        self.snp.makeConstraints { make in
+            make.top.equalToSuperview()
+            make.leading.equalToSuperview()
+            make.trailing.equalToSuperview()
+        }
+    }
+    override func customShapePath(rect: CGRect) -> UIBezierPath? {
+        return UIBezierPath(roundedRect: rect, byRoundingCorners: [.bottomLeft, .bottomRight], cornerRadii: CGSize(width: 20, height: 20))
+    }
+    override func show(in view: UIView? = nil, stay duration: TimeInterval? = nil, showAnimations: [CAAnimation] = [], dismissAnimations: [CAAnimation] = [], topLevel: Bool = true) {
+        let animDuration: TimeInterval = 0.24
+        let showAnimationOfTranslation = animationOfTranslation(from: .top, to: .zero, duration: animDuration)
+        let showAnimationOfOpacity = animationOfOpacity(from: 0, to: 1, duration: animDuration)
+        super.show(in: view, 
+                   stay: duration,
+                   showAnimations: [showAnimationOfTranslation, showAnimationOfOpacity],
+                   dismissAnimations: dismissAnimations,
+                   topLevel: topLevel)
+    }
+    override func dismiss(animations: [CAAnimation] = []) {
+        let animDuration: TimeInterval = 0.24
+        let dismissAnimationOfTranslation = animationOfTranslation(from: .zero, to: .top, duration: animDuration)
+        let dismissAnimationOfOpacity = animationOfOpacity(from: 1, to: 0, duration: animDuration)
+        super.dismiss(animations: [dismissAnimationOfTranslation, dismissAnimationOfOpacity])
+    }
+    
+    // MARK: ui
     private lazy var titleLabel: SFLabel = {
         return SFLabel().then { view in
             view.font = .systemFont(ofSize: 18, weight: .bold)
@@ -112,49 +163,6 @@ class SFCMFilterView: SFPopView {
             view.addTarget(self, action: #selector(sureBtnClicked), for: .touchUpInside)
         }
     }()
-    
-    // MARK: life cycle
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        backgroundColor = .clear
-        shapeLayer.fillColor = R.color.content()?.cgColor
-        shapeLayer.shadowOffset = CGSize(width: 0, height: 20)
-        
-        customLayoutOfFilterView()
-    }
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    // MARK: override
-    override func customLayout() {
-        self.snp.makeConstraints { make in
-            make.top.equalToSuperview()
-            make.leading.equalToSuperview()
-            make.trailing.equalToSuperview()
-        }
-    }
-    override func customShapePath(rect: CGRect) -> UIBezierPath? {
-        return UIBezierPath(roundedRect: rect, byRoundingCorners: [.bottomLeft, .bottomRight], cornerRadii: CGSize(width: 20, height: 20))
-    }
-    override func show(in view: UIView? = nil, stay duration: TimeInterval? = nil, showAnimations: [CAAnimation] = [], dismissAnimations: [CAAnimation] = [], topLevel: Bool = true) {
-        let animDuration: TimeInterval = 0.24
-        let showAnimationOfTranslation = animationOfTranslation(from: .top, to: .zero, duration: animDuration)
-        let showAnimationOfOpacity = animationOfOpacity(from: 0, to: 1, duration: animDuration)
-        super.show(in: view, 
-                   stay: duration,
-                   showAnimations: [showAnimationOfTranslation, showAnimationOfOpacity],
-                   dismissAnimations: dismissAnimations,
-                   topLevel: topLevel)
-    }
-    override func dismiss(animations: [CAAnimation] = []) {
-        let animDuration: TimeInterval = 0.24
-        let dismissAnimationOfTranslation = animationOfTranslation(from: .zero, to: .top, duration: animDuration)
-        let dismissAnimationOfOpacity = animationOfOpacity(from: 1, to: 0, duration: animDuration)
-        super.dismiss(animations: [dismissAnimationOfTranslation, dismissAnimationOfOpacity])
-    }
-    
-    // MARK: ui
     private func customLayoutOfFilterView() {
         addSubview(titleLabel)
         addSubview(uuidTitleView)
@@ -224,9 +232,19 @@ extension SFCMFilterView {
 // MARK: - TitleView
 extension SFCMFilterView {
     class TitleView: SFView {
-        // MARK: var
-        fileprivate var tipBlock: (()->())?
+        // MARK: block
+        fileprivate var tipBlock: (()->())?       
         
+        // MARK: life cycle
+        override init(frame: CGRect) {
+            super.init(frame: frame)
+            customLayoutOfTitleView()
+        }
+        required init?(coder: NSCoder) {
+            fatalError("init(coder:) has not been implemented")
+        }
+        
+        // MARK: ui
         fileprivate lazy var indicatorView: SFView = {
             return SFView().then { view in
                 view.backgroundColor = R.color.theme()
@@ -247,17 +265,6 @@ extension SFCMFilterView {
                 view.addTarget(self, action: #selector(tipBtnClicked), for: .touchUpInside)
             }
         }()
-        
-        // MARK: life cycle
-        override init(frame: CGRect) {
-            super.init(frame: frame)
-            customLayoutOfTitleView()
-        }
-        required init?(coder: NSCoder) {
-            fatalError("init(coder:) has not been implemented")
-        }
-        
-        // MARK: ui
         private func customLayoutOfTitleView() {
             addSubview(indicatorView)
             addSubview(titleLabel)

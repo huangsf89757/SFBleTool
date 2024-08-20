@@ -18,10 +18,19 @@ import SFLogger
 
 // MARK: - SFCMPeripheralLogDetailVC
 class SFCMPeripheralLogDetailVC: SFViewController {
-    // MARK: var
-    var navTitle: String?
+    // MARK: block
     var navTitleDidChangedBlock: ((String?)->())?
     
+    // MARK: var
+    var navTitle: String?
+        
+    // MARK: life cycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        customLayoutOfLogDetailVC()
+    }
+    
+    // MARK: ui
     lazy var tableView: SFTableView = {
         return SFTableView(frame: .zero, style: .plain).then { view in
             view.backgroundColor = .clear
@@ -35,14 +44,6 @@ class SFCMPeripheralLogDetailVC: SFViewController {
             view.rowHeight = 50
         }
     }()
-    
-    // MARK: life cycle
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        customLayoutOfLogDetailVC()
-    }
-    
-    // MARK: ui
     private func customLayoutOfLogDetailVC() {
         view.addSubview(tableView)
         tableView.snp.makeConstraints { make in

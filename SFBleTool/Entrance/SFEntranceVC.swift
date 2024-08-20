@@ -17,9 +17,17 @@ import SFLogger
 
 // MARK: - SFEntranceVC
 class SFEntranceVC: SFScrollViewController {
-    // MARK: var
+    // MARK: block
     var didChooseEntranceOptBlock: ((Int) -> ())?
     
+    // MARK: life cycle
+    override func viewDidLoad() {
+        super.dir = .vertical
+        super.viewDidLoad()
+        customLayoutOfEntranceVC()
+    }
+    
+    // MARK: ui
     private lazy var logoImgView: SFImageView = {
         return SFImageView().then { view in
             view.contentMode = .scaleAspectFit
@@ -71,16 +79,6 @@ class SFEntranceVC: SFScrollViewController {
             }
         }
     }()
-    
-    
-    // MARK: life cycle
-    override func viewDidLoad() {
-        super.dir = .vertical
-        super.viewDidLoad()
-        customLayoutOfEntranceVC()
-    }
-    
-    // MARK: ui
     private func customLayoutOfEntranceVC() {
         contentView.addSubview(logoImgView)
         contentView.addSubview(nameLabel)

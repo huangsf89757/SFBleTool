@@ -18,18 +18,13 @@ import SFLogger
 
 // MARK: - SFCMPeripheralAdvDetailVC
 class SFCMPeripheralAdvDetailVC: SFScrollViewController {
-    // MARK: var
-    var navTitle: String?
+    // MARK: block
     var navTitleDidChangedBlock: ((String?)->())?
     
-    private lazy var titleView: SFCMPeripheralDetailTitleView = {
-        return SFCMPeripheralDetailTitleView().then { view in
-            view.titleLabel.text = R.string.localizable.central_bar_adv()
-        }
-    }()
+    // MARK: var
+    var navTitle: String?        
     
-    
-    // 数据源
+    // MARK: data
     var localNameModel = SFCMPeripheralAdvItemModel(icon: R.image.adv.localName(),
                                                     title: R.string.localizable.central_adv_title_localName(),
                                                     subtitle: R.string.localizable.central_adv_subtitle_localName(),
@@ -82,6 +77,11 @@ class SFCMPeripheralAdvDetailVC: SFScrollViewController {
     }
     
     // MARK: ui
+    private lazy var titleView: SFCMPeripheralDetailTitleView = {
+        return SFCMPeripheralDetailTitleView().then { view in
+            view.titleLabel.text = R.string.localizable.central_bar_adv()
+        }
+    }()
     private func customLayoutOfAdvDetailVC() {
         contentView.addSubview(titleView)
         titleView.snp.makeConstraints { make in

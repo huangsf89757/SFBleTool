@@ -18,7 +18,7 @@ import SFLogger
 
 // MARK: - SFCMPeripheralAdvItemView
 class SFCMPeripheralAdvItemView: SFView {
-    // MARK: var
+    // MARK: data
     var model: SFCMPeripheralAdvItemModel? {
         didSet {
             guard let model = model else { return }
@@ -28,8 +28,20 @@ class SFCMPeripheralAdvItemView: SFView {
             keyLabel.text = model.key
             valueLabel.text = model.value
         }
-    }
+    }    
     
+    // MARK: life cycle
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        backgroundColor = .clear
+        customLayoutOfAdvItemView()
+    }
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+   
+    
+    // MARK: ui
     private lazy var iconImgView: SFImageView = {
         return SFImageView().then { view in
             view.contentMode = .scaleAspectFit
@@ -70,19 +82,6 @@ class SFCMPeripheralAdvItemView: SFView {
             view.textColor = R.color.title()
         }
     }()
-    
-    // MARK: life cycle
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        backgroundColor = .clear
-        customLayoutOfAdvItemView()
-    }
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-   
-    
-    // MARK: ui
     private func customLayoutOfAdvItemView() {
         addSubview(iconImgView)
         addSubview(titleLabel)

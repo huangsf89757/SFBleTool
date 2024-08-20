@@ -18,10 +18,19 @@ import SFLogger
 
 // MARK: - SFCMPeripheralServiceDetailVC
 class SFCMPeripheralServiceDetailVC: SFViewController {
-    // MARK: var
-    var navTitle: String?
+    // MARK: block
     var navTitleDidChangedBlock: ((String?)->())?
     
+    // MARK: var
+    var navTitle: String?
+        
+    // MARK: life cycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        customLayoutOfServiceDetailVC()
+    }
+    
+    // MARK: ui
     lazy var servicesView: SFOutlineView = {
         return SFOutlineView().then { view in
             let titleView = SFCMPeripheralDetailTitleView()
@@ -32,14 +41,6 @@ class SFCMPeripheralServiceDetailVC: SFViewController {
             view.tableView.backgroundColor = .clear
         }
     }()
-    
-    // MARK: life cycle
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        customLayoutOfServiceDetailVC()
-    }
-    
-    // MARK: ui
     private func customLayoutOfServiceDetailVC() {
         view.addSubview(servicesView)
         servicesView.snp.makeConstraints { make in

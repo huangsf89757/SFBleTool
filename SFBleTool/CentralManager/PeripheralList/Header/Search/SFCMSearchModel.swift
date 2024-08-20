@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+class SFCMSearchModel {
+    // MARK: var
+    var keyword: String?
+}

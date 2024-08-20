@@ -19,6 +19,18 @@ import SFLogger
 // MARK: - SFCMPeripheralDetailTitleView
 class SFCMPeripheralDetailTitleView: SFView {
     // MARK: var
+    let titleHeight: CGFloat = 80
+    
+    // MARK: life cycle
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        customLayoutOfTitleView()
+    }
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    // MARK: ui
     private lazy var indicatorView: SFView = {
         return SFView().then { view in
             view.backgroundColor = R.color.theme()
@@ -32,18 +44,6 @@ class SFCMPeripheralDetailTitleView: SFView {
             view.textColor = R.color.title()
         }
     }()
-    let titleHeight: CGFloat = 80
-    
-    // MARK: life cycle
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        customLayoutOfTitleView()
-    }
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    // MARK: ui
     private func customLayoutOfTitleView() {
         addSubview(indicatorView)
         addSubview(titleLabel)

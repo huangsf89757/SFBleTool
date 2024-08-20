@@ -19,6 +19,21 @@ import SFLogger
 // MARK: - SFCMPeripheralListCell
 class SFCMPeripheralListCell: SFTableViewCell {
     // MARK: var
+    
+    
+    // MARK: life cycle
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        backgroundColor = SFColor.background
+        contentView.backgroundColor = SFColor.background
+        customLayoutOfPeripheralCell()
+        separatorInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
+    }
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    // MARK: ui
     private(set) lazy var rssiView: SFCMRssiView = {
         return SFCMRssiView().then { view in
             
@@ -36,20 +51,6 @@ class SFCMPeripheralListCell: SFTableViewCell {
             view.textColor = R.color.subtitle()
         }
     }()
-    
-    // MARK: life cycle
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        backgroundColor = SFColor.background
-        contentView.backgroundColor = SFColor.background
-        customLayoutOfPeripheralCell()
-        separatorInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
-    }
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    // MARK: ui
     private func customLayoutOfPeripheralCell() {
         contentView.addSubview(rssiView)
         contentView.addSubview(nameLabel)

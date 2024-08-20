@@ -1,5 +1,5 @@
 //
-//  SFCMFilterModel.swift
+//  SFCMPeripheralListModel.swift
 //  SFBleTool
 //
 //  Created by hsf on 2024/8/20.

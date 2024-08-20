@@ -51,7 +51,17 @@ class SFCMRssiView: SFView {
             }
         }
     }
+        
+    // MARK: life cycle
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        customLayoutOfRssiView()
+    }
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
+    // MARK: ui
     private lazy var rssiImgView: SFImageView = {
         return SFImageView().then { view in
             view.contentMode = .scaleAspectFit
@@ -64,17 +74,6 @@ class SFCMRssiView: SFView {
             view.textAlignment = .center
         }
     }()
-    
-    // MARK: life cycle
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        customLayoutOfRssiView()
-    }
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    // MARK: ui
     private func customLayoutOfRssiView() {
         addSubview(rssiImgView)
         addSubview(rssiLabel)

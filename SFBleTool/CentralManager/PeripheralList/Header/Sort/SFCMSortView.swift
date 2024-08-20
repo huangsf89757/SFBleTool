@@ -18,9 +18,31 @@ import SFLogger
 
 // MARK: - SFCMSortView
 class SFCMSortView: SFView {
-    // MARK: var
+    // MARK: block
     var sortChangedBlock: ((Bool, Bool) -> ())?
     
+    // MARK: var
+   
+    
+    // MARK: data
+    var model: SFCMSortModel? {
+        didSet {
+            guard let model = model else { return }
+            nameBtn.isSelected = model.name == .des
+            rssiBtn.isSelected = model.rssi == .des
+        }
+    }
+    
+    // MARK: life cycle
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        customLayoutOfSortView()
+    }
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    // MARK: ui
     private lazy var nameBtn: SFButton = {
         return SFButton().then { view in
             view.style = .right(5)
@@ -50,17 +72,6 @@ class SFCMSortView: SFView {
             view.backgroundColor = R.color.divider()
         }
     }()
-    
-    // MARK: life cycle
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        customLayoutOfSortView()
-    }
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    // MARK: ui
     private func customLayoutOfSortView() {
         addSubview(nameBtn)
         addSubview(separatorView)

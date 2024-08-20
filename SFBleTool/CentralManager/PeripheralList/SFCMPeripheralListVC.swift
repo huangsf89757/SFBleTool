@@ -20,39 +20,7 @@ import SFBluetooth
 
 // MARK: - SFCMPeripheralListVC
 class SFCMPeripheralListVC: SFManagerVC {
-    // MARK: var
-    private lazy var scanBtn: SFButton = {
-        return SFButton().then { view in
-            view.style = .top(2)
-            view.titleLabel?.font = .systemFont(ofSize: 8, weight: .regular)
-            view.setImage(R.image.ble.scan.nor(), for: .normal)
-            view.setImage(R.image.ble.scan.sel(), for: .selected)
-            view.setTitle(R.string.localizable.central_ble_scan_paused(), for: .normal)
-            view.setTitle(R.string.localizable.central_ble_scan_doing(), for: .selected)
-            view.setTitleColor(R.color.subtitle(), for: .normal)
-            view.setTitleColor(R.color.theme(), for: .selected)
-            view.addTarget(self, action: #selector(scanBtnClicked), for: .touchUpInside)
-        }
-    }()
-    private lazy var headerView: SFCMHeaderView = {
-        return SFCMHeaderView().then { view in
-            view.filterBlock = {
-                [weak self] in
-                self?.filterView.show()
-            }
-        }
-    }()
-    private lazy var filterView: SFCMFilterView = {
-        return SFCMFilterView()
-    }()
-    private lazy var tableView: SFTableView = {
-        return SFTableView(frame: .zero, style: .plain).then { view in
-            view.delegate = self
-            view.dataSource = self
-            view.register(cellType: SFCMPeripheralListCell.self)
-        }
-    }()
-    
+    // MARK: var    
     private var centralManager: SFCentralManager!
    
     
@@ -68,6 +36,29 @@ class SFCMPeripheralListVC: SFManagerVC {
     
     
     // MARK: ui
+    private lazy var scanBtn: SFButton = {
+        return SFButton().then { view in
+            view.style = .top(2)
+            view.titleLabel?.font = .systemFont(ofSize: 8, weight: .regular)
+            view.setImage(R.image.ble.scan.nor(), for: .normal)
+            view.setImage(R.image.ble.scan.sel(), for: .selected)
+            view.setTitle(R.string.localizable.central_ble_scan_paused(), for: .normal)
+            view.setTitle(R.string.localizable.central_ble_scan_doing(), for: .selected)
+            view.setTitleColor(R.color.subtitle(), for: .normal)
+            view.setTitleColor(R.color.theme(), for: .selected)
+            view.addTarget(self, action: #selector(scanBtnClicked), for: .touchUpInside)
+        }
+    }()
+    private lazy var headerView: SFCMHeaderView = {
+        return SFCMHeaderView()
+    }()
+    private lazy var tableView: SFTableView = {
+        return SFTableView(frame: .zero, style: .plain).then { view in
+            view.delegate = self
+            view.dataSource = self
+            view.register(cellType: SFCMPeripheralListCell.self)
+        }
+    }()
     private func customLayoutOfCentralManagerVC() {
         view.addSubview(headerView)
         view.addSubview(tableView)

@@ -19,20 +19,14 @@ import SFLogger
 // MARK: - SFCMSearchView
 class SFCMSearchView: SFView {
     // MARK: var
-    private lazy var searchImgView: SFImageView = {
-        return SFImageView().then { view in
-            view.contentMode = .scaleAspectFit
-            view.image = R.image.com.search()
+    
+    
+    // MARK: data
+    var model: SFCMSearchModel? {
+        didSet {
+            textField.text = model?.keyword
         }
-    }()
-    private lazy var textField: SFTextField = {
-        return SFTextField().then { view in
-            view.tintColor = R.color.theme()
-            view.textColor = R.color.title()
-            view.placeholderColor = R.color.placeholder()
-            view.placeholder = R.string.localizable.central_search_ph()
-        }
-    }()
+    }
     
     // MARK: life cycle
     override init(frame: CGRect) {
@@ -49,6 +43,20 @@ class SFCMSearchView: SFView {
     }
     
     // MARK: ui
+    private lazy var searchImgView: SFImageView = {
+        return SFImageView().then { view in
+            view.contentMode = .scaleAspectFit
+            view.image = R.image.com.search()
+        }
+    }()
+    private lazy var textField: SFTextField = {
+        return SFTextField().then { view in
+            view.tintColor = R.color.theme()
+            view.textColor = R.color.title()
+            view.placeholderColor = R.color.placeholder()
+            view.placeholder = R.string.localizable.central_search_ph()
+        }
+    }()
     private func customLayoutOfSearchView() {
         addSubview(searchImgView)
         addSubview(textField)

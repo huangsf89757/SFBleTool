@@ -47,6 +47,16 @@ class SFCMPeripheralDetailVC: SFViewController {
         }
     }()
     
+    
+    
+    // MARK: life cycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        navigationItem.title = "AiDEX X-TEST000001"
+        customLayoutOfDetailVC()
+    }
+    
+    // MARK: ui
     private lazy var barView: SFCMPeripheralDetailBarView = {
         return SFCMPeripheralDetailBarView().then { view in
             view.didSelectedBlock = {
@@ -65,15 +75,6 @@ class SFCMPeripheralDetailVC: SFViewController {
             }
         }
     }()
-    
-    // MARK: life cycle
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        navigationItem.title = "AiDEX X-TEST000001"
-        customLayoutOfDetailVC()
-    }
-    
-    // MARK: ui
     private func customLayoutOfDetailVC() {
         view.addSubview(advVc.view)
         view.addSubview(serviceVc.view)

@@ -17,14 +17,30 @@ import SFLogger
 
 // MARK: - SFEntranceOptView
 class SFEntranceOptView: SFView {
+    // MARK: block
+    var tapBlock: ((SFEntranceOptView) -> ())?
+    
     // MARK: var
     var isSelected = false {
         didSet {
             updateAppearance()
         }
-    }
-    var tapBlock: ((SFEntranceOptView) -> ())?
+    }    
     
+    // MARK: life cycle
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        backgroundColor = R.color.content()
+        layer.cornerRadius = 10
+        layer.borderWidth = 1
+        updateAppearance()
+        customLayoutOfEntranceView()
+    }
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    // MARK: ui
     lazy var selectImgView: SFImageView = {
         return SFImageView().then { view in
             view.contentMode = .scaleAspectFit
@@ -51,21 +67,6 @@ class SFEntranceOptView: SFView {
             view.addTarget(self, action: #selector(clickBtnAction), for: .touchUpInside)
         }
     }()
-    
-    // MARK: life cycle
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        backgroundColor = R.color.content()
-        layer.cornerRadius = 10
-        layer.borderWidth = 1
-        updateAppearance()
-        customLayoutOfEntranceView()
-    }
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    // MARK: ui
     private func customLayoutOfEntranceView() {
         addSubview(selectImgView)
         addSubview(titleLabel)

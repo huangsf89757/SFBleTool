@@ -18,26 +18,20 @@ import SFLogger
 
 // MARK: - SFCMHeaderView
 class SFCMHeaderView: SFView {
-    // MARK: var
-    var filterBlock: (()->())?
+    // MARK: block
+
     
-    private lazy var searchView: SFCMSearchView = {
-        return SFCMSearchView()
-    }()
-    private lazy var filterBtn: SFButton = {
-        return SFButton().then { view in
-            view.setImage(R.image.com.filter(), for: .normal)
-            view.addTarget(self, action: #selector(filterBtnClicked), for: .touchUpInside)
+    // MARK: var
+    
+    
+    // MARK: data
+    var model: SFCMHeaderModel? {
+        didSet {
+            searchView.model = model?.search
+            sortView.model = model?.sort
+            filterView.model = model?.filter
         }
-    }()
-    private lazy var sortView: SFCMSortView = {
-        return SFCMSortView()
-    }()
-    private lazy var separatorView: SFView = {
-        return SFView().then { view in
-            view.backgroundColor = R.color.divider()
-        }
-    }()
+    }
     
     // MARK: life cycle
     override init(frame: CGRect) {
@@ -50,6 +44,26 @@ class SFCMHeaderView: SFView {
     }
     
     // MARK: ui
+    private lazy var searchView: SFCMSearchView = {
+        return SFCMSearchView()
+    }()
+    private lazy var filterBtn: SFButton = {
+        return SFButton().then { view in
+            view.setImage(R.image.com.filter(), for: .normal)
+            view.addTarget(self, action: #selector(filterBtnClicked), for: .touchUpInside)
+        }
+    }()
+    private lazy var filterView: SFCMFilterView = {
+        return SFCMFilterView()
+    }()
+    private lazy var sortView: SFCMSortView = {
+        return SFCMSortView()
+    }()
+    private lazy var separatorView: SFView = {
+        return SFView().then { view in
+            view.backgroundColor = R.color.divider()
+        }
+    }()
     private func customLayoutOfHeaderView() {
         addSubview(searchView)
         addSubview(filterBtn)
@@ -83,7 +97,7 @@ class SFCMHeaderView: SFView {
 // MARK: - click
 extension SFCMHeaderView {
     @objc private func filterBtnClicked() {
-        filterBlock?()
+        filterView.show()
     }
 }
  
