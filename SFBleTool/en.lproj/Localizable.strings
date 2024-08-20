@@ -18,6 +18,10 @@ CFBundleDisplayName = "BleMessager";
 "entrance_opt_peripheral_subtitle" = "手机作为外围设备广播数据";
 
 // -- central --
+// ble
+"central_ble_scan_doing" = "扫描中";
+"central_ble_scan_paused" = "开始扫描";
+
 // search
 "central_search_ph" = "请输入设备名称";
 
@@ -65,3 +69,4 @@ CFBundleDisplayName = "BleMessager";
 "central_adv_key_txPower" = "CBAdvertisementDataTxPowerLevelKey";
 "central_adv_key_connectable" = "CBAdvertisementDataIsConnectable";
 "central_adv_key_solicitedUuid" = "CBAdvertisementDataSolicitedServiceUUIDsKey";
+

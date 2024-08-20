@@ -14,16 +14,22 @@ import SFExtension
 import SFUI
 // Server
 import SFLogger
-// Third
-import SideMenu
+
 
 // MARK: - SFCMPeripheralListVC
 class SFCMPeripheralListVC: SFManagerVC {
     // MARK: var
-    private lazy var settingBtn: SFButton = {
+    private lazy var scanBtn: SFButton = {
         return SFButton().then { view in
-            view.setImage(R.image.com.setting(), for: .normal)
-            view.addTarget(self, action: #selector(settingBtnClicked), for: .touchUpInside)
+            view.style = .top(2)
+            view.titleLabel?.font = .systemFont(ofSize: 8, weight: .regular)
+            view.setImage(R.image.ble.scan.nor(), for: .normal)
+            view.setImage(R.image.ble.scan.sel(), for: .selected)
+            view.setTitle(R.string.localizable.central_ble_scan_paused(), for: .normal)
+            view.setTitle(R.string.localizable.central_ble_scan_doing(), for: .selected)
+            view.setTitleColor(R.color.subtitle(), for: .normal)
+            view.setTitleColor(R.color.theme(), for: .selected)
+            view.addTarget(self, action: #selector(scanBtnClicked), for: .touchUpInside)
         }
     }()
     private lazy var headerView: SFCMHeaderView = {
@@ -49,7 +55,7 @@ class SFCMPeripheralListVC: SFManagerVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = R.string.localizable.entrance_opt_central_title()
-        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: settingBtn)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: scanBtn)
         customLayoutOfCentralManagerVC()
     }
     
@@ -96,11 +102,24 @@ extension SFCMPeripheralListVC: UITableViewDelegate, UITableViewDataSource {
 // MARK: - action
 extension SFCMPeripheralListVC {
     /// 点击设置
-    @objc private func settingBtnClicked() {
-        let vc = SFCMSettingVC()
-        let menu = SideMenuNavigationController(rootViewController: vc)
-        menu.menuWidth = 300
-        menu.sf.updateBar(barTintColor: SFColor.background, tintColor: SFColor.title, titleColor: SFColor.title, titleFont: .systemFont(ofSize: 20, weight: .bold))
-        present(menu, animated: true)
+    @objc private func scanBtnClicked() {
+        scanBtn.toggleSelected()
+        if scanBtn.isSelected {
+            let anim = CABasicAnimation(keyPath: "transform.rotation.z")
+            anim.fromValue = 0
+            anim.toValue = Double.pi * 2
+            anim.repeatCount = HUGE
+            anim.duration = 2
+            anim.isRemovedOnCompletion = false
+            anim.fillMode = .forwards
+            scanBtn.imageView?.layer.add(anim, forKey: "scanBtn_doing")
+        } else {
+            scanBtn.imageView?.layer.removeAllAnimations()
+        }
+//        let vc = SFCMSettingVC()
+//        let menu = SideMenuNavigationController(rootViewController: vc)
+//        menu.menuWidth = 300
+//        menu.sf.updateBar(barTintColor: SFColor.background, tintColor: SFColor.title, titleColor: SFColor.title, titleFont: .systemFont(ofSize: 20, weight: .bold))
+//        present(menu, animated: true)
     }
 }
