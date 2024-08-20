@@ -10,5 +10,9 @@ import CoreBluetooth
 
 class SFCMPeripheralListModel {
     // MARK: var
+    var name: String?
+    var uuid: UUID?
+    var rssi: Double?
+    
     var peripheral: CBPeripheral?
 }

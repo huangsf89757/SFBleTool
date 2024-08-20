@@ -10,5 +10,5 @@ import Foundation
 class SFCMFilterModel {
     // MARK: var
     var uuids = [UUID]()
-    var rssi: (Float, Float) = (-90, -50)
+    var rssi: (Double, Double) = (-90, -50)
 }

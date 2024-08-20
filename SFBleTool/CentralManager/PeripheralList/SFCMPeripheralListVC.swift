@@ -23,6 +23,8 @@ class SFCMPeripheralListVC: SFManagerVC {
     // MARK: var    
     private var centralManager: SFCentralManager!
    
+    // MARK: data
+    private var models = [SFCMPeripheralListModel]()
     
     // MARK: life cycle
     override func viewDidLoad() {
@@ -81,13 +83,14 @@ class SFCMPeripheralListVC: SFManagerVC {
 // MARK: - UITableViewDelegate, UITableViewDataSource
 extension SFCMPeripheralListVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 20
+        return models.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let model = models[indexPath.row]
         let cell = tableView.dequeueReusableCell(for: indexPath, cellType: SFCMPeripheralListCell.self)
-        cell.rssiView.rssi = -78
-        cell.nameLabel.text = "AiDEX X-TEST000001"
-        cell.uuidLabel.text = UUID().uuidString
+        cell.nameLabel.text = model.name
+        cell.uuidLabel.text = model.uuid?.uuidString
+        cell.rssiView.rssi = model.rssi
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
