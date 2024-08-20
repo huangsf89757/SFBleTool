@@ -6,9 +6,10 @@
 //
 
 import Foundation
+import CoreBluetooth
 
 class SFCMFilterModel {
     // MARK: var
-    var uuids = [UUID]()
+    var uuids: [CBUUID]?
     var rssi: (Double, Double) = (-90, -50)
 }

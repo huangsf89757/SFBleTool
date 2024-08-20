@@ -24,7 +24,12 @@ class SFCMPeripheralListVC: SFManagerVC {
     private var centralManager: SFCentralManager!
    
     // MARK: data
-    private var models = [SFCMPeripheralListModel]()
+    var headerModel = SFCMHeaderModel() {
+        didSet {
+            headerView.model = headerModel
+        }
+    }
+    var listModels = [SFCMPeripheralListModel]()
     
     // MARK: life cycle
     override func viewDidLoad() {
@@ -32,8 +37,8 @@ class SFCMPeripheralListVC: SFManagerVC {
         navigationItem.title = R.string.localizable.entrance_opt_central_title()
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: scanBtn)
         customLayoutOfCentralManagerVC()
-        // ble
         configCentralManager()
+        headerView.model = headerModel
     }
     
     
@@ -83,11 +88,11 @@ class SFCMPeripheralListVC: SFManagerVC {
 // MARK: - UITableViewDelegate, UITableViewDataSource
 extension SFCMPeripheralListVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return models.count
+        return listModels.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(for: indexPath, cellType: SFCMPeripheralListCell.self)
-        cell.model = models[indexPath.row]
+        cell.model = listModels[indexPath.row]
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -101,7 +106,14 @@ extension SFCMPeripheralListVC: UITableViewDelegate, UITableViewDataSource {
 extension SFCMPeripheralListVC {
     /// 点击扫描
     @objc private func scanBtnClicked() {
-        scanBtn.toggleSelected()
+        if scanBtn.isSelected {
+            centralManager.stopScan()
+        } else {
+            centralManager.scanForPeripherals(services: headerModel.filter.uuids, options: nil)
+        }
+    }
+    
+    private func updateScanBtn() {
         if scanBtn.isSelected {
             let anim = CABasicAnimation(keyPath: "transform.rotation.z")
             anim.fromValue = 0
@@ -120,12 +132,16 @@ extension SFCMPeripheralListVC {
 // MARK: - CBCentralManager
 extension SFCMPeripheralListVC {
     private func configCentralManager() {
-        let options = [
+        let options: [String : Any] = [
             CBCentralManagerOptionShowPowerAlertKey: true,
             CBCentralManagerOptionRestoreIdentifierKey: SFApp.bundle,
         ]
         centralManager = SFCentralManager(queue: nil, options: options)
         centralManager.isLogEnable = true
+        centralManager.didChangedIsScanningBlock = {
+            [weak self] centralManager, isScanning in
+            self?.centralManagerDidChangedIsScanning(centralManager, isScanning: isScanning)
+        }
         centralManager.didUpdateStateBlock = {
             [weak self] centralManager in
             self?.centralManagerDidUpdateState(centralManager)
@@ -135,8 +151,8 @@ extension SFCMPeripheralListVC {
             self?.centralManager(centralManager, willRestoreState: dict)
         }
         centralManager.didDiscoverPeripheralBlock = {
-            [weak self] centralManager, peripheral, dict, rssi in
-            self?.centralManager(centralManager, didDiscover: peripheral, advertisementData: dict, rssi: rssi)
+            [weak self] centralManager, peripheral, data, rssi in
+            self?.centralManager(centralManager, didDiscover: peripheral, advertisementData: data, rssi: rssi)
         }
         centralManager.didConnectPeripheralBlock = {
             [weak self] centralManager, peripheral in
@@ -167,6 +183,11 @@ extension SFCMPeripheralListVC {
 
 // MARK: - SFCentralManagerDelegater
 extension SFCMPeripheralListVC {
+    private func centralManagerDidChangedIsScanning(_ central: CBCentralManager, isScanning: Bool) {
+        scanBtn.isSelected = isScanning
+        updateScanBtn()
+    }
+    
     private func centralManagerDidUpdateState(_ central: CBCentralManager) {
         
     }
@@ -176,7 +197,25 @@ extension SFCMPeripheralListVC {
     }
 
     private func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
-        
+        let row = listModels.firstIndex { model in
+            model.uuid == peripheral.identifier
+        }
+        if let row = row {
+            let model = listModels[row]
+            model.peripheral = peripheral
+            model.rssi = RSSI.doubleValue
+            model.advData = advertisementData
+            tableView.reloadRows(at: [IndexPath(row: row, section: 0)], with: .none)
+            Log.debug("更新")
+        } else {
+            let model = SFCMPeripheralListModel()
+            model.peripheral = peripheral
+            model.rssi = RSSI.doubleValue
+            model.advData = advertisementData
+            listModels.append(model)
+            tableView.reloadData()
+            Log.debug("新增")
+        }
     }
 
     private func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {

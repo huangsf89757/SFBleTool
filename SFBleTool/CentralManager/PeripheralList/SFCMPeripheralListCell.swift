@@ -26,7 +26,7 @@ class SFCMPeripheralListCell: SFTableViewCell {
             guard let model = model else { return }
             nameLabel.text = model.name
             uuidLabel.text = model.uuid?.uuidString
-            rssiView.rssi = model.rssi
+//            rssiView.rssi = model.rssi // FIXME
         }
     }
     

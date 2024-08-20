@@ -43,6 +43,9 @@
     ],
     "Reusable": [
       "~> 4.1.2"
+    ],
+    "IQKeyboardManagerSwift": [
+      "~> 6.5.16"
     ]
   },
   "swift_version": "5.0"

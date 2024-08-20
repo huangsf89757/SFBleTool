@@ -13,6 +13,7 @@ class SFCMPeripheralListModel {
     var name: String?
     var uuid: UUID?
     var rssi: Double?
+    var advData: [String : Any]?
     
     var peripheral: CBPeripheral?
 }
