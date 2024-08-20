@@ -20,6 +20,15 @@ import SFLogger
 class SFCMPeripheralListCell: SFTableViewCell {
     // MARK: var
     
+    // MARK: data
+    var model: SFCMPeripheralListModel? {
+        didSet {
+            guard let model = model else { return }
+            nameLabel.text = model.name
+            uuidLabel.text = model.uuid?.uuidString
+            rssiView.rssi = model.rssi
+        }
+    }
     
     // MARK: life cycle
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -34,18 +43,18 @@ class SFCMPeripheralListCell: SFTableViewCell {
     }
     
     // MARK: ui
-    private(set) lazy var rssiView: SFCMRssiView = {
+    private lazy var rssiView: SFCMRssiView = {
         return SFCMRssiView().then { view in
             
         }
     }()
-    private(set) lazy var nameLabel: SFLabel = {
+    private lazy var nameLabel: SFLabel = {
         return SFLabel().then { view in
             view.font = .systemFont(ofSize: 19, weight: .bold)
             view.textColor = R.color.title()
         }
     }()
-    private(set) lazy var uuidLabel: SFLabel = {
+    private lazy var uuidLabel: SFLabel = {
         return SFLabel().then { view in
             view.font = .systemFont(ofSize: 15, weight: .regular)
             view.textColor = R.color.subtitle()

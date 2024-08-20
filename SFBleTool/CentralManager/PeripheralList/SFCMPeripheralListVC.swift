@@ -86,11 +86,8 @@ extension SFCMPeripheralListVC: UITableViewDelegate, UITableViewDataSource {
         return models.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let model = models[indexPath.row]
         let cell = tableView.dequeueReusableCell(for: indexPath, cellType: SFCMPeripheralListCell.self)
-        cell.nameLabel.text = model.name
-        cell.uuidLabel.text = model.uuid?.uuidString
-        cell.rssiView.rssi = model.rssi
+        cell.model = models[indexPath.row]
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
