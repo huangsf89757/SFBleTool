@@ -6,3 +6,9 @@
 //
 
 import Foundation
+import CoreBluetooth
+
+class SFCMPeripheralListModel {
+    // MARK: var
+    var peripheral: CBPeripheral?
+}
