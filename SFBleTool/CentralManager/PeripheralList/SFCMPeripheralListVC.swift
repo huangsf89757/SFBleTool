@@ -35,7 +35,7 @@ class SFCMPeripheralListVC: SFManagerVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = R.string.localizable.entrance_opt_central_title()
-        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: scanBtn)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: settingBtn)
         customLayoutOfCentralManagerVC()
         configCentralManager()
         headerView.model = headerModel
@@ -43,16 +43,30 @@ class SFCMPeripheralListVC: SFManagerVC {
     
     
     // MARK: ui
+    private lazy var settingBtn: SFButton = {
+        return SFButton().then { view in
+            view.setImage(R.image.com.setting(), for: .normal)
+            view.addTarget(self, action: #selector(settingBtnClicked), for: .touchUpInside)
+        }
+    }()
     private lazy var scanBtn: SFButton = {
         return SFButton().then { view in
-            view.style = .top(2)
-            view.titleLabel?.font = .systemFont(ofSize: 8, weight: .regular)
+            view.layer.cornerRadius = 10
+            view.layer.masksToBounds = true
+//            view.layer.shadowColor = R.color.black()?.cgColor
+//            view.layer.shadowOpacity = 0.3
+//            view.layer.shadowRadius = 10
+//            view.layer.shadowOffset = CGSize(width: 0, height: 5)
+            view.style = .right(10)
+            view.titleLabel?.font = .systemFont(ofSize: 17, weight: .medium)
             view.setImage(R.image.ble.scan.nor(), for: .normal)
             view.setImage(R.image.ble.scan.sel(), for: .selected)
             view.setTitle(R.string.localizable.central_ble_scan_paused(), for: .normal)
             view.setTitle(R.string.localizable.central_ble_scan_doing(), for: .selected)
-            view.setTitleColor(R.color.subtitle(), for: .normal)
-            view.setTitleColor(R.color.theme(), for: .selected)
+            view.setTitleColor(R.color.title(), for: .normal)
+            view.setTitleColor(R.color.whiteAlways(), for: .selected)
+            view.setBackgroundImage(UIImage.sf.image(color: R.color.lightGray()), for: .normal)
+            view.setBackgroundImage(UIImage.sf.image(color: R.color.theme()), for: .selected)
             view.addTarget(self, action: #selector(scanBtnClicked), for: .touchUpInside)
         }
     }()
@@ -69,6 +83,7 @@ class SFCMPeripheralListVC: SFManagerVC {
     private func customLayoutOfCentralManagerVC() {
         view.addSubview(headerView)
         view.addSubview(tableView)
+        view.addSubview(scanBtn)
         
         headerView.snp.makeConstraints { make in
             make.top.equalToSuperview()
@@ -80,6 +95,12 @@ class SFCMPeripheralListVC: SFManagerVC {
             make.leading.equalToSuperview()
             make.trailing.equalToSuperview()
             make.bottom.equalToSuperview()
+        }
+        scanBtn.snp.makeConstraints { make in
+            make.leading.equalToSuperview().offset(20)
+            make.trailing.equalToSuperview().offset(-20)
+            make.bottom.equalToSuperview().offset(-20)
+            make.height.equalTo(50)
         }
     }
 }
@@ -104,6 +125,11 @@ extension SFCMPeripheralListVC: UITableViewDelegate, UITableViewDataSource {
 
 // MARK: - action
 extension SFCMPeripheralListVC {
+    /// 点击设置
+    @objc private func settingBtnClicked() {
+        
+    }
+    
     /// 点击扫描
     @objc private func scanBtnClicked() {
         if scanBtn.isSelected {

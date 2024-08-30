@@ -398,7 +398,7 @@ struct _R {
     }
   }
 
-  /// This `_R.color` struct is generated, and contains static references to 20 colors.
+  /// This `_R.color` struct is generated, and contains static references to 23 colors.
   struct color {
     let bundle: Foundation.Bundle
 
@@ -420,6 +420,9 @@ struct _R {
     /// Color `content`.
     var content: RswiftResources.ColorResource { .init(name: "content", path: [], bundle: bundle) }
 
+    /// Color `darkGray`.
+    var darkGray: RswiftResources.ColorResource { .init(name: "darkGray", path: [], bundle: bundle) }
+
     /// Color `detail`.
     var detail: RswiftResources.ColorResource { .init(name: "detail", path: [], bundle: bundle) }
 
@@ -432,8 +435,14 @@ struct _R {
     /// Color `error`.
     var error: RswiftResources.ColorResource { .init(name: "error", path: [], bundle: bundle) }
 
+    /// Color `gray`.
+    var gray: RswiftResources.ColorResource { .init(name: "gray", path: [], bundle: bundle) }
+
     /// Color `highlight`.
     var highlight: RswiftResources.ColorResource { .init(name: "highlight", path: [], bundle: bundle) }
+
+    /// Color `lightGray`.
+    var lightGray: RswiftResources.ColorResource { .init(name: "lightGray", path: [], bundle: bundle) }
 
     /// Color `link`.
     var link: RswiftResources.ColorResource { .init(name: "link", path: [], bundle: bundle) }
