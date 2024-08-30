@@ -64,9 +64,9 @@ class SFCMPeripheralListVC: SFManagerVC {
             view.setTitle(R.string.localizable.central_ble_scan_paused(), for: .normal)
             view.setTitle(R.string.localizable.central_ble_scan_doing(), for: .selected)
             view.setTitleColor(R.color.title(), for: .normal)
-            view.setTitleColor(R.color.whiteAlways(), for: .selected)
+            view.setTitleColor(R.color.theme(), for: .selected)
             view.setBackgroundImage(UIImage.sf.image(color: R.color.lightGray()), for: .normal)
-            view.setBackgroundImage(UIImage.sf.image(color: R.color.theme()), for: .selected)
+            view.setBackgroundImage(UIImage.sf.image(color: R.color.lightGray()), for: .selected)
             view.addTarget(self, action: #selector(scanBtnClicked), for: .touchUpInside)
         }
     }()
