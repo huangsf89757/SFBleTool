@@ -89,8 +89,6 @@
 		4EFDCC6A69BD3A5C92E496722CC43A93 /* ConstraintMakerExtendable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FCA464F14BD35E93B209EA21923BD9 /* ConstraintMakerExtendable.swift */; };
 		4F894DAB31F1A68FD37EA61B87CDC043 /* StoryboardSceneBased.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A32C78588F581D2CB514FD7828D15F /* StoryboardSceneBased.swift */; };
 		506C1EE2968687F178BB2DFA34D185CE /* IQKeyboardReturnKeyHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2215FD617D178880BC165654D80B7C /* IQKeyboardReturnKeyHandler.swift */; };
-		51A613AE2C7621D1005990FC /* SFTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A613AD2C7621D1005990FC /* SFTip.swift */; };
-		51A613B02C762214005990FC /* SFTipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A613AF2C762214005990FC /* SFTipView.swift */; };
 		52DD330B3BED8407E4EFED176F0B4DBA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79CF7D56C5D50C18B2EA0ED106D998C7 /* Foundation.framework */; };
 		533F06C629B5676D3E165946F1CAB400 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04D60AC13D33197690A05C641925DDDA /* UIKit.framework */; };
 		535131E1FD0B3E84D752497919ECE490 /* StringParam+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076302531811E8D91B8E56349CE80D24 /* StringParam+Extensions.swift */; };
@@ -487,7 +485,7 @@
 		076302531811E8D91B8E56349CE80D24 /* StringParam+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "StringParam+Extensions.swift"; path = "Sources/RswiftResources/Shared/StringParam+Extensions.swift"; sourceTree = "<group>"; };
 		07A3E90EB38955B9CD1AA4509B99A86A /* SideMenuPresentationStyle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SideMenuPresentationStyle.swift; path = Pod/Classes/SideMenuPresentationStyle.swift; sourceTree = "<group>"; };
 		0883ACD70DB48998A293B466B7DD1450 /* SFExtension */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SFExtension; path = SFExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		09819F7CAD7F6F76B08EF4356240CC6F /* SFUI.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = SFUI.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		09819F7CAD7F6F76B08EF4356240CC6F /* SFUI.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = SFUI.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		098683E426DD94AC6046A19A258BA53A /* image.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; name = image.xcassets; path = SFUI/Assets/image.xcassets; sourceTree = "<group>"; };
 		0C55C3EE784EE253C21CEE3C4064701E /* SFBase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SFBase.debug.xcconfig; sourceTree = "<group>"; };
 		0CC025C186D6DA04144F7A142A78CF13 /* Bundle+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Bundle+Extensions.swift"; path = "Sources/RswiftResources/Integrations/Bundle+Extensions.swift"; sourceTree = "<group>"; };
@@ -502,7 +500,7 @@
 		152D3EE360C92FD97CBCE515D51FDA61 /* IQKeyboardManager+Internal.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQKeyboardManager+Internal.swift"; path = "IQKeyboardManagerSwift/IQKeyboardManager+Internal.swift"; sourceTree = "<group>"; };
 		15339965FA7D8370B9872FA0E9298C58 /* SFBluetooth.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SFBluetooth.debug.xcconfig; sourceTree = "<group>"; };
 		1595259EC648406E5705FE6E2DAFACDD /* WSTagsField.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = WSTagsField.modulemap; sourceTree = "<group>"; };
-		160CEC99C17DDFCBF5CBD6C767DA6E46 /* SFBluetooth.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = SFBluetooth.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		160CEC99C17DDFCBF5CBD6C767DA6E46 /* SFBluetooth.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = SFBluetooth.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		17AC7AE3B3841E111F50E22974D0C46F /* IQTitleBarButtonItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQTitleBarButtonItem.swift; path = IQKeyboardManagerSwift/IQToolbar/IQTitleBarButtonItem.swift; sourceTree = "<group>"; };
 		17C9C0EF2DB4D262F0EB0C4EDF094A03 /* ConstraintMultiplierTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMultiplierTarget.swift; path = Sources/ConstraintMultiplierTarget.swift; sourceTree = "<group>"; };
 		1AAA8D29FCDFA88CE2151413952CD6A3 /* SFPeripheralDelegater.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SFPeripheralDelegater.swift; path = SFBluetooth/Classes/SFPeripheralDelegater.swift; sourceTree = "<group>"; };
@@ -525,7 +523,7 @@
 		2531CB8BB6ED5C458093F5FFF9C90832 /* SnapKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SnapKit-prefix.pch"; sourceTree = "<group>"; };
 		263A7FCE06DCC26A576A528A14E37736 /* ConstraintPriorityTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintPriorityTarget.swift; path = Sources/ConstraintPriorityTarget.swift; sourceTree = "<group>"; };
 		2662801C41D8D9E251D69D9D13A0B7B0 /* FilterValidator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FilterValidator.swift; path = Sources/FilterValidator.swift; sourceTree = "<group>"; };
-		26FE6DC0295D5746498EC44253C10EE5 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		26FE6DC0295D5746498EC44253C10EE5 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		272A36327AFEC530340B3E237C30D006 /* SnapKit-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SnapKit-Info.plist"; sourceTree = "<group>"; };
 		27355B63E6078D2B1D415F7E1FFFAB03 /* SFUI-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SFUI-umbrella.h"; sourceTree = "<group>"; };
 		2752115010C63970F734EEFCC668BBF6 /* TypeReference.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TypeReference.swift; path = Sources/RswiftResources/Shared/TypeReference.swift; sourceTree = "<group>"; };
@@ -549,14 +547,14 @@
 		32F827AA25A17591FCC16BF6AB4E14B2 /* Pods-SFBleTool-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SFBleTool-acknowledgements.plist"; sourceTree = "<group>"; };
 		34CFDBCFDA1446A46079CB7C10AAA59B /* WSTagsField-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "WSTagsField-umbrella.h"; sourceTree = "<group>"; };
 		3506C087A7FAAAAD621499D0E99E5B82 /* SFUI-SFUI */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "SFUI-SFUI"; path = SFUI.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
-		35407493A5CAB55541863F1FB210AF9A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = IQKeyboardManagerSwift/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		35407493A5CAB55541863F1FB210AF9A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; name = PrivacyInfo.xcprivacy; path = IQKeyboardManagerSwift/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		357C016E4FE48D62D19F347EBFFAA61C /* NibLoadable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NibLoadable.swift; path = Sources/View/NibLoadable.swift; sourceTree = "<group>"; };
 		358CD0D3366C50B37CEC18A5BBEA118C /* LocaleReference.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LocaleReference.swift; path = Sources/RswiftResources/Shared/LocaleReference.swift; sourceTree = "<group>"; };
 		36B060BF903015C927343768974E38E9 /* SwiftyBeaver.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftyBeaver.debug.xcconfig; sourceTree = "<group>"; };
 		372AE3CDC7519C1CEB52B34E90B37287 /* ImageResource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageResource.swift; path = Sources/RswiftResources/ImageResource.swift; sourceTree = "<group>"; };
 		37925F2CDD4334E6334C3953D0F4C315 /* SFCentralManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SFCentralManager.swift; path = SFBluetooth/Classes/SFCentralManager.swift; sourceTree = "<group>"; };
 		384B6C8C378E28DA891E73B8DEFFEC61 /* ConstraintConfig.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintConfig.swift; path = Sources/ConstraintConfig.swift; sourceTree = "<group>"; };
-		3944AEC00B32918B78D99AED90ADDA65 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		3944AEC00B32918B78D99AED90ADDA65 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		395E587A466757BBC5A3A86BAFB9C473 /* CBError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CBError.swift; sourceTree = "<group>"; };
 		39FCA464F14BD35E93B209EA21923BD9 /* ConstraintMakerExtendable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMakerExtendable.swift; path = Sources/ConstraintMakerExtendable.swift; sourceTree = "<group>"; };
 		3BA9D70DCC331B2F259E17E10A6E4B52 /* IQKeyboardManagerSwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = IQKeyboardManagerSwift.modulemap; sourceTree = "<group>"; };
@@ -576,16 +574,14 @@
 		483212DD3A302AC92750131BCD7309DE /* SFApp.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SFApp.swift; path = SFBase/Classes/SFApp.swift; sourceTree = "<group>"; };
 		484410F605E603328F77D1453E822770 /* IQUIView+IQKeyboardToolbar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQUIView+IQKeyboardToolbar.swift"; path = "IQKeyboardManagerSwift/IQToolbar/IQUIView+IQKeyboardToolbar.swift"; sourceTree = "<group>"; };
 		48762F383AA9600B058AF07A7A396DBF /* CBCharacteristicProperties.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CBCharacteristicProperties.swift; sourceTree = "<group>"; };
-		488C1FC23687FEBDE3684DE4C7196527 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		488C1FC23687FEBDE3684DE4C7196527 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		4936D8BFEB6515A99AA064FBE603DE96 /* SnapKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SnapKit.release.xcconfig; sourceTree = "<group>"; };
 		494B4857D0CD3C3A14011E8671D9B325 /* Base64.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Base64.swift; path = Sources/Base64.swift; sourceTree = "<group>"; };
-		496890F5B41113B7791560E3CDA686C1 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		496890F5B41113B7791560E3CDA686C1 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		49F6E9A6AB6E703B8BDC756DC07B38D6 /* Reusable.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Reusable.debug.xcconfig; sourceTree = "<group>"; };
 		4ACE6830A12CFE06F4B4B8E8E834EE01 /* SFLogger-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SFLogger-dummy.m"; sourceTree = "<group>"; };
 		506D62DEDCEF61CC2BA989028A0A0DEE /* SwiftyBeaver-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SwiftyBeaver-Info.plist"; sourceTree = "<group>"; };
 		5126058C49698D42401866B7098F6E03 /* SFProgressView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SFProgressView.swift; sourceTree = "<group>"; };
-		51A613AD2C7621D1005990FC /* SFTip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFTip.swift; sourceTree = "<group>"; };
-		51A613AF2C762214005990FC /* SFTipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFTipView.swift; sourceTree = "<group>"; };
 		51EDD4BD320208E6EF81DA7813CF88B4 /* R.swift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = R.swift.modulemap; sourceTree = "<group>"; };
 		529FBA2F6F653BA19B3F3A9E1FD2D9B3 /* ConstraintView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintView.swift; path = Sources/ConstraintView.swift; sourceTree = "<group>"; };
 		5358F385A5068C82EF055C4A912F2108 /* UITableViewVibrantCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UITableViewVibrantCell.swift; path = Pod/Classes/UITableViewVibrantCell.swift; sourceTree = "<group>"; };
@@ -666,14 +662,14 @@
 		840FA0B75AF62912A30DDC66B647ED98 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
 		858AF20CF9F2CB0282FBAC0D5E2298FA /* SFBarView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SFBarView.swift; sourceTree = "<group>"; };
 		85FEEDE00D8EC7E38A4844074D081F67 /* SFWebViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SFWebViewController.swift; sourceTree = "<group>"; };
-		87622BC60A8C4E145519F9257F55D3A9 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		87622BC60A8C4E145519F9257F55D3A9 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		87F8A0A72D914EC87468B5DBBCD9C40C /* AssetCatalog.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AssetCatalog.swift; path = Sources/RswiftResources/AssetCatalog.swift; sourceTree = "<group>"; };
 		88878EA988DBEF1BB7D2DDEA1164DA31 /* Initializable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Initializable.swift; path = Pod/Classes/Initializable.swift; sourceTree = "<group>"; };
 		88C23E16B12012734050C773EBA57D75 /* WSTagsField.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WSTagsField.h; path = WSTagsField/WSTagsField.h; sourceTree = "<group>"; };
 		8A3FAB2ED63A71F977DC707EFBBE3F59 /* R.swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = R.swift.release.xcconfig; sourceTree = "<group>"; };
 		8A4CB2C8D9A577AA3F7ACF6CD1FDD8F0 /* PropertyListResource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PropertyListResource.swift; path = Sources/RswiftResources/PropertyListResource.swift; sourceTree = "<group>"; };
 		8C0BEB5C2B788E2D929DE24A642EDFA2 /* SFTextField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SFTextField.swift; sourceTree = "<group>"; };
-		8C87521F7AB71B6ECBDD01811F41A6BD /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		8C87521F7AB71B6ECBDD01811F41A6BD /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		8D1B6A83FE45D0C21764D61DABB9D9F7 /* ConstraintMakerRelatable+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ConstraintMakerRelatable+Extensions.swift"; path = "Sources/ConstraintMakerRelatable+Extensions.swift"; sourceTree = "<group>"; };
 		8D37F1780B71DFE13F0AF2C12AC7C509 /* SFLogger.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SFLogger.modulemap; sourceTree = "<group>"; };
 		8D9A672063D4C586D6E24B3E15B34E61 /* SFDevice.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SFDevice.swift; path = SFBase/Classes/SFDevice.swift; sourceTree = "<group>"; };
@@ -696,7 +692,7 @@
 		9B9EC455323826C47CD45739F39CD879 /* SFBluetooth-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SFBluetooth-umbrella.h"; sourceTree = "<group>"; };
 		9C84BF83CF81C2F45EDB179A32BA6053 /* Reusable.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Reusable.release.xcconfig; sourceTree = "<group>"; };
 		9D10407F82F0BD900CBD5D9F6AD1A304 /* SFExtension.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SFExtension.modulemap; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9DBD6D734392B27ADCE9E7A3F8797EA8 /* SideMenuManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SideMenuManager.swift; path = Pod/Classes/SideMenuManager.swift; sourceTree = "<group>"; };
 		9DCB9177F5E57C63989F273648CCD7CB /* ConstraintMakerFinalizable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMakerFinalizable.swift; path = Sources/ConstraintMakerFinalizable.swift; sourceTree = "<group>"; };
 		9DE15A6CFB6678AE3A6D677ABC50935F /* SFOutlineItemModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SFOutlineItemModel.swift; sourceTree = "<group>"; };
@@ -717,7 +713,7 @@
 		ABAA4AEB936A6F1FF2F1FC5EC0ECE77B /* R.swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = R.swift.debug.xcconfig; sourceTree = "<group>"; };
 		AC28B589FE439FAE1E3820B6493830D2 /* ConstraintLayoutGuideDSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintLayoutGuideDSL.swift; path = Sources/ConstraintLayoutGuideDSL.swift; sourceTree = "<group>"; };
 		ACCB2B5005179E5133102BA17DBC2FDD /* SFBase-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SFBase-Info.plist"; sourceTree = "<group>"; };
-		AD1FE8D0229BBEE00FC1BF790BCA3F31 /* SFBase.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = SFBase.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		AD1FE8D0229BBEE00FC1BF790BCA3F31 /* SFBase.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = SFBase.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		ADCF7E457EA67CF11DA93D678BE8B7FE /* IQKeyboardManager+Position.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQKeyboardManager+Position.swift"; path = "IQKeyboardManagerSwift/IQKeyboardManager+Position.swift"; sourceTree = "<group>"; };
 		AE5C8339FAFEF5ABFB5EFFA7F7817D5C /* Reusable.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Reusable.modulemap; sourceTree = "<group>"; };
 		B0336852E04C40713A3D54894E9EB5CE /* ConstraintOffsetTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintOffsetTarget.swift; path = Sources/ConstraintOffsetTarget.swift; sourceTree = "<group>"; };
@@ -756,7 +752,7 @@
 		C40B8712F529892583B06A8C2C150436 /* SFUI */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SFUI; path = SFUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4F3DB84EF350897BF47B8A0B2CCB413 /* SFLogger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SFLogger.release.xcconfig; sourceTree = "<group>"; };
 		C7C3558A588A3C9C14DAA854F26AE06C /* ConstraintLayoutSupport.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintLayoutSupport.swift; path = Sources/ConstraintLayoutSupport.swift; sourceTree = "<group>"; };
-		C8580633948AF07684E4CFF4CBFA59EF /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		C8580633948AF07684E4CFF4CBFA59EF /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		C8CCFE3C4F6A2BF6797E3926D819F9BD /* IQKeyboardManagerSwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "IQKeyboardManagerSwift-dummy.m"; sourceTree = "<group>"; };
 		C924F978EE8BC7881413C59541A077B4 /* SFTableViewHeaderFooterView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SFTableViewHeaderFooterView.swift; sourceTree = "<group>"; };
 		C95D3E7DEB1F75FD5C08B61BB08D2D76 /* IQKeyboardManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQKeyboardManager.swift; path = IQKeyboardManagerSwift/IQKeyboardManager.swift; sourceTree = "<group>"; };
@@ -773,7 +769,7 @@
 		D3818BFF93CA10AFDE5C049E6A904E72 /* Pods-SFBleTool-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SFBleTool-Info.plist"; sourceTree = "<group>"; };
 		D3CA9293BDB8E482BFB590BDFA399871 /* IQKeyboardManagerConstants.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQKeyboardManagerConstants.swift; path = IQKeyboardManagerSwift/Constants/IQKeyboardManagerConstants.swift; sourceTree = "<group>"; };
 		D41AD7DDD6ACAE48F95A35B69D0ED4DA /* SFExtension-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SFExtension-dummy.m"; sourceTree = "<group>"; };
-		D4247DB81006BE5FF2157C08D336E675 /* SFLogger.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = SFLogger.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		D4247DB81006BE5FF2157C08D336E675 /* SFLogger.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = SFLogger.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		D4C022848B98E10BE66ECA71D12F1F6E /* WSTagsField-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "WSTagsField-dummy.m"; sourceTree = "<group>"; };
 		D5145B89FE2939BCFEE18D8C9075D9F6 /* ConsoleDestination.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConsoleDestination.swift; path = Sources/ConsoleDestination.swift; sourceTree = "<group>"; };
 		D5C213730DE80BE06BF98608EF257193 /* StringParam.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StringParam.swift; path = Sources/RswiftResources/Shared/StringParam.swift; sourceTree = "<group>"; };
@@ -814,11 +810,11 @@
 		E96F118B66C2ADE935785E2516A9BFC4 /* IQKeyboardManager+UIKeyboardNotification.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQKeyboardManager+UIKeyboardNotification.swift"; path = "IQKeyboardManagerSwift/IQKeyboardManager+UIKeyboardNotification.swift"; sourceTree = "<group>"; };
 		E9B1E724FBAB56A49EB3A83292CF8495 /* CBService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CBService.swift; sourceTree = "<group>"; };
 		EA3E792534A66F860C1838EB3DCFC2D9 /* SFResource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SFResource.swift; sourceTree = "<group>"; };
-		EAF1775C2568510CACDED0967B2F7B53 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		EAF1775C2568510CACDED0967B2F7B53 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		EB6D55A90A43819E9579DAED95354637 /* SFColor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SFColor.swift; sourceTree = "<group>"; };
 		EBCA100F27BDC6795348ED78D56F470E /* UILayoutSupport+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UILayoutSupport+Extensions.swift"; path = "Sources/UILayoutSupport+Extensions.swift"; sourceTree = "<group>"; };
 		EC2215FD617D178880BC165654D80B7C /* IQKeyboardReturnKeyHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQKeyboardReturnKeyHandler.swift; path = IQKeyboardManagerSwift/IQKeyboardReturnKeyHandler.swift; sourceTree = "<group>"; };
-		EE0B00C9036F0F641D34529D56E6BE64 /* SFExtension.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = SFExtension.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		EE0B00C9036F0F641D34529D56E6BE64 /* SFExtension.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = SFExtension.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		EEC6D5C3C1A32D52E62AC05EB1CFFF07 /* SFLogger-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SFLogger-prefix.pch"; sourceTree = "<group>"; };
 		EF169FB8467FFF67D7ADFCB41B245C6D /* SFBase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SFBase.swift; path = SFBase/Classes/SFBase.swift; sourceTree = "<group>"; };
 		EFD830DD4D2B931576E2740BDFA43978 /* SwiftyBeaver.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SwiftyBeaver.modulemap; sourceTree = "<group>"; };
@@ -832,7 +828,7 @@
 		F440269D12A0DE6212850C874C0DA07B /* IQKeyboardManagerConstantsInternal.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQKeyboardManagerConstantsInternal.swift; path = IQKeyboardManagerSwift/Constants/IQKeyboardManagerConstantsInternal.swift; sourceTree = "<group>"; };
 		F56164A1C929507C830A45FE75781CC3 /* SideMenuPushCoordinator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SideMenuPushCoordinator.swift; path = Pod/Classes/SideMenuPushCoordinator.swift; sourceTree = "<group>"; };
 		F5B28750A0A5887EF60A19FB019C6C08 /* ColorResource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ColorResource.swift; path = Sources/RswiftResources/ColorResource.swift; sourceTree = "<group>"; };
-		F5C830C88CEDD7BDDE1469E6AA194D65 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		F5C830C88CEDD7BDDE1469E6AA194D65 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		F6E2E34E947560221792DAE7EE4EAC43 /* IQKeyboardManager+OrientationNotification.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQKeyboardManager+OrientationNotification.swift"; path = "IQKeyboardManagerSwift/IQKeyboardManager+OrientationNotification.swift"; sourceTree = "<group>"; };
 		F71FBB994CD18B55FBAB33BFD433CF29 /* Data.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		F80F6E2E78BF55CC856514F420837A57 /* FontResource+Integrations.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "FontResource+Integrations.swift"; path = "Sources/RswiftResources/Integrations/FontResource+Integrations.swift"; sourceTree = "<group>"; };
@@ -847,7 +843,7 @@
 		FCDB9CA791E7CE2EF02FCC5E79791134 /* SwiftyBeaver-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftyBeaver-dummy.m"; sourceTree = "<group>"; };
 		FCFCC0D2CC0A3796A80B5F033ABA97E9 /* SFExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SFExtension.release.xcconfig; sourceTree = "<group>"; };
 		FDE0AE41CC19FBA352794F19EA097776 /* StringResource+Integrations.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "StringResource+Integrations.swift"; path = "Sources/RswiftResources/Integrations/StringResource+Integrations.swift"; sourceTree = "<group>"; };
-		FE9BD213E7873E4C8EBD8F0C5A28CF0C /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		FE9BD213E7873E4C8EBD8F0C5A28CF0C /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		FEC46193A0A897895ED4FA6FA2D529E7 /* IQKeyboardManagerSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = IQKeyboardManagerSwift.release.xcconfig; sourceTree = "<group>"; };
 		FF76AE1C0498E560F532472E23B12FA6 /* SFBase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SFBase.release.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -1025,6 +1021,7 @@
 				DDEFFE096849DB03966BEFA72BAA1DF5 /* Resources */,
 				29D5723BFD75DB42BCBD9EDBF99B42B9 /* Support Files */,
 			);
+			name = IQKeyboardManagerSwift;
 			path = IQKeyboardManagerSwift;
 			sourceTree = "<group>";
 		};
@@ -1050,6 +1047,7 @@
 				E7FC6296231951C6E568720987BDB733 /* SFMenuCell.swift */,
 				2525C1C98D022E15D5FEF6117A5A5EC2 /* SFMenuView.swift */,
 			);
+			name = Menu;
 			path = Menu;
 			sourceTree = "<group>";
 		};
@@ -1089,6 +1087,7 @@
 				DBD110D4F86FC15182A0D968F8D6AE73 /* WSTagView.swift */,
 				00FFDBBB66F5BA51103E5C320CFA1E03 /* Support Files */,
 			);
+			name = WSTagsField;
 			path = WSTagsField;
 			sourceTree = "<group>";
 		};
@@ -1137,6 +1136,7 @@
 				626039CF11B6F5DFF08DF5A0E521024E /* SFToast.swift */,
 				10189EFEF59293ACE404C5B4F690FF94 /* SFToastView.swift */,
 			);
+			name = Toast;
 			path = Toast;
 			sourceTree = "<group>";
 		};
@@ -1184,6 +1184,7 @@
 				5358F385A5068C82EF055C4A912F2108 /* UITableViewVibrantCell.swift */,
 				4BD365707A705DF9EEFFDE898252F1FE /* Support Files */,
 			);
+			name = SideMenu;
 			path = SideMenu;
 			sourceTree = "<group>";
 		};
@@ -1208,6 +1209,7 @@
 				6328D5D7AE5A7B159BF20E0B0A48E79E /* SFWebView.swift */,
 				20C570403CF2608CF81601468CA29F2E /* SFWindow.swift */,
 			);
+			name = View;
 			path = View;
 			sourceTree = "<group>";
 		};
@@ -1253,13 +1255,13 @@
 				C29A979A69B64A367F8AF459E0E93B5F /* SFAlert.swift */,
 				93F17E341E3B35A28BF8429E5BFCF336 /* SFAlertView.swift */,
 			);
+			name = Alert;
 			path = Alert;
 			sourceTree = "<group>";
 		};
 		4EC3D6C19708FAB4CA72CCD59EB97F01 /* Pop */ = {
 			isa = PBXGroup;
 			children = (
-				51A613AC2C7621AB005990FC /* Tip */,
 				4E626BA07C5E35A5BE293134D4E87494 /* Alert */,
 				8BC6E8D7BADA259B65DE5CA15B5DB308 /* Guide */,
 				EC15A84122EBC0547E9708646714853B /* Hud */,
@@ -1268,16 +1270,8 @@
 				BBD074817A85BC821B11EF14399F719E /* Pop */,
 				2CFFB2921EB1293D0AAE002B260F235B /* Toast */,
 			);
+			name = Pop;
 			path = Pop;
-			sourceTree = "<group>";
-		};
-		51A613AC2C7621AB005990FC /* Tip */ = {
-			isa = PBXGroup;
-			children = (
-				51A613AD2C7621D1005990FC /* SFTip.swift */,
-				51A613AF2C762214005990FC /* SFTipView.swift */,
-			);
-			path = Tip;
 			sourceTree = "<group>";
 		};
 		53C3E351F1FB0A4BC4F055BA6D6ED22C /* Pod */ = {
@@ -1316,6 +1310,7 @@
 				9E77FC3A4CEDC4C100EFE2A98B8E0EFF /* SwiftyBeaver.swift */,
 				B3351D7BC10314B070AA5A68946B0DE6 /* Support Files */,
 			);
+			name = SwiftyBeaver;
 			path = SwiftyBeaver;
 			sourceTree = "<group>";
 		};
@@ -1361,6 +1356,7 @@
 				EBCA100F27BDC6795348ED78D56F470E /* UILayoutSupport+Extensions.swift */,
 				0B97AB4CD0D6B60D20624C5DB2E306F6 /* Support Files */,
 			);
+			name = SnapKit;
 			path = SnapKit;
 			sourceTree = "<group>";
 		};
@@ -1381,6 +1377,7 @@
 				4EC3D6C19708FAB4CA72CCD59EB97F01 /* Pop */,
 				7C5A30D2582272820FF7A787DCB9A6CB /* Progress */,
 			);
+			name = View;
 			path = View;
 			sourceTree = "<group>";
 		};
@@ -1391,6 +1388,7 @@
 				2FF60610C64A313BF04DFF7D58244359 /* SFCatlogItemModel.swift */,
 				617932837C0318498F747B3E877A1426 /* SFCatlogView.swift */,
 			);
+			name = Catlog;
 			path = Catlog;
 			sourceTree = "<group>";
 		};
@@ -1418,6 +1416,7 @@
 				82BDA683301A12F24C1CDA961B93D00D /* SFRingProgressView.swift */,
 				D8F75BDDE4B7E117C00937B840D51892 /* SFWaveProgressView.swift */,
 			);
+			name = Progress;
 			path = Progress;
 			sourceTree = "<group>";
 		};
@@ -1443,6 +1442,7 @@
 				9506B29DFAE23BD291330C594B90CCFF /* Support Files */,
 				27ACFD42B8C35B65094EC79CA936BAC1 /* View */,
 			);
+			name = Reusable;
 			path = Reusable;
 			sourceTree = "<group>";
 		};
@@ -1452,6 +1452,7 @@
 				B70FEB0FD2F9E123E0D75046FD3C861E /* Then.swift */,
 				D575ABBC30B3DCA1C1A94618BD425D77 /* Support Files */,
 			);
+			name = Then;
 			path = Then;
 			sourceTree = "<group>";
 		};
@@ -1463,6 +1464,7 @@
 				FC873CBDFF2C391B39E9F55FD368E383 /* SFViewController.swift */,
 				85FEEDE00D8EC7E38A4844074D081F67 /* SFWebViewController.swift */,
 			);
+			name = ViewController;
 			path = ViewController;
 			sourceTree = "<group>";
 		};
@@ -1472,6 +1474,7 @@
 				D9F05A64788FE8EF3E7B0D1C8B742E58 /* SFGuide.swift */,
 				213283EC6A38D78E18ED567B843363C0 /* SFGuideView.swift */,
 			);
+			name = Guide;
 			path = Guide;
 			sourceTree = "<group>";
 		};
@@ -1493,6 +1496,7 @@
 				8F618B8F32455649D0252441467D88E7 /* SFNotify.swift */,
 				5C697C027A5F5D188DF75D63B6101F74 /* SFNotifyView.swift */,
 			);
+			name = Notify;
 			path = Notify;
 			sourceTree = "<group>";
 		};
@@ -1503,6 +1507,7 @@
 				9DE15A6CFB6678AE3A6D677ABC50935F /* SFOutlineItemModel.swift */,
 				CEF898CC8FDE32450BC6F286FBEE7575 /* SFOutlineView.swift */,
 			);
+			name = Outline;
 			path = Outline;
 			sourceTree = "<group>";
 		};
@@ -1629,6 +1634,7 @@
 				BDF4188B9FD9CC0D865E0B6309CE7555 /* SFPopView.swift */,
 				AB24523365ABB1E3A4B8A730C3100B1F /* SFPopWindow.swift */,
 			);
+			name = Pop;
 			path = Pop;
 			sourceTree = "<group>";
 		};
@@ -1777,6 +1783,7 @@
 				7CB556342F0E4901C8B2B4CE1BA4F2D2 /* ValidationError.swift */,
 				CB3D9EC1DB32A80597FBD46B6498B9C7 /* Support Files */,
 			);
+			name = R.swift;
 			path = R.swift;
 			sourceTree = "<group>";
 		};
@@ -1825,6 +1832,7 @@
 				BCA38051F48FA09C2FCC5A01ECC7DE07 /* SFHud.swift */,
 				DF5A121C32FE5E296CEB5D5C93E1A14D /* SFHudView.swift */,
 			);
+			name = Hud;
 			path = Hud;
 			sourceTree = "<group>";
 		};
@@ -1875,6 +1883,7 @@
 				549EF0C7BE176F8250972F6237DD44F3 /* SFCardTableViewCell.swift */,
 				3212D8D266D94EA243F530ABDF49284F /* SFCardTableViewHeaderFooterView.swift */,
 			);
+			name = Card;
 			path = Card;
 			sourceTree = "<group>";
 		};
@@ -2481,7 +2490,6 @@
 				9CB93F96BC11D7198D99B2665A2F9991 /* SFCardTableViewCell.swift in Sources */,
 				035E7C6181392B8CB9E1E807D3196818 /* SFCardTableViewHeaderFooterView.swift in Sources */,
 				1196426A9BBF7CA02F433BC4E47576B9 /* SFCatlogCell.swift in Sources */,
-				51A613B02C762214005990FC /* SFTipView.swift in Sources */,
 				B99C64E53322D3C068647D8CF3C17D52 /* SFCatlogItemModel.swift in Sources */,
 				6933B7AADC1F39827D616DF4E1EF2D67 /* SFCatlogView.swift in Sources */,
 				1FDF077A1326C36A07F2AA014CC0AF46 /* SFCollectionReusableView.swift in Sources */,
@@ -2516,7 +2524,6 @@
 				C978C23A092ABC3042FBCB9563679242 /* SFPopView.swift in Sources */,
 				8834705CF55BF3AA75983332286C12C5 /* SFPopWindow.swift in Sources */,
 				D97605B9CECD67A14690CC5ED3A00E15 /* SFProgressView.swift in Sources */,
-				51A613AE2C7621D1005990FC /* SFTip.swift in Sources */,
 				5A0A2440730C640093291BD4443CDA07 /* SFResource.swift in Sources */,
 				7BFA18293FDCE4AE4AC5D6EDA754F0D7 /* SFRingProgressView.swift in Sources */,
 				6A7F126945E86031EB18A411B5C15FC8 /* SFRulerView.swift in Sources */,

@@ -21,9 +21,9 @@
 			</array>
 		</dict>
 	</dict>
-	<key>NSBluetoothAlwaysUsageDescription</key>
-	<string>需要使用蓝牙</string>
-	<key>NSBluetoothPeripheralUsageDescription</key>
-	<string>需要使用蓝牙</string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>bluetooth-central</string>
+	</array>
 </dict>
 </plist>
