@@ -33,8 +33,8 @@ class SFCMPeripheralListCell: SFTableViewCell {
     // MARK: life cycle
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        backgroundColor = SFColor.background
-        contentView.backgroundColor = SFColor.background
+        backgroundColor = R.color.content()
+        contentView.backgroundColor = R.color.content()
         customLayoutOfPeripheralCell()
         separatorInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
     }

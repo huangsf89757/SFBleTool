@@ -36,7 +36,7 @@ class SFCMHeaderView: SFView {
     // MARK: life cycle
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = R.color.content()
+        backgroundColor = R.color.background()
         customLayoutOfHeaderView()
     }
     required init?(coder: NSCoder) {

@@ -36,6 +36,7 @@ class SFCMSortView: SFView {
     // MARK: life cycle
     override init(frame: CGRect) {
         super.init(frame: frame)
+        backgroundColor = R.color.background()
         customLayoutOfSortView()
     }
     required init?(coder: NSCoder) {

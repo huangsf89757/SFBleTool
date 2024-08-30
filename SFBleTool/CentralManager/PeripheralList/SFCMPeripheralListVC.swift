@@ -40,6 +40,10 @@ class SFCMPeripheralListVC: SFManagerVC {
         configCentralManager()
         headerView.model = headerModel
     }
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+//        scanBtn.shadowLayer.frame = scanBtn.bounds
+    }
     
     
     // MARK: ui
@@ -51,12 +55,9 @@ class SFCMPeripheralListVC: SFManagerVC {
     }()
     private lazy var scanBtn: SFButton = {
         return SFButton().then { view in
+            view.backgroundColor = R.color.background()
             view.layer.cornerRadius = 10
-            view.layer.masksToBounds = true
-//            view.layer.shadowColor = R.color.black()?.cgColor
-//            view.layer.shadowOpacity = 0.3
-//            view.layer.shadowRadius = 10
-//            view.layer.shadowOffset = CGSize(width: 0, height: 5)
+//            view.sf.setCornerAndShadow(radius: 10, fillColor: .red, shadowColor: .red, shadowOffset: CGSize(width: 0, height: 10), shadowOpacity: 0.5, shadowRadius: 5) // FIXME: 不知道为何不起作用
             view.style = .right(10)
             view.titleLabel?.font = .systemFont(ofSize: 17, weight: .medium)
             view.setImage(R.image.ble.scan.nor(), for: .normal)
@@ -65,9 +66,18 @@ class SFCMPeripheralListVC: SFManagerVC {
             view.setTitle(R.string.localizable.central_ble_scan_doing(), for: .selected)
             view.setTitleColor(R.color.title(), for: .normal)
             view.setTitleColor(R.color.theme(), for: .selected)
-            view.setBackgroundImage(UIImage.sf.image(color: R.color.lightGray()), for: .normal)
-            view.setBackgroundImage(UIImage.sf.image(color: R.color.lightGray()), for: .selected)
             view.addTarget(self, action: #selector(scanBtnClicked), for: .touchUpInside)
+            
+            // anim
+            let anim = CABasicAnimation(keyPath: "transform.rotation.z")
+            anim.fromValue = 0
+            anim.toValue = Double.pi * 2
+            anim.repeatCount = HUGE
+            anim.duration = 2
+            anim.isRemovedOnCompletion = false
+            anim.fillMode = .forwards
+            view.imageView?.layer.add(anim, forKey: "scanBtn_doing")
+            view.imageView?.layer.sf.pauseAnimation()
         }
     }()
     private lazy var headerView: SFCMHeaderView = {
@@ -141,16 +151,9 @@ extension SFCMPeripheralListVC {
     
     private func updateScanBtn() {
         if scanBtn.isSelected {
-            let anim = CABasicAnimation(keyPath: "transform.rotation.z")
-            anim.fromValue = 0
-            anim.toValue = Double.pi * 2
-            anim.repeatCount = HUGE
-            anim.duration = 2
-            anim.isRemovedOnCompletion = false
-            anim.fillMode = .forwards
-            scanBtn.imageView?.layer.add(anim, forKey: "scanBtn_doing")
+            scanBtn.imageView?.layer.sf.resumeAnimation()
         } else {
-            scanBtn.imageView?.layer.removeAllAnimations()
+            scanBtn.imageView?.layer.sf.pauseAnimation()
         }
     }
 }

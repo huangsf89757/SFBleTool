@@ -31,6 +31,7 @@ class SFCMSearchView: SFView {
     // MARK: life cycle
     override init(frame: CGRect) {
         super.init(frame: frame)
+        backgroundColor = R.color.background()
         customLayoutOfSearchView()
     }
     required init?(coder: NSCoder) {
