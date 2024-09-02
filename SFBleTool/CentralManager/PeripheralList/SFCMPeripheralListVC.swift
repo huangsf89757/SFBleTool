@@ -22,6 +22,10 @@ import SFBluetooth
 class SFCMPeripheralListVC: SFManagerVC {
     // MARK: var    
     private var centralManager: SFCentralManager!
+    /// 当前偏移量Y
+    private var contentOffsetY: CGFloat = 0
+    /// 顶部/底部 Bar 是否显示
+    private var isBarShowing = true
    
     // MARK: data
     var headerModel = SFCMHeaderModel() {
@@ -129,6 +133,50 @@ extension SFCMPeripheralListVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = SFCMPeripheralDetailVC()
         navigationController?.pushViewController(vc, animated: true)
+    }
+}
+
+
+// MARK: - UIScrollViewDelegate
+extension SFCMPeripheralListVC {
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        Log.debug("scrollViewWillEndDragging, velocity.y=\(velocity.y)")
+        // 判断滑动停止时的状态
+        if velocity.y < 0 {
+            // 向上滑动，显示
+            Log.debug("scrollViewWillEndDragging, 向上滑动，显示")
+            showBar()
+        } else {
+            // 向下滑动，隐藏
+            Log.debug("scrollViewWillEndDragging, 向下滑动，隐藏")
+            hideBar()
+        }
+    }
+    
+    private func showBar() {
+        if isBarShowing {
+            return
+        }
+        isBarShowing = true
+        scanBtn.snp.updateConstraints { make in
+            make.bottom.equalToSuperview().offset(-20)
+        }
+        UIView.animate(withDuration: 0.24) {
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    private func hideBar() {
+        if !isBarShowing {
+            return
+        }
+        isBarShowing = false
+        scanBtn.snp.updateConstraints { make in
+            make.bottom.equalToSuperview().offset(50)
+        }
+        UIView.animate(withDuration: 0.24) {
+            self.view.layoutIfNeeded()
+        }
     }
 }
 
