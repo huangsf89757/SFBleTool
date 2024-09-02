@@ -22,8 +22,6 @@ import SFBluetooth
 class SFCMPeripheralListVC: SFManagerVC {
     // MARK: var    
     private var centralManager: SFCentralManager!
-    /// 当前偏移量Y
-    private var contentOffsetY: CGFloat = 0
     /// 顶部/底部 Bar 是否显示
     private var isBarShowing = true
    
