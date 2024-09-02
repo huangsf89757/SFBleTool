@@ -140,15 +140,11 @@ extension SFCMPeripheralListVC: UITableViewDelegate, UITableViewDataSource {
 // MARK: - UIScrollViewDelegate
 extension SFCMPeripheralListVC {
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-        Log.debug("scrollViewWillEndDragging, velocity.y=\(velocity.y)")
-        // 判断滑动停止时的状态
         if velocity.y < 0 {
             // 向上滑动，显示
-            Log.debug("scrollViewWillEndDragging, 向上滑动，显示")
             showBar()
         } else {
             // 向下滑动，隐藏
-            Log.debug("scrollViewWillEndDragging, 向下滑动，隐藏")
             hideBar()
         }
     }
