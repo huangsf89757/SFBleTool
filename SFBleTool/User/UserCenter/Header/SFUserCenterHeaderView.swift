@@ -18,5 +18,10 @@ import SFLogger
 
 // MARK: - SFUserCenterHeaderView
 class SFUserCenterHeaderView: SFView {
-    
+    // MARK: ui
+    private lazy var avatarImgView: SFImageView = {
+        return SFImageView().then { view in
+            view.contentMode = .scaleAspectFit
+        }
+    }()
 }
