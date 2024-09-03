@@ -52,12 +52,14 @@ class SFCMPeripheralListVC: SFManagerVC {
     // MARK: ui
     private lazy var userBtn: SFButton = {
         return SFButton().then { view in
+            view.frame = CGRect(origin: .zero, size: CGSize(width: 40, height: 40))
             view.setImage(R.image.com.user(), for: .normal)
             view.addTarget(self, action: #selector(userBtnClicked), for: .touchUpInside)
         }
     }()
     private lazy var settingBtn: SFButton = {
         return SFButton().then { view in
+            view.frame = CGRect(origin: .zero, size: CGSize(width: 40, height: 40))
             view.setImage(R.image.com.setting(), for: .normal)
             view.addTarget(self, action: #selector(settingBtnClicked), for: .touchUpInside)
         }

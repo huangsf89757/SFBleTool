@@ -20,5 +20,9 @@ import SFBluetooth
 
 // MARK: - SFUserCenterVC
 class SFUserCenterVC: SFViewController {
-    
+    // MARK: life cycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        isHiddenNavBar = true
+    }
 }
