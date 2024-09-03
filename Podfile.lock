@@ -22,8 +22,11 @@ PODS:
     - SFExtension (~> 0.1.0)
     - SFLogger (~> 0.1.0)
     - SnapKit (~> 5.6.0)
+    - SnapKitExtend (~> 1.1.0)
   - SideMenu (6.5.0)
   - SnapKit (5.6.0)
+  - SnapKitExtend (1.1.0):
+    - SnapKit
   - SwiftyBeaver (1.9.5)
   - Then (3.0.0)
   - WARangeSlider (1.2.0)
@@ -47,6 +50,7 @@ SPEC REPOS:
     - Reusable
     - SideMenu
     - SnapKit
+    - SnapKitExtend
     - SwiftyBeaver
     - Then
     - WARangeSlider
@@ -72,9 +76,10 @@ SPEC CHECKSUMS:
   SFBluetooth: 9890236c6a157b482f79b796fcfc1491b22e4ebd
   SFExtension: db5d207c8b9cb15d09d28858aec071d51050f3c5
   SFLogger: a0357f940aa3a0f852a3af5f8f09dd1cb961e3a4
-  SFUI: ed57a3702e32f5548bb71ac6746ccad63bf44bb8
+  SFUI: 5bf4c055b310b11a8cd5dc9a97e1ac6dde818ab9
   SideMenu: f583187d21c5b1dd04c72002be544b555a2627a2
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
+  SnapKitExtend: aa30cf37196195fae9c4354686cc7710184ebfcc
   SwiftyBeaver: 84069991dd5dca07d7069100985badaca7f0ce82
   Then: 844265ae87834bbe1147d91d5d41a404da2ec27d
   WARangeSlider: 03f195d4dc5419e6b0d9043cc94fdf418dfe804d

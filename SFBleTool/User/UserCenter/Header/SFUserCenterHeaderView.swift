@@ -5,11 +5,6 @@
 //  Created by hsf on 2024/9/2.
 //
 
-import Foundation
-import UIKit
-// Basic
-import SFBase
-import SFExtension
 // UI
 import SFUI
 // Server
@@ -29,13 +24,26 @@ class SFUserCenterHeaderView: SFView {
             view.contentMode = .scaleAspectFit
         }
     }()
+    private lazy var nameView: SFView = {
+        return SFView()
+    }()
+    private lazy var ganderImgView: SFImageView = {
+        return SFImageView().then { view in
+            view.contentMode = .scaleAspectFit
+        }
+    }()
     private lazy var nameLabel: SFLabel = {
         return SFLabel().then { view in
-            
+            view.font = .systemFont(ofSize: 15, weight: .regular)
         }
     }()
     
     private func customUI() {
+        addSubview(bgImgView)
+        addSubview(avatarImgView)
+        addSubview(nameView)
+        nameView.addSubview(nameLabel)
+        nameView.addSubview(ganderImgView)
         
     }
     

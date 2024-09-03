@@ -26,3 +26,14 @@ class SFUserCenterVC: SFViewController {
         isHiddenNavBar = true
     }
 }
+
+/*
+ 
+ 中心设备
+ 外围设备
+ 
+ 账号安全
+ 
+ 
+ 
+ */
