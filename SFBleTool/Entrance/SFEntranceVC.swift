@@ -115,6 +115,7 @@ class SFEntranceVC: SFScrollViewController {
     }
 }
 
+// MARK: action
 extension SFEntranceVC {
     private func entranceOptViewTaped(_ sender: SFEntranceOptView) {
         centralEntranceOptView.isSelected = (sender === centralEntranceOptView)

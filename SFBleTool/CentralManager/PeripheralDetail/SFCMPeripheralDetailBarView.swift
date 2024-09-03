@@ -17,7 +17,7 @@ import SFLogger
 
 
 // MARK: - SFCMPeripheralDetailBarView
-class SFCMPeripheralDetailBarView: SFBarView {
+class SFCMPeripheralDetailBarView: SFSegmentView {
     // MARK: life cycle
     init() {
         let titles = [
