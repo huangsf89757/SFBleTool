@@ -57,9 +57,9 @@ class SFCMPeripheralDetailVC: SFViewController {
     }
     
     // MARK: ui
-    private lazy var barView: SFCMPeripheralDetailBarView = {
-        return SFCMPeripheralDetailBarView().then { view in
-            view.didSelectedBlock = {
+    private lazy var segmentView: SFCMPeripheralDetailSegmentView = {
+        return SFCMPeripheralDetailSegmentView().then { view in
+            view.didSelectedItemBlock = {
                 [weak self] index in
                 self?.advVc.view.isHidden = index != 0
                 self?.serviceVc.view.isHidden = index != 1
@@ -79,9 +79,9 @@ class SFCMPeripheralDetailVC: SFViewController {
         view.addSubview(advVc.view)
         view.addSubview(serviceVc.view)
         view.addSubview(logVc.view)
-        view.addSubview(barView)
+        view.addSubview(segmentView)
         
-        barView.snp.makeConstraints { make in
+        segmentView.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(20)
             make.trailing.equalToSuperview().offset(-20)
             make.bottom.equalToSuperview().offset(-20)
@@ -92,21 +92,21 @@ class SFCMPeripheralDetailVC: SFViewController {
             make.leading.equalToSuperview()
             make.trailing.equalToSuperview()
 //            make.bottom.equalToSuperview()
-            make.bottom.equalTo(barView.snp.top).offset(-20)
+            make.bottom.equalTo(segmentView.snp.top).offset(-20)
         }
         serviceVc.view.snp.makeConstraints { make in
             make.top.equalToSuperview()
             make.leading.equalToSuperview()
             make.trailing.equalToSuperview()
 //            make.bottom.equalToSuperview()
-            make.bottom.equalTo(barView.snp.top).offset(-20)
+            make.bottom.equalTo(segmentView.snp.top).offset(-20)
         }
         logVc.view.snp.makeConstraints { make in
             make.top.equalToSuperview()
             make.leading.equalToSuperview()
             make.trailing.equalToSuperview()
 //            make.bottom.equalToSuperview()
-            make.bottom.equalTo(barView.snp.top).offset(-20)
+            make.bottom.equalTo(segmentView.snp.top).offset(-20)
         }
     }
     

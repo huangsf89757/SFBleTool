@@ -266,6 +266,11 @@
 		DD4688ACF087D5CFC919CFC42BF82F8F /* SFBadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC9C36F6F7AABE9F1E15264DC7CFB5C /* SFBadgeView.swift */; };
 		DD5BCD341E2C69A2118637E694FC75DA /* WARangeSlider-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F0350DB70768D99D7D0034D015CB4379 /* WARangeSlider-dummy.m */; };
 		DDC0F4786752FBF4B07E3A4D4E273DA2 /* UICollectionView+Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DE2BA068539336DC13E27697A3A834 /* UICollectionView+Reusable.swift */; };
+		DDF08C182C870A5900FB4B48 /* SFSegmentIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF08C172C870A5900FB4B48 /* SFSegmentIndicatorView.swift */; };
+		DDF08C1A2C870F0D00FB4B48 /* SFSegmentIndicatorLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF08C192C870F0D00FB4B48 /* SFSegmentIndicatorLineView.swift */; };
+		DDF08C1C2C870F2600FB4B48 /* SFSegmentIndicatorDotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF08C1B2C870F2600FB4B48 /* SFSegmentIndicatorDotView.swift */; };
+		DDF08C1E2C870F3500FB4B48 /* SFSegmentIndicatorArrowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF08C1D2C870F3500FB4B48 /* SFSegmentIndicatorArrowView.swift */; };
+		DDF08C202C870F4C00FB4B48 /* SFSegmentIndicatorSquareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF08C1F2C870F4C00FB4B48 /* SFSegmentIndicatorSquareView.swift */; };
 		DEAF9BE2B56D0FA16070EC85C7823F34 /* SFApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C643A13D212935E4454BC8AAE0FB12 /* SFApp.swift */; };
 		DEF4ACACC5A5B37535DF580680565955 /* FontResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1F090EBD19ABB6DB0B41C8862165B2 /* FontResource.swift */; };
 		E064F8CBFA1B0159CD9EA9C1A596681F /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9080F4D181395037757178E9A3793A26 /* UIColor.swift */; };
@@ -855,6 +860,11 @@
 		DD3EEB4BB04274801FDF2B799BBC2D50 /* SFProgressView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SFProgressView.swift; sourceTree = "<group>"; };
 		DD8C31A5C7D4067845948B5226D32AC3 /* IQUITextFieldView+Additions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQUITextFieldView+Additions.swift"; path = "IQKeyboardManagerSwift/Categories/IQUITextFieldView+Additions.swift"; sourceTree = "<group>"; };
 		DDC21FCC1AEF73B7E52E07FFAC7D550A /* SFCatlogView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SFCatlogView.swift; sourceTree = "<group>"; };
+		DDF08C172C870A5900FB4B48 /* SFSegmentIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSegmentIndicatorView.swift; sourceTree = "<group>"; };
+		DDF08C192C870F0D00FB4B48 /* SFSegmentIndicatorLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSegmentIndicatorLineView.swift; sourceTree = "<group>"; };
+		DDF08C1B2C870F2600FB4B48 /* SFSegmentIndicatorDotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSegmentIndicatorDotView.swift; sourceTree = "<group>"; };
+		DDF08C1D2C870F3500FB4B48 /* SFSegmentIndicatorArrowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSegmentIndicatorArrowView.swift; sourceTree = "<group>"; };
+		DDF08C1F2C870F4C00FB4B48 /* SFSegmentIndicatorSquareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSegmentIndicatorSquareView.swift; sourceTree = "<group>"; };
 		DEDA0CFFC9BFE7E5A652F8401F5237B8 /* StringResource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StringResource.swift; path = Sources/RswiftResources/StringResource.swift; sourceTree = "<group>"; };
 		E48AB16B3D017556B69CBB1F318F2CFA /* Reusable-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Reusable-dummy.m"; sourceTree = "<group>"; };
 		E50820A8EDF537FCA69E0F2671BE1659 /* SFLogger */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SFLogger; path = SFLogger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1173,7 +1183,7 @@
 			isa = PBXGroup;
 			children = (
 				1BC9C36F6F7AABE9F1E15264DC7CFB5C /* SFBadgeView.swift */,
-				0AA83CE1CF2F8008C527CAD6D7198A9E /* SFSegmentView.swift */,
+				DDF08C162C870A3B00FB4B48 /* SFSegment */,
 				663CE45B96666D511661CAEAAE36D098 /* SFBreathLightView.swift */,
 				16B80D1EAE603C877B1895659D388953 /* SFFloatingView.swift */,
 				9F9AC544D3783CEF6113E9CE3C544F42 /* SFHollowView.swift */,
@@ -1908,6 +1918,19 @@
 			);
 			name = SFUI;
 			path = ../../../UI/SFUI;
+			sourceTree = "<group>";
+		};
+		DDF08C162C870A3B00FB4B48 /* SFSegment */ = {
+			isa = PBXGroup;
+			children = (
+				0AA83CE1CF2F8008C527CAD6D7198A9E /* SFSegmentView.swift */,
+				DDF08C172C870A5900FB4B48 /* SFSegmentIndicatorView.swift */,
+				DDF08C192C870F0D00FB4B48 /* SFSegmentIndicatorLineView.swift */,
+				DDF08C1B2C870F2600FB4B48 /* SFSegmentIndicatorDotView.swift */,
+				DDF08C1D2C870F3500FB4B48 /* SFSegmentIndicatorArrowView.swift */,
+				DDF08C1F2C870F4C00FB4B48 /* SFSegmentIndicatorSquareView.swift */,
+			);
+			path = SFSegment;
 			sourceTree = "<group>";
 		};
 		E816BC3E9C8B46159A9B2CBA1A5A46D8 /* SnapKit */ = {
@@ -2938,6 +2961,7 @@
 				1668FC70295823511620F92F6A4D1C48 /* SFAlertView.swift in Sources */,
 				DD4688ACF087D5CFC919CFC42BF82F8F /* SFBadgeView.swift in Sources */,
 				81B3072E3410B99EDAAA83D11D74544C /* SFBarProgressView.swift in Sources */,
+				DDF08C1E2C870F3500FB4B48 /* SFSegmentIndicatorArrowView.swift in Sources */,
 				4964294926B720AB7348A75A0FF8A4D7 /* SFSegmentView.swift in Sources */,
 				6B4EB3F5F3B40C98E7BEC305F6E8F541 /* SFBreathLightView.swift in Sources */,
 				0F634FB783579F60C92078308CD6EB64 /* SFButton.swift in Sources */,
@@ -2971,8 +2995,10 @@
 				35D1788BD9C04CB969A74E3CEE649B90 /* SFNotify.swift in Sources */,
 				71A82483AC2CB545BF07C2752A4A25FE /* SFNotifyView.swift in Sources */,
 				A0AE50067844C659DF7F14D809408B68 /* SFOutlineCell.swift in Sources */,
+				DDF08C1C2C870F2600FB4B48 /* SFSegmentIndicatorDotView.swift in Sources */,
 				FD7F733CF51B9E3FC6440FA475379D0B /* SFOutlineItemModel.swift in Sources */,
 				99583550A3E281962F7E5D46717E80E3 /* SFOutlineView.swift in Sources */,
+				DDF08C182C870A5900FB4B48 /* SFSegmentIndicatorView.swift in Sources */,
 				D7BEB92DB137780A473B88C30F82AED7 /* SFPinCodeView.swift in Sources */,
 				60E0ED7B1E85165E6214F6CBB384BDF0 /* SFPopManager.swift in Sources */,
 				FA8BE4AF4F6F252F78F6F306001F6EA9 /* SFPopView.swift in Sources */,
@@ -2981,6 +3007,7 @@
 				0148A0E6A3A59AECE183E0DB761C3EE5 /* SFRangeSlider.swift in Sources */,
 				63E3A95247D5AEAAAB640C2D59E2BC4C /* SFResource.swift in Sources */,
 				105684747F79695C0A5E72FD79CF34A9 /* SFRingProgressView.swift in Sources */,
+				DDF08C202C870F4C00FB4B48 /* SFSegmentIndicatorSquareView.swift in Sources */,
 				23051DA1DD38F4883E2949F1F2A9A377 /* SFRulerView.swift in Sources */,
 				062391331CA7E46FEEFFEA0CCF0F5802 /* SFScrollView.swift in Sources */,
 				0F659F87A4268E199A401A0F46262E01 /* SFScrollViewController.swift in Sources */,
@@ -2989,6 +3016,7 @@
 				8012DAC8492ACD64CC0DBF7608AD0C44 /* SFTableViewCell.swift in Sources */,
 				5DF34507696649C91DB5675BC1F6C9CE /* SFTableViewHeaderFooterView.swift in Sources */,
 				8C302FD2FFBAE6C8FD71A2549D69CCB1 /* SFTextField.swift in Sources */,
+				DDF08C1A2C870F0D00FB4B48 /* SFSegmentIndicatorLineView.swift in Sources */,
 				A3E80C26F9BB3EDDF7B4ED3AE40D8688 /* SFTextView.swift in Sources */,
 				2A19EFC17218652948678B4F029B77FA /* SFTip.swift in Sources */,
 				BCC727CCACB62F03666B40B74552B824 /* SFTipView.swift in Sources */,

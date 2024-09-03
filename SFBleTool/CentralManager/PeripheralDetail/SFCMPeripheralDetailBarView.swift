@@ -1,5 +1,5 @@
 //
-//  SFCMPeripheralDetailBarView.swift
+//  SFCMPeripheralDetailSegmentView.swift
 //  SFBleTool
 //
 //  Created by hsf on 2024/8/14.
@@ -16,8 +16,8 @@ import SFUI
 import SFLogger
 
 
-// MARK: - SFCMPeripheralDetailBarView
-class SFCMPeripheralDetailBarView: SFSegmentView {
+// MARK: - SFCMPeripheralDetailSegmentView
+class SFCMPeripheralDetailSegmentView: SFSegmentView {
     // MARK: life cycle
     init() {
         let titles = [
@@ -25,20 +25,20 @@ class SFCMPeripheralDetailBarView: SFSegmentView {
             R.string.localizable.central_bar_service(),
             R.string.localizable.central_bar_log(),
         ]
-        let imagesNor = [
+        let images = [
             R.image.bar.adv.nor(),
             R.image.bar.service.nor(),
             R.image.bar.log.nor(),
         ]
-        let imagesSel = [
+        let selectedImages = [
             R.image.bar.adv.sel(),
             R.image.bar.service.sel(),
             R.image.bar.log.sel(),
         ]
-        super.init(titles: titles, imagesNor: imagesNor, imagesSel: imagesSel)
+        super.init(titles: titles, images: images, selectedImages: selectedImages)
     }
-    private override init(titles: [String?], imagesNor: [UIImage?], imagesSel: [UIImage?]) {
-        super.init(titles: titles, imagesNor: imagesNor, imagesSel: imagesSel)
+    override init(direction: SFSegmentView.Direction = .horizontal, titles: [String?]?, images: [UIImage?]?, selectedImages: [UIImage?]? = nil) {
+        super.init(direction: .horizontal, titles: titles, images: images, selectedImages: selectedImages)
     }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
