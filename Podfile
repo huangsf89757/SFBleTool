@@ -31,9 +31,10 @@ end
 # 第三方组件
 def pods_third
   
-  pod 'R.swift',        '~> 7.3.2'
-  pod 'SideMenu',       '~> 6.5.0'
-  pod 'WSTagsField',    '~> 5.4.0'
+  pod 'R.swift',          '~> 7.3.2'
+  pod 'SideMenu',         '~> 6.5.0'
+  pod 'WSTagsField',      '~> 5.4.0'
+  pod "WARangeSlider",    '~> 1.2.0'
   
 end
 

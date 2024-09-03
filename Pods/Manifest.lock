@@ -26,6 +26,7 @@ PODS:
   - SnapKit (5.6.0)
   - SwiftyBeaver (1.9.5)
   - Then (3.0.0)
+  - WARangeSlider (1.2.0)
   - WSTagsField (5.4.0)
 
 DEPENDENCIES:
@@ -36,6 +37,7 @@ DEPENDENCIES:
   - SFLogger (from `../../Server/SFLogger/`)
   - SFUI (from `../../UI/SFUI/`)
   - SideMenu (~> 6.5.0)
+  - WARangeSlider (~> 1.2.0)
   - WSTagsField (~> 5.4.0)
 
 SPEC REPOS:
@@ -47,6 +49,7 @@ SPEC REPOS:
     - SnapKit
     - SwiftyBeaver
     - Then
+    - WARangeSlider
     - WSTagsField
 
 EXTERNAL SOURCES:
@@ -74,8 +77,9 @@ SPEC CHECKSUMS:
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
   SwiftyBeaver: 84069991dd5dca07d7069100985badaca7f0ce82
   Then: 844265ae87834bbe1147d91d5d41a404da2ec27d
+  WARangeSlider: 03f195d4dc5419e6b0d9043cc94fdf418dfe804d
   WSTagsField: a4e91b7d866e8c9755332ebcf8123f42f2abd4a0
 
-PODFILE CHECKSUM: ab6da622dbbac28df01d81a74cbbdf18b9f210f5
+PODFILE CHECKSUM: e3ca3af714f0a8af331594f44b179db61815667c
 
 COCOAPODS: 1.12.1

@@ -291,6 +291,7 @@
 				51A613A22C74DA89005990FC /* Connect */,
 				51A6139D2C74BE2B005990FC /* Header */,
 				5175ADAD2C64F4AF00C9260A /* SFCMPeripheralListCell.swift */,
+				5175ADAF2C64FA1D00C9260A /* SFCMRssiView.swift */,
 				DDA648CE2C61A3DE00F01858 /* SFCMPeripheralListVC.swift */,
 				51A6139E2C74C25A005990FC /* SFCMPeripheralListModel.swift */,
 			);
@@ -350,7 +351,6 @@
 			children = (
 				DDFA63FC2C636856002E93F3 /* SFCMFilterView.swift */,
 				DDE09DAC2C7470FB00E456B7 /* SFCMFilterModel.swift */,
-				5175ADAF2C64FA1D00C9260A /* SFCMRssiView.swift */,
 			);
 			path = Filter;
 			sourceTree = "<group>";

@@ -301,6 +301,8 @@ extension SFCMPeripheralListVC {
         }
         if let row = row {
             let model = listModels[row]
+            model.name = peripheral.name
+            model.uuid = peripheral.identifier
             model.peripheral = peripheral
             model.rssi = RSSI.doubleValue
             model.advData = advertisementData
@@ -308,6 +310,8 @@ extension SFCMPeripheralListVC {
             Log.debug("更新")
         } else {
             let model = SFCMPeripheralListModel()
+            model.name = peripheral.name
+            model.uuid = peripheral.identifier
             model.peripheral = peripheral
             model.rssi = RSSI.doubleValue
             model.advData = advertisementData

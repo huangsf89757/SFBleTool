@@ -28,8 +28,13 @@ class SFCMRssiView: SFView {
      4 : < -65
      5 : >= -65
      */
-    var rssi: Double = 0 {
+    var rssi: Double? {
         didSet {
+            guard let rssi = rssi else {
+                rssiLabel.text = ""
+                rssiImgView.image = R.image.com.rssi.level0()
+                return
+            }
             rssiLabel.text = String(format: "%.0f dBm", rssi)
             if rssi < -90 {
                 rssiImgView.image = R.image.com.rssi.level0()

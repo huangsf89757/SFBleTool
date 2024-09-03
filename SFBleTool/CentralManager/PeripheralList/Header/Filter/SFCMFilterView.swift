@@ -16,6 +16,7 @@ import SFUI
 import SFLogger
 // Third
 import WSTagsField
+import WARangeSlider
 
 
 // MARK: - SFCMFilterView
@@ -40,7 +41,7 @@ class SFCMFilterView: SFPopView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = .clear
-        shapeLayer.fillColor = R.color.content()?.cgColor
+        shapeLayer.fillColor = R.color.background()?.cgColor
         shapeLayer.shadowOffset = CGSize(width: 0, height: 20)
         customLayoutOfFilterView()
     }
@@ -55,6 +56,10 @@ class SFCMFilterView: SFPopView {
             make.leading.equalToSuperview()
             make.trailing.equalToSuperview()
         }
+    }
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        shapeLayer.fillColor = R.color.background()?.cgColor
     }
     override func customShapePath(rect: CGRect) -> UIBezierPath? {
         return UIBezierPath(roundedRect: rect, byRoundingCorners: [.bottomLeft, .bottomRight], cornerRadii: CGSize(width: 20, height: 20))
@@ -140,9 +145,19 @@ class SFCMFilterView: SFPopView {
             }
         }
     }()
-    private lazy var rssiRangeView: SFView = {
-        return SFView().then { view in
-            view.backgroundColor = R.color.placeholder()
+    private lazy var rssiRangeView: RangeSlider = {
+        return RangeSlider().then { view in
+            view.minimumValue = -100
+            view.maximumValue = 0
+            view.lowerValue = -90
+            view.upperValue = -50
+            view.trackTintColor = R.color.placeholder() ?? .gray
+            view.trackHighlightTintColor = R.color.theme() ?? .blue
+            view.thumbTintColor = R.color.white() ?? .white
+            view.thumbBorderColor = R.color.placeholder() ?? .gray
+            view.thumbBorderWidth = 1
+            view.curvaceousness = 1
+            view.addTarget(self, action: #selector(rssiRangeValueChanged(_:)), for: .valueChanged)
         }
     }()
     private lazy var resetBtn: SFButton = {
@@ -197,7 +212,7 @@ class SFCMFilterView: SFPopView {
             make.top.equalTo(rssiTitleView.snp.bottom).offset(0)
             make.leading.equalToSuperview().offset(10)
             make.trailing.equalToSuperview().offset(-10)
-            make.height.equalTo(40)
+            make.height.equalTo(30)
         }
         resetBtn.snp.makeConstraints { make in
             make.top.equalTo(rssiRangeView.snp.bottom).offset(20)
@@ -217,12 +232,18 @@ class SFCMFilterView: SFPopView {
 }
 
 
-// MARK: - click
+// MARK: - action
 extension SFCMFilterView {
+    @objc private func rssiRangeValueChanged(_ sender: RangeSlider) {
+        
+    }
+    
+    /// 点击重置
     @objc private func resetBtnClicked() {
         resetBlock?()
     }
     
+    /// 点击确定
     @objc private func sureBtnClicked() {
         sureBlock?()
     }
