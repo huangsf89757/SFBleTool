@@ -39,7 +39,7 @@ class SFCMPeripheralListVC: SFManagerVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         configNav()
-        customLayoutOfCentralManagerVC()
+        customUI()
         configCentralManager()
         headerView.model = headerModel
     }
@@ -101,7 +101,7 @@ class SFCMPeripheralListVC: SFManagerVC {
             view.register(cellType: SFCMPeripheralListCell.self)
         }
     }()
-    private func customLayoutOfCentralManagerVC() {
+    private func customUI() {
         view.addSubview(headerView)
         view.addSubview(tableView)
         view.addSubview(scanBtn)

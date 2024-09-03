@@ -27,7 +27,7 @@ class SFCMPeripheralLogDetailVC: SFViewController {
     // MARK: life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        customLayoutOfLogDetailVC()
+        customUI()
     }
     
     // MARK: ui
@@ -44,7 +44,7 @@ class SFCMPeripheralLogDetailVC: SFViewController {
             view.rowHeight = 50
         }
     }()
-    private func customLayoutOfLogDetailVC() {
+    private func customUI() {
         view.addSubview(tableView)
         tableView.snp.makeConstraints { make in
             make.edges.equalToSuperview()

@@ -34,7 +34,7 @@ class SFEntranceOptView: SFView {
         layer.cornerRadius = 10
         layer.borderWidth = 1
         updateAppearance()
-        customLayoutOfEntranceView()
+        customUI()
     }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -67,7 +67,7 @@ class SFEntranceOptView: SFView {
             view.addTarget(self, action: #selector(clickBtnAction), for: .touchUpInside)
         }
     }()
-    private func customLayoutOfEntranceView() {
+    private func customUI() {
         addSubview(selectImgView)
         addSubview(titleLabel)
         addSubview(subtitleLabel)

@@ -60,7 +60,7 @@ class SFCMRssiView: SFView {
     // MARK: life cycle
     override init(frame: CGRect) {
         super.init(frame: frame)
-        customLayoutOfRssiView()
+        customUI()
     }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -79,7 +79,7 @@ class SFCMRssiView: SFView {
             view.textAlignment = .center
         }
     }()
-    private func customLayoutOfRssiView() {
+    private func customUI() {
         addSubview(rssiImgView)
         addSubview(rssiLabel)
         

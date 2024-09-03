@@ -43,7 +43,7 @@ class SFCMFilterView: SFPopView {
         backgroundColor = .clear
         shapeLayer.fillColor = R.color.background()?.cgColor
         shapeLayer.shadowOffset = CGSize(width: 0, height: 20)
-        customLayoutOfFilterView()
+        customUIOfFilterView()
     }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -178,7 +178,7 @@ class SFCMFilterView: SFPopView {
             view.addTarget(self, action: #selector(sureBtnClicked), for: .touchUpInside)
         }
     }()
-    private func customLayoutOfFilterView() {
+    private func customUIOfFilterView() {
         addSubview(titleLabel)
         addSubview(uuidTitleView)
         addSubview(uuidTagsField)
@@ -259,7 +259,7 @@ extension SFCMFilterView {
         // MARK: life cycle
         override init(frame: CGRect) {
             super.init(frame: frame)
-            customLayoutOfTitleView()
+            customUIOfTitleView()
         }
         required init?(coder: NSCoder) {
             fatalError("init(coder:) has not been implemented")
@@ -286,7 +286,7 @@ extension SFCMFilterView {
                 view.addTarget(self, action: #selector(tipBtnClicked), for: .touchUpInside)
             }
         }()
-        private func customLayoutOfTitleView() {
+        private func customUIOfTitleView() {
             addSubview(indicatorView)
             addSubview(titleLabel)
             addSubview(tipBtn)

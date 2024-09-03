@@ -24,7 +24,7 @@ class SFEntranceVC: SFScrollViewController {
     override func viewDidLoad() {
         super.dir = .vertical
         super.viewDidLoad()
-        customLayoutOfEntranceVC()
+        customUI()
     }
     
     // MARK: ui
@@ -79,7 +79,7 @@ class SFEntranceVC: SFScrollViewController {
             }
         }
     }()
-    private func customLayoutOfEntranceVC() {
+    private func customUI() {
         contentView.addSubview(logoImgView)
         contentView.addSubview(nameLabel)
         contentView.addSubview(slogenLabel)

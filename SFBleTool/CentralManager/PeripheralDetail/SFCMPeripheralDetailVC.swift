@@ -53,7 +53,7 @@ class SFCMPeripheralDetailVC: SFViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "AiDEX X-TEST000001"
-        customLayoutOfDetailVC()
+        customUI()
     }
     
     // MARK: ui
@@ -75,7 +75,7 @@ class SFCMPeripheralDetailVC: SFViewController {
             }
         }
     }()
-    private func customLayoutOfDetailVC() {
+    private func customUI() {
         view.addSubview(advVc.view)
         view.addSubview(serviceVc.view)
         view.addSubview(logVc.view)

@@ -24,7 +24,7 @@ class SFCMPeripheralDetailTitleView: SFView {
     // MARK: life cycle
     override init(frame: CGRect) {
         super.init(frame: frame)
-        customLayoutOfTitleView()
+        customUI()
     }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -44,7 +44,7 @@ class SFCMPeripheralDetailTitleView: SFView {
             view.textColor = R.color.title()
         }
     }()
-    private func customLayoutOfTitleView() {
+    private func customUI() {
         addSubview(indicatorView)
         addSubview(titleLabel)
         indicatorView.snp.makeConstraints { make in

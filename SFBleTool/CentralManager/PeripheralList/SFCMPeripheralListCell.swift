@@ -35,7 +35,7 @@ class SFCMPeripheralListCell: SFTableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         backgroundColor = R.color.content()
         contentView.backgroundColor = R.color.content()
-        customLayoutOfPeripheralCell()
+        customUI()
         separatorInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
     }
     required init?(coder: NSCoder) {
@@ -60,7 +60,7 @@ class SFCMPeripheralListCell: SFTableViewCell {
             view.textColor = R.color.subtitle()
         }
     }()
-    private func customLayoutOfPeripheralCell() {
+    private func customUI() {
         contentView.addSubview(rssiView)
         contentView.addSubview(nameLabel)
         contentView.addSubview(uuidLabel)

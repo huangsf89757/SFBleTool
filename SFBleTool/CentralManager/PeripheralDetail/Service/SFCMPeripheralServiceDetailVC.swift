@@ -27,7 +27,7 @@ class SFCMPeripheralServiceDetailVC: SFViewController {
     // MARK: life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        customLayoutOfServiceDetailVC()
+        customUI()
     }
     
     // MARK: ui
@@ -41,7 +41,7 @@ class SFCMPeripheralServiceDetailVC: SFViewController {
             view.tableView.backgroundColor = .clear
         }
     }()
-    private func customLayoutOfServiceDetailVC() {
+    private func customUI() {
         view.addSubview(servicesView)
         servicesView.snp.makeConstraints { make in
             make.edges.equalToSuperview()

@@ -34,7 +34,7 @@ class SFCMPeripheralAdvItemView: SFView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = .clear
-        customLayoutOfAdvItemView()
+        customUI()
     }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -82,7 +82,7 @@ class SFCMPeripheralAdvItemView: SFView {
             view.textColor = R.color.title()
         }
     }()
-    private func customLayoutOfAdvItemView() {
+    private func customUI() {
         addSubview(iconImgView)
         addSubview(titleLabel)
         addSubview(subtitleLabel)

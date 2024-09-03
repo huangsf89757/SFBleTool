@@ -72,7 +72,7 @@ class SFCMPeripheralAdvDetailVC: SFScrollViewController {
     // MARK: life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        customLayoutOfAdvDetailVC()
+        customUI()
         scrollView.delegate = self
     }
     
@@ -82,7 +82,7 @@ class SFCMPeripheralAdvDetailVC: SFScrollViewController {
             view.titleLabel.text = R.string.localizable.central_bar_adv()
         }
     }()
-    private func customLayoutOfAdvDetailVC() {
+    private func customUI() {
         contentView.addSubview(titleView)
         titleView.snp.makeConstraints { make in
             make.top.equalToSuperview()

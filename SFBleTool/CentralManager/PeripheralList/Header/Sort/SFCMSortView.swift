@@ -37,7 +37,7 @@ class SFCMSortView: SFView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = R.color.background()
-        customLayoutOfSortView()
+        customUI()
     }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -73,7 +73,7 @@ class SFCMSortView: SFView {
             view.backgroundColor = R.color.divider()
         }
     }()
-    private func customLayoutOfSortView() {
+    private func customUI() {
         addSubview(nameBtn)
         addSubview(separatorView)
         addSubview(rssiBtn)

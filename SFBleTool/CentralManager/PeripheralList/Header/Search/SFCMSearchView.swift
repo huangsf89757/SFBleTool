@@ -32,7 +32,7 @@ class SFCMSearchView: SFView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = R.color.background()
-        customLayoutOfSearchView()
+        customUI()
     }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -58,7 +58,7 @@ class SFCMSearchView: SFView {
             view.placeholder = R.string.localizable.central_search_ph()
         }
     }()
-    private func customLayoutOfSearchView() {
+    private func customUI() {
         addSubview(searchImgView)
         addSubview(textField)
         

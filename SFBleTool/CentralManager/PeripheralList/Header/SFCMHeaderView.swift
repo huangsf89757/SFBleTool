@@ -37,7 +37,7 @@ class SFCMHeaderView: SFView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = R.color.background()
-        customLayoutOfHeaderView()
+        customUI()
     }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -64,7 +64,7 @@ class SFCMHeaderView: SFView {
             view.backgroundColor = R.color.divider()
         }
     }()
-    private func customLayoutOfHeaderView() {
+    private func customUI() {
         addSubview(searchView)
         addSubview(filterBtn)
         addSubview(sortView)
