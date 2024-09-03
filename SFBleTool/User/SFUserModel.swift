@@ -15,7 +15,7 @@ enum Gender {
 }
 
 // MARK: - SFUserModel
-class SFUserModel {    
+class SFUserModel {
     // MARK: var
     // - 账号信息
     /// 账号id
