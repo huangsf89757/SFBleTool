@@ -633,7 +633,7 @@ struct _R {
       }
     }
 
-    /// This `_R.image.com` struct is generated, and contains static references to 5 coms, and 3 namespaces.
+    /// This `_R.image.com` struct is generated, and contains static references to 6 coms, and 3 namespaces.
     struct com {
       let bundle: Foundation.Bundle
 
@@ -651,6 +651,9 @@ struct _R {
 
       /// Image `com/tip`.
       var tip: RswiftResources.ImageResource { .init(name: "com/tip", path: ["com"], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+      /// Image `com/user`.
+      var user: RswiftResources.ImageResource { .init(name: "com/user", path: ["com"], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
       var rssi: rssi { .init(bundle: bundle) }
       var select: select { .init(bundle: bundle) }
       var sort: sort { .init(bundle: bundle) }

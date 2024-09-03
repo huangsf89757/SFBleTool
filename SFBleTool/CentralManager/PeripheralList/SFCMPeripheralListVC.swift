@@ -16,6 +16,8 @@ import SFUI
 // Server
 import SFLogger
 import SFBluetooth
+// Third
+import SideMenu
 
 
 // MARK: - SFCMPeripheralListVC
@@ -36,8 +38,7 @@ class SFCMPeripheralListVC: SFManagerVC {
     // MARK: life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = R.string.localizable.entrance_opt_central_title()
-        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: settingBtn)
+        configNav()
         customLayoutOfCentralManagerVC()
         configCentralManager()
         headerView.model = headerModel
@@ -49,6 +50,12 @@ class SFCMPeripheralListVC: SFManagerVC {
     
     
     // MARK: ui
+    private lazy var userBtn: SFButton = {
+        return SFButton().then { view in
+            view.setImage(R.image.com.user(), for: .normal)
+            view.addTarget(self, action: #selector(userBtnClicked), for: .touchUpInside)
+        }
+    }()
     private lazy var settingBtn: SFButton = {
         return SFButton().then { view in
             view.setImage(R.image.com.setting(), for: .normal)
@@ -117,6 +124,51 @@ class SFCMPeripheralListVC: SFManagerVC {
     }
 }
 
+// MARK: - func
+extension SFCMPeripheralListVC {
+    private func configNav() {
+        navigationItem.title = R.string.localizable.entrance_opt_central_title()
+        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: userBtn)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: settingBtn)
+        SideMenuManager.default.addPanGestureToPresent(toView: self.navigationController!.navigationBar)
+        SideMenuManager.default.addScreenEdgePanGesturesToPresent(toView: self.navigationController!.view)
+    }
+}
+
+// MARK: - action
+extension SFCMPeripheralListVC {
+    /// 点击用户
+    @objc private func userBtnClicked() {
+        let vc = SFUserCenterVC()
+        let nav = SideMenuNavigationController(rootViewController: vc)
+        nav.leftSide = true
+        nav.menuWidth = SFApp.screenWidthPortrait() * 0.8
+        present(nav, animated: true, completion: nil)
+    }
+    
+    /// 点击设置
+    @objc private func settingBtnClicked() {
+        
+    }
+    
+    /// 点击扫描
+    @objc private func scanBtnClicked() {
+        if scanBtn.isSelected {
+            centralManager.stopScan()
+        } else {
+            centralManager.scanForPeripherals(services: headerModel.filter.uuids, options: nil)
+        }
+    }
+    
+    private func updateScanBtn() {
+        if scanBtn.isSelected {
+            scanBtn.imageView?.layer.sf.resumeAnimation()
+        } else {
+            scanBtn.imageView?.layer.sf.pauseAnimation()
+        }
+    }
+}
+
 
 // MARK: - UITableViewDelegate, UITableViewDataSource
 extension SFCMPeripheralListVC: UITableViewDelegate, UITableViewDataSource {
@@ -170,32 +222,6 @@ extension SFCMPeripheralListVC {
         }
         UIView.animate(withDuration: 0.24) {
             self.view.layoutIfNeeded()
-        }
-    }
-}
-
-
-// MARK: - action
-extension SFCMPeripheralListVC {
-    /// 点击设置
-    @objc private func settingBtnClicked() {
-        
-    }
-    
-    /// 点击扫描
-    @objc private func scanBtnClicked() {
-        if scanBtn.isSelected {
-            centralManager.stopScan()
-        } else {
-            centralManager.scanForPeripherals(services: headerModel.filter.uuids, options: nil)
-        }
-    }
-    
-    private func updateScanBtn() {
-        if scanBtn.isSelected {
-            scanBtn.imageView?.layer.sf.resumeAnimation()
-        } else {
-            scanBtn.imageView?.layer.sf.pauseAnimation()
         }
     }
 }

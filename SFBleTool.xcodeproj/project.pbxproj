@@ -45,6 +45,15 @@
 		DDE09DAD2C7470FB00E456B7 /* SFCMFilterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE09DAC2C7470FB00E456B7 /* SFCMFilterModel.swift */; };
 		DDE09DB02C7473AA00E456B7 /* SFCMSortModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE09DAF2C7473AA00E456B7 /* SFCMSortModel.swift */; };
 		DDE09DB32C7473E400E456B7 /* SFCMSearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE09DB22C7473E400E456B7 /* SFCMSearchModel.swift */; };
+		DDF08BF32C85BB1C00FB4B48 /* SFLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF08BF22C85BB1C00FB4B48 /* SFLoginVC.swift */; };
+		DDF08BF62C85BB5D00FB4B48 /* SFUserInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF08BF52C85BB5D00FB4B48 /* SFUserInfoVC.swift */; };
+		DDF08BF82C85BB8500FB4B48 /* SFSecurityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF08BF72C85BB8500FB4B48 /* SFSecurityVC.swift */; };
+		DDF08BFA2C85BB9400FB4B48 /* SFUserCenterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF08BF92C85BB9400FB4B48 /* SFUserCenterVC.swift */; };
+		DDF08BFF2C85BC2E00FB4B48 /* SFUserCenterItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF08BFE2C85BC2E00FB4B48 /* SFUserCenterItemModel.swift */; };
+		DDF08C012C85BC4300FB4B48 /* SFUserCenterItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF08C002C85BC4300FB4B48 /* SFUserCenterItemCell.swift */; };
+		DDF08C032C85BC5900FB4B48 /* SFUserCenterHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF08C022C85BC5900FB4B48 /* SFUserCenterHeaderView.swift */; };
+		DDF08C052C85BC6B00FB4B48 /* SFUserCenterHeaderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF08C042C85BC6B00FB4B48 /* SFUserCenterHeaderModel.swift */; };
+		DDF08C072C85BCBA00FB4B48 /* SFPwdFindbackVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF08C062C85BCBA00FB4B48 /* SFPwdFindbackVC.swift */; };
 		DDFA63E72C6339B8002E93F3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDA648A22C619F5100F01858 /* Main.storyboard */; };
 		DDFA63EA2C6339BE002E93F3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDA648A72C619F5200F01858 /* LaunchScreen.storyboard */; };
 		DDFA63F02C633BA2002E93F3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DDFA63EE2C633BA2002E93F3 /* Localizable.strings */; };
@@ -117,6 +126,15 @@
 		DDE09DAC2C7470FB00E456B7 /* SFCMFilterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFCMFilterModel.swift; sourceTree = "<group>"; };
 		DDE09DAF2C7473AA00E456B7 /* SFCMSortModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFCMSortModel.swift; sourceTree = "<group>"; };
 		DDE09DB22C7473E400E456B7 /* SFCMSearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFCMSearchModel.swift; sourceTree = "<group>"; };
+		DDF08BF22C85BB1C00FB4B48 /* SFLoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFLoginVC.swift; sourceTree = "<group>"; };
+		DDF08BF52C85BB5D00FB4B48 /* SFUserInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFUserInfoVC.swift; sourceTree = "<group>"; };
+		DDF08BF72C85BB8500FB4B48 /* SFSecurityVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSecurityVC.swift; sourceTree = "<group>"; };
+		DDF08BF92C85BB9400FB4B48 /* SFUserCenterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFUserCenterVC.swift; sourceTree = "<group>"; };
+		DDF08BFE2C85BC2E00FB4B48 /* SFUserCenterItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFUserCenterItemModel.swift; sourceTree = "<group>"; };
+		DDF08C002C85BC4300FB4B48 /* SFUserCenterItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFUserCenterItemCell.swift; sourceTree = "<group>"; };
+		DDF08C022C85BC5900FB4B48 /* SFUserCenterHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFUserCenterHeaderView.swift; sourceTree = "<group>"; };
+		DDF08C042C85BC6B00FB4B48 /* SFUserCenterHeaderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFUserCenterHeaderModel.swift; sourceTree = "<group>"; };
+		DDF08C062C85BCBA00FB4B48 /* SFPwdFindbackVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFPwdFindbackVC.swift; sourceTree = "<group>"; };
 		DDFA63E32C633912002E93F3 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		DDFA63E42C633912002E93F3 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		DDFA63E62C6339B4002E93F3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
@@ -229,6 +247,7 @@
 				51A613A72C762075005990FC /* OptionConfig */,
 				DDA648D42C61A85100F01858 /* Entrance */,
 				DDA648D22C61A51E00F01858 /* SFManagerVC.swift */,
+				DDF08BEE2C85BACA00FB4B48 /* User */,
 				DDFA63F42C636325002E93F3 /* CentralManager */,
 				DDFA63F52C63632D002E93F3 /* PeripheralManager */,
 				DDA648A22C619F5100F01858 /* Main.storyboard */,
@@ -352,6 +371,62 @@
 				DDE09DB22C7473E400E456B7 /* SFCMSearchModel.swift */,
 			);
 			path = Search;
+			sourceTree = "<group>";
+		};
+		DDF08BEE2C85BACA00FB4B48 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				DDF08BF12C85BAE300FB4B48 /* Login */,
+				DDF08BF02C85BADB00FB4B48 /* UserCenter */,
+				DDF08BEF2C85BAD200FB4B48 /* UserInfo */,
+				DDF08BF42C85BB2B00FB4B48 /* Security */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		DDF08BEF2C85BAD200FB4B48 /* UserInfo */ = {
+			isa = PBXGroup;
+			children = (
+				DDF08BF52C85BB5D00FB4B48 /* SFUserInfoVC.swift */,
+			);
+			path = UserInfo;
+			sourceTree = "<group>";
+		};
+		DDF08BF02C85BADB00FB4B48 /* UserCenter */ = {
+			isa = PBXGroup;
+			children = (
+				DDF08BF92C85BB9400FB4B48 /* SFUserCenterVC.swift */,
+				DDF08BFE2C85BC2E00FB4B48 /* SFUserCenterItemModel.swift */,
+				DDF08C002C85BC4300FB4B48 /* SFUserCenterItemCell.swift */,
+				DDF08BFB2C85BBF700FB4B48 /* Header */,
+			);
+			path = UserCenter;
+			sourceTree = "<group>";
+		};
+		DDF08BF12C85BAE300FB4B48 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				DDF08BF22C85BB1C00FB4B48 /* SFLoginVC.swift */,
+				DDF08C062C85BCBA00FB4B48 /* SFPwdFindbackVC.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		DDF08BF42C85BB2B00FB4B48 /* Security */ = {
+			isa = PBXGroup;
+			children = (
+				DDF08BF72C85BB8500FB4B48 /* SFSecurityVC.swift */,
+			);
+			path = Security;
+			sourceTree = "<group>";
+		};
+		DDF08BFB2C85BBF700FB4B48 /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				DDF08C022C85BC5900FB4B48 /* SFUserCenterHeaderView.swift */,
+				DDF08C042C85BC6B00FB4B48 /* SFUserCenterHeaderModel.swift */,
+			);
+			path = Header;
 			sourceTree = "<group>";
 		};
 		DDFA63F42C636325002E93F3 /* CentralManager */ = {
@@ -594,14 +669,20 @@
 				DDA648DF2C61FDF200F01858 /* R.generated.swift in Sources */,
 				DDB519042C6C751A00A049DE /* SFCMPeripheralDetailBarView.swift in Sources */,
 				DDB519022C6C72E200A049DE /* SFCMPeripheralLogDetailVC.swift in Sources */,
+				DDF08C072C85BCBA00FB4B48 /* SFPwdFindbackVC.swift in Sources */,
+				DDF08C012C85BC4300FB4B48 /* SFUserCenterItemCell.swift in Sources */,
 				51A613AB2C76216C005990FC /* Todo.swift in Sources */,
 				51A6139F2C74C25A005990FC /* SFCMPeripheralListModel.swift in Sources */,
+				DDF08BF32C85BB1C00FB4B48 /* SFLoginVC.swift in Sources */,
 				5175ADAE2C64F4AF00C9260A /* SFCMPeripheralListCell.swift in Sources */,
+				DDF08BFF2C85BC2E00FB4B48 /* SFUserCenterItemModel.swift in Sources */,
+				DDF08C032C85BC5900FB4B48 /* SFUserCenterHeaderView.swift in Sources */,
 				DDFA63F72C636688002E93F3 /* SFCMHeaderView.swift in Sources */,
 				DDB518F92C6C526300A049DE /* SFCMPeripheralDetailVC.swift in Sources */,
 				DDE09DB02C7473AA00E456B7 /* SFCMSortModel.swift in Sources */,
 				DDA648D32C61A51E00F01858 /* SFManagerVC.swift in Sources */,
 				51A613A62C74DABD005990FC /* SFCMConnectModel.swift in Sources */,
+				DDF08BF62C85BB5D00FB4B48 /* SFUserInfoVC.swift in Sources */,
 				51A613A12C74C75F005990FC /* SFCMHeaderModel.swift in Sources */,
 				DDA6489F2C619F5100F01858 /* SceneDelegate.swift in Sources */,
 				51A613B22C762395005990FC /* SFOptionConfigModel.swift in Sources */,
@@ -609,10 +690,13 @@
 				DDFA63FB2C636804002E93F3 /* SFCMSortView.swift in Sources */,
 				DDB519002C6C72C400A049DE /* SFCMPeripheralServiceDetailVC.swift in Sources */,
 				DDAC3D642C6DF66300AA87B4 /* SFCMPeripheralAdvItemView.swift in Sources */,
+				DDF08C052C85BC6B00FB4B48 /* SFUserCenterHeaderModel.swift in Sources */,
 				DDA648CD2C61A1E300F01858 /* SFEntranceVC.swift in Sources */,
+				DDF08BFA2C85BB9400FB4B48 /* SFUserCenterVC.swift in Sources */,
 				51A613B42C76239F005990FC /* SFOptionConfigCell.swift in Sources */,
 				51A613A42C74DAAA005990FC /* SFCMConnectView.swift in Sources */,
 				DDB518E92C6B433900A049DE /* SFCMSettingVC.swift in Sources */,
+				DDF08BF82C85BB8500FB4B48 /* SFSecurityVC.swift in Sources */,
 				DDA648D62C61A86D00F01858 /* SFEntranceView.swift in Sources */,
 				51A613A92C7620AB005990FC /* SFOptionConfigVC.swift in Sources */,
 			);
