@@ -41,7 +41,7 @@
 		DDB518FE2C6C728300A049DE /* SFCMPeripheralAdvDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB518FD2C6C728300A049DE /* SFCMPeripheralAdvDetailVC.swift */; };
 		DDB519002C6C72C400A049DE /* SFCMPeripheralServiceDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB518FF2C6C72C400A049DE /* SFCMPeripheralServiceDetailVC.swift */; };
 		DDB519022C6C72E200A049DE /* SFCMPeripheralLogDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB519012C6C72E200A049DE /* SFCMPeripheralLogDetailVC.swift */; };
-		DDB519042C6C751A00A049DE /* SFCMPeripheralDetailBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB519032C6C751A00A049DE /* SFCMPeripheralDetailBarView.swift */; };
+		DDB519042C6C751A00A049DE /* SFCMPeripheralDetailSegmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB519032C6C751A00A049DE /* SFCMPeripheralDetailSegmentView.swift */; };
 		DDE09DAD2C7470FB00E456B7 /* SFCMFilterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE09DAC2C7470FB00E456B7 /* SFCMFilterModel.swift */; };
 		DDE09DB02C7473AA00E456B7 /* SFCMSortModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE09DAF2C7473AA00E456B7 /* SFCMSortModel.swift */; };
 		DDE09DB32C7473E400E456B7 /* SFCMSearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE09DB22C7473E400E456B7 /* SFCMSearchModel.swift */; };
@@ -126,7 +126,7 @@
 		DDB518FD2C6C728300A049DE /* SFCMPeripheralAdvDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFCMPeripheralAdvDetailVC.swift; sourceTree = "<group>"; };
 		DDB518FF2C6C72C400A049DE /* SFCMPeripheralServiceDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFCMPeripheralServiceDetailVC.swift; sourceTree = "<group>"; };
 		DDB519012C6C72E200A049DE /* SFCMPeripheralLogDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFCMPeripheralLogDetailVC.swift; sourceTree = "<group>"; };
-		DDB519032C6C751A00A049DE /* SFCMPeripheralDetailBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFCMPeripheralDetailBarView.swift; sourceTree = "<group>"; };
+		DDB519032C6C751A00A049DE /* SFCMPeripheralDetailSegmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFCMPeripheralDetailSegmentView.swift; sourceTree = "<group>"; };
 		DDE09DAC2C7470FB00E456B7 /* SFCMFilterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFCMFilterModel.swift; sourceTree = "<group>"; };
 		DDE09DAF2C7473AA00E456B7 /* SFCMSortModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFCMSortModel.swift; sourceTree = "<group>"; };
 		DDE09DB22C7473E400E456B7 /* SFCMSearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFCMSearchModel.swift; sourceTree = "<group>"; };
@@ -318,7 +318,7 @@
 			isa = PBXGroup;
 			children = (
 				DDB518F82C6C526300A049DE /* SFCMPeripheralDetailVC.swift */,
-				DDB519032C6C751A00A049DE /* SFCMPeripheralDetailBarView.swift */,
+				DDB519032C6C751A00A049DE /* SFCMPeripheralDetailSegmentView.swift */,
 				DDAC3D702C6F47F700AA87B4 /* SFCMPeripheralDetailTitleView.swift */,
 				DDB518FA2C6C721E00A049DE /* Adv */,
 				DDB518FB2C6C722A00A049DE /* Service */,
@@ -688,7 +688,7 @@
 				DDA648CF2C61A3DE00F01858 /* SFCMPeripheralListVC.swift in Sources */,
 				DDAC3D662C6DFCD400AA87B4 /* SFCMPeripheralAdvItemModel.swift in Sources */,
 				DDA648DF2C61FDF200F01858 /* R.generated.swift in Sources */,
-				DDB519042C6C751A00A049DE /* SFCMPeripheralDetailBarView.swift in Sources */,
+				DDB519042C6C751A00A049DE /* SFCMPeripheralDetailSegmentView.swift in Sources */,
 				DDB519022C6C72E200A049DE /* SFCMPeripheralLogDetailVC.swift in Sources */,
 				DDF08C072C85BCBA00FB4B48 /* SFPwdFindbackVC.swift in Sources */,
 				DDF08C012C85BC4300FB4B48 /* SFUserCenterItemCell.swift in Sources */,

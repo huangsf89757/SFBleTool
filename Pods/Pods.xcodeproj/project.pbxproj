@@ -265,6 +265,7 @@
 		DCC911FBE1FDAB9877FD8889990A3412 /* ConstraintConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62CBD8ADA9878350E9A1D7227E7B7E10 /* ConstraintConfig.swift */; };
 		DD4688ACF087D5CFC919CFC42BF82F8F /* SFBadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC9C36F6F7AABE9F1E15264DC7CFB5C /* SFBadgeView.swift */; };
 		DD5BCD341E2C69A2118637E694FC75DA /* WARangeSlider-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F0350DB70768D99D7D0034D015CB4379 /* WARangeSlider-dummy.m */; };
+		DD71D5BF2C899D4500AEE090 /* SFTriangleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD71D5BE2C899D4500AEE090 /* SFTriangleView.swift */; };
 		DDC0F4786752FBF4B07E3A4D4E273DA2 /* UICollectionView+Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DE2BA068539336DC13E27697A3A834 /* UICollectionView+Reusable.swift */; };
 		DDF08C182C870A5900FB4B48 /* SFSegmentIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF08C172C870A5900FB4B48 /* SFSegmentIndicatorView.swift */; };
 		DDF08C1A2C870F0D00FB4B48 /* SFSegmentIndicatorLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF08C192C870F0D00FB4B48 /* SFSegmentIndicatorLineView.swift */; };
@@ -858,6 +859,7 @@
 		DC36C111789F5C2F598125540271C827 /* SFScrollView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SFScrollView.swift; sourceTree = "<group>"; };
 		DC776980743C8F872943D10EC6BE580F /* IQNSArray+Sort.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQNSArray+Sort.swift"; path = "IQKeyboardManagerSwift/Categories/IQNSArray+Sort.swift"; sourceTree = "<group>"; };
 		DD3EEB4BB04274801FDF2B799BBC2D50 /* SFProgressView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SFProgressView.swift; sourceTree = "<group>"; };
+		DD71D5BE2C899D4500AEE090 /* SFTriangleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFTriangleView.swift; sourceTree = "<group>"; };
 		DD8C31A5C7D4067845948B5226D32AC3 /* IQUITextFieldView+Additions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQUITextFieldView+Additions.swift"; path = "IQKeyboardManagerSwift/Categories/IQUITextFieldView+Additions.swift"; sourceTree = "<group>"; };
 		DDC21FCC1AEF73B7E52E07FFAC7D550A /* SFCatlogView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SFCatlogView.swift; sourceTree = "<group>"; };
 		DDF08C172C870A5900FB4B48 /* SFSegmentIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSegmentIndicatorView.swift; sourceTree = "<group>"; };
@@ -1183,6 +1185,7 @@
 			isa = PBXGroup;
 			children = (
 				1BC9C36F6F7AABE9F1E15264DC7CFB5C /* SFBadgeView.swift */,
+				DD71D5BE2C899D4500AEE090 /* SFTriangleView.swift */,
 				DDF08C162C870A3B00FB4B48 /* SFSegment */,
 				663CE45B96666D511661CAEAAE36D098 /* SFBreathLightView.swift */,
 				16B80D1EAE603C877B1895659D388953 /* SFFloatingView.swift */,
@@ -3024,6 +3027,7 @@
 				2B56457C0E6B5CDAE8E064C3E4FC82A0 /* SFToastView.swift in Sources */,
 				AF2826159ADE424D706BCF7C74D50E33 /* SFUI-dummy.m in Sources */,
 				9387512B250DEA9E1FB565CEA4EE1BD4 /* SFView.swift in Sources */,
+				DD71D5BF2C899D4500AEE090 /* SFTriangleView.swift in Sources */,
 				7E5B1EE2D482491519C40F6D3D8E294E /* SFViewController.swift in Sources */,
 				AFC9C3AD957D35E39A5DE640790507EC /* SFWaveProgressView.swift in Sources */,
 				9D1DC272F4B78373568C31271D0ACC4B /* SFWebView.swift in Sources */,
