@@ -71,7 +71,7 @@ class SFCMPeripheralAdvItemView: SFView {
     }()
     private lazy var valueView: SFView = {
         return SFView().then { view in
-            view.backgroundColor = R.color.content()
+            view.backgroundColor = R.color.background()
             view.layer.cornerRadius = 10
             view.layer.masksToBounds = true
         }

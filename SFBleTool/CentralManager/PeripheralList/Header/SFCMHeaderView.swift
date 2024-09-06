@@ -19,7 +19,11 @@ import SFLogger
 // MARK: - SFCMHeaderView
 class SFCMHeaderView: SFView {
     // MARK: block
-
+    var searchDidChangedBlock: ((SFCMSearchModel?)->())? {
+        didSet {
+            searchView.searchDidChangedBlock = searchDidChangedBlock
+        }
+    }
     
     // MARK: var
     

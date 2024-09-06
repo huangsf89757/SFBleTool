@@ -24,7 +24,7 @@ class SFCMPeripheralListCell: SFTableViewCell {
     var model: SFCMPeripheralListModel? {
         didSet {
             guard let model = model else { return }
-            nameLabel.text = model.name ?? "N/A"
+            nameLabel.text = model.name ?? SFCMPeripheralListModel.defaultName
             uuidLabel.text = model.uuid?.uuidString
             rssiView.rssi = model.rssi // FIXME
         }

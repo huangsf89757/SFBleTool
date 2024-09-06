@@ -18,8 +18,8 @@ import SFLogger
 
 // MARK: - SFCMSearchView
 class SFCMSearchView: SFView {
-    // MARK: var
-    
+    // MARK: block
+    var searchDidChangedBlock: ((SFCMSearchModel?)->())?
     
     // MARK: data
     var model: SFCMSearchModel? {
@@ -56,6 +56,8 @@ class SFCMSearchView: SFView {
             view.textColor = R.color.title()
             view.placeholderColor = R.color.placeholder()
             view.placeholder = R.string.localizable.central_search_ph()
+            view.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+            view.delegate = self
         }
     }()
     private func customUI() {
@@ -74,5 +76,25 @@ class SFCMSearchView: SFView {
             make.trailing.equalToSuperview().offset(-10)
             make.leading.equalTo(searchImgView.snp.trailing).offset(8)
         }
+    }
+}
+
+// MARK: - action
+extension SFCMSearchView {
+    @objc private func textFieldDidChange(_ textField: UITextField) {
+        model?.keyword = textField.text
+        searchDidChangedBlock?(model)
+    }
+}
+
+// MARK: - UITextFieldDelegate
+extension SFCMSearchView: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        return true
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }

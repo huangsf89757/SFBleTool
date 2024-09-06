@@ -18,6 +18,7 @@
 		51A613B22C762395005990FC /* SFOptionConfigModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A613B12C762395005990FC /* SFOptionConfigModel.swift */; };
 		51A613B42C76239F005990FC /* SFOptionConfigCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A613B32C76239F005990FC /* SFOptionConfigCell.swift */; };
 		8D2468F1EDAD1E4AB2CFD4EA /* Pods_SFBleTool.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4144B822BDD27C9242CA25FB /* Pods_SFBleTool.framework */; };
+		DD78D8322C8ACBD700B629AD /* SFCMPeripheralListData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD78D8312C8ACBD700B629AD /* SFCMPeripheralListData.swift */; };
 		DDA6489D2C619F5100F01858 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA6489C2C619F5100F01858 /* AppDelegate.swift */; };
 		DDA6489F2C619F5100F01858 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA6489E2C619F5100F01858 /* SceneDelegate.swift */; };
 		DDA648A42C619F5100F01858 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = DDA648A32C619F5100F01858 /* Base */; };
@@ -99,6 +100,7 @@
 		51A613B12C762395005990FC /* SFOptionConfigModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFOptionConfigModel.swift; sourceTree = "<group>"; };
 		51A613B32C76239F005990FC /* SFOptionConfigCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFOptionConfigCell.swift; sourceTree = "<group>"; };
 		947209E9BB09B6D52FE5980D /* Pods-SFBleTool.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SFBleTool.release.xcconfig"; path = "Target Support Files/Pods-SFBleTool/Pods-SFBleTool.release.xcconfig"; sourceTree = "<group>"; };
+		DD78D8312C8ACBD700B629AD /* SFCMPeripheralListData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFCMPeripheralListData.swift; sourceTree = "<group>"; };
 		DDA648992C619F5100F01858 /* SFBleTool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SFBleTool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDA6489C2C619F5100F01858 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DDA6489E2C619F5100F01858 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -301,6 +303,7 @@
 				5175ADAD2C64F4AF00C9260A /* SFCMPeripheralListCell.swift */,
 				5175ADAF2C64FA1D00C9260A /* SFCMRssiView.swift */,
 				DDA648CE2C61A3DE00F01858 /* SFCMPeripheralListVC.swift */,
+				DD78D8312C8ACBD700B629AD /* SFCMPeripheralListData.swift */,
 				51A6139E2C74C25A005990FC /* SFCMPeripheralListModel.swift */,
 			);
 			path = PeripheralList;
@@ -710,6 +713,7 @@
 				51A613B22C762395005990FC /* SFOptionConfigModel.swift in Sources */,
 				DDFA63F32C635306002E93F3 /* SFUserDefaults.swift in Sources */,
 				DDFA63FB2C636804002E93F3 /* SFCMSortView.swift in Sources */,
+				DD78D8322C8ACBD700B629AD /* SFCMPeripheralListData.swift in Sources */,
 				DDB519002C6C72C400A049DE /* SFCMPeripheralServiceDetailVC.swift in Sources */,
 				DDAC3D642C6DF66300AA87B4 /* SFCMPeripheralAdvItemView.swift in Sources */,
 				DDF08C052C85BC6B00FB4B48 /* SFUserCenterHeaderModel.swift in Sources */,

@@ -31,7 +31,6 @@ class SFLoginVC: SFScrollViewController {
     private lazy var logoImgView: SFImageView = {
         return SFImageView().then { view in
             view.contentMode = .scaleAspectFit
-            view.sf.setCornerAndShadow(radius: 12, fillColor: R.color.white(), shadowColor: R.color.black(), shadowOpacity: 0.2, shadowOffset: .zero, shadowRadius: 10)
             view.backgroundColor = R.color.content()
             view.image = R.image.logo()
         }

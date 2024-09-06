@@ -22,7 +22,8 @@ import SideMenu
 
 // MARK: - SFCMPeripheralListVC
 class SFCMPeripheralListVC: SFManagerVC {
-    // MARK: var    
+    
+    // MARK: var
     private var centralManager: SFCentralManager!
     /// 顶部/底部 Bar 是否显示
     private var isBarShowing = true
@@ -33,7 +34,10 @@ class SFCMPeripheralListVC: SFManagerVC {
             headerView.model = headerModel
         }
     }
-    var listModels = [SFCMPeripheralListModel]()
+    /// 扫描到的设备
+    var discoveredModels = [SFCMPeripheralListModel]()
+    /// 显示的设备
+    var showModels = [SFCMPeripheralListModel]()
     
     // MARK: life cycle
     override func viewDidLoad() {
@@ -45,7 +49,7 @@ class SFCMPeripheralListVC: SFManagerVC {
     }
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-//        scanBtn.shadowLayer.frame = scanBtn.bounds
+        scanBtn.sf.applyCornerAndShadow()
     }
     
     
@@ -66,9 +70,7 @@ class SFCMPeripheralListVC: SFManagerVC {
     }()
     private lazy var scanBtn: SFButton = {
         return SFButton().then { view in
-            view.backgroundColor = R.color.background()
-            view.layer.cornerRadius = 10
-//            view.sf.setCornerAndShadow(radius: 10, fillColor: .red, shadowColor: .red, shadowOffset: CGSize(width: 0, height: 10), shadowOpacity: 0.5, shadowRadius: 5) // FIXME: 不知道为何不起作用
+            view.sf.setCornerAndShadow(radius: 10, fillColor: R.color.background(), shadowColor: R.color.black(), shadowOpacity: 0.3, shadowOffset: CGSize(width: 0, height: 5), shadowRadius: 5)
             view.style = .right(10)
             view.titleLabel?.font = .systemFont(ofSize: 17, weight: .medium)
             view.setImage(R.image.ble.scan.nor(), for: .normal)
@@ -94,7 +96,7 @@ class SFCMPeripheralListVC: SFManagerVC {
     private lazy var headerView: SFCMHeaderView = {
         return SFCMHeaderView()
     }()
-    private lazy var tableView: SFTableView = {
+    lazy var tableView: SFTableView = {
         return SFTableView(frame: .zero, style: .plain).then { view in
             view.delegate = self
             view.dataSource = self
@@ -132,8 +134,8 @@ extension SFCMPeripheralListVC {
         navigationItem.title = R.string.localizable.entrance_opt_central_title()
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: userBtn)
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: settingBtn)
-        SideMenuManager.default.addPanGestureToPresent(toView: self.navigationController!.navigationBar)
-        SideMenuManager.default.addScreenEdgePanGesturesToPresent(toView: self.navigationController!.view)
+//        SideMenuManager.default.addPanGestureToPresent(toView: self.navigationController!.navigationBar)
+//        SideMenuManager.default.addScreenEdgePanGesturesToPresent(toView: self.navigationController!.view)
     }
 }
 
@@ -175,11 +177,11 @@ extension SFCMPeripheralListVC {
 // MARK: - UITableViewDelegate, UITableViewDataSource
 extension SFCMPeripheralListVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return listModels.count
+        return showModels.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(for: indexPath, cellType: SFCMPeripheralListCell.self)
-        cell.model = listModels[indexPath.row]
+        cell.model = showModels[indexPath.row]
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -192,12 +194,16 @@ extension SFCMPeripheralListVC: UITableViewDelegate, UITableViewDataSource {
 // MARK: - UIScrollViewDelegate
 extension SFCMPeripheralListVC {
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-        if velocity.y < 0 {
-            // 向上滑动，显示
+        if showModels.count == 0 {
             showBar()
         } else {
-            // 向下滑动，隐藏
-            hideBar()
+            if velocity.y < 0 {
+                // 向上滑动，显示
+                showBar()
+            } else {
+                // 向下滑动，隐藏
+                hideBar()
+            }
         }
     }
     
@@ -296,11 +302,11 @@ extension SFCMPeripheralListVC {
     }
 
     private func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
-        let row = listModels.firstIndex { model in
+        let row = showModels.firstIndex { model in
             model.uuid == peripheral.identifier
         }
         if let row = row {
-            let model = listModels[row]
+            let model = showModels[row]
             model.name = peripheral.name
             model.uuid = peripheral.identifier
             model.peripheral = peripheral
@@ -315,7 +321,7 @@ extension SFCMPeripheralListVC {
             model.peripheral = peripheral
             model.rssi = RSSI.doubleValue
             model.advData = advertisementData
-            listModels.append(model)
+            showModels.append(model)
             tableView.reloadData()
             Log.debug("新增")
         }

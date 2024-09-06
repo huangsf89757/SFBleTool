@@ -10,6 +10,7 @@ import CoreBluetooth
 
 class SFCMPeripheralListModel {
     // MARK: var
+    static let defaultName = "N/A"
     var name: String?
     var uuid: UUID?
     var rssi: Double?
