@@ -173,7 +173,6 @@
 		91815CBAFE14A27FA5D7A99EF365BDEB /* SFDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = D280647AC32E0F2C73D91DE32FD4D57A /* SFDevice.swift */; };
 		92FD148CFD59A1E85532DE7C30F76EB7 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B1E0BDEA7912B723A3983E1C86AAA5 /* Filter.swift */; };
 		930B495B7A3197730A016E2339A4CBA7 /* IQKeyboardManagerSwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 414B82716748D8148FBE61C1B452281E /* IQKeyboardManagerSwift-dummy.m */; };
-		932963C287295ADD574BEAEC8BF04E59 /* SFShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EE84813653001F4E13E8785889E81C /* SFShadowView.swift */; };
 		936ADB22487927973556CA7CA7AB463E /* Then.swift in Sources */ = {isa = PBXBuildFile; fileRef = F622C15D74CBB3A51BF640AF81D3F96B /* Then.swift */; };
 		9387512B250DEA9E1FB565CEA4EE1BD4 /* SFView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D72FB07C885449428BA9A1D102295A /* SFView.swift */; };
 		94EFE958A356CA4630020B74BCE68365 /* AssetCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82E674397BA549C6F49C94D7840D2FE /* AssetCatalog.swift */; };
@@ -600,7 +599,6 @@
 		31D65762B5E210155AFB4ECED82CD972 /* SnapKitExtend.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SnapKitExtend.release.xcconfig; sourceTree = "<group>"; };
 		327F621FA5E0298BFB73ABD758E50012 /* Constants.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Source/Constants.swift; sourceTree = "<group>"; };
 		32E196B07900A6D1D3B6AB20C01AE207 /* SnapKitExtend-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SnapKitExtend-dummy.m"; sourceTree = "<group>"; };
-		32EE84813653001F4E13E8785889E81C /* SFShadowView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SFShadowView.swift; sourceTree = "<group>"; };
 		32F6DED9FD39E1B198CB7614D0C451CB /* WSTagsField-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "WSTagsField-umbrella.h"; sourceTree = "<group>"; };
 		32F827AA25A17591FCC16BF6AB4E14B2 /* Pods-SFBleTool-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SFBleTool-acknowledgements.plist"; sourceTree = "<group>"; };
 		348A0D864327DFFE28111363F8E61AE2 /* BackspaceDetectingTextField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BackspaceDetectingTextField.swift; path = Source/BackspaceDetectingTextField.swift; sourceTree = "<group>"; };
@@ -1195,7 +1193,6 @@
 				5E69E2FA5DED3784E6DE4AE649F3CEBC /* SFPinCodeView.swift */,
 				B7BC39CA389F76D3C410D909D5A52572 /* SFRangeSlider.swift */,
 				34925245FA3377B789634303AF733149 /* SFRulerView.swift */,
-				32EE84813653001F4E13E8785889E81C /* SFShadowView.swift */,
 				FDEEF01A0C58C780AFD8B1ABADB9DC60 /* Card */,
 				0E6F13A3518363FDE46D60865626ACF2 /* Catlog */,
 				F5525091EAC99015301CBD31890D699B /* Outline */,
@@ -3018,7 +3015,6 @@
 				23051DA1DD38F4883E2949F1F2A9A377 /* SFRulerView.swift in Sources */,
 				062391331CA7E46FEEFFEA0CCF0F5802 /* SFScrollView.swift in Sources */,
 				0F659F87A4268E199A401A0F46262E01 /* SFScrollViewController.swift in Sources */,
-				932963C287295ADD574BEAEC8BF04E59 /* SFShadowView.swift in Sources */,
 				A4A6A549A323A739FEFC9BEE1494F787 /* SFTableView.swift in Sources */,
 				8012DAC8492ACD64CC0DBF7608AD0C44 /* SFTableViewCell.swift in Sources */,
 				5DF34507696649C91DB5675BC1F6C9CE /* SFTableViewHeaderFooterView.swift in Sources */,

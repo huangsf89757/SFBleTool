@@ -41,8 +41,7 @@ class SFCMFilterView: SFPopView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = .clear
-        fillColor = R.color.background()
-        shadowOffset = CGSize(width: 0, height: 20)
+        self.sf.setCornerAndShadow(radius: 20, fillColor: SFColor.background, shadowColor: SFColor.black, shadowOpacity: 0.3, shadowOffset: CGSize(width: 0, height: 20), shadowRadius: 5)
         customUIOfFilterView()
     }
     required init?(coder: NSCoder) {
@@ -57,8 +56,8 @@ class SFCMFilterView: SFPopView {
             make.trailing.equalToSuperview()
         }
     }
-    override func customShapePath(rect: CGRect) -> UIBezierPath? {
-        return UIBezierPath(roundedRect: rect, byRoundingCorners: [.bottomLeft, .bottomRight], cornerRadii: CGSize(width: 20, height: 20))
+    override func draw(_ rect: CGRect) {
+        self.sf.applyCornerAndShadow()
     }
     override func show(in view: UIView? = nil, stay duration: TimeInterval? = nil, showAnimations: [CAAnimation] = [], dismissAnimations: [CAAnimation] = [], topLevel: Bool = true) {
         let animDuration: TimeInterval = 0.24
