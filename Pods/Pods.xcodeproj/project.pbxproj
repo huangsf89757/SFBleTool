@@ -266,6 +266,7 @@
 		DD4688ACF087D5CFC919CFC42BF82F8F /* SFBadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC9C36F6F7AABE9F1E15264DC7CFB5C /* SFBadgeView.swift */; };
 		DD5BCD341E2C69A2118637E694FC75DA /* WARangeSlider-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F0350DB70768D99D7D0034D015CB4379 /* WARangeSlider-dummy.m */; };
 		DD71D5BF2C899D4500AEE090 /* SFTriangleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD71D5BE2C899D4500AEE090 /* SFTriangleView.swift */; };
+		DD78D8302C8A8C6700B629AD /* SFSegmentIndicatorImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD78D82F2C8A8C6700B629AD /* SFSegmentIndicatorImageView.swift */; };
 		DDC0F4786752FBF4B07E3A4D4E273DA2 /* UICollectionView+Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DE2BA068539336DC13E27697A3A834 /* UICollectionView+Reusable.swift */; };
 		DDF08C182C870A5900FB4B48 /* SFSegmentIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF08C172C870A5900FB4B48 /* SFSegmentIndicatorView.swift */; };
 		DDF08C1A2C870F0D00FB4B48 /* SFSegmentIndicatorLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF08C192C870F0D00FB4B48 /* SFSegmentIndicatorLineView.swift */; };
@@ -860,6 +861,7 @@
 		DC776980743C8F872943D10EC6BE580F /* IQNSArray+Sort.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQNSArray+Sort.swift"; path = "IQKeyboardManagerSwift/Categories/IQNSArray+Sort.swift"; sourceTree = "<group>"; };
 		DD3EEB4BB04274801FDF2B799BBC2D50 /* SFProgressView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SFProgressView.swift; sourceTree = "<group>"; };
 		DD71D5BE2C899D4500AEE090 /* SFTriangleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFTriangleView.swift; sourceTree = "<group>"; };
+		DD78D82F2C8A8C6700B629AD /* SFSegmentIndicatorImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSegmentIndicatorImageView.swift; sourceTree = "<group>"; };
 		DD8C31A5C7D4067845948B5226D32AC3 /* IQUITextFieldView+Additions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQUITextFieldView+Additions.swift"; path = "IQKeyboardManagerSwift/Categories/IQUITextFieldView+Additions.swift"; sourceTree = "<group>"; };
 		DDC21FCC1AEF73B7E52E07FFAC7D550A /* SFCatlogView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SFCatlogView.swift; sourceTree = "<group>"; };
 		DDF08C172C870A5900FB4B48 /* SFSegmentIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSegmentIndicatorView.swift; sourceTree = "<group>"; };
@@ -1932,6 +1934,7 @@
 				DDF08C1B2C870F2600FB4B48 /* SFSegmentIndicatorDotView.swift */,
 				DDF08C1D2C870F3500FB4B48 /* SFSegmentIndicatorArrowView.swift */,
 				DDF08C1F2C870F4C00FB4B48 /* SFSegmentIndicatorSquareView.swift */,
+				DD78D82F2C8A8C6700B629AD /* SFSegmentIndicatorImageView.swift */,
 			);
 			path = SFSegment;
 			sourceTree = "<group>";
@@ -2961,6 +2964,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C6C80FD1F18D57E430D4D4DB62CC6110 /* SFAlert.swift in Sources */,
+				DD78D8302C8A8C6700B629AD /* SFSegmentIndicatorImageView.swift in Sources */,
 				1668FC70295823511620F92F6A4D1C48 /* SFAlertView.swift in Sources */,
 				DD4688ACF087D5CFC919CFC42BF82F8F /* SFBadgeView.swift in Sources */,
 				81B3072E3410B99EDAAA83D11D74544C /* SFBarProgressView.swift in Sources */,

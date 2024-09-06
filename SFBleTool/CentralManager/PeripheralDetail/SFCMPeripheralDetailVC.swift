@@ -59,20 +59,9 @@ class SFCMPeripheralDetailVC: SFViewController {
     // MARK: ui
     private lazy var segmentView: SFCMPeripheralDetailSegmentView = {
         return SFCMPeripheralDetailSegmentView().then { view in
-            view.indicatorView = SFSegmentIndicatorDotView()
+            view.indicatorView = SFSegmentIndicatorSquareView()
             view.didSelectedItemBlock = {
                 [weak self] segmentView, index in
-                
-                if index == 0 {
-                    segmentView.indicatorView = SFSegmentIndicatorLineView()
-                }
-                else if index == 1 {
-                    segmentView.indicatorView = SFSegmentIndicatorDotView()
-                }
-                else {
-                    segmentView.indicatorView = SFSegmentIndicatorArrowView()
-                }
-                
                 self?.advVc.view.isHidden = index != 0
                 self?.serviceVc.view.isHidden = index != 1
                 self?.logVc.view.isHidden = index != 2
