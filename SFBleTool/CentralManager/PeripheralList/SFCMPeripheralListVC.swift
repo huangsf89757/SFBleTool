@@ -94,7 +94,12 @@ class SFCMPeripheralListVC: SFManagerVC {
         }
     }()
     private lazy var headerView: SFCMHeaderView = {
-        return SFCMHeaderView()
+        return SFCMHeaderView().then { view in
+            view.searchDidChangedBlock = {
+                [weak self] searchModel in
+                self?.reloadList()
+            }
+        }
     }()
     lazy var tableView: SFTableView = {
         return SFTableView(frame: .zero, style: .plain).then { view in
@@ -321,8 +326,8 @@ extension SFCMPeripheralListVC {
             model.peripheral = peripheral
             model.rssi = RSSI.doubleValue
             model.advData = advertisementData
-            showModels.append(model)
-            tableView.reloadData()
+            discoveredModels.append(model)
+            reloadList()
             Log.debug("新增")
         }
     }

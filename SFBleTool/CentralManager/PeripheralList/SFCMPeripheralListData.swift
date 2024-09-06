@@ -21,15 +21,22 @@ import SideMenu
 
 extension SFCMPeripheralListVC {
     func reloadList() {
+        // 过滤
         showModels = discoveredModels.filter { model in
+            // search
             if let keyword = headerModel.search.keyword {
                 let name = model.name ?? SFCMPeripheralListModel.defaultName
-                if name.sf.like(keyword) {
+                if name.sf.like("%\(keyword)%") {
                     return true
                 }
             }
+            // filter
+            
+            
             return true
         }
+        // 排序
+        
         tableView.reloadData()
     }
 }
