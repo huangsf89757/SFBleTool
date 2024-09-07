@@ -28,6 +28,8 @@ extension SFCMPeripheralListVC {
                 let name = model.name ?? SFCMPeripheralListModel.defaultName
                 if name.sf.like("%\(keyword)%") {
                     return true
+                } else {
+                    return false
                 }
             }
             // filter

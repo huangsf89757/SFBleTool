@@ -706,15 +706,18 @@ struct _R {
         var sel: RswiftResources.ImageResource { .init(name: "com/select/sel", path: ["com", "select"], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
       }
 
-      /// This `_R.image.com.sort` struct is generated, and contains static references to 2 sorts.
+      /// This `_R.image.com.sort` struct is generated, and contains static references to 3 sorts.
       struct sort {
         let bundle: Foundation.Bundle
 
-        /// Image `com/sort/down`.
-        var down: RswiftResources.ImageResource { .init(name: "com/sort/down", path: ["com", "sort"], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+        /// Image `com/sort/asc`.
+        var asc: RswiftResources.ImageResource { .init(name: "com/sort/asc", path: ["com", "sort"], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
 
-        /// Image `com/sort/up`.
-        var up: RswiftResources.ImageResource { .init(name: "com/sort/up", path: ["com", "sort"], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+        /// Image `com/sort/des`.
+        var des: RswiftResources.ImageResource { .init(name: "com/sort/des", path: ["com", "sort"], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+        /// Image `com/sort/none`.
+        var none: RswiftResources.ImageResource { .init(name: "com/sort/none", path: ["com", "sort"], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
       }
     }
 

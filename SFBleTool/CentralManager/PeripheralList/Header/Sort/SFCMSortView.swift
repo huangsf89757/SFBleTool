@@ -19,7 +19,7 @@ import SFLogger
 // MARK: - SFCMSortView
 class SFCMSortView: SFView {
     // MARK: block
-    var sortChangedBlock: ((Bool, Bool) -> ())?
+    var sortChangedBlock: ((SFCMSortModel?) -> ())?
     
     // MARK: var
    
@@ -27,9 +27,7 @@ class SFCMSortView: SFView {
     // MARK: data
     var model: SFCMSortModel? {
         didSet {
-            guard let model = model else { return }
-            nameBtn.isSelected = model.name == .des
-            rssiBtn.isSelected = model.rssi == .des
+            updateSortIcon()
         }
     }
     
@@ -47,10 +45,8 @@ class SFCMSortView: SFView {
     private lazy var nameBtn: SFButton = {
         return SFButton().then { view in
             view.style = .right(5)
-            view.setImage(R.image.com.sort.up(), for: .normal)
-            view.setImage(R.image.com.sort.down(), for: .selected)
+            view.setImage(R.image.com.sort.none(), for: .normal)
             view.setTitleColor(R.color.title(), for: .normal)
-            view.setTitleColor(R.color.title(), for: .selected)
             view.setTitle(R.string.localizable.central_sort_name(), for: .normal)
             view.titleLabel?.font = .systemFont(ofSize: 15, weight: .regular)
             view.addTarget(self, action: #selector(nameBtnClicked), for: .touchUpInside)
@@ -59,10 +55,8 @@ class SFCMSortView: SFView {
     private lazy var rssiBtn: SFButton = {
         return SFButton().then { view in
             view.style = .right(5)
-            view.setImage(R.image.com.sort.up(), for: .normal)
-            view.setImage(R.image.com.sort.down(), for: .selected)
+            view.setImage(R.image.com.sort.none(), for: .normal)
             view.setTitleColor(R.color.title(), for: .normal)
-            view.setTitleColor(R.color.title(), for: .selected)
             view.setTitle(R.string.localizable.central_sort_RSSI(), for: .normal)
             view.titleLabel?.font = .systemFont(ofSize: 15, weight: .regular)
             view.addTarget(self, action: #selector(rssiBtnClicked), for: .touchUpInside)
@@ -101,12 +95,23 @@ class SFCMSortView: SFView {
 
 extension SFCMSortView {
     @objc private func nameBtnClicked() {
-        nameBtn.toggleSelected()
-        sortChangedBlock?(nameBtn.isSelected, rssiBtn.isSelected)
+        model?.name.switch()
+        updateSortIcon()
+        sortChangedBlock?(model)
     }
     
     @objc private func rssiBtnClicked() {
-        rssiBtn.toggleSelected()
-        sortChangedBlock?(nameBtn.isSelected, rssiBtn.isSelected)
+        model?.rssi.switch()
+        updateSortIcon()
+        sortChangedBlock?(model)
+    }
+}
+
+extension SFCMSortView {
+    private func updateSortIcon() {
+        nameBtn.setImage(model?.name.image, for: .normal)
+        rssiBtn.setImage(model?.rssi.image, for: .normal)
+        nameBtn.setTitleColor(model?.name.color, for: .normal)
+        rssiBtn.setTitleColor(model?.rssi.color, for: .normal)
     }
 }
