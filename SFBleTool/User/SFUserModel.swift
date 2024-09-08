@@ -7,20 +7,20 @@
 
 import Foundation
 
-// MARK: Gender
-enum Gender {
-    case male
-    case female
-    case unknown
-}
-
 // MARK: - SFUserModel
 class SFUserModel {
+    // MARK: Gender
+    enum Gender {
+        case unknown
+        case male
+        case female
+    }
+    
     // MARK: var
     // - 账号信息
-    /// 账号id
+    /// uid
     var id: String?
-    /// 账号account
+    /// account
     var account: String?
     
     // - 基础信息

@@ -6,10 +6,38 @@
   
 */
 
+// -- app --
 CFBundleDisplayName = "BleMessager";
 
 "name" = "BleMessager";
 "slogen" = "蓝牙通信，畅享每一刻。";
+
+
+// -- user --
+// sign
+"user_sign_up" = "注册";
+"user_sign_in" = "登录";
+"user_sign_out" = "登出";
+
+// center
+"user_center_item_central" = "中心设备";
+"user_center_item_peripheral" = "外围设备";
+"user_center_item_security" = "账号安全";
+
+// info
+"user_info_id" = "UID";
+"user_info_account" = "账号";
+"user_info_avatar" = "头像";
+"user_info_nickname" = "昵称";
+"user_info_gender" = "性别";
+"user_info_gender_unknown" = "未知";
+"user_info_gender_male" = "男";
+"user_info_gender_female" = "女";
+"user_info_phone" = "手机号";
+"user_info_email" = "邮箱号";
+"user_info_birthday" = "出生日期";
+"user_info_address" = "所在地";
+
 
 // entrance
 "entrance_opt_central_title" = "中心模式";
@@ -69,4 +97,7 @@ CFBundleDisplayName = "BleMessager";
 "central_adv_key_txPower" = "CBAdvertisementDataTxPowerLevelKey";
 "central_adv_key_connectable" = "CBAdvertisementDataIsConnectable";
 "central_adv_key_solicitedUuid" = "CBAdvertisementDataSolicitedServiceUUIDsKey";
+
+
+
 

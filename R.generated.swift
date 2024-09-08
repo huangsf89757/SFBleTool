@@ -72,7 +72,7 @@ struct _R {
       let source: RswiftResources.StringResource.Source
     }
 
-    /// This `_R.string.localizable` struct is generated, and contains static references to 45 localization keys.
+    /// This `_R.string.localizable` struct is generated, and contains static references to 63 localization keys.
     struct localizable {
       let source: RswiftResources.StringResource.Source
 
@@ -390,6 +390,132 @@ struct _R {
       ///
       /// Locales: en, zh-Hans
       var slogen: RswiftResources.StringResource { .init(key: "slogen", tableName: "Localizable", source: source, developmentValue: "蓝牙通信，畅享每一刻。", comment: nil) }
+
+      /// en translation: 中心设备
+      ///
+      /// Key: user_center_item_central
+      ///
+      /// Locales: en
+      var user_center_item_central: RswiftResources.StringResource { .init(key: "user_center_item_central", tableName: "Localizable", source: source, developmentValue: "中心设备", comment: nil) }
+
+      /// en translation: 外围设备
+      ///
+      /// Key: user_center_item_peripheral
+      ///
+      /// Locales: en
+      var user_center_item_peripheral: RswiftResources.StringResource { .init(key: "user_center_item_peripheral", tableName: "Localizable", source: source, developmentValue: "外围设备", comment: nil) }
+
+      /// en translation: 账号安全
+      ///
+      /// Key: user_center_item_security
+      ///
+      /// Locales: en
+      var user_center_item_security: RswiftResources.StringResource { .init(key: "user_center_item_security", tableName: "Localizable", source: source, developmentValue: "账号安全", comment: nil) }
+
+      /// en translation: 账号
+      ///
+      /// Key: user_info_account
+      ///
+      /// Locales: en
+      var user_info_account: RswiftResources.StringResource { .init(key: "user_info_account", tableName: "Localizable", source: source, developmentValue: "账号", comment: nil) }
+
+      /// en translation: 所在地
+      ///
+      /// Key: user_info_address
+      ///
+      /// Locales: en
+      var user_info_address: RswiftResources.StringResource { .init(key: "user_info_address", tableName: "Localizable", source: source, developmentValue: "所在地", comment: nil) }
+
+      /// en translation: 头像
+      ///
+      /// Key: user_info_avatar
+      ///
+      /// Locales: en
+      var user_info_avatar: RswiftResources.StringResource { .init(key: "user_info_avatar", tableName: "Localizable", source: source, developmentValue: "头像", comment: nil) }
+
+      /// en translation: 出生日期
+      ///
+      /// Key: user_info_birthday
+      ///
+      /// Locales: en
+      var user_info_birthday: RswiftResources.StringResource { .init(key: "user_info_birthday", tableName: "Localizable", source: source, developmentValue: "出生日期", comment: nil) }
+
+      /// en translation: 邮箱号
+      ///
+      /// Key: user_info_email
+      ///
+      /// Locales: en
+      var user_info_email: RswiftResources.StringResource { .init(key: "user_info_email", tableName: "Localizable", source: source, developmentValue: "邮箱号", comment: nil) }
+
+      /// en translation: 性别
+      ///
+      /// Key: user_info_gender
+      ///
+      /// Locales: en
+      var user_info_gender: RswiftResources.StringResource { .init(key: "user_info_gender", tableName: "Localizable", source: source, developmentValue: "性别", comment: nil) }
+
+      /// en translation: 女
+      ///
+      /// Key: user_info_gender_female
+      ///
+      /// Locales: en
+      var user_info_gender_female: RswiftResources.StringResource { .init(key: "user_info_gender_female", tableName: "Localizable", source: source, developmentValue: "女", comment: nil) }
+
+      /// en translation: 男
+      ///
+      /// Key: user_info_gender_male
+      ///
+      /// Locales: en
+      var user_info_gender_male: RswiftResources.StringResource { .init(key: "user_info_gender_male", tableName: "Localizable", source: source, developmentValue: "男", comment: nil) }
+
+      /// en translation: 未知
+      ///
+      /// Key: user_info_gender_unknown
+      ///
+      /// Locales: en
+      var user_info_gender_unknown: RswiftResources.StringResource { .init(key: "user_info_gender_unknown", tableName: "Localizable", source: source, developmentValue: "未知", comment: nil) }
+
+      /// en translation: UID
+      ///
+      /// Key: user_info_id
+      ///
+      /// Locales: en
+      var user_info_id: RswiftResources.StringResource { .init(key: "user_info_id", tableName: "Localizable", source: source, developmentValue: "UID", comment: nil) }
+
+      /// en translation: 昵称
+      ///
+      /// Key: user_info_nickname
+      ///
+      /// Locales: en
+      var user_info_nickname: RswiftResources.StringResource { .init(key: "user_info_nickname", tableName: "Localizable", source: source, developmentValue: "昵称", comment: nil) }
+
+      /// en translation: 手机号
+      ///
+      /// Key: user_info_phone
+      ///
+      /// Locales: en
+      var user_info_phone: RswiftResources.StringResource { .init(key: "user_info_phone", tableName: "Localizable", source: source, developmentValue: "手机号", comment: nil) }
+
+      /// en translation: 登录
+      ///
+      /// Key: user_sign_in
+      ///
+      /// Locales: en
+      var user_sign_in: RswiftResources.StringResource { .init(key: "user_sign_in", tableName: "Localizable", source: source, developmentValue: "登录", comment: nil) }
+
+      /// en translation: 登出
+      ///
+      /// Key: user_sign_out
+      ///
+      /// Locales: en
+      var user_sign_out: RswiftResources.StringResource { .init(key: "user_sign_out", tableName: "Localizable", source: source, developmentValue: "登出", comment: nil) }
+
+      /// en translation: 注册
+      ///
+      /// Key: user_sign_up
+      ///
+      /// Locales: en
+      var user_sign_up: RswiftResources.StringResource { .init(key: "user_sign_up", tableName: "Localizable", source: source, developmentValue: "注册", comment: nil) }
     }
 
     /// This `_R.string.main` struct is generated, and contains static references to 0 localization keys.
@@ -472,7 +598,7 @@ struct _R {
     var whiteAlways: RswiftResources.ColorResource { .init(name: "whiteAlways", path: [], bundle: bundle) }
   }
 
-  /// This `_R.image` struct is generated, and contains static references to 3 images, and 8 namespaces.
+  /// This `_R.image` struct is generated, and contains static references to 3 images, and 9 namespaces.
   struct image {
     let bundle: Foundation.Bundle
 
@@ -492,6 +618,7 @@ struct _R {
     var doc: doc { .init(bundle: bundle) }
     var hud: hud { .init(bundle: bundle) }
     var triangle: triangle { .init(bundle: bundle) }
+    var user: user { .init(bundle: bundle) }
 
     func adv(bundle: Foundation.Bundle) -> adv {
       .init(bundle: bundle)
@@ -515,6 +642,9 @@ struct _R {
       .init(bundle: bundle)
     }
     func triangle(bundle: Foundation.Bundle) -> triangle {
+      .init(bundle: bundle)
+    }
+    func user(bundle: Foundation.Bundle) -> user {
       .init(bundle: bundle)
     }
 
@@ -633,7 +763,7 @@ struct _R {
       }
     }
 
-    /// This `_R.image.com` struct is generated, and contains static references to 7 coms, and 3 namespaces.
+    /// This `_R.image.com` struct is generated, and contains static references to 6 coms, and 3 namespaces.
     struct com {
       let bundle: Foundation.Bundle
 
@@ -654,9 +784,6 @@ struct _R {
 
       /// Image `com/tip`.
       var tip: RswiftResources.ImageResource { .init(name: "com/tip", path: ["com"], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
-
-      /// Image `com/user`.
-      var user: RswiftResources.ImageResource { .init(name: "com/user", path: ["com"], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
       var rssi: rssi { .init(bundle: bundle) }
       var select: select { .init(bundle: bundle) }
       var sort: sort { .init(bundle: bundle) }
@@ -770,6 +897,82 @@ struct _R {
 
       /// Image `triangle/top`.
       var top: RswiftResources.ImageResource { .init(name: "triangle/top", path: ["triangle"], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+    }
+
+    /// This `_R.image.user` struct is generated, and contains static references to 1 users, and 3 namespaces.
+    struct user {
+      let bundle: Foundation.Bundle
+
+      /// Image `user/user`.
+      var user: RswiftResources.ImageResource { .init(name: "user/user", path: ["user"], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+      var center: center { .init(bundle: bundle) }
+      var gender: gender { .init(bundle: bundle) }
+      var info: info { .init(bundle: bundle) }
+
+      func center(bundle: Foundation.Bundle) -> center {
+        .init(bundle: bundle)
+      }
+      func gender(bundle: Foundation.Bundle) -> gender {
+        .init(bundle: bundle)
+      }
+      func info(bundle: Foundation.Bundle) -> info {
+        .init(bundle: bundle)
+      }
+
+
+      /// This `_R.image.user.center` struct is generated, and contains static references to 3 centers.
+      struct center {
+        let bundle: Foundation.Bundle
+
+        /// Image `user/center/central`.
+        var central: RswiftResources.ImageResource { .init(name: "user/center/central", path: ["user", "center"], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+        /// Image `user/center/peripheral`.
+        var peripheral: RswiftResources.ImageResource { .init(name: "user/center/peripheral", path: ["user", "center"], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+        /// Image `user/center/security`.
+        var security: RswiftResources.ImageResource { .init(name: "user/center/security", path: ["user", "center"], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+      }
+
+      /// This `_R.image.user.gender` struct is generated, and contains static references to 2 genders.
+      struct gender {
+        let bundle: Foundation.Bundle
+
+        /// Image `user/gender/female`.
+        var female: RswiftResources.ImageResource { .init(name: "user/gender/female", path: ["user", "gender"], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+        /// Image `user/gender/male`.
+        var male: RswiftResources.ImageResource { .init(name: "user/gender/male", path: ["user", "gender"], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+      }
+
+      /// This `_R.image.user.info` struct is generated, and contains static references to 8 infos.
+      struct info {
+        let bundle: Foundation.Bundle
+
+        /// Image `user/info/account`.
+        var account: RswiftResources.ImageResource { .init(name: "user/info/account", path: ["user", "info"], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+        /// Image `user/info/address`.
+        var address: RswiftResources.ImageResource { .init(name: "user/info/address", path: ["user", "info"], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+        /// Image `user/info/avatar`.
+        var avatar: RswiftResources.ImageResource { .init(name: "user/info/avatar", path: ["user", "info"], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+        /// Image `user/info/birthday`.
+        var birthday: RswiftResources.ImageResource { .init(name: "user/info/birthday", path: ["user", "info"], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+        /// Image `user/info/email`.
+        var email: RswiftResources.ImageResource { .init(name: "user/info/email", path: ["user", "info"], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+        /// Image `user/info/gender`.
+        var gender: RswiftResources.ImageResource { .init(name: "user/info/gender", path: ["user", "info"], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+        /// Image `user/info/nickname`.
+        var nickname: RswiftResources.ImageResource { .init(name: "user/info/nickname", path: ["user", "info"], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+        /// Image `user/info/phone`.
+        var phone: RswiftResources.ImageResource { .init(name: "user/info/phone", path: ["user", "info"], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+      }
     }
   }
 

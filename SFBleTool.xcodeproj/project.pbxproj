@@ -387,7 +387,7 @@
 		DDF08BEE2C85BACA00FB4B48 /* User */ = {
 			isa = PBXGroup;
 			children = (
-				DDF08BF12C85BAE300FB4B48 /* Login */,
+				DDF08BF12C85BAE300FB4B48 /* Sign */,
 				DDF08BF02C85BADB00FB4B48 /* UserCenter */,
 				DDF08BEF2C85BAD200FB4B48 /* UserInfo */,
 				DDF08BF42C85BB2B00FB4B48 /* Security */,
@@ -416,14 +416,14 @@
 			path = UserCenter;
 			sourceTree = "<group>";
 		};
-		DDF08BF12C85BAE300FB4B48 /* Login */ = {
+		DDF08BF12C85BAE300FB4B48 /* Sign */ = {
 			isa = PBXGroup;
 			children = (
 				DDF08BF22C85BB1C00FB4B48 /* SFLoginVC.swift */,
 				DDF08C142C86FB8A00FB4B48 /* SFLoginModeView.swift */,
 				DDF08C062C85BCBA00FB4B48 /* SFPwdFindbackVC.swift */,
 			);
-			path = Login;
+			path = Sign;
 			sourceTree = "<group>";
 		};
 		DDF08BF42C85BB2B00FB4B48 /* Security */ = {

@@ -57,7 +57,7 @@ class SFCMPeripheralListVC: SFManagerVC {
     private lazy var userBtn: SFButton = {
         return SFButton().then { view in
             view.frame = CGRect(origin: .zero, size: CGSize(width: 40, height: 40))
-            view.setImage(R.image.com.user(), for: .normal)
+            view.setImage(R.image.user.user(), for: .normal)
             view.addTarget(self, action: #selector(userBtnClicked), for: .touchUpInside)
         }
     }()
