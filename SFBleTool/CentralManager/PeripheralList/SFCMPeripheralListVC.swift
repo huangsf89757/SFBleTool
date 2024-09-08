@@ -98,6 +98,12 @@ class SFCMPeripheralListVC: SFManagerVC {
             view.searchDidChangedBlock = {
                 [weak self] searchModel in
                 self?.reloadList()
+                self?.tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .none, animated: false)
+            }
+            view.sortDidChangedBlock = {
+                [weak self] sortModel in
+                self?.reloadList()
+                self?.tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .none, animated: false)
             }
         }
     }()

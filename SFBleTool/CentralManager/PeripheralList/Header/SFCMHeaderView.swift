@@ -24,6 +24,11 @@ class SFCMHeaderView: SFView {
             searchView.searchDidChangedBlock = searchDidChangedBlock
         }
     }
+    var sortDidChangedBlock: ((SFCMSortModel?) -> ())? {
+        didSet {
+            sortView.sortDidChangedBlock = sortDidChangedBlock
+        }
+    }
     
     // MARK: var
     

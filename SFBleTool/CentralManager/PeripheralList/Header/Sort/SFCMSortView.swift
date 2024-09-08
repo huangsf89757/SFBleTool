@@ -19,7 +19,7 @@ import SFLogger
 // MARK: - SFCMSortView
 class SFCMSortView: SFView {
     // MARK: block
-    var sortChangedBlock: ((SFCMSortModel?) -> ())?
+    var sortDidChangedBlock: ((SFCMSortModel?) -> ())?
     
     // MARK: var
    
@@ -27,7 +27,8 @@ class SFCMSortView: SFView {
     // MARK: data
     var model: SFCMSortModel? {
         didSet {
-            updateSortIcon()
+            guard let model = model else { return }
+            updateSort(medthod: model.medthod)
         }
     }
     
@@ -45,20 +46,14 @@ class SFCMSortView: SFView {
     private lazy var nameBtn: SFButton = {
         return SFButton().then { view in
             view.style = .right(5)
-            view.setImage(R.image.com.sort.none(), for: .normal)
-            view.setTitleColor(R.color.title(), for: .normal)
             view.setTitle(R.string.localizable.central_sort_name(), for: .normal)
-            view.titleLabel?.font = .systemFont(ofSize: 15, weight: .regular)
             view.addTarget(self, action: #selector(nameBtnClicked), for: .touchUpInside)
         }
     }()
     private lazy var rssiBtn: SFButton = {
         return SFButton().then { view in
             view.style = .right(5)
-            view.setImage(R.image.com.sort.none(), for: .normal)
-            view.setTitleColor(R.color.title(), for: .normal)
             view.setTitle(R.string.localizable.central_sort_RSSI(), for: .normal)
-            view.titleLabel?.font = .systemFont(ofSize: 15, weight: .regular)
             view.addTarget(self, action: #selector(rssiBtnClicked), for: .touchUpInside)
         }
     }()
@@ -95,23 +90,49 @@ class SFCMSortView: SFView {
 
 extension SFCMSortView {
     @objc private func nameBtnClicked() {
-        model?.name.switch()
-        updateSortIcon()
-        sortChangedBlock?(model)
+        updateSort(medthod: .name)
+        sortDidChangedBlock?(model)
     }
     
     @objc private func rssiBtnClicked() {
-        model?.rssi.switch()
-        updateSortIcon()
-        sortChangedBlock?(model)
+        updateSort(medthod: .rssi)
+        sortDidChangedBlock?(model)
+    }
+    
+    private func updateSort(medthod: SFCMSortModel.Medthod) {
+        guard let model = model else { return }
+        if model.medthod != medthod {
+            model.sort = .none
+        }
+        model.medthod = medthod
+        model.sort.switch()
+        
+        switch model.medthod {
+        case .none:
+            nameBtn.setImage(SFCMSortModel.Sort.none.image, for: .normal)
+            nameBtn.setTitleColor(SFCMSortModel.Sort.none.color, for: .normal)
+            nameBtn.titleLabel?.font = SFCMSortModel.Sort.none.font
+            rssiBtn.setImage(SFCMSortModel.Sort.none.image, for: .normal)
+            rssiBtn.setTitleColor(SFCMSortModel.Sort.none.color, for: .normal)
+            rssiBtn.titleLabel?.font = SFCMSortModel.Sort.none.font
+        case .name:
+            nameBtn.setImage(model.sort.image, for: .normal)
+            nameBtn.setTitleColor(model.sort.color, for: .normal)
+            nameBtn.titleLabel?.font = model.sort.font
+            rssiBtn.setImage(SFCMSortModel.Sort.none.image, for: .normal)
+            rssiBtn.setTitleColor(SFCMSortModel.Sort.none.color, for: .normal)
+            rssiBtn.titleLabel?.font = SFCMSortModel.Sort.none.font
+        case .rssi:
+            nameBtn.setImage(SFCMSortModel.Sort.none.image, for: .normal)
+            nameBtn.setTitleColor(SFCMSortModel.Sort.none.color, for: .normal)
+            nameBtn.titleLabel?.font = SFCMSortModel.Sort.none.font
+            rssiBtn.setImage(model.sort.image, for: .normal)
+            rssiBtn.setTitleColor(model.sort.color, for: .normal)
+            rssiBtn.titleLabel?.font = model.sort.font
+        }
     }
 }
 
 extension SFCMSortView {
-    private func updateSortIcon() {
-        nameBtn.setImage(model?.name.image, for: .normal)
-        rssiBtn.setImage(model?.rssi.image, for: .normal)
-        nameBtn.setTitleColor(model?.name.color, for: .normal)
-        rssiBtn.setTitleColor(model?.rssi.color, for: .normal)
-    }
+   
 }

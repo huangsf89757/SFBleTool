@@ -9,6 +9,13 @@ import Foundation
 import UIKit
 
 class SFCMSortModel {
+    // MARK: Type
+    enum Medthod {
+        case none
+        case name
+        case rssi
+    }
+    
     // MARK: Sort
     enum Sort {
         case none   // 未知
@@ -30,10 +37,17 @@ class SFCMSortModel {
             switch self {
             case .none:
                 return R.color.subtitle()
-            case .asc:
+            case .asc, .des:
                 return R.color.title()
-            case .des:
-                return R.color.title()
+            }
+        }
+        
+        var font: UIFont? {
+            switch self {
+            case .none:
+                return .systemFont(ofSize: 15, weight: .regular)
+            case .asc, .des:
+                return .systemFont(ofSize: 15, weight: .bold)
             }
         }
         
@@ -50,6 +64,8 @@ class SFCMSortModel {
     }
     
     // MARK: var
-    var name: Sort = .none
-    var rssi: Sort = .none
+    var medthod: Medthod = .none
+    var sort: Sort = .none
+    
+   
 }
