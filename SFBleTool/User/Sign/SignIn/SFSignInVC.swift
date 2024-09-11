@@ -41,6 +41,8 @@ class SFSignInVC: SFScrollViewController {
             view.contentMode = .scaleAspectFit
             view.backgroundColor = R.color.content()
             view.image = R.image.logo()
+            view.layer.cornerRadius = 8
+            view.layer.masksToBounds = true
         }
     }()
     private lazy var nameLabel: SFLabel = {
@@ -53,7 +55,7 @@ class SFSignInVC: SFScrollViewController {
     }()
     private lazy var slogenLabel: SFLabel = {
         return SFLabel().then { view in
-            view.font = .systemFont(ofSize: 14, weight: .regular)
+            view.font = .systemFont(ofSize: 12, weight: .regular)
             view.textColor = R.color.subtitle()
             view.textAlignment = .center
             view.text = R.string.localizable.slogen()
@@ -63,7 +65,17 @@ class SFSignInVC: SFScrollViewController {
         return SFSignInModeView()
     }()
     private lazy var signInInputView: SFSignInInputView = {
-        return SFSignInInputView()
+        return SFSignInInputView().then { view in
+            view.modeDidChangedBlock = {
+                [weak self] mode in
+                switch mode {
+                case .code:
+                    self?.signInModeView.selectedIndex = 0
+                case .pwd:
+                    self?.signInModeView.selectedIndex = 1
+                }
+            }
+        }
     }()
     private lazy var signInBtn: SFButton = {
         return SFButton().then { view in

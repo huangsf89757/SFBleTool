@@ -60,20 +60,21 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 // MARK: root
 extension SceneDelegate {
     private func setRootVc() {
-        if let entrance = UserDefaults.standard.object(forKey: SFUserDefaults.Key.entrance) as? Int {
-            if entrance == 0 {
-                window?.rootViewController = SFNavigationController(rootViewController: SFCMPeripheralListVC())
-            } else {
-                window?.rootViewController = SFNavigationController(rootViewController: SFPeripheralManagerVC())
-            }
-        } else {
-            let vc = SFEntranceVC()
-            vc.didChooseEntranceOptBlock = {
-                [weak self] entrance in
-                UserDefaults.standard.setValue(entrance, forKey: SFUserDefaults.Key.entrance)
-                self?.setRootVc()
-            }
-            window?.rootViewController = vc
-        }
+        window?.rootViewController = SFSignInVC()
+//        if let entrance = UserDefaults.standard.object(forKey: SFUserDefaults.Key.entrance) as? Int {
+//            if entrance == 0 {
+//                window?.rootViewController = SFNavigationController(rootViewController: SFCMPeripheralListVC())
+//            } else {
+//                window?.rootViewController = SFNavigationController(rootViewController: SFPeripheralManagerVC())
+//            }
+//        } else {
+//            let vc = SFEntranceVC()
+//            vc.didChooseEntranceOptBlock = {
+//                [weak self] entrance in
+//                UserDefaults.standard.setValue(entrance, forKey: SFUserDefaults.Key.entrance)
+//                self?.setRootVc()
+//            }
+//            window?.rootViewController = vc
+//        }
     }
 }

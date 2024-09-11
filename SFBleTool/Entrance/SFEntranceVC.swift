@@ -41,12 +41,10 @@ class SFEntranceVC: SFScrollViewController {
             view.contentMode = .scaleAspectFit
             view.layer.cornerRadius = 12
             view.layer.masksToBounds = true
-//            view.layer.shadowColor = R.color.black()?.cgColor
-//            view.layer.shadowOpacity = 0.2
-//            view.layer.shadowRadius = 10
-//            view.layer.shadowOffset = .zero
             view.backgroundColor = R.color.content()
             view.image = R.image.logo()
+            view.layer.cornerRadius = 8
+            view.layer.masksToBounds = true
         }
     }()
     private lazy var nameLabel: SFLabel = {
@@ -59,7 +57,7 @@ class SFEntranceVC: SFScrollViewController {
     }()
     private lazy var slogenLabel: SFLabel = {
         return SFLabel().then { view in
-            view.font = .systemFont(ofSize: 14, weight: .regular)
+            view.font = .systemFont(ofSize: 12, weight: .regular)
             view.textColor = R.color.subtitle()
             view.textAlignment = .center
             view.text = R.string.localizable.slogen()

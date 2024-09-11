@@ -20,6 +20,9 @@ class SFSignInCodeInputView: SFView {
     // MARK: life cycle
     override init(frame: CGRect) {
         super.init(frame: frame)
+        backgroundColor = R.color.background()
+        layer.cornerRadius = 15
+        layer.masksToBounds = true
         customUI()
     }
     required init?(coder: NSCoder) {
@@ -38,6 +41,7 @@ class SFSignInCodeInputView: SFView {
             view.placeholder = R.string.localizable.user_signIn_input_account_ph()
             view.placeholderColor = R.color.placeholder()
             view.clearButtonMode = .whileEditing
+            view.font = .systemFont(ofSize: 15, weight: .regular)
         }
     }()
     private lazy var dividerView: SFView = {
@@ -56,6 +60,7 @@ class SFSignInCodeInputView: SFView {
             view.placeholder = R.string.localizable.user_signIn_input_code_ph()
             view.placeholderColor = R.color.placeholder()
             view.clearButtonMode = .whileEditing
+            view.font = .systemFont(ofSize: 15, weight: .regular)
         }
     }()
     private lazy var sendCodeBtn: SFButton = {
@@ -77,7 +82,7 @@ class SFSignInCodeInputView: SFView {
         
         accountImgView.snp.makeConstraints { make in
             make.centerY.equalTo(accountTextField)
-            make.leading.equalToSuperview().offset(10)
+            make.leading.equalToSuperview().offset(15)
             make.width.height.equalTo(20)
         }
         accountTextField.snp.makeConstraints { make in
@@ -94,7 +99,7 @@ class SFSignInCodeInputView: SFView {
         }
         codeImgView.snp.makeConstraints { make in
             make.centerY.equalTo(codeTextField)
-            make.leading.equalToSuperview().offset(10)
+            make.leading.equalToSuperview().offset(15)
             make.width.height.equalTo(20)
         }
         codeTextField.snp.makeConstraints { make in

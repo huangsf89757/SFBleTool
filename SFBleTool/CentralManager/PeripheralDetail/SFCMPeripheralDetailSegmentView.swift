@@ -39,9 +39,13 @@ class SFCMPeripheralDetailSegmentView: SFSegmentView {
     }
     override init(direction: SFSegmentView.Direction = .horizontal, titles: [String?]?, images: [UIImage?]?, selectedImages: [UIImage?]? = nil) {
         super.init(direction: .horizontal, titles: titles, images: images, selectedImages: selectedImages)
+        self.sf.setCornerAndShadow(radius: 10, fillColor: SFColor.background, shadowColor: SFColor.black, shadowOpacity: 0.3, shadowOffset: CGSize(width: 0, height: 5), shadowRadius: 5)
+
     }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+    override func draw(_ rect: CGRect) {
+        self.sf.applyCornerAndShadow()
+    }
 }

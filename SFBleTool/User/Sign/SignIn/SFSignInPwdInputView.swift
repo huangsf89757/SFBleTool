@@ -20,6 +20,9 @@ class SFSignInPwdInputView: SFView {
     // MARK: life cycle
     override init(frame: CGRect) {
         super.init(frame: frame)
+        backgroundColor = R.color.background()
+        layer.cornerRadius = 15
+        layer.masksToBounds = true
         customUI()
     }
     required init?(coder: NSCoder) {
@@ -38,6 +41,7 @@ class SFSignInPwdInputView: SFView {
             view.placeholder = R.string.localizable.user_signIn_input_account_ph()
             view.placeholderColor = R.color.placeholder()
             view.clearButtonMode = .whileEditing
+            view.font = .systemFont(ofSize: 15, weight: .regular)
         }
     }()
     private lazy var dividerView: SFView = {
@@ -56,14 +60,13 @@ class SFSignInPwdInputView: SFView {
             view.placeholder = R.string.localizable.user_signIn_input_pwd_ph()
             view.placeholderColor = R.color.placeholder()
             view.clearButtonMode = .whileEditing
+            view.font = .systemFont(ofSize: 15, weight: .regular)
         }
     }()
     private lazy var eyeBtn: SFButton = {
         return SFButton().then { view in
-            view.setTitleColor(R.color.theme(), for: .normal)
-            view.setTitleColor(R.color.placeholder(), for: .selected)
-            view.setTitle(R.string.localizable.user_signIn_action_sendCode(), for: .normal)
-            view.titleLabel?.font = .systemFont(ofSize: 15, weight: .regular)
+            view.setImage(R.image.user.sign.eye.close(), for: .normal)
+            view.setImage(R.image.user.sign.eye.open(), for: .selected)
         }
     }()
     
@@ -77,7 +80,7 @@ class SFSignInPwdInputView: SFView {
         
         accountImgView.snp.makeConstraints { make in
             make.centerY.equalTo(accountTextField)
-            make.leading.equalToSuperview().offset(10)
+            make.leading.equalToSuperview().offset(15)
             make.width.height.equalTo(20)
         }
         accountTextField.snp.makeConstraints { make in
@@ -94,7 +97,7 @@ class SFSignInPwdInputView: SFView {
         }
         pwdImgView.snp.makeConstraints { make in
             make.centerY.equalTo(pwdTextField)
-            make.leading.equalToSuperview().offset(10)
+            make.leading.equalToSuperview().offset(15)
             make.width.height.equalTo(20)
         }
         pwdTextField.snp.makeConstraints { make in
