@@ -147,7 +147,7 @@ class SFSignInVC: SFScrollViewController {
             make.height.equalTo(50)
         }
         infoLabel.snp.makeConstraints { make in
-            make.top.greaterThanOrEqualTo(signInBtn.snp.bottom).offset(100)
+            make.top.greaterThanOrEqualTo(signInBtn.snp.bottom).offset(90)
             make.leading.equalToSuperview().offset(30)
             make.trailing.equalToSuperview().offset(-30)
             make.bottom.equalToSuperview().offset(-10)
