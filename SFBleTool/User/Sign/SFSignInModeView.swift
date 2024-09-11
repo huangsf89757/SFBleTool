@@ -1,5 +1,5 @@
 //
-//  SFLoginModeView.swift
+//  SFSignInModeView.swift
 //  SFBleTool
 //
 //  Created by hsf on 2024/9/3.
@@ -15,17 +15,17 @@ import SFUI
 // Server
 import SFLogger
 
-// MARK: - SFLoginMode
+// MARK: - SFSignInMode
 /// 登录方式
-enum SFLoginMode {
+enum SFSignInMode {
     case code   // 验证码
     case pwd    // 密码
 }
 
-// MARK: - SFLoginModeView
-class SFLoginModeView: SFView {
+// MARK: - SFSignInModeView
+class SFSignInModeView: SFView {
     // MARK: var
-    var mode: SFLoginMode = .code
+    var mode: SFSignInMode = .code
     
     // MARK: ui
     

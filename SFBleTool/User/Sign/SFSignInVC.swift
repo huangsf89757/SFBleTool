@@ -1,5 +1,5 @@
 //
-//  SFLoginVC.swift
+//  SFSignInVC.swift
 //  SFBleTool
 //
 //  Created by hsf on 2024/9/2.
@@ -15,8 +15,8 @@ import SFUI
 // Server
 import SFLogger
 
-// MARK: - SFLoginVC
-class SFLoginVC: SFScrollViewController {
+// MARK: - SFSignInVC
+class SFSignInVC: SFScrollViewController {
     // MARK: block
     
     
