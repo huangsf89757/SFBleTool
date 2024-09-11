@@ -868,7 +868,7 @@ struct _R {
       }
     }
 
-    /// This `_R.image.com` struct is generated, and contains static references to 6 coms, and 3 namespaces.
+    /// This `_R.image.com` struct is generated, and contains static references to 6 coms, and 4 namespaces.
     struct com {
       let bundle: Foundation.Bundle
 
@@ -889,10 +889,14 @@ struct _R {
 
       /// Image `com/tip`.
       var tip: RswiftResources.ImageResource { .init(name: "com/tip", path: ["com"], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+      var checkbox: checkbox { .init(bundle: bundle) }
       var rssi: rssi { .init(bundle: bundle) }
       var select: select { .init(bundle: bundle) }
       var sort: sort { .init(bundle: bundle) }
 
+      func checkbox(bundle: Foundation.Bundle) -> checkbox {
+        .init(bundle: bundle)
+      }
       func rssi(bundle: Foundation.Bundle) -> rssi {
         .init(bundle: bundle)
       }
@@ -903,6 +907,17 @@ struct _R {
         .init(bundle: bundle)
       }
 
+
+      /// This `_R.image.com.checkbox` struct is generated, and contains static references to 2 checkboxs.
+      struct checkbox {
+        let bundle: Foundation.Bundle
+
+        /// Image `com/checkbox/nor`.
+        var nor: RswiftResources.ImageResource { .init(name: "com/checkbox/nor", path: ["com", "checkbox"], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+        /// Image `com/checkbox/sel`.
+        var sel: RswiftResources.ImageResource { .init(name: "com/checkbox/sel", path: ["com", "checkbox"], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+      }
 
       /// This `_R.image.com.rssi` struct is generated, and contains static references to 6 rssis.
       struct rssi {

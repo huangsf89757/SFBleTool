@@ -19,9 +19,13 @@
 		51A613B42C76239F005990FC /* SFOptionConfigCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A613B32C76239F005990FC /* SFOptionConfigCell.swift */; };
 		8D2468F1EDAD1E4AB2CFD4EA /* Pods_SFBleTool.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4144B822BDD27C9242CA25FB /* Pods_SFBleTool.framework */; };
 		DD5CFF742C916653009FEFAA /* SFSignInModeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5CFF732C916653009FEFAA /* SFSignInModeView.swift */; };
-		DD5CFF772C9177AB009FEFAA /* SFSignInInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5CFF762C9177AB009FEFAA /* SFSignInInputView.swift */; };
-		DD5CFF792C917BBB009FEFAA /* SFSignInCodeInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5CFF782C917BBB009FEFAA /* SFSignInCodeInputView.swift */; };
-		DD5CFF7B2C917BC9009FEFAA /* SFSignInPwdInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5CFF7A2C917BC9009FEFAA /* SFSignInPwdInputView.swift */; };
+		DD5CFF772C9177AB009FEFAA /* SFSignInPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5CFF762C9177AB009FEFAA /* SFSignInPageView.swift */; };
+		DD5CFF792C917BBB009FEFAA /* SFSignInCodeFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5CFF782C917BBB009FEFAA /* SFSignInCodeFieldView.swift */; };
+		DD5CFF7B2C917BC9009FEFAA /* SFSignInPwdFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5CFF7A2C917BC9009FEFAA /* SFSignInPwdFieldView.swift */; };
+		DD5CFF7E2C91C79C009FEFAA /* SFSignInFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5CFF7D2C91C79C009FEFAA /* SFSignInFieldView.swift */; };
+		DD5CFF812C91C86E009FEFAA /* SFSignInCodeContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5CFF802C91C86E009FEFAA /* SFSignInCodeContentView.swift */; };
+		DD5CFF832C91C899009FEFAA /* SFSignInPwdContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5CFF822C91C899009FEFAA /* SFSignInPwdContentView.swift */; };
+		DD5CFF862C91C9FC009FEFAA /* SFSignInAgreementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5CFF852C91C9FC009FEFAA /* SFSignInAgreementView.swift */; };
 		DD78D8322C8ACBD700B629AD /* SFCMPeripheralListData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD78D8312C8ACBD700B629AD /* SFCMPeripheralListData.swift */; };
 		DDA6489D2C619F5100F01858 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA6489C2C619F5100F01858 /* AppDelegate.swift */; };
 		DDA6489F2C619F5100F01858 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA6489E2C619F5100F01858 /* SceneDelegate.swift */; };
@@ -104,9 +108,13 @@
 		51A613B32C76239F005990FC /* SFOptionConfigCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFOptionConfigCell.swift; sourceTree = "<group>"; };
 		947209E9BB09B6D52FE5980D /* Pods-SFBleTool.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SFBleTool.release.xcconfig"; path = "Target Support Files/Pods-SFBleTool/Pods-SFBleTool.release.xcconfig"; sourceTree = "<group>"; };
 		DD5CFF732C916653009FEFAA /* SFSignInModeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSignInModeView.swift; sourceTree = "<group>"; };
-		DD5CFF762C9177AB009FEFAA /* SFSignInInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSignInInputView.swift; sourceTree = "<group>"; };
-		DD5CFF782C917BBB009FEFAA /* SFSignInCodeInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSignInCodeInputView.swift; sourceTree = "<group>"; };
-		DD5CFF7A2C917BC9009FEFAA /* SFSignInPwdInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSignInPwdInputView.swift; sourceTree = "<group>"; };
+		DD5CFF762C9177AB009FEFAA /* SFSignInPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSignInPageView.swift; sourceTree = "<group>"; };
+		DD5CFF782C917BBB009FEFAA /* SFSignInCodeFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSignInCodeFieldView.swift; sourceTree = "<group>"; };
+		DD5CFF7A2C917BC9009FEFAA /* SFSignInPwdFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSignInPwdFieldView.swift; sourceTree = "<group>"; };
+		DD5CFF7D2C91C79C009FEFAA /* SFSignInFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSignInFieldView.swift; sourceTree = "<group>"; };
+		DD5CFF802C91C86E009FEFAA /* SFSignInCodeContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSignInCodeContentView.swift; sourceTree = "<group>"; };
+		DD5CFF822C91C899009FEFAA /* SFSignInPwdContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSignInPwdContentView.swift; sourceTree = "<group>"; };
+		DD5CFF852C91C9FC009FEFAA /* SFSignInAgreementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSignInAgreementView.swift; sourceTree = "<group>"; };
 		DD78D8312C8ACBD700B629AD /* SFCMPeripheralListData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFCMPeripheralListData.swift; sourceTree = "<group>"; };
 		DDA648992C619F5100F01858 /* SFBleTool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SFBleTool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDA6489C2C619F5100F01858 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -235,11 +243,39 @@
 			children = (
 				DDF08BF22C85BB1C00FB4B48 /* SFSignInVC.swift */,
 				DD5CFF732C916653009FEFAA /* SFSignInModeView.swift */,
-				DD5CFF762C9177AB009FEFAA /* SFSignInInputView.swift */,
-				DD5CFF782C917BBB009FEFAA /* SFSignInCodeInputView.swift */,
-				DD5CFF7A2C917BC9009FEFAA /* SFSignInPwdInputView.swift */,
+				DD5CFF762C9177AB009FEFAA /* SFSignInPageView.swift */,
+				DD5CFF7F2C91C808009FEFAA /* ContentView */,
 			);
 			path = SignIn;
+			sourceTree = "<group>";
+		};
+		DD5CFF7C2C91C784009FEFAA /* FieldView */ = {
+			isa = PBXGroup;
+			children = (
+				DD5CFF7D2C91C79C009FEFAA /* SFSignInFieldView.swift */,
+				DD5CFF782C917BBB009FEFAA /* SFSignInCodeFieldView.swift */,
+				DD5CFF7A2C917BC9009FEFAA /* SFSignInPwdFieldView.swift */,
+			);
+			path = FieldView;
+			sourceTree = "<group>";
+		};
+		DD5CFF7F2C91C808009FEFAA /* ContentView */ = {
+			isa = PBXGroup;
+			children = (
+				DD5CFF802C91C86E009FEFAA /* SFSignInCodeContentView.swift */,
+				DD5CFF822C91C899009FEFAA /* SFSignInPwdContentView.swift */,
+				DD5CFF842C91C9C3009FEFAA /* AgreementView */,
+				DD5CFF7C2C91C784009FEFAA /* FieldView */,
+			);
+			path = ContentView;
+			sourceTree = "<group>";
+		};
+		DD5CFF842C91C9C3009FEFAA /* AgreementView */ = {
+			isa = PBXGroup;
+			children = (
+				DD5CFF852C91C9FC009FEFAA /* SFSignInAgreementView.swift */,
+			);
+			path = AgreementView;
 			sourceTree = "<group>";
 		};
 		DDA648902C619F5100F01858 = {
@@ -695,6 +731,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD5CFF742C916653009FEFAA /* SFSignInModeView.swift in Sources */,
+				DD5CFF832C91C899009FEFAA /* SFSignInPwdContentView.swift in Sources */,
 				DDAC3D732C6F512700AA87B4 /* SFCMPeripheralLogCell.swift in Sources */,
 				DDFA63F92C6367F2002E93F3 /* SFCMSearchView.swift in Sources */,
 				DDB518FE2C6C728300A049DE /* SFCMPeripheralAdvDetailVC.swift in Sources */,
@@ -704,6 +741,7 @@
 				DDA6489D2C619F5100F01858 /* AppDelegate.swift in Sources */,
 				DDFA63FD2C636856002E93F3 /* SFCMFilterView.swift in Sources */,
 				5175ADB02C64FA1D00C9260A /* SFCMRssiView.swift in Sources */,
+				DD5CFF812C91C86E009FEFAA /* SFSignInCodeContentView.swift in Sources */,
 				DDE09DB32C7473E400E456B7 /* SFCMSearchModel.swift in Sources */,
 				DDE09DAD2C7470FB00E456B7 /* SFCMFilterModel.swift in Sources */,
 				DDA648CF2C61A3DE00F01858 /* SFCMPeripheralListVC.swift in Sources */,
@@ -726,6 +764,7 @@
 				51A613A62C74DABD005990FC /* SFCMConnectModel.swift in Sources */,
 				DDF08BF62C85BB5D00FB4B48 /* SFUserInfoVC.swift in Sources */,
 				51A613A12C74C75F005990FC /* SFCMHeaderModel.swift in Sources */,
+				DD5CFF7E2C91C79C009FEFAA /* SFSignInFieldView.swift in Sources */,
 				DDA6489F2C619F5100F01858 /* SceneDelegate.swift in Sources */,
 				51A613B22C762395005990FC /* SFOptionConfigModel.swift in Sources */,
 				DDFA63F32C635306002E93F3 /* SFUserDefaults.swift in Sources */,
@@ -735,16 +774,17 @@
 				DDAC3D642C6DF66300AA87B4 /* SFCMPeripheralAdvItemView.swift in Sources */,
 				DDF08C052C85BC6B00FB4B48 /* SFUserCenterHeaderModel.swift in Sources */,
 				DDA648CD2C61A1E300F01858 /* SFEntranceVC.swift in Sources */,
-				DD5CFF772C9177AB009FEFAA /* SFSignInInputView.swift in Sources */,
+				DD5CFF772C9177AB009FEFAA /* SFSignInPageView.swift in Sources */,
 				DDF08BFA2C85BB9400FB4B48 /* SFUserCenterVC.swift in Sources */,
 				51A613B42C76239F005990FC /* SFOptionConfigCell.swift in Sources */,
 				51A613A42C74DAAA005990FC /* SFCMConnectView.swift in Sources */,
 				DDB518E92C6B433900A049DE /* SFCMSettingVC.swift in Sources */,
-				DD5CFF7B2C917BC9009FEFAA /* SFSignInPwdInputView.swift in Sources */,
+				DD5CFF7B2C917BC9009FEFAA /* SFSignInPwdFieldView.swift in Sources */,
 				DDF08BF82C85BB8500FB4B48 /* SFSecurityVC.swift in Sources */,
 				DDF08C102C86D6DC00FB4B48 /* SFUserCenterFooterModel.swift in Sources */,
+				DD5CFF862C91C9FC009FEFAA /* SFSignInAgreementView.swift in Sources */,
 				DDA648D62C61A86D00F01858 /* SFEntranceView.swift in Sources */,
-				DD5CFF792C917BBB009FEFAA /* SFSignInCodeInputView.swift in Sources */,
+				DD5CFF792C917BBB009FEFAA /* SFSignInCodeFieldView.swift in Sources */,
 				DDF08C0E2C86D6C700FB4B48 /* SFUserCenterFooterView.swift in Sources */,
 				51A613A92C7620AB005990FC /* SFOptionConfigVC.swift in Sources */,
 			);

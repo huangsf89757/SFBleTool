@@ -1,5 +1,5 @@
 //
-//  SFSignInInputView.swift
+//  SFSignInPageView.swift
 //  SFBleTool
 //
 //  Created by hsf on 2024/9/11.
@@ -16,8 +16,8 @@ import SFUI
 import SFLogger
 
 
-// MARK: - SFSignInInputView
-class SFSignInInputView: SFScrollView {
+// MARK: - SFSignInPageView
+class SFSignInPageView: SFScrollView {
     // MARK: block
     var modeDidChangedBlock: ((SFSignInMode) -> ())?
     
@@ -40,12 +40,12 @@ class SFSignInInputView: SFScrollView {
     }
     
     // MARK: ui
-    private lazy var codeView: SFSignInCodeInputView = {
-        return SFSignInCodeInputView()
+    private lazy var codeView: SFSignInCodeContentView = {
+        return SFSignInCodeContentView()
     }()
     
-    private lazy var pwdView: SFSignInPwdInputView = {
-        return SFSignInPwdInputView()
+    private lazy var pwdView: SFSignInPwdContentView = {
+        return SFSignInPwdContentView()
     }()
     
     private func customUI() {
@@ -66,7 +66,7 @@ class SFSignInInputView: SFScrollView {
     }
 }
 
-extension SFSignInInputView: UIScrollViewDelegate {
+extension SFSignInPageView: UIScrollViewDelegate {
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         if scrollView.contentOffset.x > scrollView.frame.width / 2.0 {
             scrollView.scrollRectToVisible(CGRect(x: contentView.frame.width - scrollView.frame.width, y: 0, width: scrollView.frame.width, height: scrollView.frame.height), animated: true)

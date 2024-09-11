@@ -61,21 +61,24 @@ class SFSignInVC: SFScrollViewController {
             view.text = R.string.localizable.slogen()
         }
     }()
-    private lazy var signInModeView: SFSignInModeView = {
+    private lazy var modeView: SFSignInModeView = {
         return SFSignInModeView()
     }()
-    private lazy var signInInputView: SFSignInInputView = {
-        return SFSignInInputView().then { view in
+    private lazy var contentView: SFSignInPageView = {
+        return SFSignInPageView().then { view in
             view.modeDidChangedBlock = {
                 [weak self] mode in
                 switch mode {
                 case .code:
-                    self?.signInModeView.selectedIndex = 0
+                    self?.modeView.selectedIndex = 0
                 case .pwd:
-                    self?.signInModeView.selectedIndex = 1
+                    self?.modeView.selectedIndex = 1
                 }
             }
         }
+    }()
+    private lazy var agreementView: SFSignInAgreementView = {
+        return SFSignInAgreementView()
     }()
     private lazy var signInBtn: SFButton = {
         return SFButton().then { view in
@@ -100,13 +103,14 @@ class SFSignInVC: SFScrollViewController {
         scrollView.contentView.addSubview(logoImgView)
         scrollView.contentView.addSubview(nameLabel)
         scrollView.contentView.addSubview(slogenLabel)
-        scrollView.contentView.addSubview(signInModeView)
-        scrollView.contentView.addSubview(signInInputView)
+        scrollView.contentView.addSubview(modeView)
+        scrollView.contentView.addSubview(contentView)
+        scrollView.contentView.addSubview(agreementView)
         scrollView.contentView.addSubview(signInBtn)
         scrollView.contentView.addSubview(infoLabel)
         
         logoImgView.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(100)
+            make.top.equalToSuperview().offset(50)
             make.centerX.equalToSuperview()
             make.size.equalTo(CGSize(width: 80, height: 80))
         }
@@ -120,18 +124,24 @@ class SFSignInVC: SFScrollViewController {
             make.leading.equalToSuperview().offset(30)
             make.trailing.equalToSuperview().offset(-30)
         }
-        signInModeView.snp.makeConstraints { make in
+        modeView.snp.makeConstraints { make in
             make.top.equalTo(slogenLabel.snp.bottom).offset(50)
             make.leading.equalToSuperview().offset(30)
             make.trailing.equalToSuperview().offset(-30)
         }
-        signInInputView.snp.makeConstraints { make in
-            make.top.equalTo(signInModeView.snp.bottom).offset(10)
+        contentView.snp.makeConstraints { make in
+            make.top.equalTo(modeView.snp.bottom).offset(10)
             make.leading.equalToSuperview().offset(30)
             make.trailing.equalToSuperview().offset(-30)
         }
+        agreementView.snp.makeConstraints { make in
+            make.top.equalTo(contentView.snp.bottom).offset(30)
+            make.centerX.equalToSuperview()
+            make.leading.greaterThanOrEqualToSuperview().offset(30)
+            make.trailing.greaterThanOrEqualToSuperview().offset(-30)
+        }
         signInBtn.snp.makeConstraints { make in
-            make.top.equalTo(signInInputView.snp.bottom).offset(30)
+            make.top.equalTo(agreementView.snp.bottom).offset(10)
             make.leading.equalToSuperview().offset(30)
             make.trailing.equalToSuperview().offset(-30)
             make.height.equalTo(50)

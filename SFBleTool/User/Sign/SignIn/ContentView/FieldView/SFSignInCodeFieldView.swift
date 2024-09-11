@@ -1,5 +1,5 @@
 //
-//  SFSignInCodeInputView.swift
+//  SFSignInCodeFieldView.swift
 //  SFBleTool
 //
 //  Created by hsf on 2024/9/11.
@@ -15,14 +15,11 @@ import SFUI
 // Server
 import SFLogger
 
-// MARK: - SFSignInCodeInputView
-class SFSignInCodeInputView: SFView {
+// MARK: - SFSignInCodeFieldView
+class SFSignInCodeFieldView: SFSignInFieldView {
     // MARK: life cycle
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = R.color.background()
-        layer.cornerRadius = 15
-        layer.masksToBounds = true
         customUI()
     }
     required init?(coder: NSCoder) {
@@ -30,25 +27,6 @@ class SFSignInCodeInputView: SFView {
     }
     
     // MARK: ui
-    private lazy var accountImgView: SFImageView = {
-        return SFImageView().then { view in
-            view.contentMode = .scaleAspectFit
-            view.image = R.image.user.sign.account()
-        }
-    }()
-    private lazy var accountTextField: SFTextField = {
-        return SFTextField().then { view in
-            view.placeholder = R.string.localizable.user_signIn_input_account_ph()
-            view.placeholderColor = R.color.placeholder()
-            view.clearButtonMode = .whileEditing
-            view.font = .systemFont(ofSize: 15, weight: .regular)
-        }
-    }()
-    private lazy var dividerView: SFView = {
-        return SFView().then { view in
-            view.backgroundColor = R.color.divider()
-        }
-    }()
     private lazy var codeImgView: SFImageView = {
         return SFImageView().then { view in
             view.contentMode = .scaleAspectFit
