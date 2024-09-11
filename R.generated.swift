@@ -72,7 +72,7 @@ struct _R {
       let source: RswiftResources.StringResource.Source
     }
 
-    /// This `_R.string.localizable` struct is generated, and contains static references to 63 localization keys.
+    /// This `_R.string.localizable` struct is generated, and contains static references to 76 localization keys.
     struct localizable {
       let source: RswiftResources.StringResource.Source
 
@@ -251,27 +251,6 @@ struct _R {
       /// Locales: en, zh-Hans
       var central_adv_title_txPower: RswiftResources.StringResource { .init(key: "central_adv_title_txPower", tableName: "Localizable", source: source, developmentValue: "Tx Power", comment: nil) }
 
-      /// en translation: 广播
-      ///
-      /// Key: central_bar_adv
-      ///
-      /// Locales: en, zh-Hans
-      var central_bar_adv: RswiftResources.StringResource { .init(key: "central_bar_adv", tableName: "Localizable", source: source, developmentValue: "广播", comment: nil) }
-
-      /// en translation: 日志
-      ///
-      /// Key: central_bar_log
-      ///
-      /// Locales: en, zh-Hans
-      var central_bar_log: RswiftResources.StringResource { .init(key: "central_bar_log", tableName: "Localizable", source: source, developmentValue: "日志", comment: nil) }
-
-      /// en translation: 服务
-      ///
-      /// Key: central_bar_service
-      ///
-      /// Locales: en, zh-Hans
-      var central_bar_service: RswiftResources.StringResource { .init(key: "central_bar_service", tableName: "Localizable", source: source, developmentValue: "服务", comment: nil) }
-
       /// en translation: 扫描中
       ///
       /// Key: central_ble_scan_doing
@@ -285,6 +264,27 @@ struct _R {
       ///
       /// Locales: en, zh-Hans
       var central_ble_scan_paused: RswiftResources.StringResource { .init(key: "central_ble_scan_paused", tableName: "Localizable", source: source, developmentValue: "开始扫描", comment: nil) }
+
+      /// en translation: 广播
+      ///
+      /// Key: central_detail_item_adv
+      ///
+      /// Locales: en, zh-Hans
+      var central_detail_item_adv: RswiftResources.StringResource { .init(key: "central_detail_item_adv", tableName: "Localizable", source: source, developmentValue: "广播", comment: nil) }
+
+      /// en translation: 日志
+      ///
+      /// Key: central_detail_item_log
+      ///
+      /// Locales: en, zh-Hans
+      var central_detail_item_log: RswiftResources.StringResource { .init(key: "central_detail_item_log", tableName: "Localizable", source: source, developmentValue: "日志", comment: nil) }
+
+      /// en translation: 服务
+      ///
+      /// Key: central_detail_item_service
+      ///
+      /// Locales: en, zh-Hans
+      var central_detail_item_service: RswiftResources.StringResource { .init(key: "central_detail_item_service", tableName: "Localizable", source: source, developmentValue: "服务", comment: nil) }
 
       /// en translation: RSSI
       ///
@@ -495,6 +495,97 @@ struct _R {
       ///
       /// Locales: en
       var user_info_phone: RswiftResources.StringResource { .init(key: "user_info_phone", tableName: "Localizable", source: source, developmentValue: "手机号", comment: nil) }
+
+      /// en translation: 忘记密码？
+      ///
+      /// Key: user_signIn_action_forgetPwd
+      ///
+      /// Locales: en
+      var user_signIn_action_forgetPwd: RswiftResources.StringResource { .init(key: "user_signIn_action_forgetPwd", tableName: "Localizable", source: source, developmentValue: "忘记密码？", comment: nil) }
+
+      /// en translation: 发送验证码
+      ///
+      /// Key: user_signIn_action_sendCode
+      ///
+      /// Locales: en
+      var user_signIn_action_sendCode: RswiftResources.StringResource { .init(key: "user_signIn_action_sendCode", tableName: "Localizable", source: source, developmentValue: "发送验证码", comment: nil) }
+
+      /// en translation: 我已阅读并同意%1$@和%2$@
+      ///
+      /// Key: user_signIn_agreement
+      ///
+      /// Locales: en
+      var user_signIn_agreement: RswiftResources.StringResource2<String, String> { .init(key: "user_signIn_agreement", tableName: "Localizable", source: source, developmentValue: "我已阅读并同意%1$@和%2$@", comment: nil) }
+
+      /// en translation: 《隐私协议》
+      ///
+      /// Key: user_signIn_agreement_policy
+      ///
+      /// Locales: en
+      var user_signIn_agreement_policy: RswiftResources.StringResource { .init(key: "user_signIn_agreement_policy", tableName: "Localizable", source: source, developmentValue: "《隐私协议》", comment: nil) }
+
+      /// en translation: 《服务条款》
+      ///
+      /// Key: user_signIn_agreement_term
+      ///
+      /// Locales: en
+      var user_signIn_agreement_term: RswiftResources.StringResource { .init(key: "user_signIn_agreement_term", tableName: "Localizable", source: source, developmentValue: "《服务条款》", comment: nil) }
+
+      /// en translation: 请输入账号/手机号/邮箱号
+      ///
+      /// Key: user_signIn_input_account_ph
+      ///
+      /// Locales: en
+      var user_signIn_input_account_ph: RswiftResources.StringResource { .init(key: "user_signIn_input_account_ph", tableName: "Localizable", source: source, developmentValue: "请输入账号/手机号/邮箱号", comment: nil) }
+
+      /// en translation: 请输入验证码
+      ///
+      /// Key: user_signIn_input_code_ph
+      ///
+      /// Locales: en
+      var user_signIn_input_code_ph: RswiftResources.StringResource { .init(key: "user_signIn_input_code_ph", tableName: "Localizable", source: source, developmentValue: "请输入验证码", comment: nil) }
+
+      /// en translation: 请输入密码
+      ///
+      /// Key: user_signIn_input_pwd_ph
+      ///
+      /// Locales: en
+      var user_signIn_input_pwd_ph: RswiftResources.StringResource { .init(key: "user_signIn_input_pwd_ph", tableName: "Localizable", source: source, developmentValue: "请输入密码", comment: nil) }
+
+      /// en translation: 登录方式
+      ///
+      /// Key: user_signIn_mode
+      ///
+      /// Locales: en
+      var user_signIn_mode: RswiftResources.StringResource { .init(key: "user_signIn_mode", tableName: "Localizable", source: source, developmentValue: "登录方式", comment: nil) }
+
+      /// en translation: 验证码登录
+      ///
+      /// Key: user_signIn_mode_code
+      ///
+      /// Locales: en
+      var user_signIn_mode_code: RswiftResources.StringResource { .init(key: "user_signIn_mode_code", tableName: "Localizable", source: source, developmentValue: "验证码登录", comment: nil) }
+
+      /// en translation: 密码登录
+      ///
+      /// Key: user_signIn_mode_pwd
+      ///
+      /// Locales: en
+      var user_signIn_mode_pwd: RswiftResources.StringResource { .init(key: "user_signIn_mode_pwd", tableName: "Localizable", source: source, developmentValue: "密码登录", comment: nil) }
+
+      /// en translation: 未注册的账号将自动注册并登录
+      ///
+      /// Key: user_signIn_tip_code
+      ///
+      /// Locales: en
+      var user_signIn_tip_code: RswiftResources.StringResource { .init(key: "user_signIn_tip_code", tableName: "Localizable", source: source, developmentValue: "未注册的账号将自动注册并登录", comment: nil) }
+
+      /// en translation: 请使用已注册的账号登录
+      ///
+      /// Key: user_signIn_tip_pwd
+      ///
+      /// Locales: en
+      var user_signIn_tip_pwd: RswiftResources.StringResource { .init(key: "user_signIn_tip_pwd", tableName: "Localizable", source: source, developmentValue: "请使用已注册的账号登录", comment: nil) }
 
       /// en translation: 登录
       ///
@@ -899,7 +990,7 @@ struct _R {
       var top: RswiftResources.ImageResource { .init(name: "triangle/top", path: ["triangle"], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
     }
 
-    /// This `_R.image.user` struct is generated, and contains static references to 1 users, and 3 namespaces.
+    /// This `_R.image.user` struct is generated, and contains static references to 1 users, and 4 namespaces.
     struct user {
       let bundle: Foundation.Bundle
 
@@ -908,6 +999,7 @@ struct _R {
       var center: center { .init(bundle: bundle) }
       var gender: gender { .init(bundle: bundle) }
       var info: info { .init(bundle: bundle) }
+      var sign: sign { .init(bundle: bundle) }
 
       func center(bundle: Foundation.Bundle) -> center {
         .init(bundle: bundle)
@@ -916,6 +1008,9 @@ struct _R {
         .init(bundle: bundle)
       }
       func info(bundle: Foundation.Bundle) -> info {
+        .init(bundle: bundle)
+      }
+      func sign(bundle: Foundation.Bundle) -> sign {
         .init(bundle: bundle)
       }
 
@@ -972,6 +1067,37 @@ struct _R {
 
         /// Image `user/info/phone`.
         var phone: RswiftResources.ImageResource { .init(name: "user/info/phone", path: ["user", "info"], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+      }
+
+      /// This `_R.image.user.sign` struct is generated, and contains static references to 3 signs, and 1 namespaces.
+      struct sign {
+        let bundle: Foundation.Bundle
+
+        /// Image `user/sign/account`.
+        var account: RswiftResources.ImageResource { .init(name: "user/sign/account", path: ["user", "sign"], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+        /// Image `user/sign/code`.
+        var code: RswiftResources.ImageResource { .init(name: "user/sign/code", path: ["user", "sign"], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+        /// Image `user/sign/pwd`.
+        var pwd: RswiftResources.ImageResource { .init(name: "user/sign/pwd", path: ["user", "sign"], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+        var eye: eye { .init(bundle: bundle) }
+
+        func eye(bundle: Foundation.Bundle) -> eye {
+          .init(bundle: bundle)
+        }
+
+
+        /// This `_R.image.user.sign.eye` struct is generated, and contains static references to 2 eyes.
+        struct eye {
+          let bundle: Foundation.Bundle
+
+          /// Image `user/sign/eye/close`.
+          var close: RswiftResources.ImageResource { .init(name: "user/sign/eye/close", path: ["user", "sign", "eye"], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+          /// Image `user/sign/eye/open`.
+          var `open`: RswiftResources.ImageResource { .init(name: "user/sign/eye/open", path: ["user", "sign", "eye"], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+        }
       }
     }
   }

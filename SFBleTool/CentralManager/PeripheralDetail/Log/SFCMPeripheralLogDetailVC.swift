@@ -36,7 +36,7 @@ class SFCMPeripheralLogDetailVC: SFViewController {
             view.backgroundColor = .clear
             let titleView = SFCMPeripheralDetailTitleView()
             titleView.frame = CGRect(origin: .zero, size: CGSize(width: 0, height: titleView.titleHeight))
-            titleView.titleLabel.text = R.string.localizable.central_bar_log()
+            titleView.titleLabel.text = R.string.localizable.central_detail_item_log()
             view.tableHeaderView = titleView
             view.delegate = self
             view.dataSource = self
@@ -85,7 +85,7 @@ extension SFCMPeripheralLogDetailVC: UIScrollViewDelegate {
         let oldNavTitle: String? = navTitle
         let offsetY = scrollView.contentOffset.y
         if offsetY >= 60 {
-            let newNavTitle: String? = R.string.localizable.central_bar_log()
+            let newNavTitle: String? = R.string.localizable.central_detail_item_log()
             if newNavTitle != oldNavTitle {
                 navTitle = newNavTitle
                 navTitleDidChangedBlock?(navTitle)

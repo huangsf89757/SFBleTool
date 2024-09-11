@@ -6,25 +6,52 @@
   
 */
 
-// -- app --
+// # app
 CFBundleDisplayName = "BleMessager";
 
 "name" = "BleMessager";
 "slogen" = "蓝牙通信，畅享每一刻。";
 
 
-// -- user --
-// sign
+// # user
+// ## sign
 "user_sign_up" = "注册";
 "user_sign_in" = "登录";
 "user_sign_out" = "登出";
 
-// center
+// ## signIn
+// ### mode
+"user_signIn_mode" = "登录方式";
+"user_signIn_mode_code" = "验证码登录";
+"user_signIn_mode_pwd" = "密码登录";
+
+// ### input
+"user_signIn_input_account_ph" = "请输入账号/手机号/邮箱号";
+"user_signIn_input_code_ph" = "请输入验证码";
+"user_signIn_input_pwd_ph" = "请输入密码";
+
+// ### tip
+"user_signIn_tip_code" = "未注册的账号将自动注册并登录";
+"user_signIn_tip_pwd" = "请使用已注册的账号登录";
+
+// ### agreement
+"user_signIn_agreement" = "我已阅读并同意%1$@和%2$@";
+"user_signIn_agreement_term" = "《服务条款》";
+"user_signIn_agreement_policy" = "《隐私协议》";
+
+// ### action
+"user_signIn_action_sendCode" = "发送验证码";
+"user_signIn_action_sendCode_counting" = "%1$@秒";
+"user_signIn_action_forgetPwd" = "忘记密码？";
+"user_signIn_action_signIn" = "登录";
+
+
+// ## center
 "user_center_item_central" = "中心设备";
 "user_center_item_peripheral" = "外围设备";
 "user_center_item_security" = "账号安全";
 
-// info
+// ## info
 "user_info_id" = "UID";
 "user_info_account" = "账号";
 "user_info_avatar" = "头像";
@@ -39,25 +66,26 @@ CFBundleDisplayName = "BleMessager";
 "user_info_address" = "所在地";
 
 
-// entrance
+// # entrance
 "entrance_opt_central_title" = "中心模式";
 "entrance_opt_central_subtitle" = "手机作为中央设备来扫描和连接周围的蓝牙外设";
 "entrance_opt_peripheral_title" = "外设模式";
 "entrance_opt_peripheral_subtitle" = "手机作为外围设备广播数据";
 
-// -- central --
-// ble
+
+// # central
+// ## ble
 "central_ble_scan_doing" = "扫描中";
 "central_ble_scan_paused" = "开始扫描";
 
-// search
+// ## search
 "central_search_ph" = "请输入设备名称";
 
-// sort
+// ## sort
 "central_sort_name" = "名称";
 "central_sort_RSSI" = "RSSI";
 
-// filter
+// ## filter
 "central_filter_title" = "过滤";
 "central_filter_uuid" = "UUID";
 "central_filter_uuid_ph" = "请输入UUID";
@@ -65,12 +93,12 @@ CFBundleDisplayName = "BleMessager";
 "central_filter_reset" = "重置";
 "central_filter_sure" = "确认";
 
-// bar
-"central_bar_adv" = "广播";
-"central_bar_service" = "服务";
-"central_bar_log" = "日志";
+// ## detail
+"central_detail_item_adv" = "广播";
+"central_detail_item_service" = "服务";
+"central_detail_item_log" = "日志";
 
-// adv
+// ## adv
 "central_adv_title_localName" = "Local Name";
 "central_adv_title_manufacturer" = "Manufacturer";
 "central_adv_title_specificService" = "Specific Service";

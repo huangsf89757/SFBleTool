@@ -21,9 +21,9 @@ class SFCMPeripheralDetailSegmentView: SFSegmentView {
     // MARK: life cycle
     init() {
         let titles = [
-            R.string.localizable.central_bar_adv(),
-            R.string.localizable.central_bar_service(),
-            R.string.localizable.central_bar_log(),
+            R.string.localizable.central_detail_item_adv(),
+            R.string.localizable.central_detail_item_service(),
+            R.string.localizable.central_detail_item_log(),
         ]
         let images = [
             R.image.bar.adv.nor(),

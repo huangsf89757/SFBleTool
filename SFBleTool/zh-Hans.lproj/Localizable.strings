@@ -38,9 +38,9 @@ CFBundleDisplayName = "BleMessager";
 "central_filter_sure" = "确认";
 
 // bar
-"central_bar_adv" = "广播";
-"central_bar_service" = "服务";
-"central_bar_log" = "日志";
+"central_detail_item_adv" = "广播";
+"central_detail_item_service" = "服务";
+"central_detail_item_log" = "日志";
 
 // adv
 "central_adv_title_localName" = "Local Name";

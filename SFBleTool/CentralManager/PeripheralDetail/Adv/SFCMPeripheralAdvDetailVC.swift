@@ -79,7 +79,7 @@ class SFCMPeripheralAdvDetailVC: SFScrollViewController {
     // MARK: ui
     private lazy var titleView: SFCMPeripheralDetailTitleView = {
         return SFCMPeripheralDetailTitleView().then { view in
-            view.titleLabel.text = R.string.localizable.central_bar_adv()
+            view.titleLabel.text = R.string.localizable.central_detail_item_adv()
         }
     }()
     private func customUI() {
@@ -120,7 +120,7 @@ extension SFCMPeripheralAdvDetailVC: UIScrollViewDelegate {
         let oldNavTitle: String? = navTitle
         let offsetY = scrollView.contentOffset.y
         if offsetY >= 60 {
-            let newNavTitle: String? = R.string.localizable.central_bar_adv()
+            let newNavTitle: String? = R.string.localizable.central_detail_item_adv()
             if newNavTitle != oldNavTitle {
                 navTitle = newNavTitle
                 navTitleDidChangedBlock?(navTitle)
