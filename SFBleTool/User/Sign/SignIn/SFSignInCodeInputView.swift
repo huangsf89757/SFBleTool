@@ -40,7 +40,7 @@ class SFSignInCodeInputView: SFView {
             view.clearButtonMode = .whileEditing
         }
     }()
-    private lazy var lineView: SFView = {
+    private lazy var dividerView: SFView = {
         return SFView().then { view in
             view.backgroundColor = R.color.divider()
         }
@@ -68,6 +68,47 @@ class SFSignInCodeInputView: SFView {
     }()
     
     private func customUI() {
+        addSubview(accountImgView)
+        addSubview(accountTextField)
+        addSubview(dividerView)
+        addSubview(codeImgView)
+        addSubview(codeTextField)
+        addSubview(sendCodeBtn)
         
+        accountImgView.snp.makeConstraints { make in
+            make.centerY.equalTo(accountTextField)
+            make.leading.equalToSuperview().offset(10)
+            make.width.height.equalTo(20)
+        }
+        accountTextField.snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(10)
+            make.leading.equalTo(accountImgView.snp.trailing).offset(10)
+            make.trailing.equalToSuperview().offset(-10)
+            make.height.equalTo(44)
+        }
+        dividerView.snp.makeConstraints { make in
+            make.top.equalTo(accountTextField.snp.bottom).offset(5)
+            make.leading.equalToSuperview().offset(10)
+            make.trailing.equalToSuperview().offset(-10)
+            make.height.equalTo(1)
+        }
+        codeImgView.snp.makeConstraints { make in
+            make.centerY.equalTo(codeTextField)
+            make.leading.equalToSuperview().offset(10)
+            make.width.height.equalTo(20)
+        }
+        codeTextField.snp.makeConstraints { make in
+            make.top.equalTo(dividerView.snp.bottom).offset(5)
+            make.leading.equalTo(codeImgView.snp.trailing).offset(10)
+            make.height.equalTo(44)
+            make.bottom.equalToSuperview().offset(-10)
+        }
+        sendCodeBtn.snp.makeConstraints { make in
+            make.centerY.equalTo(codeTextField)
+            make.leading.equalTo(codeTextField.snp.trailing).offset(10)
+            make.trailing.equalToSuperview().offset(-10)
+            make.width.greaterThanOrEqualTo(60)
+            make.width.lessThanOrEqualTo(120)
+        }
     }
 }
