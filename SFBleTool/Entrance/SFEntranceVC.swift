@@ -21,8 +21,16 @@ class SFEntranceVC: SFScrollViewController {
     var didChooseEntranceOptBlock: ((Int) -> ())?
     
     // MARK: life cycle
+    convenience init() {
+        self.init(dir: .vertical)
+    }
+    private override init(dir: SFScrollView.Direction) {
+        super.init(dir: dir)
+    }
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     override func viewDidLoad() {
-        super.dir = .vertical
         super.viewDidLoad()
         customUI()
     }
@@ -80,11 +88,11 @@ class SFEntranceVC: SFScrollViewController {
         }
     }()
     private func customUI() {
-        contentView.addSubview(logoImgView)
-        contentView.addSubview(nameLabel)
-        contentView.addSubview(slogenLabel)
-        contentView.addSubview(centralEntranceOptView)
-        contentView.addSubview(peripheralEntranceOptView)
+        scrollView.contentView.addSubview(logoImgView)
+        scrollView.contentView.addSubview(nameLabel)
+        scrollView.contentView.addSubview(slogenLabel)
+        scrollView.contentView.addSubview(centralEntranceOptView)
+        scrollView.contentView.addSubview(peripheralEntranceOptView)
         
         logoImgView.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(100)

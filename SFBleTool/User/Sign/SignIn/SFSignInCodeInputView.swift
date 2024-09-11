@@ -104,7 +104,8 @@ class SFSignInCodeInputView: SFView {
             make.bottom.equalToSuperview().offset(-10)
         }
         sendCodeBtn.snp.makeConstraints { make in
-            make.centerY.equalTo(codeTextField)
+            make.top.equalTo(codeTextField)
+            make.bottom.equalTo(codeTextField)
             make.leading.equalTo(codeTextField.snp.trailing).offset(10)
             make.trailing.equalToSuperview().offset(-10)
             make.width.greaterThanOrEqualTo(60)

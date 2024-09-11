@@ -21,8 +21,16 @@ class SFSignInVC: SFScrollViewController {
     
     
     // MARK: life cycle
+    convenience init() {
+        self.init(dir: .vertical)
+    }
+    private override init(dir: SFScrollView.Direction) {
+        super.init(dir: dir)
+    }
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     override func viewDidLoad() {
-        super.dir = .vertical
         super.viewDidLoad()
         customUI()
     }
@@ -77,13 +85,13 @@ class SFSignInVC: SFScrollViewController {
     }()
     
     private func customUI() {
-        contentView.addSubview(logoImgView)
-        contentView.addSubview(nameLabel)
-        contentView.addSubview(slogenLabel)
-        contentView.addSubview(signInModeView)
-        contentView.addSubview(signInInputView)
-        contentView.addSubview(signInBtn)
-        contentView.addSubview(infoLabel)
+        scrollView.contentView.addSubview(logoImgView)
+        scrollView.contentView.addSubview(nameLabel)
+        scrollView.contentView.addSubview(slogenLabel)
+        scrollView.contentView.addSubview(signInModeView)
+        scrollView.contentView.addSubview(signInInputView)
+        scrollView.contentView.addSubview(signInBtn)
+        scrollView.contentView.addSubview(infoLabel)
         
         logoImgView.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(100)
