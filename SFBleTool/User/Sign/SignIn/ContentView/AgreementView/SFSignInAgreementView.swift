@@ -21,6 +21,9 @@ class SFSignInAgreementView: SFView {
     // MARK: life cycle
     override init(frame: CGRect) {
         super.init(frame: frame)
+        let hitInsets = UIEdgeInsets(top: -10, left: -10, bottom: -10, right: -10)
+        self.hitInsets = hitInsets
+        checkBoxBtn.hitInsets = hitInsets
         customUI()
     }
     required init?(coder: NSCoder) {
@@ -32,6 +35,7 @@ class SFSignInAgreementView: SFView {
         return SFButton().then { view in
             view.setImage(R.image.com.checkbox.nor(), for: .normal)
             view.setImage(R.image.com.checkbox.sel(), for: .selected)
+            view.addTarget(self, action: #selector(checkBoxBtnClicked), for: .touchUpInside)
         }
     }()
     private lazy var titleLabel: SFLabel = {
@@ -63,3 +67,9 @@ class SFSignInAgreementView: SFView {
     }
 }
 
+// MARK: - action
+extension SFSignInAgreementView {
+    @objc private func checkBoxBtnClicked() {
+        checkBoxBtn.toggleSelected()
+    }
+}
