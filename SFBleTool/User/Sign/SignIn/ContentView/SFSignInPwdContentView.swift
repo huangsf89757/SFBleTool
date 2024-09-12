@@ -18,6 +18,9 @@ import SFLogger
 
 // MARK: - SFSignInPwdContentView
 class SFSignInPwdContentView: SFView {
+    // MARK: block
+    var forgetPwdBlock: (()->())?
+    
     // MARK: life cycle
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -28,8 +31,8 @@ class SFSignInPwdContentView: SFView {
     }
     
     // MARK: ui
-    private lazy var fieldView: SFSignInPwdFieldView = {
-        return SFSignInPwdFieldView()
+    private lazy var fieldView: SFSignInPwdFieldContentView = {
+        return SFSignInPwdFieldContentView()
     }()
     private lazy var tipLabel: SFLabel = {
         return SFLabel().then { view in
@@ -72,6 +75,6 @@ class SFSignInPwdContentView: SFView {
 // MARK: - action
 extension SFSignInPwdContentView {
     @objc private func forgetPwdBtnClicked() {
-        
+        forgetPwdBlock?()
     }
 }

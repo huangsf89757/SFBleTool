@@ -20,6 +20,11 @@ import IQKeyboardManagerSwift
 class SFSignInPageView: SFScrollView {
     // MARK: block
     var pageDidChangedBlock: ((SFSignInPageView, Int) -> ())?
+    var forgetPwdBlock: (()->())? {
+        didSet {
+            pwdView.forgetPwdBlock = forgetPwdBlock
+        }
+    }
     
     // MARK: var
     var curPageIndex: Int = 0

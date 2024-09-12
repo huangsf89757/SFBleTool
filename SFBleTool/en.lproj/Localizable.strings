@@ -45,6 +45,9 @@ CFBundleDisplayName = "BleMessager";
 "user_signIn_action_forgetPwd" = "忘记密码？";
 "user_signIn_action_signIn" = "登录";
 
+// ## pwdFindback
+"user_pwdFindback" = "密码找回";
+
 
 // ## center
 "user_center_item_central" = "中心设备";

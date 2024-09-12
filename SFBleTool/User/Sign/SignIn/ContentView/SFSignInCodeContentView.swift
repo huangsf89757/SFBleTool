@@ -28,8 +28,8 @@ class SFSignInCodeContentView: SFView {
     }
     
     // MARK: ui
-    private lazy var fieldView: SFSignInCodeFieldView = {
-        return SFSignInCodeFieldView()
+    private lazy var fieldView: SFSignInCodeFieldContentView = {
+        return SFSignInCodeFieldContentView()
     }()
     private lazy var tipLabel: SFLabel = {
         return SFLabel().then { view in

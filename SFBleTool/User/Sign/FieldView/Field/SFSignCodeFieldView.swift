@@ -1,8 +1,8 @@
 //
-//  SFSignInCodeFieldView.swift
+//  SFSignCodeFieldView.swift
 //  SFBleTool
 //
-//  Created by hsf on 2024/9/11.
+//  Created by hsf on 2024/9/12.
 //
 
 import Foundation
@@ -15,8 +15,8 @@ import SFUI
 // Server
 import SFLogger
 
-// MARK: - SFSignInCodeFieldView
-class SFSignInCodeFieldView: SFSignInFieldView {
+// MARK: - SFSignCodeFieldView
+class SFSignCodeFieldView: SFView {
     // MARK: life cycle
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -27,13 +27,13 @@ class SFSignInCodeFieldView: SFSignInFieldView {
     }
     
     // MARK: ui
-    private lazy var codeImgView: SFImageView = {
+    private lazy var iconImgView: SFImageView = {
         return SFImageView().then { view in
             view.contentMode = .scaleAspectFit
             view.image = R.image.user.sign.code()
         }
     }()
-    private lazy var codeTextField: SFTextField = {
+    private lazy var textField: SFTextField = {
         return SFTextField().then { view in
             view.placeholder = R.string.localizable.user_signIn_input_code_ph()
             view.placeholderColor = R.color.placeholder()
@@ -47,52 +47,39 @@ class SFSignInCodeFieldView: SFSignInFieldView {
             view.setTitleColor(R.color.placeholder(), for: .selected)
             view.setTitle(R.string.localizable.user_signIn_action_sendCode(), for: .normal)
             view.titleLabel?.font = .systemFont(ofSize: 15, weight: .regular)
+            view.addTarget(self, action: #selector(sendCodeBtnClicked), for: .touchUpInside)
         }
     }()
-    
     private func customUI() {
-        addSubview(accountImgView)
-        addSubview(accountTextField)
-        addSubview(dividerView)
-        addSubview(codeImgView)
-        addSubview(codeTextField)
+        addSubview(iconImgView)
+        addSubview(textField)
         addSubview(sendCodeBtn)
         
-        accountImgView.snp.makeConstraints { make in
-            make.centerY.equalTo(accountTextField)
+        iconImgView.snp.makeConstraints { make in
+            make.centerY.equalTo(textField)
             make.leading.equalToSuperview().offset(15)
             make.width.height.equalTo(20)
         }
-        accountTextField.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(10)
-            make.leading.equalTo(accountImgView.snp.trailing).offset(10)
-            make.trailing.equalToSuperview().offset(-10)
+        textField.snp.makeConstraints { make in
+            make.top.equalToSuperview()
+            make.bottom.equalToSuperview()
+            make.leading.equalTo(iconImgView.snp.trailing).offset(10)
             make.height.equalTo(44)
-        }
-        dividerView.snp.makeConstraints { make in
-            make.top.equalTo(accountTextField.snp.bottom).offset(5)
-            make.leading.equalToSuperview().offset(10)
-            make.trailing.equalToSuperview().offset(-10)
-            make.height.equalTo(1)
-        }
-        codeImgView.snp.makeConstraints { make in
-            make.centerY.equalTo(codeTextField)
-            make.leading.equalToSuperview().offset(15)
-            make.width.height.equalTo(20)
-        }
-        codeTextField.snp.makeConstraints { make in
-            make.top.equalTo(dividerView.snp.bottom).offset(5)
-            make.leading.equalTo(codeImgView.snp.trailing).offset(10)
-            make.height.equalTo(44)
-            make.bottom.equalToSuperview().offset(-10)
         }
         sendCodeBtn.snp.makeConstraints { make in
-            make.top.equalTo(codeTextField)
-            make.bottom.equalTo(codeTextField)
-            make.leading.equalTo(codeTextField.snp.trailing).offset(10)
+            make.top.equalTo(textField)
+            make.bottom.equalTo(textField)
+            make.leading.equalTo(textField.snp.trailing).offset(10)
             make.trailing.equalToSuperview().offset(-10)
             make.width.greaterThanOrEqualTo(60)
             make.width.lessThanOrEqualTo(120)
         }
+    }
+}
+
+// MARK: - action
+extension SFSignCodeFieldView {
+    @objc private func sendCodeBtnClicked() {
+        
     }
 }

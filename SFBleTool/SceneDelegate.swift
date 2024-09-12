@@ -60,7 +60,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 // MARK: root
 extension SceneDelegate {
     private func setRootVc() {
-        window?.rootViewController = SFSignInVC()
+        window?.rootViewController = SFNavigationController(rootViewController: SFSignInVC())
 //        if let entrance = UserDefaults.standard.object(forKey: SFUserDefaults.Key.entrance) as? Int {
 //            if entrance == 0 {
 //                window?.rootViewController = SFNavigationController(rootViewController: SFCMPeripheralListVC())

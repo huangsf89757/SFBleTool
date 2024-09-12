@@ -32,6 +32,7 @@ class SFSignInVC: SFScrollViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        isHiddenNavBar = true
         customUI()
     }
     
@@ -74,6 +75,11 @@ class SFSignInVC: SFScrollViewController {
             view.pageDidChangedBlock = {
                 [weak self] pageView, index in
                 self?.modeView.selectedIndex = index
+            }
+            view.forgetPwdBlock = {
+                [weak self] in
+                let vc = SFPwdFindbackVC()
+                self?.navigationController?.pushViewController(vc, animated: true)
             }
         }
     }()
@@ -152,6 +158,5 @@ class SFSignInVC: SFScrollViewController {
             make.trailing.equalToSuperview().offset(-30)
             make.bottom.equalToSuperview().offset(-10)
         }
-        
     }
 }
