@@ -14,7 +14,7 @@ import SFExtension
 import SFUI
 // Server
 import SFLogger
-
+import IQKeyboardManagerSwift
 
 // MARK: - SFSignInPageView
 class SFSignInPageView: SFScrollView {
@@ -34,6 +34,7 @@ class SFSignInPageView: SFScrollView {
         showsHorizontalScrollIndicator = false
         isPagingEnabled = true
         delegate = self
+        shouldIgnoreScrollingAdjustment = true // 这个可以使得IQKeyboardManagerSwift忽略当前ScrollView
         customUI()
     }
     required init?(coder: NSCoder) {
