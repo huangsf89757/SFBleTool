@@ -19,10 +19,10 @@ import SFLogger
 // MARK: - SFSignInPageView
 class SFSignInPageView: SFScrollView {
     // MARK: block
-    var modeDidChangedBlock: ((SFSignInMode) -> ())?
+    var pageDidChangedBlock: ((SFSignInPageView, Int) -> ())?
     
     // MARK: var
-    var mode: SFSignInMode = .code
+    var curPageIndex: Int = 0
     
     // MARK: life cycle
     convenience init() {
@@ -32,6 +32,7 @@ class SFSignInPageView: SFScrollView {
         super.init(dir: dir)
         showsVerticalScrollIndicator = false
         showsHorizontalScrollIndicator = false
+        isPagingEnabled = true
         delegate = self
         customUI()
     }
@@ -53,14 +54,16 @@ class SFSignInPageView: SFScrollView {
         contentView.addSubview(pwdView)
         
         codeView.snp.makeConstraints { make in
-            make.top.leading.equalToSuperview()
-            make.width.equalTo(self)
+            make.top.equalToSuperview()
+            make.leading.equalToSuperview().offset(10)
+            make.width.equalTo(self).offset(-20)
             make.bottom.lessThanOrEqualToSuperview()
         }
         pwdView.snp.makeConstraints { make in
-            make.top.trailing.equalToSuperview()
+            make.top.equalToSuperview()
+            make.trailing.equalToSuperview().offset(-10)
             make.leading.equalTo(codeView.snp.trailing).offset(20)
-            make.width.equalTo(self)
+            make.width.equalTo(self).offset(-20)
             make.bottom.lessThanOrEqualToSuperview()
         }
     }
@@ -68,13 +71,52 @@ class SFSignInPageView: SFScrollView {
 
 extension SFSignInPageView: UIScrollViewDelegate {
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-        if scrollView.contentOffset.x > scrollView.frame.width / 2.0 {
-            scrollView.scrollRectToVisible(CGRect(x: contentView.frame.width - scrollView.frame.width, y: 0, width: scrollView.frame.width, height: scrollView.frame.height), animated: true)
-            mode = .pwd
+        let pageWidth = frame.width
+        let curPage = floor(scrollView.contentOffset.x / pageWidth)
+        let targetPage: CGFloat
+        
+        if velocity.x > 0 {
+            // 向右滑动
+            targetPage = curPage + 1
+        } else if velocity.x < 0 {
+            // 向左滑动
+            targetPage = curPage - 1
         } else {
-            scrollView.scrollRectToVisible(CGRect(x: 0, y: 0, width: scrollView.frame.width, height: scrollView.frame.height), animated: true)
-            mode = .code
+            // 速度为0,根据当前位置决定
+            targetPage = round(scrollView.contentOffset.x / pageWidth)
         }
-        modeDidChangedBlock?(mode)
+        
+        let newTargetOffset = max(0, min(targetPage, 1)) * pageWidth
+        targetContentOffset.pointee.x = newTargetOffset
+    }
+    
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        if !decelerate {
+            snapToPage(scrollView)
+        }
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        snapToPage(scrollView)
+    }
+    
+    private func snapToPage(_ scrollView: UIScrollView) {
+        let pageWidth = frame.width
+        let curPageIndex = Int(round(scrollView.contentOffset.x / pageWidth))
+        let newOffset = curPageIndex > 0 ? (scrollView.contentSize.width - pageWidth) : 0
+        if scrollView.contentOffset.x != newOffset {
+            scrollView.setContentOffset(CGPoint(x: newOffset, y: 0), animated: true)
+        }
+        self.curPageIndex = curPageIndex
+        pageDidChangedBlock?(self, curPageIndex)
+    }
+    
+    func changePage(to index: Int) {
+        curPageIndex = index
+        let pageWidth = frame.width
+        let newOffset = curPageIndex > 0 ? (contentSize.width - pageWidth) : 0
+        if contentOffset.x != newOffset {
+            setContentOffset(CGPoint(x: newOffset, y: 0), animated: true)
+        }
     }
 }

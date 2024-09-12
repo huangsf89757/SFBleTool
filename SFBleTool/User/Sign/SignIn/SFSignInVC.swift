@@ -62,18 +62,18 @@ class SFSignInVC: SFScrollViewController {
         }
     }()
     private lazy var modeView: SFSignInModeView = {
-        return SFSignInModeView()
+        return SFSignInModeView().then { view in
+            view.didSelectedItemBlock = {
+                [weak self] modeView, index in
+                self?.pageView.changePage(to: index)
+            }
+        }
     }()
-    private lazy var contentView: SFSignInPageView = {
+    private lazy var pageView: SFSignInPageView = {
         return SFSignInPageView().then { view in
-            view.modeDidChangedBlock = {
-                [weak self] mode in
-                switch mode {
-                case .code:
-                    self?.modeView.selectedIndex = 0
-                case .pwd:
-                    self?.modeView.selectedIndex = 1
-                }
+            view.pageDidChangedBlock = {
+                [weak self] pageView, index in
+                self?.modeView.selectedIndex = index
             }
         }
     }()
@@ -104,7 +104,7 @@ class SFSignInVC: SFScrollViewController {
         scrollView.contentView.addSubview(nameLabel)
         scrollView.contentView.addSubview(slogenLabel)
         scrollView.contentView.addSubview(modeView)
-        scrollView.contentView.addSubview(contentView)
+        scrollView.contentView.addSubview(pageView)
         scrollView.contentView.addSubview(agreementView)
         scrollView.contentView.addSubview(signInBtn)
         scrollView.contentView.addSubview(infoLabel)
@@ -129,13 +129,13 @@ class SFSignInVC: SFScrollViewController {
             make.leading.equalToSuperview().offset(30)
             make.trailing.equalToSuperview().offset(-30)
         }
-        contentView.snp.makeConstraints { make in
+        pageView.snp.makeConstraints { make in
             make.top.equalTo(modeView.snp.bottom).offset(10)
-            make.leading.equalToSuperview().offset(30)
-            make.trailing.equalToSuperview().offset(-30)
+            make.leading.equalToSuperview().offset(20)
+            make.trailing.equalToSuperview().offset(-20)
         }
         agreementView.snp.makeConstraints { make in
-            make.top.equalTo(contentView.snp.bottom).offset(30)
+            make.top.equalTo(pageView.snp.bottom).offset(30)
             make.centerX.equalToSuperview()
             make.leading.greaterThanOrEqualToSuperview().offset(30)
             make.trailing.greaterThanOrEqualToSuperview().offset(-30)
