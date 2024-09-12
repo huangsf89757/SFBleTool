@@ -39,12 +39,14 @@ class SFSignInPwdFieldView: SFSignInFieldView {
             view.placeholderColor = R.color.placeholder()
             view.clearButtonMode = .whileEditing
             view.font = .systemFont(ofSize: 15, weight: .regular)
+            view.isSecureTextEntry = true
         }
     }()
     private lazy var eyeBtn: SFButton = {
         return SFButton().then { view in
             view.setImage(R.image.user.sign.eye.close(), for: .normal)
             view.setImage(R.image.user.sign.eye.open(), for: .selected)
+            view.addTarget(self, action: #selector(eyeBtnClicked), for: .touchUpInside)
         }
     }()
     
@@ -91,5 +93,13 @@ class SFSignInPwdFieldView: SFSignInFieldView {
             make.trailing.equalToSuperview()
             make.width.equalTo(60)
         }
+    }
+}
+
+// MARK: action
+extension SFSignInPwdFieldView {
+    @objc private func eyeBtnClicked() {
+        eyeBtn.toggleSelected()
+        pwdTextField.isSecureTextEntry = !eyeBtn.isSelected
     }
 }
