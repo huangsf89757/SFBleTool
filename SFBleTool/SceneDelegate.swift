@@ -60,8 +60,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 // MARK: root
 extension SceneDelegate {
     private func setRootVc() {
-        
-        
+        SFUserManager.shared.curUser = SFUserManager.shared.adminUser
+        if let curUser = SFUserManager.shared.curUser {
+            rootEntrance()
+        } else {
+            rootSignIn()
+        }
     }
     
     private func rootSignIn() {

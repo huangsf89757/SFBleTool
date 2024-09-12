@@ -72,7 +72,7 @@ struct _R {
       let source: RswiftResources.StringResource.Source
     }
 
-    /// This `_R.string.localizable` struct is generated, and contains static references to 79 localization keys.
+    /// This `_R.string.localizable` struct is generated, and contains static references to 80 localization keys.
     struct localizable {
       let source: RswiftResources.StringResource.Source
 
@@ -481,6 +481,13 @@ struct _R {
       ///
       /// Locales: en
       var user_info_id: RswiftResources.StringResource { .init(key: "user_info_id", tableName: "Localizable", source: source, developmentValue: "UID", comment: nil) }
+
+      /// en translation: 座右铭
+      ///
+      /// Key: user_info_motto
+      ///
+      /// Locales: en
+      var user_info_motto: RswiftResources.StringResource { .init(key: "user_info_motto", tableName: "Localizable", source: source, developmentValue: "座右铭", comment: nil) }
 
       /// en translation: 昵称
       ///
@@ -1051,9 +1058,12 @@ struct _R {
       }
 
 
-      /// This `_R.image.user.center` struct is generated, and contains static references to 3 centers.
+      /// This `_R.image.user.center` struct is generated, and contains static references to 4 centers.
       struct center {
         let bundle: Foundation.Bundle
+
+        /// Image `user/center/bg`.
+        var bg: RswiftResources.ImageResource { .init(name: "user/center/bg", path: ["user", "center"], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
 
         /// Image `user/center/central`.
         var central: RswiftResources.ImageResource { .init(name: "user/center/central", path: ["user", "center"], bundle: bundle, locale: nil, onDemandResourceTags: nil) }

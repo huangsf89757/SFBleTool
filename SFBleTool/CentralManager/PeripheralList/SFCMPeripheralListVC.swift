@@ -196,6 +196,7 @@ extension SFCMPeripheralListVC: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         let vc = SFCMPeripheralDetailVC()
         navigationController?.pushViewController(vc, animated: true)
     }

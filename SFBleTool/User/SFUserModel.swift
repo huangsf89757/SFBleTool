@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 // MARK: - SFUserModel
 class SFUserModel {
@@ -14,6 +15,28 @@ class SFUserModel {
         case unknown
         case male
         case female
+        
+        var image: UIImage? {
+            switch self {
+            case .unknown:
+                return nil
+            case .male:
+                return R.image.user.gender.male()
+            case .female:
+                return R.image.user.gender.female()
+            }
+        }
+        
+        var desc: String {
+            switch self {
+            case .unknown:
+                return R.string.localizable.user_info_gender_unknown()
+            case .male:
+                return R.string.localizable.user_info_gender_male()
+            case .female:
+                return R.string.localizable.user_info_gender_female()
+            }
+        }
     }
     
     // MARK: var
@@ -30,6 +53,8 @@ class SFUserModel {
     var nickname: String?
     /// 性别
     var gender: Gender = .unknown
+    /// 座右铭
+    var motto: String?
     
     // # 绑定信息
     /// 手机号
@@ -42,6 +67,5 @@ class SFUserModel {
     var birthday: Date?
     /// 所在地
     var address: String?
-    
     
 }

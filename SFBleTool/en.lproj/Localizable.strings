@@ -63,6 +63,7 @@ CFBundleDisplayName = "BleMessager";
 "user_info_gender_unknown" = "未知";
 "user_info_gender_male" = "男";
 "user_info_gender_female" = "女";
+"user_info_motto" = "座右铭";
 "user_info_phone" = "手机号";
 "user_info_email" = "邮箱号";
 "user_info_birthday" = "出生日期";
