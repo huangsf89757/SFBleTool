@@ -138,7 +138,7 @@ class SFSignInVC: SFScrollViewController {
             make.top.equalTo(pageView.snp.bottom).offset(30)
             make.centerX.equalToSuperview()
             make.leading.greaterThanOrEqualToSuperview().offset(30)
-            make.trailing.greaterThanOrEqualToSuperview().offset(-30)
+            make.trailing.lessThanOrEqualToSuperview().offset(-30)
         }
         signInBtn.snp.makeConstraints { make in
             make.top.equalTo(agreementView.snp.bottom).offset(10)

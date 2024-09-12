@@ -52,8 +52,7 @@ class SFSignInAgreementView: SFView {
             make.top.greaterThanOrEqualToSuperview()
             make.bottom.lessThanOrEqualToSuperview()
             make.leading.equalToSuperview()
-            make.width.height.equalTo(40)
-            make.bottom.lessThanOrEqualToSuperview()
+            make.width.height.equalTo(20)
         }
         titleLabel.snp.makeConstraints { make in
             make.leading.equalTo(checkBoxBtn.snp.trailing)
