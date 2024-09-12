@@ -17,13 +17,13 @@ class SFUserModel {
     }
     
     // MARK: var
-    // - 账号信息
+    // # 账号信息
     /// uid
-    var id: String?
+    var uid: String?
     /// account
     var account: String?
     
-    // - 基础信息
+    // # 基础信息
     /// 头像
     var avatarUrl: String?
     /// 昵称
@@ -31,16 +31,17 @@ class SFUserModel {
     /// 性别
     var gender: Gender = .unknown
     
-    // - 绑定信息
+    // # 绑定信息
     /// 手机号
     var phone: String?
     /// 邮箱号
     var email: String?
     
-    // - 附加信息
+    // # 附加信息
     /// 出生日期
     var birthday: Date?
     /// 所在地
     var address: String?
+    
     
 }
