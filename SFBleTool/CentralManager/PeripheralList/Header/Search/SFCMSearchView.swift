@@ -35,11 +35,6 @@ class SFCMSearchView: SFView {
         customUI()
     }
     
-    @available(*, unavailable)
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
     override func draw(_ rect: CGRect) {
         layer.cornerRadius = rect.height / 2.0
         layer.borderColor = R.color.placeholder()?.cgColor

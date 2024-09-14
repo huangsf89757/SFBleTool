@@ -49,9 +49,5 @@ class SFSignInModeView: SFSegmentView {
         selectedTitleFont = .systemFont(ofSize: 14, weight: .bold)
     }
     
-    @available(*, unavailable)
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
     
 }

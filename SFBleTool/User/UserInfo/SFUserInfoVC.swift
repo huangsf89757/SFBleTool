@@ -19,5 +19,9 @@ import SFLogger
 // MARK: - SFUserInfoVC
 class SFUserInfoVC: SFTableViewController {
     // MARK: init
+    override init(style: UITableView.Style) {
+        super.init(style: style)
+    }
+    
     
 }

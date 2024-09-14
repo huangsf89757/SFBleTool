@@ -39,12 +39,6 @@ class SFUserCenterHeaderView: SFView {
         customUI()
     }
     
-    @available(*, unavailable)
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    
     // MARK: ui
     private lazy var bgImgView: SFImageView = {
         return SFImageView().then { view in

@@ -63,11 +63,6 @@ class SFCMRssiView: SFView {
         customUI()
     }
     
-    @available(*, unavailable)
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
     // MARK: ui
     private lazy var rssiImgView: SFImageView = {
         return SFImageView().then { view in

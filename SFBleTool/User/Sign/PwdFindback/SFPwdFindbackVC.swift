@@ -29,11 +29,6 @@ class SFPwdFindbackVC: SFScrollViewController {
         super.init(dir: dir)
     }
     
-    @available(*, unavailable)
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = R.string.localizable.user_pwdFindback()

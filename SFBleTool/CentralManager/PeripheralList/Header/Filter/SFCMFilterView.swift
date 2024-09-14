@@ -45,11 +45,6 @@ class SFCMFilterView: SFPopView {
         customUIOfFilterView()
     }
     
-    @available(*, unavailable)
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
     // MARK: override
     override func customLayout() {
         self.snp.makeConstraints { make in
@@ -257,11 +252,6 @@ extension SFCMFilterView {
         override init(frame: CGRect) {
             super.init(frame: frame)
             customUIOfTitleView()
-        }
-        
-        @available(*, unavailable)
-        required init?(coder: NSCoder) {
-            fatalError("init(coder:) has not been implemented")
         }
         
         // MARK: ui

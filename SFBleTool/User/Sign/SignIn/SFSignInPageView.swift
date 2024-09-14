@@ -44,11 +44,6 @@ class SFSignInPageView: SFScrollView {
         customUI()
     }
     
-    @available(*, unavailable)
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
     // MARK: ui
     private lazy var codeView: SFSignInCodeContentView = {
         return SFSignInCodeContentView()
