@@ -44,6 +44,8 @@ class SFCMFilterView: SFPopView {
         self.sf.setCornerAndShadow(radius: 20, fillColor: SFColor.background, shadowColor: SFColor.black, shadowOpacity: 0.3, shadowOffset: CGSize(width: 0, height: 20), shadowRadius: 5)
         customUIOfFilterView()
     }
+    
+    @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -256,6 +258,8 @@ extension SFCMFilterView {
             super.init(frame: frame)
             customUIOfTitleView()
         }
+        
+        @available(*, unavailable)
         required init?(coder: NSCoder) {
             fatalError("init(coder:) has not been implemented")
         }

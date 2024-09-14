@@ -33,6 +33,7 @@ class SFSignInPageView: SFScrollView {
     convenience init() {
         self.init(dir: .horizontal)
     }
+    
     private override init(dir: SFScrollView.Direction) {
         super.init(dir: dir)
         showsVerticalScrollIndicator = false
@@ -42,6 +43,8 @@ class SFSignInPageView: SFScrollView {
         shouldIgnoreScrollingAdjustment = true // 这个可以使得IQKeyboardManagerSwift忽略当前ScrollView
         customUI()
     }
+    
+    @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

@@ -27,9 +27,12 @@ class SFEntranceVC: SFScrollViewController {
     private override init(dir: SFScrollView.Direction) {
         super.init(dir: dir)
     }
+    
+    @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         customUI()

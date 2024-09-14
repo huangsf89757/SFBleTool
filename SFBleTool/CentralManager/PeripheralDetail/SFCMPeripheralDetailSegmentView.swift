@@ -19,7 +19,7 @@ import SFLogger
 // MARK: - SFCMPeripheralDetailSegmentView
 class SFCMPeripheralDetailSegmentView: SFSegmentView {
     // MARK: life cycle
-    init() {
+    convenience init() {
         let titles = [
             R.string.localizable.central_detail_item_adv(),
             R.string.localizable.central_detail_item_service(),
@@ -35,16 +35,19 @@ class SFCMPeripheralDetailSegmentView: SFSegmentView {
             R.image.bar.service.sel(),
             R.image.bar.log.sel(),
         ]
-        super.init(titles: titles, images: images, selectedImages: selectedImages)
+        self.init(titles: titles, images: images, selectedImages: selectedImages)
     }
-    override init(direction: SFSegmentView.Direction = .horizontal, titles: [String?]?, images: [UIImage?]?, selectedImages: [UIImage?]? = nil) {
+    
+    private override init(direction: SFSegmentView.Direction = .horizontal, titles: [String?]?, images: [UIImage?]?, selectedImages: [UIImage?]? = nil) {
         super.init(direction: .horizontal, titles: titles, images: images, selectedImages: selectedImages)
         self.sf.setCornerAndShadow(radius: 10, fillColor: SFColor.background, shadowColor: SFColor.black, shadowOpacity: 0.3, shadowOffset: CGSize(width: 0, height: 5), shadowRadius: 5)
-
     }
+    
+    @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
     override func draw(_ rect: CGRect) {
         self.sf.applyCornerAndShadow()
     }

@@ -42,11 +42,14 @@ class SFSignInModeView: SFSegmentView {
         ]
         self.init(titles: titles, images: nil, selectedImages: nil)
     }
+    
     private override init(direction: SFSegmentView.Direction = .horizontal, titles: [String?]?, images: [UIImage?]?, selectedImages: [UIImage?]? = nil) {
         super.init(direction: .horizontal, titles: titles, images: images, selectedImages: selectedImages)
         titleFont = .systemFont(ofSize: 14, weight: .regular)
         selectedTitleFont = .systemFont(ofSize: 14, weight: .bold)
     }
+    
+    @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

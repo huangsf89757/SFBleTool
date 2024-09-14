@@ -17,6 +17,7 @@ import SFLogger
 
 
 // MARK: - SFUserInfoVC
-class SFUserInfoVC: SFViewController {
+class SFUserInfoVC: SFTableViewController {
+    // MARK: init
     
 }
