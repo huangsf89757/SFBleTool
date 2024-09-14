@@ -15,7 +15,7 @@
       "scale" : "1x"
     },
     {
-      "filename" : "手机.png",
+      "filename" : "编辑 (3) 1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
@@ -26,12 +26,12 @@
           "value" : "dark"
         }
       ],
-      "filename" : "手机 (1).png",
+      "filename" : "编辑 (2).png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "手机 (3).png",
+      "filename" : "编辑.png",
       "idiom" : "universal",
       "scale" : "3x"
     },
@@ -42,7 +42,7 @@
           "value" : "dark"
         }
       ],
-      "filename" : "手机 (2).png",
+      "filename" : "编辑 (1).png",
       "idiom" : "universal",
       "scale" : "3x"
     }

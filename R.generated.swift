@@ -72,7 +72,7 @@ struct _R {
       let source: RswiftResources.StringResource.Source
     }
 
-    /// This `_R.string.localizable` struct is generated, and contains static references to 81 localization keys.
+    /// This `_R.string.localizable` struct is generated, and contains static references to 83 localization keys.
     struct localizable {
       let source: RswiftResources.StringResource.Source
 
@@ -398,6 +398,13 @@ struct _R {
       /// Locales: en, zh-Hans
       var slogen: RswiftResources.StringResource { .init(key: "slogen", tableName: "Localizable", source: source, developmentValue: "蓝牙通信，畅享每一刻。", comment: nil) }
 
+      /// en translation: 个人中心
+      ///
+      /// Key: user_center
+      ///
+      /// Locales: en
+      var user_center: RswiftResources.StringResource { .init(key: "user_center", tableName: "Localizable", source: source, developmentValue: "个人中心", comment: nil) }
+
       /// en translation: 中心设备
       ///
       /// Key: user_center_item_central
@@ -418,6 +425,13 @@ struct _R {
       ///
       /// Locales: en
       var user_center_item_security: RswiftResources.StringResource { .init(key: "user_center_item_security", tableName: "Localizable", source: source, developmentValue: "账号安全", comment: nil) }
+
+      /// en translation: 个人信息
+      ///
+      /// Key: user_info
+      ///
+      /// Locales: en
+      var user_info: RswiftResources.StringResource { .init(key: "user_info", tableName: "Localizable", source: source, developmentValue: "个人信息", comment: nil) }
 
       /// en translation: 账号
       ///
@@ -1090,7 +1104,7 @@ struct _R {
         var male: RswiftResources.ImageResource { .init(name: "user/gender/male", path: ["user", "gender"], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
       }
 
-      /// This `_R.image.user.info` struct is generated, and contains static references to 8 infos.
+      /// This `_R.image.user.info` struct is generated, and contains static references to 9 infos.
       struct info {
         let bundle: Foundation.Bundle
 
@@ -1111,6 +1125,9 @@ struct _R {
 
         /// Image `user/info/gender`.
         var gender: RswiftResources.ImageResource { .init(name: "user/info/gender", path: ["user", "info"], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+        /// Image `user/info/motto`.
+        var motto: RswiftResources.ImageResource { .init(name: "user/info/motto", path: ["user", "info"], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
 
         /// Image `user/info/nickname`.
         var nickname: RswiftResources.ImageResource { .init(name: "user/info/nickname", path: ["user", "info"], bundle: bundle, locale: nil, onDemandResourceTags: nil) }

@@ -35,7 +35,13 @@ class SFUserCenterVC: SFViewController {
     
     // MARK: ui
     private lazy var headerView: SFUserCenterHeaderView = {
-        return SFUserCenterHeaderView()
+        return SFUserCenterHeaderView().then { view in
+            view.didClickAvatarBlock = {
+                [weak self] in
+                let vc = SFUserInfoVC()
+                self?.navigationController?.pushViewController(vc, animated: true)
+            }
+        }
     }()
     private lazy var tableView: SFTableView = {
         return SFTableView(frame: .zero, style: .grouped).then { view in

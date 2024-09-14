@@ -82,8 +82,8 @@ class SFSignInVC: SFScrollViewController {
             }
         }
     }()
-    private lazy var agreementView: SFSignInAgreementView = {
-        return SFSignInAgreementView()
+    private lazy var agreementView: SFAgreementView = {
+        return SFAgreementView()
     }()
     private lazy var signInBtn: SFButton = {
         return SFButton().then { view in

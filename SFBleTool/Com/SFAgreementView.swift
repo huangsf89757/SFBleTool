@@ -1,5 +1,5 @@
 //
-//  SFSignInAgreementView.swift
+//  SFAgreementView.swift
 //  SFBleTool
 //
 //  Created by hsf on 2024/9/11.
@@ -16,8 +16,8 @@ import SFUI
 import SFLogger
 
 
-// MARK: - SFSignInAgreementView
-class SFSignInAgreementView: SFView {
+// MARK: - SFAgreementView
+class SFAgreementView: SFView {
     // MARK: life cycle
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -65,7 +65,7 @@ class SFSignInAgreementView: SFView {
 }
 
 // MARK: - action
-extension SFSignInAgreementView {
+extension SFAgreementView {
     @objc private func checkBoxBtnClicked() {
         checkBoxBtn.toggleSelected()
     }

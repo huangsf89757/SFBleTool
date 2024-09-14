@@ -18,6 +18,9 @@ import SFLogger
 
 // MARK: - SFUserCenterHeaderView
 class SFUserCenterHeaderView: SFView {
+    // MARK: block
+    var didClickAvatarBlock: (()->())?
+    
     // MARK: data
     var model: SFUserModel? {
         didSet {
@@ -52,6 +55,9 @@ class SFUserCenterHeaderView: SFView {
             view.layer.cornerRadius = 40
             view.layer.masksToBounds = true
             view.backgroundColor = R.color.white()
+            view.isUserInteractionEnabled = true
+            let tap = UITapGestureRecognizer(target: self, action: #selector(avatarImgViewClicked))
+            view.addGestureRecognizer(tap)
         }
     }()
     private lazy var nameLabel: SFLabel = {
@@ -107,6 +113,11 @@ class SFUserCenterHeaderView: SFView {
             make.bottom.equalToSuperview().offset(-30)
         }
     }
-    
 }
 
+// MARK: - action
+extension SFUserCenterHeaderView {
+    @objc private func avatarImgViewClicked() {
+        didClickAvatarBlock?()
+    }
+}

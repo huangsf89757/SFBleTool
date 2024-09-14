@@ -51,11 +51,13 @@ CFBundleDisplayName = "BleMessager";
 
 
 // ## center
+"user_center" = "个人中心";
 "user_center_item_central" = "中心设备";
 "user_center_item_peripheral" = "外围设备";
 "user_center_item_security" = "账号安全";
 
 // ## info
+"user_info" = "个人信息";
 "user_info_id" = "UID";
 "user_info_account" = "账号";
 "user_info_avatar" = "头像";
