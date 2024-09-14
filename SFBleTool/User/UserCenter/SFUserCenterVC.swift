@@ -7,7 +7,6 @@
 
 import Foundation
 import UIKit
-import CoreBluetooth
 // Basic
 import SFBase
 import SFExtension
@@ -15,7 +14,6 @@ import SFExtension
 import SFUI
 // Server
 import SFLogger
-import SFBluetooth
 
 
 // MARK: - SFUserCenterVC
