@@ -24,7 +24,7 @@ class SFUserManager {
         user.account = "SF000001"
         user.avatarUrl = ""
         user.nickname = "超级管理员"
-        user.gender = .unknown
+        user.gender = .male
         user.motto = "不经历风雨，怎能见彩虹！"
         user.phone = "15557181105"
         user.email = "hsf89757@gmail.com"

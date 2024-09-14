@@ -11,6 +11,7 @@ CFBundleDisplayName = "BleMessager";
 
 "name" = "BleMessager";
 "slogen" = "蓝牙通信，畅享每一刻。";
+"copyright" = "Copyright @ 2024-2034";
 
 
 // # user

@@ -40,16 +40,29 @@ class SFUserCenterVC: SFViewController {
             view.register(cellType: SFUserCenterItemCell.self)
         }
     }()
+    private lazy var copyrightView: SFCopyrightView = {
+        return SFCopyrightView()
+    }()
+    
+    
     private func customUI() {
         view.addSubview(headerView)
         view.addSubview(tableView)
+        view.addSubview(copyrightView)
         
         headerView.snp.makeConstraints { make in
             make.top.leading.trailing.equalToSuperview()
         }
         tableView.snp.makeConstraints { make in
             make.top.equalTo(headerView.snp.bottom)
-            make.leading.trailing.bottom.equalToSuperview()
+            make.leading.trailing.equalToSuperview()
+        }
+        copyrightView.snp.makeConstraints { make in
+            make.top.equalTo(tableView.snp.bottom)
+            make.centerX.equalToSuperview()
+            make.leading.greaterThanOrEqualToSuperview().offset(10)
+            make.trailing.lessThanOrEqualToSuperview().offset(-10)
+            make.bottom.equalToSuperview().offset(-10)
         }
     }
 }

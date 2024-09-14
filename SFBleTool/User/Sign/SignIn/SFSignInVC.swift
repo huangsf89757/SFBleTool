@@ -96,14 +96,6 @@ class SFSignInVC: SFScrollViewController {
             view.layer.masksToBounds = true
         }
     }()
-    private lazy var infoLabel: SFLabel = {
-        return SFLabel().then { view in
-            view.font = .systemFont(ofSize: 8, weight: .regular)
-            view.textColor = R.color.subtitle()
-            view.text = String(format: "V%@(%@)", SFApp.version, SFApp.build)
-            view.textAlignment = .center
-        }
-    }()
     
     private func customUI() {
         scrollView.contentView.addSubview(logoImgView)
@@ -113,7 +105,6 @@ class SFSignInVC: SFScrollViewController {
         scrollView.contentView.addSubview(pageView)
         scrollView.contentView.addSubview(agreementView)
         scrollView.contentView.addSubview(signInBtn)
-        scrollView.contentView.addSubview(infoLabel)
         
         logoImgView.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(50)
@@ -151,12 +142,7 @@ class SFSignInVC: SFScrollViewController {
             make.leading.equalToSuperview().offset(30)
             make.trailing.equalToSuperview().offset(-30)
             make.height.equalTo(50)
-        }
-        infoLabel.snp.makeConstraints { make in
-            make.top.greaterThanOrEqualTo(signInBtn.snp.bottom).offset(90)
-            make.leading.equalToSuperview().offset(30)
-            make.trailing.equalToSuperview().offset(-30)
-            make.bottom.equalToSuperview().offset(-10)
+            make.bottom.lessThanOrEqualToSuperview().offset(-100)
         }
     }
 }

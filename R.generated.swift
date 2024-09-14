@@ -72,7 +72,7 @@ struct _R {
       let source: RswiftResources.StringResource.Source
     }
 
-    /// This `_R.string.localizable` struct is generated, and contains static references to 80 localization keys.
+    /// This `_R.string.localizable` struct is generated, and contains static references to 81 localization keys.
     struct localizable {
       let source: RswiftResources.StringResource.Source
 
@@ -348,6 +348,13 @@ struct _R {
       ///
       /// Locales: en, zh-Hans
       var central_sort_name: RswiftResources.StringResource { .init(key: "central_sort_name", tableName: "Localizable", source: source, developmentValue: "名称", comment: nil) }
+
+      /// en translation: Copyright @ 2024-2034
+      ///
+      /// Key: copyright
+      ///
+      /// Locales: en
+      var copyright: RswiftResources.StringResource { .init(key: "copyright", tableName: "Localizable", source: source, developmentValue: "Copyright @ 2024-2034", comment: nil) }
 
       /// en translation: 手机作为中央设备来扫描和连接周围的蓝牙外设
       ///
@@ -1058,12 +1065,9 @@ struct _R {
       }
 
 
-      /// This `_R.image.user.center` struct is generated, and contains static references to 4 centers.
+      /// This `_R.image.user.center` struct is generated, and contains static references to 3 centers.
       struct center {
         let bundle: Foundation.Bundle
-
-        /// Image `user/center/bg`.
-        var bg: RswiftResources.ImageResource { .init(name: "user/center/bg", path: ["user", "center"], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
 
         /// Image `user/center/central`.
         var central: RswiftResources.ImageResource { .init(name: "user/center/central", path: ["user", "center"], bundle: bundle, locale: nil, onDemandResourceTags: nil) }

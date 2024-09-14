@@ -47,7 +47,6 @@ class SFUserCenterHeaderView: SFView {
     private lazy var bgImgView: SFImageView = {
         return SFImageView().then { view in
             view.contentMode = .scaleAspectFill
-            view.image = R.image.user.center.bg()
             view.clipsToBounds = true
         }
     }()
@@ -59,18 +58,15 @@ class SFUserCenterHeaderView: SFView {
             view.backgroundColor = R.color.white()
         }
     }()
-    private lazy var nameView: SFView = {
-        return SFView()
-    }()
-    private lazy var genderImgView: SFImageView = {
-        return SFImageView().then { view in
-            view.contentMode = .scaleAspectFit
-        }
-    }()
     private lazy var nameLabel: SFLabel = {
         return SFLabel().then { view in
             view.font = .systemFont(ofSize: 15, weight: .medium)
             view.textColor = R.color.title()
+        }
+    }()
+    private lazy var genderImgView: SFImageView = {
+        return SFImageView().then { view in
+            view.contentMode = .scaleAspectFit
         }
     }()
     private lazy var mottoLabel: SFLabel = {
@@ -83,10 +79,9 @@ class SFUserCenterHeaderView: SFView {
     private func customUI() {
         addSubview(bgImgView)
         addSubview(avatarImgView)
-        addSubview(nameView)
+        addSubview(nameLabel)
+        addSubview(genderImgView)
         addSubview(mottoLabel)
-        nameView.addSubview(nameLabel)
-        nameView.addSubview(genderImgView)
         
         bgImgView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
@@ -96,31 +91,24 @@ class SFUserCenterHeaderView: SFView {
             make.centerX.equalToSuperview()
             make.width.height.equalTo(80)
         }
-        nameView.snp.makeConstraints { make in
+        nameLabel.snp.makeConstraints { make in
             make.top.equalTo(avatarImgView.snp.bottom).offset(10)
             make.centerX.equalToSuperview()
             make.leading.greaterThanOrEqualToSuperview().offset(10)
             make.trailing.lessThanOrEqualToSuperview().offset(-10)
         }
+        genderImgView.snp.makeConstraints { make in
+            make.centerY.equalTo(nameLabel)
+            make.width.height.equalTo(15)
+            make.leading.equalTo(nameLabel.snp.trailing).offset(6)
+            make.trailing.lessThanOrEqualToSuperview()
+        }
         mottoLabel.snp.makeConstraints { make in
-            make.top.equalTo(nameView.snp.bottom).offset(10)
+            make.top.equalTo(nameLabel.snp.bottom).offset(10)
             make.centerX.equalToSuperview()
             make.leading.greaterThanOrEqualToSuperview().offset(10)
             make.trailing.lessThanOrEqualToSuperview().offset(-10)
             make.bottom.equalToSuperview().offset(-30)
-        }
-        nameLabel.snp.makeConstraints { make in
-            make.top.equalToSuperview()
-            make.leading.equalToSuperview()
-            make.bottom.equalToSuperview()
-        }
-        genderImgView.snp.makeConstraints { make in
-            make.centerY.equalToSuperview()
-            make.top.greaterThanOrEqualToSuperview()
-            make.bottom.lessThanOrEqualToSuperview()
-            make.width.height.equalTo(20)
-            make.leading.equalTo(nameLabel.snp.trailing).offset(10)
-            make.trailing.equalToSuperview()
         }
     }
     

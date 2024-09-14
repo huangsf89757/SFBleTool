@@ -34,6 +34,7 @@
 		DD7ABF4D2C92B3F0008BBA8F /* SFSignPwdFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7ABF4C2C92B3F0008BBA8F /* SFSignPwdFieldView.swift */; };
 		DD7ABF512C92BF03008BBA8F /* SFUserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7ABF502C92BF03008BBA8F /* SFUserManager.swift */; };
 		DD7ABF532C92C04B008BBA8F /* SFUserRecordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7ABF522C92C04B008BBA8F /* SFUserRecordModel.swift */; };
+		DD8BBB8C2C95203200DE12E5 /* SFCopyrightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8BBB8B2C95203200DE12E5 /* SFCopyrightView.swift */; };
 		DDA6489D2C619F5100F01858 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA6489C2C619F5100F01858 /* AppDelegate.swift */; };
 		DDA6489F2C619F5100F01858 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA6489E2C619F5100F01858 /* SceneDelegate.swift */; };
 		DDA648A42C619F5100F01858 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = DDA648A32C619F5100F01858 /* Base */; };
@@ -129,6 +130,7 @@
 		DD7ABF4C2C92B3F0008BBA8F /* SFSignPwdFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSignPwdFieldView.swift; sourceTree = "<group>"; };
 		DD7ABF502C92BF03008BBA8F /* SFUserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFUserManager.swift; sourceTree = "<group>"; };
 		DD7ABF522C92C04B008BBA8F /* SFUserRecordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFUserRecordModel.swift; sourceTree = "<group>"; };
+		DD8BBB8B2C95203200DE12E5 /* SFCopyrightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFCopyrightView.swift; sourceTree = "<group>"; };
 		DDA648992C619F5100F01858 /* SFBleTool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SFBleTool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDA6489C2C619F5100F01858 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DDA6489E2C619F5100F01858 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -317,6 +319,14 @@
 			path = Field;
 			sourceTree = "<group>";
 		};
+		DD8BBB8A2C95200100DE12E5 /* Com */ = {
+			isa = PBXGroup;
+			children = (
+				DD8BBB8B2C95203200DE12E5 /* SFCopyrightView.swift */,
+			);
+			path = Com;
+			sourceTree = "<group>";
+		};
 		DDA648902C619F5100F01858 = {
 			isa = PBXGroup;
 			children = (
@@ -347,6 +357,7 @@
 				DDA648DE2C61FDF200F01858 /* R.generated.swift */,
 				DDFA63F22C635306002E93F3 /* SFUserDefaults.swift */,
 				51A613AA2C76216C005990FC /* Todo.swift */,
+				DD8BBB8A2C95200100DE12E5 /* Com */,
 				51A613A72C762075005990FC /* OptionConfig */,
 				DDA648D42C61A85100F01858 /* Entrance */,
 				DDA648D22C61A51E00F01858 /* SFManagerVC.swift */,
@@ -801,6 +812,7 @@
 				51A6139F2C74C25A005990FC /* SFCMPeripheralListModel.swift in Sources */,
 				DDF08BF32C85BB1C00FB4B48 /* SFSignInVC.swift in Sources */,
 				5175ADAE2C64F4AF00C9260A /* SFCMPeripheralListCell.swift in Sources */,
+				DD8BBB8C2C95203200DE12E5 /* SFCopyrightView.swift in Sources */,
 				DDF08BFF2C85BC2E00FB4B48 /* SFUserCenterItemModel.swift in Sources */,
 				DDF08C032C85BC5900FB4B48 /* SFUserCenterHeaderView.swift in Sources */,
 				DDFA63F72C636688002E93F3 /* SFCMHeaderView.swift in Sources */,
