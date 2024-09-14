@@ -18,15 +18,22 @@ import SFLogger
 
 // MARK: - SFUserCenterItemCell
 class SFUserCenterItemCell: SFTableViewCell {
+    // MARK: data
+    var item: SFUserCenterItem? {
+        didSet {
+            guard let item = item else { return }
+            iconImgView.image = item.image
+            titleLabel.text = item.text
+        }
+    }
     
-    // MARK: life cycle
     // MARK: life cycle
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         backgroundColor = R.color.content()
         contentView.backgroundColor = R.color.content()
         customUI()
-        separatorInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
+        separatorInset = UIEdgeInsets(top: 0, left: 40, bottom: 0, right: 10)
     }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -58,13 +65,13 @@ class SFUserCenterItemCell: SFTableViewCell {
         iconImgView.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(10)
             make.centerY.equalToSuperview()
-            make.top.greaterThanOrEqualToSuperview().offset(5)
-            make.bottom.lessThanOrEqualToSuperview().offset(-5)
+            make.top.greaterThanOrEqualToSuperview().offset(10)
+            make.bottom.lessThanOrEqualToSuperview().offset(-10)
             make.width.height.equalTo(30)
         }
         titleLabel.snp.makeConstraints { make in
-            make.top.greaterThanOrEqualToSuperview().offset(10)
-            make.bottom.lessThanOrEqualToSuperview().offset(-10)
+            make.top.equalToSuperview()
+            make.bottom.equalToSuperview()
             make.leading.equalTo(iconImgView.snp.trailing).offset(10)
         }
         detailImgView.snp.makeConstraints { make in

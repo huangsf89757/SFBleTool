@@ -20,6 +20,12 @@ import SFBluetooth
 
 // MARK: - SFUserCenterVC
 class SFUserCenterVC: SFViewController {
+    // MARK: data
+    var items: [[SFUserCenterItem]] = [
+        [.central, .peripheral],
+        [.security]
+    ]
+    
     // MARK: life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +40,7 @@ class SFUserCenterVC: SFViewController {
         return SFUserCenterHeaderView()
     }()
     private lazy var tableView: SFTableView = {
-        return SFTableView().then { view in
+        return SFTableView(frame: .zero, style: .grouped).then { view in
             view.delegate = self
             view.dataSource = self
             view.register(cellType: SFUserCenterItemCell.self)
@@ -69,12 +75,16 @@ class SFUserCenterVC: SFViewController {
 
 // MARK: - UITableViewDelegate, UITableViewDataSource
 extension SFUserCenterVC: UITableViewDelegate, UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return items.count
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return items[section].count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(for: indexPath, cellType: SFUserCenterItemCell.self)
-        
+        let item = items[indexPath.section][indexPath.row]
+        cell.item = item
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

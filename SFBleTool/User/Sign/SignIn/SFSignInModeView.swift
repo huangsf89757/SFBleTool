@@ -22,7 +22,7 @@ enum SFSignInMode: CaseIterable {
     case pwd    // 密码
     
     /// 描述
-    var desc: String {
+    var text: String {
         switch self {
         case .code:
             return R.string.localizable.user_signIn_mode_code()
@@ -37,8 +37,8 @@ class SFSignInModeView: SFSegmentView {
     // MARK: life cycle
     convenience init() {
         let titles = [
-            SFSignInMode.code.desc,
-            SFSignInMode.pwd.desc,
+            SFSignInMode.code.text,
+            SFSignInMode.pwd.text,
         ]
         self.init(titles: titles, images: nil, selectedImages: nil)
     }

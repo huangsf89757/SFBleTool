@@ -27,7 +27,7 @@ class SFUserModel {
             }
         }
         
-        var desc: String {
+        var text: String {
             switch self {
             case .unknown:
                 return R.string.localizable.user_info_gender_unknown()

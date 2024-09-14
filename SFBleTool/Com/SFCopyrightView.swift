@@ -18,6 +18,15 @@ import SFLogger
 
 // MARK: - SFCopyrightView
 class SFCopyrightView: SFView {
+    // MARK: life cycle
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        customUI()
+    }
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     // MARK: ui
     private lazy var versionLabel: SFLabel = {
         return SFLabel().then { view in
