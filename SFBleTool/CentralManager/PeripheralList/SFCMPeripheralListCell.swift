@@ -53,7 +53,7 @@ class SFCMPeripheralListCell: SFTableViewCell {
     }()
     private lazy var uuidLabel: SFLabel = {
         return SFLabel().then { view in
-            view.font = .systemFont(ofSize: 15, weight: .regular)
+            view.font = .systemFont(ofSize: 12, weight: .regular)
             view.textColor = R.color.subtitle()
         }
     }()

@@ -265,6 +265,8 @@
 		DCF69B169AA678B5DED799502CA3473B /* ConstraintInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = C85233C52288A49DCB5BBB5D9DF9E855 /* ConstraintInsets.swift */; };
 		DD235CA5E0272BE871B6E49C78E52A09 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B1E0BDEA7912B723A3983E1C86AAA5 /* Filter.swift */; };
 		DD5BCD341E2C69A2118637E694FC75DA /* WARangeSlider-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F0350DB70768D99D7D0034D015CB4379 /* WARangeSlider-dummy.m */; };
+		DD630C012C966A6C00A24C35 /* SFOutlineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD630C002C966A6C00A24C35 /* SFOutlineViewController.swift */; };
+		DD630C032C966AB100A24C35 /* SFCatlogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD630C022C966AB100A24C35 /* SFCatlogViewController.swift */; };
 		DD8BBB8E2C955ADB00DE12E5 /* SFTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8BBB8D2C955ADB00DE12E5 /* SFTableViewController.swift */; };
 		DD8BBB902C955FC300DE12E5 /* SFCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8BBB8F2C955FC300DE12E5 /* SFCollectionViewController.swift */; };
 		DDC0F4786752FBF4B07E3A4D4E273DA2 /* UICollectionView+Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DE2BA068539336DC13E27697A3A834 /* UICollectionView+Reusable.swift */; };
@@ -871,6 +873,8 @@
 		DC01C168D955E906463E962F9B40E791 /* WSTagsField-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "WSTagsField-Info.plist"; sourceTree = "<group>"; };
 		DC36C111789F5C2F598125540271C827 /* SFScrollView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SFScrollView.swift; sourceTree = "<group>"; };
 		DC776980743C8F872943D10EC6BE580F /* IQNSArray+Sort.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQNSArray+Sort.swift"; path = "IQKeyboardManagerSwift/Categories/IQNSArray+Sort.swift"; sourceTree = "<group>"; };
+		DD630C002C966A6C00A24C35 /* SFOutlineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFOutlineViewController.swift; sourceTree = "<group>"; };
+		DD630C022C966AB100A24C35 /* SFCatlogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFCatlogViewController.swift; sourceTree = "<group>"; };
 		DD8BBB8D2C955ADB00DE12E5 /* SFTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFTableViewController.swift; sourceTree = "<group>"; };
 		DD8BBB8F2C955FC300DE12E5 /* SFCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFCollectionViewController.swift; sourceTree = "<group>"; };
 		DD8C31A5C7D4067845948B5226D32AC3 /* IQUITextFieldView+Additions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQUITextFieldView+Additions.swift"; path = "IQKeyboardManagerSwift/Categories/IQUITextFieldView+Additions.swift"; sourceTree = "<group>"; };
@@ -1685,6 +1689,7 @@
 				12C39E2012EC47673D524274BABED552 /* SFCatlogCell.swift */,
 				C9448719C68114E418CFBA72DA7916A2 /* SFCatlogItemModel.swift */,
 				57871CCBAF460A4FF96E6E597C8C3626 /* SFCatlogView.swift */,
+				DD630C022C966AB100A24C35 /* SFCatlogViewController.swift */,
 			);
 			path = Catlog;
 			sourceTree = "<group>";
@@ -1909,6 +1914,7 @@
 				6AA76650E1A4A5CA35017B3E989F3AA5 /* SFOutlineCell.swift */,
 				77538849DA861C899680E49ECF073AFA /* SFOutlineItemModel.swift */,
 				3C76C0E015129F42484B142CA9C5588E /* SFOutlineView.swift */,
+				DD630C002C966A6C00A24C35 /* SFOutlineViewController.swift */,
 			);
 			path = Outline;
 			sourceTree = "<group>";
@@ -2800,6 +2806,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD630C012C966A6C00A24C35 /* SFOutlineViewController.swift in Sources */,
 				C94636ABEC0EF38881D55D2A17A8F5BE /* SFAlert.swift in Sources */,
 				C17E1CDA68815F8EEF50840DFEF4C95A /* SFAlertView.swift in Sources */,
 				A581764BA542E23C80BD788FC9D4E74D /* SFBadgeView.swift in Sources */,
@@ -2858,6 +2865,7 @@
 				651704B76606C76E2AD01F9CA6921375 /* SFSegmentIndicatorView.swift in Sources */,
 				F54EBBBCC160B037AEF8FE6EDC5EE71E /* SFSegmentView.swift in Sources */,
 				4B2C63FB5B5B3AFB9CF930A7A3BAF909 /* SFTableView.swift in Sources */,
+				DD630C032C966AB100A24C35 /* SFCatlogViewController.swift in Sources */,
 				17D89F1A180E55743A1536BBE23BD29F /* SFTableViewCell.swift in Sources */,
 				18BA3C669D8FFE5CAED0A10DB820FEDB /* SFTableViewHeaderFooterView.swift in Sources */,
 				68007BA2C8A27D1D82C10BF852EC837D /* SFTextField.swift in Sources */,

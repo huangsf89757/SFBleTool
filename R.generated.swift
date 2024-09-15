@@ -802,11 +802,11 @@ struct _R {
       /// Image `adv/manufacturer`.
       var manufacturer: RswiftResources.ImageResource { .init(name: "adv/manufacturer", path: ["adv"], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
 
-      /// Image `adv/power`.
-      var power: RswiftResources.ImageResource { .init(name: "adv/power", path: ["adv"], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
-
       /// Image `adv/service`.
       var service: RswiftResources.ImageResource { .init(name: "adv/service", path: ["adv"], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+      /// Image `adv/txPower`.
+      var txPower: RswiftResources.ImageResource { .init(name: "adv/txPower", path: ["adv"], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
 
       /// Image `adv/uuid`.
       var uuid: RswiftResources.ImageResource { .init(name: "adv/uuid", path: ["adv"], bundle: bundle, locale: nil, onDemandResourceTags: nil) }

@@ -1,5 +1,5 @@
 //
-//  SFCMPeripheralAdvItemView.swift
+//  SFCMPeripheralAdvDetailCell.swift
 //  SFBleTool
 //
 //  Created by hsf on 2024/8/15.
@@ -16,27 +16,26 @@ import SFUI
 import SFLogger
 
 
-// MARK: - SFCMPeripheralAdvItemView
-class SFCMPeripheralAdvItemView: SFView {
+// MARK: - SFCMPeripheralAdvDetailCell
+class SFCMPeripheralAdvDetailCell: SFTableViewCell {
     // MARK: data
-    var model: SFCMPeripheralAdvItemModel? {
+    var item: SFCMPeripheralAdvDetailItem? {
         didSet {
-            guard let model = model else { return }
-            iconImgView.image = model.icon
-            titleLabel.text = model.title
-            subtitleLabel.text = model.subtitle
-            keyLabel.text = model.key
-            valueLabel.text = model.value
+            guard let item = item else { return }
+            iconImgView.image = item.image
+            titleLabel.text = item.text
+            subtitleLabel.text = item.detail
+            keyLabel.text = item.key
         }
-    }    
+    }
     
     // MARK: life cycle
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        backgroundColor = .clear
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        backgroundColor = R.color.content()
+        contentView.backgroundColor = R.color.content()
         customUI()
     }
-   
     
     // MARK: ui
     private lazy var iconImgView: SFImageView = {
@@ -60,7 +59,7 @@ class SFCMPeripheralAdvItemView: SFView {
         return SFLabel().then { view in
             view.edgeInsert = UIEdgeInsets(top: 4, left: 8, bottom: 4, right: 8)
             view.font = .systemFont(ofSize: 8, weight: .medium)
-            view.textColor = R.color.whiteAlways()
+            view.textColor = R.color.auxiliary()
             view.backgroundColor = R.color.placeholder()
             view.layer.cornerRadius = 5
             view.layer.masksToBounds = true
@@ -80,11 +79,11 @@ class SFCMPeripheralAdvItemView: SFView {
         }
     }()
     private func customUI() {
-        addSubview(iconImgView)
-        addSubview(titleLabel)
-        addSubview(subtitleLabel)
-        addSubview(keyLabel)
-        addSubview(valueView)
+        contentView.addSubview(iconImgView)
+        contentView.addSubview(titleLabel)
+        contentView.addSubview(subtitleLabel)
+        contentView.addSubview(keyLabel)
+        contentView.addSubview(valueView)
         valueView.addSubview(valueLabel)
         
         iconImgView.snp.makeConstraints { make in

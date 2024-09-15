@@ -26,6 +26,8 @@
 		DD5CFF812C91C86E009FEFAA /* SFSignInCodeContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5CFF802C91C86E009FEFAA /* SFSignInCodeContentView.swift */; };
 		DD5CFF832C91C899009FEFAA /* SFSignInPwdContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5CFF822C91C899009FEFAA /* SFSignInPwdContentView.swift */; };
 		DD5CFF862C91C9FC009FEFAA /* SFAgreementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5CFF852C91C9FC009FEFAA /* SFAgreementView.swift */; };
+		DD630BFD2C96591100A24C35 /* SFUserCentralDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD630BFC2C96591100A24C35 /* SFUserCentralDetailVC.swift */; };
+		DD630BFF2C965C4100A24C35 /* SFCMPeripheralAdvDetailItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD630BFE2C965C4100A24C35 /* SFCMPeripheralAdvDetailItem.swift */; };
 		DD78D8322C8ACBD700B629AD /* SFCMPeripheralListData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD78D8312C8ACBD700B629AD /* SFCMPeripheralListData.swift */; };
 		DD7ABF452C92B1D3008BBA8F /* SFPwdFindbackVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7ABF442C92B1D3008BBA8F /* SFPwdFindbackVC.swift */; };
 		DD7ABF472C92B34A008BBA8F /* SFPwdFindbackFieldContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7ABF462C92B34A008BBA8F /* SFPwdFindbackFieldContentView.swift */; };
@@ -55,8 +57,7 @@
 		DDA648D32C61A51E00F01858 /* SFManagerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA648D22C61A51E00F01858 /* SFManagerVC.swift */; };
 		DDA648D62C61A86D00F01858 /* SFEntranceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA648D52C61A86D00F01858 /* SFEntranceView.swift */; };
 		DDA648DF2C61FDF200F01858 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA648DE2C61FDF200F01858 /* R.generated.swift */; };
-		DDAC3D642C6DF66300AA87B4 /* SFCMPeripheralAdvItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDAC3D632C6DF66300AA87B4 /* SFCMPeripheralAdvItemView.swift */; };
-		DDAC3D662C6DFCD400AA87B4 /* SFCMPeripheralAdvItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDAC3D652C6DFCD400AA87B4 /* SFCMPeripheralAdvItemModel.swift */; };
+		DDAC3D642C6DF66300AA87B4 /* SFCMPeripheralAdvDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDAC3D632C6DF66300AA87B4 /* SFCMPeripheralAdvDetailCell.swift */; };
 		DDAC3D712C6F47F700AA87B4 /* SFCMPeripheralDetailTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDAC3D702C6F47F700AA87B4 /* SFCMPeripheralDetailTitleView.swift */; };
 		DDAC3D732C6F512700AA87B4 /* SFCMPeripheralLogCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDAC3D722C6F512700AA87B4 /* SFCMPeripheralLogCell.swift */; };
 		DDB518E92C6B433900A049DE /* SFCMSettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB518E82C6B433900A049DE /* SFCMSettingVC.swift */; };
@@ -125,6 +126,8 @@
 		DD5CFF802C91C86E009FEFAA /* SFSignInCodeContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSignInCodeContentView.swift; sourceTree = "<group>"; };
 		DD5CFF822C91C899009FEFAA /* SFSignInPwdContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSignInPwdContentView.swift; sourceTree = "<group>"; };
 		DD5CFF852C91C9FC009FEFAA /* SFAgreementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFAgreementView.swift; sourceTree = "<group>"; };
+		DD630BFC2C96591100A24C35 /* SFUserCentralDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFUserCentralDetailVC.swift; sourceTree = "<group>"; };
+		DD630BFE2C965C4100A24C35 /* SFCMPeripheralAdvDetailItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFCMPeripheralAdvDetailItem.swift; sourceTree = "<group>"; };
 		DD78D8312C8ACBD700B629AD /* SFCMPeripheralListData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFCMPeripheralListData.swift; sourceTree = "<group>"; };
 		DD7ABF442C92B1D3008BBA8F /* SFPwdFindbackVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFPwdFindbackVC.swift; sourceTree = "<group>"; };
 		DD7ABF462C92B34A008BBA8F /* SFPwdFindbackFieldContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFPwdFindbackFieldContentView.swift; sourceTree = "<group>"; };
@@ -158,8 +161,7 @@
 		DDA648D22C61A51E00F01858 /* SFManagerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFManagerVC.swift; sourceTree = "<group>"; };
 		DDA648D52C61A86D00F01858 /* SFEntranceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFEntranceView.swift; sourceTree = "<group>"; };
 		DDA648DE2C61FDF200F01858 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
-		DDAC3D632C6DF66300AA87B4 /* SFCMPeripheralAdvItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFCMPeripheralAdvItemView.swift; sourceTree = "<group>"; };
-		DDAC3D652C6DFCD400AA87B4 /* SFCMPeripheralAdvItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFCMPeripheralAdvItemModel.swift; sourceTree = "<group>"; };
+		DDAC3D632C6DF66300AA87B4 /* SFCMPeripheralAdvDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFCMPeripheralAdvDetailCell.swift; sourceTree = "<group>"; };
 		DDAC3D702C6F47F700AA87B4 /* SFCMPeripheralDetailTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFCMPeripheralDetailTitleView.swift; sourceTree = "<group>"; };
 		DDAC3D722C6F512700AA87B4 /* SFCMPeripheralLogCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFCMPeripheralLogCell.swift; sourceTree = "<group>"; };
 		DDB518E82C6B433900A049DE /* SFCMSettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFCMSettingVC.swift; sourceTree = "<group>"; };
@@ -329,6 +331,7 @@
 			isa = PBXGroup;
 			children = (
 				DD8BBB932C95678600DE12E5 /* SFUserCentralVC.swift */,
+				DD630BFC2C96591100A24C35 /* SFUserCentralDetailVC.swift */,
 			);
 			path = UserCentral;
 			sourceTree = "<group>";
@@ -452,8 +455,8 @@
 			isa = PBXGroup;
 			children = (
 				DDB518FD2C6C728300A049DE /* SFCMPeripheralAdvDetailVC.swift */,
-				DDAC3D632C6DF66300AA87B4 /* SFCMPeripheralAdvItemView.swift */,
-				DDAC3D652C6DFCD400AA87B4 /* SFCMPeripheralAdvItemModel.swift */,
+				DDAC3D632C6DF66300AA87B4 /* SFCMPeripheralAdvDetailCell.swift */,
+				DD630BFE2C965C4100A24C35 /* SFCMPeripheralAdvDetailItem.swift */,
 			);
 			path = Adv;
 			sourceTree = "<group>";
@@ -787,6 +790,7 @@
 				DD5CFF742C916653009FEFAA /* SFSignInModeView.swift in Sources */,
 				DD7ABF512C92BF03008BBA8F /* SFUserManager.swift in Sources */,
 				DD5CFF832C91C899009FEFAA /* SFSignInPwdContentView.swift in Sources */,
+				DD630BFF2C965C4100A24C35 /* SFCMPeripheralAdvDetailItem.swift in Sources */,
 				DD7ABF452C92B1D3008BBA8F /* SFPwdFindbackVC.swift in Sources */,
 				DDAC3D732C6F512700AA87B4 /* SFCMPeripheralLogCell.swift in Sources */,
 				DD7ABF4B2C92B3E0008BBA8F /* SFSignCodeFieldView.swift in Sources */,
@@ -805,7 +809,6 @@
 				DDE09DAD2C7470FB00E456B7 /* SFCMFilterModel.swift in Sources */,
 				DD8BBB982C95699E00DE12E5 /* SFUserInfoImageCell.swift in Sources */,
 				DDA648CF2C61A3DE00F01858 /* SFCMPeripheralListVC.swift in Sources */,
-				DDAC3D662C6DFCD400AA87B4 /* SFCMPeripheralAdvItemModel.swift in Sources */,
 				DDA648DF2C61FDF200F01858 /* R.generated.swift in Sources */,
 				DDB519042C6C751A00A049DE /* SFCMPeripheralDetailSegmentView.swift in Sources */,
 				DD8BBB942C95678600DE12E5 /* SFUserCentralVC.swift in Sources */,
@@ -827,6 +830,7 @@
 				DDA648D32C61A51E00F01858 /* SFManagerVC.swift in Sources */,
 				51A613A62C74DABD005990FC /* SFCMConnectModel.swift in Sources */,
 				DDF08BF62C85BB5D00FB4B48 /* SFUserInfoVC.swift in Sources */,
+				DD630BFD2C96591100A24C35 /* SFUserCentralDetailVC.swift in Sources */,
 				51A613A12C74C75F005990FC /* SFCMHeaderModel.swift in Sources */,
 				DD5CFF7E2C91C79C009FEFAA /* SFSignFieldContentView.swift in Sources */,
 				DDA6489F2C619F5100F01858 /* SceneDelegate.swift in Sources */,
@@ -837,7 +841,7 @@
 				DD78D8322C8ACBD700B629AD /* SFCMPeripheralListData.swift in Sources */,
 				DDB519002C6C72C400A049DE /* SFCMPeripheralServiceDetailVC.swift in Sources */,
 				DD8BBB9E2C9578A900DE12E5 /* SFUserInfoItem.swift in Sources */,
-				DDAC3D642C6DF66300AA87B4 /* SFCMPeripheralAdvItemView.swift in Sources */,
+				DDAC3D642C6DF66300AA87B4 /* SFCMPeripheralAdvDetailCell.swift in Sources */,
 				DDA648CD2C61A1E300F01858 /* SFEntranceVC.swift in Sources */,
 				DD5CFF772C9177AB009FEFAA /* SFSignInPageView.swift in Sources */,
 				DDF08BFA2C85BB9400FB4B48 /* SFUserCenterVC.swift in Sources */,

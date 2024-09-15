@@ -18,6 +18,13 @@ import SFLogger
 
 // MARK: - SFCMPeripheralDetailVC
 class SFCMPeripheralDetailVC: SFViewController {
+    // MARK: data
+    var model: SFCMPeripheralListModel? {
+        didSet {
+            
+        }
+    }
+    
     // MARK: child vc
     private lazy var advVc: SFCMPeripheralAdvDetailVC = {
         return SFCMPeripheralAdvDetailVC().then { vc in
@@ -47,8 +54,6 @@ class SFCMPeripheralDetailVC: SFViewController {
         }
     }()
     
-    
-    
     // MARK: life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,8 +73,8 @@ class SFCMPeripheralDetailVC: SFViewController {
                 self?.serviceVc.view.isHidden = index != 1
                 self?.logVc.view.isHidden = index != 2
                 
-                self?.advVc.scrollView.stopScrolling()
-                self?.serviceVc.servicesView.tableView.stopScrolling()
+                self?.advVc.tableView.stopScrolling()
+                self?.serviceVc.tableView.stopScrolling()
                 self?.logVc.tableView.stopScrolling()
                 
                 let titles = [self?.advVc.navTitle, self?.serviceVc.navTitle, self?.logVc.navTitle]

@@ -17,7 +17,7 @@ import SFLogger
 
 
 // MARK: - SFCMPeripheralAdvDetailVC
-class SFCMPeripheralAdvDetailVC: SFScrollViewController {
+class SFCMPeripheralAdvDetailVC: SFTableViewController {
     // MARK: block
     var navTitleDidChangedBlock: ((String?)->())?
     
@@ -25,101 +25,71 @@ class SFCMPeripheralAdvDetailVC: SFScrollViewController {
     var navTitle: String?        
     
     // MARK: data
-    var localNameModel = SFCMPeripheralAdvItemModel(icon: R.image.adv.localName(),
-                                                    title: R.string.localizable.central_adv_title_localName(),
-                                                    subtitle: R.string.localizable.central_adv_subtitle_localName(),
-                                                    key: R.string.localizable.central_adv_key_localName(),
-                                                    value: nil)
-    var manufacturerModel = SFCMPeripheralAdvItemModel(icon: R.image.adv.manufacturer(), 
-                                                       title: R.string.localizable.central_adv_title_manufacturer(),
-                                                       subtitle: R.string.localizable.central_adv_subtitle_manufacturer(),
-                                                       key: R.string.localizable.central_adv_key_manufacturer(),
-                                                       value: nil)
-    var specificServiceModel = SFCMPeripheralAdvItemModel(icon: R.image.adv.service(), 
-                                                          title: R.string.localizable.central_adv_title_specificService(),
-                                                          subtitle: R.string.localizable.central_adv_subtitle_specificService(),
-                                                          key: R.string.localizable.central_adv_key_specificService(),
-                                                          value: nil)
-    var serviceUuidModel = SFCMPeripheralAdvItemModel(icon: R.image.adv.uuid(), 
-                                                      title: R.string.localizable.central_adv_title_serviceUuid(),
-                                                      subtitle: R.string.localizable.central_adv_subtitle_serviceUuid(),
-                                                      key: R.string.localizable.central_adv_key_serviceUuid(),
-                                                      value: nil)
-    var overflowUuidModel = SFCMPeripheralAdvItemModel(icon: R.image.adv.uuid(), 
-                                                       title: R.string.localizable.central_adv_title_overflowUuid(),
-                                                       subtitle: R.string.localizable.central_adv_subtitle_overflowUuid(),
-                                                       key: R.string.localizable.central_adv_key_overflowUuid(),
-                                                       value: nil)
-    var txPowerModel = SFCMPeripheralAdvItemModel(icon: R.image.adv.power(), 
-                                                  title: R.string.localizable.central_adv_title_txPower(),
-                                                  subtitle: R.string.localizable.central_adv_subtitle_txPower(),
-                                                  key: R.string.localizable.central_adv_key_txPower(),
-                                                  value: nil)
-    var connectableModel = SFCMPeripheralAdvItemModel(icon: R.image.adv.connectable(), 
-                                                      title: R.string.localizable.central_adv_title_connectable(),
-                                                      subtitle: R.string.localizable.central_adv_subtitle_connectable(),
-                                                      key: R.string.localizable.central_adv_key_connectable(),
-                                                      value: nil)
-    var solicitedUuidModel = SFCMPeripheralAdvItemModel(icon: R.image.adv.uuid(), 
-                                                        title: R.string.localizable.central_adv_title_solicitedUuid(),
-                                                        subtitle: R.string.localizable.central_adv_subtitle_solicitedUuid(),
-                                                        key: R.string.localizable.central_adv_key_solicitedUuid(),
-                                                        value: nil)
-    var models: [SFCMPeripheralAdvItemModel] {
-        return [localNameModel, manufacturerModel, specificServiceModel, serviceUuidModel, overflowUuidModel, txPowerModel, connectableModel, solicitedUuidModel]
-    }
+    var items: [SFCMPeripheralAdvDetailItem] = [
+        .localName,
+        .manufacturer,
+        .specificService,
+        .serviceUuid,
+        .overflowUuid,
+        .txPower,
+        .connectable,
+        .solicitedUuid,
+    ]
     
     // MARK: life cycle
     convenience init() {
-        self.init(dir: .vertical)
+        self.init(style: .plain)
     }
     
-    private override init(dir: SFScrollView.Direction) {
-        super.init(dir: dir)
+    private override init(style: UITableView.Style) {
+        super.init(style: style)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        customUI()
-        scrollView.delegate = self
+        setup()
     }
     
-    // MARK: ui
-    private lazy var titleView: SFCMPeripheralDetailTitleView = {
-        return SFCMPeripheralDetailTitleView().then { view in
-            view.titleLabel.text = R.string.localizable.central_detail_item_adv()
-        }
-    }()
-    private func customUI() {
-        scrollView.contentView.addSubview(titleView)
-        titleView.snp.makeConstraints { make in
-            make.top.equalToSuperview()
-            make.leading.equalToSuperview()
-            make.trailing.equalToSuperview()
-        }
+    // MARK: setup
+    private func setup() {
+        let titleView = SFCMPeripheralDetailTitleView()
+        titleView.frame = CGRect(origin: .zero, size: CGSize(width: 0, height: titleView.titleHeight))
+        titleView.titleLabel.text = R.string.localizable.central_detail_item_adv()
+        tableView.tableHeaderView = titleView
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(cellType: SFCMPeripheralAdvDetailCell.self)
+        tableView.separatorStyle = .none
+    }
+    
+}
+
+// MARK: - UIScrollViewDelegate
+extension SFCMPeripheralAdvDetailVC: UITableViewDelegate, UITableViewDataSource {
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return items.count
+    }
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(for: indexPath, cellType: SFCMPeripheralAdvDetailCell.self)
+        cell.item = items[indexPath.row]
+        return cell
+    }
+    public func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 0.1
+    }
+    public func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 0.1
+    }
+    public func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        return nil
+    }
+    public func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        return nil
+    }
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         
-        var lastItemView: SFCMPeripheralAdvItemView?
-        for i in 0..<models.count {
-            let model = models[i]
-            let itemView = SFCMPeripheralAdvItemView()
-            itemView.model = model
-            scrollView.contentView.addSubview(itemView)
-            itemView.snp.makeConstraints { make in
-                make.leading.equalToSuperview()
-                make.trailing.equalToSuperview()
-                if let lastItemView = lastItemView {
-                    make.top.equalTo(lastItemView.snp.bottom)
-                } else {
-                    make.top.equalTo(titleView.snp.bottom).offset(-20)
-                }
-                if i == models.count - 1 {
-                    make.bottom.equalToSuperview().offset(-100)
-                }
-                lastItemView = itemView
-            }
-        }
     }
-    
 }
 
 // MARK: - UIScrollViewDelegate
