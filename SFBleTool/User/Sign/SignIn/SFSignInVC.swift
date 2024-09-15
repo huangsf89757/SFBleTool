@@ -73,7 +73,7 @@ class SFSignInVC: SFScrollViewController {
         return SFSignInPageView().then { view in
             view.pageDidChangedBlock = {
                 [weak self] pageView, index in
-                self?.modeView.selectedIndex = index
+                self?.modeView.select(index: index, animated: true)
             }
             view.forgetPwdBlock = {
                 [weak self] in

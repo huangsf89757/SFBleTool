@@ -35,6 +35,11 @@ class SFCMPeripheralAdvDetailVC: SFTableViewController {
         .connectable,
         .solicitedUuid,
     ]
+    var model: SFCMPeripheralListModel? {
+        didSet {
+            
+        }
+    }
     
     // MARK: life cycle
     convenience init() {
@@ -52,10 +57,10 @@ class SFCMPeripheralAdvDetailVC: SFTableViewController {
     
     // MARK: setup
     private func setup() {
-        let titleView = SFCMPeripheralDetailTitleView()
-        titleView.frame = CGRect(origin: .zero, size: CGSize(width: 0, height: titleView.titleHeight))
-        titleView.titleLabel.text = R.string.localizable.central_detail_item_adv()
-        tableView.tableHeaderView = titleView
+//        let titleView = SFCMPeripheralDetailTitleView()
+//        titleView.frame = CGRect(origin: .zero, size: CGSize(width: 0, height: titleView.titleHeight))
+//        titleView.titleLabel.text = R.string.localizable.central_detail_item_adv()
+//        tableView.tableHeaderView = titleView
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(cellType: SFCMPeripheralAdvDetailCell.self)

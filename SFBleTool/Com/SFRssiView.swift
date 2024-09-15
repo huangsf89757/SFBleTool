@@ -1,5 +1,5 @@
 //
-//  SFCMRssiView.swift
+//  SFRssiView.swift
 //  SFBleTool
 //
 //  Created by hsf on 2024/8/8.
@@ -16,8 +16,8 @@ import SFUI
 import SFLogger
 
 
-// MARK: - SFCMRssiView
-class SFCMRssiView: SFView {
+// MARK: - SFRssiView
+class SFRssiView: SFView {
     // MARK: var
     /*
      信号强度：
@@ -85,13 +85,14 @@ class SFCMRssiView: SFView {
             make.centerX.equalToSuperview()
             make.leading.greaterThanOrEqualToSuperview()
             make.trailing.lessThanOrEqualToSuperview()
-            make.size.equalTo(CGSize(width: 30, height: 30))
+            make.width.equalTo(rssiImgView.snp.height)
         }
         rssiLabel.snp.makeConstraints { make in
             make.top.equalTo(rssiImgView.snp.bottom).offset(5)
             make.leading.equalToSuperview()
             make.trailing.equalToSuperview()
             make.bottom.equalToSuperview()
+            make.height.equalTo(15)
         }
     }
 }

@@ -21,111 +21,136 @@ class SFCMPeripheralDetailVC: SFViewController {
     // MARK: data
     var model: SFCMPeripheralListModel? {
         didSet {
-            
+            headerView.model = model
         }
     }
     
     // MARK: child vc
     private lazy var advVc: SFCMPeripheralAdvDetailVC = {
-        return SFCMPeripheralAdvDetailVC().then { vc in
-            vc.view.isHidden = false
-            vc.navTitleDidChangedBlock = {
-                [weak self] title in
-                self?.changeNavTitle(to: title)
-            }
-        }
+        return SFCMPeripheralAdvDetailVC()
     }()
     private lazy var serviceVc: SFCMPeripheralServiceDetailVC = {
-        return SFCMPeripheralServiceDetailVC().then { vc in
-            vc.view.isHidden = true
-            vc.navTitleDidChangedBlock = {
-                [weak self] title in
-                self?.changeNavTitle(to: title)
-            }
-        }
+        return SFCMPeripheralServiceDetailVC()
     }()
     private lazy var logVc: SFCMPeripheralLogDetailVC = {
-        return SFCMPeripheralLogDetailVC().then { vc in
-            vc.view.isHidden = true
-            vc.navTitleDidChangedBlock = {
-                [weak self] title in
-                self?.changeNavTitle(to: title)
-            }
-        }
+        return SFCMPeripheralLogDetailVC()
     }()
     
     // MARK: life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "AiDEX X-TEST000001"
+        
         customUI()
     }
     
     // MARK: ui
     private lazy var segmentView: SFCMPeripheralDetailSegmentView = {
         return SFCMPeripheralDetailSegmentView().then { view in
-            let indicatorView = SFSegmentIndicatorSquareView()
-            indicatorView.squareView.layer.cornerRadius = 10
-            view.indicatorView = indicatorView
             view.didSelectedItemBlock = {
                 [weak self] segmentView, index in
-                self?.advVc.view.isHidden = index != 0
-                self?.serviceVc.view.isHidden = index != 1
-                self?.logVc.view.isHidden = index != 2
-                
                 self?.advVc.tableView.stopScrolling()
                 self?.serviceVc.tableView.stopScrolling()
                 self?.logVc.tableView.stopScrolling()
-                
-                let titles = [self?.advVc.navTitle, self?.serviceVc.navTitle, self?.logVc.navTitle]
-                let title = titles[index]
-                self?.changeNavTitle(to: title)
             }
         }
     }()
+    private lazy var headerView: SFCMPeripheralDetailHeaderView = {
+        return SFCMPeripheralDetailHeaderView()
+    }()
+    private lazy var scrollView: SFScrollView = {
+        return SFScrollView(dir: .horizontal).then { view in
+            view.isPagingEnabled = true
+            view.delegate = self
+        }
+    }()
+    
     private func customUI() {
-        view.addSubview(advVc.view)
-        view.addSubview(serviceVc.view)
-        view.addSubview(logVc.view)
-        view.addSubview(segmentView)
+        self.navigationItem.titleView = segmentView
+        view.addSubview(headerView)
+        view.addSubview(scrollView)
+        scrollView.contentView.addSubview(advVc.view)
+        scrollView.contentView.addSubview(serviceVc.view)
+        scrollView.contentView.addSubview(logVc.view)
         
-        segmentView.snp.makeConstraints { make in
-            make.leading.equalToSuperview().offset(20)
-            make.trailing.equalToSuperview().offset(-20)
-            make.bottom.equalToSuperview().offset(-20)
-            make.height.equalTo(60)
+        headerView.snp.makeConstraints { make in
+            make.top.leading.trailing.equalToSuperview()
+            make.height.equalTo(80)
+        }
+        scrollView.snp.makeConstraints { make in
+            make.top.equalTo(headerView.snp.bottom)
+            make.leading.trailing.bottom.equalToSuperview()
         }
         advVc.view.snp.makeConstraints { make in
             make.top.equalToSuperview()
+            make.bottom.equalToSuperview()
+            make.width.equalTo(scrollView)
             make.leading.equalToSuperview()
-            make.trailing.equalToSuperview()
-//            make.bottom.equalToSuperview()
-            make.bottom.equalTo(segmentView.snp.top).offset(-20)
         }
         serviceVc.view.snp.makeConstraints { make in
             make.top.equalToSuperview()
-            make.leading.equalToSuperview()
-            make.trailing.equalToSuperview()
-//            make.bottom.equalToSuperview()
-            make.bottom.equalTo(segmentView.snp.top).offset(-20)
+            make.bottom.equalToSuperview()
+            make.width.equalTo(scrollView)
+            make.leading.equalTo(advVc.view.snp.trailing)
         }
         logVc.view.snp.makeConstraints { make in
             make.top.equalToSuperview()
-            make.leading.equalToSuperview()
+            make.bottom.equalToSuperview()
+            make.width.equalTo(scrollView)
+            make.leading.equalTo(serviceVc.view.snp.trailing)
             make.trailing.equalToSuperview()
-//            make.bottom.equalToSuperview()
-            make.bottom.equalTo(segmentView.snp.top).offset(-20)
         }
     }
-    
-    // MARK: func
-    private func changeNavTitle(to title: String?) {
-        if let title = title {
-            navigationItem.title = title
-        } else {
-            navigationItem.title = "AiDEX X-TEST000001"
-        }
-    }
-    
 }
 
+/// TODO: page
+// MARK: - UIScrollViewDelegate
+extension SFCMPeripheralDetailVC: UIScrollViewDelegate {
+//    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+//        let offsetX = scrollView.contentOffset.x
+//        let pageWidth = scrollView.frame.width
+//        let curPage = Int(round(offsetX / pageWidth))
+//        let targetPage: Int
+//        
+//        if velocity.x > 0 {
+//            // 向右滑动
+//            targetPage = curPage + 1
+//        } else if velocity.x < 0 {
+//            // 向左滑动
+//            targetPage = curPage - 1
+//        } else {
+//            // 速度为0,根据当前位置决定
+//            targetPage = round(scrollView.contentOffset.x / pageWidth)
+//        }
+//        
+//        let newTargetOffset = max(0, min(targetPage, 1)) * pageWidth
+//        targetContentOffset.pointee.x = newTargetOffset
+//    }
+//    
+//    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+//        if !decelerate {
+//            snapToPage(scrollView)
+//        }
+//    }
+//    
+//    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+//        snapToPage(scrollView)
+//    }
+//    
+//    private func snapToPage(_ scrollView: UIScrollView) {
+//        let pageWidth = scrollView.frame.width
+//        let index = Int(round(scrollView.contentOffset.x / pageWidth))
+//        let newOffset = CGFloat(index) * pageWidth
+//        if scrollView.contentOffset.x != newOffset {
+//            scrollView.setContentOffset(CGPoint(x: newOffset, y: 0), animated: true)
+//        }
+//        self.segmentView.select(index: index, animated: true)
+//    }
+//    
+//    private func changePage(to index: Int) {
+//        let pageWidth = scrollView.frame.width
+//        let newOffset = CGFloat(index) * pageWidth
+//        if scrollView.contentOffset.x != newOffset {
+//            scrollView.setContentOffset(CGPoint(x: newOffset, y: 0), animated: true)
+//        }
+//    }
+}

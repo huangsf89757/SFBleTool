@@ -32,9 +32,9 @@ class SFCMPeripheralServiceDetailVC: SFOutlineViewController {
     
     // MARK: setup
     private func setup() {
-        let titleView = SFCMPeripheralDetailTitleView()
-        titleView.frame = CGRect(origin: .zero, size: CGSize(width: 0, height: titleView.titleHeight))
-        titleView.titleLabel.text = R.string.localizable.central_detail_item_service()
-        tableView.tableHeaderView = titleView
+//        let titleView = SFCMPeripheralDetailTitleView()
+//        titleView.frame = CGRect(origin: .zero, size: CGSize(width: 0, height: titleView.titleHeight))
+//        titleView.titleLabel.text = R.string.localizable.central_detail_item_service()
+//        tableView.tableHeaderView = titleView
     }
 }

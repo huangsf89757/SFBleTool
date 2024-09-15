@@ -73,9 +73,10 @@ class SFSignInPageView: SFScrollView {
     }
 }
 
+/// TODO: page
 extension SFSignInPageView: UIScrollViewDelegate {
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-        let pageWidth = frame.width
+        let pageWidth = scrollView.frame.width
         let curPage = floor(scrollView.contentOffset.x / pageWidth)
         let targetPage: CGFloat
         

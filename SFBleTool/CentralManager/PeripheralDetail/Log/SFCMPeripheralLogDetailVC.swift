@@ -34,10 +34,10 @@ class SFCMPeripheralLogDetailVC: SFViewController {
     lazy var tableView: SFTableView = {
         return SFTableView(frame: .zero, style: .plain).then { view in
             view.backgroundColor = .clear
-            let titleView = SFCMPeripheralDetailTitleView()
-            titleView.frame = CGRect(origin: .zero, size: CGSize(width: 0, height: titleView.titleHeight))
-            titleView.titleLabel.text = R.string.localizable.central_detail_item_log()
-            view.tableHeaderView = titleView
+//            let titleView = SFCMPeripheralDetailTitleView()
+//            titleView.frame = CGRect(origin: .zero, size: CGSize(width: 0, height: titleView.titleHeight))
+//            titleView.titleLabel.text = R.string.localizable.central_detail_item_log()
+//            view.tableHeaderView = titleView
             view.delegate = self
             view.dataSource = self
             view.register(cellType: SFCMPeripheralLogCell.self)

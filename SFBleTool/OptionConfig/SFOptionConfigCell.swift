@@ -41,8 +41,8 @@ class SFOptionConfigCell: SFTableViewCell {
     
     
     // MARK: ui
-    private lazy var rssiView: SFCMRssiView = {
-        return SFCMRssiView().then { view in
+    private lazy var rssiView: SFRssiView = {
+        return SFRssiView().then { view in
             
         }
     }()
