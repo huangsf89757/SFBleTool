@@ -51,6 +51,9 @@ class SFCMPeripheralDetailVC: SFViewController {
                 self?.advVc.tableView.stopScrolling()
                 self?.serviceVc.tableView.stopScrolling()
                 self?.logVc.tableView.stopScrolling()
+                let pageWidth = self?.scrollView.frame.width ?? 0
+                let newOffset = CGFloat(index) * pageWidth
+                self?.scrollView.setContentOffset(CGPoint(x: newOffset, y: 0), animated: false)
             }
         }
     }()
@@ -102,55 +105,37 @@ class SFCMPeripheralDetailVC: SFViewController {
     }
 }
 
-/// TODO: page
 // MARK: - UIScrollViewDelegate
 extension SFCMPeripheralDetailVC: UIScrollViewDelegate {
-//    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-//        let offsetX = scrollView.contentOffset.x
-//        let pageWidth = scrollView.frame.width
-//        let curPage = Int(round(offsetX / pageWidth))
-//        let targetPage: Int
-//        
-//        if velocity.x > 0 {
-//            // 向右滑动
-//            targetPage = curPage + 1
-//        } else if velocity.x < 0 {
-//            // 向左滑动
-//            targetPage = curPage - 1
-//        } else {
-//            // 速度为0,根据当前位置决定
-//            targetPage = round(scrollView.contentOffset.x / pageWidth)
-//        }
-//        
-//        let newTargetOffset = max(0, min(targetPage, 1)) * pageWidth
-//        targetContentOffset.pointee.x = newTargetOffset
-//    }
-//    
-//    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-//        if !decelerate {
-//            snapToPage(scrollView)
-//        }
-//    }
-//    
-//    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-//        snapToPage(scrollView)
-//    }
-//    
-//    private func snapToPage(_ scrollView: UIScrollView) {
-//        let pageWidth = scrollView.frame.width
-//        let index = Int(round(scrollView.contentOffset.x / pageWidth))
-//        let newOffset = CGFloat(index) * pageWidth
-//        if scrollView.contentOffset.x != newOffset {
-//            scrollView.setContentOffset(CGPoint(x: newOffset, y: 0), animated: true)
-//        }
-//        self.segmentView.select(index: index, animated: true)
-//    }
-//    
-//    private func changePage(to index: Int) {
-//        let pageWidth = scrollView.frame.width
-//        let newOffset = CGFloat(index) * pageWidth
-//        if scrollView.contentOffset.x != newOffset {
-//            scrollView.setContentOffset(CGPoint(x: newOffset, y: 0), animated: true)
-//        }
-//    }
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        let pageWidth = scrollView.frame.width
+        let currentPage = scrollView.contentOffset.x / pageWidth
+        let targetPage: Int
+        if velocity.x > 0 {
+            // 向右滑动
+            targetPage = Int(ceil(currentPage))
+        } else if velocity.x < 0 {
+            // 向左滑动
+            targetPage = Int(floor(currentPage))
+        } else {
+            // 速度为0,四舍五入到最近的页面
+            targetPage = Int(round(currentPage))
+        }
+        let newTargetOffset = CGFloat(targetPage) * pageWidth
+        targetContentOffset.pointee.x = newTargetOffset
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        updateSegmentViewSelection(for: scrollView)
+    }
+    
+    func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
+        updateSegmentViewSelection(for: scrollView)
+    }
+    
+    private func updateSegmentViewSelection(for scrollView: UIScrollView) {
+        let pageWidth = scrollView.frame.width
+        let currentPage = Int(round(scrollView.contentOffset.x / pageWidth))
+        segmentView.select(index: currentPage, animated: false)
+    }
 }

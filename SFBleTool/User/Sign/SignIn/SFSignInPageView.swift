@@ -73,55 +73,48 @@ class SFSignInPageView: SFScrollView {
     }
 }
 
-/// TODO: page
+// MARK: - UIScrollViewDelegate
 extension SFSignInPageView: UIScrollViewDelegate {
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         let pageWidth = scrollView.frame.width
-        let curPage = floor(scrollView.contentOffset.x / pageWidth)
-        let targetPage: CGFloat
+        let currentPage = scrollView.contentOffset.x / pageWidth
+        let targetPage: Int
         
         if velocity.x > 0 {
             // 向右滑动
-            targetPage = curPage + 1
+            targetPage = min(Int(ceil(currentPage)), 1)
         } else if velocity.x < 0 {
             // 向左滑动
-            targetPage = curPage - 1
+            targetPage = max(Int(floor(currentPage)), 0)
         } else {
-            // 速度为0,根据当前位置决定
-            targetPage = round(scrollView.contentOffset.x / pageWidth)
+            // 速度为0,四舍五入到最近的页面
+            targetPage = Int(round(currentPage))
         }
         
-        let newTargetOffset = max(0, min(targetPage, 1)) * pageWidth
+        let newTargetOffset = CGFloat(targetPage) * pageWidth
         targetContentOffset.pointee.x = newTargetOffset
     }
     
-    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        if !decelerate {
-            snapToPage(scrollView)
-        }
-    }
-    
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        snapToPage(scrollView)
+        updatePageSelection(for: scrollView)
     }
     
-    private func snapToPage(_ scrollView: UIScrollView) {
+    func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
+        updatePageSelection(for: scrollView)
+    }
+    
+    private func updatePageSelection(for scrollView: UIScrollView) {
         let pageWidth = frame.width
-        let curPageIndex = Int(round(scrollView.contentOffset.x / pageWidth))
-        let newOffset = curPageIndex > 0 ? (scrollView.contentSize.width - pageWidth) : 0
-        if scrollView.contentOffset.x != newOffset {
-            scrollView.setContentOffset(CGPoint(x: newOffset, y: 0), animated: true)
+        let newPageIndex = Int(round(scrollView.contentOffset.x / pageWidth))
+        if curPageIndex != newPageIndex {
+            curPageIndex = newPageIndex
+            pageDidChangedBlock?(self, curPageIndex)
         }
-        self.curPageIndex = curPageIndex
-        pageDidChangedBlock?(self, curPageIndex)
     }
     
     func changePage(to index: Int) {
-        curPageIndex = index
         let pageWidth = frame.width
-        let newOffset = curPageIndex > 0 ? (contentSize.width - pageWidth) : 0
-        if contentOffset.x != newOffset {
-            setContentOffset(CGPoint(x: newOffset, y: 0), animated: true)
-        }
+        let newOffset = CGFloat(index) * pageWidth
+        setContentOffset(CGPoint(x: newOffset, y: 0), animated: false)
     }
 }
