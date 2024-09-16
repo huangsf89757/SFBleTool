@@ -72,7 +72,7 @@ struct _R {
       let source: RswiftResources.StringResource.Source
     }
 
-    /// This `_R.string.localizable` struct is generated, and contains static references to 83 localization keys.
+    /// This `_R.string.localizable` struct is generated, and contains static references to 120 localization keys.
     struct localizable {
       let source: RswiftResources.StringResource.Source
 
@@ -425,6 +425,265 @@ struct _R {
       ///
       /// Locales: en
       var user_center_item_security: RswiftResources.StringResource { .init(key: "user_center_item_security", tableName: "Localizable", source: source, developmentValue: "账号安全", comment: nil) }
+
+      /// en translation: 中心设备
+      ///
+      /// Key: user_central
+      ///
+      /// Locales: en
+      var user_central: RswiftResources.StringResource { .init(key: "user_central", tableName: "Localizable", source: source, developmentValue: "中心设备", comment: nil) }
+
+      /// en translation: Connection Option
+      ///
+      /// Key: user_central_detail_connect
+      ///
+      /// Locales: en
+      var user_central_detail_connect: RswiftResources.StringResource { .init(key: "user_central_detail_connect", tableName: "Localizable", source: source, developmentValue: "Connection Option", comment: nil) }
+
+      /// en translation: CBConnectPeripheralOptionEnableAutoReconnect
+      ///
+      /// Key: user_central_detail_connect_key_isEnableAutoReconnect
+      ///
+      /// Locales: en
+      var user_central_detail_connect_key_isEnableAutoReconnect: RswiftResources.StringResource { .init(key: "user_central_detail_connect_key_isEnableAutoReconnect", tableName: "Localizable", source: source, developmentValue: "CBConnectPeripheralOptionEnableAutoReconnect", comment: nil) }
+
+      /// en translation: CBConnectPeripheralOptionEnableTransportBridgingKey
+      ///
+      /// Key: user_central_detail_connect_key_isEnableTransportBridging
+      ///
+      /// Locales: en
+      var user_central_detail_connect_key_isEnableTransportBridging: RswiftResources.StringResource { .init(key: "user_central_detail_connect_key_isEnableTransportBridging", tableName: "Localizable", source: source, developmentValue: "CBConnectPeripheralOptionEnableTransportBridgingKey", comment: nil) }
+
+      /// en translation: CBConnectPeripheralOptionNotifyOnConnectionKey
+      ///
+      /// Key: user_central_detail_connect_key_isNotifyOnConnection
+      ///
+      /// Locales: en
+      var user_central_detail_connect_key_isNotifyOnConnection: RswiftResources.StringResource { .init(key: "user_central_detail_connect_key_isNotifyOnConnection", tableName: "Localizable", source: source, developmentValue: "CBConnectPeripheralOptionNotifyOnConnectionKey", comment: nil) }
+
+      /// en translation: CBConnectPeripheralOptionNotifyOnDisconnectionKey
+      ///
+      /// Key: user_central_detail_connect_key_isNotifyOnDisconnection
+      ///
+      /// Locales: en
+      var user_central_detail_connect_key_isNotifyOnDisconnection: RswiftResources.StringResource { .init(key: "user_central_detail_connect_key_isNotifyOnDisconnection", tableName: "Localizable", source: source, developmentValue: "CBConnectPeripheralOptionNotifyOnDisconnectionKey", comment: nil) }
+
+      /// en translation: CBConnectPeripheralOptionNotifyOnNotificationKey
+      ///
+      /// Key: user_central_detail_connect_key_isNotifyOnNotification
+      ///
+      /// Locales: en
+      var user_central_detail_connect_key_isNotifyOnNotification: RswiftResources.StringResource { .init(key: "user_central_detail_connect_key_isNotifyOnNotification", tableName: "Localizable", source: source, developmentValue: "CBConnectPeripheralOptionNotifyOnNotificationKey", comment: nil) }
+
+      /// en translation: CBConnectPeripheralOptionRequiresANCS
+      ///
+      /// Key: user_central_detail_connect_key_isRequiresANCS
+      ///
+      /// Locales: en
+      var user_central_detail_connect_key_isRequiresANCS: RswiftResources.StringResource { .init(key: "user_central_detail_connect_key_isRequiresANCS", tableName: "Localizable", source: source, developmentValue: "CBConnectPeripheralOptionRequiresANCS", comment: nil) }
+
+      /// en translation: CBConnectPeripheralOptionStartDelayKey
+      ///
+      /// Key: user_central_detail_connect_key_startDelay
+      ///
+      /// Locales: en
+      var user_central_detail_connect_key_startDelay: RswiftResources.StringResource { .init(key: "user_central_detail_connect_key_startDelay", tableName: "Localizable", source: source, developmentValue: "CBConnectPeripheralOptionStartDelayKey", comment: nil) }
+
+      /// en translation: 系统是否自动重新连接到外围设备。 外围设备连接后，此设置使系统能够在链路断开时自动启动与对等设备的连接。系统用于 `centralManager(_:didDisconnectPeripheral:timestamp:isReconnecting:error:)` 通知呼叫者断开连接。
+      ///
+      /// Key: user_central_detail_connect_subtitle_isEnableAutoReconnect
+      ///
+      /// Locales: en
+      var user_central_detail_connect_subtitle_isEnableAutoReconnect: RswiftResources.StringResource { .init(key: "user_central_detail_connect_subtitle_isEnableAutoReconnect", tableName: "Localizable", source: source, developmentValue: "系统是否自动重新连接到外围设备。\n外围设备连接后，此设置使系统能够在链路断开时自动启动与对等设备的连接。系统用于 `centralManager(_:didDisconnectPeripheral:timestamp:isReconnecting:error:)` 通知呼叫者断开连接。", comment: nil) }
+
+      /// en translation: 是否桥接经典蓝牙技术配置文件。 如果与同一设备有低功耗的 GATT 连接，此选项会告诉系统在经典蓝牙设备上连接非 GATT 配置文件。 `true` 值指示系统在连接低能耗传输外围设备时调出经典传输配置文件。 `false` 值告诉系统不要使用配置文件。
+      ///
+      /// Key: user_central_detail_connect_subtitle_isEnableTransportBridging
+      ///
+      /// Locales: en
+      var user_central_detail_connect_subtitle_isEnableTransportBridging: RswiftResources.StringResource { .init(key: "user_central_detail_connect_subtitle_isEnableTransportBridging", tableName: "Localizable", source: source, developmentValue: "是否桥接经典蓝牙技术配置文件。\n如果与同一设备有低功耗的 GATT 连接，此选项会告诉系统在经典蓝牙设备上连接非 GATT 配置文件。\n`true` 值指示系统在连接低能耗传输外围设备时调出经典传输配置文件。\n`false` 值告诉系统不要使用配置文件。", comment: nil) }
+
+      /// en translation: 指定系统在后台连接外围设备时是否应显示警报。 此键对于未指定 `bluetooth-central` 后台模式且无法显示自己的警报的应用非常有用。 如果多个应用请求给定外围设备的通知，则最近处于前台的外围设备将收到警报。 如果未指定键，则默认值为 `false`。
+      ///
+      /// Key: user_central_detail_connect_subtitle_isNotifyOnConnection
+      ///
+      /// Locales: en
+      var user_central_detail_connect_subtitle_isNotifyOnConnection: RswiftResources.StringResource { .init(key: "user_central_detail_connect_subtitle_isNotifyOnConnection", tableName: "Localizable", source: source, developmentValue: "指定系统在后台连接外围设备时是否应显示警报。\n此键对于未指定 `bluetooth-central` 后台模式且无法显示自己的警报的应用非常有用。\n如果多个应用请求给定外围设备的通知，则最近处于前台的外围设备将收到警报。\n如果未指定键，则默认值为 `false`。", comment: nil) }
+
+      /// en translation: 指定在后台断开外围设备连接时系统是否应显示警报。 此键对于未指定 `bluetooth-central` 后台模式且无法显示自己的警报的应用非常有用。 如果多个应用请求给定外围设备的通知，则最近处于前台的外围设备将收到警报。 如果未指定键，则默认值为 `false`。
+      ///
+      /// Key: user_central_detail_connect_subtitle_isNotifyOnDisconnection
+      ///
+      /// Locales: en
+      var user_central_detail_connect_subtitle_isNotifyOnDisconnection: RswiftResources.StringResource { .init(key: "user_central_detail_connect_subtitle_isNotifyOnDisconnection", tableName: "Localizable", source: source, developmentValue: "指定在后台断开外围设备连接时系统是否应显示警报。\n此键对于未指定 `bluetooth-central` 后台模式且无法显示自己的警报的应用非常有用。\n如果多个应用请求给定外围设备的通知，则最近处于前台的外围设备将收到警报。\n如果未指定键，则默认值为 `false`。", comment: nil) }
+
+      /// en translation: 指定系统是否应针对外围设备发送的任何通知显示警报。 此键对于未指定 `bluetooth-central` 后台模式且无法显示自己的警报的应用非常有用。 如果多个应用请求给定外围设备的通知，则最近处于前台的外围设备将收到警报。 如果未指定键，则默认值为 `false`。 如果 `true` 为 ，则系统会针对应用挂起时从给定外围设备接收的所有通知显示警报
+      ///
+      /// Key: user_central_detail_connect_subtitle_isNotifyOnNotification
+      ///
+      /// Locales: en
+      var user_central_detail_connect_subtitle_isNotifyOnNotification: RswiftResources.StringResource { .init(key: "user_central_detail_connect_subtitle_isNotifyOnNotification", tableName: "Localizable", source: source, developmentValue: "指定系统是否应针对外围设备发送的任何通知显示警报。\n此键对于未指定 `bluetooth-central` 后台模式且无法显示自己的警报的应用非常有用。\n如果多个应用请求给定外围设备的通知，则最近处于前台的外围设备将收到警报。\n如果未指定键，则默认值为 `false`。\n如果 `true` 为 ，则系统会针对应用挂起时从给定外围设备接收的所有通知显示警报", comment: nil) }
+
+      /// en translation: 连接设备时是否需要Apple通知中心服务（ANCS）。
+      ///
+      /// Key: user_central_detail_connect_subtitle_isRequiresANCS
+      ///
+      /// Locales: en
+      var user_central_detail_connect_subtitle_isRequiresANCS: RswiftResources.StringResource { .init(key: "user_central_detail_connect_subtitle_isRequiresANCS", tableName: "Localizable", source: source, developmentValue: "连接设备时是否需要Apple通知中心服务（ANCS）。", comment: nil) }
+
+      /// en translation: 指示系统建立连接之前的延迟时间。
+      ///
+      /// Key: user_central_detail_connect_subtitle_startDelay
+      ///
+      /// Locales: en
+      var user_central_detail_connect_subtitle_startDelay: RswiftResources.StringResource { .init(key: "user_central_detail_connect_subtitle_startDelay", tableName: "Localizable", source: source, developmentValue: "指示系统建立连接之前的延迟时间。", comment: nil) }
+
+      /// en translation: isEnableAutoReconnect
+      ///
+      /// Key: user_central_detail_connect_title_isEnableAutoReconnect
+      ///
+      /// Locales: en
+      var user_central_detail_connect_title_isEnableAutoReconnect: RswiftResources.StringResource { .init(key: "user_central_detail_connect_title_isEnableAutoReconnect", tableName: "Localizable", source: source, developmentValue: "isEnableAutoReconnect", comment: nil) }
+
+      /// en translation: isEnableTransportBridging
+      ///
+      /// Key: user_central_detail_connect_title_isEnableTransportBridging
+      ///
+      /// Locales: en
+      var user_central_detail_connect_title_isEnableTransportBridging: RswiftResources.StringResource { .init(key: "user_central_detail_connect_title_isEnableTransportBridging", tableName: "Localizable", source: source, developmentValue: "isEnableTransportBridging", comment: nil) }
+
+      /// en translation: isNotifyOnConnection
+      ///
+      /// Key: user_central_detail_connect_title_isNotifyOnConnection
+      ///
+      /// Locales: en
+      var user_central_detail_connect_title_isNotifyOnConnection: RswiftResources.StringResource { .init(key: "user_central_detail_connect_title_isNotifyOnConnection", tableName: "Localizable", source: source, developmentValue: "isNotifyOnConnection", comment: nil) }
+
+      /// en translation: isNotifyOnDisconnection
+      ///
+      /// Key: user_central_detail_connect_title_isNotifyOnDisconnection
+      ///
+      /// Locales: en
+      var user_central_detail_connect_title_isNotifyOnDisconnection: RswiftResources.StringResource { .init(key: "user_central_detail_connect_title_isNotifyOnDisconnection", tableName: "Localizable", source: source, developmentValue: "isNotifyOnDisconnection", comment: nil) }
+
+      /// en translation: isNotifyOnNotification
+      ///
+      /// Key: user_central_detail_connect_title_isNotifyOnNotification
+      ///
+      /// Locales: en
+      var user_central_detail_connect_title_isNotifyOnNotification: RswiftResources.StringResource { .init(key: "user_central_detail_connect_title_isNotifyOnNotification", tableName: "Localizable", source: source, developmentValue: "isNotifyOnNotification", comment: nil) }
+
+      /// en translation: isRequiresANCS
+      ///
+      /// Key: user_central_detail_connect_title_isRequiresANCS
+      ///
+      /// Locales: en
+      var user_central_detail_connect_title_isRequiresANCS: RswiftResources.StringResource { .init(key: "user_central_detail_connect_title_isRequiresANCS", tableName: "Localizable", source: source, developmentValue: "isRequiresANCS", comment: nil) }
+
+      /// en translation: startDelay
+      ///
+      /// Key: user_central_detail_connect_title_startDelay
+      ///
+      /// Locales: en
+      var user_central_detail_connect_title_startDelay: RswiftResources.StringResource { .init(key: "user_central_detail_connect_title_startDelay", tableName: "Localizable", source: source, developmentValue: "startDelay", comment: nil) }
+
+      /// en translation: Initialization Option
+      ///
+      /// Key: user_central_detail_init
+      ///
+      /// Locales: en
+      var user_central_detail_init: RswiftResources.StringResource { .init(key: "user_central_detail_init", tableName: "Localizable", source: source, developmentValue: "Initialization Option", comment: nil) }
+
+      /// en translation: CBCentralManagerOptionShowPowerAlertKey
+      ///
+      /// Key: user_central_detail_init_key_isShowPowerAlert
+      ///
+      /// Locales: en
+      var user_central_detail_init_key_isShowPowerAlert: RswiftResources.StringResource { .init(key: "user_central_detail_init_key_isShowPowerAlert", tableName: "Localizable", source: source, developmentValue: "CBCentralManagerOptionShowPowerAlertKey", comment: nil) }
+
+      /// en translation: CBCentralManagerOptionRestoreIdentifierKey
+      ///
+      /// Key: user_central_detail_init_key_restoreIdentifier
+      ///
+      /// Locales: en
+      var user_central_detail_init_key_restoreIdentifier: RswiftResources.StringResource { .init(key: "user_central_detail_init_key_restoreIdentifier", tableName: "Localizable", source: source, developmentValue: "CBCentralManagerOptionRestoreIdentifierKey", comment: nil) }
+
+      /// en translation: 当蓝牙服务不可用时，如果应用实例化中央管理器，系统是否警告用户。
+      ///
+      /// Key: user_central_detail_init_subtitle_isShowPowerAlert
+      ///
+      /// Locales: en
+      var user_central_detail_init_subtitle_isShowPowerAlert: RswiftResources.StringResource { .init(key: "user_central_detail_init_subtitle_isShowPowerAlert", tableName: "Localizable", source: source, developmentValue: "当蓝牙服务不可用时，如果应用实例化中央管理器，系统是否警告用户。", comment: nil) }
+
+      /// en translation: 中央管理器要实例化的唯一标识符（UID）。 系统使用此UID标识特定的中央管理器。因此，UID必须保持不变，以便后续执行应用程序来恢复中央管理器。
+      ///
+      /// Key: user_central_detail_init_subtitle_restoreIdentifier
+      ///
+      /// Locales: en
+      var user_central_detail_init_subtitle_restoreIdentifier: RswiftResources.StringResource { .init(key: "user_central_detail_init_subtitle_restoreIdentifier", tableName: "Localizable", source: source, developmentValue: "中央管理器要实例化的唯一标识符（UID）。\n系统使用此UID标识特定的中央管理器。因此，UID必须保持不变，以便后续执行应用程序来恢复中央管理器。", comment: nil) }
+
+      /// en translation: isShowPowerAlert
+      ///
+      /// Key: user_central_detail_init_title_isShowPowerAlert
+      ///
+      /// Locales: en
+      var user_central_detail_init_title_isShowPowerAlert: RswiftResources.StringResource { .init(key: "user_central_detail_init_title_isShowPowerAlert", tableName: "Localizable", source: source, developmentValue: "isShowPowerAlert", comment: nil) }
+
+      /// en translation: restoreIdentifier
+      ///
+      /// Key: user_central_detail_init_title_restoreIdentifier
+      ///
+      /// Locales: en
+      var user_central_detail_init_title_restoreIdentifier: RswiftResources.StringResource { .init(key: "user_central_detail_init_title_restoreIdentifier", tableName: "Localizable", source: source, developmentValue: "restoreIdentifier", comment: nil) }
+
+      /// en translation: Scanning Option
+      ///
+      /// Key: user_central_detail_scan
+      ///
+      /// Locales: en
+      var user_central_detail_scan: RswiftResources.StringResource { .init(key: "user_central_detail_scan", tableName: "Localizable", source: source, developmentValue: "Scanning Option", comment: nil) }
+
+      /// en translation: CBCentralManagerScanOptionAllowDuplicatesKey
+      ///
+      /// Key: user_central_detail_scan_key_isAllowDuplicates
+      ///
+      /// Locales: en
+      var user_central_detail_scan_key_isAllowDuplicates: RswiftResources.StringResource { .init(key: "user_central_detail_scan_key_isAllowDuplicates", tableName: "Localizable", source: source, developmentValue: "CBCentralManagerScanOptionAllowDuplicatesKey", comment: nil) }
+
+      /// en translation: CBCentralManagerScanOptionSolicitedServiceUUIDsKey
+      ///
+      /// Key: user_central_detail_scan_key_solicitedServiceUUIDs
+      ///
+      /// Locales: en
+      var user_central_detail_scan_key_solicitedServiceUUIDs: RswiftResources.StringResource { .init(key: "user_central_detail_scan_key_solicitedServiceUUIDs", tableName: "Localizable", source: source, developmentValue: "CBCentralManagerScanOptionSolicitedServiceUUIDsKey", comment: nil) }
+
+      /// en translation: 是否应在不进行重复筛选的情况下运行扫描。 如果 `true` ，则中心禁用过滤，并在每次从外围设备接收通告数据包时生成发现事件。 如果 `false` （默认值），则中心将同一外围设备的多个发现合并为单个发现事件。
+      ///
+      /// Key: user_central_detail_scan_subtitle_isAllowDuplicates
+      ///
+      /// Locales: en
+      var user_central_detail_scan_subtitle_isAllowDuplicates: RswiftResources.StringResource { .init(key: "user_central_detail_scan_subtitle_isAllowDuplicates", tableName: "Localizable", source: source, developmentValue: "是否应在不进行重复筛选的情况下运行扫描。\n如果 `true` ，则中心禁用过滤，并在每次从外围设备接收通告数据包时生成发现事件。\n如果 `false` （默认值），则中心将同一外围设备的多个发现合并为单个发现事件。", comment: nil) }
+
+      /// en translation: 是要扫描的服务 UUID 数组。 指定此扫描选项会导致中央管理器还扫描请求阵列中包含的任何服务的外围设备。
+      ///
+      /// Key: user_central_detail_scan_subtitle_solicitedServiceUUIDs
+      ///
+      /// Locales: en
+      var user_central_detail_scan_subtitle_solicitedServiceUUIDs: RswiftResources.StringResource { .init(key: "user_central_detail_scan_subtitle_solicitedServiceUUIDs", tableName: "Localizable", source: source, developmentValue: "是要扫描的服务 UUID 数组。\n指定此扫描选项会导致中央管理器还扫描请求阵列中包含的任何服务的外围设备。", comment: nil) }
+
+      /// en translation: isAllowDuplicates
+      ///
+      /// Key: user_central_detail_scan_title_isAllowDuplicates
+      ///
+      /// Locales: en
+      var user_central_detail_scan_title_isAllowDuplicates: RswiftResources.StringResource { .init(key: "user_central_detail_scan_title_isAllowDuplicates", tableName: "Localizable", source: source, developmentValue: "isAllowDuplicates", comment: nil) }
+
+      /// en translation: solicitedServiceUUIDs
+      ///
+      /// Key: user_central_detail_scan_title_solicitedServiceUUIDs
+      ///
+      /// Locales: en
+      var user_central_detail_scan_title_solicitedServiceUUIDs: RswiftResources.StringResource { .init(key: "user_central_detail_scan_title_solicitedServiceUUIDs", tableName: "Localizable", source: source, developmentValue: "solicitedServiceUUIDs", comment: nil) }
 
       /// en translation: 个人信息
       ///
@@ -1054,18 +1313,22 @@ struct _R {
       var top: RswiftResources.ImageResource { .init(name: "triangle/top", path: ["triangle"], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
     }
 
-    /// This `_R.image.user` struct is generated, and contains static references to 1 users, and 4 namespaces.
+    /// This `_R.image.user` struct is generated, and contains static references to 1 users, and 5 namespaces.
     struct user {
       let bundle: Foundation.Bundle
 
       /// Image `user/user`.
       var user: RswiftResources.ImageResource { .init(name: "user/user", path: ["user"], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
       var center: center { .init(bundle: bundle) }
+      var central: central { .init(bundle: bundle) }
       var gender: gender { .init(bundle: bundle) }
       var info: info { .init(bundle: bundle) }
       var sign: sign { .init(bundle: bundle) }
 
       func center(bundle: Foundation.Bundle) -> center {
+        .init(bundle: bundle)
+      }
+      func central(bundle: Foundation.Bundle) -> central {
         .init(bundle: bundle)
       }
       func gender(bundle: Foundation.Bundle) -> gender {
@@ -1091,6 +1354,55 @@ struct _R {
 
         /// Image `user/center/security`.
         var security: RswiftResources.ImageResource { .init(name: "user/center/security", path: ["user", "center"], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+      }
+
+      /// This `_R.image.user.central` struct is generated, and contains static references to 0 centrals, and 1 namespaces.
+      struct central {
+        let bundle: Foundation.Bundle
+        var detail: detail { .init(bundle: bundle) }
+
+        func detail(bundle: Foundation.Bundle) -> detail {
+          .init(bundle: bundle)
+        }
+
+
+        /// This `_R.image.user.central.detail` struct is generated, and contains static references to 11 details.
+        struct detail {
+          let bundle: Foundation.Bundle
+
+          /// Image `user/central/detail/alert`.
+          var alert: RswiftResources.ImageResource { .init(name: "user/central/detail/alert", path: ["user", "central", "detail"], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+          /// Image `user/central/detail/bridge`.
+          var bridge: RswiftResources.ImageResource { .init(name: "user/central/detail/bridge", path: ["user", "central", "detail"], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+          /// Image `user/central/detail/connect`.
+          var connect: RswiftResources.ImageResource { .init(name: "user/central/detail/connect", path: ["user", "central", "detail"], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+          /// Image `user/central/detail/delay`.
+          var delay: RswiftResources.ImageResource { .init(name: "user/central/detail/delay", path: ["user", "central", "detail"], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+          /// Image `user/central/detail/disconnect`.
+          var disconnect: RswiftResources.ImageResource { .init(name: "user/central/detail/disconnect", path: ["user", "central", "detail"], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+          /// Image `user/central/detail/duplicate`.
+          var duplicate: RswiftResources.ImageResource { .init(name: "user/central/detail/duplicate", path: ["user", "central", "detail"], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+          /// Image `user/central/detail/notify`.
+          var notify: RswiftResources.ImageResource { .init(name: "user/central/detail/notify", path: ["user", "central", "detail"], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+          /// Image `user/central/detail/reconnect`.
+          var reconnect: RswiftResources.ImageResource { .init(name: "user/central/detail/reconnect", path: ["user", "central", "detail"], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+          /// Image `user/central/detail/request`.
+          var request: RswiftResources.ImageResource { .init(name: "user/central/detail/request", path: ["user", "central", "detail"], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+          /// Image `user/central/detail/restore`.
+          var restore: RswiftResources.ImageResource { .init(name: "user/central/detail/restore", path: ["user", "central", "detail"], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+          /// Image `user/central/detail/uuid`.
+          var uuid: RswiftResources.ImageResource { .init(name: "user/central/detail/uuid", path: ["user", "central", "detail"], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+        }
       }
 
       /// This `_R.image.user.gender` struct is generated, and contains static references to 2 genders.

@@ -1,8 +1,8 @@
 //
-//  SFUserCentralVC.swift
+//  SFUserCentralManagerVC.swift
 //  SFBleTool
 //
-//  Created by hsf on 2024/9/14.
+//  Created by hsf on 2024/9/16.
 //
 
 import Foundation
@@ -16,6 +16,7 @@ import SFUI
 import SFLogger
 
 // MARK: - SFUserCentralVC
-class SFUserCentralVC: SFScrollViewController {
+class SFUserCentralManagerVC: SFCollectionViewController {
     
 }
+

@@ -196,7 +196,14 @@ extension SFCMPeripheralListVC: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
+        let model = showModels[indexPath.row]
+        guard let peripheral = model.peripheral else {
+            SFToast.show("peripheral=nil")
+            tableView.deselectRow(at: indexPath, animated: true)
+            return
+        }
+//        centralManager.connect(peripheral: model.peripheral, options: <#T##[String : Any]?#>)
+        
         let vc = SFCMPeripheralDetailVC()
         vc.model = showModels[indexPath.row]
         navigationController?.pushViewController(vc, animated: true)
