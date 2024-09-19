@@ -1,8 +1,8 @@
 //
-//  SFUserCentralDetailCell.swift
+//  SFUserCentralDetailEditCell.swift
 //  SFBleTool
 //
-//  Created by hsf on 2024/9/16.
+//  Created by hsf on 2024/9/18.
 //
 
 import Foundation
@@ -16,8 +16,8 @@ import SFUI
 import SFLogger
 
 
-// MARK: - SFUserCentralDetailCell
-class SFUserCentralDetailCell: SFCardTableViewCell {
+// MARK: - SFUserCentralDetailEditCell
+class SFUserCentralDetailEditCell: SFTableViewCell {
     // MARK: data
     var item: SFUserCentralDetailItem? {
         didSet {
@@ -51,10 +51,16 @@ class SFUserCentralDetailCell: SFCardTableViewCell {
             view.textColor = R.color.subtitle()
         }
     }()
+    lazy var detailImgView: SFImageView = {
+        return SFImageView().then { view in
+            view.contentMode = .scaleAspectFit
+            view.image = R.image.com.detail()
+        }
+    }()
     private func customUI() {
-        cardView.addSubview(titleLabel)
-        cardView.addSubview(tipBtn)
-        cardView.addSubview(valueLabel)
+        contentView.addSubview(titleLabel)
+        contentView.addSubview(valueLabel)
+        contentView.addSubview(detailImgView)
         
         titleLabel.snp.makeConstraints { make in
             make.top.greaterThanOrEqualToSuperview().offset(10)
@@ -73,12 +79,17 @@ class SFUserCentralDetailCell: SFCardTableViewCell {
             make.bottom.lessThanOrEqualToSuperview().offset(-10)
             make.centerY.equalToSuperview()
             make.leading.greaterThanOrEqualTo(self.snp.centerX).offset(5)
+        }
+        detailImgView.snp.makeConstraints { make in
+            make.centerY.equalToSuperview()
+            make.leading.equalTo(valueLabel.snp.trailing).offset(10)
             make.trailing.equalToSuperview().offset(-10)
+            make.width.height.equalTo(20)
         }
     }
 }
 
-extension SFUserCentralDetailCell {
+extension SFUserCentralDetailEditCell {
     @objc private func tipBtnClicked() {
         SFAlert().show(alertStyle: .alert, headerStyle: .leading, title: "xxx", msg: "xxxxxxxxxxxxxxxxx\nxxxxxxxxxxxxxxxx\nxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nxxxxxxxxxxxxxxxx")
     }

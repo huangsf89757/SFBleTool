@@ -163,7 +163,8 @@ extension SFCMPeripheralListVC {
     
     /// 点击设置
     @objc private func settingBtnClicked() {
-        
+        let vc = SFUserCentralDetailVC()
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     /// 点击扫描

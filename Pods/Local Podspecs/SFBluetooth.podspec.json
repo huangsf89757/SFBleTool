@@ -21,6 +21,9 @@
   "swift_versions": "5.0",
   "source_files": "SFBluetooth/Classes/**/*",
   "dependencies": {
+    "SFExtension": [
+      "~> 0.1.0"
+    ],
     "SFLogger": [
       "~> 0.1.0"
     ]
