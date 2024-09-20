@@ -36,7 +36,7 @@ PODS:
 DEPENDENCIES:
   - R.swift (~> 7.3.2)
   - SFBase (from `../../Basic/SFBase/`)
-  - SFBluetooth (from `../../Server/SFBluetooth/`)
+  - SFBluetooth (from `../../Basic/SFBluetooth/`)
   - SFExtension (from `../../Basic/SFExtension/`)
   - SFLogger (from `../../Server/SFLogger/`)
   - SFUI (from `../../UI/SFUI/`)
@@ -61,7 +61,7 @@ EXTERNAL SOURCES:
   SFBase:
     :path: "../../Basic/SFBase/"
   SFBluetooth:
-    :path: "../../Server/SFBluetooth/"
+    :path: "../../Basic/SFBluetooth/"
   SFExtension:
     :path: "../../Basic/SFExtension/"
   SFLogger:
@@ -86,6 +86,6 @@ SPEC CHECKSUMS:
   WARangeSlider: 03f195d4dc5419e6b0d9043cc94fdf418dfe804d
   WSTagsField: a4e91b7d866e8c9755332ebcf8123f42f2abd4a0
 
-PODFILE CHECKSUM: e3ca3af714f0a8af331594f44b179db61815667c
+PODFILE CHECKSUM: 895824b5a18a2f4437da0bc7842958e6221a0618
 
 COCOAPODS: 1.12.1

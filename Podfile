@@ -18,14 +18,16 @@ def pods_private
   # Basic
   pod 'SFBase',         :path => $path + 'Basic/SFBase/'
   pod 'SFExtension',    :path => $path + 'Basic/SFExtension/'
+  pod 'SFBluetooth',    :path => $path + 'Basic/SFBluetooth/'
+  
   
   # UI
   pod 'SFUI',           :path => $path + 'UI/SFUI/'
   
   # Server
   pod 'SFLogger',       :path => $path + 'Server/SFLogger/'
-  pod 'SFBluetooth',    :path => $path + 'Server/SFBluetooth/'
-  
+ 
+ 
 end
 
 # 第三方组件
