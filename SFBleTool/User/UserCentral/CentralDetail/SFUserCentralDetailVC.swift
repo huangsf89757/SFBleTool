@@ -23,11 +23,17 @@ class SFUserCentralDetailVC: SFTableViewController {
     var isEdit = false
     
     // MARK: data
-    var items: [[SFUserCentralDetailItem]] = [
+    let titles = [
+        R.string.localizable.user_central_detail_init(),
+        R.string.localizable.user_central_detail_scan(),
+        R.string.localizable.user_central_detail_connect(),
+    ]
+    let items: [[SFUserCentralDetailItem]] = [
         [.showPowerAlert, .restoreIdentifier],
         [.allowDuplicates, .solicitedServiceUUIDs],
         [.enableAutoReconnect, .enableTransportBridging, .notifyOnConnection, .notifyOnDisconnection, .notifyOnNotification, .requiresANCS, .startDelay]
     ]
+   
     
     // MARK: life cycle
     convenience init() {
@@ -49,6 +55,7 @@ class SFUserCentralDetailVC: SFTableViewController {
         tableView.dataSource = self
         tableView.register(cellType: SFUserCentralDetailCell.self)
         tableView.register(cellType: SFUserCentralDetailEditCell.self)
+        tableView.separatorStyle = .none
     }
 }
 
@@ -71,11 +78,17 @@ extension SFUserCentralDetailVC: UITableViewDelegate, UITableViewDataSource {
             return cell
         }
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if isEdit {
             
         } else {
             self.tableView.card(cell: cell, at: indexPath)
         }
+    }
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return titles[section]
     }
 }
