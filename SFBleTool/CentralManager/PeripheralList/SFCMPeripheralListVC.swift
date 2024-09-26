@@ -263,7 +263,6 @@ extension SFCMPeripheralListVC {
             CBCentralManagerOptionRestoreIdentifierKey: SFApp.bundle,
         ]
         centralManager = SFCentralManager(queue: nil, options: options)
-        centralManager.isLogEnable = true
         addNotify()
     }
     
@@ -341,6 +340,32 @@ extension SFCMPeripheralListVC {
     @objc private func notifyCentralManagerDidDiscoverPeripheral(_ sender: Notification) {
         guard let userInfo = sender.userInfo else { return }
         guard let central = userInfo["central"] as? CBCentralManager else { return }
+        guard let peripheral = userInfo["peripheral"] as? CBPeripheral else { return }
+        guard let advertisementData = userInfo["advertisementData"] as? [String : Any] else { return }
+        guard let RSSI = userInfo["RSSI"] as? NSNumber else { return }
+        let row = showModels.firstIndex { model in
+            model.uuid == peripheral.identifier
+        }
+        if let row = row {
+            let model = showModels[row]
+            model.name = peripheral.name
+            model.uuid = peripheral.identifier
+            model.peripheral = peripheral
+            model.rssi = RSSI.doubleValue
+            model.advertisementData = advertisementData
+            tableView.reloadRows(at: [IndexPath(row: row, section: 0)], with: .none)
+            Log.debug("更新 peripheral=\(peripheral.sf.description)")
+        } else {
+            let model = SFCMPeripheralListModel()
+            model.name = peripheral.name
+            model.uuid = peripheral.identifier
+            model.peripheral = peripheral
+            model.rssi = RSSI.doubleValue
+            model.advertisementData = advertisementData
+            discoveredModels.append(model)
+            reloadList()
+            Log.debug("新增 peripheral=\(peripheral.sf.description)")
+        }
     }
     
     @objc private func notifyCentralManagerConnectPeripheralStart(_ sender: Notification) {
@@ -384,68 +409,4 @@ extension SFCMPeripheralListVC {
     }
 }
 
-// MARK: - SFCentralManagerDelegater
-extension SFCMPeripheralListVC {
-    private func centralManagerDidChangedIsScanning(_ central: CBCentralManager, isScanning: Bool) {
-        scanBtn.isSelected = isScanning
-        updateScanBtn()
-    }
-    
-    private func centralManagerDidUpdateState(_ central: CBCentralManager) {
-        
-    }
-    
-    private func centralManager(_ central: CBCentralManager, willRestoreState dict: [String : Any]) {
-        
-    }
 
-    private func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
-        let row = showModels.firstIndex { model in
-            model.uuid == peripheral.identifier
-        }
-        if let row = row {
-            let model = showModels[row]
-            model.name = peripheral.name
-            model.uuid = peripheral.identifier
-            model.peripheral = peripheral
-            model.rssi = RSSI.doubleValue
-            model.advData = advertisementData
-            tableView.reloadRows(at: [IndexPath(row: row, section: 0)], with: .none)
-            Log.debug("更新")
-        } else {
-            let model = SFCMPeripheralListModel()
-            model.name = peripheral.name
-            model.uuid = peripheral.identifier
-            model.peripheral = peripheral
-            model.rssi = RSSI.doubleValue
-            model.advData = advertisementData
-            discoveredModels.append(model)
-            reloadList()
-            Log.debug("新增")
-        }
-    }
-
-    private func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {
-        
-    }
- 
-    private func centralManager(_ central: CBCentralManager, didFailToConnect peripheral: CBPeripheral, error: (any Error)?) {
-        
-    }
-
-    private func centralManager(_ central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, error: (any Error)?) {
-       
-    }
-
-    private func centralManager(_ central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, timestamp: CFAbsoluteTime, isReconnecting: Bool, error: (any Error)?) {
-        
-    }
-   
-    private func centralManager(_ central: CBCentralManager, connectionEventDidOccur event: CBConnectionEvent, for peripheral: CBPeripheral) {
-        
-    }
-
-    private func centralManager(_ central: CBCentralManager, didUpdateANCSAuthorizationFor peripheral: CBPeripheral) {
-        
-    }
-}
