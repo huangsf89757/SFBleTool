@@ -53,7 +53,8 @@ class SFUserCentralDetailVC: SFTableViewController {
     private func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(cellType: SFUserCentralDetailCell.self)
+        tableView.register(cellType: SFUserCentralDetailInlineCell.self)
+        tableView.register(cellType: SFUserCentralDetailOutlineCell.self)
         tableView.register(cellType: SFUserCentralDetailEditCell.self)
         tableView.separatorStyle = .none
     }
@@ -68,14 +69,24 @@ extension SFUserCentralDetailVC: UITableViewDelegate, UITableViewDataSource {
         return items[section].count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let item = items[indexPath.section][indexPath.row]
         if isEdit {
             let cell = tableView.dequeueReusableCell(for: indexPath, cellType: SFUserCentralDetailEditCell.self)
-            cell.item = items[indexPath.section][indexPath.row]
+            cell.item = item
+            self.tableView.configPosition(cell: cell, at: indexPath)
             return cell
         } else {
-            let cell = tableView.dequeueReusableCell(for: indexPath, cellType: SFUserCentralDetailCell.self)
-            cell.item = items[indexPath.section][indexPath.row]
-            return cell
+            if item == .restoreIdentifier || item == .solicitedServiceUUIDs {
+                let cell = tableView.dequeueReusableCell(for: indexPath, cellType: SFUserCentralDetailOutlineCell.self)
+                cell.item = item
+                self.tableView.configPosition(cell: cell, at: indexPath)
+                return cell
+            } else {
+                let cell = tableView.dequeueReusableCell(for: indexPath, cellType: SFUserCentralDetailInlineCell.self)
+                cell.item = item
+                self.tableView.configPosition(cell: cell, at: indexPath)
+                return cell
+            }
         }
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

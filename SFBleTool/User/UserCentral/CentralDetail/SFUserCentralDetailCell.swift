@@ -34,10 +34,20 @@ class SFUserCentralDetailCell: SFCardTableViewCell {
         customUI()
     }
     
+    override var position: SFTableViewCell.Position? {
+        didSet {
+            if position == .first || position == .mid {
+                customSeparator.isHidden = false
+            } else {
+                customSeparator.isHidden = true
+            }
+        }
+    }
+    
     // MARK: ui
     lazy var titleLabel: SFLabel = {
         return SFLabel().then { view in
-            view.font = .systemFont(ofSize: 17, weight: .regular)
+            view.font = .systemFont(ofSize: 15, weight: .regular)
             view.textColor = R.color.title()
             view.numberOfLines = 0
         }
@@ -49,34 +59,28 @@ class SFUserCentralDetailCell: SFCardTableViewCell {
             view.hitInsets = UIEdgeInsets(top: -10, left: -10, bottom: -10, right: -10)
         }
     }()
-    lazy var valueLabel: SFLabel = {
-        return SFLabel().then { view in
-            view.font = .systemFont(ofSize: 17, weight: .bold)
-            view.textColor = R.color.subtitle()
-            view.numberOfLines = 0
-        }
-    }()
-    private func customUI() {
+    func customUI() {
         cardView.addSubview(titleLabel)
         cardView.addSubview(tipBtn)
-        cardView.addSubview(valueLabel)
+        cardView.addSubview(customSeparator)
         
         titleLabel.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(10)
             make.bottom.equalToSuperview().offset(-10)
             make.leading.equalToSuperview().offset(10)
+            make.height.greaterThanOrEqualTo(20)
         }
         tipBtn.snp.makeConstraints { make in
             make.centerY.equalTo(titleLabel)
             make.leading.equalTo(titleLabel.snp.trailing).offset(10)
             make.width.height.equalTo(12)
-            make.trailing.lessThanOrEqualTo(self.snp.centerX).offset(-5)
+            make.trailing.lessThanOrEqualToSuperview().offset(-10)
         }
-        valueLabel.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(10)
-            make.bottom.equalToSuperview().offset(-10)
-            make.leading.greaterThanOrEqualTo(self.snp.centerX).offset(5)
+        customSeparator.snp.makeConstraints { make in
+            make.leading.equalToSuperview().offset(10)
             make.trailing.equalToSuperview().offset(-10)
+            make.bottom.equalToSuperview()
+            make.height.equalTo(1)
         }
     }
 }

@@ -538,54 +538,54 @@ struct _R {
       /// Locales: en
       var user_central_detail_connect_subtitle_startDelay: RswiftResources.StringResource { .init(key: "user_central_detail_connect_subtitle_startDelay", tableName: "Localizable", source: source, developmentValue: "指示系统建立连接之前的延迟时间。", comment: nil) }
 
-      /// en translation: isEnableAutoReconnect
+      /// en translation: isEnableAutoReconnect: Bool?
       ///
       /// Key: user_central_detail_connect_title_isEnableAutoReconnect
       ///
       /// Locales: en
-      var user_central_detail_connect_title_isEnableAutoReconnect: RswiftResources.StringResource { .init(key: "user_central_detail_connect_title_isEnableAutoReconnect", tableName: "Localizable", source: source, developmentValue: "isEnableAutoReconnect", comment: nil) }
+      var user_central_detail_connect_title_isEnableAutoReconnect: RswiftResources.StringResource { .init(key: "user_central_detail_connect_title_isEnableAutoReconnect", tableName: "Localizable", source: source, developmentValue: "isEnableAutoReconnect: Bool?", comment: nil) }
 
-      /// en translation: isEnableTransportBridging
+      /// en translation: isEnableTransportBridging: Bool?
       ///
       /// Key: user_central_detail_connect_title_isEnableTransportBridging
       ///
       /// Locales: en
-      var user_central_detail_connect_title_isEnableTransportBridging: RswiftResources.StringResource { .init(key: "user_central_detail_connect_title_isEnableTransportBridging", tableName: "Localizable", source: source, developmentValue: "isEnableTransportBridging", comment: nil) }
+      var user_central_detail_connect_title_isEnableTransportBridging: RswiftResources.StringResource { .init(key: "user_central_detail_connect_title_isEnableTransportBridging", tableName: "Localizable", source: source, developmentValue: "isEnableTransportBridging: Bool?", comment: nil) }
 
-      /// en translation: isNotifyOnConnection
+      /// en translation: isNotifyOnConnection: Bool
       ///
       /// Key: user_central_detail_connect_title_isNotifyOnConnection
       ///
       /// Locales: en
-      var user_central_detail_connect_title_isNotifyOnConnection: RswiftResources.StringResource { .init(key: "user_central_detail_connect_title_isNotifyOnConnection", tableName: "Localizable", source: source, developmentValue: "isNotifyOnConnection", comment: nil) }
+      var user_central_detail_connect_title_isNotifyOnConnection: RswiftResources.StringResource { .init(key: "user_central_detail_connect_title_isNotifyOnConnection", tableName: "Localizable", source: source, developmentValue: "isNotifyOnConnection: Bool", comment: nil) }
 
-      /// en translation: isNotifyOnDisconnection
+      /// en translation: isNotifyOnDisconnection: Bool
       ///
       /// Key: user_central_detail_connect_title_isNotifyOnDisconnection
       ///
       /// Locales: en
-      var user_central_detail_connect_title_isNotifyOnDisconnection: RswiftResources.StringResource { .init(key: "user_central_detail_connect_title_isNotifyOnDisconnection", tableName: "Localizable", source: source, developmentValue: "isNotifyOnDisconnection", comment: nil) }
+      var user_central_detail_connect_title_isNotifyOnDisconnection: RswiftResources.StringResource { .init(key: "user_central_detail_connect_title_isNotifyOnDisconnection", tableName: "Localizable", source: source, developmentValue: "isNotifyOnDisconnection: Bool", comment: nil) }
 
-      /// en translation: isNotifyOnNotification
+      /// en translation: isNotifyOnNotification: Bool
       ///
       /// Key: user_central_detail_connect_title_isNotifyOnNotification
       ///
       /// Locales: en
-      var user_central_detail_connect_title_isNotifyOnNotification: RswiftResources.StringResource { .init(key: "user_central_detail_connect_title_isNotifyOnNotification", tableName: "Localizable", source: source, developmentValue: "isNotifyOnNotification", comment: nil) }
+      var user_central_detail_connect_title_isNotifyOnNotification: RswiftResources.StringResource { .init(key: "user_central_detail_connect_title_isNotifyOnNotification", tableName: "Localizable", source: source, developmentValue: "isNotifyOnNotification: Bool", comment: nil) }
 
-      /// en translation: isRequiresANCS
+      /// en translation: isRequiresANCS: Bool?
       ///
       /// Key: user_central_detail_connect_title_isRequiresANCS
       ///
       /// Locales: en
-      var user_central_detail_connect_title_isRequiresANCS: RswiftResources.StringResource { .init(key: "user_central_detail_connect_title_isRequiresANCS", tableName: "Localizable", source: source, developmentValue: "isRequiresANCS", comment: nil) }
+      var user_central_detail_connect_title_isRequiresANCS: RswiftResources.StringResource { .init(key: "user_central_detail_connect_title_isRequiresANCS", tableName: "Localizable", source: source, developmentValue: "isRequiresANCS: Bool?", comment: nil) }
 
-      /// en translation: startDelay
+      /// en translation: startDelay: TimeInterval?
       ///
       /// Key: user_central_detail_connect_title_startDelay
       ///
       /// Locales: en
-      var user_central_detail_connect_title_startDelay: RswiftResources.StringResource { .init(key: "user_central_detail_connect_title_startDelay", tableName: "Localizable", source: source, developmentValue: "startDelay", comment: nil) }
+      var user_central_detail_connect_title_startDelay: RswiftResources.StringResource { .init(key: "user_central_detail_connect_title_startDelay", tableName: "Localizable", source: source, developmentValue: "startDelay: TimeInterval?", comment: nil) }
 
       /// en translation: Initialization Option
       ///
@@ -622,19 +622,19 @@ struct _R {
       /// Locales: en
       var user_central_detail_init_subtitle_restoreIdentifier: RswiftResources.StringResource { .init(key: "user_central_detail_init_subtitle_restoreIdentifier", tableName: "Localizable", source: source, developmentValue: "中央管理器要实例化的唯一标识符（UID）。\n系统使用此UID标识特定的中央管理器。因此，UID必须保持不变，以便后续执行应用程序来恢复中央管理器。", comment: nil) }
 
-      /// en translation: isShowPowerAlert
+      /// en translation: isShowPowerAlert: Bool
       ///
       /// Key: user_central_detail_init_title_isShowPowerAlert
       ///
       /// Locales: en
-      var user_central_detail_init_title_isShowPowerAlert: RswiftResources.StringResource { .init(key: "user_central_detail_init_title_isShowPowerAlert", tableName: "Localizable", source: source, developmentValue: "isShowPowerAlert", comment: nil) }
+      var user_central_detail_init_title_isShowPowerAlert: RswiftResources.StringResource { .init(key: "user_central_detail_init_title_isShowPowerAlert", tableName: "Localizable", source: source, developmentValue: "isShowPowerAlert: Bool", comment: nil) }
 
-      /// en translation: restoreIdentifier
+      /// en translation: restoreIdentifier: String?
       ///
       /// Key: user_central_detail_init_title_restoreIdentifier
       ///
       /// Locales: en
-      var user_central_detail_init_title_restoreIdentifier: RswiftResources.StringResource { .init(key: "user_central_detail_init_title_restoreIdentifier", tableName: "Localizable", source: source, developmentValue: "restoreIdentifier", comment: nil) }
+      var user_central_detail_init_title_restoreIdentifier: RswiftResources.StringResource { .init(key: "user_central_detail_init_title_restoreIdentifier", tableName: "Localizable", source: source, developmentValue: "restoreIdentifier: String?", comment: nil) }
 
       /// en translation: Scanning Option
       ///
@@ -671,19 +671,19 @@ struct _R {
       /// Locales: en
       var user_central_detail_scan_subtitle_solicitedServiceUUIDs: RswiftResources.StringResource { .init(key: "user_central_detail_scan_subtitle_solicitedServiceUUIDs", tableName: "Localizable", source: source, developmentValue: "是要扫描的服务 UUID 数组。\n指定此扫描选项会导致中央管理器还扫描请求阵列中包含的任何服务的外围设备。", comment: nil) }
 
-      /// en translation: isAllowDuplicates
+      /// en translation: isAllowDuplicates: Bool
       ///
       /// Key: user_central_detail_scan_title_isAllowDuplicates
       ///
       /// Locales: en
-      var user_central_detail_scan_title_isAllowDuplicates: RswiftResources.StringResource { .init(key: "user_central_detail_scan_title_isAllowDuplicates", tableName: "Localizable", source: source, developmentValue: "isAllowDuplicates", comment: nil) }
+      var user_central_detail_scan_title_isAllowDuplicates: RswiftResources.StringResource { .init(key: "user_central_detail_scan_title_isAllowDuplicates", tableName: "Localizable", source: source, developmentValue: "isAllowDuplicates: Bool", comment: nil) }
 
-      /// en translation: solicitedServiceUUIDs
+      /// en translation: solicitedServiceUUIDs: [CBUUID]?
       ///
       /// Key: user_central_detail_scan_title_solicitedServiceUUIDs
       ///
       /// Locales: en
-      var user_central_detail_scan_title_solicitedServiceUUIDs: RswiftResources.StringResource { .init(key: "user_central_detail_scan_title_solicitedServiceUUIDs", tableName: "Localizable", source: source, developmentValue: "solicitedServiceUUIDs", comment: nil) }
+      var user_central_detail_scan_title_solicitedServiceUUIDs: RswiftResources.StringResource { .init(key: "user_central_detail_scan_title_solicitedServiceUUIDs", tableName: "Localizable", source: source, developmentValue: "solicitedServiceUUIDs: [CBUUID]?", comment: nil) }
 
       /// en translation: 个人信息
       ///
