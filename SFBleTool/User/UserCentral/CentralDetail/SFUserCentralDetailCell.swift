@@ -19,6 +19,27 @@ import SFLogger
 // MARK: - SFUserCentralDetailCell
 class SFUserCentralDetailCell: SFCardTableViewCell {
     // MARK: data
+    var isEdit = false {
+        didSet {
+            UIView.animate(withDuration: 1) {
+                self.cardRadius = self.isEdit ? 0 : 10
+                self.cardInset = self.isEdit ? .zero : UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
+                self.cardView.snp.remakeConstraints { make in
+                    make.top.equalToSuperview().offset(self.cardInset.top)
+                    make.leading.equalToSuperview().offset(self.cardInset.left)
+                    make.trailing.equalToSuperview().offset(-self.cardInset.right)
+                    make.bottom.equalToSuperview().offset(-self.cardInset.bottom)
+                }
+                self.detailImgView.isHidden = self.isEdit ? false : true
+                self.tipBtn.snp.updateConstraints { make in
+                    make.trailing.lessThanOrEqualToSuperview().offset(self.isEdit ? -30 : -10)
+                }
+                self.valueLabel.snp.updateConstraints { make in
+                    make.trailing.equalToSuperview().offset(self.isEdit ? -30 : -10)
+                }
+            }
+        }
+    }
     var item: SFUserCentralDetailItem? {
         didSet {
             guard let item = item else { return }
@@ -59,9 +80,23 @@ class SFUserCentralDetailCell: SFCardTableViewCell {
             view.hitInsets = UIEdgeInsets(top: -10, left: -10, bottom: -10, right: -10)
         }
     }()
+    lazy var valueLabel: SFLabel = {
+        return SFLabel().then { view in
+            view.font = .systemFont(ofSize: 15, weight: .bold)
+            view.textColor = R.color.subtitle()
+            view.numberOfLines = 0
+        }
+    }()
+    lazy var detailImgView: SFImageView = {
+        return SFImageView().then { view in
+            view.contentMode = .scaleAspectFit
+            view.image = R.image.com.detail()
+        }
+    }()
     func customUI() {
         cardView.addSubview(titleLabel)
         cardView.addSubview(tipBtn)
+        cardView.addSubview(detailImgView)
         cardView.addSubview(customSeparator)
         
         titleLabel.snp.makeConstraints { make in
@@ -75,6 +110,11 @@ class SFUserCentralDetailCell: SFCardTableViewCell {
             make.leading.equalTo(titleLabel.snp.trailing).offset(10)
             make.width.height.equalTo(12)
             make.trailing.lessThanOrEqualToSuperview().offset(-10)
+        }
+        detailImgView.snp.makeConstraints { make in
+            make.centerY.equalToSuperview()
+            make.trailing.equalToSuperview().offset(-10)
+            make.width.height.equalTo(14)
         }
         customSeparator.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(10)

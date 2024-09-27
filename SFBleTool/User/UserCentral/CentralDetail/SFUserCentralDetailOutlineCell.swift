@@ -22,18 +22,11 @@ class SFUserCentralDetailOutlineCell: SFUserCentralDetailCell {
   
     
     // MARK: ui
-    lazy var valueLabel: SFLabel = {
-        return SFLabel().then { view in
-            view.font = .systemFont(ofSize: 17, weight: .bold)
-            view.textColor = R.color.subtitle()
-            view.numberOfLines = 0
-            view.textAlignment = .center
-            view.backgroundColor = R.color.placeholder()?.withAlphaComponent(0.5)
-            view.layer.cornerRadius = 10
-            view.layer.masksToBounds = true
-        }
-    }()
     override func customUI() {
+        valueLabel.textAlignment = .center
+        valueLabel.backgroundColor = R.color.placeholder()?.withAlphaComponent(0.5)
+        valueLabel.layer.cornerRadius = 10
+        valueLabel.layer.masksToBounds = true
         super.customUI()
         titleLabel.snp.remakeConstraints { make in
             make.top.equalToSuperview().offset(10)

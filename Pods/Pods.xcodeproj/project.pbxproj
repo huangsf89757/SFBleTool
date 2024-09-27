@@ -209,7 +209,7 @@
 		B291AB916BDE034163A1E86F4419614E /* ConstraintRelation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53303080DEF9443457DB1B5376471C06 /* ConstraintRelation.swift */; };
 		B36D5FA642EEE50BC334C2419DC54857 /* ConstraintLayoutSupportDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2ABF9236644480834C8CE0D1A81477 /* ConstraintLayoutSupportDSL.swift */; };
 		B392CA66D83E9BFD9E6955497800B484 /* Base64.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7758E17F757C744FEF921B93EE96DABC /* Base64.swift */; };
-		B3B201994FAC36013B4D5A17016678CC /* StringCG.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8B32185560A6AA53C2E3458CE7D4AD /* StringCG.swift */; };
+		B3B201994FAC36013B4D5A17016678CC /* ToString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8B32185560A6AA53C2E3458CE7D4AD /* ToString.swift */; };
 		B45D0C99CB6D98CEC740C73824E54A5C /* FileResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C492172A7BCEE81A91BC3248084E8F50 /* FileResource.swift */; };
 		B46A36CA19ED6C09341D8E4031F66D5C /* IQUIViewController+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D9D1EEF3AEC715002B56B83C3FAA75 /* IQUIViewController+Additions.swift */; };
 		B4BA794E0AD83B815624CE7734D58D9D /* SwiftyBeaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DC2D0437088B976BA92739B921C05F /* SwiftyBeaver.swift */; };
@@ -579,7 +579,7 @@
 		1BB1C9E2974C20531AF3843E2BBC8D2B /* SFWrapper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SFWrapper.swift; path = SFExtension/Classes/SFWrapper.swift; sourceTree = "<group>"; };
 		1D0E793DAA8E5630CEFB165F64E43DF2 /* SFTableView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SFTableView.swift; sourceTree = "<group>"; };
 		1D6C6F4877B26B79593CA274B485B8E1 /* SFUI-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SFUI-Info.plist"; sourceTree = "<group>"; };
-		1D8B32185560A6AA53C2E3458CE7D4AD /* StringCG.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StringCG.swift; sourceTree = "<group>"; };
+		1D8B32185560A6AA53C2E3458CE7D4AD /* ToString.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ToString.swift; sourceTree = "<group>"; };
 		1DBC6D93BFC05156B20CE94017BED9C9 /* SFBase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SFBase.debug.xcconfig; sourceTree = "<group>"; };
 		1E8D501E758C6C683F43A00516B4ABFB /* IQKeyboardManager+UITextFieldViewNotification.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQKeyboardManager+UITextFieldViewNotification.swift"; path = "IQKeyboardManagerSwift/IQKeyboardManager+UITextFieldViewNotification.swift"; sourceTree = "<group>"; };
 		1E948605309A0A009651BA87DAB013B6 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
@@ -1725,7 +1725,7 @@
 				DA11F9CB956F2273EA2393F5DAAA7983 /* Data.swift */,
 				DF29BF853B92B914FAE198D63612168E /* JSON.swift */,
 				605FFA85765683035EB6751E8CAFE8BD /* String.swift */,
-				1D8B32185560A6AA53C2E3458CE7D4AD /* StringCG.swift */,
+				1D8B32185560A6AA53C2E3458CE7D4AD /* ToString.swift */,
 			);
 			name = Foundation;
 			path = SFExtension/Classes/Foundation;
@@ -2812,7 +2812,7 @@
 				11585508D26EFBBE2DAB76F13D24A6A2 /* SFExtension-dummy.m in Sources */,
 				94A11D42326EB380A4CFC377F7188C08 /* SFWrapper.swift in Sources */,
 				E69ADBB71A76714F0173A46F2B0D594C /* String.swift in Sources */,
-				B3B201994FAC36013B4D5A17016678CC /* StringCG.swift in Sources */,
+				B3B201994FAC36013B4D5A17016678CC /* ToString.swift in Sources */,
 				293E35A5778731670A1D2F9460D45B0F /* UIColor.swift in Sources */,
 				C08DDDDB8366EB8764279870CE085124 /* UIFont.swift in Sources */,
 				F097B11C9CD8DE5B4247DC357F502310 /* UIImage.swift in Sources */,

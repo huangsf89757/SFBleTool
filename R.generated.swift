@@ -72,7 +72,7 @@ struct _R {
       let source: RswiftResources.StringResource.Source
     }
 
-    /// This `_R.string.localizable` struct is generated, and contains static references to 120 localization keys.
+    /// This `_R.string.localizable` struct is generated, and contains static references to 124 localization keys.
     struct localizable {
       let source: RswiftResources.StringResource.Source
 
@@ -348,6 +348,34 @@ struct _R {
       ///
       /// Locales: en, zh-Hans
       var central_sort_name: RswiftResources.StringResource { .init(key: "central_sort_name", tableName: "Localizable", source: source, developmentValue: "名称", comment: nil) }
+
+      /// en translation: 取消
+      ///
+      /// Key: com_cancel
+      ///
+      /// Locales: en
+      var com_cancel: RswiftResources.StringResource { .init(key: "com_cancel", tableName: "Localizable", source: source, developmentValue: "取消", comment: nil) }
+
+      /// en translation: 编辑
+      ///
+      /// Key: com_edit
+      ///
+      /// Locales: en
+      var com_edit: RswiftResources.StringResource { .init(key: "com_edit", tableName: "Localizable", source: source, developmentValue: "编辑", comment: nil) }
+
+      /// en translation: 保存
+      ///
+      /// Key: com_save
+      ///
+      /// Locales: en
+      var com_save: RswiftResources.StringResource { .init(key: "com_save", tableName: "Localizable", source: source, developmentValue: "保存", comment: nil) }
+
+      /// en translation: 确定
+      ///
+      /// Key: com_sure
+      ///
+      /// Locales: en
+      var com_sure: RswiftResources.StringResource { .init(key: "com_sure", tableName: "Localizable", source: source, developmentValue: "确定", comment: nil) }
 
       /// en translation: Copyright @ 2024-2034
       ///

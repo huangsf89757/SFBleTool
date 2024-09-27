@@ -22,15 +22,12 @@ class SFUserCentralDetailInlineCell: SFUserCentralDetailCell {
     
     
     // MARK: ui
-    lazy var valueLabel: SFLabel = {
-        return SFLabel().then { view in
-            view.font = .systemFont(ofSize: 17, weight: .bold)
-            view.textColor = R.color.subtitle()
-            view.numberOfLines = 0
-        }
-    }()
     override func customUI() {
         super.customUI()
+        valueLabel.textAlignment = .right
+        valueLabel.backgroundColor = .clear
+        valueLabel.layer.cornerRadius = 0
+        valueLabel.layer.masksToBounds = true
         cardView.addSubview(valueLabel)
         valueLabel.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(10)

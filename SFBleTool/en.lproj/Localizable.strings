@@ -14,6 +14,13 @@ CFBundleDisplayName = "BleMessager";
 "copyright" = "Copyright @ 2024-2034";
 
 
+// # com
+"com_edit" = "编辑";
+"com_cancel" = "取消";
+"com_sure" = "确定";
+"com_save" = "保存";
+
+
 // # user
 // ## sign
 "user_sign_up" = "注册";

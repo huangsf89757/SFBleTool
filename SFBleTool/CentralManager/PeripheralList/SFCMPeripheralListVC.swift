@@ -68,6 +68,27 @@ class SFCMPeripheralListVC: SFManagerVC {
             view.addTarget(self, action: #selector(settingBtnClicked), for: .touchUpInside)
         }
     }()
+    private lazy var headerView: SFCMHeaderView = {
+        return SFCMHeaderView().then { view in
+            view.searchDidChangedBlock = {
+                [weak self] searchModel in
+                self?.reloadList()
+                self?.tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .none, animated: false)
+            }
+            view.sortDidChangedBlock = {
+                [weak self] sortModel in
+                self?.reloadList()
+                self?.tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .none, animated: false)
+            }
+        }
+    }()
+    lazy var tableView: SFTableView = {
+        return SFTableView(frame: .zero, style: .plain).then { view in
+            view.delegate = self
+            view.dataSource = self
+            view.register(cellType: SFCMPeripheralListCell.self)
+        }
+    }()
     private lazy var scanBtn: SFButton = {
         return SFButton().then { view in
             view.sf.setCornerAndShadow(radius: 10, fillColor: R.color.background(), shadowColor: R.color.black(), shadowOpacity: 0.3, shadowOffset: CGSize(width: 0, height: 5), shadowRadius: 5)
@@ -91,27 +112,6 @@ class SFCMPeripheralListVC: SFManagerVC {
             anim.fillMode = .forwards
             view.imageView?.layer.add(anim, forKey: "scanBtn_doing")
             view.imageView?.layer.sf.pauseAnimation()
-        }
-    }()
-    private lazy var headerView: SFCMHeaderView = {
-        return SFCMHeaderView().then { view in
-            view.searchDidChangedBlock = {
-                [weak self] searchModel in
-                self?.reloadList()
-                self?.tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .none, animated: false)
-            }
-            view.sortDidChangedBlock = {
-                [weak self] sortModel in
-                self?.reloadList()
-                self?.tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .none, animated: false)
-            }
-        }
-    }()
-    lazy var tableView: SFTableView = {
-        return SFTableView(frame: .zero, style: .plain).then { view in
-            view.delegate = self
-            view.dataSource = self
-            view.register(cellType: SFCMPeripheralListCell.self)
         }
     }()
     private func customUI() {
