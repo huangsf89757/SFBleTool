@@ -24,7 +24,7 @@ import SideMenu
 class SFCMPeripheralListVC: SFManagerVC {
     
     // MARK: var
-    private var centralManager: SFCentralManager!
+    private var centralManager: SFBleCentralManager!
     /// 顶部/底部 Bar 是否显示
     private var isBarShowing = true
    
@@ -170,9 +170,9 @@ extension SFCMPeripheralListVC {
     /// 点击扫描
     @objc private func scanBtnClicked() {
         if scanBtn.isSelected {
-            centralManager.stopScan()
+            centralManager.stopScan(id: UUID().uuidString)
         } else {
-            centralManager.scanForPeripherals(services: headerModel.filter.uuids, options: nil)
+            centralManager.scanForPeripherals(id: UUID().uuidString, services: headerModel.filter.uuids, options: nil)
         }
     }
     
@@ -262,7 +262,7 @@ extension SFCMPeripheralListVC {
             CBCentralManagerOptionShowPowerAlertKey: true,
             CBCentralManagerOptionRestoreIdentifierKey: SFApp.bundle,
         ]
-        centralManager = SFCentralManager(queue: nil, options: options)
+        centralManager = SFBleCentralManager(queue: nil, options: options)
         addNotify()
     }
     
