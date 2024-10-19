@@ -66,11 +66,9 @@
 		3817F4830A10E51D20B72530EF6A56D2 /* SideMenuTransitionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8B26EFFA422B8A952BD8A756F92DDC /* SideMenuTransitionController.swift */; };
 		38896334CD4FBF26E6C1F9D09561C002 /* ConstraintMakerFinalizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7008B96BB19ADD85088A62CF4A47AE5 /* ConstraintMakerFinalizable.swift */; };
 		3A1139F24D32AEFBC5492EA1C3DE4058 /* SFHud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91509620E484EEBE05FE742C8AC87A5B /* SFHud.swift */; };
-		3D32A255CE15B5541B31072B3A12CD7F /* SFBleCmd.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F87B536FE2EF1D7D2351E3D5CA3C65 /* SFBleCmd.swift */; };
 		3D7881304A4BC36A34A1174002482270 /* SFSegmentIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB3E6CD146D6F7E5CD5FF50FCC88E79 /* SFSegmentIndicatorView.swift */; };
 		3EA55D4F2D86D0CFA5351B970DEC9A82 /* ConstraintViewDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93C68B0480BD042B05F56AEF84E9F7D /* ConstraintViewDSL.swift */; };
 		3F5F183F0C9BB7F9E4E27FF85416240A /* SFOutlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940ED29EFEC1CB8935A5953C505F73F6 /* SFOutlineView.swift */; };
-		3FAE8B7E0C85D8C499632835FF1503D4 /* SFBleReadRSSICmd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF531C15858F84A505A486412A48D01 /* SFBleReadRSSICmd.swift */; };
 		413BF8EAF7CEC161074FCB32DF2135BF /* SFScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F84883A6FCFEC5DF8DA1E54F6D5E227 /* SFScrollViewController.swift */; };
 		41A536E6CE1C85116A756B710B2C660B /* IQKeyboardManagerConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E309213D01A9C756DECB92FBC9DE882 /* IQKeyboardManagerConstants.swift */; };
 		41B754928A6FB227652C72ABAD3B7120 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79CF7D56C5D50C18B2EA0ED106D998C7 /* Foundation.framework */; };
@@ -101,7 +99,7 @@
 		53823D18FE8E68990F500FDE7B840AAF /* ReuseIdentifier+Integrations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E0B46FA12650FA5C0B416C79FB6C66 /* ReuseIdentifier+Integrations.swift */; };
 		5587C359D9C8789950E7F6585C2292E7 /* SideMenuPresentationStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2ECA612E060620AA89FC3E8D4804CF2 /* SideMenuPresentationStyle.swift */; };
 		59D93AA030707FB80C828339802BEA17 /* SFTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482928241CAEFE7FDE6CC390A6E56367 /* SFTableViewCell.swift */; };
-		5A8AF98785EFE71CD0EE7050D42FA9A4 /* SFBle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303B7C21207D7E5249C9B047A012D873 /* SFBle.swift */; };
+		5A8AF98785EFE71CD0EE7050D42FA9A4 /* SFBleProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303B7C21207D7E5249C9B047A012D873 /* SFBleProtocol.swift */; };
 		5D7F24DDF6B33BC9B37A95D2C4184D5C /* CBService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D134EE36A257E16631A8CA35C90A0D4 /* CBService.swift */; };
 		5DCAFAD6ED6F797771516DB807352524 /* Debugging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52877958E0247243F50BB717DC61FE5E /* Debugging.swift */; };
 		5DD1B69C49DA6739686D7A688FC0962C /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 258151296DC2C1958CB6AE4090C5F9EA /* UIFont.swift */; };
@@ -117,7 +115,6 @@
 		63DDB0B647C48A7F0B2A97FE11688A64 /* SFWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C66AE3A0DC5705EA142DBEDE8C63DF /* SFWebViewController.swift */; };
 		643FB2943C37F668AB5AF30D53AFEA95 /* SFUserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB756851834F0E12A78750309C204A5B /* SFUserDefault.swift */; };
 		647D16586EBBE25158E3FD684541A1DD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79CF7D56C5D50C18B2EA0ED106D998C7 /* Foundation.framework */; };
-		65085204B216B1E58B95FD48C993FE0A /* SFBlePeripheralCmd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1E100BA03D84642B139DBA57D2F443 /* SFBlePeripheralCmd.swift */; };
 		65321E07C769EC22D59CBFBD76E69067 /* SFCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDDA6CC1788D8514733A3E2D334649F /* SFCollectionView.swift */; };
 		6735E4B11C64D20B4E05A92811F5A721 /* IQKeyboardManager+Internal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080952E83B25A8AD10D2E1FF7D92D7F7 /* IQKeyboardManager+Internal.swift */; };
 		675084C3F3F2A09DA58812A08250AE9D /* Then.swift in Sources */ = {isa = PBXBuildFile; fileRef = F622C15D74CBB3A51BF640AF81D3F96B /* Then.swift */; };
@@ -132,7 +129,6 @@
 		7023FE9ECD6051D7DC35D06747BD7136 /* SFCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A4E5FE2821CBE20CB6AA3B9DFFE69D /* SFCardTableViewCell.swift */; };
 		70BD2993BDE240856D389DE6D72CB2BD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79CF7D56C5D50C18B2EA0ED106D998C7 /* Foundation.framework */; };
 		70EA112BB1A449F565BEC9307D7DA61E /* Pods-SFBleTool-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E8F182705DB58CAAB3B52CA67861D6E8 /* Pods-SFBleTool-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		71A49C4D89E4CE6DFCE41D7233E00FCA /* SFBleDisconnectPeripheralCmd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A67C6E62ED833BAF9A693AE02B721C1 /* SFBleDisconnectPeripheralCmd.swift */; };
 		720ACF09B80E590AFDC6062E73AA0797 /* ColorResource+Integrations.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5BAC3B09D036397D641845F05BDBB74 /* ColorResource+Integrations.swift */; };
 		735B5D6A8F0A75F1A54A6AB634949721 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A34D03AA42A69F08D2328E3604747C /* UIView.swift */; };
 		74106BDED4B8B2281DFE4BE5E109D847 /* Initializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3BE11CF020CE60F5329AC8E2E27D32 /* Initializable.swift */; };
@@ -158,7 +154,6 @@
 		81FD9041F03C383E6FBCF0B4503E108C /* SFPinCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E32D749283A47EDD6EA881F75A4B0A8 /* SFPinCodeView.swift */; };
 		820E300519E853EAC9E09ED6CC71EBDC /* StoryboardBased.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95C6B32FC896AB7FAC169A2DA9AF542 /* StoryboardBased.swift */; };
 		82143A0099E26075955C9DD694AF3137 /* SFMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A0E74415BC28B3F9FDDE10D9510058 /* SFMenuCell.swift */; };
-		8361A2A98A4E595536CE207A1C0BD12E /* SFBleRegisterConnectionEventsCmd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36CF52D5FA0EFE89CC211E835D343E27 /* SFBleRegisterConnectionEventsCmd.swift */; };
 		847CECBFADD498E0BFB802072343B902 /* SFUI-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D37B5850A6FD155747CEEBE121871C5E /* SFUI-dummy.m */; };
 		85EEBC06E104F421BD11353F94FD0DC3 /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A468ACAE7272E490BDC6D80A19BEF9 /* Collection.swift */; };
 		8665729AD2F278047362299333E45DEB /* SFToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F54D0F496F3CB68E34D9B15283D9FA /* SFToastView.swift */; };
@@ -175,7 +170,6 @@
 		8C598F39348C4F76C8A470B0010EA2E3 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC9A3345DDFD85EE718BB5379A20EB2 /* JSON.swift */; };
 		8CCDF63D02634925079B24A93175455D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04D60AC13D33197690A05C641925DDDA /* UIKit.framework */; };
 		8D3E79BE8400D784C38AC907D0EAAFFB /* WSTagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95E2631BF4367DB6F9B3FF404F04E6F /* WSTagView.swift */; };
-		8DFACEA077A81AA17174FCD81890E73A /* SFBleCmdError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5ABE69A166970FCF82870C9327063F /* SFBleCmdError.swift */; };
 		8F9E73A8A2A124953B8CB43BA241EDB4 /* WSTagsField-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 32F6DED9FD39E1B198CB7614D0C451CB /* WSTagsField-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9114FCC4E77EE0180F8B3BF5983FE068 /* ValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1F45EC2856EFB07AF15473ABF2F5A6 /* ValidationError.swift */; };
 		91815CBAFE14A27FA5D7A99EF365BDEB /* SFDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88808A42C18428D9E67D394B2EAF0E0 /* SFDevice.swift */; };
@@ -240,7 +234,6 @@
 		BF2D4B32EF6324F351828EA0A8A69B7E /* SFMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BA67F02C2F4183EA43BA2C483B809D /* SFMenu.swift */; };
 		BF9C4F86FC9974B858CA6448FB495F17 /* SFCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC8CC5CA6EF9C8888FDC021123D10B4 /* SFCollectionViewCell.swift */; };
 		C2CE49962A4B84B347B21FC9A50A3A14 /* NameCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E9B17C838F25A71F1D97279B478BA3 /* NameCatalog.swift */; };
-		C391967006CE0721DC47EEF71A65A861 /* SFBleCentralManagerCmd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC3CA39657422D4C01AEEE1946F504C /* SFBleCentralManagerCmd.swift */; };
 		C43AE6F0D1E501493A070E0094AC5153 /* RangeSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435634DA8520B9DF3256C624908FF187 /* RangeSlider.swift */; };
 		C511A649906A4CE00F696D0F3196040B /* SnapKitExtend-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 93D0F052121D9AA0DE0854267F80591E /* SnapKitExtend-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C617D569B36EED3F31F5E1076760FA48 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE2BFAE8F67CD344B7F3C5A238D4259 /* Array.swift */; };
@@ -261,7 +254,6 @@
 		CBF7D55C1A60E3CBC32A2C5FBB33254C /* SFSegmentIndicatorDotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5EDB742DBA75C9AFE64A19BB4004F97 /* SFSegmentIndicatorDotView.swift */; };
 		CD41B91682AB360E5174B33BDDB5D58D /* SFLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20349B6D9A85977EE65B01A97C01B1D /* SFLabel.swift */; };
 		CE73EB779730BF15943261BFEE3F3428 /* Bundle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FB4F15EF7EAD7B59ACF60A170F2DFD /* Bundle+Extensions.swift */; };
-		CEC85F7B4F8E206904CECE6FABDF997A /* SFBleStartScanCmd.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13162C899107588C7B7E1465E8296B4 /* SFBleStartScanCmd.swift */; };
 		CF9CA5E3F7A243A0C0F326E61417C88D /* StringResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDA0CFFC9BFE7E5A652F8401F5237B8 /* StringResource.swift */; };
 		D0B06D16C35CA57365FAC6EF785BC3FE /* SFSegmentIndicatorSquareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E048BD89583661AB13CC9A8B260DB3 /* SFSegmentIndicatorSquareView.swift */; };
 		D0DF994786BCEC54939BC8216B42FBC4 /* IQTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D43F4303F0E9258CA1941B29199F19D /* IQTextView.swift */; };
@@ -274,12 +266,12 @@
 		D733CD41172DA35454CC60695C9B7817 /* FontResource+Integrations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DF65FD3194EF9711A983F508EC57E5 /* FontResource+Integrations.swift */; };
 		D7C2C07839FFB8659DA74FF089DDC0A6 /* PropertyListResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AED3CBF8D3A961C46E9C232D98EE98 /* PropertyListResource.swift */; };
 		D7C4A8CF6913E2CDA4ED1E7FFAE716E3 /* ConstraintConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62CBD8ADA9878350E9A1D7227E7B7E10 /* ConstraintConfig.swift */; };
-		D824CABA2FBDC95607AB2E1FC1D3A17F /* SFBleConnectPeripheralCmd.swift in Sources */ = {isa = PBXBuildFile; fileRef = D264ED2C5F8DCDBA53B0A5FA99016E78 /* SFBleConnectPeripheralCmd.swift */; };
 		D8A012011019B1F3E2D78A5DCDFE12EB /* SFTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20ACB8DA516A5434C9E9AD04B3700E5F /* SFTree.swift */; };
 		DAD5950A205347FCDBD3751604472431 /* Protected.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFAE25108276B26598CC8ADD89B8D29 /* Protected.swift */; };
 		DB7BADC648B9F68CFBF84C57493866AC /* CBError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEE1AB2CFCEBCE463372FC5396C438F /* CBError.swift */; };
 		DD5028AE13183040149424A8B9022D57 /* CALayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E4B3AF3D49A42EF141E56D8E4E241F /* CALayer.swift */; };
 		DD5BCD341E2C69A2118637E694FC75DA /* WARangeSlider-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F0350DB70768D99D7D0034D015CB4379 /* WARangeSlider-dummy.m */; };
+		DDAE770B2CC37F2F006F71FE /* SFBleStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDAE770A2CC37F2F006F71FE /* SFBleStep.swift */; };
 		DDC0F4786752FBF4B07E3A4D4E273DA2 /* UICollectionView+Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DE2BA068539336DC13E27697A3A834 /* UICollectionView+Reusable.swift */; };
 		DE62B9328B795CF5ECEFEDCBDD98903F /* image.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 809DE0C66BED4A1433F313672D7C2354 /* image.xcassets */; };
 		DEAF9BE2B56D0FA16070EC85C7823F34 /* SFApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87219A8A0C5277E0A8D965C7EB69A7D /* SFApp.swift */; };
@@ -327,7 +319,6 @@
 		FCF5E383E1A124CE4ED5B7B4AF9F0ABB /* SFProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F164F62479006E785DC2C9D9DC9689FD /* SFProgressView.swift */; };
 		FD294CE7B852202493DCBD6382FFE9DD /* ConstraintMultiplierTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9641CFB3D759C50D484D01B9AB5FC4F0 /* ConstraintMultiplierTarget.swift */; };
 		FDAD75E43DC904A8FA75EA2B83B8A84B /* SFCatlogCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5E1F1ECACD457BF8A3EB26DEFE9FD0 /* SFCatlogCell.swift */; };
-		FE2E6566ABC21ACE3FF7F092D73F236F /* SFBleStopScanCmd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6F05D67E623F21F2B5C6DE805564B3 /* SFBleStopScanCmd.swift */; };
 		FEF456307A15A6386F22CA9BB47FE420 /* ConsoleDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C50BF5202D13B5DF857501B8B27416C /* ConsoleDestination.swift */; };
 /* End PBXBuildFile section */
 
@@ -566,7 +557,6 @@
 		0AC8CC5CA6EF9C8888FDC021123D10B4 /* SFCollectionViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SFCollectionViewCell.swift; sourceTree = "<group>"; };
 		0AFBDF3D593D1E62FE8AD0EFFA99FCA2 /* ConstraintPriority.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintPriority.swift; path = Sources/ConstraintPriority.swift; sourceTree = "<group>"; };
 		0B8C5D1803EBB3CE5EACE695165E6AF2 /* ConstraintRelatableTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintRelatableTarget.swift; path = Sources/ConstraintRelatableTarget.swift; sourceTree = "<group>"; };
-		0C1E100BA03D84642B139DBA57D2F443 /* SFBlePeripheralCmd.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SFBlePeripheralCmd.swift; sourceTree = "<group>"; };
 		0C50BF5202D13B5DF857501B8B27416C /* ConsoleDestination.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConsoleDestination.swift; path = Sources/ConsoleDestination.swift; sourceTree = "<group>"; };
 		0D5604EAC8263F28F90A9DEBACF14126 /* SFUI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SFUI.release.xcconfig; sourceTree = "<group>"; };
 		0D625FA64364D48191E59F789EEEC6AE /* DeploymentTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DeploymentTarget.swift; path = Sources/RswiftResources/Shared/DeploymentTarget.swift; sourceTree = "<group>"; };
@@ -588,10 +578,10 @@
 		1AC4D50AB3305CD89F78068A0F5E44E4 /* WSTagsField.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = WSTagsField.debug.xcconfig; sourceTree = "<group>"; };
 		1AF4E00563F1A579C480A587C91B7B53 /* ConstraintLayoutGuide.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintLayoutGuide.swift; path = Sources/ConstraintLayoutGuide.swift; sourceTree = "<group>"; };
 		1C2DE0488C1D2145842B03AD3EC26546 /* CBManagerAuthorization.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CBManagerAuthorization.swift; sourceTree = "<group>"; };
-		1D6D46426EB50F2366B06F1C0FFC70B4 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		1D6D46426EB50F2366B06F1C0FFC70B4 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		1DBB5C3623E3D0D44A7D99D1AEB21847 /* SFRingProgressView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SFRingProgressView.swift; sourceTree = "<group>"; };
 		1E8D501E758C6C683F43A00516B4ABFB /* IQKeyboardManager+UITextFieldViewNotification.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQKeyboardManager+UITextFieldViewNotification.swift"; path = "IQKeyboardManagerSwift/IQKeyboardManager+UITextFieldViewNotification.swift"; sourceTree = "<group>"; };
-		202B064030C64DDC3B73BB999D692593 /* SFUI.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = SFUI.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		202B064030C64DDC3B73BB999D692593 /* SFUI.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = SFUI.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		203C2A4D7E78BC1C7AF91D3157EDD2FC /* SFLogger-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SFLogger-prefix.pch"; sourceTree = "<group>"; };
 		20ACB8DA516A5434C9E9AD04B3700E5F /* SFTree.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SFTree.swift; sourceTree = "<group>"; };
 		22254CB2247528BE7208E530BAB7922A /* ConstraintDSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintDSL.swift; path = Sources/ConstraintDSL.swift; sourceTree = "<group>"; };
@@ -608,9 +598,8 @@
 		2AC31332A83859CC324D01A72D3B450D /* WARangeSlider */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = WARangeSlider; path = WARangeSlider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AE9BE633CD5B8796453AC16E0576F83 /* WSTagsField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WSTagsField.swift; path = Source/WSTagsField.swift; sourceTree = "<group>"; };
 		2AF3C7CCA3F4CCC71FC6E0E188B30EF1 /* SwiftyBeaver.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftyBeaver.release.xcconfig; sourceTree = "<group>"; };
-		2C296B041D641A959967EFBF7BC740BC /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		2C296B041D641A959967EFBF7BC740BC /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		2C63D5BD8A38B94D2772DDBC1B745A47 /* SFNotifyView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SFNotifyView.swift; sourceTree = "<group>"; };
-		2C6F05D67E623F21F2B5C6DE805564B3 /* SFBleStopScanCmd.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SFBleStopScanCmd.swift; sourceTree = "<group>"; };
 		2D1B21561AC47B2FEF8111CAD175D79D /* WSTagsField.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = WSTagsField.modulemap; sourceTree = "<group>"; };
 		2D43F4303F0E9258CA1941B29199F19D /* IQTextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQTextView.swift; path = IQKeyboardManagerSwift/IQTextView/IQTextView.swift; sourceTree = "<group>"; };
 		2D7CBDAD1E4829B71F27EFD6F9BD5317 /* SFOutlineViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SFOutlineViewController.swift; sourceTree = "<group>"; };
@@ -620,7 +609,7 @@
 		2FC41984D2D468B42AE10CEB992A6237 /* SnapKitExtend.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SnapKitExtend.modulemap; sourceTree = "<group>"; };
 		2FE449C0FAFA3DA042FFF68AA9D8A862 /* Then-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Then-dummy.m"; sourceTree = "<group>"; };
 		300A1E4F20E624F128DBB383E1B616DB /* R.swift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = R.swift.modulemap; sourceTree = "<group>"; };
-		303B7C21207D7E5249C9B047A012D873 /* SFBle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SFBle.swift; sourceTree = "<group>"; };
+		303B7C21207D7E5249C9B047A012D873 /* SFBleProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SFBleProtocol.swift; sourceTree = "<group>"; };
 		30B3778403F91E6755B77B622A4E22E4 /* SFRulerView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SFRulerView.swift; sourceTree = "<group>"; };
 		319D06AA0D1D0BA345459C039040A1ED /* SideMenu */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SideMenu; path = SideMenu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		31AC8B979DEA922F16E73572CD22B886 /* Then-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Then-umbrella.h"; sourceTree = "<group>"; };
@@ -636,7 +625,6 @@
 		352EED5E1610A2F06C54748B47B6E9CD /* SFFloatingView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SFFloatingView.swift; sourceTree = "<group>"; };
 		3598B8BC07EADC9919F742A8172B1E16 /* UINavigationController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
 		36C49CCD4B253AC6956199E276610607 /* Reusable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Reusable.swift; path = Sources/View/Reusable.swift; sourceTree = "<group>"; };
-		36CF52D5FA0EFE89CC211E835D343E27 /* SFBleRegisterConnectionEventsCmd.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SFBleRegisterConnectionEventsCmd.swift; sourceTree = "<group>"; };
 		3955C2B44D43801C81373F9F8572212D /* SwiftyBeaver.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SwiftyBeaver.modulemap; sourceTree = "<group>"; };
 		39E0B46FA12650FA5C0B416C79FB6C66 /* ReuseIdentifier+Integrations.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ReuseIdentifier+Integrations.swift"; path = "Sources/RswiftResources/Integrations/ReuseIdentifier+Integrations.swift"; sourceTree = "<group>"; };
 		3B3C442F0CE511A3D53E4A1CBFBC6F3B /* String.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
@@ -667,7 +655,6 @@
 		4A3B488670F32B8D6BF48DEF0DEB0C4D /* Then.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Then.release.xcconfig; sourceTree = "<group>"; };
 		4A830D8AAAE5BD63BF021B47563004DE /* SideMenuPushCoordinator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SideMenuPushCoordinator.swift; path = Pod/Classes/SideMenuPushCoordinator.swift; sourceTree = "<group>"; };
 		4C4486644F8BA20C0E99E3B820E1A050 /* SFTableViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SFTableViewController.swift; sourceTree = "<group>"; };
-		4DC3CA39657422D4C01AEEE1946F504C /* SFBleCentralManagerCmd.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SFBleCentralManagerCmd.swift; sourceTree = "<group>"; };
 		4E3567492CE85D9E3DEC6F19BCFB7A68 /* SFUI-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SFUI-Info.plist"; sourceTree = "<group>"; };
 		4E3AC28EDB978AFE8D0F67C8668B24F9 /* SwiftyBeaver.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftyBeaver.debug.xcconfig; sourceTree = "<group>"; };
 		506C1A115B85397674E84B394D5F4802 /* CBCharacteristic.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CBCharacteristic.swift; sourceTree = "<group>"; };
@@ -713,10 +700,9 @@
 		68C1A37B949C5CF20808027C3B7387FB /* StoryboardReference+Integrations.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "StoryboardReference+Integrations.swift"; path = "Sources/RswiftResources/Integrations/StoryboardReference+Integrations.swift"; sourceTree = "<group>"; };
 		68E29A355B7E622972FE5A2FDF450B7C /* ColorResource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ColorResource.swift; path = Sources/RswiftResources/ColorResource.swift; sourceTree = "<group>"; };
 		69F54D0F496F3CB68E34D9B15283D9FA /* SFToastView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SFToastView.swift; sourceTree = "<group>"; };
-		6A688B4ECE18487767E84960328C5755 /* SFLogger.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = SFLogger.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		6A688B4ECE18487767E84960328C5755 /* SFLogger.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = SFLogger.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		6BAF51D0CA9233D17625E4EDBE584195 /* IQKeyboardManager+UIKeyboardNotification.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQKeyboardManager+UIKeyboardNotification.swift"; path = "IQKeyboardManagerSwift/IQKeyboardManager+UIKeyboardNotification.swift"; sourceTree = "<group>"; };
 		6DB021BEEEFD28D86C662A6149B2AF39 /* SFMaskConfigeration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SFMaskConfigeration.swift; sourceTree = "<group>"; };
-		6DF531C15858F84A505A486412A48D01 /* SFBleReadRSSICmd.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SFBleReadRSSICmd.swift; sourceTree = "<group>"; };
 		6DF7379E4A4DD5884E2B1C0DDEB860E2 /* SFBluetooth.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SFBluetooth.modulemap; sourceTree = "<group>"; };
 		6E4F0AEE0FEF20F522077A6634607C8A /* SFBleRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SFBleRequest.swift; sourceTree = "<group>"; };
 		710224CBBD8D8959FA13923D4D2CF9B6 /* SFNotify.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SFNotify.swift; sourceTree = "<group>"; };
@@ -728,7 +714,7 @@
 		72E47FAC13ED2683EA35E4011E18B29C /* IQUIView+IQKeyboardToolbar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQUIView+IQKeyboardToolbar.swift"; path = "IQKeyboardManagerSwift/IQToolbar/IQUIView+IQKeyboardToolbar.swift"; sourceTree = "<group>"; };
 		741F3A6924F51A36AF3D2460A1797EC6 /* SnapKitExtend */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SnapKitExtend; path = SnapKitExtend.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		74B60518E39CF4945692F63776948CDD /* SFCardTableViewHeaderFooterView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SFCardTableViewHeaderFooterView.swift; sourceTree = "<group>"; };
-		74C7A39F36DB0480B40F6FA36F612F96 /* SFExtension.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = SFExtension.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		74C7A39F36DB0480B40F6FA36F612F96 /* SFExtension.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = SFExtension.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		755EDC5D33AA8E8A6407F4CC8428A881 /* SFBluetooth-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SFBluetooth-dummy.m"; sourceTree = "<group>"; };
 		76B7B1751C764B0D0BFAEE9B544656AA /* SFBluetooth */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SFBluetooth; path = SFBluetooth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7758E17F757C744FEF921B93EE96DABC /* Base64.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Base64.swift; path = Sources/Base64.swift; sourceTree = "<group>"; };
@@ -741,7 +727,6 @@
 		79CF7D56C5D50C18B2EA0ED106D998C7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		7A5F7001277980B8F3EEA75BCD346E53 /* SwiftyBeaver */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftyBeaver; path = SwiftyBeaver.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7ADEBC700DB7BE7DE86FD7E46DD0A62D /* FileDestination.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FileDestination.swift; path = Sources/FileDestination.swift; sourceTree = "<group>"; };
-		7C5ABE69A166970FCF82870C9327063F /* SFBleCmdError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SFBleCmdError.swift; sourceTree = "<group>"; };
 		7D3C0B826DB898731A7DF035664866C9 /* NibResource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NibResource.swift; path = Sources/RswiftResources/NibResource.swift; sourceTree = "<group>"; };
 		7D431A3820B737429340108FADDEDCD4 /* IQKeyboardManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQKeyboardManager.swift; path = IQKeyboardManagerSwift/IQKeyboardManager.swift; sourceTree = "<group>"; };
 		7D6F07F3A6E00171D52346AEC09B6FB3 /* ModuleReference.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ModuleReference.swift; path = Sources/RswiftResources/Shared/ModuleReference.swift; sourceTree = "<group>"; };
@@ -759,7 +744,7 @@
 		840FA0B75AF62912A30DDC66B647ED98 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
 		846607DAA7D10DED8F9243F34B07FAA9 /* SFBase.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SFBase.modulemap; sourceTree = "<group>"; };
 		84BBE69B8EC20A52C216D5CFACD6FB14 /* SFTipView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SFTipView.swift; sourceTree = "<group>"; };
-		8575471B9D62915C4D35E67BD3ECD76F /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		8575471B9D62915C4D35E67BD3ECD76F /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		85E4859988A77243F71DB1630D5A5D09 /* ConstraintDirectionalInsetTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintDirectionalInsetTarget.swift; path = Sources/ConstraintDirectionalInsetTarget.swift; sourceTree = "<group>"; };
 		86B1E0BDEA7912B723A3983E1C86AAA5 /* Filter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Filter.swift; path = Sources/Filter.swift; sourceTree = "<group>"; };
 		87172DA01842FBB358D5DC0E10EC0E81 /* CBCentralManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CBCentralManager.swift; sourceTree = "<group>"; };
@@ -768,7 +753,6 @@
 		87F6AD681F063816E221672376BDBE6E /* NibReference+Integrations.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NibReference+Integrations.swift"; path = "Sources/RswiftResources/Integrations/NibReference+Integrations.swift"; sourceTree = "<group>"; };
 		8A06046470042F4AACA0E1FCD8B8C4B2 /* SFOutlineItemModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SFOutlineItemModel.swift; sourceTree = "<group>"; };
 		8A4B61B433BFF1DCC42B70F88226B953 /* IQKeyboardManagerSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = IQKeyboardManagerSwift.debug.xcconfig; sourceTree = "<group>"; };
-		8A67C6E62ED833BAF9A693AE02B721C1 /* SFBleDisconnectPeripheralCmd.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SFBleDisconnectPeripheralCmd.swift; sourceTree = "<group>"; };
 		8A9B7158989C3EBD6DB12A0AD45EFE86 /* FilterValidator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FilterValidator.swift; path = Sources/FilterValidator.swift; sourceTree = "<group>"; };
 		8AB1200B6E88E2E45D1AFD092982E4E2 /* IQTitleBarButtonItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQTitleBarButtonItem.swift; path = IQKeyboardManagerSwift/IQToolbar/IQTitleBarButtonItem.swift; sourceTree = "<group>"; };
 		8AFAE25108276B26598CC8ADD89B8D29 /* Protected.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Protected.swift; path = Pod/Classes/Protected.swift; sourceTree = "<group>"; };
@@ -777,7 +761,7 @@
 		91509620E484EEBE05FE742C8AC87A5B /* SFHud.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SFHud.swift; sourceTree = "<group>"; };
 		91BA67F02C2F4183EA43BA2C483B809D /* SFMenu.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SFMenu.swift; sourceTree = "<group>"; };
 		929EA3F060ABB42C1C336F0C994BF310 /* LayoutConstraint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayoutConstraint.swift; path = Sources/LayoutConstraint.swift; sourceTree = "<group>"; };
-		929F4A41F8A02439F61A9492C2CC6D14 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		929F4A41F8A02439F61A9492C2CC6D14 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		9317E4947CA2FE1B5D5999034C09CCA7 /* Then */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Then; path = Then.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		931F751AF19C317860743A247EB723ED /* WARangeSlider-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "WARangeSlider-prefix.pch"; sourceTree = "<group>"; };
 		9323E440E6F80268FB222D0E002AA18F /* SFUI.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SFUI.modulemap; sourceTree = "<group>"; };
@@ -802,7 +786,7 @@
 		9CDDA6CC1788D8514733A3E2D334649F /* SFCollectionView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SFCollectionView.swift; sourceTree = "<group>"; };
 		9D134EE36A257E16631A8CA35C90A0D4 /* CBService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CBService.swift; sourceTree = "<group>"; };
 		9D8CCDBCD339F18877DEFCE29C84E87B /* SnapKitExtend.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SnapKitExtend.debug.xcconfig; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9FAD6A7F3FAA25140AF6F99167727FB7 /* SFBluetooth-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SFBluetooth-umbrella.h"; sourceTree = "<group>"; };
 		A0ABA07B4D48354ED3F51C2D6AF5426B /* Reusable */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Reusable; path = Reusable.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A10A27B48A6DBB08BDCF28A855D5E20B /* SideMenu-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SideMenu-dummy.m"; sourceTree = "<group>"; };
@@ -819,16 +803,15 @@
 		A8E950A16D00F649C54FFB30F81D7842 /* IQKeyboardManagerSwift */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = IQKeyboardManagerSwift; path = IQKeyboardManagerSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8F0666FB99B79F8F6EC26CF11E9A19F /* SFScrollView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SFScrollView.swift; sourceTree = "<group>"; };
 		AA5E1F1ECACD457BF8A3EB26DEFE9FD0 /* SFCatlogCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SFCatlogCell.swift; sourceTree = "<group>"; };
-		AAD114FA2FC92D1CC6F00475B311398B /* SFBase.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = SFBase.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		AAD114FA2FC92D1CC6F00475B311398B /* SFBase.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = SFBase.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		AB39CD2DD5C4B9BEC7ECECE511226937 /* Reusable.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Reusable.release.xcconfig; sourceTree = "<group>"; };
 		AC56019ECECEB264D4D6D89B908DF289 /* SideMenu.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SideMenu.modulemap; sourceTree = "<group>"; };
 		ACB3E6CD146D6F7E5CD5FF50FCC88E79 /* SFSegmentIndicatorView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SFSegmentIndicatorView.swift; sourceTree = "<group>"; };
 		AE3AF921FC29DBC3BE16727FCEC5E916 /* SnapKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SnapKit.modulemap; sourceTree = "<group>"; };
 		AFE5523391DEABDB1F25B37656F674A6 /* SideMenu-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SideMenu-Info.plist"; sourceTree = "<group>"; };
-		B13162C899107588C7B7E1465E8296B4 /* SFBleStartScanCmd.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SFBleStartScanCmd.swift; sourceTree = "<group>"; };
 		B2ECA612E060620AA89FC3E8D4804CF2 /* SideMenuPresentationStyle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SideMenuPresentationStyle.swift; path = Pod/Classes/SideMenuPresentationStyle.swift; sourceTree = "<group>"; };
 		B42387835065ACB381642387B8792509 /* SFHudView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SFHudView.swift; sourceTree = "<group>"; };
-		B5651E4CEBCA10209191752ADCAD416D /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		B5651E4CEBCA10209191752ADCAD416D /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		B5E048BD89583661AB13CC9A8B260DB3 /* SFSegmentIndicatorSquareView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SFSegmentIndicatorSquareView.swift; sourceTree = "<group>"; };
 		B5EB2E243B5EF4CE5934DD0E77FABD3D /* CBConnectionEventMatchingOption.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CBConnectionEventMatchingOption.swift; sourceTree = "<group>"; };
 		B6EC6A35F83E9278BFF7AA19E83039D3 /* LocaleReference.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LocaleReference.swift; path = Sources/RswiftResources/Shared/LocaleReference.swift; sourceTree = "<group>"; };
@@ -842,7 +825,7 @@
 		BBAC7B6CEA4E141969F32D00A5954105 /* SFBarProgressView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SFBarProgressView.swift; sourceTree = "<group>"; };
 		BBBCD7467797CC43BAC91AA8492FFDF9 /* SFNavigationController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SFNavigationController.swift; sourceTree = "<group>"; };
 		BBD3896DE74ABA2F7FC46F8A097ED3CC /* color.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; name = color.xcassets; path = SFUI/Assets/color.xcassets; sourceTree = "<group>"; };
-		BCEAF9E75CB3296F7E38CC6201631D43 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		BCEAF9E75CB3296F7E38CC6201631D43 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		BCEE1AB2CFCEBCE463372FC5396C438F /* CBError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CBError.swift; sourceTree = "<group>"; };
 		BDAD34C3B0C44C3B95EFE061445062B9 /* ConstraintLayoutSupport.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintLayoutSupport.swift; path = Sources/ConstraintLayoutSupport.swift; sourceTree = "<group>"; };
 		BDE2EBC3BC6CEBFC1E3605B2FD44C3AB /* SFBase-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SFBase-dummy.m"; sourceTree = "<group>"; };
@@ -854,7 +837,7 @@
 		C1D9D1EEF3AEC715002B56B83C3FAA75 /* IQUIViewController+Additions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQUIViewController+Additions.swift"; path = "IQKeyboardManagerSwift/Categories/IQUIViewController+Additions.swift"; sourceTree = "<group>"; };
 		C216B15036531D465B19B960B9CABBF5 /* SnapKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SnapKit.release.xcconfig; sourceTree = "<group>"; };
 		C25778E8B209D74BF039314680127E68 /* Typealiases.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Typealiases.swift; path = Sources/Typealiases.swift; sourceTree = "<group>"; };
-		C27270BC09B7960011D918A7AADB0688 /* SFBluetooth.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = SFBluetooth.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		C27270BC09B7960011D918A7AADB0688 /* SFBluetooth.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = SFBluetooth.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		C28053BFF9B14C02485819B235BC40C2 /* SFOutlineCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SFOutlineCell.swift; sourceTree = "<group>"; };
 		C3DFE64F041251BFE6AA25BB426769A0 /* SFUI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SFUI.debug.xcconfig; sourceTree = "<group>"; };
 		C40B8712F529892583B06A8C2C150436 /* SFUI */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SFUI; path = SFUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -875,7 +858,7 @@
 		C85233C52288A49DCB5BBB5D9DF9E855 /* ConstraintInsets.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintInsets.swift; path = Sources/ConstraintInsets.swift; sourceTree = "<group>"; };
 		C8DB362CD2CFC8D3F8F383F0ABE9D8F0 /* WARangeSlider-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "WARangeSlider-umbrella.h"; sourceTree = "<group>"; };
 		CA2ABF9236644480834C8CE0D1A81477 /* ConstraintLayoutSupportDSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintLayoutSupportDSL.swift; path = Sources/ConstraintLayoutSupportDSL.swift; sourceTree = "<group>"; };
-		CA4C5E5A7ECEF6F7CDF83CC853A764FD /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; name = PrivacyInfo.xcprivacy; path = IQKeyboardManagerSwift/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		CA4C5E5A7ECEF6F7CDF83CC853A764FD /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = IQKeyboardManagerSwift/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		CAC0E9868FC588759E8854695308C8A3 /* SFButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SFButton.swift; sourceTree = "<group>"; };
 		CB46CAB0BE485F431DAAD7F63540ED46 /* SFBase-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SFBase-umbrella.h"; sourceTree = "<group>"; };
 		CB934D06D44C5EA81BA3F091C3C8504C /* AES256CBC.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AES256CBC.swift; path = Sources/AES256CBC.swift; sourceTree = "<group>"; };
@@ -888,10 +871,8 @@
 		CFCF1AF4D32C0488005CD94455BA2AA5 /* SFWrapper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SFWrapper.swift; path = SFExtension/Classes/SFWrapper.swift; sourceTree = "<group>"; };
 		D118D5484B4B6F52E5F5E94F18570DB5 /* SFPopView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SFPopView.swift; sourceTree = "<group>"; };
 		D1A3C33797A201326B89B871D0E2B0FE /* Reusable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Reusable.swift; path = Sources/RswiftResources/Shared/Reusable.swift; sourceTree = "<group>"; };
-		D264ED2C5F8DCDBA53B0A5FA99016E78 /* SFBleConnectPeripheralCmd.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SFBleConnectPeripheralCmd.swift; sourceTree = "<group>"; };
 		D37B5850A6FD155747CEEBE121871C5E /* SFUI-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SFUI-dummy.m"; sourceTree = "<group>"; };
 		D3818BFF93CA10AFDE5C049E6A904E72 /* Pods-SFBleTool-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SFBleTool-Info.plist"; sourceTree = "<group>"; };
-		D3F87B536FE2EF1D7D2351E3D5CA3C65 /* SFBleCmd.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SFBleCmd.swift; sourceTree = "<group>"; };
 		D55CFFC4AA8131CA5C3EC246E97F1EA8 /* SideMenu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SideMenu.release.xcconfig; sourceTree = "<group>"; };
 		D5C67A8DC1088BAB2D224556C22A7F57 /* SFSegmentIndicatorImageView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SFSegmentIndicatorImageView.swift; sourceTree = "<group>"; };
 		D62C85A7AA8B321A0FFB1A8EF6DF4891 /* SFBadgeView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SFBadgeView.swift; sourceTree = "<group>"; };
@@ -905,16 +886,17 @@
 		DB2C2579D10E055ECAE08D756BAFF340 /* SFWindow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SFWindow.swift; sourceTree = "<group>"; };
 		DB756851834F0E12A78750309C204A5B /* SFUserDefault.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SFUserDefault.swift; path = SFBase/Classes/SFUserDefault.swift; sourceTree = "<group>"; };
 		DB97E9C373C121E1897D324F71CC9C54 /* SFBlePeripheral.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SFBlePeripheral.swift; sourceTree = "<group>"; };
-		DBEE90AE7A8897BDFD6A06E915AEC97F /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		DBEE90AE7A8897BDFD6A06E915AEC97F /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		DC01C168D955E906463E962F9B40E791 /* WSTagsField-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "WSTagsField-Info.plist"; sourceTree = "<group>"; };
 		DC776980743C8F872943D10EC6BE580F /* IQNSArray+Sort.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQNSArray+Sort.swift"; path = "IQKeyboardManagerSwift/Categories/IQNSArray+Sort.swift"; sourceTree = "<group>"; };
 		DD8C31A5C7D4067845948B5226D32AC3 /* IQUITextFieldView+Additions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQUITextFieldView+Additions.swift"; path = "IQKeyboardManagerSwift/Categories/IQUITextFieldView+Additions.swift"; sourceTree = "<group>"; };
+		DDAE770A2CC37F2F006F71FE /* SFBleStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFBleStep.swift; sourceTree = "<group>"; };
 		DED588F6EFBDE6F27E62495A28B2871A /* SFBase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SFBase.debug.xcconfig; sourceTree = "<group>"; };
 		DEDA0CFFC9BFE7E5A652F8401F5237B8 /* StringResource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StringResource.swift; path = Sources/RswiftResources/StringResource.swift; sourceTree = "<group>"; };
 		DFE22E4D85F63FFF9613C6F97BCA6BC3 /* SFToast.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SFToast.swift; sourceTree = "<group>"; };
 		E1AF608FA9DD1C25D0F7E01E3DA2DE56 /* SFLineProgressView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SFLineProgressView.swift; sourceTree = "<group>"; };
 		E1BB81F881F6429B3051A83273AA0703 /* UIImage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
-		E22C386B0A68AA16B541BEC687B02161 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		E22C386B0A68AA16B541BEC687B02161 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		E48AB16B3D017556B69CBB1F318F2CFA /* Reusable-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Reusable-dummy.m"; sourceTree = "<group>"; };
 		E4A0E74415BC28B3F9FDDE10D9510058 /* SFMenuCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SFMenuCell.swift; sourceTree = "<group>"; };
 		E50820A8EDF537FCA69E0F2671BE1659 /* SFLogger */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SFLogger; path = SFLogger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -930,7 +912,7 @@
 		E8F182705DB58CAAB3B52CA67861D6E8 /* Pods-SFBleTool-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SFBleTool-umbrella.h"; sourceTree = "<group>"; };
 		E9BA345BF09901A310F926EC2CECBCA9 /* SFBluetooth-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SFBluetooth-prefix.pch"; sourceTree = "<group>"; };
 		EAEFEDD064D8D00497C74DC0A2C1F591 /* R.swift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "R.swift-prefix.pch"; sourceTree = "<group>"; };
-		EB4D7AE70CFC0E87024C0592748B1666 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		EB4D7AE70CFC0E87024C0592748B1666 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		EBAE8803260E12464B5D22AEEDFA14B7 /* SFTableViewHeaderFooterView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SFTableViewHeaderFooterView.swift; sourceTree = "<group>"; };
 		EBBFEF0FA2F4B935839AF6122226B8A2 /* SFMenuView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SFMenuView.swift; sourceTree = "<group>"; };
 		EC88F727D213DCF92C83531119B707CD /* SFBleAction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SFBleAction.swift; sourceTree = "<group>"; };
@@ -961,7 +943,7 @@
 		FC7046C4FFDE8334C45BB9D635D2D491 /* Bundle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
 		FC8932FEC5D9CA5492F6718B5EEF4F15 /* SFBase */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SFBase; path = SFBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCD532B307C66B4AC72669F5F725E51C /* Pods-SFBleTool-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SFBleTool-acknowledgements.markdown"; sourceTree = "<group>"; };
-		FCD9AB251D173F54990BDC214790CC58 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		FCD9AB251D173F54990BDC214790CC58 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		FE93BABCF073FB921D32F1B2FF45E83D /* IQKeyboardManagerSwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "IQKeyboardManagerSwift-umbrella.h"; sourceTree = "<group>"; };
 		FEC9A3345DDFD85EE718BB5379A20EB2 /* JSON.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
 		FFD3FA3A2CDDDE6186D8245114049B21 /* ConstraintView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintView.swift; path = Sources/ConstraintView.swift; sourceTree = "<group>"; };
@@ -1130,7 +1112,6 @@
 				59E562E3C44CD5414A1183828B3EECAC /* Support Files */,
 				83BEE77B1274131B967D701A5CA1A4EA /* View */,
 			);
-			name = Reusable;
 			path = Reusable;
 			sourceTree = "<group>";
 		};
@@ -1154,7 +1135,6 @@
 				81CC39A6DEC4BB5414393E6BDE145CE8 /* SFViewController.swift */,
 				18C66AE3A0DC5705EA142DBEDE8C63DF /* SFWebViewController.swift */,
 			);
-			name = ViewController;
 			path = ViewController;
 			sourceTree = "<group>";
 		};
@@ -1181,7 +1161,6 @@
 				04FC82A48C766C9A8D29BCB059E69291 /* SFCatlogView.swift */,
 				C57320297E90E751B9EB62A7DF2626C5 /* SFCatlogViewController.swift */,
 			);
-			name = Catlog;
 			path = Catlog;
 			sourceTree = "<group>";
 		};
@@ -1201,7 +1180,6 @@
 				63DC2D0437088B976BA92739B921C05F /* SwiftyBeaver.swift */,
 				D5DBDE3BB2AA352C31867575C74D1218 /* Support Files */,
 			);
-			name = SwiftyBeaver;
 			path = SwiftyBeaver;
 			sourceTree = "<group>";
 		};
@@ -1226,7 +1204,6 @@
 				77C9F28C81094C805E90E4FE00EC8027 /* SFAlert.swift */,
 				54C78DAB6D010E2CEA812F736E6DBDD1 /* SFAlertView.swift */,
 			);
-			name = Alert;
 			path = Alert;
 			sourceTree = "<group>";
 		};
@@ -1248,7 +1225,6 @@
 				2ED8CAE400627D3773E9E23F5D74C376 /* Progress */,
 				ED40C3905FF89765F4DBC4925F39A06B /* SFSegment */,
 			);
-			name = View;
 			path = View;
 			sourceTree = "<group>";
 		};
@@ -1261,7 +1237,6 @@
 				1DBB5C3623E3D0D44A7D99D1AEB21847 /* SFRingProgressView.swift */,
 				E892E5EF5BA844D39F466FA5B3FE44F9 /* SFWaveProgressView.swift */,
 			);
-			name = Progress;
 			path = Progress;
 			sourceTree = "<group>";
 		};
@@ -1358,7 +1333,6 @@
 				940ED29EFEC1CB8935A5953C505F73F6 /* SFOutlineView.swift */,
 				2D7CBDAD1E4829B71F27EFD6F9BD5317 /* SFOutlineViewController.swift */,
 			);
-			name = Outline;
 			path = Outline;
 			sourceTree = "<group>";
 		};
@@ -1381,7 +1355,6 @@
 				2504319DE10AC1F2A1B855D7EEFC8D9A /* SFWebView.swift */,
 				DB2C2579D10E055ECAE08D756BAFF340 /* SFWindow.swift */,
 			);
-			name = View;
 			path = View;
 			sourceTree = "<group>";
 		};
@@ -1391,7 +1364,6 @@
 				727C3A268946C72C639034C07D83E395 /* SFTip.swift */,
 				84BBE69B8EC20A52C216D5CFACD6FB14 /* SFTipView.swift */,
 			);
-			name = Tip;
 			path = Tip;
 			sourceTree = "<group>";
 		};
@@ -1402,7 +1374,6 @@
 				22A4E5FE2821CBE20CB6AA3B9DFFE69D /* SFCardTableViewCell.swift */,
 				74B60518E39CF4945692F63776948CDD /* SFCardTableViewHeaderFooterView.swift */,
 			);
-			name = Card;
 			path = Card;
 			sourceTree = "<group>";
 		};
@@ -1478,7 +1449,6 @@
 				CD1F45EC2856EFB07AF15473ABF2F5A6 /* ValidationError.swift */,
 				89400FBECF20E02C8341D0B606B8F229 /* Support Files */,
 			);
-			name = R.swift;
 			path = R.swift;
 			sourceTree = "<group>";
 		};
@@ -1529,7 +1499,7 @@
 		6702382C64358DD9CDDE7E8CE08EDD1B /* Ble */ = {
 			isa = PBXGroup;
 			children = (
-				303B7C21207D7E5249C9B047A012D873 /* SFBle.swift */,
+				303B7C21207D7E5249C9B047A012D873 /* SFBleProtocol.swift */,
 				B80A4C3AFCEB77F8B80152C9F6FF45B1 /* SFBleCentralManager.swift */,
 				DB97E9C373C121E1897D324F71CC9C54 /* SFBlePeripheral.swift */,
 			);
@@ -1566,7 +1536,6 @@
 				0A42DE1831115C6274C6CC778522F6CF /* ConstraintArrayDSL.swift */,
 				975EC109DB145735B536C604142C87C3 /* Support Files */,
 			);
-			name = SnapKitExtend;
 			path = SnapKitExtend;
 			sourceTree = "<group>";
 		};
@@ -1579,7 +1548,6 @@
 				D118D5484B4B6F52E5F5E94F18570DB5 /* SFPopView.swift */,
 				A4132ADD124FA792E158D4ECFF55A617 /* SFPopWindow.swift */,
 			);
-			name = Pop;
 			path = Pop;
 			sourceTree = "<group>";
 		};
@@ -1589,7 +1557,6 @@
 				91509620E484EEBE05FE742C8AC87A5B /* SFHud.swift */,
 				B42387835065ACB381642387B8792509 /* SFHudView.swift */,
 			);
-			name = Hud;
 			path = Hud;
 			sourceTree = "<group>";
 		};
@@ -1611,7 +1578,6 @@
 				F622C15D74CBB3A51BF640AF81D3F96B /* Then.swift */,
 				AB04C5816F634061A491607EE6897053 /* Support Files */,
 			);
-			name = Then;
 			path = Then;
 			sourceTree = "<group>";
 		};
@@ -1665,7 +1631,6 @@
 				B95E2631BF4367DB6F9B3FF404F04E6F /* WSTagView.swift */,
 				CF5FC34338E1C73495AC242806CD3916 /* Support Files */,
 			);
-			name = WSTagsField;
 			path = WSTagsField;
 			sourceTree = "<group>";
 		};
@@ -1706,7 +1671,6 @@
 				435634DA8520B9DF3256C624908FF187 /* RangeSlider.swift */,
 				4EB02A78D33D21F84C9BDA2D1767F010 /* Support Files */,
 			);
-			name = WARangeSlider;
 			path = WARangeSlider;
 			sourceTree = "<group>";
 		};
@@ -1737,7 +1701,6 @@
 				4BCC90F0A93E7534EBB7082A0FE4578E /* Tip */,
 				D866B2AAA215EF5F93F9E4960AEB9451 /* Toast */,
 			);
-			name = Pop;
 			path = Pop;
 			sourceTree = "<group>";
 		};
@@ -1760,6 +1723,7 @@
 			isa = PBXGroup;
 			children = (
 				6E4F0AEE0FEF20F522077A6634607C8A /* SFBleRequest.swift */,
+				DDAE770A2CC37F2F006F71FE /* SFBleStep.swift */,
 			);
 			name = Request;
 			path = SFBluetooth/Classes/Request;
@@ -1795,18 +1759,6 @@
 			);
 			name = "Pods-SFBleTool";
 			path = "Target Support Files/Pods-SFBleTool";
-			sourceTree = "<group>";
-		};
-		B39143CFB8C46AA541FF4A9B6928CB9A /* Cmd */ = {
-			isa = PBXGroup;
-			children = (
-				D3F87B536FE2EF1D7D2351E3D5CA3C65 /* SFBleCmd.swift */,
-				7C5ABE69A166970FCF82870C9327063F /* SFBleCmdError.swift */,
-				EEB2DCB1A305883E4E0E86C27D8CB7C5 /* CentralManager */,
-				DFE0CB577378F967B1C9A01C6CD57AB2 /* Peripheral */,
-			);
-			name = Cmd;
-			path = SFBluetooth/Classes/Cmd;
 			sourceTree = "<group>";
 		};
 		BA4F31F07263C99FC76E66D632A59F09 /* Frameworks */ = {
@@ -1847,7 +1799,6 @@
 				3F6FB2634B48CC866369626E8C999A39 /* Resources */,
 				3A1D918B2BB9FF87D3CD17944A6C50E3 /* Support Files */,
 			);
-			name = IQKeyboardManagerSwift;
 			path = IQKeyboardManagerSwift;
 			sourceTree = "<group>";
 		};
@@ -1924,7 +1875,6 @@
 				05E4E4928A4C9B7F86148C68FFD7CB09 /* SFDiscoveryLogger.swift */,
 				766319A53254E6F85C7F73F78003C7B4 /* Action */,
 				6702382C64358DD9CDDE7E8CE08EDD1B /* Ble */,
-				B39143CFB8C46AA541FF4A9B6928CB9A /* Cmd */,
 				5340069573BC7F3FD0E7E50ACAA475BE /* Pod */,
 				AF37FFB820778093435B894532EF5ABA /* Request */,
 				F94DF79F6DA37110D2F58562285C7C65 /* Support Files */,
@@ -1954,7 +1904,6 @@
 				DFE22E4D85F63FFF9613C6F97BCA6BC3 /* SFToast.swift */,
 				69F54D0F496F3CB68E34D9B15283D9FA /* SFToastView.swift */,
 			);
-			name = Toast;
 			path = Toast;
 			sourceTree = "<group>";
 		};
@@ -1977,7 +1926,6 @@
 				EDAB18A5BBEE1B5BAE0DBE0755505503 /* UITableViewVibrantCell.swift */,
 				D354DA0D807C0DD835F3BA0EDB4119F2 /* Support Files */,
 			);
-			name = SideMenu;
 			path = SideMenu;
 			sourceTree = "<group>";
 		};
@@ -1987,7 +1935,6 @@
 				5801828780FA27BC1390196F5458F4AD /* SFGuide.swift */,
 				E60DEE17980F2338384A01DF5837697E /* SFGuideView.swift */,
 			);
-			name = Guide;
 			path = Guide;
 			sourceTree = "<group>";
 		};
@@ -2000,16 +1947,6 @@
 			);
 			name = SFLogger;
 			path = ../../../Server/SFLogger;
-			sourceTree = "<group>";
-		};
-		DFE0CB577378F967B1C9A01C6CD57AB2 /* Peripheral */ = {
-			isa = PBXGroup;
-			children = (
-				0C1E100BA03D84642B139DBA57D2F443 /* SFBlePeripheralCmd.swift */,
-				6DF531C15858F84A505A486412A48D01 /* SFBleReadRSSICmd.swift */,
-			);
-			name = Peripheral;
-			path = Peripheral;
 			sourceTree = "<group>";
 		};
 		E33D2B5C8226B1E8C95B3098E169EDCD /* Foundation */ = {
@@ -2069,7 +2006,6 @@
 				047D5168D9A2452AD08639ECC9C9DCBB /* UILayoutSupport+Extensions.swift */,
 				AF598706FD957742E82433109908C562 /* Support Files */,
 			);
-			name = SnapKit;
 			path = SnapKit;
 			sourceTree = "<group>";
 		};
@@ -2096,22 +2032,7 @@
 				ACB3E6CD146D6F7E5CD5FF50FCC88E79 /* SFSegmentIndicatorView.swift */,
 				42F69DDB5F8BE7D18BEB867C2397354B /* SFSegmentView.swift */,
 			);
-			name = SFSegment;
 			path = SFSegment;
-			sourceTree = "<group>";
-		};
-		EEB2DCB1A305883E4E0E86C27D8CB7C5 /* CentralManager */ = {
-			isa = PBXGroup;
-			children = (
-				4DC3CA39657422D4C01AEEE1946F504C /* SFBleCentralManagerCmd.swift */,
-				D264ED2C5F8DCDBA53B0A5FA99016E78 /* SFBleConnectPeripheralCmd.swift */,
-				8A67C6E62ED833BAF9A693AE02B721C1 /* SFBleDisconnectPeripheralCmd.swift */,
-				36CF52D5FA0EFE89CC211E835D343E27 /* SFBleRegisterConnectionEventsCmd.swift */,
-				B13162C899107588C7B7E1465E8296B4 /* SFBleStartScanCmd.swift */,
-				2C6F05D67E623F21F2B5C6DE805564B3 /* SFBleStopScanCmd.swift */,
-			);
-			name = CentralManager;
-			path = CentralManager;
 			sourceTree = "<group>";
 		};
 		EF27BBA7CC3FEB3B8EE9DAE2022C9A06 /* Notify */ = {
@@ -2120,7 +2041,6 @@
 				710224CBBD8D8959FA13923D4D2CF9B6 /* SFNotify.swift */,
 				2C63D5BD8A38B94D2772DDBC1B745A47 /* SFNotifyView.swift */,
 			);
-			name = Notify;
 			path = Notify;
 			sourceTree = "<group>";
 		};
@@ -2131,7 +2051,6 @@
 				E4A0E74415BC28B3F9FDDE10D9510058 /* SFMenuCell.swift */,
 				EBBFEF0FA2F4B935839AF6122226B8A2 /* SFMenuView.swift */,
 			);
-			name = Menu;
 			path = Menu;
 			sourceTree = "<group>";
 		};
@@ -3062,21 +2981,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5A8AF98785EFE71CD0EE7050D42FA9A4 /* SFBle.swift in Sources */,
+				5A8AF98785EFE71CD0EE7050D42FA9A4 /* SFBleProtocol.swift in Sources */,
 				09AA88567E3D14AF45CED65042F262D2 /* SFBleAction.swift in Sources */,
+				DDAE770B2CC37F2F006F71FE /* SFBleStep.swift in Sources */,
 				2EB6922DBA7E470A89D3ED2E8F7D05A3 /* SFBleCentralManager.swift in Sources */,
-				C391967006CE0721DC47EEF71A65A861 /* SFBleCentralManagerCmd.swift in Sources */,
-				3D32A255CE15B5541B31072B3A12CD7F /* SFBleCmd.swift in Sources */,
-				8DFACEA077A81AA17174FCD81890E73A /* SFBleCmdError.swift in Sources */,
-				D824CABA2FBDC95607AB2E1FC1D3A17F /* SFBleConnectPeripheralCmd.swift in Sources */,
-				71A49C4D89E4CE6DFCE41D7233E00FCA /* SFBleDisconnectPeripheralCmd.swift in Sources */,
 				1DFC0192685D7444D275F6B8772D8098 /* SFBlePeripheral.swift in Sources */,
-				65085204B216B1E58B95FD48C993FE0A /* SFBlePeripheralCmd.swift in Sources */,
-				3FAE8B7E0C85D8C499632835FF1503D4 /* SFBleReadRSSICmd.swift in Sources */,
-				8361A2A98A4E595536CE207A1C0BD12E /* SFBleRegisterConnectionEventsCmd.swift in Sources */,
 				998DED004E614F80B67360982022F61B /* SFBleRequest.swift in Sources */,
-				CEC85F7B4F8E206904CECE6FABDF997A /* SFBleStartScanCmd.swift in Sources */,
-				FE2E6566ABC21ACE3FF7F092D73F236F /* SFBleStopScanCmd.swift in Sources */,
 				C863D845F37C18EF5E504D002834465B /* SFBluetooth-dummy.m in Sources */,
 				291B88D798E2BD4DBCDF9F8B610E504B /* SFDiscoveryLogger.swift in Sources */,
 			);

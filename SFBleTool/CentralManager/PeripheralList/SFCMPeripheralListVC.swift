@@ -24,7 +24,7 @@ import SideMenu
 class SFCMPeripheralListVC: SFManagerVC {
     
     // MARK: var
-    private var centralManager: SFBleCentralManager!
+    private var bleCentralManager: SFBleCentralManager!
     /// 顶部/底部 Bar 是否显示
     private var isBarShowing = true
    
@@ -170,9 +170,9 @@ extension SFCMPeripheralListVC {
     /// 点击扫描
     @objc private func scanBtnClicked() {
         if scanBtn.isSelected {
-            centralManager.stopScan(id: UUID().uuidString)
+            bleCentralManager.stopScan(id: UUID())
         } else {
-            centralManager.scanForPeripherals(id: UUID().uuidString, services: headerModel.filter.uuids, options: nil)
+            bleCentralManager.scanForPeripherals(id: UUID(), services: headerModel.filter.uuids, options: nil)
         }
     }
     
@@ -255,94 +255,60 @@ extension SFCMPeripheralListVC {
     }
 }
 
-// MARK: - CBCentralManager
+
+// MARK: - BleCentralManager
 extension SFCMPeripheralListVC {
     private func configCentralManager() {
         let options: [String : Any] = [
             CBCentralManagerOptionShowPowerAlertKey: true,
             CBCentralManagerOptionRestoreIdentifierKey: SFApp.bundle,
         ]
-        centralManager = SFBleCentralManager(queue: nil, options: options)
-        addNotify()
+        bleCentralManager = SFBleCentralManager(queue: nil, options: options)
+        configBleCentralManagerNotify()
     }
     
-    private func addNotify() {
-        NotificationCenter.default.addObserver(self, selector: #selector(notifyCentralManagerIsScanningDidChanged(_:)), name: SF_Notify_CentralManager_IsScanning_DidChanged, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(notifyCentralManagerStateDidUpdated(_:)), name: SF_Notify_CentralManager_State_DidUpdated, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(notifyCentralManagerANCSAuthorizationDidUpdated(_:)), name: SF_Notify_CentralManager_ANCSAuthorization_DidUpdated, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(notifyCentralManagerWillRestoreState(_:)), name: SF_Notify_CentralManager_WillRestoreState, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(notifyCentralManagerRetrievePeripherals(_:)), name: SF_Notify_CentralManager_RetrievePeripherals, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(notifyCentralManagerRetrieveConnectedPeripherals(_:)), name: SF_Notify_CentralManager_RetrieveConnectedPeripherals, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(notifyCentralManagerScanStart(_:)), name: SF_Notify_CentralManager_Scan_Start, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(notifyCentralManagerScanStop(_:)), name: SF_Notify_CentralManager_Scan_Stop, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(notifyCentralManagerDidDiscoverPeripheral(_:)), name: SF_Notify_CentralManager_DidDiscoverPeripheral, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(notifyCentralManagerConnectPeripheralStart(_:)), name: SF_Notify_CentralManager_ConnectPeripheral_Start, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(notifyCentralManagerConnectPeripheralSuccess(_:)), name: SF_Notify_CentralManager_ConnectPeripheral_Success, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(notifyCentralManagerConnectPeripheralFailure(_:)), name: SF_Notify_CentralManager_ConnectPeripheral_Failure, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(notifyCentralManagerDisconnectPeripheralStart(_:)), name: SF_Notify_CentralManager_DisconnectPeripheral_Start, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(notifyCentralManagerDisconnectPeripheralSuccess(_:)), name: SF_Notify_CentralManager_DisconnectPeripheral_Success, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(notifyCentralManagerDisconnectPeripheralAutoReconnectSuccess(_:)), name: SF_Notify_CentralManager_DisconnectPeripheralAutoReconnect_Success, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(notifyCentralManagerConnectionEventsRegister(_:)), name: SF_Notify_CentralManager_ConnectionEvents_Register, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(notifyCentralManagerConnectionEventsOccur(_:)), name: SF_Notify_CentralManager_ConnectionEvents_Occur, object: nil)
+    private func configBleCentralManagerNotify() {
+        NotificationCenter.default.addObserver(self, selector: #selector(notifyCentralManagerCallbackIsScanningDidUpdated), name: SF_Notify_CentralManager_Callback_IsScanning_DidUpdated, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(notifyCentralManagerCallbackStateDidUpdated), name: SF_Notify_CentralManager_Callback_State_DidUpdated, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(notifyCentralManagerCallbackWillRestoreState), name: SF_Notify_CentralManager_Callback_WillRestoreState, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(notifyCentralManagerCallbackDidDiscoverPeripheral), name: SF_Notify_CentralManager_Callback_DidDiscoverPeripheral, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(notifyCentralManagerCallbackConnectPeripheralSuccess), name: SF_Notify_CentralManager_Callback_ConnectPeripheral_Success, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(notifyCentralManagerCallbackConnectPeripheralFailure), name: SF_Notify_CentralManager_Callback_ConnectPeripheral_Failure, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(notifyCentralManagerCallbackDisconnectPeripheralSuccess), name: SF_Notify_CentralManager_Callback_DisconnectPeripheral_Success, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(notifyCentralManagerCallbackDisconnectPeripheralAutoReconnectSuccess), name: SF_Notify_CentralManager_Callback_DisconnectPeripheralAutoReconnect_Success, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(notifyCentralManagerCallbackConnectionEventsOccur), name: SF_Notify_CentralManager_Callback_ConnectionEvents_Occur, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(notifyCentralManagerCallbackANCSAuthorizationDidUpdated), name: SF_Notify_CentralManager_Callback_ANCSAuthorization_DidUpdated, object: nil)
     }
     
-    @objc private func notifyCentralManagerIsScanningDidChanged(_ sender: Notification) {
-        guard let userInfo = sender.userInfo else { return }
-        guard let central = userInfo["central"] as? CBCentralManager else { return }
-        guard let isScanning = userInfo["isScanning"] as? Bool else { return }
+    @objc private func notifyCentralManagerCallbackIsScanningDidUpdated(_ sender: NSNotification) {
+        guard let userInfo = sender.userInfo else { Log.error("userInfo=nil"); return }
+        guard let centralManager = userInfo["centralManager"] as? CBCentralManager else { Log.error("centralManager=nil"); return }
+        guard centralManager === bleCentralManager?.centralManager else { Log.debug("centralManager !== bleCentralManager.centralManager"); return }
+        guard let isScanning = userInfo["isScanning"] as? Bool else { Log.error("isScanning=nil"); return }
         scanBtn.isSelected = isScanning
         updateScanBtn()
     }
     
-    @objc private func notifyCentralManagerStateDidUpdated(_ sender: Notification) {
-        guard let userInfo = sender.userInfo else { return }
-        guard let central = userInfo["central"] as? CBCentralManager else { return }
+    @objc private func notifyCentralManagerCallbackStateDidUpdated(_ sender: NSNotification) {
+        guard let userInfo = sender.userInfo else { Log.error("userInfo=nil"); return }
+        guard let centralManager = userInfo["centralManager"] as? CBCentralManager else { Log.error("centralManager=nil"); return }
+        guard centralManager === bleCentralManager?.centralManager else { Log.debug("centralManager !== bleCentralManager.centralManager"); return }
     }
     
-    @objc private func notifyCentralManagerANCSAuthorizationDidUpdated(_ sender: Notification) {
-        guard let userInfo = sender.userInfo else { return }
-        guard let central = userInfo["central"] as? CBCentralManager else { return }
-        guard let peripheral = userInfo["peripheral"] as? CBPeripheral else { return }
+    @objc private func notifyCentralManagerCallbackWillRestoreState(_ sender: NSNotification) {
+        guard let userInfo = sender.userInfo else { Log.error("userInfo=nil"); return }
+        guard let centralManager = userInfo["centralManager"] as? CBCentralManager else { Log.error("centralManager=nil"); return }
+        guard centralManager === bleCentralManager?.centralManager else { Log.debug("centralManager !== bleCentralManager.centralManager"); return }
+        guard let dict = userInfo["dict"] as? [String : Any] else { Log.error("dict=nil"); return }
     }
     
-    @objc private func notifyCentralManagerWillRestoreState(_ sender: Notification) {
-        guard let userInfo = sender.userInfo else { return }
-        guard let central = userInfo["central"] as? CBCentralManager else { return }
-        guard let dict = userInfo["dict"] as? [String : Any] else { return }
-    }
-    
-    @objc private func notifyCentralManagerRetrievePeripherals(_ sender: Notification) {
-        guard let userInfo = sender.userInfo else { return }
-        guard let central = userInfo["central"] as? CBCentralManager else { return }
-        guard let identifiers = userInfo["identifiers"] as? [UUID] else { return }
-        guard let peripherals = userInfo["peripherals"] as? [CBPeripheral] else { return }
-    }
-    
-    @objc private func notifyCentralManagerRetrieveConnectedPeripherals(_ sender: Notification) {
-        guard let userInfo = sender.userInfo else { return }
-        guard let central = userInfo["central"] as? CBCentralManager else { return }
-        guard let identifiers = userInfo["identifiers"] as? [UUID] else { return }
-        guard let peripherals = userInfo["peripherals"] as? [CBPeripheral] else { return }
-    }
-    
-    @objc private func notifyCentralManagerScanStart(_ sender: Notification) {
-        guard let userInfo = sender.userInfo else { return }
-        guard let central = userInfo["central"] as? CBCentralManager else { return }
-        if let serviceUUIDs = userInfo["serviceUUIDs"] as? [CBUUID] {  }
-        if let options = userInfo["options"] as? [String: Any] {  }
-    }
-    
-    @objc private func notifyCentralManagerScanStop(_ sender: Notification) {
-        guard let userInfo = sender.userInfo else { return }
-        guard let central = userInfo["central"] as? CBCentralManager else { return }
-    }
-    
-    @objc private func notifyCentralManagerDidDiscoverPeripheral(_ sender: Notification) {
-        guard let userInfo = sender.userInfo else { return }
-        guard let central = userInfo["central"] as? CBCentralManager else { return }
-        guard let peripheral = userInfo["peripheral"] as? CBPeripheral else { return }
-        guard let advertisementData = userInfo["advertisementData"] as? [String : Any] else { return }
-        guard let RSSI = userInfo["RSSI"] as? NSNumber else { return }
+    @objc private func notifyCentralManagerCallbackDidDiscoverPeripheral(_ sender: NSNotification) {
+        guard let userInfo = sender.userInfo else { Log.error("userInfo=nil"); return }
+        guard let centralManager = userInfo["centralManager"] as? CBCentralManager else { Log.error("centralManager=nil"); return }
+        guard centralManager === bleCentralManager?.centralManager else { Log.debug("centralManager !== bleCentralManager.centralManager"); return }
+        guard let peripheral = userInfo["peripheral"] as? CBPeripheral else { Log.error("peripheral=nil"); return }
+        guard let advertisementData = userInfo["advertisementData"] as? [String : Any] else { Log.error("advertisementData=nil"); return }
+        guard let RSSI = userInfo["RSSI"] as? NSNumber else { Log.error("RSSI=nil"); return }
         let row = showModels.firstIndex { model in
             model.uuid == peripheral.identifier
         }
@@ -368,45 +334,48 @@ extension SFCMPeripheralListVC {
         }
     }
     
-    @objc private func notifyCentralManagerConnectPeripheralStart(_ sender: Notification) {
-        guard let userInfo = sender.userInfo else { return }
-        guard let central = userInfo["central"] as? CBCentralManager else { return }
+    @objc private func notifyCentralManagerCallbackConnectPeripheralSuccess(_ sender: NSNotification) {
+        guard let userInfo = sender.userInfo else { Log.error("userInfo=nil"); return }
+        guard let centralManager = userInfo["centralManager"] as? CBCentralManager else { Log.error("centralManager=nil"); return }
+        guard centralManager === bleCentralManager?.centralManager else { Log.debug("centralManager !== bleCentralManager.centralManager"); return }
+        guard let peripheral = userInfo["peripheral"] as? CBPeripheral else { Log.error("peripheral=nil"); return }
     }
     
-    @objc private func notifyCentralManagerConnectPeripheralSuccess(_ sender: Notification) {
-        guard let userInfo = sender.userInfo else { return }
-        guard let central = userInfo["central"] as? CBCentralManager else { return }
+    @objc private func notifyCentralManagerCallbackConnectPeripheralFailure(_ sender: NSNotification) {
+        guard let userInfo = sender.userInfo else { Log.error("userInfo=nil"); return }
+        guard let centralManager = userInfo["centralManager"] as? CBCentralManager else { Log.error("centralManager=nil"); return }
+        guard centralManager === bleCentralManager?.centralManager else { Log.debug("centralManager !== bleCentralManager.centralManager"); return }
+        guard let peripheral = userInfo["peripheral"] as? CBPeripheral else { Log.error("peripheral=nil"); return }
     }
     
-    @objc private func notifyCentralManagerConnectPeripheralFailure(_ sender: Notification) {
-        guard let userInfo = sender.userInfo else { return }
-        guard let central = userInfo["central"] as? CBCentralManager else { return }
+    @objc private func notifyCentralManagerCallbackDisconnectPeripheralSuccess(_ sender: NSNotification) {
+        guard let userInfo = sender.userInfo else { Log.error("userInfo=nil"); return }
+        guard let centralManager = userInfo["centralManager"] as? CBCentralManager else { Log.error("centralManager=nil"); return }
+        guard centralManager === bleCentralManager?.centralManager else { Log.debug("centralManager !== bleCentralManager.centralManager"); return }
+        guard let peripheral = userInfo["peripheral"] as? CBPeripheral else { Log.error("peripheral=nil"); return }
     }
     
-    @objc private func notifyCentralManagerDisconnectPeripheralStart(_ sender: Notification) {
-        guard let userInfo = sender.userInfo else { return }
-        guard let central = userInfo["central"] as? CBCentralManager else { return }
+    @objc private func notifyCentralManagerCallbackDisconnectPeripheralAutoReconnectSuccess(_ sender: NSNotification) {
+        guard let userInfo = sender.userInfo else { Log.error("userInfo=nil"); return }
+        guard let centralManager = userInfo["centralManager"] as? CBCentralManager else { Log.error("centralManager=nil"); return }
+        guard centralManager === bleCentralManager?.centralManager else { Log.debug("centralManager !== bleCentralManager.centralManager"); return }
+        guard let peripheral = userInfo["peripheral"] as? CBPeripheral else { Log.error("peripheral=nil"); return }
+        guard let timestamp = userInfo["timestamp"] as? CFAbsoluteTime else { Log.error("timestamp=nil"); return }
+        guard let isReconnecting = userInfo["isReconnecting"] as? Bool else { Log.error("isReconnecting=nil"); return }
     }
     
-    @objc private func notifyCentralManagerDisconnectPeripheralSuccess(_ sender: Notification) {
-        guard let userInfo = sender.userInfo else { return }
-        guard let central = userInfo["central"] as? CBCentralManager else { return }
+    @objc private func notifyCentralManagerCallbackConnectionEventsOccur(_ sender: NSNotification) {
+        guard let userInfo = sender.userInfo else { Log.error("userInfo=nil"); return }
+        guard let centralManager = userInfo["centralManager"] as? CBCentralManager else { Log.error("centralManager=nil"); return }
+        guard centralManager === bleCentralManager?.centralManager else { Log.debug("centralManager !== bleCentralManager.centralManager"); return }
+        guard let event = userInfo["event"] as? CBConnectionEvent else { Log.error("event=nil"); return }
+        guard let peripheral = userInfo["peripheral"] as? CBPeripheral else { Log.error("peripheral=nil"); return }
     }
     
-    @objc private func notifyCentralManagerDisconnectPeripheralAutoReconnectSuccess(_ sender: Notification) {
-        guard let userInfo = sender.userInfo else { return }
-        guard let central = userInfo["central"] as? CBCentralManager else { return }
-    }
-    
-    @objc private func notifyCentralManagerConnectionEventsRegister(_ sender: Notification) {
-        guard let userInfo = sender.userInfo else { return }
-        guard let central = userInfo["central"] as? CBCentralManager else { return }
-    }
-    
-    @objc private func notifyCentralManagerConnectionEventsOccur(_ sender: Notification) {
-        guard let userInfo = sender.userInfo else { return }
-        guard let central = userInfo["central"] as? CBCentralManager else { return }
+    @objc private func notifyCentralManagerCallbackANCSAuthorizationDidUpdated(_ sender: NSNotification) {
+        guard let userInfo = sender.userInfo else { Log.error("userInfo=nil"); return }
+        guard let centralManager = userInfo["centralManager"] as? CBCentralManager else { Log.error("centralManager=nil"); return }
+        guard centralManager === bleCentralManager?.centralManager else { Log.debug("centralManager !== bleCentralManager.centralManager"); return }
+        guard let peripheral = userInfo["peripheral"] as? CBPeripheral else { Log.error("peripheral=nil"); return }
     }
 }
-
-
