@@ -268,16 +268,16 @@ extension SFCMPeripheralListVC {
     }
     
     private func configBleCentralManagerNotify() {
-        NotificationCenter.default.addObserver(self, selector: #selector(notifyCentralManagerCallbackIsScanningDidUpdated), name: SF_Notify_CentralManager_Callback_IsScanning_DidUpdated, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(notifyCentralManagerCallbackStateDidUpdated), name: SF_Notify_CentralManager_Callback_State_DidUpdated, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(notifyCentralManagerCallbackIsScanningDidUpdated), name: SF_Notify_CentralManager_Callback_DidUpdateIsScanning, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(notifyCentralManagerCallbackStateDidUpdated), name: SF_Notify_CentralManager_Callback_DidUpdateState, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(notifyCentralManagerCallbackWillRestoreState), name: SF_Notify_CentralManager_Callback_WillRestoreState, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(notifyCentralManagerCallbackDidDiscoverPeripheral), name: SF_Notify_CentralManager_Callback_DidDiscoverPeripheral, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(notifyCentralManagerCallbackConnectPeripheralSuccess), name: SF_Notify_CentralManager_Callback_ConnectPeripheral_Success, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(notifyCentralManagerCallbackConnectPeripheralFailure), name: SF_Notify_CentralManager_Callback_ConnectPeripheral_Failure, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(notifyCentralManagerCallbackDisconnectPeripheralSuccess), name: SF_Notify_CentralManager_Callback_DisconnectPeripheral_Success, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(notifyCentralManagerCallbackDisconnectPeripheralAutoReconnectSuccess), name: SF_Notify_CentralManager_Callback_DisconnectPeripheralAutoReconnect_Success, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(notifyCentralManagerCallbackConnectionEventsOccur), name: SF_Notify_CentralManager_Callback_ConnectionEvents_Occur, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(notifyCentralManagerCallbackANCSAuthorizationDidUpdated), name: SF_Notify_CentralManager_Callback_ANCSAuthorization_DidUpdated, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(notifyCentralManagerCallbackConnectPeripheralSuccess), name: SF_Notify_CentralManager_Callback_DidConnectPeripheral, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(notifyCentralManagerCallbackConnectPeripheralFailure), name: SF_Notify_CentralManager_Callback_DidFailConnectPeripheral, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(notifyCentralManagerCallbackDisconnectPeripheralSuccess), name: SF_Notify_CentralManager_Callback_DidDisconnectPeripheral, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(notifyCentralManagerCallbackDisconnectPeripheralAutoReconnectSuccess), name: SF_Notify_CentralManager_Callback_DidDisconnectPeripheralAutoReconnect, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(notifyCentralManagerCallbackConnectionEventsOccur), name: SF_Notify_CentralManager_Callback_DidOccurConnectionEvents, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(notifyCentralManagerCallbackANCSAuthorizationDidUpdated), name: SF_Notify_CentralManager_Callback_DidUpdateANCSAuthorization, object: nil)
     }
     
     @objc private func notifyCentralManagerCallbackIsScanningDidUpdated(_ sender: NSNotification) {
