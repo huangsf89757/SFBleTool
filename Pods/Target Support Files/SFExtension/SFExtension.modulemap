@@ -1,0 +1,6 @@
+framework module SFExtension {
+  umbrella header "SFExtension-umbrella.h"
+
+  export *
+  module * { export * }
+}

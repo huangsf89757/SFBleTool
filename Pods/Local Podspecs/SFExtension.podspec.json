@@ -1,0 +1,24 @@
+{
+  "name": "SFExtension",
+  "version": "0.1.0",
+  "summary": "A short description of SFExtension.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/hsf89757/SFExtension",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "hsf89757": "shanfeng.huang@microtechmd.com"
+  },
+  "source": {
+    "git": "https://github.com/hsf89757/SFExtension.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "12.0"
+  },
+  "swift_versions": "5.0",
+  "source_files": "SFExtension/Classes/**/*",
+  "swift_version": "5.0"
+}

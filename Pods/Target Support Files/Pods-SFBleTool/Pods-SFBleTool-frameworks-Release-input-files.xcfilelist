@@ -1,0 +1,16 @@
+${PODS_ROOT}/Target Support Files/Pods-SFBleTool/Pods-SFBleTool-frameworks.sh
+${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework
+${BUILT_PRODUCTS_DIR}/R.swift/RswiftResources.framework
+${BUILT_PRODUCTS_DIR}/Reusable/Reusable.framework
+${BUILT_PRODUCTS_DIR}/SFBase/SFBase.framework
+${BUILT_PRODUCTS_DIR}/SFBluetooth/SFBluetooth.framework
+${BUILT_PRODUCTS_DIR}/SFExtension/SFExtension.framework
+${BUILT_PRODUCTS_DIR}/SFLogger/SFLogger.framework
+${BUILT_PRODUCTS_DIR}/SFUI/SFUI.framework
+${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework
+${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework
+${BUILT_PRODUCTS_DIR}/SnapKitExtend/SnapKitExtend.framework
+${BUILT_PRODUCTS_DIR}/SwiftyBeaver/SwiftyBeaver.framework
+${BUILT_PRODUCTS_DIR}/Then/Then.framework
+${BUILT_PRODUCTS_DIR}/WARangeSlider/WARangeSlider.framework
+${BUILT_PRODUCTS_DIR}/WSTagsField/WSTagsField.framework

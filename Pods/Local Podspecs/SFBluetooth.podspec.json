@@ -1,0 +1,32 @@
+{
+  "name": "SFBluetooth",
+  "version": "0.1.0",
+  "summary": "A short description of SFBluetooth.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/hsf89757/SFBluetooth",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "hsf89757": "hsf89757@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/hsf89757/SFBluetooth.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "13.0"
+  },
+  "swift_versions": "5.0",
+  "source_files": "SFBluetooth/Classes/**/*",
+  "dependencies": {
+    "SFExtension": [
+      "~> 0.1.0"
+    ],
+    "SFLogger": [
+      "~> 0.1.0"
+    ]
+  },
+  "swift_version": "5.0"
+}

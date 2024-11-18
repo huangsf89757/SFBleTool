@@ -1,0 +1,32 @@
+{
+  "name": "SFLogger",
+  "version": "0.1.0",
+  "summary": "A short description of SFLogger.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/hsf89757/SFLogger",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "hsf89757": "hsf89757@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/hsf89757/SFLogger.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "12.0"
+  },
+  "swift_versions": "5.0",
+  "source_files": "SFLogger/Classes/**/*",
+  "dependencies": {
+    "SFBase": [
+      "~> 0.1.0"
+    ],
+    "SwiftyBeaver": [
+
+    ]
+  },
+  "swift_version": "5.0"
+}
