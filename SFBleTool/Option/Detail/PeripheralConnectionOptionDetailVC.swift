@@ -1,5 +1,5 @@
 //
-//  PeripheralOptionDetailVC.swift
+//  PeripheralConnectionOptionDetailVC.swift
 //  SFBleTool
 //
 //  Created by hsf on 2024/11/22.
@@ -13,10 +13,10 @@ import SFExtension
 // UI
 import SFUI
 
-// MARK: PeripheralOptionDetailVC
-class PeripheralOptionDetailVC: OptionDetailVC {
+// MARK: PeripheralConnectionOptionDetailVC
+class PeripheralConnectionOptionDetailVC: OptionDetailVC {
     // MARK: var
-    var model: PeripheralOptionModel? {
+    var model: PeripheralConnectionOptionModel? {
         didSet {
             reconnectView.switchView.setOn(model?.reconnect ?? false, animated: false)
             bridgingView.switchView.setOn(model?.bridging ?? false, animated: false)
@@ -104,8 +104,13 @@ class PeripheralOptionDetailVC: OptionDetailVC {
    
     override func customUI() {
         super.customUI()
-        scrollView.contentView.addSubview(identifierView)
-        scrollView.contentView.addSubview(alertView)
+        scrollView.contentView.addSubview(reconnectView)
+        scrollView.contentView.addSubview(bridgingView)
+        scrollView.contentView.addSubview(connectionView)
+        scrollView.contentView.addSubview(disconnectionView)
+        scrollView.contentView.addSubview(notificationView)
+        scrollView.contentView.addSubview(ancsView)
+        scrollView.contentView.addSubview(delayView)
         
         reconnectView.snp.makeConstraints { make in
             make.top.equalTo(nameView.snp.bottom).offset(20)

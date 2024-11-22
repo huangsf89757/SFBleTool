@@ -1,5 +1,5 @@
 //
-//  CentralManagerOptionListVC.swift
+//  PeripheralScanningOptionListVC.swift
 //  SFBleTool
 //
 //  Created by hsf on 2024/11/22.
@@ -13,9 +13,10 @@ import SFExtension
 // UI
 import SFUI
 
-// MARK: CentralManagerOptionListVC
-class CentralManagerOptionListVC: OptionListVC {
+// MARK: PeripheralScanningOptionListVC
+class PeripheralScanningOptionListVC: OptionListVC {
     override func add() {
         
     }
 }
+

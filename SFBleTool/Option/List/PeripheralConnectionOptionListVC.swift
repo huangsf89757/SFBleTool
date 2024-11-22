@@ -1,5 +1,5 @@
 //
-//  PeripheralOptionListVC.swift
+//  PeripheralConnectionOptionListVC.swift
 //  SFBleTool
 //
 //  Created by hsf on 2024/11/22.
@@ -13,8 +13,8 @@ import SFExtension
 // UI
 import SFUI
 
-// MARK: PeripheralOptionListVC
-class PeripheralOptionListVC: OptionListVC {
+// MARK: PeripheralConnectionOptionListVC
+class PeripheralConnectionOptionListVC: OptionListVC {
     override func add() {
         
     }

@@ -1,5 +1,5 @@
 //
-//  CentralManagerOptionDetailVC.swift
+//  CentralManagerInitializationOptionDetailVC.swift
 //  SFBleTool
 //
 //  Created by hsf on 2024/11/22.
@@ -13,10 +13,10 @@ import SFExtension
 // UI
 import SFUI
 
-// MARK: CentralManagerOptionDetailVC
-class CentralManagerOptionDetailVC: OptionDetailVC {
+// MARK: CentralManagerInitializationOptionDetailVC
+class CentralManagerInitializationOptionDetailVC: OptionDetailVC {
     // MARK: var
-    var model: CentralManagerOptionModel? {
+    var model: CentralManagerInitializationOptionModel? {
         didSet {
             identifierView.textField.text = model?.identifier
             alertView.switchView.setOn(model?.alert ?? false, animated: false)
