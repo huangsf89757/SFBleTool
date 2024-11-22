@@ -564,7 +564,7 @@
 			};
 			buildConfigurationList = DDA648942C619F5100F01858 /* Build configuration list for PBXProject "SFBleTool" */;
 			compatibilityVersion = "Xcode 14.0";
-			developmentRegion = en;
+			developmentRegion = "zh-Hans";
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
