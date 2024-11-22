@@ -10,7 +10,11 @@ PODS:
   - SFBluetooth (0.1.0):
     - SFExtension (~> 0.1.0)
     - SFLogger (~> 0.1.0)
-  - SFBusiness (0.1.0)
+  - SFBusiness (0.1.0):
+    - SFBase (~> 0.1.0)
+    - SFExtension (~> 0.1.0)
+    - SFLogger (~> 0.1.0)
+    - SFUI (~> 0.1.0)
   - SFExtension (0.1.0)
   - SFLogger (0.1.0):
     - SwiftyBeaver
@@ -82,7 +86,7 @@ SPEC CHECKSUMS:
   Reusable: 6bae6a5e8aa793c9c441db0213c863a64bce9136
   SFBase: e6ef6e68cee897189e335d6dfdca3415871b14b1
   SFBluetooth: 971c75ed159c7ebe66f93cd6232315edc326f7b5
-  SFBusiness: e45922200a6842bd3ffa65483a185714b64c7da2
+  SFBusiness: 52d8e7acf3e422c2745b7f56af50149544bf437f
   SFExtension: db5d207c8b9cb15d09d28858aec071d51050f3c5
   SFLogger: 32dc52852844a0ac9243948c00d64e02cc5a680a
   SFUI: 9b84518709b64a65be8289aba32d43ca48015229

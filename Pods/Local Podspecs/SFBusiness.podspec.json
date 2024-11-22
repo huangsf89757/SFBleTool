@@ -20,5 +20,19 @@
   },
   "swift_versions": "5.0",
   "source_files": "SFBusiness/Classes/**/*",
+  "dependencies": {
+    "SFBase": [
+      "~> 0.1.0"
+    ],
+    "SFExtension": [
+      "~> 0.1.0"
+    ],
+    "SFUI": [
+      "~> 0.1.0"
+    ],
+    "SFLogger": [
+      "~> 0.1.0"
+    ]
+  },
   "swift_version": "5.0"
 }

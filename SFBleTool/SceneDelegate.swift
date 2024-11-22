@@ -5,8 +5,16 @@
 //  Created by hsf on 2024/8/6.
 //
 
+import Foundation
 import UIKit
+// Basic
+import SFBase
+import SFExtension
+// UI
 import SFUI
+// Business
+import SFBusiness
+import SFUser
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -66,10 +74,11 @@ extension SceneDelegate {
 //        } else {
 //            rootSignIn()
 //        }
+        rootSignIn()
     }
     
     private func rootSignIn() {
-//        window?.rootViewController = SFNavigationController(rootViewController: SFSignInVC())
+        window?.rootViewController = SFNavigationController(rootViewController: SFUser.SignVC())
     }
     
     private func rootEntrance() {
