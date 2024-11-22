@@ -1,5 +1,5 @@
 //
-//  SFCMPeripheralListModel.swift
+//  PeripheralModel.swift
 //  SFBleTool
 //
 //  Created by hsf on 2024/8/20.
@@ -8,7 +8,7 @@
 import Foundation
 import CoreBluetooth
 
-class SFCMPeripheralListModel {
+class PeripheralModel {
     // MARK: var
     static let defaultName = "N/A"
     var name: String?

@@ -1,5 +1,5 @@
 //
-//  SFCMPeripheralListVC.swift
+//  PeripheralListVC.swift
 //  SFBleTool
 //
 //  Created by hsf on 2024/8/6.
@@ -20,8 +20,8 @@ import SFBluetooth
 import SideMenu
 
 
-// MARK: - SFCMPeripheralListVC
-class SFCMPeripheralListVC: SFManagerVC {
+// MARK: - PeripheralListVC
+class PeripheralListVC: SFManagerVC {
     
     // MARK: var
     private var bleCentralManager: SFBleCentralManager!
@@ -35,9 +35,9 @@ class SFCMPeripheralListVC: SFManagerVC {
         }
     }
     /// 扫描到的设备
-    var discoveredModels = [SFCMPeripheralListModel]()
+    var discoveredModels = [PeripheralModel]()
     /// 显示的设备
-    var showModels = [SFCMPeripheralListModel]()
+    var showModels = [PeripheralModel]()
     
     // MARK: life cycle
     override func viewDidLoad() {
@@ -86,7 +86,7 @@ class SFCMPeripheralListVC: SFManagerVC {
         return SFTableView(frame: .zero, style: .plain).then { view in
             view.delegate = self
             view.dataSource = self
-            view.register(cellType: SFCMPeripheralListCell.self)
+            view.register(cellType: PeripheralListCell.self)
         }
     }()
     private lazy var scanBtn: SFButton = {
@@ -140,7 +140,7 @@ class SFCMPeripheralListVC: SFManagerVC {
 }
 
 // MARK: - func
-extension SFCMPeripheralListVC {
+extension PeripheralListVC {
     private func configNav() {
         navigationItem.title = R.string.localizable.entrance_opt_central_title()
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: userBtn)
@@ -151,7 +151,7 @@ extension SFCMPeripheralListVC {
 }
 
 // MARK: - action
-extension SFCMPeripheralListVC {
+extension PeripheralListVC {
     /// 点击用户
     @objc private func userBtnClicked() {
         let vc = SFUserCenterVC()
@@ -187,12 +187,12 @@ extension SFCMPeripheralListVC {
 
 
 // MARK: - UITableViewDelegate, UITableViewDataSource
-extension SFCMPeripheralListVC: UITableViewDelegate, UITableViewDataSource {
+extension PeripheralListVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return showModels.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(for: indexPath, cellType: SFCMPeripheralListCell.self)
+        let cell = tableView.dequeueReusableCell(for: indexPath, cellType: PeripheralListCell.self)
         cell.model = showModels[indexPath.row]
         return cell
     }
@@ -213,7 +213,7 @@ extension SFCMPeripheralListVC: UITableViewDelegate, UITableViewDataSource {
 
 
 // MARK: - UIScrollViewDelegate
-extension SFCMPeripheralListVC {
+extension PeripheralListVC {
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         if showModels.count == 0 {
             showBar()
@@ -257,7 +257,7 @@ extension SFCMPeripheralListVC {
 
 
 // MARK: - BleCentralManager
-extension SFCMPeripheralListVC {
+extension PeripheralListVC {
     private func configCentralManager() {
         let options: [String : Any] = [
             CBCentralManagerOptionShowPowerAlertKey: true,
@@ -279,7 +279,7 @@ extension SFCMPeripheralListVC {
          tableView.reloadRows(at: [IndexPath(row: row, section: 0)], with: .none)
          Log.debug("更新 peripheral=\(peripheral.sf.description)")
      } else {
-         let model = SFCMPeripheralListModel()
+         let model = PeripheralModel()
          model.name = peripheral.name
          model.uuid = peripheral.identifier
          model.peripheral = peripheral
@@ -290,4 +290,57 @@ extension SFCMPeripheralListVC {
          Log.debug("新增 peripheral=\(peripheral.sf.description)")
      }
      */
+}
+
+
+extension PeripheralListVC {
+    func reloadList() {
+        // 过滤
+        let search = headerModel.search
+        let searchModels = discoveredModels.filter { model in
+            if let keyword = search.keyword {
+                let name = model.name ?? PeripheralModel.defaultName
+                if name.sf.like("%\(keyword)%") {
+                    return true
+                } else {
+                    return false
+                }
+            }
+            return true
+        }
+        
+        // 排序
+        let sort = headerModel.sort
+        let sortModels = searchModels.sorted { model1, model2 in
+            switch sort.medthod {
+            case .none:
+                return false
+            case .name:
+                let name1 = model1.name ?? PeripheralModel.defaultName
+                let name2 = model2.name ?? PeripheralModel.defaultName
+                switch sort.sort {
+                case .none:
+                    return false
+                case .asc:
+                    return name1 < name2
+                case .des:
+                    return name1 > name2
+                }
+            case .rssi:
+                guard let rssi1 = model1.rssi, let rssi2 = model2.rssi else { return false }
+                switch sort.sort {
+                case .none:
+                    return false
+                case .asc:
+                    return rssi1 < rssi2
+                case .des:
+                    return rssi1 > rssi2
+                }
+            }
+        }
+        
+        // 刷新
+        showModels = sortModels
+        tableView.reloadData()
+    }
 }

@@ -1,5 +1,5 @@
 //
-//  SFPeripheralManagerVC.swift
+//  CentralListVC.swift
 //  SFBleTool
 //
 //  Created by hsf on 2024/8/6.
@@ -15,8 +15,8 @@ import SFUI
 // Server
 import SFLogger
 
-// MARK: - SFPeripheralManagerVC
-class SFPeripheralManagerVC: SFManagerVC {
+// MARK: - CentralListVC
+class CentralListVC: SFManagerVC {
     // MARK: var
     
     

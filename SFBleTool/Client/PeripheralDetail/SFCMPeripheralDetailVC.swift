@@ -19,7 +19,7 @@ import SFLogger
 // MARK: - SFCMPeripheralDetailVC
 class SFCMPeripheralDetailVC: SFViewController {
     // MARK: data
-    var model: SFCMPeripheralListModel? {
+    var model: PeripheralModel? {
         didSet {
             headerView.model = model
         }

@@ -1,8 +1,8 @@
 //
-//  SFCMPeripheralDetailHeaderView.swift
+//  PeripheralListCell.swift
 //  SFBleTool
 //
-//  Created by hsf on 2024/9/15.
+//  Created by hsf on 2024/8/8.
 //
 
 import Foundation
@@ -16,23 +16,27 @@ import SFUI
 import SFLogger
 
 
-// MARK: - SFCMPeripheralDetailHeaderView
-class SFCMPeripheralDetailHeaderView: SFView {
+// MARK: - PeripheralListCell
+class PeripheralListCell: SFTableViewCell {
+    // MARK: var
+    
     // MARK: data
-    var model: SFCMPeripheralListModel? {
+    var model: PeripheralModel? {
         didSet {
             guard let model = model else { return }
-            nameLabel.text = model.name ?? SFCMPeripheralListModel.defaultName
+            nameLabel.text = model.name ?? PeripheralModel.defaultName
             uuidLabel.text = model.uuid?.uuidString
             rssiView.rssi = model.rssi // FIXME
         }
     }
     
     // MARK: life cycle
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        backgroundColor = R.color.background()
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        backgroundColor = R.color.content()
+        contentView.backgroundColor = R.color.content()
         customUI()
+        separatorInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
     }
     
     // MARK: ui
@@ -55,8 +59,8 @@ class SFCMPeripheralDetailHeaderView: SFView {
         }
     }()
     private func customUI() {
-        addSubview(rssiView)
-        addSubview(nameView)
+        contentView.addSubview(rssiView)
+        contentView.addSubview(nameView)
         nameView.addSubview(nameLabel)
         nameView.addSubview(uuidLabel)
         

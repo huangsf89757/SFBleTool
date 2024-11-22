@@ -35,7 +35,7 @@ class SFCMPeripheralAdvDetailVC: SFTableViewController {
         .connectable,
         .solicitedUuid,
     ]
-    var model: SFCMPeripheralListModel? {
+    var model: PeripheralModel? {
         didSet {
             
         }

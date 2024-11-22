@@ -21,7 +21,7 @@ class SFOptionConfigCell: SFTableViewCell {
     // MARK: var
     
     // MARK: data
-    var model: SFCMPeripheralListModel? {
+    var model: PeripheralModel? {
         didSet {
             guard let model = model else { return }
             nameLabel.text = model.name
