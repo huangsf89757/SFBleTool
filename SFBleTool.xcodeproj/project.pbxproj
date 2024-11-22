@@ -75,6 +75,22 @@
 		DDB694D52CA68EDE002E7B45 /* SFUserCentralDetailInlineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB694D42CA68EDE002E7B45 /* SFUserCentralDetailInlineCell.swift */; };
 		DDB694D72CA68EE9002E7B45 /* SFUserCentralDetailOutlineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB694D62CA68EE9002E7B45 /* SFUserCentralDetailOutlineCell.swift */; };
 		DDB694DB2CA6AE4C002E7B45 /* SFUserCenterDetailFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB694DA2CA6AE4C002E7B45 /* SFUserCenterDetailFooterView.swift */; };
+		DDB895B02CF06D5100376F37 /* OptionStringItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB895AF2CF06D5100376F37 /* OptionStringItemView.swift */; };
+		DDB895B22CF06FF700376F37 /* OptionBoolItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB895B12CF06FF700376F37 /* OptionBoolItemView.swift */; };
+		DDB895B42CF0720900376F37 /* OptionItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB895B32CF0720900376F37 /* OptionItemView.swift */; };
+		DDB895BF2CF07F2200376F37 /* OptionDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB895BE2CF07F2200376F37 /* OptionDetailVC.swift */; };
+		DDB895C12CF0804B00376F37 /* OptionListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB895C02CF0804B00376F37 /* OptionListVC.swift */; };
+		DDB895C32CF0807200376F37 /* OptionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB895C22CF0807200376F37 /* OptionModel.swift */; };
+		DDB895C52CF0810F00376F37 /* OptionListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB895C42CF0810F00376F37 /* OptionListCell.swift */; };
+		DDB895CA2CF082B700376F37 /* CentralManagerOptionListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB895C92CF082B700376F37 /* CentralManagerOptionListVC.swift */; };
+		DDB895CC2CF082FA00376F37 /* CentralManagerOptionDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB895CB2CF082FA00376F37 /* CentralManagerOptionDetailVC.swift */; };
+		DDB895CF2CF084B600376F37 /* PeripheralOptionListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB895CE2CF084B600376F37 /* PeripheralOptionListVC.swift */; };
+		DDB895D12CF084C900376F37 /* PeripheralOptionDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB895D02CF084C900376F37 /* PeripheralOptionDetailVC.swift */; };
+		DDB895D42CF0877F00376F37 /* CentralManagerOptionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB895D32CF0877F00376F37 /* CentralManagerOptionModel.swift */; };
+		DDB895D62CF0878D00376F37 /* PeripheralOptionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB895D52CF0878D00376F37 /* PeripheralOptionModel.swift */; };
+		DDB895D92CF08B0400376F37 /* UserCenterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB895D82CF08B0400376F37 /* UserCenterVC.swift */; };
+		DDB895DB2CF08B3300376F37 /* UserCenterItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB895DA2CF08B3300376F37 /* UserCenterItem.swift */; };
+		DDB895DD2CF08C8F00376F37 /* UserCenterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB895DC2CF08C8F00376F37 /* UserCenterCell.swift */; };
 		DDE09DAD2C7470FB00E456B7 /* SFCMFilterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE09DAC2C7470FB00E456B7 /* SFCMFilterModel.swift */; };
 		DDE09DB02C7473AA00E456B7 /* SFCMSortModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE09DAF2C7473AA00E456B7 /* SFCMSortModel.swift */; };
 		DDE09DB32C7473E400E456B7 /* SFCMSearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE09DB22C7473E400E456B7 /* SFCMSearchModel.swift */; };
@@ -84,7 +100,7 @@
 		DDF08BFA2C85BB9400FB4B48 /* SFUserCenterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF08BF92C85BB9400FB4B48 /* SFUserCenterVC.swift */; };
 		DDF08BFF2C85BC2E00FB4B48 /* SFUserCenterItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF08BFE2C85BC2E00FB4B48 /* SFUserCenterItem.swift */; };
 		DDF08C012C85BC4300FB4B48 /* SFUserCenterItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF08C002C85BC4300FB4B48 /* SFUserCenterItemCell.swift */; };
-		DDF08C032C85BC5900FB4B48 /* SFUserCenterHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF08C022C85BC5900FB4B48 /* SFUserCenterHeaderView.swift */; };
+		DDF08C032C85BC5900FB4B48 /* UserCenterHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF08C022C85BC5900FB4B48 /* UserCenterHeaderView.swift */; };
 		DDF08C132C86E4E300FB4B48 /* SFUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF08C122C86E4E300FB4B48 /* SFUserModel.swift */; };
 		DDFA63E72C6339B8002E93F3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDA648A22C619F5100F01858 /* Main.storyboard */; };
 		DDFA63EA2C6339BE002E93F3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDA648A72C619F5200F01858 /* LaunchScreen.storyboard */; };
@@ -188,6 +204,22 @@
 		DDB694D42CA68EDE002E7B45 /* SFUserCentralDetailInlineCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFUserCentralDetailInlineCell.swift; sourceTree = "<group>"; };
 		DDB694D62CA68EE9002E7B45 /* SFUserCentralDetailOutlineCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFUserCentralDetailOutlineCell.swift; sourceTree = "<group>"; };
 		DDB694DA2CA6AE4C002E7B45 /* SFUserCenterDetailFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFUserCenterDetailFooterView.swift; sourceTree = "<group>"; };
+		DDB895AF2CF06D5100376F37 /* OptionStringItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionStringItemView.swift; sourceTree = "<group>"; };
+		DDB895B12CF06FF700376F37 /* OptionBoolItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionBoolItemView.swift; sourceTree = "<group>"; };
+		DDB895B32CF0720900376F37 /* OptionItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionItemView.swift; sourceTree = "<group>"; };
+		DDB895BE2CF07F2200376F37 /* OptionDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionDetailVC.swift; sourceTree = "<group>"; };
+		DDB895C02CF0804B00376F37 /* OptionListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionListVC.swift; sourceTree = "<group>"; };
+		DDB895C22CF0807200376F37 /* OptionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionModel.swift; sourceTree = "<group>"; };
+		DDB895C42CF0810F00376F37 /* OptionListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionListCell.swift; sourceTree = "<group>"; };
+		DDB895C92CF082B700376F37 /* CentralManagerOptionListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CentralManagerOptionListVC.swift; sourceTree = "<group>"; };
+		DDB895CB2CF082FA00376F37 /* CentralManagerOptionDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CentralManagerOptionDetailVC.swift; sourceTree = "<group>"; };
+		DDB895CE2CF084B600376F37 /* PeripheralOptionListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeripheralOptionListVC.swift; sourceTree = "<group>"; };
+		DDB895D02CF084C900376F37 /* PeripheralOptionDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeripheralOptionDetailVC.swift; sourceTree = "<group>"; };
+		DDB895D32CF0877F00376F37 /* CentralManagerOptionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CentralManagerOptionModel.swift; sourceTree = "<group>"; };
+		DDB895D52CF0878D00376F37 /* PeripheralOptionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeripheralOptionModel.swift; sourceTree = "<group>"; };
+		DDB895D82CF08B0400376F37 /* UserCenterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCenterVC.swift; sourceTree = "<group>"; };
+		DDB895DA2CF08B3300376F37 /* UserCenterItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCenterItem.swift; sourceTree = "<group>"; };
+		DDB895DC2CF08C8F00376F37 /* UserCenterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCenterCell.swift; sourceTree = "<group>"; };
 		DDE09DAC2C7470FB00E456B7 /* SFCMFilterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFCMFilterModel.swift; sourceTree = "<group>"; };
 		DDE09DAF2C7473AA00E456B7 /* SFCMSortModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFCMSortModel.swift; sourceTree = "<group>"; };
 		DDE09DB22C7473E400E456B7 /* SFCMSearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFCMSearchModel.swift; sourceTree = "<group>"; };
@@ -197,7 +229,7 @@
 		DDF08BF92C85BB9400FB4B48 /* SFUserCenterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFUserCenterVC.swift; sourceTree = "<group>"; };
 		DDF08BFE2C85BC2E00FB4B48 /* SFUserCenterItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFUserCenterItem.swift; sourceTree = "<group>"; };
 		DDF08C002C85BC4300FB4B48 /* SFUserCenterItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFUserCenterItemCell.swift; sourceTree = "<group>"; };
-		DDF08C022C85BC5900FB4B48 /* SFUserCenterHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFUserCenterHeaderView.swift; sourceTree = "<group>"; };
+		DDF08C022C85BC5900FB4B48 /* UserCenterHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCenterHeaderView.swift; sourceTree = "<group>"; };
 		DDF08C122C86E4E300FB4B48 /* SFUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFUserModel.swift; sourceTree = "<group>"; };
 		DDFA63E32C633912002E93F3 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		DDFA63E42C633912002E93F3 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
@@ -416,11 +448,13 @@
 				DDA648DE2C61FDF200F01858 /* R.generated.swift */,
 				DDFA63F22C635306002E93F3 /* SFUserDefaults.swift */,
 				51A613AA2C76216C005990FC /* Todo.swift */,
+				DDB895D72CF08AE400376F37 /* User */,
+				DDB895A12CF0341C00376F37 /* Option */,
 				DD8BBB8A2C95200100DE12E5 /* Com */,
 				51A613A72C762075005990FC /* OptionConfig */,
 				DDA648D42C61A85100F01858 /* Entrance */,
 				DDA648D22C61A51E00F01858 /* SFManagerVC.swift */,
-				DDF08BEE2C85BACA00FB4B48 /* User */,
+				DDF08BEE2C85BACA00FB4B48 /* User1 */,
 				DDFA63F42C636325002E93F3 /* CentralManager */,
 				DDFA63F52C63632D002E93F3 /* PeripheralManager */,
 				DDA648A22C619F5100F01858 /* Main.storyboard */,
@@ -520,6 +554,69 @@
 			path = Log;
 			sourceTree = "<group>";
 		};
+		DDB895A12CF0341C00376F37 /* Option */ = {
+			isa = PBXGroup;
+			children = (
+				DDB895D22CF0876000376F37 /* Model */,
+				DDB895C72CF0827600376F37 /* Detail */,
+				DDB895C62CF0823E00376F37 /* List */,
+				DDB895B52CF0758900376F37 /* OptionItem */,
+			);
+			path = Option;
+			sourceTree = "<group>";
+		};
+		DDB895B52CF0758900376F37 /* OptionItem */ = {
+			isa = PBXGroup;
+			children = (
+				DDB895B32CF0720900376F37 /* OptionItemView.swift */,
+				DDB895AF2CF06D5100376F37 /* OptionStringItemView.swift */,
+				DDB895B12CF06FF700376F37 /* OptionBoolItemView.swift */,
+			);
+			path = OptionItem;
+			sourceTree = "<group>";
+		};
+		DDB895C62CF0823E00376F37 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				DDB895C02CF0804B00376F37 /* OptionListVC.swift */,
+				DDB895C42CF0810F00376F37 /* OptionListCell.swift */,
+				DDB895CE2CF084B600376F37 /* PeripheralOptionListVC.swift */,
+				DDB895C92CF082B700376F37 /* CentralManagerOptionListVC.swift */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		DDB895C72CF0827600376F37 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				DDB895BE2CF07F2200376F37 /* OptionDetailVC.swift */,
+				DDB895D02CF084C900376F37 /* PeripheralOptionDetailVC.swift */,
+				DDB895CB2CF082FA00376F37 /* CentralManagerOptionDetailVC.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		DDB895D22CF0876000376F37 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DDB895C22CF0807200376F37 /* OptionModel.swift */,
+				DDB895D32CF0877F00376F37 /* CentralManagerOptionModel.swift */,
+				DDB895D52CF0878D00376F37 /* PeripheralOptionModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DDB895D72CF08AE400376F37 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				DDB895D82CF08B0400376F37 /* UserCenterVC.swift */,
+				DDB895DA2CF08B3300376F37 /* UserCenterItem.swift */,
+				DDB895DC2CF08C8F00376F37 /* UserCenterCell.swift */,
+				DDF08C022C85BC5900FB4B48 /* UserCenterHeaderView.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
 		DDE09DAB2C7470E000E456B7 /* Filter */ = {
 			isa = PBXGroup;
 			children = (
@@ -547,7 +644,7 @@
 			path = Search;
 			sourceTree = "<group>";
 		};
-		DDF08BEE2C85BACA00FB4B48 /* User */ = {
+		DDF08BEE2C85BACA00FB4B48 /* User1 */ = {
 			isa = PBXGroup;
 			children = (
 				DDF08BF12C85BAE300FB4B48 /* Sign */,
@@ -560,7 +657,7 @@
 				DD7ABF522C92C04B008BBA8F /* SFUserRecordModel.swift */,
 				DD7ABF502C92BF03008BBA8F /* SFUserManager.swift */,
 			);
-			path = User;
+			path = User1;
 			sourceTree = "<group>";
 		};
 		DDF08BEF2C85BAD200FB4B48 /* UserInfo */ = {
@@ -581,7 +678,6 @@
 				DDF08BF92C85BB9400FB4B48 /* SFUserCenterVC.swift */,
 				DDF08BFE2C85BC2E00FB4B48 /* SFUserCenterItem.swift */,
 				DDF08C002C85BC4300FB4B48 /* SFUserCenterItemCell.swift */,
-				DDF08C022C85BC5900FB4B48 /* SFUserCenterHeaderView.swift */,
 			);
 			path = UserCenter;
 			sourceTree = "<group>";
@@ -844,17 +940,23 @@
 				DDB518FE2C6C728300A049DE /* SFCMPeripheralAdvDetailVC.swift in Sources */,
 				DD630C092C9838E100A24C35 /* SFUserCentralManagerVC.swift in Sources */,
 				DDA648D12C61A3F000F01858 /* SFPeripheralManagerVC.swift in Sources */,
+				DDB895CF2CF084B600376F37 /* PeripheralOptionListVC.swift in Sources */,
 				DDAC3D712C6F47F700AA87B4 /* SFCMPeripheralDetailTitleView.swift in Sources */,
 				DD7ABF4D2C92B3F0008BBA8F /* SFSignPwdFieldView.swift in Sources */,
 				DDF08C132C86E4E300FB4B48 /* SFUserModel.swift in Sources */,
+				DDB895DB2CF08B3300376F37 /* UserCenterItem.swift in Sources */,
 				DDA6489D2C619F5100F01858 /* AppDelegate.swift in Sources */,
+				DDB895CC2CF082FA00376F37 /* CentralManagerOptionDetailVC.swift in Sources */,
 				DDFA63FD2C636856002E93F3 /* SFCMFilterView.swift in Sources */,
 				5175ADB02C64FA1D00C9260A /* SFRssiView.swift in Sources */,
 				DD5CFF812C91C86E009FEFAA /* SFSignInCodeContentView.swift in Sources */,
 				DDE09DB32C7473E400E456B7 /* SFCMSearchModel.swift in Sources */,
+				DDB895CA2CF082B700376F37 /* CentralManagerOptionListVC.swift in Sources */,
 				DDE09DAD2C7470FB00E456B7 /* SFCMFilterModel.swift in Sources */,
 				DD8BBB982C95699E00DE12E5 /* SFUserInfoImageCell.swift in Sources */,
 				DDB694D72CA68EE9002E7B45 /* SFUserCentralDetailOutlineCell.swift in Sources */,
+				DDB895C12CF0804B00376F37 /* OptionListVC.swift in Sources */,
+				DDB895BF2CF07F2200376F37 /* OptionDetailVC.swift in Sources */,
 				DDA648CF2C61A3DE00F01858 /* SFCMPeripheralListVC.swift in Sources */,
 				DDA648DF2C61FDF200F01858 /* R.generated.swift in Sources */,
 				DDB519042C6C751A00A049DE /* SFCMPeripheralDetailSegmentView.swift in Sources */,
@@ -863,17 +965,22 @@
 				51A613AB2C76216C005990FC /* Todo.swift in Sources */,
 				DDB694DB2CA6AE4C002E7B45 /* SFUserCenterDetailFooterView.swift in Sources */,
 				51A6139F2C74C25A005990FC /* SFCMPeripheralListModel.swift in Sources */,
+				DDB895DD2CF08C8F00376F37 /* UserCenterCell.swift in Sources */,
 				DD630C0F2C98395100A24C35 /* SFUserCentralItemModel.swift in Sources */,
 				DDB694D52CA68EDE002E7B45 /* SFUserCentralDetailInlineCell.swift in Sources */,
+				DDB895D62CF0878D00376F37 /* PeripheralOptionModel.swift in Sources */,
 				DDF08BF32C85BB1C00FB4B48 /* SFSignInVC.swift in Sources */,
 				5175ADAE2C64F4AF00C9260A /* SFCMPeripheralListCell.swift in Sources */,
 				DD630C052C966CDA00A24C35 /* SFCMPeripheralDetailHeaderView.swift in Sources */,
 				DD8BBB8C2C95203200DE12E5 /* SFCopyrightView.swift in Sources */,
 				DDF08BFF2C85BC2E00FB4B48 /* SFUserCenterItem.swift in Sources */,
-				DDF08C032C85BC5900FB4B48 /* SFUserCenterHeaderView.swift in Sources */,
+				DDB895D42CF0877F00376F37 /* CentralManagerOptionModel.swift in Sources */,
+				DDF08C032C85BC5900FB4B48 /* UserCenterHeaderView.swift in Sources */,
+				DDB895D92CF08B0400376F37 /* UserCenterVC.swift in Sources */,
 				DD8BBB9C2C9569DC00DE12E5 /* SFUserInfoValueCell.swift in Sources */,
 				DDFA63F72C636688002E93F3 /* SFCMHeaderView.swift in Sources */,
 				DD8BBB9A2C9569B300DE12E5 /* SFUserInfoCell.swift in Sources */,
+				DDB895B22CF06FF700376F37 /* OptionBoolItemView.swift in Sources */,
 				DD7ABF532C92C04B008BBA8F /* SFUserRecordModel.swift in Sources */,
 				DDB518F92C6C526300A049DE /* SFCMPeripheralDetailVC.swift in Sources */,
 				DDE09DB02C7473AA00E456B7 /* SFCMSortModel.swift in Sources */,
@@ -882,12 +989,14 @@
 				DDF08BF62C85BB5D00FB4B48 /* SFUserInfoVC.swift in Sources */,
 				DD630BFD2C96591100A24C35 /* SFUserCentralDetailVC.swift in Sources */,
 				51A613A12C74C75F005990FC /* SFCMHeaderModel.swift in Sources */,
+				DDB895D12CF084C900376F37 /* PeripheralOptionDetailVC.swift in Sources */,
 				DD630C132C984FED00A24C35 /* SFUserCentralDetailCell.swift in Sources */,
 				DD5CFF7E2C91C79C009FEFAA /* SFSignFieldContentView.swift in Sources */,
 				DDA6489F2C619F5100F01858 /* SceneDelegate.swift in Sources */,
 				51A613B22C762395005990FC /* SFOptionConfigModel.swift in Sources */,
 				DD8BBB962C95679A00DE12E5 /* SFUserPeripheralVC.swift in Sources */,
 				DDFA63F32C635306002E93F3 /* SFUserDefaults.swift in Sources */,
+				DDB895B42CF0720900376F37 /* OptionItemView.swift in Sources */,
 				DDFA63FB2C636804002E93F3 /* SFCMSortView.swift in Sources */,
 				DD78D8322C8ACBD700B629AD /* SFCMPeripheralListData.swift in Sources */,
 				DDB519002C6C72C400A049DE /* SFCMPeripheralServiceDetailVC.swift in Sources */,
@@ -895,12 +1004,15 @@
 				DDAC3D642C6DF66300AA87B4 /* SFCMPeripheralAdvDetailCell.swift in Sources */,
 				DDA648CD2C61A1E300F01858 /* SFEntranceVC.swift in Sources */,
 				DD5CFF772C9177AB009FEFAA /* SFSignInPageView.swift in Sources */,
+				DDB895B02CF06D5100376F37 /* OptionStringItemView.swift in Sources */,
 				DDF08BFA2C85BB9400FB4B48 /* SFUserCenterVC.swift in Sources */,
 				DD630C112C983A8200A24C35 /* SFCMOption.swift in Sources */,
 				51A613B42C76239F005990FC /* SFOptionConfigCell.swift in Sources */,
 				51A613A42C74DAAA005990FC /* SFCMConnectView.swift in Sources */,
 				DDB518E92C6B433900A049DE /* SFCMSettingVC.swift in Sources */,
+				DDB895C52CF0810F00376F37 /* OptionListCell.swift in Sources */,
 				DD5CFF7B2C917BC9009FEFAA /* SFSignInPwdFieldContentView.swift in Sources */,
+				DDB895C32CF0807200376F37 /* OptionModel.swift in Sources */,
 				DDF08BF82C85BB8500FB4B48 /* SFSecurityVC.swift in Sources */,
 				DD5CFF862C91C9FC009FEFAA /* SFAgreementView.swift in Sources */,
 				DD7ABF492C92B3CB008BBA8F /* SFSignAccountFieldView.swift in Sources */,

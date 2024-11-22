@@ -1,0 +1,6 @@
+framework module SFUser {
+  umbrella header "SFUser-umbrella.h"
+
+  export *
+  module * { export * }
+}

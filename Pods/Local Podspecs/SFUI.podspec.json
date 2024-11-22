@@ -16,7 +16,7 @@
     "tag": "0.1.0"
   },
   "platforms": {
-    "ios": "12.0"
+    "ios": "14.0"
   },
   "swift_versions": "5.0",
   "source_files": "SFUI/Classes/**/*",
@@ -33,9 +33,6 @@
       "~> 0.1.0"
     ],
     "SFLogger": [
-      "~> 0.1.0"
-    ],
-    "SFBluetooth": [
       "~> 0.1.0"
     ],
     "SnapKit": [

@@ -4,7 +4,7 @@ use_frameworks!
 # 忽略pod里面警告
 inhibit_all_warnings!
 # 支持的平台
-platform :ios, '12.0'
+platform :ios, '14.0'
 
 
 ##################
@@ -14,19 +14,25 @@ platform :ios, '12.0'
 # === 私有组件 === #
 def pods_private
   # 本地路径
-  $path = '../../'
+  $root = '../../'
+  $basic = 'Basic/'
+  $ui = 'UI/'
+  $business = 'Business/'
+  $server = 'Server/'
   
   # Basic
-  pod 'SFBase',         :path => $path + 'Basic/SFBase/'
-  pod 'SFExtension',    :path => $path + 'Basic/SFExtension/'
-  pod 'SFBluetooth',    :path => $path + 'Basic/SFBluetooth/'
-  
+  pod 'SFBase',           :path => $root + $basic + 'SFBase/'
+  pod 'SFExtension',      :path => $root + $basic + 'SFExtension/'
   
   # UI
-  pod 'SFUI',           :path => $path + 'UI/SFUI/'
+  pod 'SFUI',             :path => $root + $ui + 'SFUI/'
   
+  # Business
+  pod 'SFUser',           :path => $root + $business + 'SFUser/'
+    
   # Server
-  pod 'SFLogger',       :path => $path + 'Server/SFLogger/'
+  pod 'SFLogger',         :path => $root + $server + 'SFLogger/'
+  pod 'SFBluetooth',      :path => $root + $server + 'SFBluetooth/'
  
  
 end
@@ -34,7 +40,6 @@ end
 # === 第三方组件 === #
 def pods_third
   
-  pod 'R.swift',          '~> 7.3.2'
   pod 'SideMenu',         '~> 6.5.0'
   pod 'WSTagsField',      '~> 5.4.0'
   pod "WARangeSlider",    '~> 1.2.0'

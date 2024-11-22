@@ -16,14 +16,11 @@
     "tag": "0.1.0"
   },
   "platforms": {
-    "ios": "12.0"
+    "ios": "14.0"
   },
   "swift_versions": "5.0",
   "source_files": "SFLogger/Classes/**/*",
   "dependencies": {
-    "SFBase": [
-      "~> 0.1.0"
-    ],
     "SwiftyBeaver": [
 
     ]

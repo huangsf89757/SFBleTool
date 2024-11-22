@@ -1,6 +1,5 @@
 PODS:
   - IQKeyboardManagerSwift (6.5.16)
-  - R.swift (7.3.2)
   - Reusable (4.1.2):
     - Reusable/Storyboard (= 4.1.2)
     - Reusable/View (= 4.1.2)
@@ -13,17 +12,20 @@ PODS:
     - SFLogger (~> 0.1.0)
   - SFExtension (0.1.0)
   - SFLogger (0.1.0):
-    - SFBase (~> 0.1.0)
     - SwiftyBeaver
   - SFUI (0.1.0):
     - IQKeyboardManagerSwift (~> 6.5.16)
     - Reusable (~> 4.1.2)
     - SFBase (~> 0.1.0)
-    - SFBluetooth (~> 0.1.0)
     - SFExtension (~> 0.1.0)
     - SFLogger (~> 0.1.0)
     - SnapKit (~> 5.6.0)
     - SnapKitExtend (~> 1.1.0)
+  - SFUser (0.1.0):
+    - SFBase (~> 0.1.0)
+    - SFExtension (~> 0.1.0)
+    - SFLogger (~> 0.1.0)
+    - SFUI (~> 0.1.0)
   - SideMenu (6.5.0)
   - SnapKit (5.6.0)
   - SnapKitExtend (1.1.0):
@@ -34,12 +36,12 @@ PODS:
   - WSTagsField (5.4.0)
 
 DEPENDENCIES:
-  - R.swift (~> 7.3.2)
   - SFBase (from `../../Basic/SFBase/`)
-  - SFBluetooth (from `../../Basic/SFBluetooth/`)
+  - SFBluetooth (from `../../Server/SFBluetooth/`)
   - SFExtension (from `../../Basic/SFExtension/`)
   - SFLogger (from `../../Server/SFLogger/`)
   - SFUI (from `../../UI/SFUI/`)
+  - SFUser (from `../../Business/SFUser/`)
   - SideMenu (~> 6.5.0)
   - WARangeSlider (~> 1.2.0)
   - WSTagsField (~> 5.4.0)
@@ -47,7 +49,6 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - IQKeyboardManagerSwift
-    - R.swift
     - Reusable
     - SideMenu
     - SnapKit
@@ -61,23 +62,25 @@ EXTERNAL SOURCES:
   SFBase:
     :path: "../../Basic/SFBase/"
   SFBluetooth:
-    :path: "../../Basic/SFBluetooth/"
+    :path: "../../Server/SFBluetooth/"
   SFExtension:
     :path: "../../Basic/SFExtension/"
   SFLogger:
     :path: "../../Server/SFLogger/"
   SFUI:
     :path: "../../UI/SFUI/"
+  SFUser:
+    :path: "../../Business/SFUser/"
 
 SPEC CHECKSUMS:
   IQKeyboardManagerSwift: 12d89768845bb77b55cc092ecc2b1f9370f06b76
-  R.swift: 0af0d882f49f03711415cb4e5215daa977d8a480
   Reusable: 6bae6a5e8aa793c9c441db0213c863a64bce9136
-  SFBase: 1eba5a746b2470d76b0fec3477288ebea87ebb53
-  SFBluetooth: a7ad0c729de191d0efde6a4c49f0bb6b030feed6
-  SFExtension: db5d207c8b9cb15d09d28858aec071d51050f3c5
-  SFLogger: a0357f940aa3a0f852a3af5f8f09dd1cb961e3a4
-  SFUI: 5bf4c055b310b11a8cd5dc9a97e1ac6dde818ab9
+  SFBase: e6ef6e68cee897189e335d6dfdca3415871b14b1
+  SFBluetooth: 971c75ed159c7ebe66f93cd6232315edc326f7b5
+  SFExtension: 4d7aefd56e766216b7e03cfd362867893b0574a0
+  SFLogger: 32dc52852844a0ac9243948c00d64e02cc5a680a
+  SFUI: 9b84518709b64a65be8289aba32d43ca48015229
+  SFUser: 5f3a452d44b4edfce31ec1a226ebb9f016319aeb
   SideMenu: f583187d21c5b1dd04c72002be544b555a2627a2
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
   SnapKitExtend: aa30cf37196195fae9c4354686cc7710184ebfcc
@@ -86,6 +89,6 @@ SPEC CHECKSUMS:
   WARangeSlider: 03f195d4dc5419e6b0d9043cc94fdf418dfe804d
   WSTagsField: a4e91b7d866e8c9755332ebcf8123f42f2abd4a0
 
-PODFILE CHECKSUM: 03bb4f488ab6754f32c98814645035f1f6728861
+PODFILE CHECKSUM: 8195c9bbaad9909a3a079d32a5ea1e65a8a1a2b6
 
-COCOAPODS: 1.12.1
+COCOAPODS: 1.16.2

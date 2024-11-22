@@ -18,7 +18,7 @@ echo "mkdir -p ${CONFIGURATION_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}"
 mkdir -p "${CONFIGURATION_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}"
 
 COCOAPODS_PARALLEL_CODE_SIGN="${COCOAPODS_PARALLEL_CODE_SIGN:-false}"
-SWIFT_STDLIB_PATH="${DT_TOOLCHAIN_DIR}/usr/lib/swift/${PLATFORM_NAME}"
+SWIFT_STDLIB_PATH="${TOOLCHAIN_DIR}/usr/lib/swift/${PLATFORM_NAME}"
 BCSYMBOLMAP_DIR="BCSymbolMaps"
 
 
@@ -177,13 +177,13 @@ code_sign_if_enabled() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/R.swift/RswiftResources.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Reusable/Reusable.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SFBase/SFBase.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SFBluetooth/SFBluetooth.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SFExtension/SFExtension.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SFLogger/SFLogger.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SFUI/SFUI.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/SFUser/SFUser.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SnapKitExtend/SnapKitExtend.framework"
@@ -194,13 +194,13 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/R.swift/RswiftResources.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Reusable/Reusable.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SFBase/SFBase.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SFBluetooth/SFBluetooth.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SFExtension/SFExtension.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SFLogger/SFLogger.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SFUI/SFUI.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/SFUser/SFUser.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SnapKitExtend/SnapKitExtend.framework"
