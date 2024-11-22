@@ -1,5 +1,5 @@
 //
-//  UserCenterHeaderView.swift
+//  UserCenterHeader.swift
 //  SFBleTool
 //
 //  Created by hsf on 2024/9/2.
@@ -15,9 +15,8 @@ import SFUI
 // Server
 import SFLogger
 
-
-// MARK: - UserCenterHeaderView
-class UserCenterHeaderView: SFView {
+// MARK: - UserCenterHeader
+class UserCenterHeader: SFView {
     // MARK: block
     var didClickAvatarBlock: (()->())?
     

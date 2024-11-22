@@ -9,29 +9,29 @@ import Foundation
 import UIKit
 
 enum UserCenterItem {
-    case centralManagerOptions
-    case peripheralOptions
+    case centralManagerInitializationOptions
+    case peripheralConnectionOptions
+    case peripheralScanningOptions
     
-    case security
     
     var text: String {
         switch self {
-        case .centralManagerOptions:
-            return "centralManagerOptions"
-        case .peripheralOptions:
-            return "peripheralOptions"
-        case .security:
-            return "security"
+        case .centralManagerInitializationOptions:
+            return "centralManagerInitializationOptions"
+        case .peripheralConnectionOptions:
+            return "peripheralConnectionOptions"
+        case .peripheralScanningOptions:
+            return "peripheralScanningOptions"
         }
     }
     
     var image: UIImage? {
         switch self {
-        case .centralManagerOptions:
+        case .centralManagerInitializationOptions:
             return nil
-        case .peripheralOptions:
+        case .peripheralScanningOptions:
             return nil
-        case .security:
+        case .peripheralScanningOptions:
             return nil
         }
     }

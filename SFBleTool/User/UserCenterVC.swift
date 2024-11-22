@@ -19,9 +19,9 @@ import SFLogger
 // MARK: - UserCenterVC
 class UserCenterVC: SFViewController {
     // MARK: data
-    var items: [[SFUserCenterItem]] = [
-        [.central, .peripheral],
-        [.security]
+
+    var items: [UserCenterItem]] = [
+        [.central, .peripheral]
     ]
     
     // MARK: life cycle
