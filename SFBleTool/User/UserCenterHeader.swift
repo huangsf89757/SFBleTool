@@ -21,19 +21,7 @@ class UserCenterHeader: SFView {
     var didClickAvatarBlock: (()->())?
     
     // MARK: data
-    var model: SFUserModel? {
-        didSet {
-            guard let model = model else { return }
-            if let avatarUrl = model.avatarUrl {
-                
-            } else {
-                avatarImgView.image = nil
-            }
-            nameLabel.text = model.nickname
-            genderImgView.image = model.gender.image
-            mottoLabel.text = model.motto
-        }
-    }
+   
     
     // MARK: life cycle
     override init(frame: CGRect) {
@@ -53,7 +41,7 @@ class UserCenterHeader: SFView {
             view.contentMode = .scaleAspectFit
             view.layer.cornerRadius = 40
             view.layer.masksToBounds = true
-            view.backgroundColor = R.color.white()
+            view.backgroundColor = SFColor.UI.content
             view.isUserInteractionEnabled = true
             let tap = UITapGestureRecognizer(target: self, action: #selector(avatarImgViewClicked))
             view.addGestureRecognizer(tap)
@@ -62,7 +50,7 @@ class UserCenterHeader: SFView {
     private lazy var nameLabel: SFLabel = {
         return SFLabel().then { view in
             view.font = .systemFont(ofSize: 15, weight: .medium)
-            view.textColor = R.color.title()
+            view.textColor = SFColor.UI.title
         }
     }()
     private lazy var genderImgView: SFImageView = {
@@ -73,7 +61,7 @@ class UserCenterHeader: SFView {
     private lazy var mottoLabel: SFLabel = {
         return SFLabel().then { view in
             view.font = .systemFont(ofSize: 12, weight: .regular)
-            view.textColor = R.color.subtitle()
+            view.textColor = SFColor.UI.title
         }
     }()
     
@@ -115,7 +103,7 @@ class UserCenterHeader: SFView {
 }
 
 // MARK: - action
-extension UserCenterHeaderView {
+extension UserCenterHeader {
     @objc private func avatarImgViewClicked() {
         didClickAvatarBlock?()
     }

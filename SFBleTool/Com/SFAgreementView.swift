@@ -30,17 +30,17 @@ class SFAgreementView: SFView {
     // MARK: ui
     private lazy var checkBoxBtn: SFButton = {
         return SFButton().then { view in
-            view.setImage(R.image.com.checkbox.nor(), for: .normal)
-            view.setImage(R.image.com.checkbox.sel(), for: .selected)
+//            view.setImage(R.image.com.checkbox.nor(), for: .normal)
+//            view.setImage(R.image.com.checkbox.sel(), for: .selected)
             view.addTarget(self, action: #selector(checkBoxBtnClicked), for: .touchUpInside)
         }
     }()
     private lazy var titleLabel: SFLabel = {
         return SFLabel().then { view in
             view.font = .systemFont(ofSize: 12, weight: .regular)
-            view.textColor = R.color.subtitle()
-            let text = R.string.localizable.user_signIn_agreement(R.string.localizable.user_signIn_agreement_term(), R.string.localizable.user_signIn_agreement_policy())
-            view.text = text
+            view.textColor = SFColor.UI.subtitle
+//            let text = R.string.localizable.user_signIn_agreement(R.string.localizable.user_signIn_agreement_term(), R.string.localizable.user_signIn_agreement_policy())
+//            view.text = text
         }
     }()
     

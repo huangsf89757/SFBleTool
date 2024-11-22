@@ -20,10 +20,5 @@
   },
   "swift_versions": "5.0",
   "source_files": "SFBusiness/Classes/**/*",
-  "dependencies": {
-    "WCDB.swift": [
-      "~> 2.1.8"
-    ]
-  },
   "swift_version": "5.0"
 }

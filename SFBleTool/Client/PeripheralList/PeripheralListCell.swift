@@ -33,8 +33,8 @@ class PeripheralListCell: SFTableViewCell {
     // MARK: life cycle
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        backgroundColor = R.color.content()
-        contentView.backgroundColor = R.color.content()
+        backgroundColor = SFColor.UI.content
+        contentView.backgroundColor = SFColor.UI.content
         customUI()
         separatorInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
     }
@@ -49,13 +49,13 @@ class PeripheralListCell: SFTableViewCell {
     private lazy var nameLabel: SFLabel = {
         return SFLabel().then { view in
             view.font = .systemFont(ofSize: 19, weight: .bold)
-            view.textColor = R.color.title()
+            view.textColor = SFColor.UI.title
         }
     }()
     private lazy var uuidLabel: SFLabel = {
         return SFLabel().then { view in
             view.font = .systemFont(ofSize: 12, weight: .regular)
-            view.textColor = R.color.subtitle()
+            view.textColor = SFColor.UI.subtitle
         }
     }()
     private func customUI() {

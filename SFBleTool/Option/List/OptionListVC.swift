@@ -26,7 +26,7 @@ class OptionListVC: SFTableViewController {
         tableView.dataSource = self
         tableView.register(cellType: OptionListCell.self)
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "新建", style: .plain, target: self, action: #selector(add))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "新建", style: .plain, target: self, action: #selector(addItemClicked))
     }
     
     // MARK: - func
@@ -36,7 +36,7 @@ class OptionListVC: SFTableViewController {
 }
 
 // MARK: - UITableViewDelegate, UITableViewDataSource
-extension CentralManagerListVC: UITableViewDelegate, UITableViewDataSource {
+extension OptionListVC: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return models.count
     }

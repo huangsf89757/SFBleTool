@@ -20,10 +20,10 @@ import SFLogger
 class SFCMPeripheralDetailSegmentView: SFSegmentView {
     // MARK: life cycle
     convenience init() {
-        let titles = [
-            R.string.localizable.central_detail_item_adv(),
-            R.string.localizable.central_detail_item_service(),
-            R.string.localizable.central_detail_item_log(),
+        let titles: [String] = [
+//            R.string.localizable.central_detail_item_adv(),
+//            R.string.localizable.central_detail_item_service(),
+//            R.string.localizable.central_detail_item_log(),
         ]
         self.init(titles: titles, images: nil, selectedImages: nil)
     }

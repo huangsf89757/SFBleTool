@@ -31,7 +31,7 @@ class SFCMPeripheralDetailHeaderView: SFView {
     // MARK: life cycle
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = R.color.background()
+        backgroundColor = SFColor.UI.background
         customUI()
     }
     
@@ -45,13 +45,13 @@ class SFCMPeripheralDetailHeaderView: SFView {
     private lazy var nameLabel: SFLabel = {
         return SFLabel().then { view in
             view.font = .systemFont(ofSize: 19, weight: .bold)
-            view.textColor = R.color.title()
+            view.textColor = SFColor.UI.title
         }
     }()
     private lazy var uuidLabel: SFLabel = {
         return SFLabel().then { view in
             view.font = .systemFont(ofSize: 12, weight: .regular)
-            view.textColor = R.color.subtitle()
+            view.textColor = SFColor.UI.subtitle
         }
     }()
     private func customUI() {

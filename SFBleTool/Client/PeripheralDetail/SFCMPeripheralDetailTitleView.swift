@@ -30,7 +30,7 @@ class SFCMPeripheralDetailTitleView: SFView {
     // MARK: ui
     private lazy var indicatorView: SFView = {
         return SFView().then { view in
-            view.backgroundColor = R.color.theme()
+            view.backgroundColor = SFColor.UI.theme
             view.layer.cornerRadius = 2
             view.layer.masksToBounds = true
         }
@@ -38,7 +38,7 @@ class SFCMPeripheralDetailTitleView: SFView {
     lazy var titleLabel: SFLabel = {
         return SFLabel().then { view in
             view.font = .systemFont(ofSize: 30, weight: .bold)
-            view.textColor = R.color.title()
+            view.textColor = SFColor.UI.title
         }
     }()
     private func customUI() {

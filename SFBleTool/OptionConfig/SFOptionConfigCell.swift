@@ -33,8 +33,8 @@ class SFOptionConfigCell: SFTableViewCell {
     // MARK: life cycle
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        backgroundColor = SFColor.background
-        contentView.backgroundColor = SFColor.background
+        backgroundColor = SFColor.UI.background
+        contentView.backgroundColor = SFColor.UI.background
         customUI()
         separatorInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
     }
@@ -49,13 +49,13 @@ class SFOptionConfigCell: SFTableViewCell {
     private lazy var nameLabel: SFLabel = {
         return SFLabel().then { view in
             view.font = .systemFont(ofSize: 19, weight: .bold)
-            view.textColor = R.color.title()
+            view.textColor = SFColor.UI.title
         }
     }()
     private lazy var uuidLabel: SFLabel = {
         return SFLabel().then { view in
             view.font = .systemFont(ofSize: 15, weight: .regular)
-            view.textColor = R.color.subtitle()
+            view.textColor = SFColor.UI.subtitle
         }
     }()
     private func customUI() {

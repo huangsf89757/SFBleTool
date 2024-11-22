@@ -45,7 +45,7 @@ class SFCMHeaderView: SFView {
     // MARK: life cycle
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = R.color.background()
+        backgroundColor = SFColor.UI.background
         customUI()
     }
     
@@ -55,7 +55,7 @@ class SFCMHeaderView: SFView {
     }()
     private lazy var filterBtn: SFButton = {
         return SFButton().then { view in
-            view.setImage(R.image.com.filter(), for: .normal)
+//            view.setImage(R.image.com.filter(), for: .normal)
             view.addTarget(self, action: #selector(filterBtnClicked), for: .touchUpInside)
         }
     }()
@@ -67,7 +67,7 @@ class SFCMHeaderView: SFView {
     }()
     private lazy var separatorView: SFView = {
         return SFView().then { view in
-            view.backgroundColor = R.color.divider()
+            view.backgroundColor = SFColor.UI.divider
         }
     }()
     private func customUI() {

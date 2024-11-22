@@ -16,13 +16,13 @@ import SFUI
 import SFLogger
 
 // MARK: - CentralListVC
-class CentralListVC: SFManagerVC {
+class CentralListVC: SFViewController {
     // MARK: var
     
     
     // MARK: life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = R.string.localizable.entrance_opt_peripheral_title()
+        navigationItem.title = "外设模式"
     }
 }

@@ -10,8 +10,7 @@ PODS:
   - SFBluetooth (0.1.0):
     - SFExtension (~> 0.1.0)
     - SFLogger (~> 0.1.0)
-  - SFBusiness (0.1.0):
-    - WCDB.swift (~> 2.1.8)
+  - SFBusiness (0.1.0)
   - SFExtension (0.1.0)
   - SFLogger (0.1.0):
     - SwiftyBeaver
@@ -25,6 +24,7 @@ PODS:
     - SnapKitExtend (~> 1.1.0)
   - SFUser (0.1.0):
     - SFBase (~> 0.1.0)
+    - SFBusiness (~> 0.1.0)
     - SFExtension (~> 0.1.0)
     - SFLogger (~> 0.1.0)
     - SFUI (~> 0.1.0)
@@ -35,9 +35,6 @@ PODS:
   - SwiftyBeaver (1.9.5)
   - Then (3.0.0)
   - WARangeSlider (1.2.0)
-  - WCDB.swift (2.1.8):
-    - WCDBOptimizedSQLCipher (= 1.4.6)
-  - WCDBOptimizedSQLCipher (1.4.6)
   - WSTagsField (5.4.0)
 
 DEPENDENCIES:
@@ -62,8 +59,6 @@ SPEC REPOS:
     - SwiftyBeaver
     - Then
     - WARangeSlider
-    - WCDB.swift
-    - WCDBOptimizedSQLCipher
     - WSTagsField
 
 EXTERNAL SOURCES:
@@ -87,19 +82,17 @@ SPEC CHECKSUMS:
   Reusable: 6bae6a5e8aa793c9c441db0213c863a64bce9136
   SFBase: e6ef6e68cee897189e335d6dfdca3415871b14b1
   SFBluetooth: 971c75ed159c7ebe66f93cd6232315edc326f7b5
-  SFBusiness: 66e064807ca717114c4931549a62c3a72fea6d1f
+  SFBusiness: e45922200a6842bd3ffa65483a185714b64c7da2
   SFExtension: db5d207c8b9cb15d09d28858aec071d51050f3c5
   SFLogger: 32dc52852844a0ac9243948c00d64e02cc5a680a
   SFUI: 9b84518709b64a65be8289aba32d43ca48015229
-  SFUser: 5f3a452d44b4edfce31ec1a226ebb9f016319aeb
+  SFUser: 80a608a356389a13808f9b56cee37e6ea84505cd
   SideMenu: f583187d21c5b1dd04c72002be544b555a2627a2
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
   SnapKitExtend: aa30cf37196195fae9c4354686cc7710184ebfcc
   SwiftyBeaver: 84069991dd5dca07d7069100985badaca7f0ce82
   Then: 844265ae87834bbe1147d91d5d41a404da2ec27d
   WARangeSlider: 03f195d4dc5419e6b0d9043cc94fdf418dfe804d
-  WCDB.swift: 603b32d432a58ec2e6eef8965d8bd6bb3cc7c39a
-  WCDBOptimizedSQLCipher: c6451e1dead7ec53e1344a2545aaed2c4c139fc0
   WSTagsField: a4e91b7d866e8c9755332ebcf8123f42f2abd4a0
 
 PODFILE CHECKSUM: 5198d21ca5f3941baba424005fdb4d2d78864445

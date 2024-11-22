@@ -28,7 +28,7 @@ class SFCopyrightView: SFView {
     private lazy var versionLabel: SFLabel = {
         return SFLabel().then { view in
             view.font = .systemFont(ofSize: 10, weight: .regular)
-            view.textColor = R.color.subtitle()
+            view.textColor = SFColor.UI.subtitle
             view.text = String(format: "Version %@(%@)", SFApp.version, SFApp.build)
             view.textAlignment = .center
         }
@@ -36,8 +36,8 @@ class SFCopyrightView: SFView {
     private lazy var copyrightLabel: SFLabel = {
         return SFLabel().then { view in
             view.font = .systemFont(ofSize: 10, weight: .regular)
-            view.textColor = R.color.subtitle()
-            view.text = R.string.localizable.copyright()
+            view.textColor = SFColor.UI.subtitle
+//            view.text = R.string.localizable.copyright()
             view.textAlignment = .center
         }
     }()

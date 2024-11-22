@@ -32,8 +32,8 @@ class SFCMPeripheralAdvDetailCell: SFTableViewCell {
     // MARK: life cycle
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        backgroundColor = R.color.content()
-        contentView.backgroundColor = R.color.content()
+        backgroundColor = SFColor.UI.content
+        contentView.backgroundColor = SFColor.UI.content
         customUI()
     }
     
@@ -46,28 +46,28 @@ class SFCMPeripheralAdvDetailCell: SFTableViewCell {
     private lazy var titleLabel: SFLabel = {
         return SFLabel().then { view in
             view.font = .systemFont(ofSize: 17, weight: .bold)
-            view.textColor = R.color.title()
+            view.textColor = SFColor.UI.title
         }
     }()
     private lazy var subtitleLabel: SFLabel = {
         return SFLabel().then { view in
             view.font = .systemFont(ofSize: 12, weight: .regular)
-            view.textColor = R.color.subtitle()
+            view.textColor = SFColor.UI.subtitle
         }
     }()
     private lazy var keyLabel: SFLabel = {
         return SFLabel().then { view in
             view.edgeInsert = UIEdgeInsets(top: 4, left: 8, bottom: 4, right: 8)
             view.font = .systemFont(ofSize: 8, weight: .medium)
-            view.textColor = R.color.auxiliary()
-            view.backgroundColor = R.color.placeholder()
+            view.textColor = SFColor.UI.auxiliary
+            view.backgroundColor = SFColor.UI.placeholder
             view.layer.cornerRadius = 5
             view.layer.masksToBounds = true
         }
     }()
     private lazy var valueView: SFView = {
         return SFView().then { view in
-            view.backgroundColor = R.color.background()
+            view.backgroundColor = SFColor.UI.background
             view.layer.cornerRadius = 10
             view.layer.masksToBounds = true
         }
@@ -75,7 +75,7 @@ class SFCMPeripheralAdvDetailCell: SFTableViewCell {
     private lazy var valueLabel: SFLabel = {
         return SFLabel().then { view in
             view.font = .systemFont(ofSize: 20, weight: .regular)
-            view.textColor = R.color.title()
+            view.textColor = SFColor.UI.title
         }
     }()
     private func customUI() {

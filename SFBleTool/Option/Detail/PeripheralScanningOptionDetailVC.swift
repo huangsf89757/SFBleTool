@@ -16,12 +16,7 @@ import SFUI
 // MARK: PeripheralScanningOptionDetailVC
 class PeripheralScanningOptionDetailVC: OptionDetailVC {
     // MARK: var
-    var model: CentralManagerInitializationOptionModel? {
-        didSet {
-            identifierView.textField.text = model?.identifier
-            alertView.switchView.setOn(model?.alert ?? false, animated: false)
-        }
-    }
+    
     
     // MARK: life cycle
     override func viewDidLoad() {
@@ -57,13 +52,13 @@ class PeripheralScanningOptionDetailVC: OptionDetailVC {
         scrollView.contentView.addSubview(duplicatesView)
         scrollView.contentView.addSubview(uuidsView)
         
-        identifierView.snp.makeConstraints { make in
+        duplicatesView.snp.makeConstraints { make in
             make.top.equalTo(nameView.snp.bottom).offset(20)
             make.leading.equalToSuperview()
             make.trailing.equalToSuperview()
         }
-        alertView.snp.makeConstraints { make in
-            make.top.equalTo(identifierView.snp.bottom).offset(20)
+        uuidsView.snp.makeConstraints { make in
+            make.top.equalTo(duplicatesView.snp.bottom).offset(20)
             make.leading.equalToSuperview()
             make.trailing.equalToSuperview()
             make.bottom.lessThanOrEqualToSuperview().offset(-20)

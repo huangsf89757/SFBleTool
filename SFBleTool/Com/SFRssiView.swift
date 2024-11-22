@@ -28,34 +28,35 @@ class SFRssiView: SFView {
      4 : < -65
      5 : >= -65
      */
-    var rssi: Double? {
-        didSet {
-            guard let rssi = rssi else {
-                rssiLabel.text = ""
-                rssiImgView.image = R.image.com.rssi.level0()
-                return
-            }
-            rssiLabel.text = String(format: "%.0f dBm", rssi)
-            if rssi < -90 {
-                rssiImgView.image = R.image.com.rssi.level0()
-            }
-            else if rssi < -80 {
-                rssiImgView.image = R.image.com.rssi.level1()
-            }
-            else if rssi < -75 {
-                rssiImgView.image = R.image.com.rssi.level2()
-            }
-            else if rssi < -70 {
-                rssiImgView.image = R.image.com.rssi.level3()
-            }
-            else if rssi < -65 {
-                rssiImgView.image = R.image.com.rssi.level4()
-            }
-            else {
-                rssiImgView.image = R.image.com.rssi.level5()
-            }
-        }
-    }
+    var rssi: Double? 
+//    {
+//        didSet {
+//            guard let rssi = rssi else {
+//                rssiLabel.text = ""
+//                rssiImgView.image = R.image.com.rssi.level0()
+//                return
+//            }
+//            rssiLabel.text = String(format: "%.0f dBm", rssi)
+//            if rssi < -90 {
+//                rssiImgView.image = R.image.com.rssi.level0()
+//            }
+//            else if rssi < -80 {
+//                rssiImgView.image = R.image.com.rssi.level1()
+//            }
+//            else if rssi < -75 {
+//                rssiImgView.image = R.image.com.rssi.level2()
+//            }
+//            else if rssi < -70 {
+//                rssiImgView.image = R.image.com.rssi.level3()
+//            }
+//            else if rssi < -65 {
+//                rssiImgView.image = R.image.com.rssi.level4()
+//            }
+//            else {
+//                rssiImgView.image = R.image.com.rssi.level5()
+//            }
+//        }
+//    }
         
     // MARK: life cycle
     override init(frame: CGRect) {
@@ -72,7 +73,7 @@ class SFRssiView: SFView {
     private lazy var rssiLabel: SFLabel = {
         return SFLabel().then { view in
             view.font = .systemFont(ofSize: 10, weight: .regular)
-            view.textColor = R.color.title()
+            view.textColor = SFColor.UI.title
             view.textAlignment = .center
         }
     }()

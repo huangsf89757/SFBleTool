@@ -40,8 +40,8 @@ class SFEntranceVC: SFScrollViewController {
             view.contentMode = .scaleAspectFit
             view.layer.cornerRadius = 12
             view.layer.masksToBounds = true
-            view.backgroundColor = R.color.content()
-            view.image = R.image.logo()
+            view.backgroundColor = SFColor.UI.content
+//            view.image = R.image.logo()
             view.layer.cornerRadius = 8
             view.layer.masksToBounds = true
         }
@@ -49,24 +49,24 @@ class SFEntranceVC: SFScrollViewController {
     private lazy var nameLabel: SFLabel = {
         return SFLabel().then { view in
             view.font = .systemFont(ofSize: 17, weight: .bold)
-            view.textColor = R.color.title()
+            view.textColor = SFColor.UI.title
             view.textAlignment = .center
-            view.text = R.string.localizable.name()
+//            view.text = R.string.localizable.name()
         }
     }()
     private lazy var slogenLabel: SFLabel = {
         return SFLabel().then { view in
             view.font = .systemFont(ofSize: 12, weight: .regular)
-            view.textColor = R.color.subtitle()
+            view.textColor = SFColor.UI.subtitle
             view.textAlignment = .center
-            view.text = R.string.localizable.slogen()
+//            view.text = R.string.localizable.slogen()
         }
     }()
     private lazy var centralEntranceOptView: SFEntranceOptView = {
         return SFEntranceOptView().then { view in
             view.tag = 0
-            view.titleLabel.text = R.string.localizable.entrance_opt_central_title()
-            view.subtitleLabel.text = R.string.localizable.entrance_opt_central_subtitle()
+//            view.titleLabel.text = R.string.localizable.entrance_opt_central_title()
+//            view.subtitleLabel.text = R.string.localizable.entrance_opt_central_subtitle()
             view.tapBlock = {
                 [weak self] optView in
                 self?.entranceOptViewTaped(optView)
@@ -76,8 +76,8 @@ class SFEntranceVC: SFScrollViewController {
     private lazy var peripheralEntranceOptView: SFEntranceOptView = {
         return SFEntranceOptView().then { view in
             view.tag = 1
-            view.titleLabel.text = R.string.localizable.entrance_opt_peripheral_title()
-            view.subtitleLabel.text = R.string.localizable.entrance_opt_peripheral_subtitle()
+//            view.titleLabel.text = R.string.localizable.entrance_opt_peripheral_title()
+//            view.subtitleLabel.text = R.string.localizable.entrance_opt_peripheral_subtitle()
             view.tapBlock = {
                 [weak self] optView in
                 self?.entranceOptViewTaped(optView)

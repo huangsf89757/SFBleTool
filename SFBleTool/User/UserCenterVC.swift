@@ -12,6 +12,9 @@ import SFBase
 import SFExtension
 // UI
 import SFUI
+// Business
+import SFBusiness
+import SFUser
 // Server
 import SFLogger
 
@@ -20,8 +23,12 @@ import SFLogger
 class UserCenterVC: SFViewController {
     // MARK: data
 
-    var items: [UserCenterItem]] = [
-        [.central, .peripheral]
+    var items: [[UserCenterItem]] = [
+        [
+            .centralManagerInitializationOptions,
+            .peripheralScanningOptions,
+            .peripheralConnectionOptions,
+        ]
     ]
     
     // MARK: life cycle
@@ -32,11 +39,11 @@ class UserCenterVC: SFViewController {
     }
     
     // MARK: ui
-    private lazy var headerView: UserCenterHeaderView = {
-        return UserCenterHeaderView().then { view in
+    private lazy var headerView: UserCenterHeader = {
+        return UserCenterHeader().then { view in
             view.didClickAvatarBlock = {
                 [weak self] in
-                let vc = SFUserInfoVC()
+                let vc = SFUser.InfoVC()
                 self?.navigationController?.pushViewController(vc, animated: true)
             }
         }
@@ -45,7 +52,7 @@ class UserCenterVC: SFViewController {
         return SFTableView(frame: .zero, style: .grouped).then { view in
             view.delegate = self
             view.dataSource = self
-            view.register(cellType: SFUserCenterItemCell.self)
+            view.register(cellType: UserCenterCell.self)
         }
     }()
     private lazy var copyrightView: SFCopyrightView = {
@@ -76,7 +83,7 @@ class UserCenterVC: SFViewController {
 }
 
 // MARK: - UITableViewDelegate, UITableViewDataSource
-extension SFUserCenterVC: UITableViewDelegate, UITableViewDataSource {
+extension UserCenterVC: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return items.count
     }
@@ -84,7 +91,7 @@ extension SFUserCenterVC: UITableViewDelegate, UITableViewDataSource {
         return items[section].count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(for: indexPath, cellType: SFUserCenterItemCell.self)
+        let cell = tableView.dequeueReusableCell(for: indexPath, cellType: UserCenterCell.self)
         let item = items[indexPath.section][indexPath.row]
         cell.item = item
         return cell

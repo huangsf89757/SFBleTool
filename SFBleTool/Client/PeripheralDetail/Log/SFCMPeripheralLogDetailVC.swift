@@ -85,11 +85,11 @@ extension SFCMPeripheralLogDetailVC: UIScrollViewDelegate {
         let oldNavTitle: String? = navTitle
         let offsetY = scrollView.contentOffset.y
         if offsetY >= 60 {
-            let newNavTitle: String? = R.string.localizable.central_detail_item_log()
-            if newNavTitle != oldNavTitle {
-                navTitle = newNavTitle
-                navTitleDidChangedBlock?(navTitle)
-            }
+//            let newNavTitle: String? = R.string.localizable.central_detail_item_log()
+//            if newNavTitle != oldNavTitle {
+//                navTitle = newNavTitle
+//                navTitleDidChangedBlock?(navTitle)
+//            }
         } else {
             let newNavTitle: String? = nil
             if newNavTitle != oldNavTitle {

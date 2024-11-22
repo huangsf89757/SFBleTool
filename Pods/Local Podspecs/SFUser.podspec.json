@@ -34,6 +34,9 @@
     "SFExtension": [
       "~> 0.1.0"
     ],
+    "SFBusiness": [
+      "~> 0.1.0"
+    ],
     "SFLogger": [
       "~> 0.1.0"
     ]

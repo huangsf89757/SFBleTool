@@ -13,8 +13,8 @@ import SFExtension
 // UI
 import SFUI
 
-// MARK: OptionInfoVC
-class OptionInfoVC: SFScrollViewController {
+// MARK: OptionDetailVC
+class OptionDetailVC: SFScrollViewController {
     // MARK: var
 
     
@@ -55,7 +55,7 @@ class OptionInfoVC: SFScrollViewController {
 }
 
 // MARK: - Action
-extension CentralManagerInfoVC {
+extension OptionDetailVC {
     @objc func editBtnClicked() {
         editBtn.toggleSelected()
         let editEnable = editBtn.isSelected

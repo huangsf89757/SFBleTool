@@ -21,10 +21,9 @@ import SideMenu
 
 
 // MARK: - PeripheralListVC
-class PeripheralListVC: SFManagerVC {
+class PeripheralListVC: SFViewController {
     
     // MARK: var
-    private var bleCentralManager: SFBleCentralManager!
     /// 顶部/底部 Bar 是否显示
     private var isBarShowing = true
    
@@ -57,14 +56,14 @@ class PeripheralListVC: SFManagerVC {
     private lazy var userBtn: SFButton = {
         return SFButton().then { view in
             view.frame = CGRect(origin: .zero, size: CGSize(width: 40, height: 40))
-            view.setImage(R.image.user.user(), for: .normal)
+//            view.setImage(R.image.user.user(), for: .normal)
             view.addTarget(self, action: #selector(userBtnClicked), for: .touchUpInside)
         }
     }()
     private lazy var settingBtn: SFButton = {
         return SFButton().then { view in
             view.frame = CGRect(origin: .zero, size: CGSize(width: 40, height: 40))
-            view.setImage(R.image.com.setting(), for: .normal)
+//            view.setImage(R.image.com.setting(), for: .normal)
             view.addTarget(self, action: #selector(settingBtnClicked), for: .touchUpInside)
         }
     }()
@@ -91,15 +90,15 @@ class PeripheralListVC: SFManagerVC {
     }()
     private lazy var scanBtn: SFButton = {
         return SFButton().then { view in
-            view.sf.setCornerAndShadow(radius: 10, fillColor: R.color.background(), shadowColor: R.color.black(), shadowOpacity: 0.3, shadowOffset: CGSize(width: 0, height: 5), shadowRadius: 5)
+            view.sf.setCornerAndShadow(radius: 10, fillColor: SFColor.UI.background, shadowColor: SFColor.UI.black, shadowOpacity: 0.3, shadowOffset: CGSize(width: 0, height: 5), shadowRadius: 5)
             view.style = .right(10)
             view.titleLabel?.font = .systemFont(ofSize: 17, weight: .medium)
-            view.setImage(R.image.ble.scan.nor(), for: .normal)
-            view.setImage(R.image.ble.scan.sel(), for: .selected)
-            view.setTitle(R.string.localizable.central_ble_scan_paused(), for: .normal)
-            view.setTitle(R.string.localizable.central_ble_scan_doing(), for: .selected)
-            view.setTitleColor(R.color.title(), for: .normal)
-            view.setTitleColor(R.color.theme(), for: .selected)
+//            view.setImage(R.image.ble.scan.nor(), for: .normal)
+//            view.setImage(R.image.ble.scan.sel(), for: .selected)
+//            view.setTitle(R.string.localizable.central_ble_scan_paused(), for: .normal)
+//            view.setTitle(R.string.localizable.central_ble_scan_doing(), for: .selected)
+            view.setTitleColor(SFColor.UI.title, for: .normal)
+            view.setTitleColor(SFColor.UI.theme, for: .selected)
             view.addTarget(self, action: #selector(scanBtnClicked), for: .touchUpInside)
             
             // anim
@@ -142,7 +141,7 @@ class PeripheralListVC: SFManagerVC {
 // MARK: - func
 extension PeripheralListVC {
     private func configNav() {
-        navigationItem.title = R.string.localizable.entrance_opt_central_title()
+//        navigationItem.title = R.string.localizable.entrance_opt_central_title()
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: userBtn)
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: settingBtn)
 //        SideMenuManager.default.addPanGestureToPresent(toView: self.navigationController!.navigationBar)
@@ -154,26 +153,26 @@ extension PeripheralListVC {
 extension PeripheralListVC {
     /// 点击用户
     @objc private func userBtnClicked() {
-        let vc = SFUserCenterVC()
-        let nav = SideMenuNavigationController(rootViewController: vc)
-        nav.leftSide = true
-        nav.menuWidth = SFApp.screenWidthPortrait() * 0.8
-        present(nav, animated: true, completion: nil)
+//        let vc = SFUserCenterVC()
+//        let nav = SideMenuNavigationController(rootViewController: vc)
+//        nav.leftSide = true
+//        nav.menuWidth = SFApp.screenWidthPortrait() * 0.8
+//        present(nav, animated: true, completion: nil)
     }
     
     /// 点击设置
     @objc private func settingBtnClicked() {
-        let vc = SFUserCentralDetailVC()
-        navigationController?.pushViewController(vc, animated: true)
+//        let vc = SFUserCentralDetailVC()
+//        navigationController?.pushViewController(vc, animated: true)
     }
     
     /// 点击扫描
     @objc private func scanBtnClicked() {
-        if scanBtn.isSelected {
-            bleCentralManager.stopScan(id: UUID())
-        } else {
-            bleCentralManager.scanForPeripherals(id: UUID(), services: headerModel.filter.uuids, options: nil)
-        }
+//        if scanBtn.isSelected {
+//            bleCentralManager.stopScan(id: UUID())
+//        } else {
+//            bleCentralManager.scanForPeripherals(id: UUID(), services: headerModel.filter.uuids, options: nil)
+//        }
     }
     
     private func updateScanBtn() {
@@ -259,11 +258,11 @@ extension PeripheralListVC {
 // MARK: - BleCentralManager
 extension PeripheralListVC {
     private func configCentralManager() {
-        let options: [String : Any] = [
-            CBCentralManagerOptionShowPowerAlertKey: true,
-            CBCentralManagerOptionRestoreIdentifierKey: SFApp.bundle,
-        ]
-        bleCentralManager = SFBleCentralManager(queue: nil, options: options)
+//        let options: [String : Any] = [
+//            CBCentralManagerOptionShowPowerAlertKey: true,
+//            CBCentralManagerOptionRestoreIdentifierKey: SFApp.bundle,
+//        ]
+//        bleCentralManager = SFBleCentralManager(queue: nil, options: options)
     }
     /*
      let row = showModels.firstIndex { model in

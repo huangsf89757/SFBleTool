@@ -26,13 +26,6 @@ enum UserCenterItem {
     }
     
     var image: UIImage? {
-        switch self {
-        case .centralManagerInitializationOptions:
-            return nil
-        case .peripheralScanningOptions:
-            return nil
-        case .peripheralScanningOptions:
-            return nil
-        }
+        return nil
     }
 }

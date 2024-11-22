@@ -30,7 +30,7 @@ class SFEntranceOptView: SFView {
     // MARK: life cycle
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = R.color.content()
+        backgroundColor = SFColor.UI.content
         layer.cornerRadius = 10
         layer.borderWidth = 1
         updateAppearance()
@@ -56,7 +56,7 @@ class SFEntranceOptView: SFView {
     lazy var gotoImgView: SFImageView = {
         return SFImageView().then { view in
             view.contentMode = .scaleAspectFit
-            view.image = R.image.com.goto()
+//            view.image = R.image.com.goto()
         }
     }()
     lazy var clickBtn: SFButton = {
@@ -100,13 +100,13 @@ class SFEntranceOptView: SFView {
     // MARK: appearance
     private func updateAppearance() {
         if isSelected {
-            layer.borderColor = R.color.theme()?.cgColor
-            selectImgView.image = R.image.com.select.sel()
-            backgroundColor = R.color.theme()?.withAlphaComponent(0.3)
+            layer.borderColor = SFColor.UI.theme?.cgColor
+//            selectImgView.image = R.image.com.select.sel()
+            backgroundColor = SFColor.UI.theme?.withAlphaComponent(0.3)
         } else {
-            layer.borderColor = R.color.placeholder()?.cgColor
-            selectImgView.image = R.image.com.select.nor()
-            backgroundColor = R.color.content()
+            layer.borderColor = SFColor.UI.placeholder?.cgColor
+//            selectImgView.image = R.image.com.select.nor()
+            backgroundColor = SFColor.UI.content
         }
     }
 }

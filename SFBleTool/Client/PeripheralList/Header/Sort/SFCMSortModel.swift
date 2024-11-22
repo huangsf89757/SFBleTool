@@ -7,6 +7,11 @@
 
 import Foundation
 import UIKit
+// Basic
+import SFBase
+import SFExtension
+// UI
+import SFUI
 
 class SFCMSortModel {
     // MARK: Type
@@ -23,22 +28,23 @@ class SFCMSortModel {
         case des    // 降序
         
         var image: UIImage? {
-            switch self {
-            case .none:
-                return R.image.com.sort.none()
-            case .asc:
-                return R.image.com.sort.asc()
-            case .des:
-                return R.image.com.sort.des()
-            }
+            return nil
+//            switch self {
+//            case .none:
+//                return R.image.com.sort.none()
+//            case .asc:
+//                return R.image.com.sort.asc()
+//            case .des:
+//                return R.image.com.sort.des()
+//            }
         }
         
         var color: UIColor? {
             switch self {
             case .none:
-                return R.color.subtitle()
+                return SFColor.UI.subtitle
             case .asc, .des:
-                return R.color.title()
+                return SFColor.UI.title
             }
         }
         
