@@ -1,0 +1,29 @@
+{
+  "name": "SFBusiness",
+  "version": "0.1.0",
+  "summary": "A short description of SFBusiness.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/hsf89757/SFBusiness",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "hsf89757": "hsf89757@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/hsf89757/SFBusiness.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "14.0"
+  },
+  "swift_versions": "5.0",
+  "source_files": "SFBusiness/Classes/**/*",
+  "dependencies": {
+    "WCDB.swift": [
+      "~> 2.1.8"
+    ]
+  },
+  "swift_version": "5.0"
+}

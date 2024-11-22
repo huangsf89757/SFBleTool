@@ -1,0 +1,6 @@
+framework module SFBusiness {
+  umbrella header "SFBusiness-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -180,6 +180,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/Reusable/Reusable.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SFBase/SFBase.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SFBluetooth/SFBluetooth.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/SFBusiness/SFBusiness.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SFExtension/SFExtension.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SFLogger/SFLogger.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SFUI/SFUI.framework"
@@ -190,6 +191,8 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/SwiftyBeaver/SwiftyBeaver.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Then/Then.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/WARangeSlider/WARangeSlider.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/WCDB.swift/WCDBSwift.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/WCDBOptimizedSQLCipher/sqlcipher.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/WSTagsField/WSTagsField.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
@@ -197,6 +200,7 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/Reusable/Reusable.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SFBase/SFBase.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SFBluetooth/SFBluetooth.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/SFBusiness/SFBusiness.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SFExtension/SFExtension.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SFLogger/SFLogger.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SFUI/SFUI.framework"
@@ -207,6 +211,8 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/SwiftyBeaver/SwiftyBeaver.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Then/Then.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/WARangeSlider/WARangeSlider.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/WCDB.swift/WCDBSwift.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/WCDBOptimizedSQLCipher/sqlcipher.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/WSTagsField/WSTagsField.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then

@@ -28,6 +28,7 @@ def pods_private
   pod 'SFUI',             :path => $root + $ui + 'SFUI/'
   
   # Business
+  pod 'SFBusiness',           :path => $root + $business + 'SFBusiness/'
   pod 'SFUser',           :path => $root + $business + 'SFUser/'
     
   # Server
