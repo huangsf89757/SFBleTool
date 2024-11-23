@@ -36,7 +36,7 @@ PODS:
   - SnapKit (5.6.0)
   - SnapKitExtend (1.1.0):
     - SnapKit
-  - SwiftyBeaver (1.9.5)
+  - SwiftyBeaver (2.1.1)
   - Then (3.0.0)
   - WARangeSlider (1.2.0)
   - WSTagsField (5.4.0)
@@ -94,11 +94,11 @@ SPEC CHECKSUMS:
   SideMenu: f583187d21c5b1dd04c72002be544b555a2627a2
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
   SnapKitExtend: aa30cf37196195fae9c4354686cc7710184ebfcc
-  SwiftyBeaver: 84069991dd5dca07d7069100985badaca7f0ce82
+  SwiftyBeaver: ade157e4f857812e7d7f15f2e3396bb8733f8a1c
   Then: 844265ae87834bbe1147d91d5d41a404da2ec27d
   WARangeSlider: 03f195d4dc5419e6b0d9043cc94fdf418dfe804d
   WSTagsField: a4e91b7d866e8c9755332ebcf8123f42f2abd4a0
 
-PODFILE CHECKSUM: 110b8c9a7c281809ad9eb7a6d0d7abe899a5241d
+PODFILE CHECKSUM: 93c1d52fa8ca63c78e86d8c63882808dbf7f09b4
 
 COCOAPODS: 1.12.1

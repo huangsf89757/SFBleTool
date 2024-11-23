@@ -84,54 +84,28 @@ end
 ##################
 #      FUNC      #
 ##################
-require 'xcodeproj'
 
-def get_main_project_localizations()
-  project_path = "./SFBleTool.xcodeproj"
-  unless File.exist?(project_path)
-    raise "主工程路径无效：#{project_path}"
-  end
-
-  unless project_path.end_with?('.xcodeproj')
-    raise "提供的路径不是一个有效的 Xcode 工程文件：#{project_path}"
-  end
-
-  begin
-    project = Xcodeproj::Project.open(project_path)
-  rescue => e
-    raise "打开工程失败：#{e.message}"
-  end
-
-  root_object = project.root_object
-  known_regions = root_object.known_regions
-  if known_regions.nil? || known_regions.empty?
-    colorize(COLOR_YELLOW, "警告：主工程未设置 knownRegions 或没有 Localizations。")
-    return []
-  end
-  
-  colorize(COLOR_GREEN, "主工程的 knownRegions: #{known_regions.join(', ')}")
-  
-  localizations = known_regions.reject { |region| region == 'Base' }
-  localizations
-end
-
-
-# 设置 Localizations 和 Default Language
 def set_localization(installer)
   colorize(COLOR_BLUE, "set_localization [开始]")
-
-  localizations = get_main_project_localizations()
-  if localizations.empty?
-    colorize(COLOR_YELLOW, "警告：未找到 Localizations，跳过设置。")
-    return
-  end
-
-  installer.pods_project.targets.each do |target|
-    target.build_configurations.each do |config|
-      config.build_settings['DEVELOPMENT_LANGUAGE'] = localizations.first
-    end
-  end
-
+  
+  pods_project = installer.pods_project
+  
+  # 获取主工程的设置
+  main_project_path = Dir.glob("*.xcodeproj").first
+  main_project = Xcodeproj::Project.open(main_project_path)
+  main_project_settings = main_project.root_object
+  
+  # 获取主工程的 knownRegions 和 developmentRegion
+  known_regions = main_project_settings.known_regions
+  development_region = main_project_settings.development_region
+  
+  # 同步到 Pods 工程
+  pods_project.root_object.known_regions = known_regions
+  pods_project.root_object.development_region = development_region
+  
+  # 保存修改
+  pods_project.save
+  
   colorize(COLOR_GREEN, "set_localization [成功]")
 end
 
