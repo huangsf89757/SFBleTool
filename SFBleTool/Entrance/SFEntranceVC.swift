@@ -69,8 +69,8 @@ class SFEntranceVC: SFScrollViewController {
         
         logoView.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(100)
-            make.centerX.equalToSuperview()
-            make.size.equalTo(CGSize(width: 80, height: 80))
+            make.leading.equalToSuperview().offset(50)
+            make.trailing.equalToSuperview().offset(-50)
         }
         clientOptView.snp.makeConstraints { make in
             make.top.equalTo(logoView.snp.bottom).offset(80)
