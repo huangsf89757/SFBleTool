@@ -36,7 +36,21 @@ class SFEntranceVC: SFScrollViewController {
         customUI()
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        colorLayer.frame = view.bounds
+    }
+    
     // MARK: ui
+    private lazy var colorLayer: CAGradientLayer = {
+        return CAGradientLayer().then { layer in
+            layer.startPoint = CGPoint(x: 1, y: 0)
+            layer.endPoint = CGPoint(x: 0, y: 1)
+            layer.locations = [0, 1]
+            let color: UIColor = SFColor.UI.theme ?? UIColor.green
+            layer.colors = [color.cgColor, UIColor.white.cgColor]
+        }
+    }()
     private lazy var logoView: SFLogoView = {
         return SFLogoView()
     }()
@@ -63,6 +77,9 @@ class SFEntranceVC: SFScrollViewController {
         }
     }()
     private func customUI() {
+        view.layer.insertSublayer(colorLayer, at: 0)
+        scrollView.backgroundColor = .clear
+        scrollView.contentView.backgroundColor = .clear
         scrollView.contentView.addSubview(logoView)
         scrollView.contentView.addSubview(clientOptView)
         scrollView.contentView.addSubview(serverOptView)
