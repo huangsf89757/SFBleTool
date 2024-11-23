@@ -28,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // 日志
         SFLogger.config()
-        // 键盘
+        // 键盘 TODO: 考虑一下是否使用notify监听didFinishLaunching 实现自动配置
         IQKeyboardManager.shared.enable = true
         IQKeyboardManager.shared.enableAutoToolbar = true
         IQKeyboardManager.shared.shouldShowToolbarPlaceholder = true
