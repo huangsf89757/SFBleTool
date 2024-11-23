@@ -40,7 +40,7 @@
 		DDA648CD2C61A1E300F01858 /* SFEntranceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA648CC2C61A1E300F01858 /* SFEntranceVC.swift */; };
 		DDA648CF2C61A3DE00F01858 /* PeripheralListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA648CE2C61A3DE00F01858 /* PeripheralListVC.swift */; };
 		DDA648D12C61A3F000F01858 /* CentralListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA648D02C61A3F000F01858 /* CentralListVC.swift */; };
-		DDA648D62C61A86D00F01858 /* SFEntranceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA648D52C61A86D00F01858 /* SFEntranceView.swift */; };
+		DDA648D62C61A86D00F01858 /* SFEntranceOptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA648D52C61A86D00F01858 /* SFEntranceOptView.swift */; };
 		DDAC3D642C6DF66300AA87B4 /* SFCMPeripheralAdvDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDAC3D632C6DF66300AA87B4 /* SFCMPeripheralAdvDetailCell.swift */; };
 		DDAC3D712C6F47F700AA87B4 /* SFCMPeripheralDetailTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDAC3D702C6F47F700AA87B4 /* SFCMPeripheralDetailTitleView.swift */; };
 		DDAC3D732C6F512700AA87B4 /* SFCMPeripheralLogCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDAC3D722C6F512700AA87B4 /* SFCMPeripheralLogCell.swift */; };
@@ -135,7 +135,7 @@
 		DDA648CC2C61A1E300F01858 /* SFEntranceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFEntranceVC.swift; sourceTree = "<group>"; };
 		DDA648CE2C61A3DE00F01858 /* PeripheralListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeripheralListVC.swift; sourceTree = "<group>"; };
 		DDA648D02C61A3F000F01858 /* CentralListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CentralListVC.swift; sourceTree = "<group>"; };
-		DDA648D52C61A86D00F01858 /* SFEntranceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFEntranceView.swift; sourceTree = "<group>"; };
+		DDA648D52C61A86D00F01858 /* SFEntranceOptView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFEntranceOptView.swift; sourceTree = "<group>"; };
 		DDAC3D632C6DF66300AA87B4 /* SFCMPeripheralAdvDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFCMPeripheralAdvDetailCell.swift; sourceTree = "<group>"; };
 		DDAC3D702C6F47F700AA87B4 /* SFCMPeripheralDetailTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFCMPeripheralDetailTitleView.swift; sourceTree = "<group>"; };
 		DDAC3D722C6F512700AA87B4 /* SFCMPeripheralLogCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFCMPeripheralLogCell.swift; sourceTree = "<group>"; };
@@ -327,7 +327,7 @@
 			isa = PBXGroup;
 			children = (
 				DDA648CC2C61A1E300F01858 /* SFEntranceVC.swift */,
-				DDA648D52C61A86D00F01858 /* SFEntranceView.swift */,
+				DDA648D52C61A86D00F01858 /* SFEntranceOptView.swift */,
 			);
 			path = Entrance;
 			sourceTree = "<group>";
@@ -739,7 +739,7 @@
 				51A613A42C74DAAA005990FC /* SFCMConnectView.swift in Sources */,
 				DDB895C52CF0810F00376F37 /* OptionListCell.swift in Sources */,
 				DDB895C32CF0807200376F37 /* OptionModel.swift in Sources */,
-				DDA648D62C61A86D00F01858 /* SFEntranceView.swift in Sources */,
+				DDA648D62C61A86D00F01858 /* SFEntranceOptView.swift in Sources */,
 				51F77F3C2CF0A98400B44CAB /* PeripheralScanningOptionListVC.swift in Sources */,
 				51A613A92C7620AB005990FC /* SFOptionConfigVC.swift in Sources */,
 			);

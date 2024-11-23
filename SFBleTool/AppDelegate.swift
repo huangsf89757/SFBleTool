@@ -26,9 +26,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Resource
         SFImage.App.icon = SFImage.Main.icon
-        SFImage.App.logo = SFImage.Main.icon
-        SFText.App.name = SFText.Main.name
-        SFText.App.slogen = SFText.Main.slogen
+        SFImage.App.logo = SFImage.Main.logo
+        SFText.App.name = SFText.Main.app_name
+        SFText.App.slogen = SFText.Main.app_slogen
         
         // 日志
         SFLogger.config()

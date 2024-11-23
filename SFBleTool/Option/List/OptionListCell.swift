@@ -39,7 +39,7 @@ class OptionListCell: SFTableViewCell {
     private lazy var detailIcon: SFImageView = {
         return SFImageView().then { view in
             view.contentMode = .scaleAspectFit
-            view.image = SFImage.UI.detail
+            view.image = SFImage.UI.Com.detail
         }
     }()
     private func customUI() {

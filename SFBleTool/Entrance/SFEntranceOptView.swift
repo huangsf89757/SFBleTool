@@ -56,7 +56,7 @@ class SFEntranceOptView: SFView {
     lazy var gotoImgView: SFImageView = {
         return SFImageView().then { view in
             view.contentMode = .scaleAspectFit
-//            view.image = R.image.com.goto()
+            view.image = SFImage.UI.Com.goto
         }
     }()
     lazy var clickBtn: SFButton = {
@@ -101,11 +101,11 @@ class SFEntranceOptView: SFView {
     private func updateAppearance() {
         if isSelected {
             layer.borderColor = SFColor.UI.theme?.cgColor
-//            selectImgView.image = R.image.com.select.sel()
+            selectImgView.image = SFImage.UI.Select.sel
             backgroundColor = SFColor.UI.theme?.withAlphaComponent(0.3)
         } else {
             layer.borderColor = SFColor.UI.placeholder?.cgColor
-//            selectImgView.image = R.image.com.select.nor()
+            selectImgView.image = SFImage.UI.Select.nor
             backgroundColor = SFColor.UI.content
         }
     }

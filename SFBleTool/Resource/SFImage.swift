@@ -22,7 +22,15 @@ extension SFImage {
         }
         
         public static var icon: UIImage? { image(name: "AppIcon") }
-        public static var logo: UIImage? { image(name: "AppIcon") }
+        public static var logo: UIImage? { image(name: "AppLogo") }
+        
+        struct Com {
+            public static var goto: UIImage? { image(name: "com/goto") }
+            struct Select {
+                public static var nor: UIImage? { image(name: "com/select/nor") }
+                public static var sel: UIImage? { image(name: "com/select/sel") }
+            }
+        }
     }
 }
 

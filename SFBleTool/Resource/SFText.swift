@@ -18,11 +18,15 @@ extension SFText {
     public struct Main {
         public static var bundle = Bundle.main
         private static func text(name: String) -> String {
-            NSLocalizedString(name, bundle: Self.bundle ?? .main, comment: name)
+            NSLocalizedString(name, bundle: Self.bundle, comment: name)
         }
         
-        public static var name: String { text(name: "name") }
-        public static var slogen: String { text(name: "slogen") }
+        public static var app_name: String { text(name: "app_name") }
+        public static var app_slogen: String { text(name: "app_slogen") }
+        public static var entrance_client_title: String { text(name: "entrance_client_title") }
+        public static var entrance_client_subtitle: String { text(name: "entrance_client_subtitle") }
+        public static var entrance_server_title: String { text(name: "entrance_server_title") }
+        public static var entrance_server_subtitle: String { text(name: "entrance_server_subtitle") }
     }
 }
 

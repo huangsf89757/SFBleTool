@@ -74,7 +74,8 @@ extension SceneDelegate {
 //        } else {
 //            rootSignIn()
 //        }
-        rootSignIn()
+//        rootSignIn()
+        rootEntrance()
     }
     
     private func rootSignIn() {

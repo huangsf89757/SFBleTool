@@ -1,7 +1,7 @@
 {
   "sourceLanguage" : "zh-Hans",
   "strings" : {
-    "name" : {
+    "app_name" : {
       "extractionState" : "manual",
       "localizations" : {
         "zh-Hans" : {
@@ -12,13 +12,57 @@
         }
       }
     },
-    "slogen" : {
+    "app_slogen" : {
       "extractionState" : "manual",
       "localizations" : {
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "蓝牙通信，畅享每一刻。"
+          }
+        }
+      }
+    },
+    "entrance_client_subtitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "手机作为中央设备来扫描和连接周围的蓝牙外设"
+          }
+        }
+      }
+    },
+    "entrance_client_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "中心模式"
+          }
+        }
+      }
+    },
+    "entrance_server_subtitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "手机作为外围设备广播数据"
+          }
+        }
+      }
+    },
+    "entrance_server_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "外设模式"
           }
         }
       }
