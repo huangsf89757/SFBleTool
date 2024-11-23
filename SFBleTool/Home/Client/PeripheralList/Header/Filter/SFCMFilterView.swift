@@ -56,21 +56,25 @@ class SFCMFilterView: SFPopView {
     override func draw(_ rect: CGRect) {
         self.sf.applyCornerAndShadow()
     }
-    override func show(in view: UIView? = nil, stay duration: TimeInterval? = nil, showAnimations: [CAAnimation] = [], dismissAnimations: [CAAnimation] = [], topLevel: Bool = true) {
-        let animDuration: TimeInterval = 0.24
-        let showAnimationOfTranslation = animationOfTranslation(from: .top, to: .zero, duration: animDuration)
-        let showAnimationOfOpacity = animationOfOpacity(from: 0, to: 1, duration: animDuration)
-        super.show(in: view, 
-                   stay: duration,
-                   showAnimations: [showAnimationOfTranslation, showAnimationOfOpacity],
-                   dismissAnimations: dismissAnimations,
-                   topLevel: topLevel)
+    override func show(in view: UIView? = nil,
+                       stay duration: TimeInterval? = nil,
+                       showAnimationsBlock: ((SFPopView) -> [CAAnimation])? = nil,
+                       dismissAnimationsBlock: ((SFPopView) -> [CAAnimation])? = nil,
+                       topLevel: Bool = true) {
+        super.show(in: view, stay: duration, showAnimationsBlock: {
+            popView in
+            let showAnimationOfTranslation = popView.animationOfTranslation(from: .top, to: .zero)
+            let showAnimationOfOpacity = popView.animationOfOpacity(from: 0, to: 1)
+            return [showAnimationOfTranslation, showAnimationOfOpacity]
+        }, dismissAnimationsBlock: dismissAnimationsBlock, topLevel: topLevel)
     }
-    override func dismiss(animations: [CAAnimation] = []) {
-        let animDuration: TimeInterval = 0.24
-        let dismissAnimationOfTranslation = animationOfTranslation(from: .zero, to: .top, duration: animDuration)
-        let dismissAnimationOfOpacity = animationOfOpacity(from: 1, to: 0, duration: animDuration)
-        super.dismiss(animations: [dismissAnimationOfTranslation, dismissAnimationOfOpacity])
+    override func dismiss(animationsBlock: ((SFPopView) -> [CAAnimation])? = nil) {
+        super.dismiss(animationsBlock: {
+            popView in
+            let translation = popView.animationOfTranslation(from: .zero, to: .top)
+            let opacity = popView.animationOfOpacity(from: 1, to: 0)
+            return [translation, opacity]
+        })
     }
     
     // MARK: ui
@@ -180,7 +184,6 @@ class SFCMFilterView: SFPopView {
         addSubview(sureBtn)
         
         titleLabel.snp.makeConstraints { make in
-            print("SFApp.safeAreaInsets().top=\(SFApp.safeAreaInsets().top)")
             make.top.equalToSuperview().offset(SFApp.safeAreaInsets().top + 20)
             make.leading.equalToSuperview().offset(10)
             make.trailing.equalToSuperview().offset(-10)
