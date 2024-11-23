@@ -1,5 +1,5 @@
 //
-//  SFCMFilterView.swift
+//  PeripheralListFilterView.swift
 //  SFBleTool
 //
 //  Created by hsf on 2024/8/7.
@@ -19,8 +19,8 @@ import WSTagsField
 import WARangeSlider
 
 
-// MARK: - SFCMFilterView
-class SFCMFilterView: SFPopView {
+// MARK: - PeripheralListFilterView
+class PeripheralListFilterView: SFPopView {
     // MARK: block
     var uuidTipBlock: (()->())?
     var rssiTipBlock: (()->())?
@@ -30,7 +30,7 @@ class SFCMFilterView: SFPopView {
     // MARK: var
     
     // MARK: data
-    var model: SFCMFilterModel? {
+    var model: PeripheralListFilterModel? {
         didSet {
             guard let model = model else { return }
             
@@ -86,7 +86,7 @@ class SFCMFilterView: SFPopView {
             view.text = SFText.Main.peripheral_list_filter_title
         }
     }()
-    private lazy var uuidTitleView: SFCMFilterView.TitleView = {
+    private lazy var uuidTitleView: PeripheralListFilterView.TitleView = {
         return TitleView().then { view in
             view.titleLabel.text = SFText.Main.peripheral_list_filter_uuid
             view.tipBlock = { [weak self] in
@@ -133,7 +133,7 @@ class SFCMFilterView: SFPopView {
             }
         }
     }()
-    private lazy var rssiTitleView: SFCMFilterView.TitleView = {
+    private lazy var rssiTitleView: PeripheralListFilterView.TitleView = {
         return TitleView().then { view in
             view.titleLabel.text = SFText.Main.peripheral_list_filter_rssi
             view.tipBlock = { [weak self] in
@@ -185,33 +185,33 @@ class SFCMFilterView: SFPopView {
         
         titleLabel.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(SFApp.safeAreaInsets().top + 20)
-            make.leading.equalToSuperview().offset(10)
-            make.trailing.equalToSuperview().offset(-10)
+            make.leading.equalToSuperview().offset(20)
+            make.trailing.equalToSuperview().offset(-20)
         }
         uuidTitleView.snp.makeConstraints { make in
             make.top.equalTo(titleLabel.snp.bottom).offset(10)
-            make.leading.equalToSuperview().offset(10)
-            make.trailing.equalToSuperview().offset(-10)
+            make.leading.equalToSuperview().offset(20)
+            make.trailing.equalToSuperview().offset(-20)
         }
         uuidTagsField.snp.makeConstraints { make in
             make.top.equalTo(uuidTitleView.snp.bottom).offset(0)
-            make.leading.equalToSuperview().offset(10)
-            make.trailing.equalToSuperview().offset(-10)
+            make.leading.equalToSuperview().offset(20)
+            make.trailing.equalToSuperview().offset(-20)
             make.height.equalTo(80)
         }
         rssiTitleView.snp.makeConstraints { make in
             make.top.equalTo(uuidTagsField.snp.bottom).offset(10)
-            make.leading.equalToSuperview().offset(10)
-            make.trailing.equalToSuperview().offset(-10)
+            make.leading.equalToSuperview().offset(20)
+            make.trailing.equalToSuperview().offset(-20)
         }
         rssiRangeView.snp.makeConstraints { make in
-            make.top.equalTo(rssiTitleView.snp.bottom).offset(0)
-            make.leading.equalToSuperview().offset(10)
-            make.trailing.equalToSuperview().offset(-10)
+            make.top.equalTo(rssiTitleView.snp.bottom).offset(10)
+            make.leading.equalToSuperview().offset(20)
+            make.trailing.equalToSuperview().offset(-20)
             make.height.equalTo(30)
         }
         resetBtn.snp.makeConstraints { make in
-            make.top.equalTo(rssiRangeView.snp.bottom).offset(20)
+            make.top.equalTo(rssiRangeView.snp.bottom).offset(40)
             make.leading.equalToSuperview().offset(20)
             make.bottom.equalToSuperview().offset(-20)
             make.height.equalTo(44)
@@ -229,7 +229,7 @@ class SFCMFilterView: SFPopView {
 
 
 // MARK: - action
-extension SFCMFilterView {
+extension PeripheralListFilterView {
     @objc private func rssiRangeValueChanged(_ sender: RangeSlider) {
         
     }
@@ -247,7 +247,7 @@ extension SFCMFilterView {
 
 
 // MARK: - TitleView
-extension SFCMFilterView {
+extension PeripheralListFilterView {
     class TitleView: SFView {
         // MARK: block
         fileprivate var tipBlock: (()->())?       

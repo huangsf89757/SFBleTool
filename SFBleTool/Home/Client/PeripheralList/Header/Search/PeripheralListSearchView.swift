@@ -1,5 +1,5 @@
 //
-//  SFCMSearchView.swift
+//  PeripheralListSearchView.swift
 //  SFBleTool
 //
 //  Created by hsf on 2024/8/7.
@@ -16,13 +16,13 @@ import SFUI
 import SFLogger
 
 
-// MARK: - SFCMSearchView
-class SFCMSearchView: SFView {
+// MARK: - PeripheralListSearchView
+class PeripheralListSearchView: SFView {
     // MARK: block
-    var searchDidChangedBlock: ((SFCMSearchModel?)->())?
+    var searchDidChangedBlock: ((PeripheralListSearchModel?)->())?
     
     // MARK: data
-    var model: SFCMSearchModel? {
+    var model: PeripheralListSearchModel? {
         didSet {
             textField.text = model?.keyword
         }
@@ -78,7 +78,7 @@ class SFCMSearchView: SFView {
 }
 
 // MARK: - action
-extension SFCMSearchView {
+extension PeripheralListSearchView {
     @objc private func textFieldDidChange(_ textField: UITextField) {
         model?.keyword = textField.text
         searchDidChangedBlock?(model)
@@ -86,7 +86,7 @@ extension SFCMSearchView {
 }
 
 // MARK: - UITextFieldDelegate
-extension SFCMSearchView: UITextFieldDelegate {
+extension PeripheralListSearchView: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         return true
     }

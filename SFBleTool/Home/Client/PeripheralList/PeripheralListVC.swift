@@ -28,7 +28,7 @@ class PeripheralListVC: HomeVC {
     private var isBarShowing = true
    
     // MARK: data
-    var headerModel = SFCMHeaderModel() {
+    var headerModel = PeripheralListHeaderModel() {
         didSet {
             headerView.model = headerModel
         }
@@ -60,8 +60,8 @@ class PeripheralListVC: HomeVC {
             view.addTarget(self, action: #selector(settingBtnClicked), for: .touchUpInside)
         }
     }()
-    private lazy var headerView: SFCMHeaderView = {
-        return SFCMHeaderView().then { view in
+    private lazy var headerView: PeripheralListHeader = {
+        return PeripheralListHeader().then { view in
             view.searchDidChangedBlock = {
                 [weak self] searchModel in
                 self?.reloadList()

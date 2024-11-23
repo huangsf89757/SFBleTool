@@ -1,5 +1,5 @@
 //
-//  SFCMHeaderView.swift
+//  PeripheralListHeader.swift
 //  SFBleTool
 //
 //  Created by hsf on 2024/8/7.
@@ -16,15 +16,15 @@ import SFUI
 import SFLogger
 
 
-// MARK: - SFCMHeaderView
-class SFCMHeaderView: SFView {
+// MARK: - PeripheralListHeader
+class PeripheralListHeader: SFView {
     // MARK: block
-    var searchDidChangedBlock: ((SFCMSearchModel?)->())? {
+    var searchDidChangedBlock: ((PeripheralListSearchModel?)->())? {
         didSet {
             searchView.searchDidChangedBlock = searchDidChangedBlock
         }
     }
-    var sortDidChangedBlock: ((SFCMSortModel?) -> ())? {
+    var sortDidChangedBlock: ((PeripheralListSortModel?) -> ())? {
         didSet {
             sortView.sortDidChangedBlock = sortDidChangedBlock
         }
@@ -34,7 +34,7 @@ class SFCMHeaderView: SFView {
     
     
     // MARK: data
-    var model: SFCMHeaderModel? {
+    var model: PeripheralListHeaderModel? {
         didSet {
             searchView.model = model?.search
             sortView.model = model?.sort
@@ -50,8 +50,8 @@ class SFCMHeaderView: SFView {
     }
     
     // MARK: ui
-    private lazy var searchView: SFCMSearchView = {
-        return SFCMSearchView()
+    private lazy var searchView: PeripheralListSearchView = {
+        return PeripheralListSearchView()
     }()
     private lazy var filterBtn: SFButton = {
         return SFButton().then { view in
@@ -59,11 +59,11 @@ class SFCMHeaderView: SFView {
             view.addTarget(self, action: #selector(filterBtnClicked), for: .touchUpInside)
         }
     }()
-    private lazy var filterView: SFCMFilterView = {
-        return SFCMFilterView()
+    private lazy var filterView: PeripheralListFilterView = {
+        return PeripheralListFilterView()
     }()
-    private lazy var sortView: SFCMSortView = {
-        return SFCMSortView()
+    private lazy var sortView: PeripheralListSortView = {
+        return PeripheralListSortView()
     }()
     private lazy var separatorView: SFView = {
         return SFView().then { view in
@@ -101,7 +101,7 @@ class SFCMHeaderView: SFView {
 }
 
 // MARK: - click
-extension SFCMHeaderView {
+extension PeripheralListHeader {
     @objc private func filterBtnClicked() {
         filterView.show()
     }

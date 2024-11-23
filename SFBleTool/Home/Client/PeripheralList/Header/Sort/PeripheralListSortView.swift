@@ -1,5 +1,5 @@
 //
-//  SFCMSortView.swift
+//  PeripheralListSortView.swift
 //  SFBleTool
 //
 //  Created by hsf on 2024/8/7.
@@ -16,16 +16,16 @@ import SFUI
 import SFLogger
 
 
-// MARK: - SFCMSortView
-class SFCMSortView: SFView {
+// MARK: - PeripheralListSortView
+class PeripheralListSortView: SFView {
     // MARK: block
-    var sortDidChangedBlock: ((SFCMSortModel?) -> ())?
+    var sortDidChangedBlock: ((PeripheralListSortModel?) -> ())?
     
     // MARK: var
    
     
     // MARK: data
-    var model: SFCMSortModel? {
+    var model: PeripheralListSortModel? {
         didSet {
             guard let model = model else { return }
             updateSort(medthod: model.medthod)
@@ -85,7 +85,7 @@ class SFCMSortView: SFView {
     }
 }
 
-extension SFCMSortView {
+extension PeripheralListSortView {
     @objc private func nameBtnClicked() {
         updateSort(medthod: .name)
         sortDidChangedBlock?(model)
@@ -96,7 +96,7 @@ extension SFCMSortView {
         sortDidChangedBlock?(model)
     }
     
-    private func updateSort(medthod: SFCMSortModel.Medthod) {
+    private func updateSort(medthod: PeripheralListSortModel.Medthod) {
         guard let model = model else { return }
         if model.medthod != medthod {
             model.sort = .none
@@ -106,23 +106,23 @@ extension SFCMSortView {
         
         switch model.medthod {
         case .none:
-            nameBtn.setImage(SFCMSortModel.Sort.none.image, for: .normal)
-            nameBtn.setTitleColor(SFCMSortModel.Sort.none.color, for: .normal)
-            nameBtn.titleLabel?.font = SFCMSortModel.Sort.none.font
-            rssiBtn.setImage(SFCMSortModel.Sort.none.image, for: .normal)
-            rssiBtn.setTitleColor(SFCMSortModel.Sort.none.color, for: .normal)
-            rssiBtn.titleLabel?.font = SFCMSortModel.Sort.none.font
+            nameBtn.setImage(PeripheralListSortModel.Sort.none.image, for: .normal)
+            nameBtn.setTitleColor(PeripheralListSortModel.Sort.none.color, for: .normal)
+            nameBtn.titleLabel?.font = PeripheralListSortModel.Sort.none.font
+            rssiBtn.setImage(PeripheralListSortModel.Sort.none.image, for: .normal)
+            rssiBtn.setTitleColor(PeripheralListSortModel.Sort.none.color, for: .normal)
+            rssiBtn.titleLabel?.font = PeripheralListSortModel.Sort.none.font
         case .name:
             nameBtn.setImage(model.sort.image, for: .normal)
             nameBtn.setTitleColor(model.sort.color, for: .normal)
             nameBtn.titleLabel?.font = model.sort.font
-            rssiBtn.setImage(SFCMSortModel.Sort.none.image, for: .normal)
-            rssiBtn.setTitleColor(SFCMSortModel.Sort.none.color, for: .normal)
-            rssiBtn.titleLabel?.font = SFCMSortModel.Sort.none.font
+            rssiBtn.setImage(PeripheralListSortModel.Sort.none.image, for: .normal)
+            rssiBtn.setTitleColor(PeripheralListSortModel.Sort.none.color, for: .normal)
+            rssiBtn.titleLabel?.font = PeripheralListSortModel.Sort.none.font
         case .rssi:
-            nameBtn.setImage(SFCMSortModel.Sort.none.image, for: .normal)
-            nameBtn.setTitleColor(SFCMSortModel.Sort.none.color, for: .normal)
-            nameBtn.titleLabel?.font = SFCMSortModel.Sort.none.font
+            nameBtn.setImage(PeripheralListSortModel.Sort.none.image, for: .normal)
+            nameBtn.setTitleColor(PeripheralListSortModel.Sort.none.color, for: .normal)
+            nameBtn.titleLabel?.font = PeripheralListSortModel.Sort.none.font
             rssiBtn.setImage(model.sort.image, for: .normal)
             rssiBtn.setTitleColor(model.sort.color, for: .normal)
             rssiBtn.titleLabel?.font = model.sort.font
@@ -130,6 +130,6 @@ extension SFCMSortView {
     }
 }
 
-extension SFCMSortView {
+extension PeripheralListSortView {
    
 }

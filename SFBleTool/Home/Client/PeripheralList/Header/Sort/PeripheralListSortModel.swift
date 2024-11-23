@@ -1,5 +1,5 @@
 //
-//  SFCMSortModel.swift
+//  PeripheralListSortModel.swift
 //  SFBleTool
 //
 //  Created by hsf on 2024/8/20.
@@ -13,7 +13,7 @@ import SFBase
 // UI
 import SFUI
 
-class SFCMSortModel {
+class PeripheralListSortModel {
     // MARK: Type
     enum Medthod {
         case none
