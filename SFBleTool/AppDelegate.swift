@@ -6,6 +6,9 @@
 //
 
 import UIKit
+// Basic
+import SFExtension
+import SFBase
 // UI
 import SFUI
 // Server
@@ -22,9 +25,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         // Resource
-        SFImage.App.icon = UIImage(named: "AppIcon")
-        SFText.App.name = "BleTool"
-        SFText.App.slogen = "蓝牙通信，畅享每一刻。"
+        SFImage.App.icon = SFImage.Main.icon
+        SFImage.App.logo = SFImage.Main.icon
+        SFText.App.name = SFText.Main.name
+        SFText.App.slogen = SFText.Main.slogen
         
         // 日志
         SFLogger.config()

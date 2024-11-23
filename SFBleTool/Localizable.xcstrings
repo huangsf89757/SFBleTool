@@ -1,0 +1,28 @@
+{
+  "sourceLanguage" : "zh-Hans",
+  "strings" : {
+    "name" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "BleTool"
+          }
+        }
+      }
+    },
+    "slogen" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "蓝牙通信，畅享每一刻。"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}
