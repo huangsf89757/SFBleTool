@@ -20,11 +20,16 @@
   },
   "swift_versions": "5.0",
   "source_files": "SFBusiness/Classes/**/*",
+  "resource_bundles": {
+    "SFBusiness": [
+      "SFBusiness/Assets/**/*"
+    ]
+  },
   "dependencies": {
-    "SFBase": [
+    "SFExtension": [
       "~> 0.1.0"
     ],
-    "SFExtension": [
+    "SFBase": [
       "~> 0.1.0"
     ],
     "SFUI": [

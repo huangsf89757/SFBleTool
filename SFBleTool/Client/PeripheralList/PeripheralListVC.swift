@@ -9,8 +9,8 @@ import Foundation
 import UIKit
 import CoreBluetooth
 // Basic
-import SFBase
 import SFExtension
+import SFBase
 // UI
 import SFUI
 // Server

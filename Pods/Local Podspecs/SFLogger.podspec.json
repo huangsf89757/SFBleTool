@@ -21,6 +21,9 @@
   "swift_versions": "5.0",
   "source_files": "SFLogger/Classes/**/*",
   "dependencies": {
+    "SFExtension": [
+      "~> 0.1.0"
+    ],
     "SwiftyBeaver": [
 
     ]

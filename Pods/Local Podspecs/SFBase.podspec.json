@@ -21,6 +21,9 @@
   "swift_versions": "5.0",
   "source_files": "SFBase/Classes/**/*",
   "dependencies": {
+    "SFExtension": [
+      "~> 0.1.0"
+    ],
     "Then": [
       "~> 3.0.0"
     ]

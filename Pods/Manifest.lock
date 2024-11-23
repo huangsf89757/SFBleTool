@@ -6,8 +6,10 @@ PODS:
   - Reusable/Storyboard (4.1.2)
   - Reusable/View (4.1.2)
   - SFBase (0.1.0):
+    - SFExtension (~> 0.1.0)
     - Then (~> 3.0.0)
   - SFBluetooth (0.1.0):
+    - SFBase (~> 0.1.0)
     - SFExtension (~> 0.1.0)
     - SFLogger (~> 0.1.0)
   - SFBusiness (0.1.0):
@@ -17,6 +19,7 @@ PODS:
     - SFUI (~> 0.1.0)
   - SFExtension (0.1.0)
   - SFLogger (0.1.0):
+    - SFExtension (~> 0.1.0)
     - SwiftyBeaver
   - SFUI (0.1.0):
     - IQKeyboardManagerSwift (~> 6.5.16)
@@ -84,13 +87,13 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   IQKeyboardManagerSwift: 12d89768845bb77b55cc092ecc2b1f9370f06b76
   Reusable: 6bae6a5e8aa793c9c441db0213c863a64bce9136
-  SFBase: e6ef6e68cee897189e335d6dfdca3415871b14b1
-  SFBluetooth: 971c75ed159c7ebe66f93cd6232315edc326f7b5
-  SFBusiness: 52d8e7acf3e422c2745b7f56af50149544bf437f
+  SFBase: 74ba9db6aad5b3f5471abcdfbc23a674efcafd4f
+  SFBluetooth: 03c30507c919f3eec02109344afd3ead6033f711
+  SFBusiness: dfc2961e6fab594e1fb3681a1668be99a641f34f
   SFExtension: db5d207c8b9cb15d09d28858aec071d51050f3c5
-  SFLogger: 32dc52852844a0ac9243948c00d64e02cc5a680a
-  SFUI: 9b84518709b64a65be8289aba32d43ca48015229
-  SFUser: 80a608a356389a13808f9b56cee37e6ea84505cd
+  SFLogger: addda8edacef3ea943515daec2287f8347a48247
+  SFUI: 7363213be4101e2a8a0c4cec8f1bea67ba5b81c2
+  SFUser: 7079302000eb5c36b03ce7dad67d41b565b994d4
   SideMenu: f583187d21c5b1dd04c72002be544b555a2627a2
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
   SnapKitExtend: aa30cf37196195fae9c4354686cc7710184ebfcc

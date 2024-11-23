@@ -28,10 +28,10 @@
     "SFUI": [
       "~> 0.1.0"
     ],
-    "SFBase": [
+    "SFExtension": [
       "~> 0.1.0"
     ],
-    "SFExtension": [
+    "SFBase": [
       "~> 0.1.0"
     ],
     "SFBusiness": [
