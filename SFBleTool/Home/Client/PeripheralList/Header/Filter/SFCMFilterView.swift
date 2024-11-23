@@ -41,7 +41,7 @@ class SFCMFilterView: SFPopView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = .clear
-        self.sf.setCornerAndShadow(radius: 20, fillColor: SFColor.UI.background, shadowColor: SFColor.UI.black, shadowOpacity: 0.3, shadowOffset: CGSize(width: 0, height: 20), shadowRadius: 5)
+        self.sf.setCornerAndShadow(radius: 20, fillColor: SFColor.UI.content, shadowColor: SFColor.UI.black, shadowOpacity: 0.2, shadowOffset: CGSize(width: 0, height: 20), shadowRadius: 5)
         customUIOfFilterView()
     }
     
@@ -76,15 +76,15 @@ class SFCMFilterView: SFPopView {
     // MARK: ui
     private lazy var titleLabel: SFLabel = {
         return SFLabel().then { view in
-            view.font = .systemFont(ofSize: 18, weight: .bold)
+            view.font = .systemFont(ofSize: 20, weight: .bold)
             view.textColor = SFColor.UI.title
             view.textAlignment = .center
-//            view.text = R.string.localizable.central_filter_title()
+            view.text = SFText.Main.peripheral_list_filter_title
         }
     }()
     private lazy var uuidTitleView: SFCMFilterView.TitleView = {
         return TitleView().then { view in
-//            view.titleLabel.text = R.string.localizable.central_filter_uuid()
+            view.titleLabel.text = SFText.Main.peripheral_list_filter_uuid
             view.tipBlock = { [weak self] in
                 self?.uuidTipBlock?()
             }
@@ -102,7 +102,7 @@ class SFCMFilterView: SFPopView {
             view.textColor = SFColor.UI.title
             view.selectedColor = SFColor.UI.theme
             view.selectedTextColor = SFColor.UI.white
-//            view.placeholder = R.string.localizable.central_filter_uuid_ph()
+            view.placeholder = SFText.Main.peripheral_list_filter_uuid_hint
             view.placeholderColor = SFColor.UI.placeholder
             view.placeholderAlwaysVisible = true
             view.textField.returnKeyType = .next
@@ -131,7 +131,7 @@ class SFCMFilterView: SFPopView {
     }()
     private lazy var rssiTitleView: SFCMFilterView.TitleView = {
         return TitleView().then { view in
-//            view.titleLabel.text = R.string.localizable.central_filter_RSSI()
+            view.titleLabel.text = SFText.Main.peripheral_list_filter_rssi
             view.tipBlock = { [weak self] in
                 self?.rssiTipBlock?()
             }
@@ -157,7 +157,7 @@ class SFCMFilterView: SFPopView {
             view.backgroundColor = SFColor.UI.auxiliary
             view.setTitleColor(SFColor.UI.whiteAlways, for: .normal)
             view.layer.cornerRadius = 10
-//            view.setTitle(R.string.localizable.central_filter_reset(), for: .normal)
+            view.setTitle(SFText.Main.peripheral_list_filter_reset, for: .normal)
             view.addTarget(self, action: #selector(resetBtnClicked), for: .touchUpInside)
         }
     }()
@@ -166,7 +166,7 @@ class SFCMFilterView: SFPopView {
             view.backgroundColor = SFColor.UI.theme
             view.setTitleColor(SFColor.UI.whiteAlways, for: .normal)
             view.layer.cornerRadius = 10
-//            view.setTitle(R.string.localizable.central_filter_sure(), for: .normal)
+            view.setTitle(SFText.Main.peripheral_list_filter_sure, for: .normal)
             view.addTarget(self, action: #selector(sureBtnClicked), for: .touchUpInside)
         }
     }()
@@ -180,6 +180,7 @@ class SFCMFilterView: SFPopView {
         addSubview(sureBtn)
         
         titleLabel.snp.makeConstraints { make in
+            print("SFApp.safeAreaInsets().top=\(SFApp.safeAreaInsets().top)")
             make.top.equalToSuperview().offset(SFApp.safeAreaInsets().top + 20)
             make.leading.equalToSuperview().offset(10)
             make.trailing.equalToSuperview().offset(-10)

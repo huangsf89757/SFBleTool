@@ -43,14 +43,14 @@ class SFCMSortView: SFView {
     private lazy var nameBtn: SFButton = {
         return SFButton().then { view in
             view.style = .right(5)
-            view.setTitle(SFText.Main.client_list_sort_name, for: .normal)
+            view.setTitle(SFText.Main.peripheral_list_sort_name, for: .normal)
             view.addTarget(self, action: #selector(nameBtnClicked), for: .touchUpInside)
         }
     }()
     private lazy var rssiBtn: SFButton = {
         return SFButton().then { view in
             view.style = .right(5)
-            view.setTitle(SFText.Main.client_list_sort_rssi, for: .normal)
+            view.setTitle(SFText.Main.peripheral_list_sort_rssi, for: .normal)
             view.addTarget(self, action: #selector(rssiBtnClicked), for: .touchUpInside)
         }
     }()

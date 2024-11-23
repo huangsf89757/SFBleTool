@@ -53,7 +53,7 @@ class SFCMSearchView: SFView {
             view.tintColor = SFColor.UI.theme
             view.textColor = SFColor.UI.title
             view.placeholderColor = SFColor.UI.placeholder
-            view.placeholder = SFText.Main.client_list_search_hint
+            view.placeholder = SFText.Main.peripheral_list_search_hint
             view.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
             view.delegate = self
         }

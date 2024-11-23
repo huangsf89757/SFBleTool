@@ -55,7 +55,7 @@ class SFCMHeaderView: SFView {
     }()
     private lazy var filterBtn: SFButton = {
         return SFButton().then { view in
-//            view.setImage(R.image.com.filter(), for: .normal)
+            view.setImage(SFImage.UI.Com.filter, for: .normal)
             view.addTarget(self, action: #selector(filterBtnClicked), for: .touchUpInside)
         }
     }()

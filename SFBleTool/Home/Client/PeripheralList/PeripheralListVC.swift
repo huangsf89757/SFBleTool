@@ -41,6 +41,7 @@ class PeripheralListVC: HomeVC {
     // MARK: life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.title = SFText.Main.peripheral_list
         customUI()
         configCentralManager()
         headerView.model = headerModel
@@ -82,13 +83,13 @@ class PeripheralListVC: HomeVC {
     }()
     private lazy var scanBtn: SFButton = {
         return SFButton().then { view in
-            view.sf.setCornerAndShadow(radius: 10, fillColor: SFColor.UI.background, shadowColor: SFColor.UI.black, shadowOpacity: 0.3, shadowOffset: CGSize(width: 0, height: 5), shadowRadius: 5)
+            view.sf.setCornerAndShadow(radius: 10, fillColor: SFColor.UI.content, shadowColor: SFColor.UI.black, shadowOpacity: 0.3, shadowOffset: CGSize(width: 0, height: 5), shadowRadius: 5)
             view.style = .right(10)
             view.titleLabel?.font = .systemFont(ofSize: 17, weight: .medium)
-//            view.setImage(R.image.ble.scan.nor(), for: .normal)
-//            view.setImage(R.image.ble.scan.sel(), for: .selected)
-//            view.setTitle(R.string.localizable.central_ble_scan_paused(), for: .normal)
-//            view.setTitle(R.string.localizable.central_ble_scan_doing(), for: .selected)
+            view.setImage(SFImage.Main.Ble.Scan.nor, for: .normal)
+            view.setImage(SFImage.Main.Ble.Scan.sel, for: .selected)
+            view.setTitle(SFText.Main.peripheral_list_scan_paused, for: .normal)
+            view.setTitle(SFText.Main.peripheral_list_scan_doing, for: .selected)
             view.setTitleColor(SFColor.UI.title, for: .normal)
             view.setTitleColor(SFColor.UI.theme, for: .selected)
             view.addTarget(self, action: #selector(scanBtnClicked), for: .touchUpInside)

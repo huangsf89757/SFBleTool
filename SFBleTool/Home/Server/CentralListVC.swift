@@ -23,6 +23,6 @@ class CentralListVC: HomeVC {
     // MARK: life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "外设模式"
+        navigationItem.title = SFText.Main.central_list
     }
 }

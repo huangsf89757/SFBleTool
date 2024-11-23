@@ -28,15 +28,27 @@ extension SFText {
         public static var entrance_server_title: String { text(name: "entrance_server_title") }
         public static var entrance_server_subtitle: String { text(name: "entrance_server_subtitle") }
         
+        public static var central_list: String { text(name: "central_list") }
+        public static var peripheral_list: String { text(name: "peripheral_list") }
+        
         public static var userCenter_title_opt: String { text(name: "userCenter_title_opt") }
         
         public static var userCenter_item_opt_initial: String { text(name: "userCenter_item_opt_initial") }
         public static var userCenter_item_opt_scan: String { text(name: "userCenter_item_opt_scan") }
         public static var userCenter_item_opt_connect: String { text(name: "userCenter_item_opt_connect") }
         
-        public static var client_list_search_hint: String { text(name: "client_list_search_hint") }
-        public static var client_list_sort_name: String { text(name: "client_list_sort_name") }
-        public static var client_list_sort_rssi: String { text(name: "client_list_sort_rssi") }
+        public static var peripheral_list_search_hint: String { text(name: "peripheral_list_search_hint") }
+        public static var peripheral_list_sort_name: String { text(name: "peripheral_list_sort_name") }
+        public static var peripheral_list_sort_rssi: String { text(name: "peripheral_list_sort_rssi") }
+        public static var peripheral_list_filter_title: String { text(name: "peripheral_list_filter_title") }
+        public static var peripheral_list_filter_uuid: String { text(name: "peripheral_list_filter_uuid") }
+        public static var peripheral_list_filter_uuid_hint: String { text(name: "peripheral_list_filter_uuid_hint") }
+        public static var peripheral_list_filter_rssi: String { text(name: "peripheral_list_filter_rssi") }
+        public static var peripheral_list_filter_reset: String { text(name: "peripheral_list_filter_reset") }
+        public static var peripheral_list_filter_sure: String { text(name: "peripheral_list_filter_sure") }
+        
+        public static var peripheral_list_scan_paused: String { text(name: "peripheral_list_scan_paused") }
+        public static var peripheral_list_scan_doing: String { text(name: "peripheral_list_scan_doing") }
     }
 }
 

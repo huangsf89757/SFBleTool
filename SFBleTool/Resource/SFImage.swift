@@ -41,6 +41,13 @@ extension SFImage {
                 }
             }
         }
+        
+        public struct Ble {
+            struct Scan {
+                public static var nor: UIImage? { image(name: "ble/scan/nor") }
+                public static var sel: UIImage? { image(name: "ble/scan/sel") }
+            }
+        }
     }
 }
 
