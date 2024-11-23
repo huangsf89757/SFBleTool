@@ -48,6 +48,7 @@ class UserCenterVC: SFViewController {
     }()
     private lazy var tableView: SFTableView = {
         return SFTableView(frame: .zero, style: .grouped).then { view in
+            view.backgroundColor = SFColor.UI.content
             view.delegate = self
             view.dataSource = self
             view.register(cellType: UserCenterCell.self)
@@ -59,6 +60,7 @@ class UserCenterVC: SFViewController {
     
     
     private func customUI() {
+        view.backgroundColor = SFColor.UI.content
         view.addSubview(headerView)
         view.addSubview(tableView)
         view.addSubview(copyrightView)

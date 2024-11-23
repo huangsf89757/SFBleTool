@@ -31,7 +31,7 @@ class SFCMSearchView: SFView {
     // MARK: life cycle
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = SFColor.UI.background
+        backgroundColor = SFColor.UI.content
         customUI()
     }
     
@@ -45,7 +45,7 @@ class SFCMSearchView: SFView {
     private lazy var searchImgView: SFImageView = {
         return SFImageView().then { view in
             view.contentMode = .scaleAspectFit
-//            view.image = R.image.com.search() // FIXME
+            view.image = SFImage.UI.Com.search
         }
     }()
     private lazy var textField: SFTextField = {
@@ -53,7 +53,7 @@ class SFCMSearchView: SFView {
             view.tintColor = SFColor.UI.theme
             view.textColor = SFColor.UI.title
             view.placeholderColor = SFColor.UI.placeholder
-//            view.placeholder = R.string.localizable.central_search_ph() // FIXME
+            view.placeholder = SFText.Main.client_list_search_hint
             view.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
             view.delegate = self
         }

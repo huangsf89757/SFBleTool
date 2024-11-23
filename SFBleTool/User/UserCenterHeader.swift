@@ -67,6 +67,7 @@ class UserCenterHeader: SFView {
     }()
     
     private func customUI() {
+        backgroundColor = SFColor.UI.content
         addSubview(bgImgView)
         addSubview(avatarImgView)
         addSubview(nameLabel)

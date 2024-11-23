@@ -33,6 +33,10 @@ extension SFText {
         public static var userCenter_item_opt_initial: String { text(name: "userCenter_item_opt_initial") }
         public static var userCenter_item_opt_scan: String { text(name: "userCenter_item_opt_scan") }
         public static var userCenter_item_opt_connect: String { text(name: "userCenter_item_opt_connect") }
+        
+        public static var client_list_search_hint: String { text(name: "client_list_search_hint") }
+        public static var client_list_sort_name: String { text(name: "client_list_sort_name") }
+        public static var client_list_sort_rssi: String { text(name: "client_list_sort_rssi") }
     }
 }
 

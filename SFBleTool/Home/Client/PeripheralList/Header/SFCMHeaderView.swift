@@ -45,7 +45,7 @@ class SFCMHeaderView: SFView {
     // MARK: life cycle
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = SFColor.UI.background
+        backgroundColor = SFColor.UI.content
         customUI()
     }
     

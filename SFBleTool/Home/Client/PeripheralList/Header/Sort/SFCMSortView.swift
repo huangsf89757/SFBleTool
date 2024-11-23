@@ -35,7 +35,7 @@ class SFCMSortView: SFView {
     // MARK: life cycle
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = SFColor.UI.background
+        backgroundColor = SFColor.UI.content
         customUI()
     }
     
@@ -43,14 +43,14 @@ class SFCMSortView: SFView {
     private lazy var nameBtn: SFButton = {
         return SFButton().then { view in
             view.style = .right(5)
-//            view.setTitle(R.string.localizable.central_sort_name(), for: .normal)
+            view.setTitle(SFText.Main.client_list_sort_name, for: .normal)
             view.addTarget(self, action: #selector(nameBtnClicked), for: .touchUpInside)
         }
     }()
     private lazy var rssiBtn: SFButton = {
         return SFButton().then { view in
             view.style = .right(5)
-//            view.setTitle(R.string.localizable.central_sort_RSSI(), for: .normal)
+            view.setTitle(SFText.Main.client_list_sort_rssi, for: .normal)
             view.addTarget(self, action: #selector(rssiBtnClicked), for: .touchUpInside)
         }
     }()
