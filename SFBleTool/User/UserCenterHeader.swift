@@ -39,6 +39,7 @@ class UserCenterHeader: SFView {
     private lazy var avatarImgView: SFImageView = {
         return SFImageView().then { view in
             view.contentMode = .scaleAspectFit
+            view.image = SFImage.User.user
             view.layer.cornerRadius = 40
             view.layer.masksToBounds = true
             view.backgroundColor = SFColor.UI.content

@@ -21,7 +21,7 @@ import SideMenu
 
 
 // MARK: - PeripheralListVC
-class PeripheralListVC: SFViewController {
+class PeripheralListVC: HomeVC {
     
     // MARK: var
     /// 顶部/底部 Bar 是否显示
@@ -41,7 +41,6 @@ class PeripheralListVC: SFViewController {
     // MARK: life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        configNav()
         customUI()
         configCentralManager()
         headerView.model = headerModel
@@ -53,17 +52,10 @@ class PeripheralListVC: SFViewController {
     
     
     // MARK: ui
-    private lazy var userBtn: SFButton = {
-        return SFButton().then { view in
-            view.frame = CGRect(origin: .zero, size: CGSize(width: 40, height: 40))
-//            view.setImage(R.image.user.user(), for: .normal)
-            view.addTarget(self, action: #selector(userBtnClicked), for: .touchUpInside)
-        }
-    }()
     private lazy var settingBtn: SFButton = {
         return SFButton().then { view in
             view.frame = CGRect(origin: .zero, size: CGSize(width: 40, height: 40))
-//            view.setImage(R.image.com.setting(), for: .normal)
+            view.setImage(SFImage.UI.Com.setting, for: .normal)
             view.addTarget(self, action: #selector(settingBtnClicked), for: .touchUpInside)
         }
     }()
@@ -140,26 +132,12 @@ class PeripheralListVC: SFViewController {
 
 // MARK: - func
 extension PeripheralListVC {
-    private func configNav() {
-//        navigationItem.title = R.string.localizable.entrance_opt_central_title()
-        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: userBtn)
-        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: settingBtn)
-//        SideMenuManager.default.addPanGestureToPresent(toView: self.navigationController!.navigationBar)
-//        SideMenuManager.default.addScreenEdgePanGesturesToPresent(toView: self.navigationController!.view)
-    }
+
 }
 
 // MARK: - action
 extension PeripheralListVC {
-    /// 点击用户
-    @objc private func userBtnClicked() {
-//        let vc = SFUserCenterVC()
-//        let nav = SideMenuNavigationController(rootViewController: vc)
-//        nav.leftSide = true
-//        nav.menuWidth = SFApp.screenWidthPortrait() * 0.8
-//        present(nav, animated: true, completion: nil)
-    }
-    
+
     /// 点击设置
     @objc private func settingBtnClicked() {
 //        let vc = SFUserCentralDetailVC()

@@ -22,6 +22,8 @@
 		51DF13A72CF1CF1400838578 /* SFFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DF13A32CF1CF1400838578 /* SFFont.swift */; };
 		51DF13A82CF1CF1400838578 /* SFText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DF13A42CF1CF1400838578 /* SFText.swift */; };
 		51DF13A92CF1CF1400838578 /* SFImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DF13A52CF1CF1400838578 /* SFImage.swift */; };
+		51DF13B12CF207DE00838578 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DF13B02CF207DE00838578 /* HomeVC.swift */; };
+		51DF13B32CF20CAF00838578 /* Root.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DF13B22CF20CAF00838578 /* Root.swift */; };
 		51F77F3C2CF0A98400B44CAB /* PeripheralScanningOptionListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F77F3B2CF0A98400B44CAB /* PeripheralScanningOptionListVC.swift */; };
 		51F77F3E2CF0A9AB00B44CAB /* PeripheralScanningOptionDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F77F3D2CF0A9AB00B44CAB /* PeripheralScanningOptionDetailVC.swift */; };
 		51F77F402CF0A9D600B44CAB /* PeripheralScanningOptionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F77F3F2CF0A9D600B44CAB /* PeripheralScanningOptionModel.swift */; };
@@ -71,7 +73,7 @@
 		DDF08C032C85BC5900FB4B48 /* UserCenterHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF08C022C85BC5900FB4B48 /* UserCenterHeader.swift */; };
 		DDFA63E72C6339B8002E93F3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDA648A22C619F5100F01858 /* Main.storyboard */; };
 		DDFA63EA2C6339BE002E93F3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDA648A72C619F5200F01858 /* LaunchScreen.storyboard */; };
-		DDFA63F32C635306002E93F3 /* SFUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFA63F22C635306002E93F3 /* SFUserDefaults.swift */; };
+		DDFA63F32C635306002E93F3 /* UserDefaultKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFA63F22C635306002E93F3 /* UserDefaultKey.swift */; };
 		DDFA63F72C636688002E93F3 /* SFCMHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFA63F62C636688002E93F3 /* SFCMHeaderView.swift */; };
 		DDFA63F92C6367F2002E93F3 /* SFCMSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFA63F82C6367F2002E93F3 /* SFCMSearchView.swift */; };
 		DDFA63FB2C636804002E93F3 /* SFCMSortView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFA63FA2C636804002E93F3 /* SFCMSortView.swift */; };
@@ -113,6 +115,8 @@
 		51DF13A32CF1CF1400838578 /* SFFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFFont.swift; sourceTree = "<group>"; };
 		51DF13A42CF1CF1400838578 /* SFText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFText.swift; sourceTree = "<group>"; };
 		51DF13A52CF1CF1400838578 /* SFImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFImage.swift; sourceTree = "<group>"; };
+		51DF13B02CF207DE00838578 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		51DF13B22CF20CAF00838578 /* Root.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Root.swift; sourceTree = "<group>"; };
 		51F77F3B2CF0A98400B44CAB /* PeripheralScanningOptionListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeripheralScanningOptionListVC.swift; sourceTree = "<group>"; };
 		51F77F3D2CF0A9AB00B44CAB /* PeripheralScanningOptionDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeripheralScanningOptionDetailVC.swift; sourceTree = "<group>"; };
 		51F77F3F2CF0A9D600B44CAB /* PeripheralScanningOptionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeripheralScanningOptionModel.swift; sourceTree = "<group>"; };
@@ -168,7 +172,7 @@
 		DDFA63E42C633912002E93F3 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		DDFA63E62C6339B4002E93F3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		DDFA63E92C6339BD002E93F3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
-		DDFA63F22C635306002E93F3 /* SFUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFUserDefaults.swift; sourceTree = "<group>"; };
+		DDFA63F22C635306002E93F3 /* UserDefaultKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultKey.swift; sourceTree = "<group>"; };
 		DDFA63F62C636688002E93F3 /* SFCMHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFCMHeaderView.swift; sourceTree = "<group>"; };
 		DDFA63F82C6367F2002E93F3 /* SFCMSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFCMSearchView.swift; sourceTree = "<group>"; };
 		DDFA63FA2C636804002E93F3 /* SFCMSortView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFCMSortView.swift; sourceTree = "<group>"; };
@@ -243,6 +247,16 @@
 			path = Resource;
 			sourceTree = "<group>";
 		};
+		51DF13AF2CF207A200838578 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				51DF13B02CF207DE00838578 /* HomeVC.swift */,
+				DDB895DF2CF0911500376F37 /* Server */,
+				DDB895DE2CF0910800376F37 /* Client */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		56BF08185ED182C7CD474D48 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -287,16 +301,16 @@
 			children = (
 				DDA6489C2C619F5100F01858 /* AppDelegate.swift */,
 				DDA6489E2C619F5100F01858 /* SceneDelegate.swift */,
-				DDFA63F22C635306002E93F3 /* SFUserDefaults.swift */,
+				51DF13B22CF20CAF00838578 /* Root.swift */,
+				DDFA63F22C635306002E93F3 /* UserDefaultKey.swift */,
 				51A613AA2C76216C005990FC /* Todo.swift */,
 				51DF13A12CF1CF1400838578 /* Resource */,
-				DDB895DF2CF0911500376F37 /* Server */,
-				DDB895DE2CF0910800376F37 /* Client */,
+				DDA648D42C61A85100F01858 /* Entrance */,
+				51DF13AF2CF207A200838578 /* Home */,
 				DDB895D72CF08AE400376F37 /* User */,
 				DDB895A12CF0341C00376F37 /* Option */,
 				DD8BBB8A2C95200100DE12E5 /* Com */,
 				51A613A72C762075005990FC /* OptionConfig */,
-				DDA648D42C61A85100F01858 /* Entrance */,
 				DDA648A22C619F5100F01858 /* Main.storyboard */,
 				DDA648A52C619F5200F01858 /* Assets.xcassets */,
 				51DF139F2CF1CEA600838578 /* Localizable.xcstrings */,
@@ -695,6 +709,7 @@
 				DDA6489D2C619F5100F01858 /* AppDelegate.swift in Sources */,
 				DDB895CC2CF082FA00376F37 /* CentralManagerInitializationOptionDetailVC.swift in Sources */,
 				DDFA63FD2C636856002E93F3 /* SFCMFilterView.swift in Sources */,
+				51DF13B12CF207DE00838578 /* HomeVC.swift in Sources */,
 				5175ADB02C64FA1D00C9260A /* SFRssiView.swift in Sources */,
 				DDE09DB32C7473E400E456B7 /* SFCMSearchModel.swift in Sources */,
 				DDB895CA2CF082B700376F37 /* CentralManagerInitializationOptionListVC.swift in Sources */,
@@ -717,6 +732,7 @@
 				DDB895D42CF0877F00376F37 /* CentralManagerInitializationOptionModel.swift in Sources */,
 				DDF08C032C85BC5900FB4B48 /* UserCenterHeader.swift in Sources */,
 				DDB895D92CF08B0400376F37 /* UserCenterVC.swift in Sources */,
+				51DF13B32CF20CAF00838578 /* Root.swift in Sources */,
 				DDFA63F72C636688002E93F3 /* SFCMHeaderView.swift in Sources */,
 				DDB895B22CF06FF700376F37 /* OptionBoolItemView.swift in Sources */,
 				DDB518F92C6C526300A049DE /* SFCMPeripheralDetailVC.swift in Sources */,
@@ -727,7 +743,7 @@
 				51DF13A72CF1CF1400838578 /* SFFont.swift in Sources */,
 				DDA6489F2C619F5100F01858 /* SceneDelegate.swift in Sources */,
 				51A613B22C762395005990FC /* SFOptionConfigModel.swift in Sources */,
-				DDFA63F32C635306002E93F3 /* SFUserDefaults.swift in Sources */,
+				DDFA63F32C635306002E93F3 /* UserDefaultKey.swift in Sources */,
 				DDB895B42CF0720900376F37 /* OptionItemView.swift in Sources */,
 				DDFA63FB2C636804002E93F3 /* SFCMSortView.swift in Sources */,
 				DDB519002C6C72C400A049DE /* SFCMPeripheralServiceDetailVC.swift in Sources */,

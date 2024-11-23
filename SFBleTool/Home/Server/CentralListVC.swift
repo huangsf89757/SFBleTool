@@ -16,7 +16,7 @@ import SFUI
 import SFLogger
 
 // MARK: - CentralListVC
-class CentralListVC: SFViewController {
+class CentralListVC: HomeVC {
     // MARK: var
     
     

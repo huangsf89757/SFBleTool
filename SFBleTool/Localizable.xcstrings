@@ -66,6 +66,50 @@
           }
         }
       }
+    },
+    "userCenter_item_opt_connect" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "连接选项"
+          }
+        }
+      }
+    },
+    "userCenter_item_opt_initial" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "初始化选项"
+          }
+        }
+      }
+    },
+    "userCenter_item_opt_scan" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "扫描选项"
+          }
+        }
+      }
+    },
+    "userCenter_title_opt" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OPTIONS"
+          }
+        }
+      }
     }
   },
   "version" : "1.0"

@@ -27,6 +27,12 @@ extension SFText {
         public static var entrance_client_subtitle: String { text(name: "entrance_client_subtitle") }
         public static var entrance_server_title: String { text(name: "entrance_server_title") }
         public static var entrance_server_subtitle: String { text(name: "entrance_server_subtitle") }
+        
+        public static var userCenter_title_opt: String { text(name: "userCenter_title_opt") }
+        
+        public static var userCenter_item_opt_initial: String { text(name: "userCenter_item_opt_initial") }
+        public static var userCenter_item_opt_scan: String { text(name: "userCenter_item_opt_scan") }
+        public static var userCenter_item_opt_connect: String { text(name: "userCenter_item_opt_connect") }
     }
 }
 

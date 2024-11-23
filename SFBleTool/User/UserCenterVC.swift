@@ -18,17 +18,15 @@ import SFUser
 // Server
 import SFLogger
 
-
 // MARK: - UserCenterVC
 class UserCenterVC: SFViewController {
     // MARK: data
 
+    var titles: [String] = [
+        SFText.Main.userCenter_title_opt
+    ]
     var items: [[UserCenterItem]] = [
-        [
-            .centralManagerInitializationOptions,
-            .peripheralScanningOptions,
-            .peripheralConnectionOptions,
-        ]
+        [.optInit,.optScan,.optConnect]
     ]
     
     // MARK: life cycle
@@ -98,6 +96,9 @@ extension UserCenterVC: UITableViewDelegate, UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return titles[section]
     }
 }
 

@@ -7,25 +7,37 @@
 
 import Foundation
 import UIKit
+// Basic
+import SFExtension
+import SFBase
+// UI
+import SFUI
 
 enum UserCenterItem {
-    case centralManagerInitializationOptions
-    case peripheralConnectionOptions
-    case peripheralScanningOptions
+    case optInit
+    case optScan
+    case optConnect
     
     
     var text: String {
         switch self {
-        case .centralManagerInitializationOptions:
-            return "centralManagerInitializationOptions"
-        case .peripheralConnectionOptions:
-            return "peripheralConnectionOptions"
-        case .peripheralScanningOptions:
-            return "peripheralScanningOptions"
+        case .optInit:
+            return SFText.Main.userCenter_item_opt_initial
+        case .optScan:
+            return SFText.Main.userCenter_item_opt_scan
+        case .optConnect:
+            return SFText.Main.userCenter_item_opt_connect
         }
     }
     
     var image: UIImage? {
-        return nil
+        switch self {
+        case .optInit:
+            return SFImage.Main.User.Center.Opt.initial
+        case .optScan:
+            return SFImage.Main.User.Center.Opt.scan
+        case .optConnect:
+            return SFImage.Main.User.Center.Opt.connect
+        }
     }
 }

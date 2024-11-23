@@ -56,7 +56,7 @@ class SFEntranceVC: SFScrollViewController {
     }()
     private lazy var clientOptView: SFEntranceOptView = {
         return SFEntranceOptView().then { view in
-            view.tag = 0
+            view.tag = 2
             view.titleLabel.text = SFText.Main.entrance_client_title
             view.subtitleLabel.text = SFText.Main.entrance_client_subtitle
             view.tapBlock = {
@@ -67,7 +67,7 @@ class SFEntranceVC: SFScrollViewController {
     }()
     private lazy var serverOptView: SFEntranceOptView = {
         return SFEntranceOptView().then { view in
-            view.tag = 1
+            view.tag = 3
             view.titleLabel.text = SFText.Main.entrance_server_title
             view.subtitleLabel.text = SFText.Main.entrance_server_subtitle
             view.tapBlock = {

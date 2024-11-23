@@ -19,19 +19,17 @@ import SFUser
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-
+    var root: RootPage = .sign
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
-        // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
+        
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScene)
         window.makeKeyAndVisible()
         self.window = window
        
         // root
-        setRootVc()
+        setRoot()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -65,38 +63,3 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 }
 
-// MARK: root
-extension SceneDelegate {
-    private func setRootVc() {
-//        SFUserManager.shared.curUser = SFUserManager.shared.adminUser
-//        if let curUser = SFUserManager.shared.curUser {
-//            rootEntrance()
-//        } else {
-//            rootSignIn()
-//        }
-//        rootSignIn()
-        rootEntrance()
-    }
-    
-    private func rootSignIn() {
-        window?.rootViewController = SFNavigationController(rootViewController: SFUser.SignVC())
-    }
-    
-    private func rootEntrance() {
-        if let entrance = UserDefaults.standard.object(forKey: SFUserDefaults.Key.entrance) as? Int {
-            if entrance == 0 {
-                window?.rootViewController = SFNavigationController(rootViewController: PeripheralListVC())
-            } else {
-                window?.rootViewController = SFNavigationController(rootViewController: CentralListVC())
-            }
-        } else {
-            let vc = SFEntranceVC()
-            vc.didChooseEntranceOptBlock = {
-                [weak self] entrance in
-                UserDefaults.standard.setValue(entrance, forKey: SFUserDefaults.Key.entrance)
-                self?.setRootVc()
-            }
-            window?.rootViewController = vc
-        }
-    }
-}

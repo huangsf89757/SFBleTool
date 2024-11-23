@@ -24,11 +24,21 @@ extension SFImage {
         public static var icon: UIImage? { image(name: "AppIcon") }
         public static var logo: UIImage? { image(name: "AppLogo") }
         
-        struct Com {
+        public struct Com {
             public static var goto: UIImage? { image(name: "com/goto") }
             struct Select {
                 public static var nor: UIImage? { image(name: "com/select/nor") }
                 public static var sel: UIImage? { image(name: "com/select/sel") }
+            }
+        }
+        
+        public struct User {
+            public struct Center {
+                public struct Opt {
+                    public static var initial: UIImage? { image(name: "user/center/opt/initial") }
+                    public static var scan: UIImage? { image(name: "user/center/opt/scan") }
+                    public static var connect: UIImage? { image(name: "user/center/opt/connect") }
+                }
             }
         }
     }
