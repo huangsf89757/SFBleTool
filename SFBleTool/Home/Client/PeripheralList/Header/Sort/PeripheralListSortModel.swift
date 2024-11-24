@@ -29,14 +29,14 @@ class PeripheralListSortModel {
         
         var image: UIImage? {
             return nil
-//            switch self {
-//            case .none:
-//                return R.image.com.sort.none()
-//            case .asc:
-//                return R.image.com.sort.asc()
-//            case .des:
-//                return R.image.com.sort.des()
-//            }
+            switch self {
+            case .none:
+                return SFImage.UI.Sort.none
+            case .asc:
+                return SFImage.UI.Sort.asc
+            case .des:
+                return SFImage.UI.Sort.des
+            }
         }
         
         var color: UIColor? {
