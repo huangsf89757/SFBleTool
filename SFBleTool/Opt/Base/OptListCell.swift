@@ -14,7 +14,7 @@ import SFBase
 import SFUI
 
 // MARK: - OptListCell
-class OptListCell: SFTableViewCell {
+class OptListCell: SFCardTableViewCell {
     // MARK: model
     var model: OptModel? {
         didSet {
@@ -34,6 +34,7 @@ class OptListCell: SFTableViewCell {
         return SFLabel().then { view in
             view.font = .systemFont(ofSize: 17, weight: .bold)
             view.textColor = SFColor.UI.title
+            view.text = "Name"
         }
     }()
     private lazy var detailIcon: SFImageView = {
@@ -43,13 +44,14 @@ class OptListCell: SFTableViewCell {
         }
     }()
     private func customUI() {
-        contentView.addSubview(nameLabel)
-        contentView.addSubview(detailIcon)
+        cardView.addSubview(nameLabel)
+        cardView.addSubview(detailIcon)
         
         nameLabel.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(10)
             make.leading.equalToSuperview().offset(10)
             make.bottom.equalToSuperview().offset(-10)
+            make.height.equalTo(40)
         }
         detailIcon.snp.makeConstraints { make in
             make.centerY.equalToSuperview()

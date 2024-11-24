@@ -21,7 +21,7 @@ class OptListVC: SFTableViewController {
     
     // MARK: life cycle
     convenience init() {
-        self.init(style: .grouped)
+        self.init(style: .plain)
     }
     private override init(style: UITableView.Style) {
         super.init(style: style)
@@ -30,6 +30,7 @@ class OptListVC: SFTableViewController {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.separatorStyle = .none
         tableView.register(cellType: OptListCell.self)
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: SFText.Main.opt_list_new, style: .plain, target: self, action: #selector(addItemClicked))
@@ -44,7 +45,8 @@ class OptListVC: SFTableViewController {
 // MARK: - UITableViewDelegate, UITableViewDataSource
 extension OptListVC: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return models.count
+//        return models.count
+        return 10
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
@@ -52,6 +54,21 @@ extension OptListVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(for: indexPath, cellType: OptListCell.self)
         return cell
+    }
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        self.tableView.card(cell: cell, at: indexPath)
+    }
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        return nil
+    }
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        return nil
+    }
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 20
+    }
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 0.1
     }
 }
 
