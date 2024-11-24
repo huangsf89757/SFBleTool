@@ -21,6 +21,7 @@ class ClientScanOptListVC: OptListVC {
         navigationItem.title = SFText.Main.client_opt_list_scan
     }
     
+    // MARK: override
     override func addNew() {
         
     }

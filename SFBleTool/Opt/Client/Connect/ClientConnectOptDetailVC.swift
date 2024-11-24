@@ -126,5 +126,17 @@ class ClientConnectOptDetailVC: OptDetailVC {
             make.bottom.lessThanOrEqualToSuperview().offset(-20)
         }
     }
+    
+    // MARK: override
+    override func editOrSave(_ editEnable: Bool) {
+        super.editOrSave(editEnable)
+        reconnectView.editEnable = editEnable
+        bridgingView.editEnable = editEnable
+        connectionView.editEnable = editEnable
+        disconnectionView.editEnable = editEnable
+        notificationView.editEnable = editEnable
+        ancsView.editEnable = editEnable
+        delayView.editEnable = editEnable
+    }
 }
 

@@ -61,4 +61,11 @@ class ClientInitialOptDetailVC: OptDetailVC {
             make.bottom.lessThanOrEqualToSuperview().offset(-20)
         }
     }
+    
+    // MARK: override
+    override func editOrSave(_ editEnable: Bool) {
+        super.editOrSave(editEnable)
+        identifierView.editEnable = editEnable
+        alertView.editEnable = editEnable
+    }
 }

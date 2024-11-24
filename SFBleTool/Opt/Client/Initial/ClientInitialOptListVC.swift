@@ -21,7 +21,7 @@ class ClientInitialOptListVC: OptListVC {
         navigationItem.title = SFText.Main.client_opt_list_initial
     }
     
-    
+    // MARK: override
     override func addNew() {
         let vc = ClientInitialOptDetailVC()
         navigationController?.pushViewController(vc, animated: true)

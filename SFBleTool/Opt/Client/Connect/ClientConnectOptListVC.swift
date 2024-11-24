@@ -21,6 +21,7 @@ class ClientConnectOptListVC: OptListVC {
         navigationItem.title = SFText.Main.client_opt_list_connect
     }
     
+    // MARK: override
     override func addNew() {
         
     }

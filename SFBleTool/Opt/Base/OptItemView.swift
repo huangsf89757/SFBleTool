@@ -19,6 +19,10 @@ class OptItemView: SFView {
     var editEnable = false {
         didSet {
             isUserInteractionEnabled = editEnable
+            editImgView.isHidden = !editEnable
+            titleLabel.snp.updateConstraints { make in
+                make.leading.equalToSuperview().offset(editEnable ? 40 : 10)
+            }
         }
     }
     
@@ -33,6 +37,13 @@ class OptItemView: SFView {
     lazy var contentView: SFView = {
         return SFView().then { view in
             view.backgroundColor = SFColor.UI.content
+        }
+    }()
+    lazy var editImgView: SFImageView = {
+        return SFImageView().then { view in
+            view.contentMode = .scaleAspectFit
+            view.image = SFImage.UI.Com.edit
+            view.isHidden = true
         }
     }()
     lazy var titleLabel: SFLabel = {
@@ -53,6 +64,7 @@ class OptItemView: SFView {
     func customUI() {
         backgroundColor = .clear
         addSubview(contentView)
+        contentView.addSubview(editImgView)
         contentView.addSubview(titleLabel)
         addSubview(subtitleLabel)
         
@@ -60,6 +72,11 @@ class OptItemView: SFView {
             make.top.equalToSuperview()
             make.leading.equalToSuperview()
             make.trailing.equalToSuperview()
+        }
+        editImgView.snp.makeConstraints { make in
+            make.centerY.equalToSuperview()
+            make.leading.equalToSuperview().offset(10)
+            make.width.height.equalTo(20)
         }
         titleLabel.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(10)

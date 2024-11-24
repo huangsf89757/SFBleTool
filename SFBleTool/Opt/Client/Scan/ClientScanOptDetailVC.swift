@@ -56,4 +56,11 @@ class ClientScanOptDetailVC: OptDetailVC {
             make.bottom.lessThanOrEqualToSuperview().offset(-20)
         }
     }
+    
+    // MARK: override
+    override func editOrSave(_ editEnable: Bool) {
+        super.editOrSave(editEnable)
+        duplicatesView.editEnable = editEnable
+        uuidsView.editEnable = editEnable
+    }
 }
