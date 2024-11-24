@@ -15,7 +15,7 @@
       "scale" : "1x"
     },
     {
-      "filename" : "网络扫描.png",
+      "filename" : "scan-line.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
@@ -26,12 +26,12 @@
           "value" : "dark"
         }
       ],
-      "filename" : "网络扫描 (3).png",
+      "filename" : "scan-line (1).png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "网络扫描 (1).png",
+      "filename" : "scan-line (3).png",
       "idiom" : "universal",
       "scale" : "3x"
     },
@@ -42,7 +42,7 @@
           "value" : "dark"
         }
       ],
-      "filename" : "网络扫描 (2).png",
+      "filename" : "scan-line (2).png",
       "idiom" : "universal",
       "scale" : "3x"
     }

@@ -128,15 +128,15 @@ class ClientConnectOptDetailVC: OptDetailVC {
     }
     
     // MARK: override
-    override func editOrSave(_ editEnable: Bool) {
-        super.editOrSave(editEnable)
-        reconnectView.editEnable = editEnable
-        bridgingView.editEnable = editEnable
-        connectionView.editEnable = editEnable
-        disconnectionView.editEnable = editEnable
-        notificationView.editEnable = editEnable
-        ancsView.editEnable = editEnable
-        delayView.editEnable = editEnable
+    override func editOrSave(_ isEdit: Bool) {
+        super.editOrSave(isEdit)
+        reconnectView.isEdit = isEdit
+        bridgingView.isEdit = isEdit
+        connectionView.isEdit = isEdit
+        disconnectionView.isEdit = isEdit
+        notificationView.isEdit = isEdit
+        ancsView.isEdit = isEdit
+        delayView.isEdit = isEdit
     }
 }
 

@@ -63,9 +63,9 @@ class ClientInitialOptDetailVC: OptDetailVC {
     }
     
     // MARK: override
-    override func editOrSave(_ editEnable: Bool) {
-        super.editOrSave(editEnable)
-        identifierView.editEnable = editEnable
-        alertView.editEnable = editEnable
+    override func editOrSave(_ isEdit: Bool) {
+        super.editOrSave(isEdit)
+        identifierView.isEdit = isEdit
+        alertView.isEdit = isEdit
     }
 }

@@ -16,12 +16,13 @@ import SFUI
 // MARK: - OptItemView
 class OptItemView: SFView {
     // MARK: var
-    var editEnable = false {
+    var selectBlcok: (()->())?
+    var isEdit = false {
         didSet {
-            isUserInteractionEnabled = editEnable
-            editImgView.isHidden = !editEnable
+            isUserInteractionEnabled = isEdit
+            selectBtn.isHidden = !isEdit
             titleLabel.snp.updateConstraints { make in
-                make.leading.equalToSuperview().offset(editEnable ? 40 : 10)
+                make.leading.equalToSuperview().offset(isEdit ? 40 : 10)
             }
         }
     }
@@ -29,7 +30,7 @@ class OptItemView: SFView {
     // MARK: life cycle
     override init(frame: CGRect) {
         super.init(frame: frame)
-        isUserInteractionEnabled = editEnable
+        isUserInteractionEnabled = isEdit
         customUI()
     }
     
@@ -39,10 +40,12 @@ class OptItemView: SFView {
             view.backgroundColor = SFColor.UI.content
         }
     }()
-    lazy var editImgView: SFImageView = {
-        return SFImageView().then { view in
-            view.contentMode = .scaleAspectFit
-            view.image = SFImage.UI.Com.edit
+    lazy var selectBtn: SFButton = {
+        return SFButton().then { view in
+            view.setImage(SFImage.UI.Select.nor, for: .normal)
+            view.setImage(SFImage.UI.Select.sel, for: .normal)
+            view.hitInsets = UIEdgeInsets(top: -10, left: -10, bottom: -10, right: -10)
+            view.addTarget(self, action: #selector(selectBtnClicked), for: .touchUpInside)
             view.isHidden = true
         }
     }()
@@ -64,7 +67,7 @@ class OptItemView: SFView {
     func customUI() {
         backgroundColor = .clear
         addSubview(contentView)
-        contentView.addSubview(editImgView)
+        contentView.addSubview(selectBtn)
         contentView.addSubview(titleLabel)
         addSubview(subtitleLabel)
         
@@ -73,7 +76,7 @@ class OptItemView: SFView {
             make.leading.equalToSuperview()
             make.trailing.equalToSuperview()
         }
-        editImgView.snp.makeConstraints { make in
+        selectBtn.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
             make.leading.equalToSuperview().offset(10)
             make.width.height.equalTo(20)
@@ -90,5 +93,12 @@ class OptItemView: SFView {
             make.trailing.equalToSuperview().offset(-10)
             make.bottom.equalToSuperview().offset(-10)
         }
+    }
+}
+
+// MARK: - Action
+extension OptItemView {
+    @objc private func selectBtnClicked() {
+        selectBlcok?()
     }
 }

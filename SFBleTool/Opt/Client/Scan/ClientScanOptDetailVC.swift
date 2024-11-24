@@ -58,9 +58,9 @@ class ClientScanOptDetailVC: OptDetailVC {
     }
     
     // MARK: override
-    override func editOrSave(_ editEnable: Bool) {
-        super.editOrSave(editEnable)
-        duplicatesView.editEnable = editEnable
-        uuidsView.editEnable = editEnable
+    override func editOrSave(_ isEdit: Bool) {
+        super.editOrSave(isEdit)
+        duplicatesView.isEdit = isEdit
+        uuidsView.isEdit = isEdit
     }
 }

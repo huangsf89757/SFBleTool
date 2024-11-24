@@ -16,7 +16,12 @@ import SFUI
 // MARK: OptDetailVC
 class OptDetailVC: SFScrollViewController {
     // MARK: var
-
+    var isEdit = false {
+        didSet  {
+            editBtn.isSelected = isEdit
+            editOrSave(isEdit)
+        }
+    }
     
     // MARK: life cycle
     convenience init() {
@@ -34,7 +39,7 @@ class OptDetailVC: SFScrollViewController {
     // MARK: ui
     lazy var nameView: OptStringItemView = {
         return OptStringItemView().then { view in
-            view.titleLabel.text = "Name"
+            view.titleLabel.text = SFText.Main.opt_detail_name
         }
     }()
     private lazy var editBtn: SFButton = {
@@ -56,17 +61,16 @@ class OptDetailVC: SFScrollViewController {
     }
     
     // MARK: func
-    func editOrSave(_ editEnable: Bool) {
-        nameView.editEnable = editEnable
+    func editOrSave(_ isEdit: Bool) {
+        nameView.isEdit = isEdit
     }
 }
 
 // MARK: - Action
 extension OptDetailVC {
     @objc func editBtnClicked() {
-        editBtn.toggleSelected()
-        let editEnable = editBtn.isSelected
-        editOrSave(editEnable)
+        isEdit.toggle()
+        
     }
 }
 
