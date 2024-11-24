@@ -26,6 +26,7 @@ class HomeVC: SFViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: userBtn)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: settingBtn)
     }
     
     // MARK: ui
@@ -34,6 +35,13 @@ class HomeVC: SFViewController {
             view.frame = CGRect(origin: .zero, size: CGSize(width: 40, height: 40))
             view.setImage(SFImage.User.user, for: .normal)
             view.addTarget(self, action: #selector(userBtnClicked), for: .touchUpInside)
+        }
+    }()
+    private lazy var settingBtn: SFButton = {
+        return SFButton().then { view in
+            view.frame = CGRect(origin: .zero, size: CGSize(width: 40, height: 40))
+            view.setImage(SFImage.UI.Com.setting, for: .normal)
+            view.addTarget(self, action: #selector(settingBtnClicked), for: .touchUpInside)
         }
     }()
 }
@@ -47,5 +55,10 @@ extension HomeVC {
         nav.leftSide = true
         nav.menuWidth = SFApp.screenWidthPortrait() * 0.8
         present(nav, animated: true, completion: nil)
+    }
+    /// 点击设置
+    @objc private func settingBtnClicked() {
+        let vc = ClientInitialOptListVC()
+        navigationController?.pushViewController(vc, animated: true)
     }
 }

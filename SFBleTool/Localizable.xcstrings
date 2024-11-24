@@ -34,6 +34,358 @@
         }
       }
     },
+    "client_opt" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "客户端选项"
+          }
+        }
+      }
+    },
+    "client_opt_detail_connect" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "连接选项信息"
+          }
+        }
+      }
+    },
+    "client_opt_detail_connect_ancs" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "RequiresANCS"
+          }
+        }
+      }
+    },
+    "client_opt_detail_connect_ancs_desc" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CBConnectPeripheralOptionRequiresANCS\\nAn option to require Apple Notification Center Service (ANCS) when connecting a device."
+          }
+        }
+      }
+    },
+    "client_opt_detail_connect_bridging" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TransportBridging"
+          }
+        }
+      }
+    },
+    "client_opt_detail_connect_bridging_desc" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CBConnectPeripheralOptionEnableTransportBridgingKey\\nAn option to bridge classic Bluetooth technology profiles, if already connected over Bluetooth Low Energy."
+          }
+        }
+      }
+    },
+    "client_opt_detail_connect_connection" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotifyOnConnection"
+          }
+        }
+      }
+    },
+    "client_opt_detail_connect_connection_desc" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CBConnectPeripheralOptionNotifyOnConnectionKey\\nA Boolean value that specifies whether the system should display an alert when connecting a peripheral in the background."
+          }
+        }
+      }
+    },
+    "client_opt_detail_connect_delay" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "StartDelay"
+          }
+        }
+      }
+    },
+    "client_opt_detail_connect_delay_desc" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CBConnectPeripheralOptionStartDelayKey\\nAn option that indicates a delay before the system makes a connection."
+          }
+        }
+      }
+    },
+    "client_opt_detail_connect_disconnection" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotifyOnDisconnection"
+          }
+        }
+      }
+    },
+    "client_opt_detail_connect_disconnection_desc" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CBConnectPeripheralOptionNotifyOnDisconnectionKey\\nA Boolean value that specifies whether the system should display an alert when disconnecting a peripheral in the background."
+          }
+        }
+      }
+    },
+    "client_opt_detail_connect_desc" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Peripheral Connection Options\\nKeys used to pass options when connecting to a peripheral."
+          }
+        }
+      }
+    },
+    "client_opt_detail_connect_notification" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NotifyOnNotification"
+          }
+        }
+      }
+    },
+    "client_opt_detail_connect_notification_desc" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CBConnectPeripheralOptionNotifyOnNotificationKey\\nA Boolean value that specifies whether the system should display an alert for any notification sent by a peripheral."
+          }
+        }
+      }
+    },
+    "client_opt_detail_connect_reconnect" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "EnableAutoReconnect"
+          }
+        }
+      }
+    },
+    "client_opt_detail_connect_reconnect_desc" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CBConnectPeripheralOptionEnableAutoReconnect\\nA Boolean value that specifies whether the system automatically reconnects with a peripheral."
+          }
+        }
+      }
+    },
+    "client_opt_detail_initial" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "初始化选项信息"
+          }
+        }
+      }
+    },
+    "client_opt_detail_initial_alert" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ShowPowerAlert"
+          }
+        }
+      }
+    },
+    "client_opt_detail_initial_alert_desc" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CBCentralManagerOptionShowPowerAlertKey\\nA Boolean value that specifies whether the system warns the user if the app instantiates the central manager when Bluetooth service isn’t available."
+          }
+        }
+      }
+    },
+    "client_opt_detail_initial_identifier" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "RestoreIdentifier"
+          }
+        }
+      }
+    },
+    "client_opt_detail_initial_identifier_desc" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CBCentralManagerOptionRestoreIdentifierKey\\nA string containing a unique identifier (UID) for the central manager to instantiate."
+          }
+        }
+      }
+    },
+    "client_opt_detail_initial_desc" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Central Manager Initialization Options\\nKeys used to pass options when initializing a central manager."
+          }
+        }
+      }
+    },
+    "client_opt_detail_scan" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "扫描选项信息"
+          }
+        }
+      }
+    },
+    "client_opt_detail_scan_duplicates" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "AllowDuplicates"
+          }
+        }
+      }
+    },
+    "client_opt_detail_scan_duplicates_desc" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CBCentralManagerScanOptionAllowDuplicatesKey\\nA Boolean value that specifies whether the scan should run without duplicate filtering."
+          }
+        }
+      }
+    },
+    "client_opt_detail_scan_desc" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Peripheral Scanning Options\\nKeys used to pass options when scanning for peripherals."
+          }
+        }
+      }
+    },
+    "client_opt_detail_scan_uuids" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SolicitedServiceUUIDs"
+          }
+        }
+      }
+    },
+    "client_opt_detail_scan_uuids_desc" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CBCentralManagerScanOptionSolicitedServiceUUIDsKey\\nAn array of service UUIDs that you want to scan for."
+          }
+        }
+      }
+    },
+    "client_opt_list_connect" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "连接选项"
+          }
+        }
+      }
+    },
+    "client_opt_list_initial" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "初始化选项"
+          }
+        }
+      }
+    },
+    "client_opt_list_scan" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "扫描选项"
+          }
+        }
+      }
+    },
     "entrance_client_subtitle" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -51,7 +403,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "中心模式"
+            "value" : "客户端(中心模式)"
           }
         }
       }
@@ -73,7 +425,51 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "外设模式"
+            "value" : "服务端(外设模式)"
+          }
+        }
+      }
+    },
+    "opt_detail_edit" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "编辑"
+          }
+        }
+      }
+    },
+    "opt_detail_name" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Name"
+          }
+        }
+      }
+    },
+    "opt_detail_save" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "保存"
+          }
+        }
+      }
+    },
+    "opt_list_new" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "新建"
           }
         }
       }
@@ -206,6 +602,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "RSSI"
+          }
+        }
+      }
+    },
+    "server_opt" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "服务端选项"
           }
         }
       }

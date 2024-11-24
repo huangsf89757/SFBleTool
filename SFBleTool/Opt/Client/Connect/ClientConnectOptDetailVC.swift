@@ -31,74 +31,51 @@ class ClientConnectOptDetailVC: OptDetailVC {
     // MARK: life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        nameView.subtitleLabel.text = """
-                                      Peripheral Connection Options
-                                      Keys used to pass options when connecting to a peripheral.
-                                      """
+        navigationItem.title = SFText.Main.client_opt_detail_connect
+        nameView.subtitleLabel.text = SFText.Main.client_opt_detail_connect_desc
     }
     
     // MARK: ui
     lazy var reconnectView: OptBoolItemView = {
         return OptBoolItemView().then { view in
-            view.titleLabel.text = "EnableAutoReconnect"
-            view.subtitleLabel.text = """
-                                      CBConnectPeripheralOptionEnableAutoReconnect
-                                      A Boolean value that specifies whether the system automatically reconnects with a peripheral.
-                                      """
+            view.titleLabel.text = SFText.Main.client_opt_detail_connect_reconnect
+            view.subtitleLabel.text = SFText.Main.client_opt_detail_connect_reconnect_desc
         }
     }()
     lazy var bridgingView: OptBoolItemView = {
         return OptBoolItemView().then { view in
-            view.titleLabel.text = "TransportBridging"
-            view.subtitleLabel.text = """
-                                      CBConnectPeripheralOptionEnableTransportBridgingKey
-                                      An option to bridge classic Bluetooth technology profiles, if already connected over Bluetooth Low Energy.
-                                      """
+            view.titleLabel.text = SFText.Main.client_opt_detail_connect_bridging
+            view.subtitleLabel.text = SFText.Main.client_opt_detail_connect_bridging_desc
         }
     }()
     lazy var connectionView: OptBoolItemView = {
         return OptBoolItemView().then { view in
-            view.titleLabel.text = "NotifyOnConnection"
-            view.subtitleLabel.text = """
-                                      CBConnectPeripheralOptionNotifyOnConnectionKey
-                                      A Boolean value that specifies whether the system should display an alert when connecting a peripheral in the background.
-                                      """
+            view.titleLabel.text = SFText.Main.client_opt_detail_connect_connection
+            view.subtitleLabel.text = SFText.Main.client_opt_detail_connect_connection_desc
         }
     }()
     lazy var disconnectionView: OptBoolItemView = {
         return OptBoolItemView().then { view in
-            view.titleLabel.text = "NotifyOnDisconnection"
-            view.subtitleLabel.text = """
-                                      CBConnectPeripheralOptionNotifyOnDisconnectionKey
-                                      A Boolean value that specifies whether the system should display an alert when disconnecting a peripheral in the background.
-                                      """
+            view.titleLabel.text = SFText.Main.client_opt_detail_connect_disconnection
+            view.subtitleLabel.text = SFText.Main.client_opt_detail_connect_disconnection_desc
         }
     }()
     lazy var notificationView: OptBoolItemView = {
         return OptBoolItemView().then { view in
-            view.titleLabel.text = "NotifyOnNotification"
-            view.subtitleLabel.text = """
-                                      CBConnectPeripheralOptionNotifyOnNotificationKey
-                                      A Boolean value that specifies whether the system should display an alert for any notification sent by a peripheral.
-                                      """
+            view.titleLabel.text = SFText.Main.client_opt_detail_connect_notification
+            view.subtitleLabel.text = SFText.Main.client_opt_detail_connect_notification_desc
         }
     }()
     lazy var ancsView: OptBoolItemView = {
         return OptBoolItemView().then { view in
-            view.titleLabel.text = "RequiresANCS"
-            view.subtitleLabel.text = """
-                                      CBConnectPeripheralOptionRequiresANCS
-                                      An option to require Apple Notification Center Service (ANCS) when connecting a device.
-                                      """
+            view.titleLabel.text = SFText.Main.client_opt_detail_connect_ancs
+            view.subtitleLabel.text = SFText.Main.client_opt_detail_connect_ancs_desc
         }
     }()
     lazy var delayView: OptStringItemView = {
         return OptStringItemView().then { view in
-            view.titleLabel.text = "StartDelay"
-            view.subtitleLabel.text = """
-                                      CBConnectPeripheralOptionStartDelayKey
-                                      An option that indicates a delay before the system makes a connection.
-                                      """
+            view.titleLabel.text = SFText.Main.client_opt_detail_connect_delay
+            view.subtitleLabel.text = SFText.Main.client_opt_detail_connect_delay_desc
         }
     }()
    

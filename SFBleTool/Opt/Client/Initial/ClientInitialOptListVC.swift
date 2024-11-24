@@ -15,7 +15,15 @@ import SFUI
 
 // MARK: ClientInitialOptListVC
 class ClientInitialOptListVC: OptListVC {
-    override func add() {
-        
+    // MARK: life cycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        navigationItem.title = SFText.Main.client_opt_list_initial
+    }
+    
+    
+    override func addNew() {
+        let vc = ClientInitialOptDetailVC()
+        navigationController?.pushViewController(vc, animated: true)
     }
 }

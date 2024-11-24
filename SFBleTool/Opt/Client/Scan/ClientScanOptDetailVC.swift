@@ -21,29 +21,21 @@ class ClientScanOptDetailVC: OptDetailVC {
     // MARK: life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        nameView.subtitleLabel.text = """
-                                      Peripheral Scanning Options
-                                      Keys used to pass options when scanning for peripherals.
-                                      """
+        navigationItem.title = SFText.Main.client_opt_detail_scan
+        nameView.subtitleLabel.text = SFText.Main.client_opt_detail_scan_desc
     }
     
     // MARK: ui
     lazy var duplicatesView: OptStringItemView = {
         return OptStringItemView().then { view in
-            view.titleLabel.text = "AllowDuplicates"
-            view.subtitleLabel.text = """
-                                      CBCentralManagerScanOptionAllowDuplicatesKey
-                                      A Boolean value that specifies whether the scan should run without duplicate filtering.
-                                      """
+            view.titleLabel.text = SFText.Main.client_opt_detail_scan_duplicates
+            view.subtitleLabel.text = SFText.Main.client_opt_detail_scan_duplicates_desc
         }
     }()
     lazy var uuidsView: OptBoolItemView = {
         return OptBoolItemView().then { view in
-            view.titleLabel.text = "SolicitedServiceUUIDs"
-            view.subtitleLabel.text = """
-                                      CBCentralManagerScanOptionSolicitedServiceUUIDsKey
-                                      An array of service UUIDs that you want to scan for.
-                                      """
+            view.titleLabel.text = SFText.Main.client_opt_detail_scan_uuids
+            view.subtitleLabel.text = SFText.Main.client_opt_detail_scan_uuids_desc
         }
     }()
    

@@ -49,6 +49,49 @@ extension SFText {
         
         public static var peripheral_list_scan_paused: String { text(name: "peripheral_list_scan_paused") }
         public static var peripheral_list_scan_doing: String { text(name: "peripheral_list_scan_doing") }
+        
+        
+        public static var client_opt: String { text(name: "client_opt") }
+        public static var server_opt: String { text(name: "server_opt") }
+        
+        public static var opt_list_new: String { text(name: "opt_list_new") }
+        public static var opt_detail_edit: String { text(name: "opt_detail_edit") }
+        public static var opt_detail_save: String { text(name: "opt_detail_save") }
+        
+        public static var client_opt_list_initial: String { text(name: "client_opt_list_initial") }
+        public static var client_opt_list_scan: String { text(name: "client_opt_list_scan") }
+        public static var client_opt_list_connect: String { text(name: "client_opt_list_connect") }
+        
+        public static var client_opt_detail_initial: String { text(name: "client_opt_detail_initial") }
+        public static var client_opt_detail_initial_desc: String { text(name: "client_opt_detail_initial_desc") }
+        public static var client_opt_detail_initial_identifier: String { text(name: "client_opt_detail_initial_identifier") }
+        public static var client_opt_detail_initial_identifier_desc: String { text(name: "client_opt_detail_initial_identifier_desc") }
+        public static var client_opt_detail_initial_alert: String { text(name: "client_opt_detail_initial_alert") }
+        public static var client_opt_detail_initial_alert_desc: String { text(name: "client_opt_detail_initial_alert_desc") }
+        
+        public static var client_opt_detail_scan: String { text(name: "client_opt_detail_scan") }
+        public static var client_opt_detail_scan_desc: String { text(name: "client_opt_detail_scan_desc") }
+        public static var client_opt_detail_scan_duplicates: String { text(name: "client_opt_detail_scan_duplicates") }
+        public static var client_opt_detail_scan_duplicates_desc: String { text(name: "client_opt_detail_scan_duplicates_desc") }
+        public static var client_opt_detail_scan_uuids: String { text(name: "client_opt_detail_scan_uuids") }
+        public static var client_opt_detail_scan_uuids_desc: String { text(name: "client_opt_detail_scan_uuids_desc") }
+        
+        public static var client_opt_detail_connect: String { text(name: "client_opt_detail_connect") }
+        public static var client_opt_detail_connect_desc: String { text(name: "client_opt_detail_connect_desc") }
+        public static var client_opt_detail_connect_ancs: String { text(name: "client_opt_detail_connect_ancs") }
+        public static var client_opt_detail_connect_ancs_desc: String { text(name: "client_opt_detail_connect_ancs_desc") }
+        public static var client_opt_detail_connect_bridging: String { text(name: "client_opt_detail_connect_bridging") }
+        public static var client_opt_detail_connect_bridging_desc: String { text(name: "client_opt_detail_connect_bridging_desc") }
+        public static var client_opt_detail_connect_connection: String { text(name: "client_opt_detail_connect_connection") }
+        public static var client_opt_detail_connect_connection_desc: String { text(name: "client_opt_detail_connect_connection_desc") }
+        public static var client_opt_detail_connect_delay: String { text(name: "client_opt_detail_connect_delay") }
+        public static var client_opt_detail_connect_delay_desc: String { text(name: "client_opt_detail_connect_delay_desc") }
+        public static var client_opt_detail_connect_reconnect: String { text(name: "client_opt_detail_connect_reconnect") }
+        public static var client_opt_detail_connect_reconnect_desc: String { text(name: "client_opt_detail_connect_reconnect_desc") }
+        public static var client_opt_detail_connect_disconnection: String { text(name: "client_opt_detail_connect_disconnection") }
+        public static var client_opt_detail_connect_disconnection_desc: String { text(name: "client_opt_detail_connect_disconnection_desc") }
+        public static var client_opt_detail_connect_notification: String { text(name: "client_opt_detail_connect_notification") }
+        public static var client_opt_detail_connect_notification_desc: String { text(name: "client_opt_detail_connect_notification_desc") }
     }
 }
 

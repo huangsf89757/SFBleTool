@@ -26,11 +26,11 @@ class OptStringItemView: OptItemView {
     }()
     override func customUI() {
         super.customUI()
-        addSubview(textField)
+        contentView.addSubview(textField)
         textField.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(10)
             make.bottom.equalToSuperview().offset(-10)
-            make.leading.equalTo(titleLabel.snp.trailing).offset(10)
+            make.leading.greaterThanOrEqualTo(titleLabel.snp.trailing).offset(10)
             make.trailing.equalToSuperview().offset(-10)
         }
     }

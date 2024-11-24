@@ -69,9 +69,9 @@ class OptItemView: SFView {
         }
         subtitleLabel.snp.makeConstraints { make in
             make.top.equalTo(contentView.snp.bottom).offset(10)
-            make.leading.equalTo(contentView.snp.bottom).offset(10)
-            make.trailing.equalTo(contentView.snp.bottom).offset(-10)
-            make.bottom.equalTo(contentView.snp.bottom).offset(-10)
+            make.leading.equalToSuperview().offset(10)
+            make.trailing.equalToSuperview().offset(-10)
+            make.bottom.equalToSuperview().offset(-10)
         }
     }
 }

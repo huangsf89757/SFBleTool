@@ -19,9 +19,16 @@ class OptDetailVC: SFScrollViewController {
 
     
     // MARK: life cycle
+    convenience init() {
+        self.init(dir: .vertical)
+    }
+    private override init(dir: SFScrollView.Direction) {
+        super.init(dir: dir)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: editBtn)
+        customUI()
     }
     
     // MARK: ui
@@ -32,8 +39,8 @@ class OptDetailVC: SFScrollViewController {
     }()
     private lazy var editBtn: SFButton = {
         return SFButton().then { view in
-            view.setTitle("Edit", for: .normal)
-            view.setTitle("Save", for: .selected)
+            view.setTitle(SFText.Main.opt_detail_edit, for: .normal)
+            view.setTitle(SFText.Main.opt_detail_save, for: .selected)
             view.setTitleColor(SFColor.UI.title, for: .normal)
             view.setTitleColor(SFColor.UI.title, for: .selected)
             view.addTarget(self, action: #selector(editBtnClicked), for: .touchUpInside)

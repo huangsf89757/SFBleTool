@@ -15,7 +15,13 @@ import SFUI
 
 // MARK: ClientScanOptListVC
 class ClientScanOptListVC: OptListVC {
-    override func add() {
+    // MARK: life cycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        navigationItem.title = SFText.Main.client_opt_list_scan
+    }
+    
+    override func addNew() {
         
     }
 }

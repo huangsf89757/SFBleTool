@@ -26,29 +26,21 @@ class ClientInitialOptDetailVC: OptDetailVC {
     // MARK: life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        nameView.subtitleLabel.text = """
-                                      Central Manager Initialization Options
-                                      Keys used to pass options when initializing a central manager.
-                                      """
+        navigationItem.title = SFText.Main.client_opt_detail_initial
+        nameView.subtitleLabel.text = SFText.Main.client_opt_detail_initial_desc
     }
     
     // MARK: ui
     lazy var identifierView: OptStringItemView = {
         return OptStringItemView().then { view in
-            view.titleLabel.text = "RestoreIdentifier"
-            view.subtitleLabel.text = """
-                                      CBCentralManagerOptionRestoreIdentifierKey
-                                      A string containing a unique identifier (UID) for the central manager to instantiate.
-                                      """
+            view.titleLabel.text = SFText.Main.client_opt_detail_initial_identifier
+            view.subtitleLabel.text = SFText.Main.client_opt_detail_initial_identifier_desc
         }
     }()
     lazy var alertView: OptBoolItemView = {
         return OptBoolItemView().then { view in
-            view.titleLabel.text = "ShowPowerAlert"
-            view.subtitleLabel.text = """
-                                      CBCentralManagerOptionShowPowerAlertKey
-                                      A Boolean value that specifies whether the system warns the user if the app instantiates the central manager when Bluetooth service isn’t available.
-                                      """
+            view.titleLabel.text = SFText.Main.client_opt_detail_initial_alert
+            view.subtitleLabel.text = SFText.Main.client_opt_detail_initial_alert_desc
         }
     }()
    

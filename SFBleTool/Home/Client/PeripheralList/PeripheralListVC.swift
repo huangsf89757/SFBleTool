@@ -42,7 +42,6 @@ class PeripheralListVC: HomeVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = SFText.Main.peripheral_list
-        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: settingBtn)
         customUI()
         configCentralManager()
         headerView.model = headerModel
@@ -54,13 +53,7 @@ class PeripheralListVC: HomeVC {
     
     
     // MARK: ui
-    private lazy var settingBtn: SFButton = {
-        return SFButton().then { view in
-            view.frame = CGRect(origin: .zero, size: CGSize(width: 40, height: 40))
-            view.setImage(SFImage.UI.Com.setting, for: .normal)
-            view.addTarget(self, action: #selector(settingBtnClicked), for: .touchUpInside)
-        }
-    }()
+    
     private lazy var headerView: PeripheralListHeader = {
         return PeripheralListHeader().then { view in
             view.searchDidChangedBlock = {
@@ -140,11 +133,7 @@ extension PeripheralListVC {
 // MARK: - action
 extension PeripheralListVC {
 
-    /// 点击设置
-    @objc private func settingBtnClicked() {
-//        let vc = SFUserCentralDetailVC()
-//        navigationController?.pushViewController(vc, animated: true)
-    }
+
     
     /// 点击扫描
     @objc private func scanBtnClicked() {

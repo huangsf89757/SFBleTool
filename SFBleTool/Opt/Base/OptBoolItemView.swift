@@ -21,9 +21,10 @@ class OptBoolItemView: OptItemView {
     }()
     override func customUI() {
         super.customUI()
-        addSubview(switchView)
+        contentView.addSubview(switchView)
         switchView.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
+            make.leading.greaterThanOrEqualTo(titleLabel.snp.trailing).offset(10)
             make.trailing.equalToSuperview().offset(-10)
         }
     }

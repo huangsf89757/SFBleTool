@@ -20,17 +20,23 @@ class OptListVC: SFTableViewController {
     private var models = [OptModel]()
     
     // MARK: life cycle
+    convenience init() {
+        self.init(style: .grouped)
+    }
+    private override init(style: UITableView.Style) {
+        super.init(style: style)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(cellType: OptListCell.self)
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "新建", style: .plain, target: self, action: #selector(addItemClicked))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: SFText.Main.opt_list_new, style: .plain, target: self, action: #selector(addItemClicked))
     }
     
     // MARK: - func
-    func add() {
+    func addNew() {
         
     }
 }
@@ -52,7 +58,7 @@ extension OptListVC: UITableViewDelegate, UITableViewDataSource {
 // MARK: - Action
 extension OptListVC {
     @objc func addItemClicked() {
-        add()
+        addNew()
     }
 }
 
