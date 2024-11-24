@@ -1,5 +1,5 @@
 //
-//  PeripheralConnectionOptionModel.swift
+//  ClientConnectOptModel.swift
 //  SFBleTool
 //
 //  Created by hsf on 2024/11/22.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-class PeripheralConnectionOptionModel: OptionModel {
+class ClientConnectOptModel: OptModel {
     var reconnect: Bool?
     var bridging: Bool?
     var connection: Bool?

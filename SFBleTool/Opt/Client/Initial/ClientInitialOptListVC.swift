@@ -1,5 +1,5 @@
 //
-//  CentralManagerInitializationOptionListVC.swift
+//  ClientInitialOptListVC.swift
 //  SFBleTool
 //
 //  Created by hsf on 2024/11/22.
@@ -13,8 +13,8 @@ import SFBase
 // UI
 import SFUI
 
-// MARK: CentralManagerInitializationOptionListVC
-class CentralManagerInitializationOptionListVC: OptionListVC {
+// MARK: ClientInitialOptListVC
+class ClientInitialOptListVC: OptListVC {
     override func add() {
         
     }

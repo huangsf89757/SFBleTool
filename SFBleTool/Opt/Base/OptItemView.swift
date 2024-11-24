@@ -1,5 +1,5 @@
 //
-//  OptionItemView.swift
+//  OptItemView.swift
 //  SFBleTool
 //
 //  Created by hsf on 2024/11/22.
@@ -13,8 +13,8 @@ import SFBase
 // UI
 import SFUI
 
-// MARK: - OptionItemView
-class OptionItemView: SFView {
+// MARK: - OptItemView
+class OptItemView: SFView {
     // MARK: var
     var editEnable = false {
         didSet {

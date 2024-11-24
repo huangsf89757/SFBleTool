@@ -42,6 +42,7 @@ class PeripheralListVC: HomeVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = SFText.Main.peripheral_list
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: settingBtn)
         customUI()
         configCentralManager()
         headerView.model = headerModel

@@ -1,5 +1,5 @@
 //
-//  CentralManagerInitializationOptionDetailVC.swift
+//  ClientInitialOptDetailVC.swift
 //  SFBleTool
 //
 //  Created by hsf on 2024/11/22.
@@ -13,10 +13,10 @@ import SFBase
 // UI
 import SFUI
 
-// MARK: CentralManagerInitializationOptionDetailVC
-class CentralManagerInitializationOptionDetailVC: OptionDetailVC {
+// MARK: ClientInitialOptDetailVC
+class ClientInitialOptDetailVC: OptDetailVC {
     // MARK: var
-    var model: CentralManagerInitializationOptionModel? {
+    var model: ClientInitialOptModel? {
         didSet {
             identifierView.textField.text = model?.identifier
             alertView.switchView.setOn(model?.alert ?? false, animated: false)
@@ -33,8 +33,8 @@ class CentralManagerInitializationOptionDetailVC: OptionDetailVC {
     }
     
     // MARK: ui
-    lazy var identifierView: OptionStringItemView = {
-        return OptionStringItemView().then { view in
+    lazy var identifierView: OptStringItemView = {
+        return OptStringItemView().then { view in
             view.titleLabel.text = "RestoreIdentifier"
             view.subtitleLabel.text = """
                                       CBCentralManagerOptionRestoreIdentifierKey
@@ -42,8 +42,8 @@ class CentralManagerInitializationOptionDetailVC: OptionDetailVC {
                                       """
         }
     }()
-    lazy var alertView: OptionBoolItemView = {
-        return OptionBoolItemView().then { view in
+    lazy var alertView: OptBoolItemView = {
+        return OptBoolItemView().then { view in
             view.titleLabel.text = "ShowPowerAlert"
             view.subtitleLabel.text = """
                                       CBCentralManagerOptionShowPowerAlertKey

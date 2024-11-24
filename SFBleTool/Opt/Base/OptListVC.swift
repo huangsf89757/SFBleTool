@@ -1,5 +1,5 @@
 //
-//  OptionListVC.swift
+//  OptListVC.swift
 //  SFBleTool
 //
 //  Created by hsf on 2024/11/22.
@@ -13,18 +13,18 @@ import SFBase
 // UI
 import SFUI
 
-// MARK: OptionListVC
-class OptionListVC: SFTableViewController {
+// MARK: OptListVC
+class OptListVC: SFTableViewController {
     
     // MARK: var
-    private var models = [OptionModel]()
+    private var models = [OptModel]()
     
     // MARK: life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(cellType: OptionListCell.self)
+        tableView.register(cellType: OptListCell.self)
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "新建", style: .plain, target: self, action: #selector(addItemClicked))
     }
@@ -36,7 +36,7 @@ class OptionListVC: SFTableViewController {
 }
 
 // MARK: - UITableViewDelegate, UITableViewDataSource
-extension OptionListVC: UITableViewDelegate, UITableViewDataSource {
+extension OptListVC: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return models.count
     }
@@ -44,13 +44,13 @@ extension OptionListVC: UITableViewDelegate, UITableViewDataSource {
         return 1
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(for: indexPath, cellType: OptionListCell.self)
+        let cell = tableView.dequeueReusableCell(for: indexPath, cellType: OptListCell.self)
         return cell
     }
 }
 
 // MARK: - Action
-extension OptionListVC {
+extension OptListVC {
     @objc func addItemClicked() {
         add()
     }

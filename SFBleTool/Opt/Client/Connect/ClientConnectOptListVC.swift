@@ -1,5 +1,5 @@
 //
-//  PeripheralConnectionOptionListVC.swift
+//  ClientConnectOptListVC.swift
 //  SFBleTool
 //
 //  Created by hsf on 2024/11/22.
@@ -13,8 +13,8 @@ import SFBase
 // UI
 import SFUI
 
-// MARK: PeripheralConnectionOptionListVC
-class PeripheralConnectionOptionListVC: OptionListVC {
+// MARK: ClientConnectOptListVC
+class ClientConnectOptListVC: OptListVC {
     override func add() {
         
     }

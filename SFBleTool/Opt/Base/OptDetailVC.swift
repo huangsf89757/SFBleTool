@@ -13,8 +13,8 @@ import SFBase
 // UI
 import SFUI
 
-// MARK: OptionDetailVC
-class OptionDetailVC: SFScrollViewController {
+// MARK: OptDetailVC
+class OptDetailVC: SFScrollViewController {
     // MARK: var
 
     
@@ -25,8 +25,8 @@ class OptionDetailVC: SFScrollViewController {
     }
     
     // MARK: ui
-    lazy var nameView: OptionStringItemView = {
-        return OptionStringItemView().then { view in
+    lazy var nameView: OptStringItemView = {
+        return OptStringItemView().then { view in
             view.titleLabel.text = "Name"
         }
     }()
@@ -55,7 +55,7 @@ class OptionDetailVC: SFScrollViewController {
 }
 
 // MARK: - Action
-extension OptionDetailVC {
+extension OptDetailVC {
     @objc func editBtnClicked() {
         editBtn.toggleSelected()
         let editEnable = editBtn.isSelected

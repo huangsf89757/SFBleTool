@@ -1,5 +1,5 @@
 //
-//  PeripheralConnectionOptionDetailVC.swift
+//  ClientConnectOptDetailVC.swift
 //  SFBleTool
 //
 //  Created by hsf on 2024/11/22.
@@ -13,10 +13,10 @@ import SFBase
 // UI
 import SFUI
 
-// MARK: PeripheralConnectionOptionDetailVC
-class PeripheralConnectionOptionDetailVC: OptionDetailVC {
+// MARK: ClientConnectOptDetailVC
+class ClientConnectOptDetailVC: OptDetailVC {
     // MARK: var
-    var model: PeripheralConnectionOptionModel? {
+    var model: ClientConnectOptModel? {
         didSet {
             reconnectView.switchView.setOn(model?.reconnect ?? false, animated: false)
             bridgingView.switchView.setOn(model?.bridging ?? false, animated: false)
@@ -38,8 +38,8 @@ class PeripheralConnectionOptionDetailVC: OptionDetailVC {
     }
     
     // MARK: ui
-    lazy var reconnectView: OptionBoolItemView = {
-        return OptionBoolItemView().then { view in
+    lazy var reconnectView: OptBoolItemView = {
+        return OptBoolItemView().then { view in
             view.titleLabel.text = "EnableAutoReconnect"
             view.subtitleLabel.text = """
                                       CBConnectPeripheralOptionEnableAutoReconnect
@@ -47,8 +47,8 @@ class PeripheralConnectionOptionDetailVC: OptionDetailVC {
                                       """
         }
     }()
-    lazy var bridgingView: OptionBoolItemView = {
-        return OptionBoolItemView().then { view in
+    lazy var bridgingView: OptBoolItemView = {
+        return OptBoolItemView().then { view in
             view.titleLabel.text = "TransportBridging"
             view.subtitleLabel.text = """
                                       CBConnectPeripheralOptionEnableTransportBridgingKey
@@ -56,8 +56,8 @@ class PeripheralConnectionOptionDetailVC: OptionDetailVC {
                                       """
         }
     }()
-    lazy var connectionView: OptionBoolItemView = {
-        return OptionBoolItemView().then { view in
+    lazy var connectionView: OptBoolItemView = {
+        return OptBoolItemView().then { view in
             view.titleLabel.text = "NotifyOnConnection"
             view.subtitleLabel.text = """
                                       CBConnectPeripheralOptionNotifyOnConnectionKey
@@ -65,8 +65,8 @@ class PeripheralConnectionOptionDetailVC: OptionDetailVC {
                                       """
         }
     }()
-    lazy var disconnectionView: OptionBoolItemView = {
-        return OptionBoolItemView().then { view in
+    lazy var disconnectionView: OptBoolItemView = {
+        return OptBoolItemView().then { view in
             view.titleLabel.text = "NotifyOnDisconnection"
             view.subtitleLabel.text = """
                                       CBConnectPeripheralOptionNotifyOnDisconnectionKey
@@ -74,8 +74,8 @@ class PeripheralConnectionOptionDetailVC: OptionDetailVC {
                                       """
         }
     }()
-    lazy var notificationView: OptionBoolItemView = {
-        return OptionBoolItemView().then { view in
+    lazy var notificationView: OptBoolItemView = {
+        return OptBoolItemView().then { view in
             view.titleLabel.text = "NotifyOnNotification"
             view.subtitleLabel.text = """
                                       CBConnectPeripheralOptionNotifyOnNotificationKey
@@ -83,8 +83,8 @@ class PeripheralConnectionOptionDetailVC: OptionDetailVC {
                                       """
         }
     }()
-    lazy var ancsView: OptionBoolItemView = {
-        return OptionBoolItemView().then { view in
+    lazy var ancsView: OptBoolItemView = {
+        return OptBoolItemView().then { view in
             view.titleLabel.text = "RequiresANCS"
             view.subtitleLabel.text = """
                                       CBConnectPeripheralOptionRequiresANCS
@@ -92,8 +92,8 @@ class PeripheralConnectionOptionDetailVC: OptionDetailVC {
                                       """
         }
     }()
-    lazy var delayView: OptionStringItemView = {
-        return OptionStringItemView().then { view in
+    lazy var delayView: OptStringItemView = {
+        return OptStringItemView().then { view in
             view.titleLabel.text = "StartDelay"
             view.subtitleLabel.text = """
                                       CBConnectPeripheralOptionStartDelayKey

@@ -1,5 +1,5 @@
 //
-//  PeripheralScanningOptionListVC.swift
+//  ClientScanOptListVC.swift
 //  SFBleTool
 //
 //  Created by hsf on 2024/11/22.
@@ -13,8 +13,8 @@ import SFBase
 // UI
 import SFUI
 
-// MARK: PeripheralScanningOptionListVC
-class PeripheralScanningOptionListVC: OptionListVC {
+// MARK: ClientScanOptListVC
+class ClientScanOptListVC: OptListVC {
     override func add() {
         
     }

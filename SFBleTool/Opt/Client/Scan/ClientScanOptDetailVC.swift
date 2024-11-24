@@ -1,5 +1,5 @@
 //
-//  PeripheralScanningOptionDetailVC.swift
+//  ClientScanOptDetailVC.swift
 //  SFBleTool
 //
 //  Created by hsf on 2024/11/22.
@@ -13,8 +13,8 @@ import SFBase
 // UI
 import SFUI
 
-// MARK: PeripheralScanningOptionDetailVC
-class PeripheralScanningOptionDetailVC: OptionDetailVC {
+// MARK: ClientScanOptDetailVC
+class ClientScanOptDetailVC: OptDetailVC {
     // MARK: var
     
     
@@ -28,8 +28,8 @@ class PeripheralScanningOptionDetailVC: OptionDetailVC {
     }
     
     // MARK: ui
-    lazy var duplicatesView: OptionStringItemView = {
-        return OptionStringItemView().then { view in
+    lazy var duplicatesView: OptStringItemView = {
+        return OptStringItemView().then { view in
             view.titleLabel.text = "AllowDuplicates"
             view.subtitleLabel.text = """
                                       CBCentralManagerScanOptionAllowDuplicatesKey
@@ -37,8 +37,8 @@ class PeripheralScanningOptionDetailVC: OptionDetailVC {
                                       """
         }
     }()
-    lazy var uuidsView: OptionBoolItemView = {
-        return OptionBoolItemView().then { view in
+    lazy var uuidsView: OptBoolItemView = {
+        return OptBoolItemView().then { view in
             view.titleLabel.text = "SolicitedServiceUUIDs"
             view.subtitleLabel.text = """
                                       CBCentralManagerScanOptionSolicitedServiceUUIDsKey

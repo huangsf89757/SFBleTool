@@ -1,5 +1,5 @@
 //
-//  OptionListCell.swift
+//  OptListCell.swift
 //  SFBleTool
 //
 //  Created by hsf on 2024/11/22.
@@ -13,10 +13,10 @@ import SFBase
 // UI
 import SFUI
 
-// MARK: - OptionListCell
-class OptionListCell: SFTableViewCell {
+// MARK: - OptListCell
+class OptListCell: SFTableViewCell {
     // MARK: model
-    var model: OptionModel? {
+    var model: OptModel? {
         didSet {
             guard let model = model else { return }
             nameLabel.text = model.name
