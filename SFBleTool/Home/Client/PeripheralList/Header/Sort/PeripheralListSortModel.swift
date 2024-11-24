@@ -28,7 +28,6 @@ class PeripheralListSortModel {
         case des    // 降序
         
         var image: UIImage? {
-            return nil
             switch self {
             case .none:
                 return SFImage.UI.Sort.none
