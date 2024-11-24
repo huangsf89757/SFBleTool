@@ -26,7 +26,7 @@ class UserCenterVC: SFViewController {
         SFText.Main.userCenter_title_opt
     ]
     var items: [[UserCenterItem]] = [
-        [.optInit,.optScan,.optConnect]
+        [.clientOptInit,.clientOptScan,.clientOptConnect]
     ]
     
     // MARK: life cycle
@@ -98,6 +98,18 @@ extension UserCenterVC: UITableViewDelegate, UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        let item = items[indexPath.section][indexPath.row]
+        switch item {
+        case .clientOptInit:
+            let vc = ClientInitialOptListVC()
+            navigationController?.pushViewController(vc, animated: true)
+        case .clientOptScan:
+            let vc = ClientScanOptListVC()
+            navigationController?.pushViewController(vc, animated: true)
+        case .clientOptConnect:
+            let vc = ClientConnectOptListVC()
+            navigationController?.pushViewController(vc, animated: true)
+        }
     }
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return titles[section]

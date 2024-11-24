@@ -23,7 +23,8 @@ class ClientScanOptListVC: OptListVC {
     
     // MARK: override
     override func addNew() {
-        
+        let vc = ClientScanOptDetailVC()
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 

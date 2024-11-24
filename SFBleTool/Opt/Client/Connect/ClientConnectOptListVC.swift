@@ -23,7 +23,8 @@ class ClientConnectOptListVC: OptListVC {
     
     // MARK: override
     override func addNew() {
-        
+        let vc = ClientConnectOptDetailVC()
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 

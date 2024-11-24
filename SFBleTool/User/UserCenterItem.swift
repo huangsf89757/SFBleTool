@@ -14,29 +14,29 @@ import SFBase
 import SFUI
 
 enum UserCenterItem {
-    case optInit
-    case optScan
-    case optConnect
+    case clientOptInit
+    case clientOptScan
+    case clientOptConnect
     
     
     var text: String {
         switch self {
-        case .optInit:
+        case .clientOptInit:
             return SFText.Main.userCenter_item_opt_initial
-        case .optScan:
+        case .clientOptScan:
             return SFText.Main.userCenter_item_opt_scan
-        case .optConnect:
+        case .clientOptConnect:
             return SFText.Main.userCenter_item_opt_connect
         }
     }
     
     var image: UIImage? {
         switch self {
-        case .optInit:
+        case .clientOptInit:
             return SFImage.Main.User.Center.Opt.initial
-        case .optScan:
+        case .clientOptScan:
             return SFImage.Main.User.Center.Opt.scan
-        case .optConnect:
+        case .clientOptConnect:
             return SFImage.Main.User.Center.Opt.connect
         }
     }

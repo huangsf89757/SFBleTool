@@ -44,6 +44,11 @@ class HomeVC: SFViewController {
             view.addTarget(self, action: #selector(settingBtnClicked), for: .touchUpInside)
         }
     }()
+    
+    // MARK: func
+    func settingAction() {
+        
+    }
 }
 
 // MARK: - action
@@ -58,7 +63,6 @@ extension HomeVC {
     }
     /// 点击设置
     @objc private func settingBtnClicked() {
-        let vc = ClientInitialOptListVC()
-        navigationController?.pushViewController(vc, animated: true)
+        settingAction()
     }
 }

@@ -53,7 +53,6 @@ class PeripheralListVC: HomeVC {
     
     
     // MARK: ui
-    
     private lazy var headerView: PeripheralListHeader = {
         return PeripheralListHeader().then { view in
             view.searchDidChangedBlock = {
@@ -122,6 +121,12 @@ class PeripheralListVC: HomeVC {
             make.bottom.equalToSuperview().offset(-20)
             make.height.equalTo(50)
         }
+    }
+    
+    // MARK: override
+    override func settingAction() {
+        let vc = ClientOptVC()
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 
