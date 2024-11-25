@@ -13,8 +13,8 @@ import SFBase
 // UI
 import SFUI
 
-// MARK: - OptBoolItemView
-class OptBoolItemView: OptItemView {
+// MARK: - OptDetailBoolCell
+class OptDetailBoolCell: OptDetailCell {
     // MARK: ui
     lazy var switchView: UISwitch = {
         return UISwitch()

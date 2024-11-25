@@ -37,8 +37,8 @@ class OptDetailVC: SFScrollViewController {
     }
     
     // MARK: ui
-    lazy var nameView: OptStringItemView = {
-        return OptStringItemView().then { view in
+    lazy var nameView: OptDetailStringCell = {
+        return OptDetailStringCell().then { view in
             view.titleLabel.text = SFText.Main.opt_detail_name
         }
     }()

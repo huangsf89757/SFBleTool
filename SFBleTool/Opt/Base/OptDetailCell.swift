@@ -13,8 +13,8 @@ import SFBase
 // UI
 import SFUI
 
-// MARK: - OptItemView
-class OptItemView: SFView {
+// MARK: - OptDetailCell
+class OptDetailCell: SFView {
     // MARK: var
     var selectBlcok: (()->())?
     var isEdit = false {
@@ -97,7 +97,7 @@ class OptItemView: SFView {
 }
 
 // MARK: - Action
-extension OptItemView {
+extension OptDetailCell {
     @objc private func selectBtnClicked() {
         selectBlcok?()
     }

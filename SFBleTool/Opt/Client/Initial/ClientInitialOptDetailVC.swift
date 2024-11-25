@@ -31,14 +31,14 @@ class ClientInitialOptDetailVC: OptDetailVC {
     }
     
     // MARK: ui
-    lazy var identifierView: OptStringItemView = {
-        return OptStringItemView().then { view in
+    lazy var identifierView: OptDetailStringCell = {
+        return OptDetailStringCell().then { view in
             view.titleLabel.text = SFText.Main.client_opt_detail_initial_identifier
             view.subtitleLabel.text = SFText.Main.client_opt_detail_initial_identifier_desc
         }
     }()
-    lazy var alertView: OptBoolItemView = {
-        return OptBoolItemView().then { view in
+    lazy var alertView: OptDetailBoolCell = {
+        return OptDetailBoolCell().then { view in
             view.titleLabel.text = SFText.Main.client_opt_detail_initial_alert
             view.subtitleLabel.text = SFText.Main.client_opt_detail_initial_alert_desc
         }

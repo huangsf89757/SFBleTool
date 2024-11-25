@@ -13,8 +13,8 @@ import SFBase
 // UI
 import SFUI
 
-// MARK: - OptStringItemView
-class OptStringItemView: OptItemView {
+// MARK: - OptDetailStringCell
+class OptDetailStringCell: OptDetailCell {
     
     // MARK: ui
     lazy var textField: SFTextField = {

@@ -36,44 +36,44 @@ class ClientConnectOptDetailVC: OptDetailVC {
     }
     
     // MARK: ui
-    lazy var reconnectView: OptBoolItemView = {
-        return OptBoolItemView().then { view in
+    lazy var reconnectView: OptDetailBoolCell = {
+        return OptDetailBoolCell().then { view in
             view.titleLabel.text = SFText.Main.client_opt_detail_connect_reconnect
             view.subtitleLabel.text = SFText.Main.client_opt_detail_connect_reconnect_desc
         }
     }()
-    lazy var bridgingView: OptBoolItemView = {
-        return OptBoolItemView().then { view in
+    lazy var bridgingView: OptDetailBoolCell = {
+        return OptDetailBoolCell().then { view in
             view.titleLabel.text = SFText.Main.client_opt_detail_connect_bridging
             view.subtitleLabel.text = SFText.Main.client_opt_detail_connect_bridging_desc
         }
     }()
-    lazy var connectionView: OptBoolItemView = {
-        return OptBoolItemView().then { view in
+    lazy var connectionView: OptDetailBoolCell = {
+        return OptDetailBoolCell().then { view in
             view.titleLabel.text = SFText.Main.client_opt_detail_connect_connection
             view.subtitleLabel.text = SFText.Main.client_opt_detail_connect_connection_desc
         }
     }()
-    lazy var disconnectionView: OptBoolItemView = {
-        return OptBoolItemView().then { view in
+    lazy var disconnectionView: OptDetailBoolCell = {
+        return OptDetailBoolCell().then { view in
             view.titleLabel.text = SFText.Main.client_opt_detail_connect_disconnection
             view.subtitleLabel.text = SFText.Main.client_opt_detail_connect_disconnection_desc
         }
     }()
-    lazy var notificationView: OptBoolItemView = {
-        return OptBoolItemView().then { view in
+    lazy var notificationView: OptDetailBoolCell = {
+        return OptDetailBoolCell().then { view in
             view.titleLabel.text = SFText.Main.client_opt_detail_connect_notification
             view.subtitleLabel.text = SFText.Main.client_opt_detail_connect_notification_desc
         }
     }()
-    lazy var ancsView: OptBoolItemView = {
-        return OptBoolItemView().then { view in
+    lazy var ancsView: OptDetailBoolCell = {
+        return OptDetailBoolCell().then { view in
             view.titleLabel.text = SFText.Main.client_opt_detail_connect_ancs
             view.subtitleLabel.text = SFText.Main.client_opt_detail_connect_ancs_desc
         }
     }()
-    lazy var delayView: OptStringItemView = {
-        return OptStringItemView().then { view in
+    lazy var delayView: OptDetailStringCell = {
+        return OptDetailStringCell().then { view in
             view.titleLabel.text = SFText.Main.client_opt_detail_connect_delay
             view.subtitleLabel.text = SFText.Main.client_opt_detail_connect_delay_desc
         }

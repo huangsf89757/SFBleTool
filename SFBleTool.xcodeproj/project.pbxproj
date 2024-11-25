@@ -48,9 +48,9 @@
 		DDB519002C6C72C400A049DE /* SFCMPeripheralServiceDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB518FF2C6C72C400A049DE /* SFCMPeripheralServiceDetailVC.swift */; };
 		DDB519022C6C72E200A049DE /* SFCMPeripheralLogDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB519012C6C72E200A049DE /* SFCMPeripheralLogDetailVC.swift */; };
 		DDB519042C6C751A00A049DE /* SFCMPeripheralDetailSegmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB519032C6C751A00A049DE /* SFCMPeripheralDetailSegmentView.swift */; };
-		DDB895B02CF06D5100376F37 /* OptStringItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB895AF2CF06D5100376F37 /* OptStringItemView.swift */; };
-		DDB895B22CF06FF700376F37 /* OptBoolItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB895B12CF06FF700376F37 /* OptBoolItemView.swift */; };
-		DDB895B42CF0720900376F37 /* OptItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB895B32CF0720900376F37 /* OptItemView.swift */; };
+		DDB895B02CF06D5100376F37 /* OptDetailStringCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB895AF2CF06D5100376F37 /* OptDetailStringCell.swift */; };
+		DDB895B22CF06FF700376F37 /* OptDetailBoolCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB895B12CF06FF700376F37 /* OptDetailBoolCell.swift */; };
+		DDB895B42CF0720900376F37 /* OptDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB895B32CF0720900376F37 /* OptDetailCell.swift */; };
 		DDB895BF2CF07F2200376F37 /* OptDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB895BE2CF07F2200376F37 /* OptDetailVC.swift */; };
 		DDB895C12CF0804B00376F37 /* OptListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB895C02CF0804B00376F37 /* OptListVC.swift */; };
 		DDB895C32CF0807200376F37 /* OptModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB895C22CF0807200376F37 /* OptModel.swift */; };
@@ -142,9 +142,9 @@
 		DDB518FF2C6C72C400A049DE /* SFCMPeripheralServiceDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFCMPeripheralServiceDetailVC.swift; sourceTree = "<group>"; };
 		DDB519012C6C72E200A049DE /* SFCMPeripheralLogDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFCMPeripheralLogDetailVC.swift; sourceTree = "<group>"; };
 		DDB519032C6C751A00A049DE /* SFCMPeripheralDetailSegmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFCMPeripheralDetailSegmentView.swift; sourceTree = "<group>"; };
-		DDB895AF2CF06D5100376F37 /* OptStringItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptStringItemView.swift; sourceTree = "<group>"; };
-		DDB895B12CF06FF700376F37 /* OptBoolItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptBoolItemView.swift; sourceTree = "<group>"; };
-		DDB895B32CF0720900376F37 /* OptItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptItemView.swift; sourceTree = "<group>"; };
+		DDB895AF2CF06D5100376F37 /* OptDetailStringCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptDetailStringCell.swift; sourceTree = "<group>"; };
+		DDB895B12CF06FF700376F37 /* OptDetailBoolCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptDetailBoolCell.swift; sourceTree = "<group>"; };
+		DDB895B32CF0720900376F37 /* OptDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptDetailCell.swift; sourceTree = "<group>"; };
 		DDB895BE2CF07F2200376F37 /* OptDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptDetailVC.swift; sourceTree = "<group>"; };
 		DDB895C02CF0804B00376F37 /* OptListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptListVC.swift; sourceTree = "<group>"; };
 		DDB895C22CF0807200376F37 /* OptModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptModel.swift; sourceTree = "<group>"; };
@@ -296,9 +296,9 @@
 				DDB895C02CF0804B00376F37 /* OptListVC.swift */,
 				DDB895C42CF0810F00376F37 /* OptListCell.swift */,
 				DDB895BE2CF07F2200376F37 /* OptDetailVC.swift */,
-				DDB895B32CF0720900376F37 /* OptItemView.swift */,
-				DDB895AF2CF06D5100376F37 /* OptStringItemView.swift */,
-				DDB895B12CF06FF700376F37 /* OptBoolItemView.swift */,
+				DDB895B32CF0720900376F37 /* OptDetailCell.swift */,
+				DDB895AF2CF06D5100376F37 /* OptDetailStringCell.swift */,
+				DDB895B12CF06FF700376F37 /* OptDetailBoolCell.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -732,7 +732,7 @@
 				DDB895D92CF08B0400376F37 /* UserCenterVC.swift in Sources */,
 				51DF13B32CF20CAF00838578 /* Root.swift in Sources */,
 				DDFA63F72C636688002E93F3 /* PeripheralListHeader.swift in Sources */,
-				DDB895B22CF06FF700376F37 /* OptBoolItemView.swift in Sources */,
+				DDB895B22CF06FF700376F37 /* OptDetailBoolCell.swift in Sources */,
 				DDB518F92C6C526300A049DE /* SFCMPeripheralDetailVC.swift in Sources */,
 				DDE09DB02C7473AA00E456B7 /* PeripheralListSortModel.swift in Sources */,
 				51A613A62C74DABD005990FC /* SFCMConnectModel.swift in Sources */,
@@ -741,13 +741,13 @@
 				51DF13A72CF1CF1400838578 /* SFFont.swift in Sources */,
 				DDA6489F2C619F5100F01858 /* SceneDelegate.swift in Sources */,
 				DDFA63F32C635306002E93F3 /* UserDefaultKey.swift in Sources */,
-				DDB895B42CF0720900376F37 /* OptItemView.swift in Sources */,
+				DDB895B42CF0720900376F37 /* OptDetailCell.swift in Sources */,
 				51DF13BE2CF2B1BC00838578 /* ClientOptVC.swift in Sources */,
 				DDFA63FB2C636804002E93F3 /* PeripheralListSortView.swift in Sources */,
 				DDB519002C6C72C400A049DE /* SFCMPeripheralServiceDetailVC.swift in Sources */,
 				DDAC3D642C6DF66300AA87B4 /* SFCMPeripheralAdvDetailCell.swift in Sources */,
 				DDA648CD2C61A1E300F01858 /* SFEntranceVC.swift in Sources */,
-				DDB895B02CF06D5100376F37 /* OptStringItemView.swift in Sources */,
+				DDB895B02CF06D5100376F37 /* OptDetailStringCell.swift in Sources */,
 				51DF13A82CF1CF1400838578 /* SFText.swift in Sources */,
 				51A613A42C74DAAA005990FC /* SFCMConnectView.swift in Sources */,
 				DDB895C52CF0810F00376F37 /* OptListCell.swift in Sources */,

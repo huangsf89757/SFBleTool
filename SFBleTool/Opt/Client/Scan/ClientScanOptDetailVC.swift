@@ -26,14 +26,14 @@ class ClientScanOptDetailVC: OptDetailVC {
     }
     
     // MARK: ui
-    lazy var duplicatesView: OptStringItemView = {
-        return OptStringItemView().then { view in
+    lazy var duplicatesView: OptDetailStringCell = {
+        return OptDetailStringCell().then { view in
             view.titleLabel.text = SFText.Main.client_opt_detail_scan_duplicates
             view.subtitleLabel.text = SFText.Main.client_opt_detail_scan_duplicates_desc
         }
     }()
-    lazy var uuidsView: OptBoolItemView = {
-        return OptBoolItemView().then { view in
+    lazy var uuidsView: OptDetailBoolCell = {
+        return OptDetailBoolCell().then { view in
             view.titleLabel.text = SFText.Main.client_opt_detail_scan_uuids
             view.subtitleLabel.text = SFText.Main.client_opt_detail_scan_uuids_desc
         }
