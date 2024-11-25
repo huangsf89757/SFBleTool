@@ -28,4 +28,11 @@ class OptDetailBoolCell: OptDetailCell {
             make.trailing.equalToSuperview().offset(-10)
         }
     }
+    
+    // MARK: override
+    override func update(model: OptItemModel) {
+        super.update(model: model)
+        guard let value = model.value as? Bool else { return }
+        switchView.setOn(value, animated: false)
+    }
 }

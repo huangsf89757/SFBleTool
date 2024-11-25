@@ -27,15 +27,18 @@ class OptDetailCell: SFTableViewCell {
         }
     }
     
-    // MARK: life cycle
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        
+    // MARK: data
+    var model: OptItemModel? {
+        didSet {       
+            guard let model = model else { return }
+            update(model: model)
+        }
     }
+    
+    
+    // MARK: life cycle
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        backgroundColor = .clear
-        contentView.backgroundColor = .clear
         isUserInteractionEnabled = isEdit
         customUI()
     }
@@ -62,7 +65,7 @@ class OptDetailCell: SFTableViewCell {
             view.setContentHuggingPriority(.required, for: .horizontal)
         }
     }()
-    lazy var subtitleLabel: SFLabel = {
+    lazy var descLabel: SFLabel = {
         return SFLabel().then { view in
             view.font = .systemFont(ofSize: 12, weight: .regular)
             view.textColor = SFColor.UI.subtitle
@@ -71,14 +74,15 @@ class OptDetailCell: SFTableViewCell {
     }()
     
     func customUI() {
-        backgroundColor = .clear
+        backgroundColorNor = .clear
+        
         contentView.addSubview(mainView)
         mainView.addSubview(selectBtn)
         mainView.addSubview(titleLabel)
-        contentView.addSubview(subtitleLabel)
+        contentView.addSubview(descLabel)
         
         mainView.snp.makeConstraints { make in
-            make.top.equalToSuperview()
+            make.top.equalToSuperview().offset(20)
             make.leading.equalToSuperview()
             make.trailing.equalToSuperview()
         }
@@ -93,12 +97,19 @@ class OptDetailCell: SFTableViewCell {
             make.bottom.equalToSuperview().offset(-10)
             make.height.equalTo(30)
         }
-        subtitleLabel.snp.makeConstraints { make in
-            make.top.equalTo(contentView.snp.bottom).offset(10)
+        descLabel.snp.makeConstraints { make in
+            make.top.equalTo(mainView.snp.bottom).offset(10)
             make.leading.equalToSuperview().offset(10)
             make.trailing.equalToSuperview().offset(-10)
             make.bottom.equalToSuperview().offset(-10)
         }
+    }
+    
+    // MARK: func
+    func update(model: OptItemModel) {
+        selectBtn.isSelected = model.isSelected
+        titleLabel.text = model.item.title
+        descLabel.text = model.item.desc
     }
 }
 

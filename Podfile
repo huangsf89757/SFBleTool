@@ -118,17 +118,22 @@ def set_configurations(installer)
   
   pods_project.targets.each do |target|
     target.build_configurations.each do |config|
-      config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '14.0'
       config.build_settings['EXCLUDED_ARCHS[sdk=iphonesimulator*]'] = 'arm64'
-      config.build_settings['SWIFT_VERSION'] = '5.0'
-      config.build_settings['ENABLE_BITCODE'] = 'YES'
-      config.build_settings['GCC_OPTIMIZATION_LEVEL'] = 's'
-      config.build_settings['OTHER_SWIFT_FLAGS'] ||= ''
+      config.build_settings['ONLY_ACTIVE_ARCH'] = 'false'
+      # Ignoring ENABLE_BITCODE because building with bitcode is no longer supported.
+      # config.build_settings['ENABLE_BITCODE'] = 'YES'
       
-      # 检查是否已经包含调试标志
-      unless config.build_settings['OTHER_SWIFT_FLAGS'].include?('-DDEBUG')
-        config.build_settings['OTHER_SWIFT_FLAGS'] += ' -DDEBUG'
+      config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '14.0'
+      config.build_settings['SWIFT_VERSION'] = '5.0'
+            
+      if config.name == "DEBUG"
+        config.build_settings['GCC_OPTIMIZATION_LEVEL'] = '0'
+        config.build_settings['SWIFT_OPTIMIZATION_LEVEL'] = '-Onone'
+      else
+        config.build_settings['GCC_OPTIMIZATION_LEVEL'] = 's'
+        config.build_settings['SWIFT_OPTIMIZATION_LEVEL'] = '-O'
       end
+     
     end
   end
 

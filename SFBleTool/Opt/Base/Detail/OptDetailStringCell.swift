@@ -15,7 +15,6 @@ import SFUI
 
 // MARK: - OptDetailStringCell
 class OptDetailStringCell: OptDetailCell {
-    
     // MARK: ui
     lazy var textField: SFTextField = {
         return SFTextField().then { view in
@@ -33,6 +32,13 @@ class OptDetailStringCell: OptDetailCell {
             make.leading.greaterThanOrEqualTo(titleLabel.snp.trailing).offset(10)
             make.trailing.equalToSuperview().offset(-10)
         }
+    }
+    
+    // MARK: override
+    override func update(model: OptItemModel) {
+        super.update(model: model)
+        guard let value = model.value as? String else { return }
+        textField.text = value
     }
 }
 

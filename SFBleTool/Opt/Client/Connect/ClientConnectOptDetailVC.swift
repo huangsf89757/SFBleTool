@@ -15,128 +15,21 @@ import SFUI
 
 // MARK: ClientConnectOptDetailVC
 class ClientConnectOptDetailVC: OptDetailVC {
-    // MARK: var
-    var model: ClientConnectOptModel? {
-        didSet {
-            reconnectView.switchView.setOn(model?.reconnect ?? false, animated: false)
-            bridgingView.switchView.setOn(model?.bridging ?? false, animated: false)
-            connectionView.switchView.setOn(model?.connection ?? false, animated: false)
-            disconnectionView.switchView.setOn(model?.disconnection ?? false, animated: false)
-            notificationView.switchView.setOn(model?.notification ?? false, animated: false)
-            ancsView.switchView.setOn(model?.ancs ?? false, animated: false)
-            delayView.textField.text = model?.delay
-        }
-    }
-    
     // MARK: life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = SFText.Main.client_opt_detail_connect
-        nameView.subtitleLabel.text = SFText.Main.client_opt_detail_connect_desc
-    }
-    
-    // MARK: ui
-    lazy var reconnectView: OptDetailBoolCell = {
-        return OptDetailBoolCell().then { view in
-            view.titleLabel.text = SFText.Main.client_opt_detail_connect_reconnect
-            view.subtitleLabel.text = SFText.Main.client_opt_detail_connect_reconnect_desc
-        }
-    }()
-    lazy var bridgingView: OptDetailBoolCell = {
-        return OptDetailBoolCell().then { view in
-            view.titleLabel.text = SFText.Main.client_opt_detail_connect_bridging
-            view.subtitleLabel.text = SFText.Main.client_opt_detail_connect_bridging_desc
-        }
-    }()
-    lazy var connectionView: OptDetailBoolCell = {
-        return OptDetailBoolCell().then { view in
-            view.titleLabel.text = SFText.Main.client_opt_detail_connect_connection
-            view.subtitleLabel.text = SFText.Main.client_opt_detail_connect_connection_desc
-        }
-    }()
-    lazy var disconnectionView: OptDetailBoolCell = {
-        return OptDetailBoolCell().then { view in
-            view.titleLabel.text = SFText.Main.client_opt_detail_connect_disconnection
-            view.subtitleLabel.text = SFText.Main.client_opt_detail_connect_disconnection_desc
-        }
-    }()
-    lazy var notificationView: OptDetailBoolCell = {
-        return OptDetailBoolCell().then { view in
-            view.titleLabel.text = SFText.Main.client_opt_detail_connect_notification
-            view.subtitleLabel.text = SFText.Main.client_opt_detail_connect_notification_desc
-        }
-    }()
-    lazy var ancsView: OptDetailBoolCell = {
-        return OptDetailBoolCell().then { view in
-            view.titleLabel.text = SFText.Main.client_opt_detail_connect_ancs
-            view.subtitleLabel.text = SFText.Main.client_opt_detail_connect_ancs_desc
-        }
-    }()
-    lazy var delayView: OptDetailStringCell = {
-        return OptDetailStringCell().then { view in
-            view.titleLabel.text = SFText.Main.client_opt_detail_connect_delay
-            view.subtitleLabel.text = SFText.Main.client_opt_detail_connect_delay_desc
-        }
-    }()
-   
-    override func customUI() {
-        super.customUI()
-        scrollView.contentView.addSubview(reconnectView)
-        scrollView.contentView.addSubview(bridgingView)
-        scrollView.contentView.addSubview(connectionView)
-        scrollView.contentView.addSubview(disconnectionView)
-        scrollView.contentView.addSubview(notificationView)
-        scrollView.contentView.addSubview(ancsView)
-        scrollView.contentView.addSubview(delayView)
-        
-        reconnectView.snp.makeConstraints { make in
-            make.top.equalTo(nameView.snp.bottom).offset(20)
-            make.leading.equalToSuperview()
-            make.trailing.equalToSuperview()
-        }
-        bridgingView.snp.makeConstraints { make in
-            make.top.equalTo(reconnectView.snp.bottom).offset(20)
-            make.leading.equalToSuperview()
-            make.trailing.equalToSuperview()
-        }
-        connectionView.snp.makeConstraints { make in
-            make.top.equalTo(bridgingView.snp.bottom).offset(20)
-            make.leading.equalToSuperview()
-            make.trailing.equalToSuperview()
-        }
-        disconnectionView.snp.makeConstraints { make in
-            make.top.equalTo(connectionView.snp.bottom).offset(20)
-            make.leading.equalToSuperview()
-            make.trailing.equalToSuperview()
-        }
-        notificationView.snp.makeConstraints { make in
-            make.top.equalTo(disconnectionView.snp.bottom).offset(20)
-            make.leading.equalToSuperview()
-            make.trailing.equalToSuperview()
-        }
-        ancsView.snp.makeConstraints { make in
-            make.top.equalTo(notificationView.snp.bottom).offset(20)
-            make.leading.equalToSuperview()
-            make.trailing.equalToSuperview()
-        }
-        delayView.snp.makeConstraints { make in
-            make.top.equalTo(ancsView.snp.bottom).offset(20)
-            make.leading.equalToSuperview()
-            make.trailing.equalToSuperview()
-            make.bottom.lessThanOrEqualToSuperview().offset(-20)
-        }
-    }
-    
-    // MARK: override
-    override func editOrSave(_ isEdit: Bool) {
-        super.editOrSave(isEdit)
-        reconnectView.isEdit = isEdit
-        bridgingView.isEdit = isEdit
-        connectionView.isEdit = isEdit
-        disconnectionView.isEdit = isEdit
-        notificationView.isEdit = isEdit
-        ancsView.isEdit = isEdit
-        delayView.isEdit = isEdit
+        let model = OptModel()
+        model.title = SFText.Main.client_opt_detail_connect
+        model.desc = SFText.Main.client_opt_detail_connect_desc
+        let itemModel_reconnect = OptItemModel(item: .client(.connect(.reconnect)), cellType: .bool)
+        let itemModel_bridging = OptItemModel(item: .client(.connect(.bridging)), cellType: .bool)
+        let itemModel_connection = OptItemModel(item: .client(.connect(.connection)), cellType: .bool)
+        let itemModel_disconnection = OptItemModel(item: .client(.connect(.disconnection)), cellType: .bool)
+        let itemModel_notification = OptItemModel(item: .client(.connect(.notification)), cellType: .bool)
+        let itemModel_ancs = OptItemModel(item: .client(.connect(.ancs)), cellType: .bool)
+        let itemModel_delay = OptItemModel(item: .client(.connect(.delay)), cellType: .string)
+        model.itemModels = [itemModel_reconnect, itemModel_bridging, itemModel_connection, itemModel_disconnection, itemModel_notification, itemModel_ancs, itemModel_delay]
+        self.model = model
     }
 }
 

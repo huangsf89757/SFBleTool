@@ -15,52 +15,15 @@ import SFUI
 
 // MARK: ClientScanOptDetailVC
 class ClientScanOptDetailVC: OptDetailVC {
-    // MARK: var
-    
-    
     // MARK: life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = SFText.Main.client_opt_detail_scan
-        nameView.subtitleLabel.text = SFText.Main.client_opt_detail_scan_desc
-    }
-    
-    // MARK: ui
-    lazy var duplicatesView: OptDetailStringCell = {
-        return OptDetailStringCell().then { view in
-            view.titleLabel.text = SFText.Main.client_opt_detail_scan_duplicates
-            view.subtitleLabel.text = SFText.Main.client_opt_detail_scan_duplicates_desc
-        }
-    }()
-    lazy var uuidsView: OptDetailBoolCell = {
-        return OptDetailBoolCell().then { view in
-            view.titleLabel.text = SFText.Main.client_opt_detail_scan_uuids
-            view.subtitleLabel.text = SFText.Main.client_opt_detail_scan_uuids_desc
-        }
-    }()
-   
-    override func customUI() {
-        super.customUI()
-        scrollView.contentView.addSubview(duplicatesView)
-        scrollView.contentView.addSubview(uuidsView)
-        
-        duplicatesView.snp.makeConstraints { make in
-            make.top.equalTo(nameView.snp.bottom).offset(20)
-            make.leading.equalToSuperview()
-            make.trailing.equalToSuperview()
-        }
-        uuidsView.snp.makeConstraints { make in
-            make.top.equalTo(duplicatesView.snp.bottom).offset(20)
-            make.leading.equalToSuperview()
-            make.trailing.equalToSuperview()
-            make.bottom.lessThanOrEqualToSuperview().offset(-20)
-        }
-    }
-    
-    // MARK: override
-    override func editOrSave(_ isEdit: Bool) {
-        super.editOrSave(isEdit)
-        duplicatesView.isEdit = isEdit
-        uuidsView.isEdit = isEdit
+        let model = OptModel()
+        model.title = SFText.Main.client_opt_detail_scan
+        model.desc = SFText.Main.client_opt_detail_scan_desc
+        let itemModel_duplicates = OptItemModel(item: .client(.scan(.duplicates)), cellType: .bool)
+        let itemModel_uuids = OptItemModel(item: .client(.scan(.uuids)), cellType: .string)
+        model.itemModels = [itemModel_duplicates, itemModel_uuids]
+        self.model = model
     }
 }

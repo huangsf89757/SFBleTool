@@ -7,7 +7,7 @@
 
 import Foundation
 
-class ClientConnectOptModel: OptModel {
+class ClientConnectOptModel: OptItemModel {
     var reconnect: Bool?
     var bridging: Bool?
     var connection: Bool?

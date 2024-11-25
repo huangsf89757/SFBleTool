@@ -7,7 +7,7 @@
 
 import Foundation
 
-class ClientScanOptModel: OptModel {
+class ClientScanOptModel: OptItemModel {
     var duplicate: Bool?
     var uuids: [String]?
 }

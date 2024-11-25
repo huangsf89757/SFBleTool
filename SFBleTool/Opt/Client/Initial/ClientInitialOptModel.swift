@@ -7,7 +7,7 @@
 
 import Foundation
 
-class ClientInitialOptModel: OptModel {
+class ClientInitialOptModel: OptItemModel {
     var identifier: String?
     var alert: Bool?
 }
