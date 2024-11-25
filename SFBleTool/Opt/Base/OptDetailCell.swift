@@ -14,7 +14,7 @@ import SFBase
 import SFUI
 
 // MARK: - OptDetailCell
-class OptDetailCell: SFView {
+class OptDetailCell: SFTableViewCell {
     // MARK: var
     var selectBlcok: (()->())?
     var isEdit = false {
@@ -30,12 +30,18 @@ class OptDetailCell: SFView {
     // MARK: life cycle
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
+    }
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        backgroundColor = .clear
+        contentView.backgroundColor = .clear
         isUserInteractionEnabled = isEdit
         customUI()
     }
     
     // MARK: ui
-    lazy var contentView: SFView = {
+    lazy var mainView: SFView = {
         return SFView().then { view in
             view.backgroundColor = SFColor.UI.content
         }
@@ -66,12 +72,12 @@ class OptDetailCell: SFView {
     
     func customUI() {
         backgroundColor = .clear
-        addSubview(contentView)
-        contentView.addSubview(selectBtn)
-        contentView.addSubview(titleLabel)
-        addSubview(subtitleLabel)
+        contentView.addSubview(mainView)
+        mainView.addSubview(selectBtn)
+        mainView.addSubview(titleLabel)
+        contentView.addSubview(subtitleLabel)
         
-        contentView.snp.makeConstraints { make in
+        mainView.snp.makeConstraints { make in
             make.top.equalToSuperview()
             make.leading.equalToSuperview()
             make.trailing.equalToSuperview()

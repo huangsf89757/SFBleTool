@@ -26,7 +26,7 @@ class OptDetailStringCell: OptDetailCell {
     }()
     override func customUI() {
         super.customUI()
-        contentView.addSubview(textField)
+        mainView.addSubview(textField)
         textField.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(10)
             make.bottom.equalToSuperview().offset(-10)

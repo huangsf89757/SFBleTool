@@ -21,7 +21,7 @@ class OptDetailBoolCell: OptDetailCell {
     }()
     override func customUI() {
         super.customUI()
-        contentView.addSubview(switchView)
+        mainView.addSubview(switchView)
         switchView.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
             make.leading.greaterThanOrEqualTo(titleLabel.snp.trailing).offset(10)

@@ -16,8 +16,8 @@ def pods_private
   $server = 'Server/'
   
   # Basic
-  pod 'SFBase',           :path => $root + $basic + 'SFBase/'
   pod 'SFExtension',      :path => $root + $basic + 'SFExtension/'
+  pod 'SFBase',           :path => $root + $basic + 'SFBase/'
   
   # UI
   pod 'SFUI',             :path => $root + $ui + 'SFUI/'
