@@ -61,6 +61,19 @@ class OptDetailVC: SFTableViewController {
             view.addTarget(self, action: #selector(editBtnClicked), for: .touchUpInside)
         }
     }()
+    
+    // MARK: back
+    override func willBack() -> (will: Bool, animated: Bool) {
+        SFAlert.addSureAction(title: "保存", action: { [weak self] popView in
+            self?.goBack(animated: true)
+            return true
+        })
+        SFAlert.addCancelAction(title: "取消", action: { popView in
+            return true
+        })
+        SFAlert.show(title: "是否保存修改？")
+        return (false, false)
+    }
 }
 
 // MARK: - UITableViewDelegate, UITableViewDataSource

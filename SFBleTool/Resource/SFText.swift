@@ -58,6 +58,7 @@ extension SFText {
         
         public static var opt_detail: String { text(name: "opt_detail") }
         public static var opt_detail_edit: String { text(name: "opt_detail_edit") }
+        public static var opt_detail_sure: String { text(name: "opt_detail_sure") }
         public static var opt_detail_save: String { text(name: "opt_detail_save") }
         
         public static var client_opt_list_initial: String { text(name: "client_opt_list_initial") }

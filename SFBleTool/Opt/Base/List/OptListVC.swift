@@ -45,8 +45,7 @@ class OptListVC: SFTableViewController {
 // MARK: - UITableViewDelegate, UITableViewDataSource
 extension OptListVC: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-//        return models.count
-        return 10
+        return models.count
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1

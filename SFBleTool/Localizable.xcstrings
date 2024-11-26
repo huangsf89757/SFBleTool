@@ -463,6 +463,17 @@
         }
       }
     },
+    "opt_detail_sure" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "确定"
+          }
+        }
+      }
+    },
     "opt_list_new" : {
       "extractionState" : "manual",
       "localizations" : {
