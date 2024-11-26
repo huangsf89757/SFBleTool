@@ -142,6 +142,8 @@ extension PeripheralListVC {
     
     /// 点击扫描
     @objc private func scanBtnClicked() {
+        SFNotify.show(title: "TITLE")
+        
 //        if scanBtn.isSelected {
 //            bleCentralManager.stopScan(id: UUID())
 //        } else {
