@@ -16,7 +16,7 @@ import SFUI
 // MARK: - OptDetailCell
 class OptDetailCell: SFTableViewCell {
     // MARK: var
-    var selectBlcok: (()->())?
+    var selectBlcok: ((OptItemModel)->())?
     var isEdit = false {
         didSet {
             isUserInteractionEnabled = isEdit
@@ -35,7 +35,6 @@ class OptDetailCell: SFTableViewCell {
         }
     }
     
-    
     // MARK: life cycle
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -52,7 +51,7 @@ class OptDetailCell: SFTableViewCell {
     lazy var selectBtn: SFButton = {
         return SFButton().then { view in
             view.setImage(SFImage.UI.Select.nor, for: .normal)
-            view.setImage(SFImage.UI.Select.sel, for: .normal)
+            view.setImage(SFImage.UI.Select.sel, for: .selected)
             view.hitInsets = UIEdgeInsets(top: -10, left: -10, bottom: -10, right: -10)
             view.addTarget(self, action: #selector(selectBtnClicked), for: .touchUpInside)
             view.isHidden = true
@@ -116,6 +115,7 @@ class OptDetailCell: SFTableViewCell {
 // MARK: - Action
 extension OptDetailCell {
     @objc private func selectBtnClicked() {
-        selectBlcok?()
+        guard let model = model else { return }
+        selectBlcok?(model)
     }
 }

@@ -11,4 +11,10 @@ class OptModel {
     var title: String?
     var desc: String?
     var itemModels: [OptItemModel] = []
+    
+    var selectedModels: [OptItemModel] {
+        return itemModels.filter { model in
+            model.isSelected == true
+        }
+    }
 }

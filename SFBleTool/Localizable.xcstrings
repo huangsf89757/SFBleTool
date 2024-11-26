@@ -73,7 +73,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "CBConnectPeripheralOptionRequiresANCS\\nAn option to require Apple Notification Center Service (ANCS) when connecting a device."
+            "value" : "CBConnectPeripheralOptionRequiresANCS\nAn option to require Apple Notification Center Service (ANCS) when connecting a device."
           }
         }
       }
@@ -95,7 +95,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "CBConnectPeripheralOptionEnableTransportBridgingKey\\nAn option to bridge classic Bluetooth technology profiles, if already connected over Bluetooth Low Energy."
+            "value" : "CBConnectPeripheralOptionEnableTransportBridgingKey\nAn option to bridge classic Bluetooth technology profiles, if already connected over Bluetooth Low Energy."
           }
         }
       }
@@ -117,7 +117,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "CBConnectPeripheralOptionNotifyOnConnectionKey\\nA Boolean value that specifies whether the system should display an alert when connecting a peripheral in the background."
+            "value" : "CBConnectPeripheralOptionNotifyOnConnectionKey\nA Boolean value that specifies whether the system should display an alert when connecting a peripheral in the background."
           }
         }
       }
@@ -139,7 +139,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "CBConnectPeripheralOptionStartDelayKey\\nAn option that indicates a delay before the system makes a connection."
+            "value" : "CBConnectPeripheralOptionStartDelayKey\nAn option that indicates a delay before the system makes a connection."
           }
         }
       }
@@ -172,7 +172,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "CBConnectPeripheralOptionNotifyOnDisconnectionKey\\nA Boolean value that specifies whether the system should display an alert when disconnecting a peripheral in the background."
+            "value" : "CBConnectPeripheralOptionNotifyOnDisconnectionKey\nA Boolean value that specifies whether the system should display an alert when disconnecting a peripheral in the background."
           }
         }
       }
@@ -194,7 +194,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "CBConnectPeripheralOptionNotifyOnNotificationKey\\nA Boolean value that specifies whether the system should display an alert for any notification sent by a peripheral."
+            "value" : "CBConnectPeripheralOptionNotifyOnNotificationKey\nA Boolean value that specifies whether the system should display an alert for any notification sent by a peripheral."
           }
         }
       }
@@ -216,7 +216,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "CBConnectPeripheralOptionEnableAutoReconnect\\nA Boolean value that specifies whether the system automatically reconnects with a peripheral."
+            "value" : "CBConnectPeripheralOptionEnableAutoReconnect \nA Boolean value that specifies whether the system automatically reconnects with a peripheral."
           }
         }
       }
@@ -249,7 +249,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "CBCentralManagerOptionShowPowerAlertKey\\nA Boolean value that specifies whether the system warns the user if the app instantiates the central manager when Bluetooth service isn’t available."
+            "value" : "CBCentralManagerOptionShowPowerAlertKey\nA Boolean value that specifies whether the system warns the user if the app instantiates the central manager when Bluetooth service isn’t available."
           }
         }
       }
@@ -282,7 +282,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "CBCentralManagerOptionRestoreIdentifierKey\\nA string containing a unique identifier (UID) for the central manager to instantiate."
+            "value" : "CBCentralManagerOptionRestoreIdentifierKey\nA string containing a unique identifier (UID) for the central manager to instantiate."
           }
         }
       }
@@ -326,7 +326,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "CBCentralManagerScanOptionAllowDuplicatesKey\\nA Boolean value that specifies whether the scan should run without duplicate filtering."
+            "value" : "CBCentralManagerScanOptionAllowDuplicatesKey\nA Boolean value that specifies whether the scan should run without duplicate filtering."
           }
         }
       }
@@ -348,7 +348,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "CBCentralManagerScanOptionSolicitedServiceUUIDsKey\\nAn array of service UUIDs that you want to scan for."
+            "value" : "CBCentralManagerScanOptionSolicitedServiceUUIDsKey\nAn array of service UUIDs that you want to scan for."
           }
         }
       }

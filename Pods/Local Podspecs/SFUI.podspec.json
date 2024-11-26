@@ -46,6 +46,9 @@
     ],
     "IQKeyboardManagerSwift": [
       "~> 6.5.16"
+    ],
+    "EmptyDataSet-Swift": [
+      "~> 5.0.0"
     ]
   },
   "swift_version": "5.0"

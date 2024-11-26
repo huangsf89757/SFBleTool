@@ -1,4 +1,5 @@
 PODS:
+  - EmptyDataSet-Swift (5.0.0)
   - IQKeyboardManagerSwift (6.5.16)
   - Reusable (4.1.2):
     - Reusable/Storyboard (= 4.1.2)
@@ -22,6 +23,7 @@ PODS:
     - SFExtension (~> 0.1.0)
     - SwiftyBeaver
   - SFUI (0.1.0):
+    - EmptyDataSet-Swift (~> 5.0.0)
     - IQKeyboardManagerSwift (~> 6.5.16)
     - Reusable (~> 4.1.2)
     - SFBase (~> 0.1.0)
@@ -58,6 +60,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
+    - EmptyDataSet-Swift
     - IQKeyboardManagerSwift
     - Reusable
     - SideMenu
@@ -85,6 +88,7 @@ EXTERNAL SOURCES:
     :path: "../../Business/SFUser/"
 
 SPEC CHECKSUMS:
+  EmptyDataSet-Swift: eb382c0c87a2d9c678077385a595cec52da38171
   IQKeyboardManagerSwift: 12d89768845bb77b55cc092ecc2b1f9370f06b76
   Reusable: 6bae6a5e8aa793c9c441db0213c863a64bce9136
   SFBase: 74ba9db6aad5b3f5471abcdfbc23a674efcafd4f
@@ -92,7 +96,7 @@ SPEC CHECKSUMS:
   SFBusiness: dfc2961e6fab594e1fb3681a1668be99a641f34f
   SFExtension: 4d7aefd56e766216b7e03cfd362867893b0574a0
   SFLogger: addda8edacef3ea943515daec2287f8347a48247
-  SFUI: 7363213be4101e2a8a0c4cec8f1bea67ba5b81c2
+  SFUI: 4387cedb09baa360293fc14ca8d943027be2e039
   SFUser: 7079302000eb5c36b03ce7dad67d41b565b994d4
   SideMenu: f583187d21c5b1dd04c72002be544b555a2627a2
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25

@@ -29,6 +29,7 @@ class OptDetailVC: SFTableViewController {
             tableView.reloadData()
         }
     }
+    var showItemModels = [OptItemModel]()
     
     // MARK: life cycle
     convenience init() {
@@ -68,11 +69,18 @@ extension OptDetailVC: UITableViewDelegate, UITableViewDataSource {
         return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return model.itemModels.count
+        var showModels = [OptItemModel]()
+        if isEdit {
+            showModels = model.itemModels
+        } else {
+            showModels = model.selectedModels
+        }
+        self.showItemModels =  showModels
+        return self.showItemModels.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: OptDetailCell
-        let itemModel = model.itemModels[indexPath.row]
+        let itemModel = showItemModels[indexPath.row]
         switch itemModel.cellType {
         case .string:
             cell = tableView.dequeueReusableCell(for: indexPath, cellType: OptDetailStringCell.self)
@@ -81,6 +89,11 @@ extension OptDetailVC: UITableViewDelegate, UITableViewDataSource {
         }
         cell.model = itemModel
         cell.isEdit = isEdit
+        cell.selectBlcok = {
+            [weak self] model in
+            model.isSelected.toggle()
+            self?.tableView.reloadData()
+        }
         return cell
     }
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
