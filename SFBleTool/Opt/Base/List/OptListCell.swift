@@ -19,7 +19,7 @@ class OptListCell: SFCardTableViewCell {
     var model: OptModel? {
         didSet {
             guard let model = model else { return }
-            titleLabel.text = model.title
+            nameLabel.text = model.name
         }
     }
     
@@ -30,7 +30,7 @@ class OptListCell: SFCardTableViewCell {
     }
     
     // MARK: ui
-    private lazy var titleLabel: SFLabel = {
+    private lazy var nameLabel: SFLabel = {
         return SFLabel().then { view in
             view.font = .systemFont(ofSize: 17, weight: .bold)
             view.textColor = SFColor.UI.title
@@ -43,10 +43,10 @@ class OptListCell: SFCardTableViewCell {
         }
     }()
     private func customUI() {
-        cardView.addSubview(titleLabel)
+        cardView.addSubview(nameLabel)
         cardView.addSubview(detailIcon)
         
-        titleLabel.snp.makeConstraints { make in
+        nameLabel.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(10)
             make.leading.equalToSuperview().offset(10)
             make.bottom.equalToSuperview().offset(-10)
@@ -54,7 +54,7 @@ class OptListCell: SFCardTableViewCell {
         }
         detailIcon.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
-            make.leading.equalTo(titleLabel.snp.trailing).offset(10)
+            make.leading.equalTo(nameLabel.snp.trailing).offset(10)
             make.trailing.equalToSuperview().offset(-10)
             make.width.height.equalTo(20)
         }

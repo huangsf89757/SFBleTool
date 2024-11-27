@@ -24,6 +24,9 @@ class ClientScanOptListVC: OptListVC {
     // MARK: override
     override func addNew() {
         let vc = ClientScanOptDetailVC()
+        let optModel = OptModel()
+        optModel.default_clientScan()
+        vc.model = optModel
         navigationController?.pushViewController(vc, animated: true)
     }
 }

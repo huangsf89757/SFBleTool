@@ -24,6 +24,9 @@ class ClientInitialOptListVC: OptListVC {
     // MARK: override
     override func addNew() {
         let vc = ClientInitialOptDetailVC()
+        let optModel = OptModel()
+        optModel.default_clientInitial()
+        vc.model = optModel
         navigationController?.pushViewController(vc, animated: true)
     }
 }

@@ -24,12 +24,14 @@ class OptDetailVC: SFTableViewController {
     }
     
     // MARK: data
+    var headerTitle: String?
+    var headerDesc: String?
     var model: OptModel = OptModel() {
         didSet {
             tableView.reloadData()
         }
     }
-    var showItemModels = [OptItemModel]()
+    private var showItemModels = [OptItemModel]()
     
     // MARK: life cycle
     convenience init() {
@@ -44,6 +46,7 @@ class OptDetailVC: SFTableViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorStyle = .none
+        tableView.estimatedSectionHeaderHeight = 100
         tableView.register(headerFooterViewType: OptDetailHeader.self)
         tableView.register(cellType: OptDetailCell.self)
         tableView.register(cellType: OptDetailStringCell.self)
@@ -55,7 +58,7 @@ class OptDetailVC: SFTableViewController {
     private lazy var editBtn: SFButton = {
         return SFButton().then { view in
             view.setTitle(SFText.Main.opt_detail_edit, for: .normal)
-            view.setTitle(SFText.Main.opt_detail_save, for: .selected)
+            view.setTitle(SFText.Main.opt_detail_sure, for: .selected)
             view.setTitleColor(SFColor.UI.title, for: .normal)
             view.setTitleColor(SFColor.UI.title, for: .selected)
             view.addTarget(self, action: #selector(editBtnClicked), for: .touchUpInside)
@@ -94,7 +97,9 @@ extension OptDetailVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: OptDetailCell
         let itemModel = showItemModels[indexPath.row]
-        switch itemModel.cellType {
+        switch itemModel.item.valueType {
+        case .none:
+            cell = tableView.dequeueReusableCell(for: indexPath, cellType: OptDetailCell.self)
         case .string:
             cell = tableView.dequeueReusableCell(for: indexPath, cellType: OptDetailStringCell.self)
         case .bool:
@@ -114,7 +119,8 @@ extension OptDetailVC: UITableViewDelegate, UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let header = tableView.dequeueReusableHeaderFooterView(OptDetailHeader.self)
-        header?.model = model
+        header?.titleLabel.text = headerTitle
+        header?.descLabel.text = headerDesc
         return header
     }
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {

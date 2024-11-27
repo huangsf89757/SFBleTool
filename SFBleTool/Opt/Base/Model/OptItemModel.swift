@@ -9,19 +9,12 @@ import Foundation
 import UIKit
 
 class OptItemModel {
-    /// cell类型
-    enum CellType {
-        case string
-        case bool
-    }
     
-    var cellType: CellType
     var item: OptItem = .client(.connect(.ancs))
     var value: Any? = nil
     var isSelected: Bool = false
     
-    init(item: OptItem, cellType: CellType) {
+    init(item: OptItem) {
         self.item = item
-        self.cellType = cellType
     }
 }

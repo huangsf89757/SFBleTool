@@ -14,14 +14,6 @@ import SFBase
 import SFUI
 
 class OptDetailHeader: SFTableViewHeaderFooterView {
-    // MARK: data
-    var model: OptModel? {
-        didSet {
-            guard let model = model else { return }
-            titleLabel.text = model.title
-            descLabel.text = model.desc
-        }
-    }
     
     // MARK: life cycle
     override init(reuseIdentifier: String?) {
@@ -45,9 +37,6 @@ class OptDetailHeader: SFTableViewHeaderFooterView {
         }
     }()
     private func customUI() {
-        backgroundColor = .clear
-        contentView.backgroundColor = .clear
-        
         contentView.addSubview(titleLabel)
         contentView.addSubview(descLabel)
         
