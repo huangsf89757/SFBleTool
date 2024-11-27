@@ -20,7 +20,8 @@ class OptDetailStringCell: OptDetailCell {
         return SFTextField().then { view in
             view.font = .systemFont(ofSize: 17, weight: .regular)
             view.textColor = SFColor.UI.title
-            view.textAlignment = .center
+            view.textAlignment = .right
+            view.addTarget(self, action: #selector(textFieldAction(_:)), for: .valueChanged)
         }
     }()
     override func customUI() {
@@ -29,7 +30,7 @@ class OptDetailStringCell: OptDetailCell {
         textField.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(10)
             make.bottom.equalToSuperview().offset(-10)
-            make.leading.greaterThanOrEqualTo(titleLabel.snp.trailing).offset(10)
+            make.leading.equalTo(titleLabel.snp.trailing).offset(10)
             make.trailing.equalToSuperview().offset(-10)
         }
     }
@@ -42,3 +43,9 @@ class OptDetailStringCell: OptDetailCell {
     }
 }
 
+// MARK: - Action
+extension OptDetailStringCell {
+    @objc private func textFieldAction(_ sender: SFTextField) {
+        model?.value = sender.text
+    }
+}

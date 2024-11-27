@@ -17,7 +17,9 @@ import SFUI
 class OptDetailBoolCell: OptDetailCell {
     // MARK: ui
     lazy var switchView: UISwitch = {
-        return UISwitch()
+        return UISwitch().then { view in
+            view.addTarget(self, action: #selector(switchViewAction(_:)), for: .valueChanged)
+        }
     }()
     override func customUI() {
         super.customUI()
@@ -34,5 +36,12 @@ class OptDetailBoolCell: OptDetailCell {
         super.update(model: model)
         guard let value = model.value as? Bool else { return }
         switchView.setOn(value, animated: false)
+    }
+}
+
+// MARK: - Action
+extension OptDetailBoolCell {
+    @objc private func switchViewAction(_ sender: UISwitch) {
+        model?.value = sender.isOn
     }
 }
