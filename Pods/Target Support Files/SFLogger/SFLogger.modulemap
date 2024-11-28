@@ -1,6 +1,0 @@
-framework module SFLogger {
-  umbrella header "SFLogger-umbrella.h"
-
-  export *
-  module * { export * }
-}
