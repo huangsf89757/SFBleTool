@@ -12,17 +12,29 @@ import SFBusiness
 import WCDBSwift
 
 // MARK: - OptModel
-class OptModel: SFRemoteDataModel {
-    // MARK: var
-    /// 静态表名
-    override class var tableName: String {
+final class OptModel: SFLocalDatanable, SFRemoteDatanable, WCDBSwift.TableCodable {
+    // MARK: Data
+    class var tableName: String {
         return "option"
     }
     
+    // MARK: Local
+    var orderL: Int?
+    var idL: String?
+    var createTimeL: String?
+    var updateTimeL: String?
+    
+    // MARK: Remote
+    var orderR: Int?
+    var idR: String?
+    var createTimeR: String?
+    var updateTimeR: String?
+    
+    // MARK: Opt
     var type: Int?
     var name: String?
-    var values: [Int: Any]?
-    
+    var values: [Int: String]?
+
     private(set) var itemModels: [OptItemModel] = []
     var selectedModels: [OptItemModel] {
         return itemModels.filter { model in
@@ -31,8 +43,8 @@ class OptModel: SFRemoteDataModel {
     }
     
     /// CodingKeys
-    public enum CodingKeys: String, CodingTableKey {
-        public typealias Root = SFRemoteDataModel
+    enum CodingKeys: String, CodingTableKey {
+        public typealias Root = OptModel
         
         case orderL
         case idL
@@ -70,16 +82,8 @@ extension OptModel {
     }
     func setValue(_ value: Any?, for itemModel: OptItemModel) {
         guard let value = value else { return }
-        switch itemModel.item.valueType {
-        case .string:
-            guard let string = value as? String else { return }
-            itemModel.value = string
-        case .bool:
-            guard let bool = value as? Bool else { return }
-            itemModel.value = bool
-        case .none:
-            break
-        }
+        guard let string = value as? String else { return }
+        itemModel.value = string
     }
 }
 
@@ -90,7 +94,7 @@ extension OptModel {
             values = [:]
             return
         }
-        var values = [Int: Any]()
+        var values = [Int: String]()
         for selectedModel in self.selectedModels {
             let code = selectedModel.item.code
             guard let value = selectedModel.value else {

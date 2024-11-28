@@ -20,19 +20,25 @@ import IQKeyboardManagerSwift
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {                
+       
+        
+        // 日志
+        SFLogger.config()
+        
+        // 键盘 TODO: 考虑一下是否使用notify监听didFinishLaunching 实现自动配置
+        IQKeyboardManager.shared.enable = true
+        IQKeyboardManager.shared.enableAutoToolbar = true
+        IQKeyboardManager.shared.shouldShowToolbarPlaceholder = true
+        IQKeyboardManager.shared.shouldResignOnTouchOutside = true
+        
         // Resource
         SFImage.App.icon = SFImage.Main.icon
         SFImage.App.logo = SFImage.Main.logo
         SFText.App.name = SFText.Main.app_name
         SFText.App.slogen = SFText.Main.app_slogen
         
-        // 日志
-        SFLogger.config()
-        // 键盘 TODO: 考虑一下是否使用notify监听didFinishLaunching 实现自动配置
-        IQKeyboardManager.shared.enable = true
-        IQKeyboardManager.shared.enableAutoToolbar = true
-        IQKeyboardManager.shared.shouldShowToolbarPlaceholder = true
-        IQKeyboardManager.shared.shouldResignOnTouchOutside = true
+        // Database
+        configAppDatabase()
                 
         return true
     }

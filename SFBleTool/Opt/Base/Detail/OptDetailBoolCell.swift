@@ -34,14 +34,14 @@ class OptDetailBoolCell: OptDetailCell {
     // MARK: override
     override func update(model: OptItemModel) {
         super.update(model: model)
-        guard let value = model.value as? Bool else { return }
-        switchView.setOn(value, animated: false)
+        guard let value = model.value, let int = Int(value) else { return }
+        switchView.setOn(int > 0, animated: false)
     }
 }
 
 // MARK: - Action
 extension OptDetailBoolCell {
     @objc private func switchViewAction(_ sender: UISwitch) {
-        model?.value = sender.isOn
+        model?.value = sender.isOn ? "1" : "0"
     }
 }

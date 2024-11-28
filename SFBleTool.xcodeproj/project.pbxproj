@@ -29,7 +29,7 @@
 		DD0E2EB62CF4496E00200456 /* OptItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0E2EB52CF4496E00200456 /* OptItem.swift */; };
 		DD0E2EB82CF4652500200456 /* OptModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0E2EB72CF4652500200456 /* OptModel.swift */; };
 		DD0E2EBD2CF46A0500200456 /* OptDetailHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0E2EBC2CF46A0500200456 /* OptDetailHeader.swift */; };
-		DD214E862CF84C5000D0D493 /* BleToolUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD214E852CF84C5000D0D493 /* BleToolUserModel.swift */; };
+		DD214E862CF84C5000D0D493 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD214E852CF84C5000D0D493 /* UserModel.swift */; };
 		DD214E882CF84E0300D0D493 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD214E872CF84E0300D0D493 /* Database.swift */; };
 		DD630BFF2C965C4100A24C35 /* SFCMPeripheralAdvDetailItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD630BFE2C965C4100A24C35 /* SFCMPeripheralAdvDetailItem.swift */; };
 		DD630C052C966CDA00A24C35 /* SFCMPeripheralDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD630C042C966CDA00A24C35 /* SFCMPeripheralDetailHeaderView.swift */; };
@@ -124,7 +124,7 @@
 		DD0E2EB52CF4496E00200456 /* OptItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptItem.swift; sourceTree = "<group>"; };
 		DD0E2EB72CF4652500200456 /* OptModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptModel.swift; sourceTree = "<group>"; };
 		DD0E2EBC2CF46A0500200456 /* OptDetailHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptDetailHeader.swift; sourceTree = "<group>"; };
-		DD214E852CF84C5000D0D493 /* BleToolUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BleToolUserModel.swift; sourceTree = "<group>"; };
+		DD214E852CF84C5000D0D493 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		DD214E872CF84E0300D0D493 /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 		DD630BFE2C965C4100A24C35 /* SFCMPeripheralAdvDetailItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFCMPeripheralAdvDetailItem.swift; sourceTree = "<group>"; };
 		DD630C042C966CDA00A24C35 /* SFCMPeripheralDetailHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFCMPeripheralDetailHeaderView.swift; sourceTree = "<group>"; };
@@ -499,7 +499,7 @@
 				DDB895DA2CF08B3300376F37 /* UserCenterItem.swift */,
 				DDB895DC2CF08C8F00376F37 /* UserCenterCell.swift */,
 				DDF08C022C85BC5900FB4B48 /* UserCenterHeader.swift */,
-				DD214E852CF84C5000D0D493 /* BleToolUserModel.swift */,
+				DD214E852CF84C5000D0D493 /* UserModel.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -770,7 +770,7 @@
 				DD0E2EBD2CF46A0500200456 /* OptDetailHeader.swift in Sources */,
 				DD214E882CF84E0300D0D493 /* Database.swift in Sources */,
 				DDF08C032C85BC5900FB4B48 /* UserCenterHeader.swift in Sources */,
-				DD214E862CF84C5000D0D493 /* BleToolUserModel.swift in Sources */,
+				DD214E862CF84C5000D0D493 /* UserModel.swift in Sources */,
 				DDB895D92CF08B0400376F37 /* UserCenterVC.swift in Sources */,
 				51DF13B32CF20CAF00838578 /* Root.swift in Sources */,
 				DDFA63F72C636688002E93F3 /* PeripheralListHeader.swift in Sources */,

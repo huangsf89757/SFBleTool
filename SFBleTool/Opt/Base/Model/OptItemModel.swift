@@ -11,7 +11,7 @@ import UIKit
 class OptItemModel {
     
     var item: OptItem = .client(.connect(.ancs))
-    var value: Any? = nil
+    var value: String? = nil
     var isSelected: Bool = false
     
     init(item: OptItem) {
