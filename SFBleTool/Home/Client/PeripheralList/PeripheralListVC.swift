@@ -252,7 +252,7 @@ extension PeripheralListVC {
          model.rssi = RSSI.doubleValue
          model.advertisementData = advertisementData
          tableView.reloadRows(at: [IndexPath(row: row, section: 0)], with: .none)
-         Log.debug("更新 peripheral=\(peripheral.sf.description)")
+         SFLogger.debug("更新 peripheral=\(peripheral.sf.description)")
      } else {
          let model = PeripheralModel()
          model.name = peripheral.name
@@ -262,7 +262,7 @@ extension PeripheralListVC {
          model.advertisementData = advertisementData
          discoveredModels.append(model)
          reloadList()
-         Log.debug("新增 peripheral=\(peripheral.sf.description)")
+         SFLogger.debug("新增 peripheral=\(peripheral.sf.description)")
      }
      */
 }

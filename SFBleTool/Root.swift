@@ -25,12 +25,12 @@ enum RootPage: Int {
 }
 extension SceneDelegate {
     func setRoot() {
-//        if let rootValue = UserDefaults.standard.object(forKey: UserDefaultKey.root) as? Int {
-//            root = RootPage(rawValue: rootValue) ?? .sign
-//        } else {
-//            UserDefaults.standard.setValue(RootPage.sign.rawValue, forKey: UserDefaultKey.root)
-//        }
-        showPage(root: .client)
+        if let rootValue = UserDefaults.standard.object(forKey: UserDefaultKey.root) as? Int {
+            root = RootPage(rawValue: rootValue) ?? .sign
+        } else {
+            UserDefaults.standard.setValue(RootPage.sign.rawValue, forKey: UserDefaultKey.root)
+        }
+        showPage(root: root)
     }
     private func showPage(root: RootPage) {
         switch root {

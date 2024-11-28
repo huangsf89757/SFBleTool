@@ -116,16 +116,16 @@ class PeripheralListFilterView: SFPopView {
 
             // Events
             view.onDidAddTag = { field, tag in
-                Log.debug("DidAddTag:\(tag.text)")
+                SFLogger.debug("DidAddTag:\(tag.text)")
             }
             view.onDidRemoveTag = { field, tag in
-                Log.debug("DidRemoveTag:\(tag.text)")
+                SFLogger.debug("DidRemoveTag:\(tag.text)")
             }
             view.onDidChangeText = { _, text in
-                Log.debug("DidChangeText:\(text ?? "")")
+                SFLogger.debug("DidChangeText:\(text ?? "")")
             }
             view.onDidChangeHeightTo = { _, height in
-                Log.debug("onDidChangeHeightTo:\(height)")
+                SFLogger.debug("onDidChangeHeightTo:\(height)")
             }
             view.onValidateTag = { tag, tags in
                 // custom validations, called before tag is added to tags list
