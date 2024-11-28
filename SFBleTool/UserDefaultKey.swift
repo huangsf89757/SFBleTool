@@ -10,5 +10,6 @@ import Foundation
 struct UserDefaultKey {
     private static let perfix = "SF_KEY_"
     
-    static let root = perfix + "root"
+//    /// 当前活跃用户的uid
+//    static let uid = perfix + "uid"
 }

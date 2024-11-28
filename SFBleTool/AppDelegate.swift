@@ -39,6 +39,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Database
         configAppDatabase()
+        getActiveUser()
                 
         return true
     }

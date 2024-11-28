@@ -119,8 +119,8 @@ extension OptDetailVC: UITableViewDelegate, UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let header = tableView.dequeueReusableHeaderFooterView(OptDetailHeader.self)
-        header?.titleLabel.text = headerTitle
-        header?.descLabel.text = headerDesc
+        header?.titleLabel.text = model.typeEnum.title
+        header?.descLabel.text = model.typeEnum.desc
         return header
     }
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {

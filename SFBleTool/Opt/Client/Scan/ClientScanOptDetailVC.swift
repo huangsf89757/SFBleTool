@@ -18,7 +18,5 @@ class ClientScanOptDetailVC: OptDetailVC {
     // MARK: life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        headerTitle = SFText.Main.client_opt_detail_scan
-        headerDesc = SFText.Main.client_opt_detail_scan_desc
     }
 }

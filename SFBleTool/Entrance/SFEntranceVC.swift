@@ -20,7 +20,8 @@ import SFLogger
 // MARK: - SFEntranceVC
 class SFEntranceVC: SFScrollViewController {
     // MARK: block
-    var didChooseEntranceOptBlock: ((Int) -> ())?
+    var willEnterBlock: ((Int) -> Bool)?
+    var didEnterBlock: ((Int) -> ())?
     
     // MARK: life cycle
     convenience init() {
@@ -56,7 +57,7 @@ class SFEntranceVC: SFScrollViewController {
     }()
     private lazy var clientOptView: SFEntranceOptView = {
         return SFEntranceOptView().then { view in
-            view.tag = 2
+            view.tag = 1
             view.titleLabel.text = SFText.Main.entrance_client_title
             view.subtitleLabel.text = SFText.Main.entrance_client_subtitle
             view.tapBlock = {
@@ -67,7 +68,7 @@ class SFEntranceVC: SFScrollViewController {
     }()
     private lazy var serverOptView: SFEntranceOptView = {
         return SFEntranceOptView().then { view in
-            view.tag = 3
+            view.tag = 2
             view.titleLabel.text = SFText.Main.entrance_server_title
             view.subtitleLabel.text = SFText.Main.entrance_server_subtitle
             view.tapBlock = {
@@ -106,10 +107,12 @@ class SFEntranceVC: SFScrollViewController {
 // MARK: action
 extension SFEntranceVC {
     private func entranceOptViewTaped(_ sender: SFEntranceOptView) {
-        clientOptView.isSelected = (sender === clientOptView)
-        serverOptView.isSelected = (sender === serverOptView)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-            self.didChooseEntranceOptBlock?(sender.tag)
-        }
+        guard let willEnterBlock = willEnterBlock, let didEnterBlock = didEnterBlock else { return }
+        let page = sender.tag
+        let isSuccess = willEnterBlock(page)
+        guard isSuccess else { return }
+        clientOptView.isSelected = page == 1
+        serverOptView.isSelected = page == 2
+        didEnterBlock(page)
     }
 }

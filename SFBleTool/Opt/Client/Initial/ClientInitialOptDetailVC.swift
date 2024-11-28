@@ -18,7 +18,5 @@ class ClientInitialOptDetailVC: OptDetailVC {
     // MARK: life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        headerTitle = SFText.Main.client_opt_detail_initial
-        headerDesc = SFText.Main.client_opt_detail_initial_desc
     }
 }

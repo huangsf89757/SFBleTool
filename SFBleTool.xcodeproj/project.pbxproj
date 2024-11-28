@@ -20,8 +20,9 @@
 		51DF13A82CF1CF1400838578 /* SFText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DF13A42CF1CF1400838578 /* SFText.swift */; };
 		51DF13A92CF1CF1400838578 /* SFImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DF13A52CF1CF1400838578 /* SFImage.swift */; };
 		51DF13B12CF207DE00838578 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DF13B02CF207DE00838578 /* HomeVC.swift */; };
-		51DF13B32CF20CAF00838578 /* Root.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DF13B22CF20CAF00838578 /* Root.swift */; };
+		51DF13B32CF20CAF00838578 /* RootPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DF13B22CF20CAF00838578 /* RootPage.swift */; };
 		51DF13BE2CF2B1BC00838578 /* ClientOptVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DF13BD2CF2B1BC00838578 /* ClientOptVC.swift */; };
+		51DF13C42CF8B63B00838578 /* OptType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DF13C32CF8B63B00838578 /* OptType.swift */; };
 		51F77F3C2CF0A98400B44CAB /* ClientScanOptListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F77F3B2CF0A98400B44CAB /* ClientScanOptListVC.swift */; };
 		51F77F3E2CF0A9AB00B44CAB /* ClientScanOptDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F77F3D2CF0A9AB00B44CAB /* ClientScanOptDetailVC.swift */; };
 		51F77F402CF0A9D600B44CAB /* ClientScanOptModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F77F3F2CF0A9D600B44CAB /* ClientScanOptModel.swift */; };
@@ -115,8 +116,9 @@
 		51DF13A42CF1CF1400838578 /* SFText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFText.swift; sourceTree = "<group>"; };
 		51DF13A52CF1CF1400838578 /* SFImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFImage.swift; sourceTree = "<group>"; };
 		51DF13B02CF207DE00838578 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
-		51DF13B22CF20CAF00838578 /* Root.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Root.swift; sourceTree = "<group>"; };
+		51DF13B22CF20CAF00838578 /* RootPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootPage.swift; sourceTree = "<group>"; };
 		51DF13BD2CF2B1BC00838578 /* ClientOptVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientOptVC.swift; sourceTree = "<group>"; };
+		51DF13C32CF8B63B00838578 /* OptType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptType.swift; sourceTree = "<group>"; };
 		51F77F3B2CF0A98400B44CAB /* ClientScanOptListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientScanOptListVC.swift; sourceTree = "<group>"; };
 		51F77F3D2CF0A9AB00B44CAB /* ClientScanOptDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientScanOptDetailVC.swift; sourceTree = "<group>"; };
 		51F77F3F2CF0A9D600B44CAB /* ClientScanOptModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientScanOptModel.swift; sourceTree = "<group>"; };
@@ -324,6 +326,7 @@
 				DDB895C22CF0807200376F37 /* OptItemModel.swift */,
 				DD0E2EB72CF4652500200456 /* OptModel.swift */,
 				DD0E2EB52CF4496E00200456 /* OptItem.swift */,
+				51DF13C32CF8B63B00838578 /* OptType.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -385,7 +388,7 @@
 				DDA6489C2C619F5100F01858 /* AppDelegate.swift */,
 				DDA6489E2C619F5100F01858 /* SceneDelegate.swift */,
 				DD214E872CF84E0300D0D493 /* Database.swift */,
-				51DF13B22CF20CAF00838578 /* Root.swift */,
+				51DF13B22CF20CAF00838578 /* RootPage.swift */,
 				DDFA63F22C635306002E93F3 /* UserDefaultKey.swift */,
 				51A613AA2C76216C005990FC /* Todo.swift */,
 				51DF13A12CF1CF1400838578 /* Resource */,
@@ -772,7 +775,7 @@
 				DDF08C032C85BC5900FB4B48 /* UserCenterHeader.swift in Sources */,
 				DD214E862CF84C5000D0D493 /* UserModel.swift in Sources */,
 				DDB895D92CF08B0400376F37 /* UserCenterVC.swift in Sources */,
-				51DF13B32CF20CAF00838578 /* Root.swift in Sources */,
+				51DF13B32CF20CAF00838578 /* RootPage.swift in Sources */,
 				DDFA63F72C636688002E93F3 /* PeripheralListHeader.swift in Sources */,
 				DDB895B22CF06FF700376F37 /* OptDetailBoolCell.swift in Sources */,
 				DDB518F92C6C526300A049DE /* SFCMPeripheralDetailVC.swift in Sources */,
@@ -796,6 +799,7 @@
 				51A613A42C74DAAA005990FC /* SFCMConnectView.swift in Sources */,
 				DDB895C52CF0810F00376F37 /* OptListCell.swift in Sources */,
 				DDB895C32CF0807200376F37 /* OptItemModel.swift in Sources */,
+				51DF13C42CF8B63B00838578 /* OptType.swift in Sources */,
 				DDA648D62C61A86D00F01858 /* SFEntranceOptView.swift in Sources */,
 				51F77F3C2CF0A98400B44CAB /* ClientScanOptListVC.swift in Sources */,
 			);

@@ -14,7 +14,7 @@ import WCDBSwift
 // MARK: - OptModel
 final class OptModel: SFLocalDatanable, SFRemoteDatanable, WCDBSwift.TableCodable {
     // MARK: Data
-    class var tableName: String {
+    class var table: String {
         return "option"
     }
     
@@ -35,6 +35,14 @@ final class OptModel: SFLocalDatanable, SFRemoteDatanable, WCDBSwift.TableCodabl
     var name: String?
     var values: [Int: String]?
 
+    var typeEnum: OptType {
+        set {
+            type = newValue.code
+        }
+        get {
+            OptType(code: type ?? 0)
+        }
+    }
     private(set) var itemModels: [OptItemModel] = []
     var selectedModels: [OptItemModel] {
         return itemModels.filter { model in
@@ -71,11 +79,11 @@ final class OptModel: SFLocalDatanable, SFRemoteDatanable, WCDBSwift.TableCodabl
 extension OptModel {
     func valuesToModels() {
         guard let type = type else { return }
-        let codes = OptItem.getOptItemCodes(with: type)
+        let items = typeEnum.items
         var itemModels: [OptItemModel] = []
-        for code in codes {
-            let itemModel = OptItemModel(item: OptItem(code: code))
-            setValue(values?[code], for: itemModel)
+        for item in items {
+            let itemModel = OptItemModel(item: item)
+            setValue(values?[item.code], for: itemModel)
             itemModels.append(itemModel)
         }
         self.itemModels = itemModels
@@ -109,15 +117,15 @@ extension OptModel {
 // MARK: - default
 extension OptModel {
     func default_clientInitial() {
-        type = 110
+        typeEnum = .client(.initial)
         valuesToModels()
     }
     func default_clientScan() {
-        type = 120
+        typeEnum = .client(.scan)
         valuesToModels()
     }
     func default_clientConnect() {
-        type = 130
+        typeEnum = .client(.connect)
         valuesToModels()
     }
 }

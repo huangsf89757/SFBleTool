@@ -23,26 +23,26 @@ import WCDBSwift
 // MARK: UserModel
 final class UserModel: UserDatanable, WCDBSwift.TableCodable {
     // MARK: Data
-    class var tableName: String {
+    class var table: String {
         return "user"
     }
     
-    // MARK: Local
+    // MARK: SFLocalDatanable
     var orderL: Int?
     var idL: String?
     var createTimeL: String?
     var updateTimeL: String?
     
-    // MARK: Remote
+    // MARK: SFRemoteDatanable
     var orderR: Int?
     var idR: String?
     var createTimeR: String?
     var updateTimeR: String?
     
-    // MARK: User
-    static var current: (any SFUser.UserDatanable)?
+    // MARK: UserDatanable
     var uid: String?
     var account: String?
+    var isActive: Bool?
     var nickname: String?
     var gender: Int? = 0
     var avatar: String?
@@ -51,6 +51,19 @@ final class UserModel: UserDatanable, WCDBSwift.TableCodable {
     var email: String?
     var birthday: String?
     var address: String?
+    
+    // MARK: UserModel
+    /// 当前活跃的用户
+    static var active: UserModel? {
+        didSet {
+            SFDatabase.needUpdateUserDb = true
+        }
+    }
+    /// 页面
+    /// 0：entrance
+    /// 1：client
+    /// 2：server
+    var page: Int?
     
     /// CodingKeys
     enum CodingKeys: String, CodingTableKey {
@@ -68,6 +81,7 @@ final class UserModel: UserDatanable, WCDBSwift.TableCodable {
         
         case uid
         case account
+        case isActive
         case nickname
         case gender
         case avatar
@@ -77,9 +91,45 @@ final class UserModel: UserDatanable, WCDBSwift.TableCodable {
         case birthday
         case address
         
+        case page
+        
         public static let objectRelationalMapping = TableBinding(CodingKeys.self) {
             BindColumnConstraint(orderL, isPrimary: true, isAutoIncrement: true)
             BindColumnConstraint(idL, isNotNull: true, isUnique: true)
+        }
+    }
+}
+
+// MARK: - UserPage
+extension UserModel {
+    enum UserPage: Int {
+        case entrance = 0
+        case client
+        case server
+    }
+    var pageEnum: UserPage {
+        set {
+            page = newValue.rawValue
+        }
+        get {
+            return UserPage(rawValue: page ?? 0) ?? .entrance
+        }
+    }
+}
+
+// MARK: - Database
+extension UserModel {
+    /// 更新用户信息
+    func update() -> Bool {
+        guard let appDb = SFDatabase.appDb else { return false }
+        guard let idL = idL else { return false }
+        do {
+            let condition = UserModel.Properties.idL.is(idL)
+            try appDb.update(table: UserModel.table, on: UserModel.Properties.all, with: self, where: condition)
+            return true
+        } catch let error {
+            SFLogger.debug("[DB]", "[改]", "更新用户信息", "失败", error.localizedDescription)
+            return false
         }
     }
 }

@@ -12,12 +12,22 @@ import SFExtension
 import SFBase
 // UI
 import SFUI
+// Business
+import SFBusiness
+import SFUser
+// Server
+import SFLogger
 
 // MARK: OptListVC
 class OptListVC: SFTableViewController {
     
     // MARK: var
-    private var models = [OptModel]()
+    var typeEnum: OptType = .none
+    private var models = [OptModel]() {
+        didSet {
+            tableView.reloadData()
+        }
+    }
     
     // MARK: life cycle
     convenience init() {
@@ -78,3 +88,24 @@ extension OptListVC {
     }
 }
 
+// MARK: - Data
+extension OptListVC {
+    func getListData() {
+        if typeEnum == .none {
+            models = []
+            return
+        }
+        guard let userDb = SFDatabase.userDb() else {
+            models = []
+            return
+        }
+        do {
+            let condition = OptModel.Properties.type.is(typeEnum.code)
+            let order = [OptModel.Properties.createTimeL.order(.descending)]
+            let models: [OptModel] = try userDb.getObjects(on: OptModel.Properties.all, fromTable: OptModel.table, where: condition, orderBy: order)
+            self.models = models
+        } catch let error {
+            SFDbLogger.dbError(type: .find, msgs: "获取OptList数据", "失败", error.localizedDescription)
+        }
+    }
+}

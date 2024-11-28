@@ -51,6 +51,13 @@ enum OptItem {
     }
 }
 
+// MARK: - Equatable
+extension OptItem: Equatable {
+    static func == (lhs: OptItem, rhs: OptItem) -> Bool {
+        lhs.code == rhs.code
+    }
+}
+
 // MARK: - code
 extension OptItem {
     /// code
@@ -123,19 +130,6 @@ extension OptItem {
             self = .client(.connect(.delay))
         default:
             self = .none
-        }
-    }
-    
-    static func getOptItemCodes(with type: Int) -> [Int] {
-        switch type {
-        case 110:
-            return [111, 112]
-        case 120:
-            return [121, 122]
-        case 130:
-            return [131, 132, 133, 134, 135, 136, 137]
-        default:
-            return []
         }
     }
 }
