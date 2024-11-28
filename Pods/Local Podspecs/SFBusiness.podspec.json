@@ -37,6 +37,9 @@
     ],
     "SFLogger": [
       "~> 0.1.0"
+    ],
+    "WCDB.swift": [
+
     ]
   },
   "swift_version": "5.0"

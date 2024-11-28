@@ -18,6 +18,7 @@ PODS:
     - SFExtension (~> 0.1.0)
     - SFLogger (~> 0.1.0)
     - SFUI (~> 0.1.0)
+    - WCDB.swift
   - SFExtension (0.1.0)
   - SFLogger (0.1.0):
     - SFExtension (~> 0.1.0)
@@ -44,6 +45,9 @@ PODS:
   - SwiftyBeaver (2.1.1)
   - Then (3.0.0)
   - WARangeSlider (1.2.0)
+  - WCDB.swift (2.1.8):
+    - WCDBOptimizedSQLCipher (= 1.4.6)
+  - WCDBOptimizedSQLCipher (1.4.6)
   - WSTagsField (5.4.0)
 
 DEPENDENCIES:
@@ -69,6 +73,8 @@ SPEC REPOS:
     - SwiftyBeaver
     - Then
     - WARangeSlider
+    - WCDB.swift
+    - WCDBOptimizedSQLCipher
     - WSTagsField
 
 EXTERNAL SOURCES:
@@ -93,7 +99,7 @@ SPEC CHECKSUMS:
   Reusable: 6bae6a5e8aa793c9c441db0213c863a64bce9136
   SFBase: 74ba9db6aad5b3f5471abcdfbc23a674efcafd4f
   SFBluetooth: 03c30507c919f3eec02109344afd3ead6033f711
-  SFBusiness: dfc2961e6fab594e1fb3681a1668be99a641f34f
+  SFBusiness: fa5c6769d1f10cf564e76e5f8bd274f41fdc7632
   SFExtension: 4d7aefd56e766216b7e03cfd362867893b0574a0
   SFLogger: addda8edacef3ea943515daec2287f8347a48247
   SFUI: 4387cedb09baa360293fc14ca8d943027be2e039
@@ -104,8 +110,10 @@ SPEC CHECKSUMS:
   SwiftyBeaver: ade157e4f857812e7d7f15f2e3396bb8733f8a1c
   Then: 844265ae87834bbe1147d91d5d41a404da2ec27d
   WARangeSlider: 03f195d4dc5419e6b0d9043cc94fdf418dfe804d
+  WCDB.swift: 603b32d432a58ec2e6eef8965d8bd6bb3cc7c39a
+  WCDBOptimizedSQLCipher: c6451e1dead7ec53e1344a2545aaed2c4c139fc0
   WSTagsField: a4e91b7d866e8c9755332ebcf8123f42f2abd4a0
 
 PODFILE CHECKSUM: bf8479685d2fe5cc89f54734d32a9af456549f40
 
-COCOAPODS: 1.12.1
+COCOAPODS: 1.16.2

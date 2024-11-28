@@ -67,14 +67,14 @@ class OptDetailVC: SFTableViewController {
     
     // MARK: back
     override func willBack() -> (will: Bool, animated: Bool) {
-        SFAlert.addSureAction(title: "保存", action: { [weak self] popView in
+        SFAlert.show(title: "保存", msg: "是否保存？", cancel: "取消", cancelActionBlock: {
+            [weak self] popView in
+            return true
+        }, sure: "确定", sureActionBlock: {
+            [weak self] popView in
             self?.goBack(animated: true)
             return true
         })
-        SFAlert.addCancelAction(title: "取消", action: { popView in
-            return true
-        })
-        SFAlert.show(title: "是否保存修改？")
         return (false, false)
     }
 }
