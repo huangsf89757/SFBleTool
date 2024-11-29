@@ -42,6 +42,7 @@ final class UserModel: UserDatanable, WCDBSwift.TableCodable {
     // MARK: UserDatanable
     var uid: String?
     var account: String?
+    var pwd: String?
     var isActive: Bool?
     var nickname: String?
     var gender: Int? = 0
@@ -81,6 +82,7 @@ final class UserModel: UserDatanable, WCDBSwift.TableCodable {
         
         case uid
         case account
+        case pwd
         case isActive
         case nickname
         case gender
