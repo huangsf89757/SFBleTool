@@ -11,6 +11,9 @@ import SFExtension
 import SFBase
 // UI
 import SFUI
+// Business
+import SFBusiness
+import SFUser
 // Server
 import SFLogger
 // Third
@@ -19,8 +22,9 @@ import IQKeyboardManagerSwift
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {                
-       
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        // 环境配置
+        SFEnvironment.cur = .dev
         
         // 日志
         SFLogger.config()
@@ -38,9 +42,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         SFText.App.slogen = SFText.Main.app_slogen
         
         // Database
-        configAppDatabase()
+        configClientAppDatabase()
         getActiveUser()
-                
+        configClientUserDatabase()
+        
+        // DataService
+        SFDataService.shared.provider = DbDataProvider()
+         
         return true
     }
 

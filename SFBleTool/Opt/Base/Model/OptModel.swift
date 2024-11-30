@@ -68,10 +68,7 @@ final class OptModel: SFLocalDatanable, SFRemoteDatanable, WCDBSwift.TableCodabl
         case name
         case values
         
-        public static let objectRelationalMapping = TableBinding(CodingKeys.self) {
-            BindColumnConstraint(orderL, isPrimary: true, isAutoIncrement: true)
-            BindColumnConstraint(idL, isNotNull: true, isUnique: true)
-        }
+        public static let objectRelationalMapping = TableBinding(CodingKeys.self) 
     }
 }
 

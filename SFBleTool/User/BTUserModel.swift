@@ -1,5 +1,5 @@
 //
-//  UserModel.swift
+//  BTUserModel.swift
 //  SFBleTool
 //
 //  Created by hsf on 2024/11/28.
@@ -20,8 +20,8 @@ import SFLogger
 // Third
 import WCDBSwift
 
-// MARK: UserModel
-final class UserModel: UserDatanable, WCDBSwift.TableCodable {
+// MARK: BTUserModel
+final class BTUserModel: UserDatanable, WCDBSwift.TableCodable {
     // MARK: Data
     class var table: String {
         return "user"
@@ -53,13 +53,7 @@ final class UserModel: UserDatanable, WCDBSwift.TableCodable {
     var birthday: String?
     var address: String?
     
-    // MARK: UserModel
-    /// 当前活跃的用户
-    static var active: UserModel? {
-        didSet {
-            SFDatabase.needUpdateUserDb = true
-        }
-    }
+    // MARK: BTUserModel
     /// 页面
     /// 0：entrance
     /// 1：client
@@ -68,7 +62,7 @@ final class UserModel: UserDatanable, WCDBSwift.TableCodable {
     
     /// CodingKeys
     enum CodingKeys: String, CodingTableKey {
-        public typealias Root = UserModel
+        public typealias Root = BTUserModel
         
         case orderL
         case idL
@@ -95,15 +89,12 @@ final class UserModel: UserDatanable, WCDBSwift.TableCodable {
         
         case page
         
-        public static let objectRelationalMapping = TableBinding(CodingKeys.self) {
-            BindColumnConstraint(orderL, isPrimary: true, isAutoIncrement: true)
-            BindColumnConstraint(idL, isNotNull: true, isUnique: true)
-        }
+        public static let objectRelationalMapping = TableBinding(CodingKeys.self) 
     }
 }
 
 // MARK: - UserPage
-extension UserModel {
+extension BTUserModel {
     enum UserPage: Int {
         case entrance = 0
         case client
@@ -120,18 +111,19 @@ extension UserModel {
 }
 
 // MARK: - Database
-extension UserModel {
+extension BTUserModel {
     /// 更新用户信息
     func update() -> Bool {
-        guard let appDb = SFDatabase.appDb else { return false }
-        guard let idL = idL else { return false }
-        do {
-            let condition = UserModel.Properties.idL.is(idL)
-            try appDb.update(table: UserModel.table, on: UserModel.Properties.all, with: self, where: condition)
-            return true
-        } catch let error {
-            SFLogger.debug("[DB]", "[改]", "更新用户信息", "失败", error.localizedDescription)
-            return false
-        }
+        return false
+//        guard let appDb = SFDatabase.appDb else { return false }
+//        guard let idL = idL else { return false }
+//        do {
+//            let condition = BTUserModel.Properties.idL.is(idL)
+//            try appDb.update(table: BTUserModel.table, on: BTUserModel.Properties.all, with: self, where: condition)
+//            return true
+//        } catch let error {
+//            SFLogger.debug("[DB]", "[改]", "更新用户信息", "失败", error.localizedDescription)
+//            return false
+//        }
     }
 }

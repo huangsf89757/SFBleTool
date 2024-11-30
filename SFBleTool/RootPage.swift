@@ -19,7 +19,7 @@ import SFUser
 // MARK: rootPage
 extension SceneDelegate {
     func setRootPage() {
-        if let user = UserModel.active {
+        if let user = UserModel.active as? BTUserModel {
             switch user.pageEnum {
             case .entrance:
                 let vc = SFEntranceVC()

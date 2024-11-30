@@ -14,6 +14,8 @@
 		51A613A42C74DAAA005990FC /* SFCMConnectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A613A32C74DAAA005990FC /* SFCMConnectView.swift */; };
 		51A613A62C74DABD005990FC /* SFCMConnectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A613A52C74DABD005990FC /* SFCMConnectModel.swift */; };
 		51A613AB2C76216C005990FC /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A613AA2C76216C005990FC /* Todo.swift */; };
+		51B7A2BB2CFAAF540067D609 /* HttpDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B7A2BA2CFAAF540067D609 /* HttpDataProvider.swift */; };
+		51B7A2BD2CFAAF660067D609 /* DbDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B7A2BC2CFAAF650067D609 /* DbDataProvider.swift */; };
 		51DF13A02CF1CEA600838578 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 51DF139F2CF1CEA600838578 /* Localizable.xcstrings */; };
 		51DF13A62CF1CF1400838578 /* SFColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DF13A22CF1CF1400838578 /* SFColor.swift */; };
 		51DF13A72CF1CF1400838578 /* SFFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DF13A32CF1CF1400838578 /* SFFont.swift */; };
@@ -30,7 +32,7 @@
 		DD0E2EB62CF4496E00200456 /* OptItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0E2EB52CF4496E00200456 /* OptItem.swift */; };
 		DD0E2EB82CF4652500200456 /* OptModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0E2EB72CF4652500200456 /* OptModel.swift */; };
 		DD0E2EBD2CF46A0500200456 /* OptDetailHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0E2EBC2CF46A0500200456 /* OptDetailHeader.swift */; };
-		DD214E862CF84C5000D0D493 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD214E852CF84C5000D0D493 /* UserModel.swift */; };
+		DD214E862CF84C5000D0D493 /* BTUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD214E852CF84C5000D0D493 /* BTUserModel.swift */; };
 		DD214E882CF84E0300D0D493 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD214E872CF84E0300D0D493 /* Database.swift */; };
 		DD630BFF2C965C4100A24C35 /* SFCMPeripheralAdvDetailItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD630BFE2C965C4100A24C35 /* SFCMPeripheralAdvDetailItem.swift */; };
 		DD630C052C966CDA00A24C35 /* SFCMPeripheralDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD630C042C966CDA00A24C35 /* SFCMPeripheralDetailHeaderView.swift */; };
@@ -110,6 +112,8 @@
 		51A613A32C74DAAA005990FC /* SFCMConnectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFCMConnectView.swift; sourceTree = "<group>"; };
 		51A613A52C74DABD005990FC /* SFCMConnectModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFCMConnectModel.swift; sourceTree = "<group>"; };
 		51A613AA2C76216C005990FC /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
+		51B7A2BA2CFAAF540067D609 /* HttpDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpDataProvider.swift; sourceTree = "<group>"; };
+		51B7A2BC2CFAAF650067D609 /* DbDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DbDataProvider.swift; sourceTree = "<group>"; };
 		51DF139F2CF1CEA600838578 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		51DF13A22CF1CF1400838578 /* SFColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFColor.swift; sourceTree = "<group>"; };
 		51DF13A32CF1CF1400838578 /* SFFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFFont.swift; sourceTree = "<group>"; };
@@ -126,7 +130,7 @@
 		DD0E2EB52CF4496E00200456 /* OptItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptItem.swift; sourceTree = "<group>"; };
 		DD0E2EB72CF4652500200456 /* OptModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptModel.swift; sourceTree = "<group>"; };
 		DD0E2EBC2CF46A0500200456 /* OptDetailHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptDetailHeader.swift; sourceTree = "<group>"; };
-		DD214E852CF84C5000D0D493 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		DD214E852CF84C5000D0D493 /* BTUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BTUserModel.swift; sourceTree = "<group>"; };
 		DD214E872CF84E0300D0D493 /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 		DD630BFE2C965C4100A24C35 /* SFCMPeripheralAdvDetailItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFCMPeripheralAdvDetailItem.swift; sourceTree = "<group>"; };
 		DD630C042C966CDA00A24C35 /* SFCMPeripheralDetailHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFCMPeripheralDetailHeaderView.swift; sourceTree = "<group>"; };
@@ -230,6 +234,15 @@
 				51A613A52C74DABD005990FC /* SFCMConnectModel.swift */,
 			);
 			path = Connect;
+			sourceTree = "<group>";
+		};
+		51B7A29D2CFAAD230067D609 /* DataService */ = {
+			isa = PBXGroup;
+			children = (
+				51B7A2BA2CFAAF540067D609 /* HttpDataProvider.swift */,
+				51B7A2BC2CFAAF650067D609 /* DbDataProvider.swift */,
+			);
+			path = DataService;
 			sourceTree = "<group>";
 		};
 		51DF13A12CF1CF1400838578 /* Resource */ = {
@@ -352,13 +365,6 @@
 			path = Detail;
 			sourceTree = "<group>";
 		};
-		DD214E972CF9A4BF00D0D493 /* Api */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Api;
-			sourceTree = "<group>";
-		};
 		DD8BBB8A2C95200100DE12E5 /* Com */ = {
 			isa = PBXGroup;
 			children = (
@@ -398,7 +404,7 @@
 				51DF13B22CF20CAF00838578 /* RootPage.swift */,
 				DDFA63F22C635306002E93F3 /* UserDefaultKey.swift */,
 				51A613AA2C76216C005990FC /* Todo.swift */,
-				DD214E972CF9A4BF00D0D493 /* Api */,
+				51B7A29D2CFAAD230067D609 /* DataService */,
 				51DF13A12CF1CF1400838578 /* Resource */,
 				DDA648D42C61A85100F01858 /* Entrance */,
 				51DF13AF2CF207A200838578 /* Home */,
@@ -510,7 +516,7 @@
 				DDB895DA2CF08B3300376F37 /* UserCenterItem.swift */,
 				DDB895DC2CF08C8F00376F37 /* UserCenterCell.swift */,
 				DDF08C022C85BC5900FB4B48 /* UserCenterHeader.swift */,
-				DD214E852CF84C5000D0D493 /* UserModel.swift */,
+				DD214E852CF84C5000D0D493 /* BTUserModel.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -748,6 +754,7 @@
 			files = (
 				DD630BFF2C965C4100A24C35 /* SFCMPeripheralAdvDetailItem.swift in Sources */,
 				DDAC3D732C6F512700AA87B4 /* SFCMPeripheralLogCell.swift in Sources */,
+				51B7A2BD2CFAAF660067D609 /* DbDataProvider.swift in Sources */,
 				DDFA63F92C6367F2002E93F3 /* PeripheralListSearchView.swift in Sources */,
 				DDB518FE2C6C728300A049DE /* SFCMPeripheralAdvDetailVC.swift in Sources */,
 				DDA648D12C61A3F000F01858 /* CentralListVC.swift in Sources */,
@@ -775,13 +782,14 @@
 				DDB895D62CF0878D00376F37 /* ClientConnectOptModel.swift in Sources */,
 				5175ADAE2C64F4AF00C9260A /* PeripheralListCell.swift in Sources */,
 				DD630C052C966CDA00A24C35 /* SFCMPeripheralDetailHeaderView.swift in Sources */,
+				51B7A2BB2CFAAF540067D609 /* HttpDataProvider.swift in Sources */,
 				51F77F402CF0A9D600B44CAB /* ClientScanOptModel.swift in Sources */,
 				51F77F3E2CF0A9AB00B44CAB /* ClientScanOptDetailVC.swift in Sources */,
 				DDB895D42CF0877F00376F37 /* ClientInitialOptModel.swift in Sources */,
 				DD0E2EBD2CF46A0500200456 /* OptDetailHeader.swift in Sources */,
 				DD214E882CF84E0300D0D493 /* Database.swift in Sources */,
 				DDF08C032C85BC5900FB4B48 /* UserCenterHeader.swift in Sources */,
-				DD214E862CF84C5000D0D493 /* UserModel.swift in Sources */,
+				DD214E862CF84C5000D0D493 /* BTUserModel.swift in Sources */,
 				DDB895D92CF08B0400376F37 /* UserCenterVC.swift in Sources */,
 				51DF13B32CF20CAF00838578 /* RootPage.swift in Sources */,
 				DDFA63F72C636688002E93F3 /* PeripheralListHeader.swift in Sources */,
