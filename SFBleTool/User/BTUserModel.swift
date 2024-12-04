@@ -26,6 +26,8 @@ final class BTUserModel: UserDatanable, WCDBSwift.TableCodable {
     class var table: String {
         return "user"
     }
+    var isAutoIncrement: Bool = true
+    var lastInsertedRowID: Int64 = 0
     
     // MARK: SFLocalDatanable
     var orderL: Int?
@@ -42,8 +44,8 @@ final class BTUserModel: UserDatanable, WCDBSwift.TableCodable {
     // MARK: UserDatanable
     var uid: String?
     var account: String?
-    var pwd: String?
     var isActive: Bool?
+    var pwd: String?
     var nickname: String?
     var gender: Int? = 0
     var avatar: String?
@@ -76,8 +78,8 @@ final class BTUserModel: UserDatanable, WCDBSwift.TableCodable {
         
         case uid
         case account
-        case pwd
         case isActive
+        case pwd
         case nickname
         case gender
         case avatar
@@ -89,7 +91,19 @@ final class BTUserModel: UserDatanable, WCDBSwift.TableCodable {
         
         case page
         
-        public static let objectRelationalMapping = TableBinding(CodingKeys.self) 
+        public static let objectRelationalMapping = TableBinding(CodingKeys.self) {
+            BindColumnConstraint(orderL, isPrimary: true, orderBy: .ascending, isAutoIncrement: true, isNotNull: true, defaultTo: 0)
+            BindColumnConstraint(idL, isUnique: true)
+            BindIndex(uid, namedWith: "_uidIndex", isUnique: true)
+        }
+    }
+}
+
+extension BTUserModel: Describable {
+    var description: String {
+        let uid = uid ?? "UID"
+        let account = account ?? "ACCOUNT"
+        return "\(uid)(\(account))"
     }
 }
 

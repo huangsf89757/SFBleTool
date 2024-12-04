@@ -105,7 +105,7 @@ extension OptListVC {
 //            let models: [OptModel] = try userDb.getObjects(on: OptModel.Properties.all, fromTable: OptModel.table, where: condition, orderBy: order)
 //            self.models = models
 //        } catch let error {
-//            SFDbLogger.dbError(type: .find, msgs: "获取OptList数据", "失败", error.localizedDescription)
+//            SFDbLogger.error(port: .client, type: .find, msgs: "获取OptList数据", "失败", error.localizedDescription)
 //        }
     }
 }
