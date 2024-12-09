@@ -44,7 +44,7 @@ final class BTUserModel: UserDatanable, WCDBSwift.TableCodable {
     // MARK: UserDatanable
     var uid: String?
     var account: String?
-    var isActive: Bool?
+    var state: Int?
     var pwd: String?
     var nickname: String?
     var gender: Int? = 0
@@ -60,7 +60,7 @@ final class BTUserModel: UserDatanable, WCDBSwift.TableCodable {
     /// 0：entrance
     /// 1：client
     /// 2：server
-    var page: Int?
+    var page: Int? = 0
     
     /// CodingKeys
     enum CodingKeys: String, CodingTableKey {
@@ -78,7 +78,7 @@ final class BTUserModel: UserDatanable, WCDBSwift.TableCodable {
         
         case uid
         case account
-        case isActive
+        case state
         case pwd
         case nickname
         case gender
@@ -99,6 +99,45 @@ final class BTUserModel: UserDatanable, WCDBSwift.TableCodable {
     }
 }
 
+// MARK: - KeyPath
+extension BTUserModel {
+    struct KeyPathProperty<Model> {
+        let keyPath: WritableKeyPath<Model, Any?>
+        let property: BTUserModel.Properties
+        
+        init<Value>(keyPath: WritableKeyPath<Model, Value>, property: BTUserModel.Properties) {
+            self.keyPath = keyPath as! WritableKeyPath<Model, Any?>
+            self.property = property
+        }
+    }
+    static let keyPathMapping: [String: KeyPathProperty<BTUserModel>] = [
+        "orderL": KeyPathProperty(keyPath: \BTUserModel.orderL, property: .orderL),
+        "idL": KeyPathProperty(keyPath: \BTUserModel.idL, property: .idL),
+        "createTimeL": KeyPathProperty(keyPath: \BTUserModel.createTimeL, property: .createTimeL),
+        "updateTimeL": KeyPathProperty(keyPath: \BTUserModel.updateTimeL, property: .updateTimeL),
+        
+        "orderR": KeyPathProperty(keyPath: \BTUserModel.orderR, property: .orderR),
+        "idR": KeyPathProperty(keyPath: \BTUserModel.idR, property: .idR),
+        "createTimeR": KeyPathProperty(keyPath: \BTUserModel.createTimeR, property: .createTimeR),
+        "updateTimeR": KeyPathProperty(keyPath: \BTUserModel.updateTimeR, property: .updateTimeR),
+
+        "uid": KeyPathProperty(keyPath: \BTUserModel.uid, property: .uid),
+        "account": KeyPathProperty(keyPath: \BTUserModel.account, property: .account),
+        "state": KeyPathProperty(keyPath: \BTUserModel.state, property: .state),
+        "pwd": KeyPathProperty(keyPath: \BTUserModel.pwd, property: .pwd),
+        "nickname": KeyPathProperty(keyPath: \BTUserModel.nickname, property: .nickname),
+        "gender": KeyPathProperty(keyPath: \BTUserModel.gender, property: .gender),
+        "avatar": KeyPathProperty(keyPath: \BTUserModel.avatar, property: .avatar),
+        "motto": KeyPathProperty(keyPath: \BTUserModel.motto, property: .motto),
+        "phone": KeyPathProperty(keyPath: \BTUserModel.phone, property: .phone),
+        "email": KeyPathProperty(keyPath: \BTUserModel.email, property: .email),
+        "birthday": KeyPathProperty(keyPath: \BTUserModel.birthday, property: .birthday),
+        "address": KeyPathProperty(keyPath: \BTUserModel.address, property: .address),
+        "page": KeyPathProperty(keyPath: \BTUserModel.page, property: .page),
+    ]
+}
+
+// MARK: - Describable
 extension BTUserModel: Describable {
     var description: String {
         let uid = uid ?? "UID"

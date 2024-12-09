@@ -21,7 +21,7 @@ class DbDataProvider: SFDataProvider {
     var timeout: TimeInterval = 30
     
     // MARK: value
-    var smsCode: String?
+    var smsCodes = [String]()
     
 }
 
@@ -34,9 +34,11 @@ extension DbDataProvider: SFUserApi {
             "0123456789".randomElement()
         })
         SFDsLogger.debug(tag: logTag, step: .inProcess, msgs: "生成随机验证码", smsCode)
-        self.smsCode = smsCode
+        self.smsCodes.append(smsCode)
         DispatchQueue.main.asyncAfter(deadline: .now() + 60) {
-            self.smsCode = nil
+            self.smsCodes.removeAll { ele in
+                ele == smsCode
+            }
             SFDsLogger.debug(tag: logTag, step: .end(.success), msgs: "验证码(\(smsCode))过期")
         }
         SFDsLogger.debug(tag: logTag, step: .end(.success), msgs: smsCode)
@@ -50,23 +52,35 @@ extension DbDataProvider: SFUserApi {
             SFDsLogger.debug(tag: logTag, step: .end(.failure), msgs: "appDb=nil")
             return (code: .serverError, isSuccess: false, data: nil, message: nil)
         }
+        let smsCode = self.smsCodes.first { ele in
+            ele == code
+        }
         guard let smsCode = smsCode else {
             SFDsLogger.debug(tag: logTag, step: .end(.failure), msgs: "smsCode=nil")
-            return (code: .ok, isSuccess: false, data: nil, message: "验证码已过期，请重新发送")
-        }
-        guard smsCode == code else {
-            SFDsLogger.debug(tag: logTag, step: .end(.failure), msgs: "smsCode != code")
             return (code: .ok, isSuccess: false, data: nil, message: "验证码错误")
         }
         do {
             let condition = BTUserModel.Properties.phone.is(phone)
             let user: BTUserModel? = try appDb.getObject(on: BTUserModel.Properties.all, fromTable: BTUserModel.table, where: condition)
-            if let user = user {
+            if var user = user {
+                var properties = [BTUserModel.Properties]()
+                user.updateDateR = Date()
+                user.stateEnum = .active
+                properties.append(.updateTimeR)
+                properties.append(.state)
+                try appDb.update(table: BTUserModel.table, on: properties, with: user, where: condition)
                 SFDsLogger.debug(tag: logTag, step: .end(.success), msgs: user)
                 return (code: .ok, isSuccess: true, data: user, message: nil)
             } else {
-                SFDsLogger.debug(tag: logTag, step: .end(.success), msgs: "user=nil")
-                return (code: .ok, isSuccess: true, data: nil, message: "用户不存在")
+                SFDsLogger.debug(tag: logTag, step: .inProcess, msgs: "user=nil")
+                let accounts: [String] = try appDb.getColumn(on: BTUserModel.Properties.account, fromTable: BTUserModel.table).map{ $0.stringValue }
+                var newUser = BTUserModel()
+                newUser.defaultR()
+                newUser.account = BTUserModel.generateUniqueAccount(existingAccounts: Set(accounts))
+                newUser.phone = phone
+                try appDb.insertOrReplace([newUser], intoTable: BTUserModel.table)
+                SFDsLogger.debug(tag: logTag, step: .end(.success), msgs: "注册用户", newUser)
+                return (code: .ok, isSuccess: true, data: newUser, message: nil)
             }
         } catch let error {
             SFDsLogger.debug(tag: logTag, step: .end(.failure), msgs: error.localizedDescription)
@@ -81,23 +95,35 @@ extension DbDataProvider: SFUserApi {
             SFDsLogger.debug(tag: logTag, step: .end(.failure), msgs: "appDb=nil")
             return (code: .serverError, isSuccess: false, data: nil, message: nil)
         }
+        let smsCode = self.smsCodes.first { ele in
+            ele == code
+        }
         guard let smsCode = smsCode else {
             SFDsLogger.debug(tag: logTag, step: .end(.failure), msgs: "smsCode=nil")
-            return (code: .ok, isSuccess: false, data: nil, message: "验证码已过期，请重新发送")
-        }
-        guard smsCode == code else {
-            SFDsLogger.debug(tag: logTag, step: .end(.failure), msgs: "smsCode != code")
             return (code: .ok, isSuccess: false, data: nil, message: "验证码错误")
         }
         do {
             let condition = BTUserModel.Properties.email.is(email)
             let user: BTUserModel? = try appDb.getObject(on: BTUserModel.Properties.all, fromTable: BTUserModel.table, where: condition)
-            if let user = user {
+            if var user = user {
+                var properties = [BTUserModel.Properties]()
+                user.updateDateR = Date()
+                user.stateEnum = .active
+                properties.append(.updateTimeR)
+                properties.append(.state)
+                try appDb.update(table: BTUserModel.table, on: properties, with: user, where: condition)
                 SFDsLogger.debug(tag: logTag, step: .end(.success), msgs: user)
                 return (code: .ok, isSuccess: true, data: user, message: nil)
             } else {
-                SFDsLogger.debug(tag: logTag, step: .end(.success), msgs: "user=nil")
-                return (code: .ok, isSuccess: true, data: nil, message: "用户不存在")
+                SFDsLogger.debug(tag: logTag, step: .inProcess, msgs: "user=nil")
+                let accounts: [String] = try appDb.getColumn(on: BTUserModel.Properties.account, fromTable: BTUserModel.table).map{ $0.stringValue }
+                var newUser = BTUserModel()
+                newUser.defaultR()
+                newUser.account = BTUserModel.generateUniqueAccount(existingAccounts: Set(accounts))
+                newUser.email = email
+                try appDb.insertOrReplace([newUser], intoTable: BTUserModel.table)
+                SFDsLogger.debug(tag: logTag, step: .end(.success), msgs: "注册用户", newUser)
+                return (code: .ok, isSuccess: true, data: newUser, message: nil)
             }
         } catch let error {
             SFDsLogger.debug(tag: logTag, step: .end(.failure), msgs: error.localizedDescription)
@@ -115,7 +141,13 @@ extension DbDataProvider: SFUserApi {
         do {
             let condition = BTUserModel.Properties.account.is(account) && BTUserModel.Properties.pwd.is(pwd)
             let user: BTUserModel? = try appDb.getObject(on: BTUserModel.Properties.all, fromTable: BTUserModel.table, where: condition)
-            if let user = user {
+            if var user = user {
+                var properties = [BTUserModel.Properties]()
+                user.updateDateR = Date()
+                user.stateEnum = .active
+                properties.append(.updateTimeR)
+                properties.append(.state)
+                try appDb.update(table: BTUserModel.table, on: properties, with: user, where: condition)
                 SFDsLogger.debug(tag: logTag, step: .end(.success), msgs: user)
                 return (code: .ok, isSuccess: true, data: user, message: nil)
             } else {
@@ -138,7 +170,13 @@ extension DbDataProvider: SFUserApi {
         do {
             let condition = BTUserModel.Properties.phone.is(phone) && BTUserModel.Properties.pwd.is(pwd)
             let user: BTUserModel? = try appDb.getObject(on: BTUserModel.Properties.all, fromTable: BTUserModel.table, where: condition)
-            if let user = user {
+            if var user = user {
+                var properties = [BTUserModel.Properties]()
+                user.updateDateR = Date()
+                user.stateEnum = .active
+                properties.append(.updateTimeR)
+                properties.append(.state)
+                try appDb.update(table: BTUserModel.table, on: properties, with: user, where: condition)
                 SFDsLogger.debug(tag: logTag, step: .end(.success), msgs: user)
                 return (code: .ok, isSuccess: true, data: user, message: nil)
             } else {
@@ -161,7 +199,13 @@ extension DbDataProvider: SFUserApi {
         do {
             let condition = BTUserModel.Properties.email.is(email) && BTUserModel.Properties.pwd.is(pwd)
             let user: BTUserModel? = try appDb.getObject(on: BTUserModel.Properties.all, fromTable: BTUserModel.table, where: condition)
-            if let user = user {
+            if var user = user {
+                var properties = [BTUserModel.Properties]()
+                user.updateDateR = Date()
+                user.stateEnum = .active
+                properties.append(.updateTimeR)
+                properties.append(.state)
+                try appDb.update(table: BTUserModel.table, on: properties, with: user, where: condition)
                 SFDsLogger.debug(tag: logTag, step: .end(.success), msgs: user)
                 return (code: .ok, isSuccess: true, data: user, message: nil)
             } else {
@@ -175,30 +219,282 @@ extension DbDataProvider: SFUserApi {
     }
     
     func signOut() async -> SFDataResponse {
-        return (code: .ok, isSuccess: true, data: nil, message: nil)
+        let logTag = "登出"
+        SFDsLogger.debug(tag: logTag, step: .start, msgs: "")
+        guard let activeUser = UserModel.active else {
+            SFDsLogger.debug(tag: logTag, step: .end(.failure), msgs: "activeUser=nil")
+            return (code: .badRequest, isSuccess: false, data: nil, message: nil)
+        }
+        guard let uid = activeUser.uid else {
+            SFDsLogger.debug(tag: logTag, step: .end(.failure), msgs: "uid=nil")
+            return (code: .badRequest, isSuccess: false, data: nil, message: nil)
+        }
+        SFDsLogger.debug(tag: logTag, step: .inProcess, msgs: activeUser)
+        guard let appDb = SFServerDatabase.getAppDb() else {
+            SFDsLogger.debug(tag: logTag, step: .end(.failure), msgs: "appDb=nil")
+            return (code: .serverError, isSuccess: false, data: nil, message: nil)
+        }
+        do {
+            let condition = BTUserModel.Properties.uid.is(uid)
+            let user: BTUserModel? = try appDb.getObject(on: BTUserModel.Properties.all, fromTable: BTUserModel.table, where: condition)
+            if var user = user {
+                var properties = [BTUserModel.Properties]()
+                user.updateDateR = Date()
+                user.stateEnum = .inactive
+                properties.append(.updateTimeR)
+                properties.append(.state)
+                try appDb.update(table: BTUserModel.table, on: properties, with: user, where: condition)
+                SFDsLogger.debug(tag: logTag, step: .end(.success), msgs: user)
+                return (code: .ok, isSuccess: true, data: user, message: nil)
+            } else {
+                SFDsLogger.debug(tag: logTag, step: .end(.success), msgs: "user=nil")
+                return (code: .ok, isSuccess: true, data: nil, message: "用户不存在")
+            }
+        } catch let error {
+            SFDsLogger.debug(tag: logTag, step: .end(.failure), msgs: error.localizedDescription)
+            return (code: .serverError, isSuccess: false, data: nil, message: nil)
+        }
     }
     
     func initialPwd(_ pwd: String) async -> SFDataResponse {
-        return (code: .ok, isSuccess: true, data: nil, message: nil)
+        let logTag = "设置初始密码"
+        SFDsLogger.debug(tag: logTag, step: .start, msgs: pwd)
+        guard let activeUser = UserModel.active else {
+            SFDsLogger.debug(tag: logTag, step: .end(.failure), msgs: "activeUser=nil")
+            return (code: .badRequest, isSuccess: false, data: nil, message: nil)
+        }
+        guard let uid = activeUser.uid else {
+            SFDsLogger.debug(tag: logTag, step: .end(.failure), msgs: "uid=nil")
+            return (code: .badRequest, isSuccess: false, data: nil, message: nil)
+        }
+        SFDsLogger.debug(tag: logTag, step: .inProcess, msgs: activeUser)
+        guard let appDb = SFServerDatabase.getAppDb() else {
+            SFDsLogger.debug(tag: logTag, step: .end(.failure), msgs: "appDb=nil")
+            return (code: .serverError, isSuccess: false, data: nil, message: nil)
+        }
+        do {
+            let condition = BTUserModel.Properties.uid.is(uid)
+            let user: BTUserModel? = try appDb.getObject(on: BTUserModel.Properties.all, fromTable: BTUserModel.table, where: condition)
+            if var user = user {
+                var properties = [BTUserModel.Properties]()
+                user.updateDateR = Date()
+                user.pwd = pwd
+                properties.append(.updateTimeR)
+                properties.append(.pwd)
+                try appDb.update(table: BTUserModel.table, on: properties, with: user, where: condition)
+                SFDsLogger.debug(tag: logTag, step: .end(.success), msgs: user)
+                return (code: .ok, isSuccess: true, data: user, message: nil)
+            } else {
+                SFDsLogger.debug(tag: logTag, step: .end(.success), msgs: "user=nil")
+                return (code: .ok, isSuccess: true, data: nil, message: "用户不存在")
+            }
+        } catch let error {
+            SFDsLogger.debug(tag: logTag, step: .end(.failure), msgs: error.localizedDescription)
+            return (code: .serverError, isSuccess: false, data: nil, message: nil)
+        }
     }
     
     func resetPwd(_ pwd: String, phone: String, code: String) async -> SFDataResponse {
-        return (code: .ok, isSuccess: true, data: nil, message: nil)
+        let logTag = "重置密码（手机号+验证码）"
+        SFDsLogger.debug(tag: logTag, step: .start, msgs: pwd)
+        guard let activeUser = UserModel.active else {
+            SFDsLogger.debug(tag: logTag, step: .end(.failure), msgs: "activeUser=nil")
+            return (code: .badRequest, isSuccess: false, data: nil, message: nil)
+        }
+        guard let uid = activeUser.uid else {
+            SFDsLogger.debug(tag: logTag, step: .end(.failure), msgs: "uid=nil")
+            return (code: .badRequest, isSuccess: false, data: nil, message: nil)
+        }
+        SFDsLogger.debug(tag: logTag, step: .inProcess, msgs: activeUser)
+        let smsCode = self.smsCodes.first { ele in
+            ele == code
+        }
+        guard let smsCode = smsCode else {
+            SFDsLogger.debug(tag: logTag, step: .end(.failure), msgs: "smsCode=nil")
+            return (code: .ok, isSuccess: false, data: nil, message: "验证码错误")
+        }
+        guard let appDb = SFServerDatabase.getAppDb() else {
+            SFDsLogger.debug(tag: logTag, step: .end(.failure), msgs: "appDb=nil")
+            return (code: .serverError, isSuccess: false, data: nil, message: nil)
+        }
+        do {
+            let condition = BTUserModel.Properties.uid.is(uid) && BTUserModel.Properties.phone.is(phone)
+            let user: BTUserModel? = try appDb.getObject(on: BTUserModel.Properties.all, fromTable: BTUserModel.table, where: condition)
+            if var user = user {
+                var properties = [BTUserModel.Properties]()
+                user.updateDateR = Date()
+                user.pwd = pwd
+                properties.append(.updateTimeR)
+                properties.append(.pwd)
+                try appDb.update(table: BTUserModel.table, on: properties, with: user, where: condition)
+                SFDsLogger.debug(tag: logTag, step: .end(.success), msgs: user)
+                return (code: .ok, isSuccess: true, data: user, message: nil)
+            } else {
+                SFDsLogger.debug(tag: logTag, step: .end(.success), msgs: "user=nil")
+                return (code: .ok, isSuccess: true, data: nil, message: "用户不存在")
+            }
+        } catch let error {
+            SFDsLogger.debug(tag: logTag, step: .end(.failure), msgs: error.localizedDescription)
+            return (code: .serverError, isSuccess: false, data: nil, message: nil)
+        }
     }
     
     func resetPwd(_ pwd: String, email: String, code: String) async -> SFDataResponse {
-        return (code: .ok, isSuccess: true, data: nil, message: nil)
+        let logTag = "重置密码（邮箱+验证码）"
+        SFDsLogger.debug(tag: logTag, step: .start, msgs: pwd)
+        guard let activeUser = UserModel.active else {
+            SFDsLogger.debug(tag: logTag, step: .end(.failure), msgs: "activeUser=nil")
+            return (code: .badRequest, isSuccess: false, data: nil, message: nil)
+        }
+        guard let uid = activeUser.uid else {
+            SFDsLogger.debug(tag: logTag, step: .end(.failure), msgs: "uid=nil")
+            return (code: .badRequest, isSuccess: false, data: nil, message: nil)
+        }
+        SFDsLogger.debug(tag: logTag, step: .inProcess, msgs: activeUser)
+        let smsCode = self.smsCodes.first { ele in
+            ele == code
+        }
+        guard let smsCode = smsCode else {
+            SFDsLogger.debug(tag: logTag, step: .end(.failure), msgs: "smsCode=nil")
+            return (code: .ok, isSuccess: false, data: nil, message: "验证码错误")
+        }
+        guard let appDb = SFServerDatabase.getAppDb() else {
+            SFDsLogger.debug(tag: logTag, step: .end(.failure), msgs: "appDb=nil")
+            return (code: .serverError, isSuccess: false, data: nil, message: nil)
+        }
+        do {
+            let condition = BTUserModel.Properties.uid.is(uid) && BTUserModel.Properties.email.is(email)
+            let user: BTUserModel? = try appDb.getObject(on: BTUserModel.Properties.all, fromTable: BTUserModel.table, where: condition)
+            if var user = user {
+                var properties = [BTUserModel.Properties]()
+                user.updateDateR = Date()
+                user.pwd = pwd
+                properties.append(.updateTimeR)
+                properties.append(.pwd)
+                try appDb.update(table: BTUserModel.table, on: properties, with: user, where: condition)
+                SFDsLogger.debug(tag: logTag, step: .end(.success), msgs: user)
+                return (code: .ok, isSuccess: true, data: user, message: nil)
+            } else {
+                SFDsLogger.debug(tag: logTag, step: .end(.success), msgs: "user=nil")
+                return (code: .ok, isSuccess: true, data: nil, message: "用户不存在")
+            }
+        } catch let error {
+            SFDsLogger.debug(tag: logTag, step: .end(.failure), msgs: error.localizedDescription)
+            return (code: .serverError, isSuccess: false, data: nil, message: nil)
+        }
     }
     
     func getInfo() async -> SFDataResponse {
-        return (code: .ok, isSuccess: true, data: nil, message: nil)
+        let logTag = "获取用户信息"
+        SFDsLogger.debug(tag: logTag, step: .start, msgs: "")
+        guard let activeUser = UserModel.active else {
+            SFDsLogger.debug(tag: logTag, step: .end(.failure), msgs: "activeUser=nil")
+            return (code: .badRequest, isSuccess: false, data: nil, message: nil)
+        }
+        guard let uid = activeUser.uid else {
+            SFDsLogger.debug(tag: logTag, step: .end(.failure), msgs: "uid=nil")
+            return (code: .badRequest, isSuccess: false, data: nil, message: nil)
+        }
+        SFDsLogger.debug(tag: logTag, step: .inProcess, msgs: activeUser)
+        guard let appDb = SFServerDatabase.getAppDb() else {
+            SFDsLogger.debug(tag: logTag, step: .end(.failure), msgs: "appDb=nil")
+            return (code: .serverError, isSuccess: false, data: nil, message: nil)
+        }
+        do {
+            let condition = BTUserModel.Properties.uid.is(uid)
+            let user: BTUserModel? = try appDb.getObject(on: BTUserModel.Properties.all, fromTable: BTUserModel.table, where: condition)
+            if let user = user {
+                SFDsLogger.debug(tag: logTag, step: .end(.success), msgs: user)
+                return (code: .ok, isSuccess: true, data: user, message: nil)
+            } else {
+                SFDsLogger.debug(tag: logTag, step: .end(.success), msgs: "user=nil")
+                return (code: .ok, isSuccess: true, data: nil, message: "用户不存在")
+            }
+        } catch let error {
+            SFDsLogger.debug(tag: logTag, step: .end(.failure), msgs: error.localizedDescription)
+            return (code: .serverError, isSuccess: false, data: nil, message: nil)
+        }
     }
     
     func updateInfo(_ info: [String : Any]) async -> SFDataResponse {
-        return (code: .ok, isSuccess: true, data: nil, message: nil)
+        let logTag = "更新用户信息"
+        SFDsLogger.debug(tag: logTag, step: .start, msgs: info)
+        guard let activeUser = UserModel.active else {
+            SFDsLogger.debug(tag: logTag, step: .end(.failure), msgs: "activeUser=nil")
+            return (code: .badRequest, isSuccess: false, data: nil, message: nil)
+        }
+        guard let uid = activeUser.uid else {
+            SFDsLogger.debug(tag: logTag, step: .end(.failure), msgs: "uid=nil")
+            return (code: .badRequest, isSuccess: false, data: nil, message: nil)
+        }
+        SFDsLogger.debug(tag: logTag, step: .inProcess, msgs: activeUser)
+        guard let appDb = SFServerDatabase.getAppDb() else {
+            SFDsLogger.debug(tag: logTag, step: .end(.failure), msgs: "appDb=nil")
+            return (code: .serverError, isSuccess: false, data: nil, message: nil)
+        }
+        do {
+            let condition = BTUserModel.Properties.uid.is(uid)
+            let user: BTUserModel? = try appDb.getObject(on: BTUserModel.Properties.all, fromTable: BTUserModel.table, where: condition)
+            if var user = user {
+                var properties = [BTUserModel.Properties]()
+                user.updateDateR = Date()
+                properties.append(.updateTimeR)
+                for (key, value) in info {
+                    if let mapping = BTUserModel.keyPathMapping[key] {
+                        user[keyPath: mapping.keyPath] = value
+                        properties.append(mapping.property)
+                    } else {
+                        SFDsLogger.debug(tag: logTag, step: .inProcess, msgs: "未知字段: \(key)")
+                    }
+                }
+                try appDb.update(table: BTUserModel.table, on: properties, with: user, where: condition)
+                SFDsLogger.debug(tag: logTag, step: .end(.success), msgs: user)
+                return (code: .ok, isSuccess: true, data: user, message: nil)
+            } else {
+                SFDsLogger.debug(tag: logTag, step: .end(.success), msgs: "user=nil")
+                return (code: .ok, isSuccess: true, data: nil, message: "用户不存在")
+            }
+        } catch let error {
+            SFDsLogger.debug(tag: logTag, step: .end(.failure), msgs: error.localizedDescription)
+            return (code: .serverError, isSuccess: false, data: nil, message: nil)
+        }
     }
     
     func deleteAccount(pwd: String) async -> SFDataResponse {
-        return (code: .ok, isSuccess: true, data: nil, message: nil)
+        let logTag = "注销账户"
+        SFDsLogger.debug(tag: logTag, step: .start, msgs: "")
+        guard let activeUser = UserModel.active else {
+            SFDsLogger.debug(tag: logTag, step: .end(.failure), msgs: "activeUser=nil")
+            return (code: .badRequest, isSuccess: false, data: nil, message: nil)
+        }
+        guard let uid = activeUser.uid else {
+            SFDsLogger.debug(tag: logTag, step: .end(.failure), msgs: "uid=nil")
+            return (code: .badRequest, isSuccess: false, data: nil, message: nil)
+        }
+        SFDsLogger.debug(tag: logTag, step: .inProcess, msgs: activeUser)
+        guard let appDb = SFServerDatabase.getAppDb() else {
+            SFDsLogger.debug(tag: logTag, step: .end(.failure), msgs: "appDb=nil")
+            return (code: .serverError, isSuccess: false, data: nil, message: nil)
+        }
+        do {
+            let condition = BTUserModel.Properties.uid.is(uid)
+            let user: BTUserModel? = try appDb.getObject(on: BTUserModel.Properties.all, fromTable: BTUserModel.table, where: condition)
+            if var user = user {
+                var properties = [BTUserModel.Properties]()
+                user.updateDateR = Date()
+                user.stateEnum = .delete
+                properties.append(.updateTimeR)
+                properties.append(.state)
+                try appDb.update(table: BTUserModel.table, on: properties, with: user, where: condition)
+                SFDsLogger.debug(tag: logTag, step: .end(.success), msgs: user)
+                return (code: .ok, isSuccess: true, data: user, message: nil)
+            } else {
+                SFDsLogger.debug(tag: logTag, step: .end(.success), msgs: "user=nil")
+                return (code: .ok, isSuccess: true, data: nil, message: "用户不存在")
+            }
+        } catch let error {
+            SFDsLogger.debug(tag: logTag, step: .end(.failure), msgs: error.localizedDescription)
+            return (code: .serverError, isSuccess: false, data: nil, message: nil)
+        }
     }
 }
