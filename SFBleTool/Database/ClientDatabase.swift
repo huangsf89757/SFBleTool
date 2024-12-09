@@ -1,8 +1,8 @@
 //
-//  Database.swift
+//  ClientDatabase.swift
 //  SFBleTool
 //
-//  Created by hsf on 2024/11/28.
+//  Created by hsf on 2024/12/9.
 //
 
 import Foundation
@@ -20,16 +20,16 @@ import SFLogger
 // Third
 import WCDBSwift
 
-extension AppDelegate {
+extension SFClientDatabase {
     /// 创建App相关表
-    func createClientAppTables() {
+    static func createAppTables() {
         let tag = "创建App相关表"
-        guard let clientAppDb = SFApp.clientDb() else {
-            SFDbLogger.error(port: .client, type: .add, msgs: tag, "失败", "clientAppDb=nil")
+        guard let appDb = getAppDb() else {
+            SFDbLogger.error(port: .client, type: .add, msgs: tag, "失败", "appDb=nil")
             return
         }
         do {
-            try clientAppDb.create(table: BTUserModel.table, of: BTUserModel.self)
+            try appDb.create(table: BTUserModel.table, of: BTUserModel.self)
             SFDbLogger.info(port: .client, type: .add, msgs: tag, "成功")
         } catch let error {
             SFDbLogger.error(port: .client, type: .add, msgs: tag, "失败", error.localizedDescription)
@@ -37,16 +37,16 @@ extension AppDelegate {
     }
     
     /// 获取当前登录用户
-    func getActiveUser() -> BTUserModel? {
+    static func getActiveUser() -> BTUserModel? {
         let tag = "获取当前登录用户"
-        guard let clientAppDb = SFApp.clientDb() else {
-            SFDbLogger.error(port: .client, type: .find, msgs: tag, "失败", "clientAppDb=nil")
+        guard let appDb = getAppDb() else {
+            SFDbLogger.error(port: .client, type: .find, msgs: tag, "失败", "appDb=nil")
             return nil
         }
         do {
             let condition = BTUserModel.Properties.isActive.is(true)
             let order = [BTUserModel.Properties.updateTimeL.order(.descending)]
-            let user: BTUserModel? = try clientAppDb.getObject(on: BTUserModel.Properties.all, fromTable: BTUserModel.table, where: condition, orderBy: order)
+            let user: BTUserModel? = try appDb.getObject(on: BTUserModel.Properties.all, fromTable: BTUserModel.table, where: condition, orderBy: order)
             if let user = user {
                 SFDbLogger.info(port: .client, type: .find, msgs: tag, "成功", "user=\(user)")
             } else {
@@ -60,18 +60,20 @@ extension AppDelegate {
     }
     
     /// 创建User相关表
-    func createClientUserTables() {
+    static func createUserTables() {
         let tag = "创建User相关表"
         guard let user = UserModel.active else { return }
-        guard let clientUserDb = user.clientDb else {
-            SFDbLogger.error(port: .client, type: .add, msgs: tag, "失败", "clientUserDb=nil")
+        guard let uid = user.uid else { return }
+        guard let userDb = getUserDb(with: uid) else {
+            SFDbLogger.error(port: .client, type: .add, msgs: tag, "失败", "userDb=nil")
             return
         }
         do {
-            try clientUserDb.create(table: OptModel.table, of: OptModel.self)
+            try userDb.create(table: OptModel.table, of: OptModel.self)
             SFDbLogger.info(port: .client, type: .add, msgs: tag, "成功")
         } catch let error {
             SFDbLogger.error(port: .client, type: .add, msgs: tag, "失败", error.localizedDescription)
         }
     }
 }
+

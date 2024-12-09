@@ -42,12 +42,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         SFText.App.slogen = SFText.Main.app_slogen
         
         // Database
-        createClientAppTables()
-        buildInData() // 内建数据
-        let user = getActiveUser()
+        SFServerDatabase.createAppTables()
+        SFClientDatabase.createAppTables()
+        SFDatabase.buildInData()
+        let user = SFClientDatabase.getActiveUser()
         UserModel.active = user
         if let user = UserModel.active {
-            createClientUserTables()
+            SFClientDatabase.createUserTables()
         }
         
         // DataService

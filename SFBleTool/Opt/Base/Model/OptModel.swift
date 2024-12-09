@@ -17,14 +17,16 @@ final class OptModel: SFLocalDatanable, SFRemoteDatanable, WCDBSwift.TableCodabl
     class var table: String {
         return "option"
     }
+    var isAutoIncrement: Bool = true
+    var lastInsertedRowID: Int64 = 0
     
-    // MARK: Local
+    // MARK: SFLocalDatanable
     var orderL: Int?
     var idL: String?
     var createTimeL: String?
     var updateTimeL: String?
     
-    // MARK: Remote
+    // MARK: SFRemoteDatanable
     var orderR: Int?
     var idR: String?
     var createTimeR: String?
@@ -68,14 +70,17 @@ final class OptModel: SFLocalDatanable, SFRemoteDatanable, WCDBSwift.TableCodabl
         case name
         case values
         
-        public static let objectRelationalMapping = TableBinding(CodingKeys.self) 
+        public static let objectRelationalMapping = TableBinding(CodingKeys.self)  {
+            BindColumnConstraint(orderL, isPrimary: true, orderBy: .ascending, isAutoIncrement: true, isNotNull: true, defaultTo: 0)
+            BindColumnConstraint(idL, isUnique: true)
+            BindIndex(name, namedWith: "_nameIndex")
+        }
     }
 }
 
 // MARK: - valuesToModels
 extension OptModel {
     func valuesToModels() {
-        guard let type = type else { return }
         let items = typeEnum.items
         var itemModels: [OptItemModel] = []
         for item in items {

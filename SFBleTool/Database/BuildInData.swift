@@ -20,8 +20,8 @@ import SFLogger
 // Third
 import WCDBSwift
 
-extension AppDelegate {
-    func buildInData() {
+extension SFDatabase {
+    static func buildInData() {
         let hasData = UserDefaults.standard.bool(forKey: UserDefaultKey.buildInData)
         if hasData {
             return
@@ -44,20 +44,35 @@ extension AppDelegate {
         user.pageEnum = .entrance
         
         let tag = "内建数据"
-        let clientSuccess = buildClient(user: user)
-        let serverSuccess = buildServer(user: user)
-        if clientSuccess, serverSuccess {
-            UserDefaults.standard.setValue(true, forKey: UserDefaultKey.buildInData)
-            SFLogger.info(tag, "成功")
+        let serverSuccess = build(port: .server, user: user)
+        if serverSuccess {
+            let clientSuccess = build(port: .client, user: user)
+            if clientSuccess {
+                UserDefaults.standard.setValue(true, forKey: UserDefaultKey.buildInData)
+                SFDbLogger.info(port: .none, type: .add, msgs: tag, "成功")
+            } else {
+                SFDbLogger.info(port: .none, type: .add, msgs: tag, "失败", "build client data failed")
+            }
+        } else {
+            SFDbLogger.info(port: .none, type: .add, msgs: tag, "失败", "build server data failed")
         }
-       
-        func buildClient(user: BTUserModel) -> Bool {
-            guard let clientAppDb = SFApp.clientDb() else {
-                SFDbLogger.error(port: .client, type: .add, msgs: tag, "失败", "clientAppDb=nil")
+        
+        func build(port: SFPort, user: BTUserModel) -> Bool {
+            var appDb: Database?
+            switch port {
+            case .none:
+                appDb = nil
+            case .client:
+                appDb = SFClientDatabase.getAppDb()
+            case .server:
+                appDb = SFServerDatabase.getAppDb()
+            }
+            guard let appDb = appDb else {
+                SFDbLogger.error(port: .client, type: .add, msgs: tag, "失败", "appDb=nil")
                 return false
             }
             do {
-                try clientAppDb.insertOrReplace([user], intoTable: BTUserModel.table)
+                try appDb.insertOrReplace([user], intoTable: BTUserModel.table)
                 SFDbLogger.info(port: .client, type: .add, msgs: tag, "成功")
                 return true
             } catch let error {
@@ -66,19 +81,5 @@ extension AppDelegate {
             }
         }
         
-        func buildServer(user: BTUserModel) -> Bool {
-            guard let serverAppDb = SFApp.serverDb() else {
-                SFDbLogger.error(port: .server, type: .add, msgs: tag, "失败", "serverAppDb=nil")
-                return false
-            }
-            do {
-                try serverAppDb.insertOrReplace([user], intoTable: BTUserModel.table)
-                SFDbLogger.info(port: .server, type: .add, msgs: tag, "成功")
-                return true
-            } catch let error {
-                SFDbLogger.error(port: .server, type: .add, msgs: tag, "失败", error.localizedDescription)
-                return false
-            }
-        }
     }
 }
