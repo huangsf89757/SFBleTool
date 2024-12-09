@@ -414,10 +414,10 @@
 			children = (
 				DDA6489C2C619F5100F01858 /* AppDelegate.swift */,
 				DDA6489E2C619F5100F01858 /* SceneDelegate.swift */,
-				DD56B5672D068A0B00657DC1 /* Database */,
 				51DF13B22CF20CAF00838578 /* RootPage.swift */,
 				DDFA63F22C635306002E93F3 /* UserDefaultKey.swift */,
 				51A613AA2C76216C005990FC /* Todo.swift */,
+				DD56B5672D068A0B00657DC1 /* Database */,
 				51B7A29D2CFAAD230067D609 /* DataService */,
 				51DF13A12CF1CF1400838578 /* Resource */,
 				DDA648D42C61A85100F01858 /* Entrance */,

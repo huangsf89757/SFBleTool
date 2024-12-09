@@ -27,7 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         SFEnvironment.cur = .dev
         
         // 日志
-        SFLogger.config()
+        SFLogger.shared.config()
         
         // 键盘 TODO: 考虑一下是否使用notify监听didFinishLaunching 实现自动配置
         IQKeyboardManager.shared.enable = true
@@ -47,9 +47,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         SFDatabase.buildInData()
         let user = SFClientDatabase.getActiveUser()
         UserModel.active = user
-        if let user = UserModel.active {
-            SFClientDatabase.createUserTables()
-        }
+        SFClientDatabase.createUserTables()
         
         // DataService
         SFDataService.shared.provider = DbDataProvider()
