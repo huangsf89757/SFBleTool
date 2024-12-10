@@ -74,6 +74,9 @@ extension DbDataProvider: SFUserApi {
             SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.failure), msgs: "smsCode=nil")
             return (code: .ok, isSuccess: false, data: nil, message: "验证码错误")
         }
+        self.smsCodes.removeAll { ele in
+            ele == smsCode
+        }
         do {
             let condition = BTUserModel.Properties.phone.is(phone)
             let user: BTUserModel? = try appDb.getObject(on: BTUserModel.Properties.all, fromTable: BTUserModel.table, where: condition)
@@ -124,6 +127,9 @@ extension DbDataProvider: SFUserApi {
             SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.failure), msgs: "smsCode=nil")
             return (code: .ok, isSuccess: false, data: nil, message: "验证码错误")
         }
+        self.smsCodes.removeAll { ele in
+            ele == smsCode
+        }
         do {
             let condition = BTUserModel.Properties.email.is(email)
             let user: BTUserModel? = try appDb.getObject(on: BTUserModel.Properties.all, fromTable: BTUserModel.table, where: condition)
@@ -168,20 +174,25 @@ extension DbDataProvider: SFUserApi {
             return (code: .serverError, isSuccess: false, data: nil, message: nil)
         }
         do {
-            let condition = BTUserModel.Properties.account.is(account) && BTUserModel.Properties.pwd.is(pwd)
+            let condition = BTUserModel.Properties.account.is(account)
             let user: BTUserModel? = try appDb.getObject(on: BTUserModel.Properties.all, fromTable: BTUserModel.table, where: condition)
             if var user = user {
-                var properties = [BTUserModel.Properties]()
-                user.updateDateR = Date()
-                user.stateEnum = .active
-                properties.append(.updateTimeR)
-                properties.append(.state)
-                try appDb.update(table: BTUserModel.table, on: properties, with: user, where: condition)
-                SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.success), msgs: user)
-                return (code: .ok, isSuccess: true, data: user, message: nil)
+                if user.pwd == pwd {
+                    var properties = [BTUserModel.Properties]()
+                    user.updateDateR = Date()
+                    user.stateEnum = .active
+                    properties.append(.updateTimeR)
+                    properties.append(.state)
+                    try appDb.update(table: BTUserModel.table, on: properties, with: user, where: condition)
+                    SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.success), msgs: user)
+                    return (code: .ok, isSuccess: true, data: user, message: nil)
+                } else {
+                    SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.failure), msgs: "密码不正确")
+                    return (code: .ok, isSuccess: false, data: nil, message: "密码不正确")
+                }
             } else {
-                SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.success), msgs: "user=nil")
-                return (code: .ok, isSuccess: true, data: nil, message: "用户不存在")
+                SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.failure), msgs: "user=nil")
+                return (code: .ok, isSuccess: false, data: nil, message: "用户不存在")
             }
         } catch let error {
             SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.failure), msgs: error.localizedDescription)
@@ -204,20 +215,25 @@ extension DbDataProvider: SFUserApi {
             return (code: .serverError, isSuccess: false, data: nil, message: nil)
         }
         do {
-            let condition = BTUserModel.Properties.phone.is(phone) && BTUserModel.Properties.pwd.is(pwd)
+            let condition = BTUserModel.Properties.phone.is(phone)
             let user: BTUserModel? = try appDb.getObject(on: BTUserModel.Properties.all, fromTable: BTUserModel.table, where: condition)
             if var user = user {
-                var properties = [BTUserModel.Properties]()
-                user.updateDateR = Date()
-                user.stateEnum = .active
-                properties.append(.updateTimeR)
-                properties.append(.state)
-                try appDb.update(table: BTUserModel.table, on: properties, with: user, where: condition)
-                SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.success), msgs: user)
-                return (code: .ok, isSuccess: true, data: user, message: nil)
+                if user.pwd == pwd {
+                    var properties = [BTUserModel.Properties]()
+                    user.updateDateR = Date()
+                    user.stateEnum = .active
+                    properties.append(.updateTimeR)
+                    properties.append(.state)
+                    try appDb.update(table: BTUserModel.table, on: properties, with: user, where: condition)
+                    SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.success), msgs: user)
+                    return (code: .ok, isSuccess: true, data: user, message: nil)
+                } else {
+                    SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.failure), msgs: "密码不正确")
+                    return (code: .ok, isSuccess: false, data: nil, message: "密码不正确")
+                }
             } else {
-                SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.success), msgs: "user=nil")
-                return (code: .ok, isSuccess: true, data: nil, message: "用户不存在")
+                SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.failure), msgs: "user=nil")
+                return (code: .ok, isSuccess: false, data: nil, message: "用户不存在")
             }
         } catch let error {
             SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.failure), msgs: error.localizedDescription)
@@ -240,20 +256,25 @@ extension DbDataProvider: SFUserApi {
             return (code: .serverError, isSuccess: false, data: nil, message: nil)
         }
         do {
-            let condition = BTUserModel.Properties.email.is(email) && BTUserModel.Properties.pwd.is(pwd)
+            let condition = BTUserModel.Properties.email.is(email)
             let user: BTUserModel? = try appDb.getObject(on: BTUserModel.Properties.all, fromTable: BTUserModel.table, where: condition)
             if var user = user {
-                var properties = [BTUserModel.Properties]()
-                user.updateDateR = Date()
-                user.stateEnum = .active
-                properties.append(.updateTimeR)
-                properties.append(.state)
-                try appDb.update(table: BTUserModel.table, on: properties, with: user, where: condition)
-                SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.success), msgs: user)
-                return (code: .ok, isSuccess: true, data: user, message: nil)
+                if user.pwd == pwd {
+                    var properties = [BTUserModel.Properties]()
+                    user.updateDateR = Date()
+                    user.stateEnum = .active
+                    properties.append(.updateTimeR)
+                    properties.append(.state)
+                    try appDb.update(table: BTUserModel.table, on: properties, with: user, where: condition)
+                    SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.success), msgs: user)
+                    return (code: .ok, isSuccess: true, data: user, message: nil)
+                } else {
+                    SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.failure), msgs: "密码不正确")
+                    return (code: .ok, isSuccess: false, data: nil, message: "密码不正确")
+                }
             } else {
                 SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.success), msgs: "user=nil")
-                return (code: .ok, isSuccess: true, data: nil, message: "用户不存在")
+                return (code: .ok, isSuccess: false, data: nil, message: "用户不存在")
             }
         } catch let error {
             SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.failure), msgs: error.localizedDescription)
@@ -377,25 +398,38 @@ extension DbDataProvider: SFUserApi {
             SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.failure), msgs: "smsCode=nil")
             return (code: .ok, isSuccess: false, data: nil, message: "验证码错误")
         }
+        self.smsCodes.removeAll { ele in
+            ele == smsCode
+        }
         guard let appDb = SFServerDatabase.getAppDb() else {
             SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.failure), msgs: "appDb=nil")
             return (code: .serverError, isSuccess: false, data: nil, message: nil)
         }
         do {
-            let condition = BTUserModel.Properties.uid.is(uid) && BTUserModel.Properties.phone.is(phone)
+            let condition = BTUserModel.Properties.uid.is(uid)
             let user: BTUserModel? = try appDb.getObject(on: BTUserModel.Properties.all, fromTable: BTUserModel.table, where: condition)
             if var user = user {
-                var properties = [BTUserModel.Properties]()
-                user.updateDateR = Date()
-                user.pwd = pwd
-                properties.append(.updateTimeR)
-                properties.append(.pwd)
-                try appDb.update(table: BTUserModel.table, on: properties, with: user, where: condition)
-                SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.success), msgs: user)
-                return (code: .ok, isSuccess: true, data: user, message: nil)
+                if let userPhone = user.phone {
+                    if userPhone == phone {
+                        var properties = [BTUserModel.Properties]()
+                        user.updateDateR = Date()
+                        user.pwd = pwd
+                        properties.append(.updateTimeR)
+                        properties.append(.pwd)
+                        try appDb.update(table: BTUserModel.table, on: properties, with: user, where: condition)
+                        SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.success), msgs: user)
+                        return (code: .ok, isSuccess: true, data: user, message: nil)
+                    } else {
+                        SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.success), msgs: "手机号不正确")
+                        return (code: .ok, isSuccess: false, data: nil, message: "请使用该账号当前绑定的手机号")
+                    }
+                } else {
+                    SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.success), msgs: "未绑定手机号")
+                    return (code: .ok, isSuccess: false, data: nil, message: "该账号未绑定手机号，请尝试其他方式重置密码")
+                }
             } else {
                 SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.success), msgs: "user=nil")
-                return (code: .ok, isSuccess: true, data: nil, message: "用户不存在")
+                return (code: .ok, isSuccess: false, data: nil, message: "用户不存在")
             }
         } catch let error {
             SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.failure), msgs: error.localizedDescription)
@@ -429,22 +463,35 @@ extension DbDataProvider: SFUserApi {
             SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.failure), msgs: "smsCode=nil")
             return (code: .ok, isSuccess: false, data: nil, message: "验证码错误")
         }
+        self.smsCodes.removeAll { ele in
+            ele == smsCode
+        }
         guard let appDb = SFServerDatabase.getAppDb() else {
             SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.failure), msgs: "appDb=nil")
             return (code: .serverError, isSuccess: false, data: nil, message: nil)
         }
         do {
-            let condition = BTUserModel.Properties.uid.is(uid) && BTUserModel.Properties.email.is(email)
+            let condition = BTUserModel.Properties.uid.is(uid)
             let user: BTUserModel? = try appDb.getObject(on: BTUserModel.Properties.all, fromTable: BTUserModel.table, where: condition)
             if var user = user {
-                var properties = [BTUserModel.Properties]()
-                user.updateDateR = Date()
-                user.pwd = pwd
-                properties.append(.updateTimeR)
-                properties.append(.pwd)
-                try appDb.update(table: BTUserModel.table, on: properties, with: user, where: condition)
-                SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.success), msgs: user)
-                return (code: .ok, isSuccess: true, data: user, message: nil)
+                if let userEmail = user.email {
+                    if userEmail == email {
+                        var properties = [BTUserModel.Properties]()
+                        user.updateDateR = Date()
+                        user.pwd = pwd
+                        properties.append(.updateTimeR)
+                        properties.append(.pwd)
+                        try appDb.update(table: BTUserModel.table, on: properties, with: user, where: condition)
+                        SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.success), msgs: user)
+                        return (code: .ok, isSuccess: true, data: user, message: nil)
+                    } else {
+                        SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.success), msgs: "邮箱不正确")
+                        return (code: .ok, isSuccess: false, data: nil, message: "请使用该账号当前绑定的邮箱")
+                    }
+                } else {
+                    SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.success), msgs: "未绑定邮箱")
+                    return (code: .ok, isSuccess: false, data: nil, message: "该账号未绑定邮箱，请尝试其他方式重置密码")
+                }
             } else {
                 SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.success), msgs: "user=nil")
                 return (code: .ok, isSuccess: true, data: nil, message: "用户不存在")
