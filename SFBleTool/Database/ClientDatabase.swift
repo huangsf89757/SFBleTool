@@ -44,7 +44,7 @@ extension SFClientDatabase {
             return nil
         }
         do {
-            let condition = BTUserModel.Properties.isActive.is(true)
+            let condition = BTUserModel.Properties.state.is(AccountState.active.rawValue)
             let order = [BTUserModel.Properties.updateTimeL.order(.descending)]
             let user: BTUserModel? = try appDb.getObject(on: BTUserModel.Properties.all, fromTable: BTUserModel.table, where: condition, orderBy: order)
             if let user = user {

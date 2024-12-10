@@ -31,7 +31,7 @@ extension SFDatabase {
         user.defaultR()
         user.uid = UUID().uuidString
         user.account = BTUserModel.generateRandomAccount()
-        user.isActive = true
+        user.stateEnum = .inactive
         user.pwd = "Sf123456".sf.sha256()
         user.nickname = "阿七"
         user.genderEnum = .male
