@@ -26,31 +26,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // 环境配置
         SFEnvironment.cur = .dev
         
-        // 日志
-        SFLogger.shared.config()
-        
-        // 键盘 TODO: 考虑一下是否使用notify监听didFinishLaunching 实现自动配置
-        IQKeyboardManager.shared.enable = true
-        IQKeyboardManager.shared.enableAutoToolbar = true
-        IQKeyboardManager.shared.shouldShowToolbarPlaceholder = true
-        IQKeyboardManager.shared.shouldResignOnTouchOutside = true
-        
-        // Resource
-        SFImage.App.icon = SFImage.Main.icon
-        SFImage.App.logo = SFImage.Main.logo
-        SFText.App.name = SFText.Main.app_name
-        SFText.App.slogen = SFText.Main.app_slogen
-        
-        // Database
-        SFServerDatabase.createAppTables()
-        SFClientDatabase.createAppTables()
-        SFDatabase.buildInData()
-        let user = SFClientDatabase.getActiveUser()
-        UserModel.active = user
-        SFClientDatabase.createUserTables()
-        
-        // DataService
-        SFDataService.shared.provider = DbDataProvider()
+        // config
+        config_privatePod_SFLogger()
+        config_resource()
+        config_thirdPod_IQKeyboardManagerSwift()
+        config_database()
+        config_dataProvider()
          
         return true
     }

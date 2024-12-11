@@ -36,6 +36,7 @@
 		DD4579BE2D003E42001FFCBD /* BuildInData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4579BD2D003E42001FFCBD /* BuildInData.swift */; };
 		DD56B5642D0689E700657DC1 /* ClientDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD56B5632D0689E700657DC1 /* ClientDatabase.swift */; };
 		DD56B5662D0689F100657DC1 /* ServerDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD56B5652D0689F100657DC1 /* ServerDatabase.swift */; };
+		DD5952DB2D09377D003F5781 /* LaunchConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5952DA2D09377D003F5781 /* LaunchConfig.swift */; };
 		DD630BFF2C965C4100A24C35 /* SFCMPeripheralAdvDetailItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD630BFE2C965C4100A24C35 /* SFCMPeripheralAdvDetailItem.swift */; };
 		DD630C052C966CDA00A24C35 /* SFCMPeripheralDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD630C042C966CDA00A24C35 /* SFCMPeripheralDetailHeaderView.swift */; };
 		DDA6489D2C619F5100F01858 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA6489C2C619F5100F01858 /* AppDelegate.swift */; };
@@ -136,6 +137,7 @@
 		DD4579BD2D003E42001FFCBD /* BuildInData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildInData.swift; sourceTree = "<group>"; };
 		DD56B5632D0689E700657DC1 /* ClientDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientDatabase.swift; sourceTree = "<group>"; };
 		DD56B5652D0689F100657DC1 /* ServerDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerDatabase.swift; sourceTree = "<group>"; };
+		DD5952DA2D09377D003F5781 /* LaunchConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchConfig.swift; sourceTree = "<group>"; };
 		DD630BFE2C965C4100A24C35 /* SFCMPeripheralAdvDetailItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFCMPeripheralAdvDetailItem.swift; sourceTree = "<group>"; };
 		DD630C042C966CDA00A24C35 /* SFCMPeripheralDetailHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFCMPeripheralDetailHeaderView.swift; sourceTree = "<group>"; };
 		DDA648992C619F5100F01858 /* SFBleTool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SFBleTool.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -379,6 +381,24 @@
 			path = Database;
 			sourceTree = "<group>";
 		};
+		DD5952D82D0936F4003F5781 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				DDA6489C2C619F5100F01858 /* AppDelegate.swift */,
+				DD5952DA2D09377D003F5781 /* LaunchConfig.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		DD5952D92D093700003F5781 /* SceneDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				DDA6489E2C619F5100F01858 /* SceneDelegate.swift */,
+				51DF13B22CF20CAF00838578 /* RootPage.swift */,
+			);
+			path = SceneDelegate;
+			sourceTree = "<group>";
+		};
 		DD8BBB8A2C95200100DE12E5 /* Com */ = {
 			isa = PBXGroup;
 			children = (
@@ -412,9 +432,8 @@
 		DDA6489B2C619F5100F01858 /* SFBleTool */ = {
 			isa = PBXGroup;
 			children = (
-				DDA6489C2C619F5100F01858 /* AppDelegate.swift */,
-				DDA6489E2C619F5100F01858 /* SceneDelegate.swift */,
-				51DF13B22CF20CAF00838578 /* RootPage.swift */,
+				DD5952D82D0936F4003F5781 /* AppDelegate */,
+				DD5952D92D093700003F5781 /* SceneDelegate */,
 				DDFA63F22C635306002E93F3 /* UserDefaultKey.swift */,
 				51A613AA2C76216C005990FC /* Todo.swift */,
 				DD56B5672D068A0B00657DC1 /* Database */,
@@ -792,6 +811,7 @@
 				51A613AB2C76216C005990FC /* Todo.swift in Sources */,
 				51A6139F2C74C25A005990FC /* PeripheralModel.swift in Sources */,
 				DDB895DD2CF08C8F00376F37 /* UserCenterCell.swift in Sources */,
+				DD5952DB2D09377D003F5781 /* LaunchConfig.swift in Sources */,
 				51DF13A62CF1CF1400838578 /* SFColor.swift in Sources */,
 				DDB895D62CF0878D00376F37 /* ClientConnectOptModel.swift in Sources */,
 				5175ADAE2C64F4AF00C9260A /* PeripheralListCell.swift in Sources */,
