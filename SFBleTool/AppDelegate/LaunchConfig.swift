@@ -36,6 +36,7 @@ extension AppDelegate {
         IQKeyboardManager.shared.enableDebugging = true
         IQKeyboardManager.shared.enableAutoToolbar = true
         IQKeyboardManager.shared.toolbarManageBehaviour = .byTag
+        IQKeyboardManager.shared.toolbarPreviousNextAllowedClasses.append(UIScrollView.self)
         IQKeyboardManager.shared.shouldShowToolbarPlaceholder = true
         IQKeyboardManager.shared.shouldResignOnTouchOutside = true
     }
