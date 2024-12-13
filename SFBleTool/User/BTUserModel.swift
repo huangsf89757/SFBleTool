@@ -140,9 +140,9 @@ extension BTUserModel {
 // MARK: - Describable
 extension BTUserModel: Describable {
     var description: String {
-        let uid = uid ?? "UID"
-        let account = account ?? "ACCOUNT"
-        return "\(uid)(\(account))"
+        let uid = uid ?? "<uid>"
+        let account = account ?? "<account>"
+        return "\(account)(\(uid))"
     }
 }
 

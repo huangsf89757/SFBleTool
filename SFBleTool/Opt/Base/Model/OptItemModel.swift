@@ -12,6 +12,7 @@ class OptItemModel {
     
     var item: OptItem = .client(.connect(.ancs))
     var value: String? = nil
+    var selectable: Bool = true
     var isSelected: Bool = false
     
     init(item: OptItem) {

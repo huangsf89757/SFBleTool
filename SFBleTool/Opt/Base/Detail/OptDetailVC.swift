@@ -21,7 +21,6 @@ import SFLogger
 // MARK: OptDetailVC
 class OptDetailVC: SFTableViewController {
     // MARK: var
-    var typeEnum: OptType = .none
     var isEdit = false {
         didSet  {
             editBtn.isSelected = isEdit
@@ -79,7 +78,7 @@ class OptDetailVC: SFTableViewController {
         },
                      sure: SFText.Main.com_sure,
                      sureActionBlock: { [weak self] popView in
-            
+            self?.saveModel()
             self?.goBack(animated: true)
             return true
         })
@@ -151,25 +150,24 @@ extension OptDetailVC {
 
 // MARK: - Data
 extension OptDetailVC {
-    func saveModel() {
+    func saveModel() -> Bool {
         let logTag = "保存Opt数据"
         SFDbLogger.info(tag: logTag, step: .begin, port: .client, type: .add, msgs: "")
         guard let user = UserModel.active, let uid = user.uid else {
-            SFDbLogger.error(tag: logTag, step: .failure, port: .client, type: .find, msgs: "uid=nil")
-            return
+            SFDbLogger.error(tag: logTag, step: .failure, port: .client, type: .add, msgs: "uid=nil")
+            return false
         }
         guard let userDb = SFClientDatabase.getUserDb(with: uid) else {
-            SFDbLogger.error(tag: logTag, step: .failure, port: .client, type: .find, msgs: "userDb=nil")
-            return
+            SFDbLogger.error(tag: logTag, step: .failure, port: .client, type: .add, msgs: "userDb=nil")
+            return false
         }
         do {
-            let condition = OptModel.Properties.type.is(typeEnum.code)
-            let order = [OptModel.Properties.createTimeL.order(.descending)]
-            let models: [OptModel] = try userDb.getObjects(on: OptModel.Properties.all, fromTable: OptModel.table, where: condition, orderBy: order)
-            self.models = models
-            SFDbLogger.info(tag: logTag, step: .success, port: .client, type: .find, msgs: "models.count=\(models.count)")
+            try userDb.insertOrReplace([model], intoTable: OptModel.table)
+            SFDbLogger.info(tag: logTag, step: .success, port: .client, type: .add, msgs: model)
+            return true
         } catch let error {
-            SFDbLogger.error(tag: logTag, step: .failure, port: .client, type: .find, msgs: error.localizedDescription)
+            SFDbLogger.error(tag: logTag, step: .failure, port: .client, type: .add, msgs: error.localizedDescription)
+            return false
         }
     }
 }

@@ -20,9 +20,14 @@ class OptDetailCell: SFTableViewCell {
     var isEdit = false {
         didSet {
             isUserInteractionEnabled = isEdit
-            selectBtn.isHidden = !isEdit
+            let showSelect = isEdit || model?.isSelected == true
+            selectBtn.isHidden = !showSelect
             titleLabel.snp.updateConstraints { make in
-                make.leading.equalToSuperview().offset(isEdit ? 40 : 10)
+                if showSelect {
+                    make.leading.equalToSuperview().offset(40)
+                } else {
+                    make.leading.equalToSuperview().offset(10)
+                }
             }
         }
     }
@@ -107,6 +112,7 @@ class OptDetailCell: SFTableViewCell {
     
     // MARK: func
     func update(model: OptItemModel) {
+        selectBtn.isUserInteractionEnabled = model.selectable
         selectBtn.isSelected = model.isSelected
         titleLabel.text = model.item.title
         descLabel.text = model.item.desc

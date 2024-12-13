@@ -48,16 +48,19 @@ extension OptType {
             switch client {
             case .initial:
                 return [
+                    .name,
                     .client(.initial(.identifier)),
                     .client(.initial(.alert)),
                 ]
             case .scan:
                 return [
+                    .name,
                     .client(.scan(.duplicates)),
                     .client(.scan(.uuids)),
                 ]
             case .connect:
                 return [
+                    .name,
                     .client(.connect(.reconnect)),
                     .client(.connect(.bridging)),
                     .client(.connect(.connection)),

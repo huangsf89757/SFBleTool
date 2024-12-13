@@ -38,8 +38,7 @@ class OptDetailStringCell: OptDetailCell {
     // MARK: override
     override func update(model: OptItemModel) {
         super.update(model: model)
-        guard let value = model.value as? String else { return }
-        textField.text = value
+        textField.text = model.value
     }
 }
 

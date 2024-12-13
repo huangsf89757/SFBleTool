@@ -59,22 +59,22 @@ class OptListVC: SFTableViewController {
             switch client {
             case .initial:
                 let vc = OptDetailVC()
-                vc.typeEnum = typeEnum
                 let optModel = OptModel()
+                optModel.typeEnum = typeEnum
                 optModel.default_clientInitial()
                 vc.model = optModel
                 navigationController?.pushViewController(vc, animated: true)
             case .scan:
                 let vc = OptDetailVC()
-                vc.typeEnum = typeEnum
                 let optModel = OptModel()
+                optModel.typeEnum = typeEnum
                 optModel.default_clientScan()
                 vc.model = optModel
                 navigationController?.pushViewController(vc, animated: true)
             case .connect:
                 let vc = OptDetailVC()
-                vc.typeEnum = typeEnum
                 let optModel = OptModel()
+                optModel.typeEnum = typeEnum
                 optModel.default_clientConnect()
                 vc.model = optModel
                 navigationController?.pushViewController(vc, animated: true)
@@ -95,7 +95,16 @@ extension OptListVC: UITableViewDelegate, UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(for: indexPath, cellType: OptListCell.self)
+        let model = models[indexPath.section]
+        cell.model = model
         return cell
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let model = models[indexPath.section]
+        let vc = OptDetailVC()
+        vc.model = model
+        navigationController?.pushViewController(vc, animated: true)
     }
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         self.tableView.card(cell: cell, at: indexPath)
@@ -145,6 +154,9 @@ extension OptListVC {
             let condition = OptModel.Properties.type.is(typeEnum.code)
             let order = [OptModel.Properties.createTimeL.order(.descending)]
             let models: [OptModel] = try userDb.getObjects(on: OptModel.Properties.all, fromTable: OptModel.table, where: condition, orderBy: order)
+            models.forEach { model in
+                model.valuesToModels()
+            }
             self.models = models
             SFDbLogger.info(tag: logTag, step: .success, port: .client, type: .find, msgs: "models.count=\(models.count)")
         } catch let error {
