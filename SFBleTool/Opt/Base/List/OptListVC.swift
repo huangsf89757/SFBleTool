@@ -42,13 +42,46 @@ class OptListVC: SFTableViewController {
         tableView.dataSource = self
         tableView.separatorStyle = .none
         tableView.register(cellType: OptListCell.self)
-        
+        navigationItem.title = typeEnum.list
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: SFText.Main.opt_list_new, style: .plain, target: self, action: #selector(addItemClicked))
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        getModels()
     }
     
     // MARK: - func
     func addNew() {
-        
+        switch typeEnum {
+        case .none:
+            return
+        case .client(let client):
+            switch client {
+            case .initial:
+                let vc = OptDetailVC()
+                vc.typeEnum = typeEnum
+                let optModel = OptModel()
+                optModel.default_clientInitial()
+                vc.model = optModel
+                navigationController?.pushViewController(vc, animated: true)
+            case .scan:
+                let vc = OptDetailVC()
+                vc.typeEnum = typeEnum
+                let optModel = OptModel()
+                optModel.default_clientScan()
+                vc.model = optModel
+                navigationController?.pushViewController(vc, animated: true)
+            case .connect:
+                let vc = OptDetailVC()
+                vc.typeEnum = typeEnum
+                let optModel = OptModel()
+                optModel.default_clientConnect()
+                vc.model = optModel
+                navigationController?.pushViewController(vc, animated: true)
+            }
+        case .server(let server):
+            break
+        }
     }
 }
 
@@ -90,22 +123,32 @@ extension OptListVC {
 
 // MARK: - Data
 extension OptListVC {
-    func getListData() {
-//        if typeEnum == .none {
-//            models = []
-//            return
-//        }
-//        guard let userDb = SFDatabase.userDb() else {
-//            models = []
-//            return
-//        }
-//        do {
-//            let condition = OptModel.Properties.type.is(typeEnum.code)
-//            let order = [OptModel.Properties.createTimeL.order(.descending)]
-//            let models: [OptModel] = try userDb.getObjects(on: OptModel.Properties.all, fromTable: OptModel.table, where: condition, orderBy: order)
-//            self.models = models
-//        } catch let error {
-//            SFDbLogger.error(port: .client, type: .find, msgs: "获取OptList数据", "失败", error.localizedDescription)
-//        }
+    func getModels() {
+        let logTag = "获取OptList数据"
+        SFDbLogger.info(tag: logTag, step: .begin, port: .client, type: .find, msgs: "")
+        if typeEnum == .none {
+            models = []
+            SFDbLogger.error(tag: logTag, step: .failure, port: .client, type: .find, msgs: "type=none")
+            return
+        }
+        guard let user = UserModel.active, let uid = user.uid else {
+            models = []
+            SFDbLogger.error(tag: logTag, step: .failure, port: .client, type: .find, msgs: "uid=nil")
+            return
+        }
+        guard let userDb = SFClientDatabase.getUserDb(with: uid) else {
+            models = []
+            SFDbLogger.error(tag: logTag, step: .failure, port: .client, type: .find, msgs: "userDb=nil")
+            return
+        }
+        do {
+            let condition = OptModel.Properties.type.is(typeEnum.code)
+            let order = [OptModel.Properties.createTimeL.order(.descending)]
+            let models: [OptModel] = try userDb.getObjects(on: OptModel.Properties.all, fromTable: OptModel.table, where: condition, orderBy: order)
+            self.models = models
+            SFDbLogger.info(tag: logTag, step: .success, port: .client, type: .find, msgs: "models.count=\(models.count)")
+        } catch let error {
+            SFDbLogger.error(tag: logTag, step: .failure, port: .client, type: .find, msgs: error.localizedDescription)
+        }
     }
 }

@@ -12,10 +12,16 @@ import SFExtension
 import SFBase
 // UI
 import SFUI
+// Business
+import SFBusiness
+import SFUser
+// Server
+import SFLogger
 
 // MARK: OptDetailVC
 class OptDetailVC: SFTableViewController {
     // MARK: var
+    var typeEnum: OptType = .none
     var isEdit = false {
         didSet  {
             editBtn.isSelected = isEdit
@@ -24,8 +30,6 @@ class OptDetailVC: SFTableViewController {
     }
     
     // MARK: data
-    var headerTitle: String?
-    var headerDesc: String?
     var model: OptModel = OptModel() {
         didSet {
             tableView.reloadData()
@@ -57,8 +61,8 @@ class OptDetailVC: SFTableViewController {
     // MARK: ui
     private lazy var editBtn: SFButton = {
         return SFButton().then { view in
-            view.setTitle(SFText.Main.opt_detail_edit, for: .normal)
-            view.setTitle(SFText.Main.opt_detail_sure, for: .selected)
+            view.setTitle(SFText.Main.com_edit, for: .normal)
+            view.setTitle(SFText.Main.com_sure, for: .selected)
             view.setTitleColor(SFColor.UI.title, for: .normal)
             view.setTitleColor(SFColor.UI.title, for: .selected)
             view.addTarget(self, action: #selector(editBtnClicked), for: .touchUpInside)
@@ -67,11 +71,15 @@ class OptDetailVC: SFTableViewController {
     
     // MARK: back
     override func willBack() -> (will: Bool, animated: Bool) {
-        SFAlert.show(title: "保存", msg: "是否保存？", cancel: "取消", cancelActionBlock: {
-            [weak self] popView in
+        SFAlert.show(title: SFText.Main.opt_detail_save_title,
+                     msg: SFText.Main.opt_detail_save_subtitle,
+                     cancel: SFText.Main.com_cancel,
+                     cancelActionBlock: { _ in
             return true
-        }, sure: "确定", sureActionBlock: {
-            [weak self] popView in
+        },
+                     sure: SFText.Main.com_sure,
+                     sureActionBlock: { [weak self] popView in
+            
             self?.goBack(animated: true)
             return true
         })
@@ -138,7 +146,30 @@ extension OptDetailVC: UITableViewDelegate, UITableViewDataSource {
 extension OptDetailVC {
     @objc func editBtnClicked() {
         isEdit.toggle()
-        
     }
 }
 
+// MARK: - Data
+extension OptDetailVC {
+    func saveModel() {
+        let logTag = "保存Opt数据"
+        SFDbLogger.info(tag: logTag, step: .begin, port: .client, type: .add, msgs: "")
+        guard let user = UserModel.active, let uid = user.uid else {
+            SFDbLogger.error(tag: logTag, step: .failure, port: .client, type: .find, msgs: "uid=nil")
+            return
+        }
+        guard let userDb = SFClientDatabase.getUserDb(with: uid) else {
+            SFDbLogger.error(tag: logTag, step: .failure, port: .client, type: .find, msgs: "userDb=nil")
+            return
+        }
+        do {
+            let condition = OptModel.Properties.type.is(typeEnum.code)
+            let order = [OptModel.Properties.createTimeL.order(.descending)]
+            let models: [OptModel] = try userDb.getObjects(on: OptModel.Properties.all, fromTable: OptModel.table, where: condition, orderBy: order)
+            self.models = models
+            SFDbLogger.info(tag: logTag, step: .success, port: .client, type: .find, msgs: "models.count=\(models.count)")
+        } catch let error {
+            SFDbLogger.error(tag: logTag, step: .failure, port: .client, type: .find, msgs: error.localizedDescription)
+        }
+    }
+}

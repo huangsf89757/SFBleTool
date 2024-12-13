@@ -57,9 +57,8 @@ extension SFText {
         public static var opt_list_new: String { text(name: "opt_list_new") }
         
         public static var opt_detail: String { text(name: "opt_detail") }
-        public static var opt_detail_edit: String { text(name: "opt_detail_edit") }
-        public static var opt_detail_sure: String { text(name: "opt_detail_sure") }
-        public static var opt_detail_save: String { text(name: "opt_detail_save") }
+        public static var opt_detail_save_title: String { text(name: "opt_detail_save_title") }
+        public static var opt_detail_save_subtitle: String { text(name: "opt_detail_save_subtitle") }
         
         public static var client_opt_list_initial: String { text(name: "client_opt_list_initial") }
         public static var client_opt_list_scan: String { text(name: "client_opt_list_scan") }
@@ -95,6 +94,11 @@ extension SFText {
         public static var client_opt_detail_connect_disconnection_desc: String { text(name: "client_opt_detail_connect_disconnection_desc") }
         public static var client_opt_detail_connect_notification: String { text(name: "client_opt_detail_connect_notification") }
         public static var client_opt_detail_connect_notification_desc: String { text(name: "client_opt_detail_connect_notification_desc") }
+        
+        public static var com_edit: String { text(name: "com_edit") }
+        public static var com_sure: String { text(name: "com_sure") }
+        public static var com_save: String { text(name: "com_save") }
+        public static var com_cancel: String { text(name: "com_cancel") }
     }
 }
 

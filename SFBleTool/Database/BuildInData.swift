@@ -22,10 +22,12 @@ import WCDBSwift
 
 extension SFDatabase {
     static func buildInData() {
+        let logTag = "内建数据"
+        SFDbLogger.info(tag: logTag, step: .begin, port: .none, type: .add, msgs: "")
         if SFUserDefault.buildInData {
             return
         }
-        var user = BTUserModel()
+        let user = BTUserModel()
         user.defaultL()
         user.defaultR()
         user.uid = UUID().uuidString
@@ -42,18 +44,19 @@ extension SFDatabase {
         user.address = "浙江省杭州市余杭区"
         user.pageEnum = .entrance
         
-        let tag = "内建数据"
+        
+        
         let serverSuccess = build(port: .server, user: user)
         if serverSuccess {
             let clientSuccess = build(port: .client, user: user)
             if clientSuccess {
                 SFUserDefault.buildInData = true
-                SFDbLogger.info(port: .none, type: .add, msgs: tag, "成功")
+                SFDbLogger.info(tag: logTag, step: .success, port: .none, type: .add, msgs: "")
             } else {
-                SFDbLogger.info(port: .none, type: .add, msgs: tag, "失败", "build client data failed")
+                SFDbLogger.info(tag: logTag, step: .failure, port: .none, type: .add, msgs: "build client data failed")
             }
         } else {
-            SFDbLogger.info(port: .none, type: .add, msgs: tag, "失败", "build server data failed")
+            SFDbLogger.info(tag: logTag, step: .failure, port: .none, type: .add, msgs: "build server data failed")
         }
         
         func build(port: SFPort, user: BTUserModel) -> Bool {
@@ -67,15 +70,15 @@ extension SFDatabase {
                 appDb = SFServerDatabase.getAppDb()
             }
             guard let appDb = appDb else {
-                SFDbLogger.error(port: .client, type: .add, msgs: tag, "失败", "appDb=nil")
+                SFDbLogger.error(tag: logTag, step: .failure, port: port, type: .add, msgs: "appDb=nil")
                 return false
             }
             do {
                 try appDb.insertOrReplace([user], intoTable: BTUserModel.table)
-                SFDbLogger.info(port: .client, type: .add, msgs: tag, "成功")
+                SFDbLogger.info(tag: logTag, step: .success, port: port, type: .add, msgs: "")
                 return true
             } catch let error {
-                SFDbLogger.error(port: .client, type: .add, msgs: tag, "失败", error.localizedDescription)
+                SFDbLogger.error(tag: logTag, step: .failure, port: port, type: .add, msgs: error.localizedDescription)
                 return false
             }
         }

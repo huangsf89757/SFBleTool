@@ -119,14 +119,17 @@ extension OptModel {
 // MARK: - default
 extension OptModel {
     func default_clientInitial() {
+        defaultL()
         typeEnum = .client(.initial)
         valuesToModels()
     }
     func default_clientScan() {
+        defaultL()
         typeEnum = .client(.scan)
         valuesToModels()
     }
     func default_clientConnect() {
+        defaultL()
         typeEnum = .client(.connect)
         valuesToModels()
     }

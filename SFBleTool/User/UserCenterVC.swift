@@ -101,13 +101,16 @@ extension UserCenterVC: UITableViewDelegate, UITableViewDataSource {
         let item = items[indexPath.section][indexPath.row]
         switch item {
         case .clientOptInit:
-            let vc = ClientInitialOptListVC()
+            let vc = OptListVC()
+            vc.typeEnum = .client(.initial)
             navigationController?.pushViewController(vc, animated: true)
         case .clientOptScan:
-            let vc = ClientScanOptListVC()
+            let vc = OptListVC()
+            vc.typeEnum = .client(.scan)
             navigationController?.pushViewController(vc, animated: true)
         case .clientOptConnect:
-            let vc = ClientConnectOptListVC()
+            let vc = OptListVC()
+            vc.typeEnum = .client(.connect)
             navigationController?.pushViewController(vc, animated: true)
         }
     }

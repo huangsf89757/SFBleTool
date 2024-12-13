@@ -123,6 +123,25 @@ extension OptType {
 
 // MARK: - title/desc
 extension OptType {
+    /// list
+    var list: String {
+        switch self {
+        case .none:
+            return ""
+        case .client(let client):
+            switch client {
+            case .initial:
+                return SFText.Main.client_opt_list_initial
+            case .scan:
+                return SFText.Main.client_opt_list_scan
+            case .connect:
+                return SFText.Main.client_opt_list_connect
+            }
+        case .server(let server):
+            return ""
+        }
+    }
+    
     /// title
     var title: String {
         switch self {
