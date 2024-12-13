@@ -19,7 +19,7 @@ import WCDBSwift
 class DbDataProvider: SFDataProvider {
     // MARK: var
     var timeout: TimeInterval = 30
-    static let randomTimeRange = 0...6
+    static let randomTimeRange = 1...6
     
     // MARK: value
     var smsCodes = [String]()
@@ -36,7 +36,7 @@ extension DbDataProvider: SFUserApi {
             try await Task.sleep(nanoseconds: UInt64(random) * 1_000_000_000)
         } catch {
             SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.failure), msgs: "模拟耗时被中断")
-            return (code: .serverError, isSuccess: false, data: nil, message: nil)
+            return (success: false, code: .serverError, data: nil, message: nil)
         }
         let smsCode = String((0..<6).compactMap { _ in
             "0123456789".randomElement()
@@ -50,7 +50,7 @@ extension DbDataProvider: SFUserApi {
             SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.success), msgs: "验证码(\(smsCode))过期")
         }
         SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.success), msgs: smsCode)
-        return (code: .ok, isSuccess: true, data: smsCode, message: "验证码发送成功")
+        return (success: true, code: .ok, data: smsCode, message: "验证码发送成功")
     }
     
     func signIn(phone: String, code: String) async -> SFDataResponse {
@@ -61,18 +61,18 @@ extension DbDataProvider: SFUserApi {
             try await Task.sleep(nanoseconds: UInt64(random) * 1_000_000_000)
         } catch {
             SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.failure), msgs: "模拟耗时被中断")
-            return (code: .serverError, isSuccess: false, data: nil, message: nil)
+            return (success: false, code: .serverError, data: nil, message: nil)
         }
         guard let appDb = SFServerDatabase.getAppDb() else {
             SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.failure), msgs: "appDb=nil")
-            return (code: .serverError, isSuccess: false, data: nil, message: nil)
+            return (success: false, code: .serverError, data: nil, message: nil)
         }
         let smsCode = self.smsCodes.first { ele in
             ele == code
         }
         guard let smsCode = smsCode else {
             SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.failure), msgs: "smsCode=nil")
-            return (code: .ok, isSuccess: false, data: nil, message: "验证码错误")
+            return (success: false, code: .ok, data: nil, message: "验证码错误")
         }
         self.smsCodes.removeAll { ele in
             ele == smsCode
@@ -88,7 +88,7 @@ extension DbDataProvider: SFUserApi {
                 properties.append(.state)
                 try appDb.update(table: BTUserModel.table, on: properties, with: user, where: condition)
                 SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.success), msgs: user)
-                return (code: .ok, isSuccess: true, data: user, message: nil)
+                return (success: true, code: .ok, data: user, message: nil)
             } else {
                 SFDpLogger.debug(port: .server ,tag: logTag, step: .inProcess, msgs: "user=nil")
                 let accounts: [String] = try appDb.getColumn(on: BTUserModel.Properties.account, fromTable: BTUserModel.table).map{ $0.stringValue }
@@ -98,11 +98,11 @@ extension DbDataProvider: SFUserApi {
                 newUser.phone = phone
                 try appDb.insertOrReplace([newUser], intoTable: BTUserModel.table)
                 SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.success), msgs: "注册用户", newUser)
-                return (code: .ok, isSuccess: true, data: newUser, message: nil)
+                return (success: true, code: .ok, data: newUser, message: nil)
             }
         } catch let error {
             SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.failure), msgs: error.localizedDescription)
-            return (code: .serverError, isSuccess: false, data: nil, message: nil)
+            return (success: false, code: .serverError, data: nil, message: nil)
         }
     }
     
@@ -114,18 +114,18 @@ extension DbDataProvider: SFUserApi {
             try await Task.sleep(nanoseconds: UInt64(random) * 1_000_000_000)
         } catch {
             SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.failure), msgs: "模拟耗时被中断")
-            return (code: .serverError, isSuccess: false, data: nil, message: nil)
+            return (success: false, code: .serverError, data: nil, message: nil)
         }
         guard let appDb = SFServerDatabase.getAppDb() else {
             SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.failure), msgs: "appDb=nil")
-            return (code: .serverError, isSuccess: false, data: nil, message: nil)
+            return (success: false, code: .serverError, data: nil, message: nil)
         }
         let smsCode = self.smsCodes.first { ele in
             ele == code
         }
         guard let smsCode = smsCode else {
             SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.failure), msgs: "smsCode=nil")
-            return (code: .ok, isSuccess: false, data: nil, message: "验证码错误")
+            return (success: false, code: .ok, data: nil, message: "验证码错误")
         }
         self.smsCodes.removeAll { ele in
             ele == smsCode
@@ -141,7 +141,7 @@ extension DbDataProvider: SFUserApi {
                 properties.append(.state)
                 try appDb.update(table: BTUserModel.table, on: properties, with: user, where: condition)
                 SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.success), msgs: user)
-                return (code: .ok, isSuccess: true, data: user, message: nil)
+                return (success: true, code: .ok, data: user, message: nil)
             } else {
                 SFDpLogger.debug(port: .server ,tag: logTag, step: .inProcess, msgs: "user=nil")
                 let accounts: [String] = try appDb.getColumn(on: BTUserModel.Properties.account, fromTable: BTUserModel.table).map{ $0.stringValue }
@@ -151,11 +151,11 @@ extension DbDataProvider: SFUserApi {
                 newUser.email = email
                 try appDb.insertOrReplace([newUser], intoTable: BTUserModel.table)
                 SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.success), msgs: "注册用户", newUser)
-                return (code: .ok, isSuccess: true, data: newUser, message: nil)
+                return (success: true, code: .ok, data: newUser, message: nil)
             }
         } catch let error {
             SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.failure), msgs: error.localizedDescription)
-            return (code: .serverError, isSuccess: false, data: nil, message: nil)
+            return (success: false, code: .serverError, data: nil, message: nil)
         }
     }
     
@@ -167,11 +167,11 @@ extension DbDataProvider: SFUserApi {
             try await Task.sleep(nanoseconds: UInt64(random) * 1_000_000_000)
         } catch {
             SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.failure), msgs: "模拟耗时被中断")
-            return (code: .serverError, isSuccess: false, data: nil, message: nil)
+            return (success: false, code: .serverError, data: nil, message: nil)
         }
         guard let appDb = SFServerDatabase.getAppDb() else {
             SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.failure), msgs: "appDb=nil")
-            return (code: .serverError, isSuccess: false, data: nil, message: nil)
+            return (success: false, code: .serverError, data: nil, message: nil)
         }
         do {
             let condition = BTUserModel.Properties.account.is(account)
@@ -185,18 +185,18 @@ extension DbDataProvider: SFUserApi {
                     properties.append(.state)
                     try appDb.update(table: BTUserModel.table, on: properties, with: user, where: condition)
                     SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.success), msgs: user)
-                    return (code: .ok, isSuccess: true, data: user, message: nil)
+                    return (success: true, code: .ok, data: user, message: nil)
                 } else {
                     SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.failure), msgs: "密码不正确")
-                    return (code: .ok, isSuccess: false, data: nil, message: "密码不正确")
+                    return (success: false, code: .ok, data: nil, message: "密码不正确")
                 }
             } else {
                 SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.failure), msgs: "user=nil")
-                return (code: .ok, isSuccess: false, data: nil, message: "用户不存在")
+                return (success: false, code: .ok, data: nil, message: "用户不存在")
             }
         } catch let error {
             SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.failure), msgs: error.localizedDescription)
-            return (code: .serverError, isSuccess: false, data: nil, message: nil)
+            return (success: false, code: .serverError, data: nil, message: nil)
         }
     }
     
@@ -208,11 +208,11 @@ extension DbDataProvider: SFUserApi {
             try await Task.sleep(nanoseconds: UInt64(random) * 1_000_000_000)
         } catch {
             SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.failure), msgs: "模拟耗时被中断")
-            return (code: .serverError, isSuccess: false, data: nil, message: nil)
+            return (success: false, code: .serverError, data: nil, message: nil)
         }
         guard let appDb = SFServerDatabase.getAppDb() else {
             SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.failure), msgs: "appDb=nil")
-            return (code: .serverError, isSuccess: false, data: nil, message: nil)
+            return (success: false, code: .serverError, data: nil, message: nil)
         }
         do {
             let condition = BTUserModel.Properties.phone.is(phone)
@@ -226,18 +226,18 @@ extension DbDataProvider: SFUserApi {
                     properties.append(.state)
                     try appDb.update(table: BTUserModel.table, on: properties, with: user, where: condition)
                     SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.success), msgs: user)
-                    return (code: .ok, isSuccess: true, data: user, message: nil)
+                    return (success: true, code: .ok, data: user, message: nil)
                 } else {
                     SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.failure), msgs: "密码不正确")
-                    return (code: .ok, isSuccess: false, data: nil, message: "密码不正确")
+                    return (success: false, code: .ok, data: nil, message: "密码不正确")
                 }
             } else {
                 SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.failure), msgs: "user=nil")
-                return (code: .ok, isSuccess: false, data: nil, message: "用户不存在")
+                return (success: false, code: .ok, data: nil, message: "用户不存在")
             }
         } catch let error {
             SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.failure), msgs: error.localizedDescription)
-            return (code: .serverError, isSuccess: false, data: nil, message: nil)
+            return (success: false, code: .serverError, data: nil, message: nil)
         }
     }
     
@@ -249,11 +249,11 @@ extension DbDataProvider: SFUserApi {
             try await Task.sleep(nanoseconds: UInt64(random) * 1_000_000_000)
         } catch {
             SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.failure), msgs: "模拟耗时被中断")
-            return (code: .serverError, isSuccess: false, data: nil, message: nil)
+            return (success: false, code: .serverError, data: nil, message: nil)
         }
         guard let appDb = SFServerDatabase.getAppDb() else {
             SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.failure), msgs: "appDb=nil")
-            return (code: .serverError, isSuccess: false, data: nil, message: nil)
+            return (success: false, code: .serverError, data: nil, message: nil)
         }
         do {
             let condition = BTUserModel.Properties.email.is(email)
@@ -267,18 +267,18 @@ extension DbDataProvider: SFUserApi {
                     properties.append(.state)
                     try appDb.update(table: BTUserModel.table, on: properties, with: user, where: condition)
                     SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.success), msgs: user)
-                    return (code: .ok, isSuccess: true, data: user, message: nil)
+                    return (success: true, code: .ok, data: user, message: nil)
                 } else {
                     SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.failure), msgs: "密码不正确")
-                    return (code: .ok, isSuccess: false, data: nil, message: "密码不正确")
+                    return (success: false, code: .ok, data: nil, message: "密码不正确")
                 }
             } else {
                 SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.success), msgs: "user=nil")
-                return (code: .ok, isSuccess: false, data: nil, message: "用户不存在")
+                return (success: false, code: .ok, data: nil, message: "用户不存在")
             }
         } catch let error {
             SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.failure), msgs: error.localizedDescription)
-            return (code: .serverError, isSuccess: false, data: nil, message: nil)
+            return (success: false, code: .serverError, data: nil, message: nil)
         }
     }
     
@@ -290,20 +290,20 @@ extension DbDataProvider: SFUserApi {
             try await Task.sleep(nanoseconds: UInt64(random) * 1_000_000_000)
         } catch {
             SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.failure), msgs: "模拟耗时被中断")
-            return (code: .serverError, isSuccess: false, data: nil, message: nil)
+            return (success: false, code: .serverError, data: nil, message: nil)
         }
         guard let activeUser = UserModel.active else {
             SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.failure), msgs: "activeUser=nil")
-            return (code: .badRequest, isSuccess: false, data: nil, message: nil)
+            return (success: false, code: .badRequest, data: nil, message: nil)
         }
         guard let uid = activeUser.uid else {
             SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.failure), msgs: "uid=nil")
-            return (code: .badRequest, isSuccess: false, data: nil, message: nil)
+            return (success: false, code: .badRequest, data: nil, message: nil)
         }
         SFDpLogger.debug(port: .server ,tag: logTag, step: .inProcess, msgs: activeUser)
         guard let appDb = SFServerDatabase.getAppDb() else {
             SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.failure), msgs: "appDb=nil")
-            return (code: .serverError, isSuccess: false, data: nil, message: nil)
+            return (success: false, code: .serverError, data: nil, message: nil)
         }
         do {
             let condition = BTUserModel.Properties.uid.is(uid)
@@ -316,14 +316,14 @@ extension DbDataProvider: SFUserApi {
                 properties.append(.state)
                 try appDb.update(table: BTUserModel.table, on: properties, with: user, where: condition)
                 SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.success), msgs: user)
-                return (code: .ok, isSuccess: true, data: user, message: nil)
+                return (success: true, code: .ok, data: user, message: nil)
             } else {
                 SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.success), msgs: "user=nil")
-                return (code: .ok, isSuccess: true, data: nil, message: "用户不存在")
+                return (success: true, code: .ok, data: nil, message: "用户不存在")
             }
         } catch let error {
             SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.failure), msgs: error.localizedDescription)
-            return (code: .serverError, isSuccess: false, data: nil, message: nil)
+            return (success: false, code: .serverError, data: nil, message: nil)
         }
     }
     
@@ -335,20 +335,20 @@ extension DbDataProvider: SFUserApi {
             try await Task.sleep(nanoseconds: UInt64(random) * 1_000_000_000)
         } catch {
             SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.failure), msgs: "模拟耗时被中断")
-            return (code: .serverError, isSuccess: false, data: nil, message: nil)
+            return (success: false, code: .serverError, data: nil, message: nil)
         }
         guard let activeUser = UserModel.active else {
             SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.failure), msgs: "activeUser=nil")
-            return (code: .badRequest, isSuccess: false, data: nil, message: nil)
+            return (success: false, code: .badRequest, data: nil, message: nil)
         }
         guard let uid = activeUser.uid else {
             SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.failure), msgs: "uid=nil")
-            return (code: .badRequest, isSuccess: false, data: nil, message: nil)
+            return (success: false, code: .badRequest, data: nil, message: nil)
         }
         SFDpLogger.debug(port: .server ,tag: logTag, step: .inProcess, msgs: activeUser)
         guard let appDb = SFServerDatabase.getAppDb() else {
             SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.failure), msgs: "appDb=nil")
-            return (code: .serverError, isSuccess: false, data: nil, message: nil)
+            return (success: false, code: .serverError, data: nil, message: nil)
         }
         do {
             let condition = BTUserModel.Properties.uid.is(uid)
@@ -361,14 +361,14 @@ extension DbDataProvider: SFUserApi {
                 properties.append(.pwd)
                 try appDb.update(table: BTUserModel.table, on: properties, with: user, where: condition)
                 SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.success), msgs: user)
-                return (code: .ok, isSuccess: true, data: user, message: nil)
+                return (success: true, code: .ok, data: user, message: nil)
             } else {
                 SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.success), msgs: "user=nil")
-                return (code: .ok, isSuccess: true, data: nil, message: "用户不存在")
+                return (success: true, code: .ok, data: nil, message: "用户不存在")
             }
         } catch let error {
             SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.failure), msgs: error.localizedDescription)
-            return (code: .serverError, isSuccess: false, data: nil, message: nil)
+            return (success: false, code: .serverError, data: nil, message: nil)
         }
     }
     
@@ -380,15 +380,15 @@ extension DbDataProvider: SFUserApi {
             try await Task.sleep(nanoseconds: UInt64(random) * 1_000_000_000)
         } catch {
             SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.failure), msgs: "模拟耗时被中断")
-            return (code: .serverError, isSuccess: false, data: nil, message: nil)
+            return (success: false, code: .serverError, data: nil, message: nil)
         }
         guard let activeUser = UserModel.active else {
             SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.failure), msgs: "activeUser=nil")
-            return (code: .badRequest, isSuccess: false, data: nil, message: nil)
+            return (success: false, code: .badRequest, data: nil, message: nil)
         }
         guard let uid = activeUser.uid else {
             SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.failure), msgs: "uid=nil")
-            return (code: .badRequest, isSuccess: false, data: nil, message: nil)
+            return (success: false, code: .badRequest, data: nil, message: nil)
         }
         SFDpLogger.debug(port: .server ,tag: logTag, step: .inProcess, msgs: activeUser)
         let smsCode = self.smsCodes.first { ele in
@@ -396,14 +396,14 @@ extension DbDataProvider: SFUserApi {
         }
         guard let smsCode = smsCode else {
             SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.failure), msgs: "smsCode=nil")
-            return (code: .ok, isSuccess: false, data: nil, message: "验证码错误")
+            return (success: false, code: .ok, data: nil, message: "验证码错误")
         }
         self.smsCodes.removeAll { ele in
             ele == smsCode
         }
         guard let appDb = SFServerDatabase.getAppDb() else {
             SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.failure), msgs: "appDb=nil")
-            return (code: .serverError, isSuccess: false, data: nil, message: nil)
+            return (success: false, code: .serverError, data: nil, message: nil)
         }
         do {
             let condition = BTUserModel.Properties.uid.is(uid)
@@ -418,22 +418,22 @@ extension DbDataProvider: SFUserApi {
                         properties.append(.pwd)
                         try appDb.update(table: BTUserModel.table, on: properties, with: user, where: condition)
                         SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.success), msgs: user)
-                        return (code: .ok, isSuccess: true, data: user, message: nil)
+                        return (success: true, code: .ok, data: user, message: nil)
                     } else {
                         SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.success), msgs: "手机号不正确")
-                        return (code: .ok, isSuccess: false, data: nil, message: "请使用该账号当前绑定的手机号")
+                        return (success: false, code: .ok, data: nil, message: "请使用该账号当前绑定的手机号")
                     }
                 } else {
                     SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.success), msgs: "未绑定手机号")
-                    return (code: .ok, isSuccess: false, data: nil, message: "该账号未绑定手机号，请尝试其他方式重置密码")
+                    return (success: false, code: .ok, data: nil, message: "该账号未绑定手机号，请尝试其他方式重置密码")
                 }
             } else {
                 SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.success), msgs: "user=nil")
-                return (code: .ok, isSuccess: false, data: nil, message: "用户不存在")
+                return (success: false, code: .ok, data: nil, message: "用户不存在")
             }
         } catch let error {
             SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.failure), msgs: error.localizedDescription)
-            return (code: .serverError, isSuccess: false, data: nil, message: nil)
+            return (success: false, code: .serverError, data: nil, message: nil)
         }
     }
     
@@ -445,15 +445,15 @@ extension DbDataProvider: SFUserApi {
             try await Task.sleep(nanoseconds: UInt64(random) * 1_000_000_000)
         } catch {
             SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.failure), msgs: "模拟耗时被中断")
-            return (code: .serverError, isSuccess: false, data: nil, message: nil)
+            return (success: false, code: .serverError, data: nil, message: nil)
         }
         guard let activeUser = UserModel.active else {
             SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.failure), msgs: "activeUser=nil")
-            return (code: .badRequest, isSuccess: false, data: nil, message: nil)
+            return (success: false, code: .badRequest, data: nil, message: nil)
         }
         guard let uid = activeUser.uid else {
             SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.failure), msgs: "uid=nil")
-            return (code: .badRequest, isSuccess: false, data: nil, message: nil)
+            return (success: false, code: .badRequest, data: nil, message: nil)
         }
         SFDpLogger.debug(port: .server ,tag: logTag, step: .inProcess, msgs: activeUser)
         let smsCode = self.smsCodes.first { ele in
@@ -461,14 +461,14 @@ extension DbDataProvider: SFUserApi {
         }
         guard let smsCode = smsCode else {
             SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.failure), msgs: "smsCode=nil")
-            return (code: .ok, isSuccess: false, data: nil, message: "验证码错误")
+            return (success: false, code: .ok, data: nil, message: "验证码错误")
         }
         self.smsCodes.removeAll { ele in
             ele == smsCode
         }
         guard let appDb = SFServerDatabase.getAppDb() else {
             SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.failure), msgs: "appDb=nil")
-            return (code: .serverError, isSuccess: false, data: nil, message: nil)
+            return (success: false, code: .serverError, data: nil, message: nil)
         }
         do {
             let condition = BTUserModel.Properties.uid.is(uid)
@@ -483,22 +483,22 @@ extension DbDataProvider: SFUserApi {
                         properties.append(.pwd)
                         try appDb.update(table: BTUserModel.table, on: properties, with: user, where: condition)
                         SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.success), msgs: user)
-                        return (code: .ok, isSuccess: true, data: user, message: nil)
+                        return (success: true, code: .ok, data: user, message: nil)
                     } else {
                         SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.success), msgs: "邮箱不正确")
-                        return (code: .ok, isSuccess: false, data: nil, message: "请使用该账号当前绑定的邮箱")
+                        return (success: false, code: .ok, data: nil, message: "请使用该账号当前绑定的邮箱")
                     }
                 } else {
                     SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.success), msgs: "未绑定邮箱")
-                    return (code: .ok, isSuccess: false, data: nil, message: "该账号未绑定邮箱，请尝试其他方式重置密码")
+                    return (success: false, code: .ok, data: nil, message: "该账号未绑定邮箱，请尝试其他方式重置密码")
                 }
             } else {
                 SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.success), msgs: "user=nil")
-                return (code: .ok, isSuccess: true, data: nil, message: "用户不存在")
+                return (success: true, code: .ok, data: nil, message: "用户不存在")
             }
         } catch let error {
             SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.failure), msgs: error.localizedDescription)
-            return (code: .serverError, isSuccess: false, data: nil, message: nil)
+            return (success: false, code: .serverError, data: nil, message: nil)
         }
     }
     
@@ -510,34 +510,34 @@ extension DbDataProvider: SFUserApi {
             try await Task.sleep(nanoseconds: UInt64(random) * 1_000_000_000)
         } catch {
             SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.failure), msgs: "模拟耗时被中断")
-            return (code: .serverError, isSuccess: false, data: nil, message: nil)
+            return (success: false, code: .serverError, data: nil, message: nil)
         }
         guard let activeUser = UserModel.active else {
             SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.failure), msgs: "activeUser=nil")
-            return (code: .badRequest, isSuccess: false, data: nil, message: nil)
+            return (success: false, code: .badRequest, data: nil, message: nil)
         }
         guard let uid = activeUser.uid else {
             SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.failure), msgs: "uid=nil")
-            return (code: .badRequest, isSuccess: false, data: nil, message: nil)
+            return (success: false, code: .badRequest, data: nil, message: nil)
         }
         SFDpLogger.debug(port: .server ,tag: logTag, step: .inProcess, msgs: activeUser)
         guard let appDb = SFServerDatabase.getAppDb() else {
             SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.failure), msgs: "appDb=nil")
-            return (code: .serverError, isSuccess: false, data: nil, message: nil)
+            return (success: false, code: .serverError, data: nil, message: nil)
         }
         do {
             let condition = BTUserModel.Properties.uid.is(uid)
             let user: BTUserModel? = try appDb.getObject(on: BTUserModel.Properties.all, fromTable: BTUserModel.table, where: condition)
             if let user = user {
                 SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.success), msgs: user)
-                return (code: .ok, isSuccess: true, data: user, message: nil)
+                return (success: true, code: .ok, data: user, message: nil)
             } else {
                 SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.success), msgs: "user=nil")
-                return (code: .ok, isSuccess: true, data: nil, message: "用户不存在")
+                return (success: true, code: .ok, data: nil, message: "用户不存在")
             }
         } catch let error {
             SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.failure), msgs: error.localizedDescription)
-            return (code: .serverError, isSuccess: false, data: nil, message: nil)
+            return (success: false, code: .serverError, data: nil, message: nil)
         }
     }
     
@@ -549,20 +549,20 @@ extension DbDataProvider: SFUserApi {
             try await Task.sleep(nanoseconds: UInt64(random) * 1_000_000_000)
         } catch {
             SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.failure), msgs: "模拟耗时被中断")
-            return (code: .serverError, isSuccess: false, data: nil, message: nil)
+            return (success: false, code: .serverError, data: nil, message: nil)
         }
         guard let activeUser = UserModel.active else {
             SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.failure), msgs: "activeUser=nil")
-            return (code: .badRequest, isSuccess: false, data: nil, message: nil)
+            return (success: false, code: .badRequest, data: nil, message: nil)
         }
         guard let uid = activeUser.uid else {
             SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.failure), msgs: "uid=nil")
-            return (code: .badRequest, isSuccess: false, data: nil, message: nil)
+            return (success: false, code: .badRequest, data: nil, message: nil)
         }
         SFDpLogger.debug(port: .server ,tag: logTag, step: .inProcess, msgs: activeUser)
         guard let appDb = SFServerDatabase.getAppDb() else {
             SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.failure), msgs: "appDb=nil")
-            return (code: .serverError, isSuccess: false, data: nil, message: nil)
+            return (success: false, code: .serverError, data: nil, message: nil)
         }
         do {
             let condition = BTUserModel.Properties.uid.is(uid)
@@ -581,14 +581,14 @@ extension DbDataProvider: SFUserApi {
                 }
                 try appDb.update(table: BTUserModel.table, on: properties, with: user, where: condition)
                 SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.success), msgs: user)
-                return (code: .ok, isSuccess: true, data: user, message: nil)
+                return (success: true, code: .ok, data: user, message: nil)
             } else {
                 SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.success), msgs: "user=nil")
-                return (code: .ok, isSuccess: true, data: nil, message: "用户不存在")
+                return (success: true, code: .ok, data: nil, message: "用户不存在")
             }
         } catch let error {
             SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.failure), msgs: error.localizedDescription)
-            return (code: .serverError, isSuccess: false, data: nil, message: nil)
+            return (success: false, code: .serverError, data: nil, message: nil)
         }
     }
     
@@ -600,20 +600,20 @@ extension DbDataProvider: SFUserApi {
             try await Task.sleep(nanoseconds: UInt64(random) * 1_000_000_000)
         } catch {
             SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.failure), msgs: "模拟耗时被中断")
-            return (code: .serverError, isSuccess: false, data: nil, message: nil)
+            return (success: false, code: .serverError, data: nil, message: nil)
         }
         guard let activeUser = UserModel.active else {
             SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.failure), msgs: "activeUser=nil")
-            return (code: .badRequest, isSuccess: false, data: nil, message: nil)
+            return (success: false, code: .badRequest, data: nil, message: nil)
         }
         guard let uid = activeUser.uid else {
             SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.failure), msgs: "uid=nil")
-            return (code: .badRequest, isSuccess: false, data: nil, message: nil)
+            return (success: false, code: .badRequest, data: nil, message: nil)
         }
         SFDpLogger.debug(port: .server ,tag: logTag, step: .inProcess, msgs: activeUser)
         guard let appDb = SFServerDatabase.getAppDb() else {
             SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.failure), msgs: "appDb=nil")
-            return (code: .serverError, isSuccess: false, data: nil, message: nil)
+            return (success: false, code: .serverError, data: nil, message: nil)
         }
         do {
             let condition = BTUserModel.Properties.uid.is(uid)
@@ -626,14 +626,14 @@ extension DbDataProvider: SFUserApi {
                 properties.append(.state)
                 try appDb.update(table: BTUserModel.table, on: properties, with: user, where: condition)
                 SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.success), msgs: user)
-                return (code: .ok, isSuccess: true, data: user, message: nil)
+                return (success: true, code: .ok, data: user, message: nil)
             } else {
                 SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.success), msgs: "user=nil")
-                return (code: .ok, isSuccess: true, data: nil, message: "用户不存在")
+                return (success: true, code: .ok, data: nil, message: "用户不存在")
             }
         } catch let error {
             SFDpLogger.debug(port: .server ,tag: logTag, step: .end(.failure), msgs: error.localizedDescription)
-            return (code: .serverError, isSuccess: false, data: nil, message: nil)
+            return (success: false, code: .serverError, data: nil, message: nil)
         }
     }
 }

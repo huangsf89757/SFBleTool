@@ -22,8 +22,7 @@ import WCDBSwift
 
 extension SFDatabase {
     static func buildInData() {
-        let hasData = UserDefaults.standard.bool(forKey: UserDefaultKey.buildInData)
-        if hasData {
+        if SFUserDefault.buildInData {
             return
         }
         var user = BTUserModel()
@@ -48,7 +47,7 @@ extension SFDatabase {
         if serverSuccess {
             let clientSuccess = build(port: .client, user: user)
             if clientSuccess {
-                UserDefaults.standard.setValue(true, forKey: UserDefaultKey.buildInData)
+                SFUserDefault.buildInData = true
                 SFDbLogger.info(port: .none, type: .add, msgs: tag, "成功")
             } else {
                 SFDbLogger.info(port: .none, type: .add, msgs: tag, "失败", "build client data failed")
