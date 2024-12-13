@@ -91,12 +91,12 @@ extension SFClientDatabase {
             SFDbLogger.error(port: .client, type: .add, msgs: tag, "失败", "userDb=nil")
             return
         }
-//        do {
-//            try userDb.create(table: OptModel.table, of: OptModel.self)
-//            SFDbLogger.info(port: .client, type: .add, msgs: tag, "成功")
-//        } catch let error {
-//            SFDbLogger.error(port: .client, type: .add, msgs: tag, "失败", error.localizedDescription)
-//        }
+        do {
+            try userDb.create(table: OptModel.table, of: OptModel.self)
+            SFDbLogger.info(port: .client, type: .add, msgs: tag, "成功")
+        } catch let error {
+            SFDbLogger.error(port: .client, type: .add, msgs: tag, "失败", error.localizedDescription)
+        }
     }
 }
 

@@ -35,7 +35,7 @@ final class OptModel: SFLocalDatanable, SFRemoteDatanable, WCDBSwift.TableCodabl
     // MARK: Opt
     var type: Int?
     var name: String?
-    var values: [Int: String]?
+    var itemValues: [Int: String]?
 
     var typeEnum: OptType {
         set {
@@ -68,7 +68,7 @@ final class OptModel: SFLocalDatanable, SFRemoteDatanable, WCDBSwift.TableCodabl
         
         case type
         case name
-        case values
+        case itemValues
         
         public static let objectRelationalMapping = TableBinding(CodingKeys.self)  {
             BindColumnConstraint(orderL, isPrimary: true, orderBy: .ascending, isAutoIncrement: true, isNotNull: true, defaultTo: 0)
@@ -85,7 +85,7 @@ extension OptModel {
         var itemModels: [OptItemModel] = []
         for item in items {
             let itemModel = OptItemModel(item: item)
-            setValue(values?[item.code], for: itemModel)
+            setValue(itemValues?[item.code], for: itemModel)
             itemModels.append(itemModel)
         }
         self.itemModels = itemModels
@@ -101,18 +101,18 @@ extension OptModel {
 extension OptModel {
     func modelsToValues() {
         guard selectedModels.count > 0 else {
-            values = [:]
+            itemValues = [:]
             return
         }
-        var values = [Int: String]()
+        var itemValues = [Int: String]()
         for selectedModel in self.selectedModels {
             let code = selectedModel.item.code
             guard let value = selectedModel.value else {
                 continue
             }
-            values[code] = value
+            itemValues[code] = value
         }
-        self.values = values
+        self.itemValues = itemValues
     }
 }
 
