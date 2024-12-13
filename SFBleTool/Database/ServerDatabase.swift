@@ -24,23 +24,50 @@ extension SFServerDatabase {
     /// 创建App相关表
     static func createAppTables() {
         let tag = "创建App相关表"
+        SFDbLogger.info(tag: tag, step: .start, port: .server, type: .add, msgs: "")
         guard let appDb = getAppDb() else {
-            SFDbLogger.error(port: .server, type: .add, msgs: tag, "失败", "appDb=nil")
+            SFDbLogger.error(tag: tag, step: .failure, port: .server, type: .add, msgs: "appDb=nil")
             return
         }
         do {
             try appDb.create(table: BTUserModel.table, of: BTUserModel.self)
-            SFDbLogger.info(port: .server, type: .add, msgs: tag, "成功")
+            SFDbLogger.info(tag: tag, step: .success, port: .server, type: .add, msgs: "")
         } catch let error {
-            SFDbLogger.error(port: .server, type: .add, msgs: tag, "失败", error.localizedDescription)
+            SFDbLogger.error(tag: tag, step: .failure, port: .server, type: .add, msgs: error.localizedDescription)
+        }
+    }
+    
+    /// 设置当前登录用户
+    static func setActiveUser(_ user: BTUserModel) -> Bool {
+        let tag = "设置当前登录用户"
+        SFDbLogger.info(tag: tag, step: .start, port: .server, type: .update, msgs: "")
+        guard let appDb = getAppDb() else {
+            SFDbLogger.error(tag: tag, step: .failure, port: .server, type: .update, msgs: "appDb=nil")
+            return false
+        }
+        do {
+            let condition = BTUserModel.Properties.state.is(AccountState.active.rawValue)
+            var tmp = BTUserModel()
+            tmp.stateEnum = .inactive
+            try appDb.update(table: BTUserModel.table, on: [BTUserModel.Properties.state], with: tmp, where: condition)
+           
+            var activeUser = user
+            activeUser.stateEnum = .active
+            try appDb.insertOrReplace([activeUser], intoTable: BTUserModel.table)
+            SFDbLogger.info(tag: tag, step: .success, port: .server, type: .update, msgs: "")
+            return true
+        } catch let error {
+            SFDbLogger.error(tag: tag, step: .failure, port: .server, type: .update, msgs: error.localizedDescription)
+            return false
         }
     }
     
     /// 获取当前登录用户
     static func getActiveUser() -> BTUserModel? {
         let tag = "获取当前登录用户"
+        SFDbLogger.info(tag: tag, step: .start, port: .server, type: .find, msgs: "")
         guard let appDb = getAppDb() else {
-            SFDbLogger.error(port: .server, type: .find, msgs: tag, "失败", "appDb=nil")
+            SFDbLogger.error(tag: tag, step: .failure, port: .server, type: .find, msgs: "appDb=nil")
             return nil
         }
         do {
@@ -48,31 +75,60 @@ extension SFServerDatabase {
             let order = [BTUserModel.Properties.updateTimeL.order(.descending)]
             let user: BTUserModel? = try appDb.getObject(on: BTUserModel.Properties.all, fromTable: BTUserModel.table, where: condition, orderBy: order)
             if let user = user {
-                SFDbLogger.info(port: .server, type: .find, msgs: tag, "成功", "user=\(user)")
+                SFDbLogger.info(tag: tag, step: .success, port: .server, type: .find, msgs: "user=\(user)")
             } else {
-                SFDbLogger.info(port: .server, type: .find, msgs: tag, "成功", "user=nil")
+                SFDbLogger.info(tag: tag, step: .failure, port: .server, type: .find, msgs: "user=nil")
             }
             return user
         } catch let error {
-            SFDbLogger.error(port: .server, type: .find, msgs: tag, "失败", error.localizedDescription)
+            SFDbLogger.error(tag: tag, step: .failure, port: .server, type: .find, msgs: error.localizedDescription)
             return nil
+        }
+    }
+    
+    static func updateUser(_ user: BTUserModel) -> Bool {
+        let tag = "更新当前登录用户"
+        SFDbLogger.info(tag: tag, step: .start, port: .server, type: .update, msgs: "")
+        guard let uid = user.uid else {
+            SFDbLogger.error(tag: tag, step: .failure, port: .server, type: .update, msgs: "uid=nil")
+            return false
+        }
+        guard let appDb = getAppDb() else {
+            SFDbLogger.error(tag: tag, step: .failure, port: .server, type: .update, msgs: "appDb=nil")
+            return false
+        }
+        do {
+            let condition = BTUserModel.Properties.uid.is(uid)
+            try appDb.update(table: BTUserModel.table, on: BTUserModel.Properties.all, with: user, where: condition)
+            SFDbLogger.info(tag: tag, step: .success, port: .server, type: .update, msgs: "")
+            return true
+        } catch let error {
+            SFDbLogger.error(tag: tag, step: .failure, port: .server, type: .update, msgs: error.localizedDescription)
+            return false
         }
     }
     
     /// 创建User相关表
     static func createUserTables() {
         let tag = "创建User相关表"
-        guard let user = UserModel.active else { return }
-        guard let uid = user.uid else { return }
+        SFDbLogger.info(tag: tag, step: .start, port: .server, type: .add, msgs: "")
+        guard let user = UserModel.active else {
+            SFDbLogger.error(tag: tag, step: .failure, port: .server, type: .add, msgs: "UserModel.active=nil")
+            return
+        }
+        guard let uid = user.uid else {
+            SFDbLogger.error(tag: tag, step: .failure, port: .server, type: .add, msgs: "uid=nil")
+            return
+        }
         guard let userDb = getUserDb(with: uid) else {
-            SFDbLogger.error(port: .server, type: .add, msgs: tag, "失败", "userDb=nil")
+            SFDbLogger.error(tag: tag, step: .failure, port: .server, type: .add, msgs: "userDb=nil")
             return
         }
         do {
             try userDb.create(table: OptModel.table, of: OptModel.self)
-            SFDbLogger.info(port: .server, type: .add, msgs: tag, "成功")
+            SFDbLogger.info(tag: tag, step: .success, port: .server, type: .add, msgs: "")
         } catch let error {
-            SFDbLogger.error(port: .server, type: .add, msgs: tag, "失败", error.localizedDescription)
+            SFDbLogger.error(tag: tag, step: .failure, port: .server, type: .add, msgs: error.localizedDescription)
         }
     }
 }

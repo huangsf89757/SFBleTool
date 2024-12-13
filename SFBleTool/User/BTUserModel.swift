@@ -163,20 +163,3 @@ extension BTUserModel {
     }
 }
 
-// MARK: - Database
-extension BTUserModel {
-    /// 更新用户信息
-    func update() -> Bool {
-        return false
-//        guard let appDb = SFDatabase.appDb else { return false }
-//        guard let idL = idL else { return false }
-//        do {
-//            let condition = BTUserModel.Properties.idL.is(idL)
-//            try appDb.update(table: BTUserModel.table, on: BTUserModel.Properties.all, with: self, where: condition)
-//            return true
-//        } catch let error {
-//            SFLogger.debug("[DB]", "[改]", "更新用户信息", "失败", error.localizedDescription)
-//            return false
-//        }
-    }
-}

@@ -25,7 +25,7 @@ extension SceneDelegate {
                 let vc = SFEntranceVC()
                 vc.willEnterBlock = { page in
                     user.page = page
-                    let isSuccess = user.update()
+                    let isSuccess = SFClientDatabase.updateUser(user)
                     return isSuccess
                 }
                 vc.didEnterBlock = { [weak self] page in
