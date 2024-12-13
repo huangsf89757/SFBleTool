@@ -38,7 +38,17 @@ extension SceneDelegate {
                 window?.rootViewController = SFNavigationController(rootViewController: CentralListVC())
             }
         } else {
-            window?.rootViewController = SFNavigationController(rootViewController: SFUser.SignVC())
+            let vc = SFUser.SignVC()
+            vc.signInSuccessBlock = {
+                [weak self] user in
+                guard let user = user as? BTUserModel else { return }
+                let success = SFClientDatabase.setActiveUser(user)
+                if success {
+                    UserModel.active = user
+                    self?.setRootPage()
+                }                
+            }
+            window?.rootViewController = SFNavigationController(rootViewController: vc)
         }
     }
 }

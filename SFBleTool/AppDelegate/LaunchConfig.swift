@@ -33,7 +33,7 @@ extension AppDelegate {
 extension AppDelegate {
     func config_thirdPod_IQKeyboardManagerSwift() {
         IQKeyboardManager.shared.enable = true
-        IQKeyboardManager.shared.enableDebugging = true
+//        IQKeyboardManager.shared.enableDebugging = true
         IQKeyboardManager.shared.enableAutoToolbar = true
         IQKeyboardManager.shared.toolbarManageBehaviour = .byTag
         IQKeyboardManager.shared.toolbarPreviousNextAllowedClasses.append(CodeContentView.self)

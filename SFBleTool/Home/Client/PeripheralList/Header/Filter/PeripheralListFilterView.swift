@@ -41,7 +41,6 @@ class PeripheralListFilterView: SFPopView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = .clear
-        self.sf.setCornerAndShadow(radius: 20, fillColor: SFColor.UI.content, shadowColor: SFColor.UI.black, shadowOpacity: 0.2, shadowOffset: CGSize(width: 0, height: 20), shadowRadius: 5)
         customUIOfFilterView()
     }
     
@@ -53,7 +52,8 @@ class PeripheralListFilterView: SFPopView {
             make.trailing.equalToSuperview()
         }
     }
-    override func draw(_ rect: CGRect) {
+    override func frameDetermined() {
+        self.sf.setCornerAndShadow(radius: 20, fillColor: SFColor.UI.background, shadowColor: SFColor.UI.black, shadowOpacity: 0.3, shadowOffset: .zero, shadowRadius: 5)
         self.sf.applyCornerAndShadow()
     }
     override func show(in view: UIView? = nil,

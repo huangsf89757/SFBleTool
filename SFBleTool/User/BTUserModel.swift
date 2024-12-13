@@ -42,7 +42,7 @@ final class BTUserModel: UserDatanable, WCDBSwift.TableCodable {
     var updateTimeR: String?
     
     // MARK: UserDatanable
-    var uid: String?
+    var uid: String? = UUID().uuidString
     var account: String?
     var state: Int?
     var pwd: String?

@@ -36,6 +36,29 @@ extension SFClientDatabase {
         }
     }
     
+    /// 设置当前登录用户
+    static func setActiveUser(_ user: BTUserModel) -> Bool {
+        let tag = "设置当前登录用户"
+        guard let appDb = getAppDb() else {
+            SFDbLogger.error(port: .client, type: .find, msgs: tag, "失败", "appDb=nil")
+            return false
+        }
+        do {
+            let condition = BTUserModel.Properties.state.is(AccountState.active.rawValue)
+            var tmp = BTUserModel()
+            tmp.stateEnum = .inactive
+            try appDb.update(table: BTUserModel.table, on: [BTUserModel.Properties.state], with: tmp, where: condition)
+           
+            var activeUser = user
+            activeUser.stateEnum = .active
+            try appDb.insertOrReplace([activeUser], intoTable: BTUserModel.table)
+            return true
+        } catch let error {
+            SFDbLogger.error(port: .client, type: .find, msgs: tag, "失败", error.localizedDescription)
+            return false
+        }
+    }
+    
     /// 获取当前登录用户
     static func getActiveUser() -> BTUserModel? {
         let tag = "获取当前登录用户"
@@ -68,12 +91,12 @@ extension SFClientDatabase {
             SFDbLogger.error(port: .client, type: .add, msgs: tag, "失败", "userDb=nil")
             return
         }
-        do {
-            try userDb.create(table: OptModel.table, of: OptModel.self)
-            SFDbLogger.info(port: .client, type: .add, msgs: tag, "成功")
-        } catch let error {
-            SFDbLogger.error(port: .client, type: .add, msgs: tag, "失败", error.localizedDescription)
-        }
+//        do {
+//            try userDb.create(table: OptModel.table, of: OptModel.self)
+//            SFDbLogger.info(port: .client, type: .add, msgs: tag, "成功")
+//        } catch let error {
+//            SFDbLogger.error(port: .client, type: .add, msgs: tag, "失败", error.localizedDescription)
+//        }
     }
 }
 
