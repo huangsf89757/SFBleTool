@@ -156,21 +156,21 @@ extension OptDetailVC {
 extension OptDetailVC {
     func saveModel() -> Bool {
         let logTag = "保存Opt数据"
-        SFDbLogger.info(tag: logTag, step: .begin, port: .client, type: .add, msgs: "")
+        SFDatabaseLogger.info(port: .client, tag: logTag, step: .begin, type: .add, msgs: "")
         guard let user = UserModel.active, let uid = user.uid else {
-            SFDbLogger.error(tag: logTag, step: .failure, port: .client, type: .add, msgs: "uid=nil")
+            SFDatabaseLogger.error(port: .client, tag: logTag, step: .failure, type: .add, msgs: "uid=nil")
             return false
         }
         guard let userDb = SFClientDatabase.getUserDb(with: uid) else {
-            SFDbLogger.error(tag: logTag, step: .failure, port: .client, type: .add, msgs: "userDb=nil")
+            SFDatabaseLogger.error(port: .client, tag: logTag, step: .failure, type: .add, msgs: "userDb=nil")
             return false
         }
         do {
             try userDb.insertOrReplace([model], intoTable: OptModel.table)
-            SFDbLogger.info(tag: logTag, step: .success, port: .client, type: .add, msgs: model)
+            SFDatabaseLogger.info(port: .client, tag: logTag, step: .success, type: .add, msgs: model)
             return true
         } catch let error {
-            SFDbLogger.error(tag: logTag, step: .failure, port: .client, type: .add, msgs: error.localizedDescription)
+            SFDatabaseLogger.error(port: .client, tag: logTag, step: .failure, type: .add, msgs: error.localizedDescription)
             return false
         }
     }

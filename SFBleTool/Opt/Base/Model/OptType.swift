@@ -97,6 +97,8 @@ extension OptType {
         }
     }
     
+    static var codes: [Int] = [110, 120, 130, 200]
+    
     init(code: Int) {
         switch code {
         case 110:

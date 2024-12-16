@@ -23,7 +23,7 @@ import WCDBSwift
 extension SFDatabase {
     static func buildInData() {
         let logTag = "内建数据"
-        SFDbLogger.info(tag: logTag, step: .begin, port: .none, type: .add, msgs: "")
+        SFDatabaseLogger.info(port: .none, tag: logTag, step: .begin, type: .add, msgs: "")
         if SFUserDefault.buildInData {
             return
         }
@@ -51,12 +51,12 @@ extension SFDatabase {
             let clientSuccess = build(port: .client, user: user)
             if clientSuccess {
                 SFUserDefault.buildInData = true
-                SFDbLogger.info(tag: logTag, step: .success, port: .none, type: .add, msgs: "")
+                SFDatabaseLogger.info(port: .none, tag: logTag, step: .success, type: .add, msgs: "")
             } else {
-                SFDbLogger.info(tag: logTag, step: .failure, port: .none, type: .add, msgs: "build client data failed")
+                SFDatabaseLogger.info(port: .none, tag: logTag, step: .failure, type: .add, msgs: "build client data failed")
             }
         } else {
-            SFDbLogger.info(tag: logTag, step: .failure, port: .none, type: .add, msgs: "build server data failed")
+            SFDatabaseLogger.info(port: .none, tag: logTag, step: .failure, type: .add, msgs: "build server data failed")
         }
         
         func build(port: SFPort, user: BTUserModel) -> Bool {
@@ -70,15 +70,15 @@ extension SFDatabase {
                 appDb = SFServerDatabase.getAppDb()
             }
             guard let appDb = appDb else {
-                SFDbLogger.error(tag: logTag, step: .failure, port: port, type: .add, msgs: "appDb=nil")
+                SFDatabaseLogger.error(port: .none, tag: logTag, step: .failure, type: .add, msgs: "appDb=nil")
                 return false
             }
             do {
                 try appDb.insertOrReplace([user], intoTable: BTUserModel.table)
-                SFDbLogger.info(tag: logTag, step: .success, port: port, type: .add, msgs: "")
+                SFDatabaseLogger.info(port: .none, tag: logTag, step: .success, type: .add, msgs: "")
                 return true
             } catch let error {
-                SFDbLogger.error(tag: logTag, step: .failure, port: port, type: .add, msgs: error.localizedDescription)
+                SFDatabaseLogger.error(port: .none, tag: logTag, step: .failure, type: .add, msgs: error.localizedDescription)
                 return false
             }
         }

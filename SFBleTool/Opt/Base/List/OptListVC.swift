@@ -134,20 +134,20 @@ extension OptListVC {
 extension OptListVC {
     func getModels() {
         let logTag = "获取OptList数据"
-        SFDbLogger.info(tag: logTag, step: .begin, port: .client, type: .find, msgs: "")
+        SFDatabaseLogger.info(port: .client, tag: logTag, step: .begin, type: .find, msgs: "")
         if typeEnum == .none {
             models = []
-            SFDbLogger.error(tag: logTag, step: .failure, port: .client, type: .find, msgs: "type=none")
+            SFDatabaseLogger.error(port: .client, tag: logTag, step: .failure, type: .find, msgs: "type=none")
             return
         }
         guard let user = UserModel.active, let uid = user.uid else {
             models = []
-            SFDbLogger.error(tag: logTag, step: .failure, port: .client, type: .find, msgs: "uid=nil")
+            SFDatabaseLogger.error(port: .client, tag: logTag, step: .failure, type: .find, msgs: "uid=nil")
             return
         }
         guard let userDb = SFClientDatabase.getUserDb(with: uid) else {
             models = []
-            SFDbLogger.error(tag: logTag, step: .failure, port: .client, type: .find, msgs: "userDb=nil")
+            SFDatabaseLogger.error(port: .client, tag: logTag, step: .failure, type: .find, msgs: "userDb=nil")
             return
         }
         do {
@@ -158,9 +158,9 @@ extension OptListVC {
                 model.valuesToModels()
             }
             self.models = models
-            SFDbLogger.info(tag: logTag, step: .success, port: .client, type: .find, msgs: "models.count=\(models.count)")
+            SFDatabaseLogger.info(port: .client, tag: logTag, step: .success, type: .find, msgs: "models.count=\(models.count)")
         } catch let error {
-            SFDbLogger.error(tag: logTag, step: .failure, port: .client, type: .find, msgs: error.localizedDescription)
+            SFDatabaseLogger.error(port: .client, tag: logTag, step: .failure, type: .find, msgs: error.localizedDescription)
         }
     }
 }

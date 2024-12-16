@@ -1,8 +1,8 @@
 //
-//  DbDataProvider.swift
+//  DbUserDataProvider.swift
 //  SFBleTool
 //
-//  Created by hsf on 2024/11/30.
+//  Created by hsf on 2024/12/16.
 //
 
 import Foundation
@@ -14,17 +14,6 @@ import SFBusiness
 import SFUser
 // Third
 import WCDBSwift
-
-// MARK: - DbDataProvider
-class DbDataProvider: SFDataProvider {
-    // MARK: var
-    var timeout: TimeInterval = 30
-    static let randomTimeRange = 1...6
-    
-    // MARK: value
-    var smsCodes = [String]()
-    
-}
 
 // MARK: - SFUserApi
 extension DbDataProvider: SFUserApi {
@@ -294,11 +283,11 @@ extension DbDataProvider: SFUserApi {
         }
         guard let activeUser = UserModel.active else {
             SFDpLogger.debug(port: .server ,tag: logTag, step: .failure, msgs: "activeUser=nil")
-            return (success: false, code: .badRequest, data: nil, message: nil)
+            return (success: false, code: .unauthorized, data: nil, message: nil)
         }
         guard let uid = activeUser.uid else {
             SFDpLogger.debug(port: .server ,tag: logTag, step: .failure, msgs: "uid=nil")
-            return (success: false, code: .badRequest, data: nil, message: nil)
+            return (success: false, code: .unauthorized, data: nil, message: nil)
         }
         SFDpLogger.debug(port: .server ,tag: logTag, step: .inProcess, msgs: activeUser)
         guard let appDb = SFServerDatabase.getAppDb() else {
@@ -339,11 +328,11 @@ extension DbDataProvider: SFUserApi {
         }
         guard let activeUser = UserModel.active else {
             SFDpLogger.debug(port: .server ,tag: logTag, step: .failure, msgs: "activeUser=nil")
-            return (success: false, code: .badRequest, data: nil, message: nil)
+            return (success: false, code: .unauthorized, data: nil, message: nil)
         }
         guard let uid = activeUser.uid else {
             SFDpLogger.debug(port: .server ,tag: logTag, step: .failure, msgs: "uid=nil")
-            return (success: false, code: .badRequest, data: nil, message: nil)
+            return (success: false, code: .unauthorized, data: nil, message: nil)
         }
         SFDpLogger.debug(port: .server ,tag: logTag, step: .inProcess, msgs: activeUser)
         guard let appDb = SFServerDatabase.getAppDb() else {
@@ -384,11 +373,11 @@ extension DbDataProvider: SFUserApi {
         }
         guard let activeUser = UserModel.active else {
             SFDpLogger.debug(port: .server ,tag: logTag, step: .failure, msgs: "activeUser=nil")
-            return (success: false, code: .badRequest, data: nil, message: nil)
+            return (success: false, code: .unauthorized, data: nil, message: nil)
         }
         guard let uid = activeUser.uid else {
             SFDpLogger.debug(port: .server ,tag: logTag, step: .failure, msgs: "uid=nil")
-            return (success: false, code: .badRequest, data: nil, message: nil)
+            return (success: false, code: .unauthorized, data: nil, message: nil)
         }
         SFDpLogger.debug(port: .server ,tag: logTag, step: .inProcess, msgs: activeUser)
         let smsCode = self.smsCodes.first { ele in
@@ -449,11 +438,11 @@ extension DbDataProvider: SFUserApi {
         }
         guard let activeUser = UserModel.active else {
             SFDpLogger.debug(port: .server ,tag: logTag, step: .failure, msgs: "activeUser=nil")
-            return (success: false, code: .badRequest, data: nil, message: nil)
+            return (success: false, code: .unauthorized, data: nil, message: nil)
         }
         guard let uid = activeUser.uid else {
             SFDpLogger.debug(port: .server ,tag: logTag, step: .failure, msgs: "uid=nil")
-            return (success: false, code: .badRequest, data: nil, message: nil)
+            return (success: false, code: .unauthorized, data: nil, message: nil)
         }
         SFDpLogger.debug(port: .server ,tag: logTag, step: .inProcess, msgs: activeUser)
         let smsCode = self.smsCodes.first { ele in
@@ -514,11 +503,11 @@ extension DbDataProvider: SFUserApi {
         }
         guard let activeUser = UserModel.active else {
             SFDpLogger.debug(port: .server ,tag: logTag, step: .failure, msgs: "activeUser=nil")
-            return (success: false, code: .badRequest, data: nil, message: nil)
+            return (success: false, code: .unauthorized, data: nil, message: nil)
         }
         guard let uid = activeUser.uid else {
             SFDpLogger.debug(port: .server ,tag: logTag, step: .failure, msgs: "uid=nil")
-            return (success: false, code: .badRequest, data: nil, message: nil)
+            return (success: false, code: .unauthorized, data: nil, message: nil)
         }
         SFDpLogger.debug(port: .server ,tag: logTag, step: .inProcess, msgs: activeUser)
         guard let appDb = SFServerDatabase.getAppDb() else {
@@ -553,11 +542,11 @@ extension DbDataProvider: SFUserApi {
         }
         guard let activeUser = UserModel.active else {
             SFDpLogger.debug(port: .server ,tag: logTag, step: .failure, msgs: "activeUser=nil")
-            return (success: false, code: .badRequest, data: nil, message: nil)
+            return (success: false, code: .unauthorized, data: nil, message: nil)
         }
         guard let uid = activeUser.uid else {
             SFDpLogger.debug(port: .server ,tag: logTag, step: .failure, msgs: "uid=nil")
-            return (success: false, code: .badRequest, data: nil, message: nil)
+            return (success: false, code: .unauthorized, data: nil, message: nil)
         }
         SFDpLogger.debug(port: .server ,tag: logTag, step: .inProcess, msgs: activeUser)
         guard let appDb = SFServerDatabase.getAppDb() else {
@@ -604,11 +593,11 @@ extension DbDataProvider: SFUserApi {
         }
         guard let activeUser = UserModel.active else {
             SFDpLogger.debug(port: .server ,tag: logTag, step: .failure, msgs: "activeUser=nil")
-            return (success: false, code: .badRequest, data: nil, message: nil)
+            return (success: false, code: .unauthorized, data: nil, message: nil)
         }
         guard let uid = activeUser.uid else {
             SFDpLogger.debug(port: .server ,tag: logTag, step: .failure, msgs: "uid=nil")
-            return (success: false, code: .badRequest, data: nil, message: nil)
+            return (success: false, code: .unauthorized, data: nil, message: nil)
         }
         SFDpLogger.debug(port: .server ,tag: logTag, step: .inProcess, msgs: activeUser)
         guard let appDb = SFServerDatabase.getAppDb() else {
