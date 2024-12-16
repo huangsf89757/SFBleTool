@@ -60,8 +60,8 @@ class OptDetailVC: SFTableViewController {
     // MARK: ui
     private lazy var editBtn: SFButton = {
         return SFButton().then { view in
-            view.setTitle(SFText.Main.com_edit, for: .normal)
-            view.setTitle(SFText.Main.com_sure, for: .selected)
+            view.setTitle(SFText.UI.com_edit, for: .normal)
+            view.setTitle(SFText.UI.com_sure, for: .selected)
             view.setTitleColor(SFColor.UI.title, for: .normal)
             view.setTitleColor(SFColor.UI.title, for: .selected)
             view.addTarget(self, action: #selector(editBtnClicked), for: .touchUpInside)
@@ -70,16 +70,20 @@ class OptDetailVC: SFTableViewController {
     
     // MARK: back
     override func willBack() -> (will: Bool, animated: Bool) {
-        SFAlert.show(title: SFText.Main.opt_detail_save_title,
-                     msg: SFText.Main.opt_detail_save_subtitle,
-                     cancel: SFText.Main.com_cancel,
+        SFAlert.show(title: SFText.UI.com_save,
+                     msg: SFText.Main.opt_detail_save_msg,
+                     cancel: SFText.UI.com_cancel,
                      cancelActionBlock: { _ in
             return true
         },
-                     sure: SFText.Main.com_sure,
+                     sure: SFText.UI.com_sure,
                      sureActionBlock: { [weak self] popView in
-            self?.saveModel()
-            self?.goBack(animated: true)
+            let success = self?.saveModel() ?? false
+            if success {
+                self?.goBack(animated: true)
+            } else {
+                
+            }
             return true
         })
         return (false, false)
