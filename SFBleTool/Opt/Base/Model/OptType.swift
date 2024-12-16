@@ -99,7 +99,7 @@ extension OptType {
     
     static var codes: [Int] = [110, 120, 130, 200]
     
-    init(code: Int) {
+    init?(code: Int) {
         switch code {
         case 110:
             self = .client(.initial)
@@ -108,7 +108,7 @@ extension OptType {
         case 130:
             self = .client(.connect)
         default:
-            self = .none
+            return nil
         }
     }
     

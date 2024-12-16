@@ -47,11 +47,11 @@ extension SFServerDatabase {
         }
         do {
             let condition = BTUserModel.Properties.state.is(AccountState.active.rawValue)
-            var tmp = BTUserModel()
+            let tmp = BTUserModel()
             tmp.stateEnum = .inactive
             try appDb.update(table: BTUserModel.table, on: [BTUserModel.Properties.state], with: tmp, where: condition)
            
-            var activeUser = user
+            let activeUser = user
             activeUser.stateEnum = .active
             try appDb.insertOrReplace([activeUser], intoTable: BTUserModel.table)
             SFDatabaseLogger.info(port: .server, tag: logTag, step: .success, type: .update, msgs: "")
@@ -109,17 +109,9 @@ extension SFServerDatabase {
     }
     
     /// 创建User相关表
-    static func createUserTables() {
-        let logTag = "创建User相关表"
+    static func createUserTables(with uid: String) {
+        let logTag = "创建User相关表(\(uid))"
         SFDatabaseLogger.info(port: .server, tag: logTag, step: .begin, type: .add, msgs: "")
-        guard let user = UserModel.active else {
-            SFDatabaseLogger.error(port: .server, tag: logTag, step: .failure, type: .add, msgs: "UserModel.active=nil")
-            return
-        }
-        guard let uid = user.uid else {
-            SFDatabaseLogger.error(port: .server, tag: logTag, step: .failure, type: .add, msgs: "uid=nil")
-            return
-        }
         guard let userDb = getUserDb(with: uid) else {
             SFDatabaseLogger.error(port: .server, tag: logTag, step: .failure, type: .add, msgs: "userDb=nil")
             return

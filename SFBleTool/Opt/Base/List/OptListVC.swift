@@ -42,12 +42,16 @@ class OptListVC: SFTableViewController {
         tableView.dataSource = self
         tableView.separatorStyle = .none
         tableView.register(cellType: OptListCell.self)
+        tableView.headerRefreshBlock = {
+            [weak self] in
+            self?.dp_getList()
+        }
         navigationItem.title = typeEnum.list
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: SFText.Main.opt_list_new, style: .plain, target: self, action: #selector(addItemClicked))
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        getModels()
+        dp_getList()
     }
     
     // MARK: - func
@@ -63,6 +67,7 @@ class OptListVC: SFTableViewController {
                 optModel.typeEnum = typeEnum
                 optModel.default_clientInitial()
                 vc.model = optModel
+                vc.isEdit = true
                 navigationController?.pushViewController(vc, animated: true)
             case .scan:
                 let vc = OptDetailVC()
@@ -70,6 +75,7 @@ class OptListVC: SFTableViewController {
                 optModel.typeEnum = typeEnum
                 optModel.default_clientScan()
                 vc.model = optModel
+                vc.isEdit = true
                 navigationController?.pushViewController(vc, animated: true)
             case .connect:
                 let vc = OptDetailVC()
@@ -77,6 +83,7 @@ class OptListVC: SFTableViewController {
                 optModel.typeEnum = typeEnum
                 optModel.default_clientConnect()
                 vc.model = optModel
+                vc.isEdit = true
                 navigationController?.pushViewController(vc, animated: true)
             }
         case .server(let server):
@@ -132,35 +139,17 @@ extension OptListVC {
 
 // MARK: - Data
 extension OptListVC {
-    func getModels() {
-        let logTag = "获取OptList数据"
-        SFDatabaseLogger.info(port: .client, tag: logTag, step: .begin, type: .find, msgs: "")
-        if typeEnum == .none {
-            models = []
-            SFDatabaseLogger.error(port: .client, tag: logTag, step: .failure, type: .find, msgs: "type=none")
-            return
-        }
-        guard let user = UserModel.active, let uid = user.uid else {
-            models = []
-            SFDatabaseLogger.error(port: .client, tag: logTag, step: .failure, type: .find, msgs: "uid=nil")
-            return
-        }
-        guard let userDb = SFClientDatabase.getUserDb(with: uid) else {
-            models = []
-            SFDatabaseLogger.error(port: .client, tag: logTag, step: .failure, type: .find, msgs: "userDb=nil")
-            return
-        }
-        do {
-            let condition = OptModel.Properties.type.is(typeEnum.code)
-            let order = [OptModel.Properties.createTimeL.order(.descending)]
-            let models: [OptModel] = try userDb.getObjects(on: OptModel.Properties.all, fromTable: OptModel.table, where: condition, orderBy: order)
-            models.forEach { model in
-                model.valuesToModels()
+    private func dp_getList() {
+        Task {
+            let res = await SFDataService.shared.request(hud: (loading: nil, success: nil, failure: nil)) { provider in
+                return await (provider as? OptApi)?.getList(type: self.typeEnum.code)
+            }
+            await self.tableView.mj_header?.endRefreshing()
+            guard res.success, let models = res.data as? [OptModel] else {
+                return
             }
             self.models = models
-            SFDatabaseLogger.info(port: .client, tag: logTag, step: .success, type: .find, msgs: "models.count=\(models.count)")
-        } catch let error {
-            SFDatabaseLogger.error(port: .client, tag: logTag, step: .failure, type: .find, msgs: error.localizedDescription)
+            self.tableView.reloadData()
         }
     }
 }

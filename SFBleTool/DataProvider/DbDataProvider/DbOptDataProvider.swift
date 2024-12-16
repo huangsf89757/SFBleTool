@@ -18,14 +18,14 @@ import WCDBSwift
 // MARK: - SFUserApi
 extension DbDataProvider: OptApi {
     func getList(type: Int) async -> SFBusiness.SFDataResponse {
-        let logTag = "获取OptList数据"
-        let random = Int.random(in: Self.randomTimeRange)
-        SFDpLogger.debug(port: .server ,tag: logTag, step: .begin, msgs: "模拟耗时\(random)秒")
+        let logTag = "获取OptList"
+        let random = Double.random(in: Self.randomTimeRange)
+        SFDpLogger.debug(port: .server ,tag: logTag, step: .begin, msgs: String(format: "模拟耗时%.2f秒", random))
         do {
             try await Task.sleep(nanoseconds: UInt64(random) * 1_000_000_000)
         } catch {
             SFDpLogger.debug(port: .server ,tag: logTag, step: .failure, msgs: "模拟耗时被中断")
-            return (success: false, code: .serverError, data: nil, message: nil)
+            return (success: false, code: .badRequest, data: nil, message: nil)
         }
         guard let activeUser = UserModel.active else {
             SFDpLogger.debug(port: .server ,tag: logTag, step: .failure, msgs: "activeUser=nil")
@@ -39,11 +39,8 @@ extension DbDataProvider: OptApi {
             SFDpLogger.debug(port: .server ,tag: logTag, step: .failure, msgs: "userDb=nil")
             return (success: false, code: .serverError, data: nil, message: nil)
         }
-        let isContains = OptType.codes.contains { code in
-            type == code
-        }
-        guard isContains else {
-            SFDpLogger.debug(port: .server ,tag: logTag, step: .failure, msgs: "type错误")
+        guard let _ = OptType(code: type) else {
+            SFDpLogger.debug(port: .server ,tag: logTag, step: .failure, msgs: "type不合法")
             return (success: false, code: .badRequest, data: nil, message: nil)
         }
         do {
@@ -62,14 +59,124 @@ extension DbDataProvider: OptApi {
     }
     
     func getDetail(id: String) async -> SFBusiness.SFDataResponse {
-        return (success: false, code: .serverError, data: nil, message: nil)
+        let logTag = "获取OptDetail"
+        let random = Double.random(in: Self.randomTimeRange)
+        SFDpLogger.debug(port: .server ,tag: logTag, step: .begin, msgs: String(format: "模拟耗时%.2f秒", random))
+        do {
+            try await Task.sleep(nanoseconds: UInt64(random) * 1_000_000_000)
+        } catch {
+            SFDpLogger.debug(port: .server ,tag: logTag, step: .failure, msgs: "模拟耗时被中断")
+            return (success: false, code: .badRequest, data: nil, message: nil)
+        }
+        guard let activeUser = UserModel.active else {
+            SFDpLogger.debug(port: .server ,tag: logTag, step: .failure, msgs: "activeUser=nil")
+            return (success: false, code: .unauthorized, data: nil, message: nil)
+        }
+        guard let uid = activeUser.uid else {
+            SFDpLogger.debug(port: .server ,tag: logTag, step: .failure, msgs: "uid=nil")
+            return (success: false, code: .unauthorized, data: nil, message: nil)
+        }
+        guard let userDb = SFServerDatabase.getUserDb(with: uid) else {
+            SFDpLogger.debug(port: .server ,tag: logTag, step: .failure, msgs: "userDb=nil")
+            return (success: false, code: .serverError, data: nil, message: nil)
+        }
+        do {
+            let condition = OptModel.Properties.idR.is(id)
+            let model: OptModel? = try userDb.getObject(on: OptModel.Properties.all, fromTable: OptModel.table, where: condition)
+            if let model = model {
+                SFDpLogger.debug(port: .server ,tag: logTag, step: .success, msgs: model)
+                return (success: true, code: .ok, data: model, message: nil)
+            } else {
+                SFDpLogger.debug(port: .server ,tag: logTag, step: .failure, msgs: "model=nil")
+                return (success: false, code: .ok, data: nil, message: nil)
+            }
+        } catch let error {
+            SFDpLogger.debug(port: .server ,tag: logTag, step: .failure, msgs: error.localizedDescription)
+            return (success: false, code: .serverError, data: nil, message: nil)
+        }
     }
     
     func add(_ opt: [String : Any]) async -> SFBusiness.SFDataResponse {
-        return (success: false, code: .serverError, data: nil, message: nil)
+        let logTag = "新增Opt"
+        let random = Double.random(in: Self.randomTimeRange)
+        SFDpLogger.debug(port: .server ,tag: logTag, step: .begin, msgs: String(format: "模拟耗时%.2f秒", random))
+        do {
+            try await Task.sleep(nanoseconds: UInt64(random) * 1_000_000_000)
+        } catch {
+            SFDpLogger.debug(port: .server ,tag: logTag, step: .failure, msgs: "模拟耗时被中断")
+            return (success: false, code: .badRequest, data: nil, message: nil)
+        }
+        guard let activeUser = UserModel.active else {
+            SFDpLogger.debug(port: .server ,tag: logTag, step: .failure, msgs: "activeUser=nil")
+            return (success: false, code: .unauthorized, data: nil, message: nil)
+        }
+        guard let uid = activeUser.uid else {
+            SFDpLogger.debug(port: .server ,tag: logTag, step: .failure, msgs: "uid=nil")
+            return (success: false, code: .unauthorized, data: nil, message: nil)
+        }
+        guard let userDb = SFServerDatabase.getUserDb(with: uid) else {
+            SFDpLogger.debug(port: .server ,tag: logTag, step: .failure, msgs: "userDb=nil")
+            return (success: false, code: .serverError, data: nil, message: nil)
+        }
+        guard let type = opt["type"] as? Int else {
+            SFDpLogger.debug(port: .server ,tag: logTag, step: .failure, msgs: "参数必须包含type")
+            return (success: false, code: .badRequest, data: nil, message: nil)
+        }
+        guard let typeEnum = OptType(code: type) else {
+            SFDpLogger.debug(port: .server ,tag: logTag, step: .failure, msgs: "type不合法")
+            return (success: false, code: .badRequest, data: nil, message: nil)
+        }
+        guard let name = opt["name"] as? String else {
+            SFDpLogger.debug(port: .server ,tag: logTag, step: .failure, msgs: "参数必须包含name")
+            return (success: false, code: .badRequest, data: nil, message: nil)
+        }
+        let model = OptModel()
+        model.defaultR()
+        model.typeEnum = typeEnum
+        model.name = name
+        if let itemValues = opt["itemValues"] as? [Int: String] {
+            model.itemValues = itemValues
+        }
+        do {
+            try userDb.insertOrReplace([model], intoTable: OptModel.table)
+            SFDpLogger.debug(port: .server ,tag: logTag, step: .success, msgs: model)
+            return (success: true, code: .ok, data: nil, message: nil)
+        } catch let error {
+            SFDpLogger.debug(port: .server ,tag: logTag, step: .failure, msgs: error.localizedDescription)
+            return (success: false, code: .serverError, data: nil, message: nil)
+        }
     }
     
     func delete(id: String) async -> SFBusiness.SFDataResponse {
-        return (success: false, code: .serverError, data: nil, message: nil)
-    }    
+        let logTag = "删除Opt"
+        let random = Double.random(in: Self.randomTimeRange)
+        SFDpLogger.debug(port: .server ,tag: logTag, step: .begin, msgs: String(format: "模拟耗时%.2f秒", random))
+        do {
+            try await Task.sleep(nanoseconds: UInt64(random) * 1_000_000_000)
+        } catch {
+            SFDpLogger.debug(port: .server ,tag: logTag, step: .failure, msgs: "模拟耗时被中断")
+            return (success: false, code: .badRequest, data: nil, message: nil)
+        }
+        guard let activeUser = UserModel.active else {
+            SFDpLogger.debug(port: .server ,tag: logTag, step: .failure, msgs: "activeUser=nil")
+            return (success: false, code: .unauthorized, data: nil, message: nil)
+        }
+        guard let uid = activeUser.uid else {
+            SFDpLogger.debug(port: .server ,tag: logTag, step: .failure, msgs: "uid=nil")
+            return (success: false, code: .unauthorized, data: nil, message: nil)
+        }
+        guard let userDb = SFServerDatabase.getUserDb(with: uid) else {
+            SFDpLogger.debug(port: .server ,tag: logTag, step: .failure, msgs: "userDb=nil")
+            return (success: false, code: .serverError, data: nil, message: nil)
+        }
+        do {
+            let condition = OptModel.Properties.idR.is(id)
+            try userDb.delete(fromTable: OptModel.table, where: condition)
+            SFDpLogger.debug(port: .server ,tag: logTag, step: .success, msgs: "")
+            return (success: true, code: .ok, data: nil, message: nil)
+        } catch let error {
+            SFDpLogger.debug(port: .server ,tag: logTag, step: .failure, msgs: error.localizedDescription)
+            return (success: false, code: .serverError, data: nil, message: nil)
+        }
+    }
 }

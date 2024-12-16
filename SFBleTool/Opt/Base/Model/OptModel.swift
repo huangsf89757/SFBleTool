@@ -42,7 +42,7 @@ final class OptModel: SFLocalDatanable, SFRemoteDatanable, WCDBSwift.TableCodabl
             type = newValue.code
         }
         get {
-            OptType(code: type ?? 0)
+            OptType(code: type ?? 0) ?? .none
         }
     }
     private(set) var itemModels: [OptItemModel] = []
@@ -85,6 +85,16 @@ extension OptModel: Describable {
         let name = name ?? "<name>"
         let idL = idL ?? "<idL>"
         return "\(code): \(name)(\(idL))"
+    }
+}
+
+// MARK: - Equatable
+extension OptModel: Equatable {
+    static func == (lhs: OptModel, rhs: OptModel) -> Bool {
+        let equalL = (lhs.orderL == rhs.orderL) && (lhs.idL == rhs.idL) && (lhs.createTimeL == rhs.createTimeL)  && (lhs.updateTimeL == rhs.updateTimeL)
+        let equalR = (lhs.orderR == rhs.orderR) && (lhs.idR == rhs.idR) && (lhs.createTimeR == rhs.createTimeR)  && (lhs.updateTimeR == rhs.updateTimeR)
+        let equalS = (lhs.type == rhs.type) && (lhs.name == rhs.name) && (lhs.itemValues == rhs.itemValues)
+        return equalL && equalR && equalS
     }
 }
 

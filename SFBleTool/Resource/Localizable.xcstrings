@@ -441,6 +441,17 @@
         }
       }
     },
+    "opt_detail_hint_name" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "请先输入选项名称"
+          }
+        }
+      }
+    },
     "opt_detail_name" : {
       "extractionState" : "manual",
       "localizations" : {

@@ -24,13 +24,14 @@ class OptDetailVC: SFTableViewController {
     var isEdit = false {
         didSet  {
             editBtn.isSelected = isEdit
-            tableView.reloadData()
         }
     }
     
     // MARK: data
+    var model_saved: OptModel!
     var model: OptModel = OptModel() {
         didSet {
+            model_saved = model
             tableView.reloadData()
         }
     }
@@ -42,6 +43,7 @@ class OptDetailVC: SFTableViewController {
     }
     private override init(style: UITableView.Style) {
         super.init(style: style)
+        model_saved = model
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,6 +72,9 @@ class OptDetailVC: SFTableViewController {
     
     // MARK: back
     override func willBack() -> (will: Bool, animated: Bool) {
+        if model == model_saved {
+            return super.willBack()
+        }
         SFAlert.show(title: SFText.UI.com_save,
                      msg: SFText.Main.opt_detail_save_msg,
                      cancel: SFText.UI.com_cancel,
@@ -148,7 +153,15 @@ extension OptDetailVC: UITableViewDelegate, UITableViewDataSource {
 // MARK: - Action
 extension OptDetailVC {
     @objc func editBtnClicked() {
+        if isEdit {
+            let name = model.name ?? ""
+            if name.isEmpty {
+                SFToast.show(SFText.Main.opt_detail_hint_name)
+                return
+            }
+        }
         isEdit.toggle()
+        tableView.reloadData()
     }
 }
 

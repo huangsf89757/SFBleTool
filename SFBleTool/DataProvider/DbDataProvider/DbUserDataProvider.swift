@@ -19,13 +19,13 @@ import WCDBSwift
 extension DbDataProvider: SFUserApi {
     func sendSmsCode(type: SFUser.SmsCodeType) async -> SFDataResponse {
         let logTag = "发送验证码"
-        let random = Int.random(in: Self.randomTimeRange)
-        SFDpLogger.debug(port: .server ,tag: logTag, step: .begin, msgs: "模拟耗时\(random)秒")
+        let random = Double.random(in: Self.randomTimeRange)
+        SFDpLogger.debug(port: .server ,tag: logTag, step: .begin, msgs: String(format: "模拟耗时%.2f秒", random))
         do {
             try await Task.sleep(nanoseconds: UInt64(random) * 1_000_000_000)
         } catch {
             SFDpLogger.debug(port: .server ,tag: logTag, step: .failure, msgs: "模拟耗时被中断")
-            return (success: false, code: .serverError, data: nil, message: nil)
+            return (success: false, code: .badRequest, data: nil, message: nil)
         }
         let smsCode = String((0..<6).compactMap { _ in
             "0123456789".randomElement()
@@ -44,13 +44,13 @@ extension DbDataProvider: SFUserApi {
     
     func signIn(phone: String, code: String) async -> SFDataResponse {
         let logTag = "登录（手机号+验证码）"
-        let random = Int.random(in: Self.randomTimeRange)
-        SFDpLogger.debug(port: .server ,tag: logTag, step: .begin, msgs: "模拟耗时\(random)秒")
+        let random = Double.random(in: Self.randomTimeRange)
+        SFDpLogger.debug(port: .server ,tag: logTag, step: .begin, msgs: String(format: "模拟耗时%.2f秒", random))
         do {
             try await Task.sleep(nanoseconds: UInt64(random) * 1_000_000_000)
         } catch {
             SFDpLogger.debug(port: .server ,tag: logTag, step: .failure, msgs: "模拟耗时被中断")
-            return (success: false, code: .serverError, data: nil, message: nil)
+            return (success: false, code: .badRequest, data: nil, message: nil)
         }
         guard let appDb = SFServerDatabase.getAppDb() else {
             SFDpLogger.debug(port: .server ,tag: logTag, step: .failure, msgs: "appDb=nil")
@@ -81,12 +81,12 @@ extension DbDataProvider: SFUserApi {
             } else {
                 SFDpLogger.debug(port: .server ,tag: logTag, step: .inProcess, msgs: "user=nil")
                 let accounts: [String] = try appDb.getColumn(on: BTUserModel.Properties.account, fromTable: BTUserModel.table).map{ $0.stringValue }
-                var newUser = BTUserModel()
+                let newUser = BTUserModel()
                 newUser.defaultR()
                 newUser.account = BTUserModel.generateUniqueAccount(existingAccounts: Set(accounts))
                 newUser.phone = phone
                 try appDb.insertOrReplace([newUser], intoTable: BTUserModel.table)
-                SFDpLogger.debug(port: .server ,tag: logTag, step: .success, msgs: "注册用户", newUser)
+                SFDpLogger.debug(port: .server ,tag: logTag, step: .success, msgs: "注册新用户", newUser)
                 return (success: true, code: .ok, data: newUser, message: nil)
             }
         } catch let error {
@@ -97,13 +97,13 @@ extension DbDataProvider: SFUserApi {
     
     func signIn(email: String, code: String) async -> SFDataResponse {
         let logTag = "登录（邮箱+验证码）"
-        let random = Int.random(in: Self.randomTimeRange)
-        SFDpLogger.debug(port: .server ,tag: logTag, step: .begin, msgs: "模拟耗时\(random)秒")
+        let random = Double.random(in: Self.randomTimeRange)
+        SFDpLogger.debug(port: .server ,tag: logTag, step: .begin, msgs: String(format: "模拟耗时%.2f秒", random))
         do {
             try await Task.sleep(nanoseconds: UInt64(random) * 1_000_000_000)
         } catch {
             SFDpLogger.debug(port: .server ,tag: logTag, step: .failure, msgs: "模拟耗时被中断")
-            return (success: false, code: .serverError, data: nil, message: nil)
+            return (success: false, code: .badRequest, data: nil, message: nil)
         }
         guard let appDb = SFServerDatabase.getAppDb() else {
             SFDpLogger.debug(port: .server ,tag: logTag, step: .failure, msgs: "appDb=nil")
@@ -134,12 +134,12 @@ extension DbDataProvider: SFUserApi {
             } else {
                 SFDpLogger.debug(port: .server ,tag: logTag, step: .inProcess, msgs: "user=nil")
                 let accounts: [String] = try appDb.getColumn(on: BTUserModel.Properties.account, fromTable: BTUserModel.table).map{ $0.stringValue }
-                var newUser = BTUserModel()
+                let newUser = BTUserModel()
                 newUser.defaultR()
                 newUser.account = BTUserModel.generateUniqueAccount(existingAccounts: Set(accounts))
                 newUser.email = email
                 try appDb.insertOrReplace([newUser], intoTable: BTUserModel.table)
-                SFDpLogger.debug(port: .server ,tag: logTag, step: .success, msgs: "注册用户", newUser)
+                SFDpLogger.debug(port: .server ,tag: logTag, step: .success, msgs: "注册新用户", newUser)
                 return (success: true, code: .ok, data: newUser, message: nil)
             }
         } catch let error {
@@ -150,13 +150,13 @@ extension DbDataProvider: SFUserApi {
     
     func signIn(account: String, pwd: String) async -> SFDataResponse {
         let logTag = "登录（账号+密码）"
-        let random = Int.random(in: Self.randomTimeRange)
-        SFDpLogger.debug(port: .server ,tag: logTag, step: .begin, msgs: "模拟耗时\(random)秒")
+        let random = Double.random(in: Self.randomTimeRange)
+        SFDpLogger.debug(port: .server ,tag: logTag, step: .begin, msgs: String(format: "模拟耗时%.2f秒", random))
         do {
             try await Task.sleep(nanoseconds: UInt64(random) * 1_000_000_000)
         } catch {
             SFDpLogger.debug(port: .server ,tag: logTag, step: .failure, msgs: "模拟耗时被中断")
-            return (success: false, code: .serverError, data: nil, message: nil)
+            return (success: false, code: .badRequest, data: nil, message: nil)
         }
         guard let appDb = SFServerDatabase.getAppDb() else {
             SFDpLogger.debug(port: .server ,tag: logTag, step: .failure, msgs: "appDb=nil")
@@ -191,13 +191,13 @@ extension DbDataProvider: SFUserApi {
     
     func signIn(phone: String, pwd: String) async -> SFDataResponse {
         let logTag = "登录（手机号+密码）"
-        let random = Int.random(in: Self.randomTimeRange)
-        SFDpLogger.debug(port: .server ,tag: logTag, step: .begin, msgs: "模拟耗时\(random)秒")
+        let random = Double.random(in: Self.randomTimeRange)
+        SFDpLogger.debug(port: .server ,tag: logTag, step: .begin, msgs: String(format: "模拟耗时%.2f秒", random))
         do {
             try await Task.sleep(nanoseconds: UInt64(random) * 1_000_000_000)
         } catch {
             SFDpLogger.debug(port: .server ,tag: logTag, step: .failure, msgs: "模拟耗时被中断")
-            return (success: false, code: .serverError, data: nil, message: nil)
+            return (success: false, code: .badRequest, data: nil, message: nil)
         }
         guard let appDb = SFServerDatabase.getAppDb() else {
             SFDpLogger.debug(port: .server ,tag: logTag, step: .failure, msgs: "appDb=nil")
@@ -232,13 +232,13 @@ extension DbDataProvider: SFUserApi {
     
     func signIn(email: String, pwd: String) async -> SFDataResponse {
         let logTag = "登录（邮箱+密码）"
-        let random = Int.random(in: Self.randomTimeRange)
-        SFDpLogger.debug(port: .server ,tag: logTag, step: .begin, msgs: "模拟耗时\(random)秒")
+        let random = Double.random(in: Self.randomTimeRange)
+        SFDpLogger.debug(port: .server ,tag: logTag, step: .begin, msgs: String(format: "模拟耗时%.2f秒", random))
         do {
             try await Task.sleep(nanoseconds: UInt64(random) * 1_000_000_000)
         } catch {
             SFDpLogger.debug(port: .server ,tag: logTag, step: .failure, msgs: "模拟耗时被中断")
-            return (success: false, code: .serverError, data: nil, message: nil)
+            return (success: false, code: .badRequest, data: nil, message: nil)
         }
         guard let appDb = SFServerDatabase.getAppDb() else {
             SFDpLogger.debug(port: .server ,tag: logTag, step: .failure, msgs: "appDb=nil")
@@ -262,7 +262,7 @@ extension DbDataProvider: SFUserApi {
                     return (success: false, code: .ok, data: nil, message: "密码不正确")
                 }
             } else {
-                SFDpLogger.debug(port: .server ,tag: logTag, step: .success, msgs: "user=nil")
+                SFDpLogger.debug(port: .server ,tag: logTag, step: .failure, msgs: "user=nil")
                 return (success: false, code: .ok, data: nil, message: "用户不存在")
             }
         } catch let error {
@@ -273,13 +273,13 @@ extension DbDataProvider: SFUserApi {
     
     func signOut() async -> SFDataResponse {
         let logTag = "登出"
-        let random = Int.random(in: Self.randomTimeRange)
-        SFDpLogger.debug(port: .server ,tag: logTag, step: .begin, msgs: "模拟耗时\(random)秒")
+        let random = Double.random(in: Self.randomTimeRange)
+        SFDpLogger.debug(port: .server ,tag: logTag, step: .begin, msgs: String(format: "模拟耗时%.2f秒", random))
         do {
             try await Task.sleep(nanoseconds: UInt64(random) * 1_000_000_000)
         } catch {
             SFDpLogger.debug(port: .server ,tag: logTag, step: .failure, msgs: "模拟耗时被中断")
-            return (success: false, code: .serverError, data: nil, message: nil)
+            return (success: false, code: .badRequest, data: nil, message: nil)
         }
         guard let activeUser = UserModel.active else {
             SFDpLogger.debug(port: .server ,tag: logTag, step: .failure, msgs: "activeUser=nil")
@@ -307,8 +307,8 @@ extension DbDataProvider: SFUserApi {
                 SFDpLogger.debug(port: .server ,tag: logTag, step: .success, msgs: user)
                 return (success: true, code: .ok, data: user, message: nil)
             } else {
-                SFDpLogger.debug(port: .server ,tag: logTag, step: .success, msgs: "user=nil")
-                return (success: true, code: .ok, data: nil, message: "用户不存在")
+                SFDpLogger.debug(port: .server ,tag: logTag, step: .failure, msgs: "user=nil")
+                return (success: false, code: .ok, data: nil, message: "用户不存在")
             }
         } catch let error {
             SFDpLogger.debug(port: .server ,tag: logTag, step: .failure, msgs: error.localizedDescription)
@@ -318,13 +318,13 @@ extension DbDataProvider: SFUserApi {
     
     func initialPwd(_ pwd: String) async -> SFDataResponse {
         let logTag = "设置初始密码"
-        let random = Int.random(in: Self.randomTimeRange)
-        SFDpLogger.debug(port: .server ,tag: logTag, step: .begin, msgs: "模拟耗时\(random)秒")
+        let random = Double.random(in: Self.randomTimeRange)
+        SFDpLogger.debug(port: .server ,tag: logTag, step: .begin, msgs: String(format: "模拟耗时%.2f秒", random))
         do {
             try await Task.sleep(nanoseconds: UInt64(random) * 1_000_000_000)
         } catch {
             SFDpLogger.debug(port: .server ,tag: logTag, step: .failure, msgs: "模拟耗时被中断")
-            return (success: false, code: .serverError, data: nil, message: nil)
+            return (success: false, code: .badRequest, data: nil, message: nil)
         }
         guard let activeUser = UserModel.active else {
             SFDpLogger.debug(port: .server ,tag: logTag, step: .failure, msgs: "activeUser=nil")
@@ -352,8 +352,8 @@ extension DbDataProvider: SFUserApi {
                 SFDpLogger.debug(port: .server ,tag: logTag, step: .success, msgs: user)
                 return (success: true, code: .ok, data: user, message: nil)
             } else {
-                SFDpLogger.debug(port: .server ,tag: logTag, step: .success, msgs: "user=nil")
-                return (success: true, code: .ok, data: nil, message: "用户不存在")
+                SFDpLogger.debug(port: .server ,tag: logTag, step: .failure, msgs: "user=nil")
+                return (success: false, code: .ok, data: nil, message: "用户不存在")
             }
         } catch let error {
             SFDpLogger.debug(port: .server ,tag: logTag, step: .failure, msgs: error.localizedDescription)
@@ -363,13 +363,13 @@ extension DbDataProvider: SFUserApi {
     
     func resetPwd(_ pwd: String, phone: String, code: String) async -> SFDataResponse {
         let logTag = "重置密码（手机号+验证码）"
-        let random = Int.random(in: Self.randomTimeRange)
-        SFDpLogger.debug(port: .server ,tag: logTag, step: .begin, msgs: "模拟耗时\(random)秒")
+        let random = Double.random(in: Self.randomTimeRange)
+        SFDpLogger.debug(port: .server ,tag: logTag, step: .begin, msgs: String(format: "模拟耗时%.2f秒", random))
         do {
             try await Task.sleep(nanoseconds: UInt64(random) * 1_000_000_000)
         } catch {
             SFDpLogger.debug(port: .server ,tag: logTag, step: .failure, msgs: "模拟耗时被中断")
-            return (success: false, code: .serverError, data: nil, message: nil)
+            return (success: false, code: .badRequest, data: nil, message: nil)
         }
         guard let activeUser = UserModel.active else {
             SFDpLogger.debug(port: .server ,tag: logTag, step: .failure, msgs: "activeUser=nil")
@@ -409,15 +409,15 @@ extension DbDataProvider: SFUserApi {
                         SFDpLogger.debug(port: .server ,tag: logTag, step: .success, msgs: user)
                         return (success: true, code: .ok, data: user, message: nil)
                     } else {
-                        SFDpLogger.debug(port: .server ,tag: logTag, step: .success, msgs: "手机号不正确")
+                        SFDpLogger.debug(port: .server ,tag: logTag, step: .failure, msgs: "手机号不正确")
                         return (success: false, code: .ok, data: nil, message: "请使用该账号当前绑定的手机号")
                     }
                 } else {
-                    SFDpLogger.debug(port: .server ,tag: logTag, step: .success, msgs: "未绑定手机号")
+                    SFDpLogger.debug(port: .server ,tag: logTag, step: .failure, msgs: "未绑定手机号")
                     return (success: false, code: .ok, data: nil, message: "该账号未绑定手机号，请尝试其他方式重置密码")
                 }
             } else {
-                SFDpLogger.debug(port: .server ,tag: logTag, step: .success, msgs: "user=nil")
+                SFDpLogger.debug(port: .server ,tag: logTag, step: .failure, msgs: "user=nil")
                 return (success: false, code: .ok, data: nil, message: "用户不存在")
             }
         } catch let error {
@@ -428,13 +428,13 @@ extension DbDataProvider: SFUserApi {
     
     func resetPwd(_ pwd: String, email: String, code: String) async -> SFDataResponse {
         let logTag = "重置密码（邮箱+验证码）"
-        let random = Int.random(in: Self.randomTimeRange)
-        SFDpLogger.debug(port: .server ,tag: logTag, step: .begin, msgs: "模拟耗时\(random)秒")
+        let random = Double.random(in: Self.randomTimeRange)
+        SFDpLogger.debug(port: .server ,tag: logTag, step: .begin, msgs: String(format: "模拟耗时%.2f秒", random))
         do {
             try await Task.sleep(nanoseconds: UInt64(random) * 1_000_000_000)
         } catch {
             SFDpLogger.debug(port: .server ,tag: logTag, step: .failure, msgs: "模拟耗时被中断")
-            return (success: false, code: .serverError, data: nil, message: nil)
+            return (success: false, code: .badRequest, data: nil, message: nil)
         }
         guard let activeUser = UserModel.active else {
             SFDpLogger.debug(port: .server ,tag: logTag, step: .failure, msgs: "activeUser=nil")
@@ -474,16 +474,16 @@ extension DbDataProvider: SFUserApi {
                         SFDpLogger.debug(port: .server ,tag: logTag, step: .success, msgs: user)
                         return (success: true, code: .ok, data: user, message: nil)
                     } else {
-                        SFDpLogger.debug(port: .server ,tag: logTag, step: .success, msgs: "邮箱不正确")
+                        SFDpLogger.debug(port: .server ,tag: logTag, step: .failure, msgs: "邮箱不正确")
                         return (success: false, code: .ok, data: nil, message: "请使用该账号当前绑定的邮箱")
                     }
                 } else {
-                    SFDpLogger.debug(port: .server ,tag: logTag, step: .success, msgs: "未绑定邮箱")
+                    SFDpLogger.debug(port: .server ,tag: logTag, step: .failure, msgs: "未绑定邮箱")
                     return (success: false, code: .ok, data: nil, message: "该账号未绑定邮箱，请尝试其他方式重置密码")
                 }
             } else {
-                SFDpLogger.debug(port: .server ,tag: logTag, step: .success, msgs: "user=nil")
-                return (success: true, code: .ok, data: nil, message: "用户不存在")
+                SFDpLogger.debug(port: .server ,tag: logTag, step: .failure, msgs: "user=nil")
+                return (success: false, code: .ok, data: nil, message: "用户不存在")
             }
         } catch let error {
             SFDpLogger.debug(port: .server ,tag: logTag, step: .failure, msgs: error.localizedDescription)
@@ -493,13 +493,13 @@ extension DbDataProvider: SFUserApi {
     
     func getInfo() async -> SFDataResponse {
         let logTag = "获取用户信息"
-        let random = Int.random(in: Self.randomTimeRange)
-        SFDpLogger.debug(port: .server ,tag: logTag, step: .begin, msgs: "模拟耗时\(random)秒")
+        let random = Double.random(in: Self.randomTimeRange)
+        SFDpLogger.debug(port: .server ,tag: logTag, step: .begin, msgs: String(format: "模拟耗时%.2f秒", random))
         do {
             try await Task.sleep(nanoseconds: UInt64(random) * 1_000_000_000)
         } catch {
             SFDpLogger.debug(port: .server ,tag: logTag, step: .failure, msgs: "模拟耗时被中断")
-            return (success: false, code: .serverError, data: nil, message: nil)
+            return (success: false, code: .badRequest, data: nil, message: nil)
         }
         guard let activeUser = UserModel.active else {
             SFDpLogger.debug(port: .server ,tag: logTag, step: .failure, msgs: "activeUser=nil")
@@ -521,8 +521,8 @@ extension DbDataProvider: SFUserApi {
                 SFDpLogger.debug(port: .server ,tag: logTag, step: .success, msgs: user)
                 return (success: true, code: .ok, data: user, message: nil)
             } else {
-                SFDpLogger.debug(port: .server ,tag: logTag, step: .success, msgs: "user=nil")
-                return (success: true, code: .ok, data: nil, message: "用户不存在")
+                SFDpLogger.debug(port: .server ,tag: logTag, step: .failure, msgs: "user=nil")
+                return (success: false, code: .ok, data: nil, message: "用户不存在")
             }
         } catch let error {
             SFDpLogger.debug(port: .server ,tag: logTag, step: .failure, msgs: error.localizedDescription)
@@ -532,13 +532,13 @@ extension DbDataProvider: SFUserApi {
     
     func updateInfo(_ info: [String : Any]) async -> SFDataResponse {
         let logTag = "更新用户信息"
-        let random = Int.random(in: Self.randomTimeRange)
-        SFDpLogger.debug(port: .server ,tag: logTag, step: .begin, msgs: "模拟耗时\(random)秒")
+        let random = Double.random(in: Self.randomTimeRange)
+        SFDpLogger.debug(port: .server ,tag: logTag, step: .begin, msgs: String(format: "模拟耗时%.2f秒", random))
         do {
             try await Task.sleep(nanoseconds: UInt64(random) * 1_000_000_000)
         } catch {
             SFDpLogger.debug(port: .server ,tag: logTag, step: .failure, msgs: "模拟耗时被中断")
-            return (success: false, code: .serverError, data: nil, message: nil)
+            return (success: false, code: .badRequest, data: nil, message: nil)
         }
         guard let activeUser = UserModel.active else {
             SFDpLogger.debug(port: .server ,tag: logTag, step: .failure, msgs: "activeUser=nil")
@@ -572,8 +572,8 @@ extension DbDataProvider: SFUserApi {
                 SFDpLogger.debug(port: .server ,tag: logTag, step: .success, msgs: user)
                 return (success: true, code: .ok, data: user, message: nil)
             } else {
-                SFDpLogger.debug(port: .server ,tag: logTag, step: .success, msgs: "user=nil")
-                return (success: true, code: .ok, data: nil, message: "用户不存在")
+                SFDpLogger.debug(port: .server ,tag: logTag, step: .failure, msgs: "user=nil")
+                return (success: false, code: .ok, data: nil, message: "用户不存在")
             }
         } catch let error {
             SFDpLogger.debug(port: .server ,tag: logTag, step: .failure, msgs: error.localizedDescription)
@@ -583,13 +583,13 @@ extension DbDataProvider: SFUserApi {
     
     func deleteAccount(pwd: String) async -> SFDataResponse {
         let logTag = "注销账户"
-        let random = Int.random(in: Self.randomTimeRange)
-        SFDpLogger.debug(port: .server ,tag: logTag, step: .begin, msgs: "模拟耗时\(random)秒")
+        let random = Double.random(in: Self.randomTimeRange)
+        SFDpLogger.debug(port: .server ,tag: logTag, step: .begin, msgs: String(format: "模拟耗时%.2f秒", random))
         do {
             try await Task.sleep(nanoseconds: UInt64(random) * 1_000_000_000)
         } catch {
             SFDpLogger.debug(port: .server ,tag: logTag, step: .failure, msgs: "模拟耗时被中断")
-            return (success: false, code: .serverError, data: nil, message: nil)
+            return (success: false, code: .badRequest, data: nil, message: nil)
         }
         guard let activeUser = UserModel.active else {
             SFDpLogger.debug(port: .server ,tag: logTag, step: .failure, msgs: "activeUser=nil")
@@ -617,8 +617,8 @@ extension DbDataProvider: SFUserApi {
                 SFDpLogger.debug(port: .server ,tag: logTag, step: .success, msgs: user)
                 return (success: true, code: .ok, data: user, message: nil)
             } else {
-                SFDpLogger.debug(port: .server ,tag: logTag, step: .success, msgs: "user=nil")
-                return (success: true, code: .ok, data: nil, message: "用户不存在")
+                SFDpLogger.debug(port: .server ,tag: logTag, step: .failure, msgs: "user=nil")
+                return (success: false, code: .ok, data: nil, message: "用户不存在")
             }
         } catch let error {
             SFDpLogger.debug(port: .server ,tag: logTag, step: .failure, msgs: error.localizedDescription)

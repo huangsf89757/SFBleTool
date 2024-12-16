@@ -19,7 +19,7 @@ import WCDBSwift
 class DbDataProvider: SFDataProvider {
     // MARK: var
     var timeout: TimeInterval = 30
-    static let randomTimeRange = 1...6
+    static let randomTimeRange: ClosedRange<Double> = 1...5
     
     // MARK: value
     var smsCodes = [String]()

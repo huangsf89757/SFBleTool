@@ -58,8 +58,10 @@ extension AppDelegate {
         SFClientDatabase.createAppTables()
         SFDatabase.buildInData()
         let user = SFClientDatabase.getActiveUser()
-        UserModel.active = user
-        SFClientDatabase.createUserTables()
+        if let uid = user?.uid {
+            SFClientDatabase.createUserTables(with: uid)
+            UserModel.active = user
+        }
     }
     
     func config_dataProvider() {
