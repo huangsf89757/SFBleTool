@@ -72,17 +72,15 @@ class OptDetailVC: SFTableViewController {
     
     // MARK: back
     override func willBack() -> (will: Bool, animated: Bool) {
-        if model == model_saved {
+        if !isEdit, model == model_saved {
             return super.willBack()
         }
-        SFAlert.show(title: SFText.UI.com_save,
-                     msg: SFText.Main.opt_detail_save_msg,
-                     cancel: SFText.UI.com_cancel,
-                     cancelActionBlock: { _ in
+        SFAlert.config(title: SFText.UI.com_save, msg: SFText.Main.opt_detail_save_msg)
+        SFAlert.addCancelAction(title: SFText.UI.com_cancel) { [weak self] alertView in
+            self?.goBack(animated: true)
             return true
-        },
-                     sure: SFText.UI.com_sure,
-                     sureActionBlock: { [weak self] popView in
+        }
+        SFAlert.addConfirmAction(title: SFText.UI.com_sure) { [weak self] alertView in
             let success = self?.saveModel() ?? false
             if success {
                 self?.goBack(animated: true)
@@ -90,7 +88,8 @@ class OptDetailVC: SFTableViewController {
                 
             }
             return true
-        })
+        }
+        SFAlert.show()
         return (false, false)
     }
 }
