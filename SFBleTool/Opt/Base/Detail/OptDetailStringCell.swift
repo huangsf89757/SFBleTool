@@ -21,7 +21,7 @@ class OptDetailStringCell: OptDetailCell {
             view.font = .systemFont(ofSize: 17, weight: .regular)
             view.textColor = SFColor.UI.title
             view.textAlignment = .right
-            view.addTarget(self, action: #selector(textFieldAction(_:)), for: .valueChanged)
+            view.addTarget(self, action: #selector(textFieldAction(_:)), for: .editingChanged)
         }
     }()
     override func customUI() {

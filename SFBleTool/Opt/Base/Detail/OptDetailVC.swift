@@ -63,7 +63,7 @@ class OptDetailVC: SFTableViewController {
     private lazy var editBtn: SFButton = {
         return SFButton().then { view in
             view.setTitle(SFText.UI.com_edit, for: .normal)
-            view.setTitle(SFText.UI.com_sure, for: .selected)
+            view.setTitle(SFText.UI.com_save, for: .selected)
             view.setTitleColor(SFColor.UI.title, for: .normal)
             view.setTitleColor(SFColor.UI.title, for: .selected)
             view.addTarget(self, action: #selector(editBtnClicked), for: .touchUpInside)
@@ -81,11 +81,13 @@ class OptDetailVC: SFTableViewController {
             return true
         }
         SFAlert.addConfirmAction(title: SFText.UI.com_sure) { [weak self] alertView in
-            let success = self?.saveModel() ?? false
-            if success {
-                self?.goBack(animated: true)
-            } else {
-                
+            Task {
+                let success = await self?.dp_add() ?? false
+                if success {
+                    self?.isEdit = false
+                    self?.tableView.reloadData()
+                    self?.goBack(animated: true)
+                }
             }
             return true
         }
@@ -153,37 +155,32 @@ extension OptDetailVC: UITableViewDelegate, UITableViewDataSource {
 extension OptDetailVC {
     @objc func editBtnClicked() {
         if isEdit {
-            let name = model.name ?? ""
-            if name.isEmpty {
-                SFToast.show(SFText.Main.opt_detail_hint_name)
-                return
+            Task {
+                let success = await self.dp_add()
+                if success {
+                    isEdit = false
+                    self.tableView.reloadData()
+                }
             }
+        } else {
+            isEdit = true
+            tableView.reloadData()
         }
-        isEdit.toggle()
-        tableView.reloadData()
     }
 }
 
 // MARK: - Data
 extension OptDetailVC {
-    func saveModel() -> Bool {
-        let logTag = "保存Opt数据"
-        SFDatabaseLogger.info(port: .client, tag: logTag, step: .begin, type: .add, msgs: "")
-        guard let user = UserModel.active, let uid = user.uid else {
-            SFDatabaseLogger.error(port: .client, tag: logTag, step: .failure, type: .add, msgs: "uid=nil")
+    private func dp_add() async -> Bool {
+        model.modelsToValues()
+        let name = model.name ?? ""
+        if name.isEmpty {
+            SFToast.show(SFText.Main.opt_detail_hint_name)
             return false
         }
-        guard let userDb = SFClientDatabase.getUserDb(with: uid) else {
-            SFDatabaseLogger.error(port: .client, tag: logTag, step: .failure, type: .add, msgs: "userDb=nil")
-            return false
+        let res = await SFDataService.shared.request(hud: (loading: nil, success: nil, failure: nil)) { provider in
+            return await (provider as? OptApi)?.add(self.model.toDict())
         }
-        do {
-            try userDb.insertOrReplace([model], intoTable: OptModel.table)
-            SFDatabaseLogger.info(port: .client, tag: logTag, step: .success, type: .add, msgs: model)
-            return true
-        } catch let error {
-            SFDatabaseLogger.error(port: .client, tag: logTag, step: .failure, type: .add, msgs: error.localizedDescription)
-            return false
-        }
+        return res.success
     }
 }
