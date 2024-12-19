@@ -105,10 +105,6 @@ extension OptModel {
         var itemModels: [OptItemModel] = []
         for item in items {
             let itemModel = OptItemModel(item: item)
-            if item == .name {
-                itemModel.selectable = false
-                itemModel.isSelected = true
-            }
             setValue(itemValues?[item.code], for: itemModel)
             itemModels.append(itemModel)
         }

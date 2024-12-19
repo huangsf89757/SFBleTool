@@ -59,6 +59,7 @@ extension AppDelegate {
         SFDatabase.buildInData()
         let user = SFClientDatabase.getActiveUser()
         if let uid = user?.uid {
+            SFServerDatabase.createUserTables(with: uid)
             SFClientDatabase.createUserTables(with: uid)
             UserModel.active = user
         }

@@ -19,16 +19,7 @@ class OptDetailCell: SFTableViewCell {
     var selectBlcok: ((OptItemModel)->())?
     var isEdit = false {
         didSet {
-            isUserInteractionEnabled = isEdit
-            let showSelect = isEdit || model?.isSelected == true
-            selectBtn.isHidden = !showSelect
-            titleLabel.snp.updateConstraints { make in
-                if showSelect {
-                    make.leading.equalToSuperview().offset(40)
-                } else {
-                    make.leading.equalToSuperview().offset(10)
-                }
-            }
+            isEditDidChanged()
         }
     }
     
@@ -116,6 +107,19 @@ class OptDetailCell: SFTableViewCell {
         selectBtn.isSelected = model.isSelected
         titleLabel.text = model.item.title
         descLabel.text = model.item.desc
+    }
+    
+    func isEditDidChanged() {
+        isUserInteractionEnabled = isEdit
+        let showSelect = isEdit || model?.isSelected == true
+        selectBtn.isHidden = !showSelect
+        titleLabel.snp.updateConstraints { make in
+            if showSelect {
+                make.leading.equalToSuperview().offset(40)
+            } else {
+                make.leading.equalToSuperview().offset(10)
+            }
+        }
     }
 }
 

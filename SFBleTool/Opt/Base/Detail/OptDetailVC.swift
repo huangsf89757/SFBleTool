@@ -32,7 +32,7 @@ class OptDetailVC: SFTableViewController {
     var model: OptModel = OptModel() {
         didSet {
             model_saved = model
-            tableView.reloadData()
+            reloadData()
         }
     }
     private var showItemModels = [OptItemModel]()
@@ -47,7 +47,7 @@ class OptDetailVC: SFTableViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = SFText.Main.opt_detail
+        navigationItem.titleView = nameView
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorStyle = .none
@@ -57,9 +57,13 @@ class OptDetailVC: SFTableViewController {
         tableView.register(cellType: OptDetailStringCell.self)
         tableView.register(cellType: OptDetailBoolCell.self)
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: editBtn)
+        reloadData()
     }
     
     // MARK: ui
+    private lazy var nameView: OptDetailNameView = {
+        return OptDetailNameView(frame: CGRect(origin: .zero, size: CGSize(width: SFApp.screenWidthPortrait()/2, height: 40)))
+    }()
     private lazy var editBtn: SFButton = {
         return SFButton().then { view in
             view.setTitle(SFText.UI.com_edit, for: .normal)
@@ -159,17 +163,24 @@ extension OptDetailVC {
                 let success = await self.dp_add()
                 if success {
                     isEdit = false
-                    self.tableView.reloadData()
+                    reloadData()
                 }
             }
         } else {
             isEdit = true
-            tableView.reloadData()
+            reloadData()
         }
     }
 }
 
 // MARK: - Data
+extension OptDetailVC {
+    private func reloadData() {
+        nameView.model = model
+        nameView.isEdit = isEdit
+        tableView.reloadData()
+    }
+}
 extension OptDetailVC {
     private func dp_add() async -> Bool {
         model.modelsToValues()

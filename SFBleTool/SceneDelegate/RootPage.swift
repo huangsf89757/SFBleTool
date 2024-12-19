@@ -44,8 +44,9 @@ extension SceneDelegate {
                 guard let user = user as? BTUserModel, let uid = user.uid else { return }
                 let success = SFClientDatabase.setActiveUser(user)
                 if success {
-                    UserModel.active = user
                     SFServerDatabase.createUserTables(with: uid)
+                    SFClientDatabase.createUserTables(with: uid)
+                    UserModel.active = user
                     self?.setRootPage()
                 }                
             }

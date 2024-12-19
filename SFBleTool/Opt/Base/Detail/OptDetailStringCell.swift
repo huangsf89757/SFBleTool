@@ -18,6 +18,13 @@ class OptDetailStringCell: OptDetailCell {
     // MARK: ui
     lazy var textField: SFTextField = {
         return SFTextField().then { view in
+            view.rightViewMode = .unlessEditing
+            view.rightView = SFImageView().then({ view in
+                view.contentMode = .scaleAspectFit
+                view.image = SFImage.UI.Com.edit
+                view.alpha = 0.5
+                view.frame = CGRect(origin: .zero, size: CGSize(width: 18, height: 18))
+            })
             view.font = .systemFont(ofSize: 17, weight: .regular)
             view.textColor = SFColor.UI.title
             view.textAlignment = .right
@@ -39,6 +46,11 @@ class OptDetailStringCell: OptDetailCell {
     override func update(model: OptItemModel) {
         super.update(model: model)
         textField.text = model.value
+    }
+    override func isEditDidChanged() {
+        super.isEditDidChanged()
+        textField.isUserInteractionEnabled = isEdit
+        textField.rightViewMode = isEdit ? .unlessEditing : .never
     }
 }
 

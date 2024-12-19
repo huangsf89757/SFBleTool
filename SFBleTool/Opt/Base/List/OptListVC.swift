@@ -25,7 +25,7 @@ class OptListVC: SFTableViewController {
     var typeEnum: OptType = .none
     private var models = [OptModel]() {
         didSet {
-            tableView.reloadData()
+            reloadData()
         }
     }
     
@@ -139,17 +139,22 @@ extension OptListVC {
 
 // MARK: - Data
 extension OptListVC {
+    private func reloadData() {
+        tableView.mj_header?.endRefreshing()
+        tableView.reloadData()
+    }
+}
+extension OptListVC {
     private func dp_getList() {
         Task {
             let res = await SFDataService.shared.request(hud: (loading: nil, success: nil, failure: nil)) { provider in
                 return await (provider as? OptApi)?.getList(type: self.typeEnum.code)
             }
-            await self.tableView.mj_header?.endRefreshing()
             guard res.success, let models = res.data as? [OptModel] else {
                 return
             }
             self.models = models
-            self.tableView.reloadData()
+            self.reloadData()
         }
     }
 }

@@ -16,7 +16,6 @@ import SFUI
 // MARK: - OptItem
 enum OptItem {
     case none
-    case name
     case client(Client)
     case server(Server)
     
@@ -65,8 +64,6 @@ extension OptItem {
     var code: Int {
         switch self {
         case .none:
-            return 0
-        case .name:
             return 0
         case .client(let client):
             switch client {
@@ -144,8 +141,6 @@ extension OptItem {
         switch self {
         case .none:
             return ""
-        case .name:
-            return SFText.Main.opt_detail_name
         case .client(let client):
             switch client {
             case .initial(let initial):
@@ -190,8 +185,6 @@ extension OptItem {
         switch self {
         case .none:
             return ""
-        case .name:
-            return SFText.Main.opt_detail_name_desc
         case .client(let client):
             switch client {
             case .initial(let initial):
@@ -244,8 +237,6 @@ extension OptItem {
         switch self {
         case .none:
             return .none
-        case .name:
-            return .string
         case .client(let client):
             switch client {
             case .initial(let initial):

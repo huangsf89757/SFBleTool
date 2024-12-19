@@ -37,6 +37,10 @@ class OptDetailBoolCell: OptDetailCell {
         guard let value = model.value, let int = Int(value) else { return }
         switchView.setOn(int > 0, animated: false)
     }
+    override func isEditDidChanged() {
+        super.isEditDidChanged()
+        switchView.isUserInteractionEnabled = isEdit
+    }
 }
 
 // MARK: - Action
