@@ -31,7 +31,7 @@ class OptListVC: SFTableViewController {
     
     // MARK: life cycle
     convenience init() {
-        self.init(style: .plain)
+        self.init(style: .grouped)
     }
     private override init(style: UITableView.Style) {
         super.init(style: style)
@@ -95,10 +95,10 @@ class OptListVC: SFTableViewController {
 // MARK: - UITableViewDelegate, UITableViewDataSource
 extension OptListVC: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return models.count
+        return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return models.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(for: indexPath, cellType: OptListCell.self)
@@ -123,7 +123,7 @@ extension OptListVC: UITableViewDelegate, UITableViewDataSource {
         return nil
     }
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 20
+        return 0.1
     }
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 0.1
@@ -153,7 +153,10 @@ extension OptListVC {
             guard res.success, let models = res.data as? [OptModel] else {
                 return
             }
-            self.models = models
+            self.models.append(contentsOf: models)
+            self.models.append(contentsOf: models)
+            self.models.append(contentsOf: models)
+            self.models.append(contentsOf: models)
             self.reloadData()
         }
     }

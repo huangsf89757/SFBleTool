@@ -26,6 +26,8 @@ class OptListCell: SFCardTableViewCell {
     // MARK: life cycle
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        cardInset = UIEdgeInsets(top: 10, left: 10, bottom: 0, right: 10)
+        cardJoin = false
         customUI()
     }
     
