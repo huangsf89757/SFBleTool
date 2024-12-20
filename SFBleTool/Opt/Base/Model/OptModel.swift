@@ -81,10 +81,11 @@ final class OptModel: SFLocalDatanable, SFRemoteDatanable, WCDBSwift.TableCodabl
 // MARK: - Describable
 extension OptModel: Describable {
     var description: String {
+        let idL = idL ?? "<idL>"
         let code = typeEnum.code
         let name = name ?? "<name>"
-        let idL = idL ?? "<idL>"
-        return "\(code): \(name)(\(idL))"
+        let itemValues = String(describing: itemValues ?? [:])
+        return "OptModel=>\(idL): \(name) \(code) \(itemValues)"
     }
 }
 
@@ -114,6 +115,7 @@ extension OptModel {
         guard let value = value else { return }
         guard let string = value as? String else { return }
         itemModel.value = string
+        itemModel.isSelected = true
     }
 }
 

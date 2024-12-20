@@ -41,6 +41,16 @@ class OptDetailBoolCell: OptDetailCell {
         super.isEditDidChanged()
         switchView.isUserInteractionEnabled = isEdit
     }
+    override func updateIsSelected() {
+        super.updateIsSelected()
+        if model?.isSelected == true {
+            if model?.value == nil {
+                model?.value = switchView.isOn ? "1" : "0"
+            }
+        } else {
+            model?.value = nil
+        }
+    }
 }
 
 // MARK: - Action

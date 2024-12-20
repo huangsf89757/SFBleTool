@@ -121,12 +121,17 @@ class OptDetailCell: SFTableViewCell {
             }
         }
     }
+    
+    func updateIsSelected() {
+        model?.isSelected.toggle()
+    }
 }
 
 // MARK: - Action
 extension OptDetailCell {
     @objc private func selectBtnClicked() {
         guard let model = model else { return }
+        updateIsSelected()
         selectBlcok?(model)
     }
 }

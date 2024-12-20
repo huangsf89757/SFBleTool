@@ -44,14 +44,14 @@ class OptListVC: SFTableViewController {
         tableView.register(cellType: OptListCell.self)
         tableView.headerRefreshBlock = {
             [weak self] in
-            self?.dp_getList()
+            self?.database_getList()
         }
         navigationItem.title = typeEnum.list
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: SFText.Main.opt_list_new, style: .plain, target: self, action: #selector(addItemClicked))
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        dp_getList()
+        database_getList()
     }
     
     // MARK: - func
@@ -68,6 +68,7 @@ class OptListVC: SFTableViewController {
                 optModel.default_clientInitial()
                 vc.model = optModel
                 vc.isEdit = true
+                vc.isAddNew = true
                 navigationController?.pushViewController(vc, animated: true)
             case .scan:
                 let vc = OptDetailVC()
@@ -76,6 +77,7 @@ class OptListVC: SFTableViewController {
                 optModel.default_clientScan()
                 vc.model = optModel
                 vc.isEdit = true
+                vc.isAddNew = true
                 navigationController?.pushViewController(vc, animated: true)
             case .connect:
                 let vc = OptDetailVC()
@@ -84,6 +86,7 @@ class OptListVC: SFTableViewController {
                 optModel.default_clientConnect()
                 vc.model = optModel
                 vc.isEdit = true
+                vc.isAddNew = true
                 navigationController?.pushViewController(vc, animated: true)
             }
         case .server(let server):
@@ -111,6 +114,8 @@ extension OptListVC: UITableViewDelegate, UITableViewDataSource {
         let model = models[indexPath.section]
         let vc = OptDetailVC()
         vc.model = model
+        vc.isEdit = false
+        vc.isAddNew = false
         navigationController?.pushViewController(vc, animated: true)
     }
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
@@ -145,19 +150,37 @@ extension OptListVC {
     }
 }
 extension OptListVC {
-    private func dp_getList() {
-        Task {
-            let res = await SFDataService.shared.request(hud: (loading: nil, success: nil, failure: nil)) { provider in
-                return await (provider as? OptApi)?.getList(type: self.typeEnum.code)
+    private func database_getList() {
+        let logTag = "获取OptList"
+        SFDatabaseLogger.info(port: .client, tag: logTag, step: .begin, type: .find, msgs: "")
+        guard let activeUser = UserModel.active else {
+            SFDatabaseLogger.info(port: .client ,tag: logTag, step: .failure, type: .find, msgs: "activeUser=nil")
+            return
+        }
+        guard let uid = activeUser.uid else {
+            SFDatabaseLogger.info(port: .client ,tag: logTag, step: .failure, type: .find, msgs: "uid=nil")
+            return
+        }
+        guard let userDb = SFClientDatabase.getUserDb(with: uid) else {
+            SFDatabaseLogger.info(port: .client ,tag: logTag, step: .failure, type: .find, msgs: "userDb=nil")
+            return
+        }
+        guard typeEnum != .none else {
+            SFDatabaseLogger.info(port: .client ,tag: logTag, step: .failure, type: .find, msgs: "type=none")
+            return
+        }
+        do {
+            let condition = OptModel.Properties.type.is(typeEnum.code)
+            let order = [OptModel.Properties.createTimeL.order(.descending)]
+            let models: [OptModel] = try userDb.getObjects(on: OptModel.Properties.all, fromTable: OptModel.table, where: condition, orderBy: order)
+            models.forEach { model in
+                model.valuesToModels()
             }
-            guard res.success, let models = res.data as? [OptModel] else {
-                return
-            }
-            self.models.append(contentsOf: models)
-            self.models.append(contentsOf: models)
-            self.models.append(contentsOf: models)
-            self.models.append(contentsOf: models)
+            SFDatabaseLogger.info(port: .client ,tag: logTag, step: .success, type: .find, msgs: "models.count=\(models.count)")
+            self.models = models
             self.reloadData()
+        } catch let error {
+            SFDatabaseLogger.info(port: .client ,tag: logTag, step: .failure, type: .find, msgs: error.localizedDescription)
         }
     }
 }

@@ -51,6 +51,17 @@ class OptDetailStringCell: OptDetailCell {
         super.isEditDidChanged()
         textField.isUserInteractionEnabled = isEdit
         textField.rightViewMode = isEdit ? .unlessEditing : .never
+        
+    }
+    override func updateIsSelected() {
+        super.updateIsSelected()
+        if model?.isSelected == true {
+            if model?.value == nil {
+                model?.value = ""
+            }
+        } else {
+            model?.value = nil
+        }
     }
 }
 
