@@ -89,10 +89,9 @@ class OptDetailVC: SFTableViewController {
             return true
         }
         SFAlert.addConfirmAction(title: SFText.UI.com_sure) { [weak self] alertView in
-            Task {
+            var success = self?.addOrUpdate() ?? false
+            if success {
                 self?.isEdit = false
-                self?.reloadData()
-                self?.addOrUpdate()
                 self?.goBack(animated: true)
             }
             return true
@@ -159,10 +158,14 @@ extension OptDetailVC: UITableViewDelegate, UITableViewDataSource {
 // MARK: - Action
 extension OptDetailVC {
     @objc func editBtnClicked() {
-        isEdit.toggle()
-        reloadData()
-        if isEdit == false {
-            addOrUpdate()
+        if isEdit {
+            var success = addOrUpdate()
+            if success {
+                isEdit = false
+            }
+        } else {
+            isEdit = true
+            reloadData()
         }
     }
 }
@@ -176,80 +179,90 @@ extension OptDetailVC {
     }
 }
 extension OptDetailVC {
-    private func addOrUpdate() {
+    private func addOrUpdate() -> Bool {
         model.modelsToValues()
         let name = model.name ?? ""
         if name.isEmpty {
             SFToast.show(SFText.Main.opt_detail_hint_name)
-            return
+            return false
         }
+        var success = false
         if isAddNew {
-            database_add()
+            success = database_add()
         } else {
-            database_update()
+            success = database_update()
         }
-        SFHud.show(.success, msg: SFText.UI.com_save_success, stay: 2)
+        if success {
+            SFHud.show(.success, msg: SFText.UI.com_save_success, stay: 2)
+        } else {
+            SFHud.show(.failure, msg: SFText.UI.com_save_failure, stay: 2)
+        }
+        return success
     }
 }
 extension OptDetailVC {
-    private func database_add() {
+    private func database_add() -> Bool {
         let logTag = "新增Opt"
         SFDatabaseLogger.info(port: .client, tag: logTag, step: .begin, type: .add, msgs: "")
         guard let activeUser = UserModel.active else {
             SFDatabaseLogger.info(port: .client ,tag: logTag, step: .failure, type: .add, msgs: "activeUser=nil")
-            return
+            return false
         }
         guard let uid = activeUser.uid else {
             SFDatabaseLogger.info(port: .client ,tag: logTag, step: .failure, type: .add, msgs: "uid=nil")
-            return
+            return false
         }
         guard let userDb = SFClientDatabase.getUserDb(with: uid) else {
             SFDatabaseLogger.info(port: .client ,tag: logTag, step: .failure, type: .add, msgs: "userDb=nil")
-            return
+            return false
         }
         guard model.typeEnum != .none else {
             SFDatabaseLogger.info(port: .client ,tag: logTag, step: .failure, type: .add, msgs: "type=none")
-            return
+            return false
         }
         do {
             try userDb.insertOrReplace([model], intoTable: OptModel.table)
             SFDatabaseLogger.info(port: .client ,tag: logTag, step: .success, type: .add, msgs: model)
             self.reloadData()
+            return true
         } catch let error {
             SFDatabaseLogger.info(port: .client ,tag: logTag, step: .failure, type: .add, msgs: error.localizedDescription)
+            return false
         }
     }
     
-    private func database_update() {
+    private func database_update() -> Bool {
         let logTag = "更新Opt"
         SFDatabaseLogger.info(port: .client, tag: logTag, step: .begin, type: .update, msgs: "")
         guard let activeUser = UserModel.active else {
             SFDatabaseLogger.info(port: .client ,tag: logTag, step: .failure, type: .update, msgs: "activeUser=nil")
-            return
+            return false
         }
         guard let uid = activeUser.uid else {
             SFDatabaseLogger.info(port: .client ,tag: logTag, step: .failure, type: .update, msgs: "uid=nil")
-            return
+            return false
         }
         guard let userDb = SFClientDatabase.getUserDb(with: uid) else {
             SFDatabaseLogger.info(port: .client ,tag: logTag, step: .failure, type: .update, msgs: "userDb=nil")
-            return
+            return false
         }
         guard model.typeEnum != .none else {
             SFDatabaseLogger.info(port: .client ,tag: logTag, step: .failure, type: .update, msgs: "type=none")
-            return
+            return false
         }
         guard let idL = model.idL else {
             SFDatabaseLogger.info(port: .client ,tag: logTag, step: .failure, type: .update, msgs: "idL=nil")
-            return
+            return false
         }
         do {
             let condition = OptModel.Properties.idL.is(idL)
             try userDb.update(table: OptModel.table, on: OptModel.Properties.all, with: model, where: condition)
             SFDatabaseLogger.info(port: .client ,tag: logTag, step: .success, type: .update, msgs: model)
             self.reloadData()
+            return true
         } catch let error {
             SFDatabaseLogger.info(port: .client ,tag: logTag, step: .failure, type: .update, msgs: error.localizedDescription)
+            return false
         }
     }
 }
