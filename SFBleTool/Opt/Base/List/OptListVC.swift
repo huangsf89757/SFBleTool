@@ -41,13 +41,14 @@ class OptListVC: SFTableViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorStyle = .none
+        tableView.register(cellType: OptAddCell.self)
         tableView.register(cellType: OptListCell.self)
         tableView.headerRefreshBlock = {
             [weak self] in
             self?.database_getList()
         }
         navigationItem.title = typeEnum.list
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: SFText.Main.opt_list_new, style: .plain, target: self, action: #selector(addItemClicked))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: SFText.UI.com_edit, style: .plain, target: self, action: #selector(editItemClicked))
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -101,22 +102,31 @@ extension OptListVC: UITableViewDelegate, UITableViewDataSource {
         return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return models.count
+        return models.count + 1
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(for: indexPath, cellType: OptListCell.self)
-        let model = models[indexPath.section]
-        cell.model = model
-        return cell
+        if indexPath.row == models.count {
+            let cell = tableView.dequeueReusableCell(for: indexPath, cellType: OptAddCell.self)
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(for: indexPath, cellType: OptListCell.self)
+            let model = models[indexPath.section]
+            cell.model = model
+            return cell
+        }
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let model = models[indexPath.section]
-        let vc = OptDetailVC()
-        vc.model = model
-        vc.isEdit = false
-        vc.isAddNew = false
-        navigationController?.pushViewController(vc, animated: true)
+        if indexPath.row == models.count {
+            addNew()
+        } else {
+            let model = models[indexPath.section]
+            let vc = OptDetailVC()
+            vc.model = model
+            vc.isEdit = false
+            vc.isAddNew = false
+            navigationController?.pushViewController(vc, animated: true)
+        }
     }
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         self.tableView.card(cell: cell, at: indexPath)
@@ -137,8 +147,8 @@ extension OptListVC: UITableViewDelegate, UITableViewDataSource {
 
 // MARK: - Action
 extension OptListVC {
-    @objc func addItemClicked() {
-        addNew()
+    @objc func editItemClicked() {
+        
     }
 }
 
