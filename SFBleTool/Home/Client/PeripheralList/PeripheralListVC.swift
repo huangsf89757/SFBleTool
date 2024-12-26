@@ -18,7 +18,7 @@ import SFLogger
 import SFBluetooth
 // Third
 import SideMenu
-
+import Macaw
 
 // MARK: - PeripheralListVC
 class PeripheralListVC: HomeVC {
@@ -120,6 +120,18 @@ class PeripheralListVC: HomeVC {
             make.trailing.equalToSuperview().offset(-20)
             make.bottom.equalToSuperview().offset(-20)
             make.height.equalTo(50)
+        }
+        
+        
+        let svgView = SFSvgView().then { view in
+            view.backgroundColor = .red
+            view.svg = SFSvg.UI.Com.back
+            view.fillColor = SFColor.UI.black
+        }
+        view.addSubview(svgView)
+        svgView.snp.makeConstraints { make in
+            make.center.equalToSuperview()
+            make.width.height.equalTo(200)
         }
     }
     
