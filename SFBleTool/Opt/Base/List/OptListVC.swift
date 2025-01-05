@@ -45,18 +45,30 @@ class OptListVC: SFTableViewController {
         tableView.register(cellType: OptListCell.self)
         tableView.headerRefreshBlock = {
             [weak self] in
+            self?.editBtnEnable(false)
             self?.database_getList()
         }
         navigationItem.title = typeEnum.list
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: SFText.UI.com_edit, style: .plain, target: self, action: #selector(editItemClicked))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: editBtn)
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         database_getList()
     }
     
+    // MARK: ui
+    private lazy var editBtn: SFButton = {
+        return SFButton().then { view in
+            view.setTitle(SFText.UI.com_edit, for: .normal)
+            view.setTitle(SFText.UI.com_save, for: .selected)
+            view.setTitleColor(SFColor.UI.title, for: .normal)
+            view.setTitleColor(SFColor.UI.title, for: .selected)
+            view.addTarget(self, action: #selector(editBtnClicked), for: .touchUpInside)
+        }
+    }()
+    
     // MARK: - func
-    func addNew() {
+    private func addNew() {
         switch typeEnum {
         case .none:
             return
@@ -93,6 +105,11 @@ class OptListVC: SFTableViewController {
         case .server(let server):
             break
         }
+    }
+    
+    private func editBtnEnable(_ enable: Bool) {
+        editBtn.isUserInteractionEnabled = enable
+        editBtn.alpha = enable ? 1 : 0.3
     }
 }
 
@@ -147,7 +164,7 @@ extension OptListVC: UITableViewDelegate, UITableViewDataSource {
 
 // MARK: - Action
 extension OptListVC {
-    @objc func editItemClicked() {
+    @objc func editBtnClicked() {
         
     }
 }
@@ -156,6 +173,7 @@ extension OptListVC {
 extension OptListVC {
     private func reloadData() {
         tableView.mj_header?.endRefreshing()
+        editBtnEnable(true)
         tableView.reloadData()
     }
 }

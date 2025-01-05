@@ -89,9 +89,10 @@ class OptDetailVC: SFTableViewController {
             return true
         }
         SFAlert.addConfirmAction(title: SFText.UI.com_sure) { [weak self] alertView in
-            var success = self?.addOrUpdate() ?? false
+            let success = self?.addOrUpdate() ?? false
             if success {
                 self?.isEdit = false
+                self?.reloadData()
                 self?.goBack(animated: true)
             }
             return true
@@ -159,9 +160,10 @@ extension OptDetailVC: UITableViewDelegate, UITableViewDataSource {
 extension OptDetailVC {
     @objc func editBtnClicked() {
         if isEdit {
-            var success = addOrUpdate()
+            let success = addOrUpdate()
             if success {
                 isEdit = false
+                reloadData()
             }
         } else {
             isEdit = true
@@ -223,7 +225,6 @@ extension OptDetailVC {
         do {
             try userDb.insertOrReplace([model], intoTable: OptModel.table)
             SFDatabaseLogger.info(port: .client ,tag: logTag, step: .success, type: .add, msgs: model)
-            self.reloadData()
             return true
         } catch let error {
             SFDatabaseLogger.info(port: .client ,tag: logTag, step: .failure, type: .add, msgs: error.localizedDescription)
@@ -258,7 +259,6 @@ extension OptDetailVC {
             let condition = OptModel.Properties.idL.is(idL)
             try userDb.update(table: OptModel.table, on: OptModel.Properties.all, with: model, where: condition)
             SFDatabaseLogger.info(port: .client ,tag: logTag, step: .success, type: .update, msgs: model)
-            self.reloadData()
             return true
         } catch let error {
             SFDatabaseLogger.info(port: .client ,tag: logTag, step: .failure, type: .update, msgs: error.localizedDescription)
