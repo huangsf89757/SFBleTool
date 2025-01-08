@@ -496,6 +496,17 @@
         }
       }
     },
+    "opt_list_using" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "使用中"
+          }
+        }
+      }
+    },
     "peripheral_list" : {
       "extractionState" : "manual",
       "localizations" : {

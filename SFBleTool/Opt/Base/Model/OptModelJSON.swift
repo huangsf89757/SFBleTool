@@ -30,6 +30,7 @@ public enum OptKey: String {
     case type
     case name
     case itemValues
+    case isActive
 }
 extension JSON {
     subscript(key: OptKey) -> JSON {
@@ -69,6 +70,7 @@ extension OptModel {
         
         type = json[OptKey.type].int
         name = json[OptKey.name].string
+        isActive = json[OptKey.isActive].bool
 //        itemValues = json[OptKey.itemValues].string // FIXME
     }
     
@@ -88,6 +90,7 @@ extension OptModel {
 
         json[OptKey.type].int = type
         json[OptKey.name].string = name
+        json[OptKey.isActive].bool = isActive
         
         return json.dictionaryObject ?? [:]
     }

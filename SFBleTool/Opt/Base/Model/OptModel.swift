@@ -36,6 +36,7 @@ final class OptModel: SFLocalDatanable, SFRemoteDatanable, WCDBSwift.TableCodabl
     var type: Int?
     var name: String?
     var itemValues: [Int: String]?
+    var isActive: Bool? = false
 
     var typeEnum: OptType {
         set {
@@ -69,6 +70,7 @@ final class OptModel: SFLocalDatanable, SFRemoteDatanable, WCDBSwift.TableCodabl
         case type
         case name
         case itemValues
+        case isActive
         
         public static let objectRelationalMapping = TableBinding(CodingKeys.self)  {
             BindColumnConstraint(orderL, isPrimary: true, orderBy: .ascending, isAutoIncrement: true, isNotNull: true, defaultTo: 0)
