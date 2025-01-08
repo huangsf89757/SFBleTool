@@ -72,6 +72,10 @@ class OptListVC: SFViewController {
     private lazy var editView: OptListEditView = {
         return OptListEditView().then { view in
             view.isHidden = true
+            view.selectBlcok = {
+                [weak self] isSelectAll in
+                self?.selectAllOrNot(isSelectAll)
+            }
         }
     }()
     
@@ -114,48 +118,69 @@ extension OptListVC {
         }
     }
     
-    private func addNew() {
+    private func editBtnEnable(_ enable: Bool) {
+        editBtn.isUserInteractionEnabled = enable
+        editBtn.alpha = enable ? 1 : 0.3
+    }
+}
+
+// MARK: - Seletc
+extension OptListVC {
+    private func checkSelectAllOrNot() {
+        var isSelectAll = true
+        for model in models {
+            if !model.isSelected {
+                isSelectAll = false
+                break
+            }
+        }
+        editView.isSelectAll = isSelectAll
+    }
+    
+    private func selectAllOrNot(_ isSelected: Bool) {
+        models.forEach { model in
+            model.isSelected = isSelected
+        }
+        tableView.reloadData()
+    }
+}
+
+
+extension OptListVC {
+   private func addNewOpt() {
+       let vc = OptDetailVC()
+       let optModel = OptModel()
+       optModel.defaultL()
+       optModel.typeEnum = typeEnum
+       
         switch typeEnum {
         case .none:
             return
         case .client(let client):
             switch client {
             case .initial:
-                let vc = OptDetailVC()
-                let optModel = OptModel()
-                optModel.typeEnum = typeEnum
                 optModel.default_clientInitial()
-                vc.model = optModel
-                vc.isEdit = true
-                vc.isAddNew = true
-                navigationController?.pushViewController(vc, animated: true)
             case .scan:
-                let vc = OptDetailVC()
-                let optModel = OptModel()
-                optModel.typeEnum = typeEnum
                 optModel.default_clientScan()
-                vc.model = optModel
-                vc.isEdit = true
-                vc.isAddNew = true
-                navigationController?.pushViewController(vc, animated: true)
             case .connect:
-                let vc = OptDetailVC()
-                let optModel = OptModel()
-                optModel.typeEnum = typeEnum
                 optModel.default_clientConnect()
-                vc.model = optModel
-                vc.isEdit = true
-                vc.isAddNew = true
-                navigationController?.pushViewController(vc, animated: true)
             }
         case .server(let server):
             break
         }
+       
+       vc.model = optModel
+       vc.isEdit = true
+       vc.isAddNew = true
+       navigationController?.pushViewController(vc, animated: true)
     }
     
-    private func editBtnEnable(_ enable: Bool) {
-        editBtn.isUserInteractionEnabled = enable
-        editBtn.alpha = enable ? 1 : 0.3
+    private func modifyOldOpt(model: OptModel) {
+        let vc = OptDetailVC()
+        vc.model = model
+        vc.isEdit = false
+        vc.isAddNew = false
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 
@@ -182,6 +207,7 @@ extension OptListVC: UITableViewDelegate, UITableViewDataSource {
             cell.isEdit = isEdit
             cell.selectBlcok = {
                 [weak self] _ in
+                self?.checkSelectAllOrNot()
                 self?.tableView.reloadData()
             }
             return cell
@@ -190,14 +216,10 @@ extension OptListVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         if indexPath.row == models.count {
-            addNew()
+            addNewOpt()
         } else {
             let model = models[indexPath.section]
-            let vc = OptDetailVC()
-            vc.model = model
-            vc.isEdit = false
-            vc.isAddNew = false
-            navigationController?.pushViewController(vc, animated: true)
+            modifyOldOpt(model: model)
         }
     }
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {

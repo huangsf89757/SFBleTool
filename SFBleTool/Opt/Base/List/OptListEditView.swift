@@ -15,8 +15,15 @@ import SFUI
 
 class OptListEditView: SFView {
     // MARK: - block
-    var selectBlcok: ((OptModel)->())?
-    var deleteBlcok: ((OptModel)->())?
+    var selectBlcok: ((Bool)->())?
+    var deleteBlcok: (()->())?
+    
+    // MARK: - data
+    var isSelectAll = false {
+        didSet {
+            selectBtn.isSelected = isSelectAll
+        }
+    }
     
     // MARK: life cycle
     override init(frame: CGRect) {
@@ -82,7 +89,8 @@ class OptListEditView: SFView {
 // MARK: - Action
 extension OptListEditView {
     @objc private func selectBtnClicked() {
-        
+        isSelectAll.toggle()
+        selectBlcok?(isSelectAll)
     }
     
     @objc private func deleteBtnClicked() {

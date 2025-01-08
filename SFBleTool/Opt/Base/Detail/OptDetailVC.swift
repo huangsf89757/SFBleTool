@@ -44,10 +44,6 @@ class OptDetailVC: SFTableViewController {
     }
     private override init(style: UITableView.Style) {
         super.init(style: style)
-        let model = OptModel()
-        model.defaultL()
-        self.model = model
-        self.model_saved = model
     }
     override func viewDidLoad() {
         super.viewDidLoad()
