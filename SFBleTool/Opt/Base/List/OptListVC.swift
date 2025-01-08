@@ -19,7 +19,7 @@ import SFUser
 import SFLogger
 
 // MARK: OptListVC
-class OptListVC: SFTableViewController {
+class OptListVC: SFViewController {
     
     // MARK: var
     var typeEnum: OptType = .none
@@ -28,28 +28,22 @@ class OptListVC: SFTableViewController {
             reloadData()
         }
     }
+    var isEdit = false {
+        didSet  {
+            configHeaderRefresh()
+            showOrHideEditView()
+            reloadData()
+        }
+    }
     
     // MARK: life cycle
-    convenience init() {
-        self.init(style: .grouped)
-    }
-    private override init(style: UITableView.Style) {
-        super.init(style: style)
-    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.separatorStyle = .none
-        tableView.register(cellType: OptAddCell.self)
-        tableView.register(cellType: OptListCell.self)
-        tableView.headerRefreshBlock = {
-            [weak self] in
-            self?.editBtnEnable(false)
-            self?.database_getList()
-        }
         navigationItem.title = typeEnum.list
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: editBtn)
+        customUI()
+        configHeaderRefresh()
+        showOrHideEditView()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -66,8 +60,60 @@ class OptListVC: SFTableViewController {
             view.addTarget(self, action: #selector(editBtnClicked), for: .touchUpInside)
         }
     }()
+    private lazy var tableView: SFTableView = {
+        return SFTableView(frame: .zero, style: .grouped).then { view in
+            view.delegate = self
+            view.dataSource = self
+            view.separatorStyle = .none
+            view.register(cellType: OptAddCell.self)
+            view.register(cellType: OptListCell.self)
+        }
+    }()
+    private lazy var editView: OptListEditView = {
+        return OptListEditView().then { view in
+            view.isHidden = true
+        }
+    }()
     
-    // MARK: - func
+    private func customUI() {
+        view.addSubview(tableView)
+        view.addSubview(editView)
+        
+        tableView.snp.makeConstraints { make in
+            make.top.equalToSuperview()
+            make.leading.equalToSuperview()
+            make.trailing.equalToSuperview()
+        }
+        editView.snp.makeConstraints { make in
+            make.top.equalTo(tableView.snp.bottom)
+            make.leading.equalToSuperview()
+            make.trailing.equalToSuperview()
+            make.bottom.equalToSuperview()
+        }
+    }
+}
+
+// MARK: - Func
+extension OptListVC {
+    private func configHeaderRefresh() {
+        if isEdit {
+            tableView.headerRefreshBlock = nil
+        } else {
+            tableView.headerRefreshBlock = {
+                [weak self] in
+                self?.editBtnEnable(false)
+                self?.database_getList()
+            }
+        }
+    }
+    
+    private func showOrHideEditView() {
+        editView.isHidden = !isEdit
+        editView.snp.updateConstraints { make in
+            make.bottom.equalToSuperview().offset(isEdit ? 0 : 60)
+        }
+    }
+    
     private func addNew() {
         switch typeEnum {
         case .none:
@@ -119,16 +165,25 @@ extension OptListVC: UITableViewDelegate, UITableViewDataSource {
         return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return models.count + 1
+        if isEdit {
+            return models.count
+        } else {
+            return models.count + 1
+        }
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.row == models.count {
+        if !isEdit, indexPath.row == models.count {
             let cell = tableView.dequeueReusableCell(for: indexPath, cellType: OptAddCell.self)
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(for: indexPath, cellType: OptListCell.self)
             let model = models[indexPath.section]
             cell.model = model
+            cell.isEdit = isEdit
+            cell.selectBlcok = {
+                [weak self] _ in
+                self?.tableView.reloadData()
+            }
             return cell
         }
     }
@@ -155,7 +210,7 @@ extension OptListVC: UITableViewDelegate, UITableViewDataSource {
         return nil
     }
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 0.1
+        return 10
     }
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 0.1
@@ -165,7 +220,8 @@ extension OptListVC: UITableViewDelegate, UITableViewDataSource {
 // MARK: - Action
 extension OptListVC {
     @objc func editBtnClicked() {
-        
+        editBtn.isSelected.toggle()
+        isEdit = editBtn.isSelected
     }
 }
 

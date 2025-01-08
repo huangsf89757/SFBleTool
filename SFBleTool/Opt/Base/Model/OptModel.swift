@@ -37,6 +37,9 @@ final class OptModel: SFLocalDatanable, SFRemoteDatanable, WCDBSwift.TableCodabl
     var name: String?
     var itemValues: [Int: String]?
     var isActive: Bool? = false
+    
+    var selectable: Bool = true
+    var isSelected: Bool = false
 
     var typeEnum: OptType {
         set {
