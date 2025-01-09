@@ -51,7 +51,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Peripheral Connection Options"
+            "value" : "Peripheral Connection Option"
           }
         }
       }
@@ -227,7 +227,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Central Manager Initialization Options"
+            "value" : "Central Manager Initialization Option"
           }
         }
       }
@@ -293,7 +293,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Peripheral Scanning Options"
+            "value" : "Peripheral Scanning Option"
           }
         }
       }
@@ -426,6 +426,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "服务端(外设模式)"
+          }
+        }
+      }
+    },
+    "opt_config" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "选项配置"
+          }
+        }
+      }
+    },
+    "opt_config_save_msg" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "是否保存编辑内容？"
           }
         }
       }

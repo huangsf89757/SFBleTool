@@ -95,6 +95,8 @@ extension OptType {
     }
     
     static var codes: [Int] = [110, 120, 130, 200]
+    static var clientCodes: [Int] = [110, 120, 130]
+    static var serverCodes: [Int] = [200]
     
     init?(code: Int) {
         switch code {

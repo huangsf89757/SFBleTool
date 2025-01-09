@@ -30,8 +30,7 @@ class OptListVC: SFViewController {
     }
     private var models_saved = [OptModel]()
     private var models_delete = [OptModel]()
-    
-    var isEdit = false {
+    private var isEdit = false {
         didSet  {
             if isEdit {
                 models_saved = models

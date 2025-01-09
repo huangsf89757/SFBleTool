@@ -125,7 +125,7 @@ class PeripheralListVC: HomeVC {
     
     // MARK: override
     override func settingAction() {
-        let vc = ClientOptVC()
+        let vc = OptConfigVC()
         navigationController?.pushViewController(vc, animated: true)
     }
 }
