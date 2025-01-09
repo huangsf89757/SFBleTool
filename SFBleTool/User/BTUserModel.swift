@@ -23,9 +23,7 @@ import WCDBSwift
 // MARK: BTUserModel
 final class BTUserModel: UserDatanable, WCDBSwift.TableCodable {
     // MARK: Data
-    class var table: String {
-        return "user"
-    }
+    static let table: String = "user"
     var isAutoIncrement: Bool = true
     var lastInsertedRowID: Int64 = 0
     

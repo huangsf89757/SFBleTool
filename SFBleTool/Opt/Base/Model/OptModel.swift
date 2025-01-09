@@ -16,9 +16,8 @@ import WCDBSwift
 // MARK: - OptModel
 final class OptModel: SFLocalDatanable, SFRemoteDatanable, WCDBSwift.TableCodable {
     // MARK: Data
-    class var table: String {
-        return "option"
-    }
+    static let table: String = "option"
+    
     var isAutoIncrement: Bool = true
     var lastInsertedRowID: Int64 = 0
     
