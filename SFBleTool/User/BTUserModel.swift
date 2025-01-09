@@ -137,13 +137,13 @@ extension BTUserModel {
     ]
 }
 
-// MARK: - Describable
-extension BTUserModel: Describable {
+// MARK: - CustomStringConvertible
+extension BTUserModel: CustomStringConvertible {
     var description: String {
         let idL = idL
         let uid = uid
         let account = account ?? "<account>"
-        return "BTUserModel=>\(idL): \(account) \(uid)"
+        return "[BTUserModel]{\(idL): \(account) \(uid)}"
     }
 }
 

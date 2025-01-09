@@ -83,14 +83,14 @@ final class OptModel: SFLocalDatanable, SFRemoteDatanable, WCDBSwift.TableCodabl
     }
 }
 
-// MARK: - Describable
-extension OptModel: Describable {
+// MARK: - CustomStringConvertible
+extension OptModel: CustomStringConvertible {
     var description: String {
-        let idL = idL ?? "<idL>"
-        let code = typeEnum.code
+        let idL = idL
         let name = name ?? "<name>"
+        let code = typeEnum.code
         let itemValues = String(describing: itemValues ?? [:])
-        return "OptModel=>\(idL): \(name) \(code) \(itemValues)"
+        return "[OptModel]{\(idL): \(name) \(code) \(itemValues)}"
     }
 }
 
