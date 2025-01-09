@@ -71,7 +71,7 @@ final class OptModel: SFLocalDatanable, SFRemoteDatanable, WCDBSwift.TableCodabl
         case isActive
         
         public static let objectRelationalMapping = TableBinding(CodingKeys.self) {
-            BindColumnConstraint(orderL, isPrimary: true, isAutoIncrement: true)
+            BindColumnConstraint(orderL, isPrimary: true, orderBy: .ascending, isAutoIncrement: true, isNotNull: true, defaultTo: 0)
             BindColumnConstraint(idL, isUnique: true)
             BindIndex(name, namedWith: "_nameIndex")
         }

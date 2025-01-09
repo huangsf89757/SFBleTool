@@ -83,7 +83,7 @@ final class BTUserModel: UserDatanable, WCDBSwift.TableCodable {
         case page
         
         public static let objectRelationalMapping = TableBinding(CodingKeys.self) {
-            BindColumnConstraint(orderL, isPrimary: true, orderBy: .ascending, isAutoIncrement: true, isNotNull: true)
+            BindColumnConstraint(orderL, isPrimary: true, orderBy: .ascending, isAutoIncrement: true, isNotNull: true, defaultTo: 0)
             BindColumnConstraint(idL, isUnique: true)
             BindIndex(uid, namedWith: "_uidIndex", isUnique: true)
         }
