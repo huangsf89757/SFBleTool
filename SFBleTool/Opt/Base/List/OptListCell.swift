@@ -114,7 +114,7 @@ class OptListCell: SFCardTableViewCell {
     }
     func isEditDidChanged() {
         if isEdit {
-            cardInset = UIEdgeInsets(top: 0, left: 60, bottom: 0, right: 10)
+            cardInset = UIEdgeInsets(top: 10, left: 60, bottom: 0, right: 10)
             cardView.isUserInteractionEnabled = false
             selectBtn.isHidden = false
             detailIcon.isHidden = true
@@ -122,7 +122,7 @@ class OptListCell: SFCardTableViewCell {
                 make.trailing.equalToSuperview().offset(20)
             }
         } else {
-            cardInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
+            cardInset = UIEdgeInsets(top: 10, left: 10, bottom: 0, right: 10)
             cardView.isUserInteractionEnabled = true
             selectBtn.isHidden = true
             detailIcon.isHidden = false

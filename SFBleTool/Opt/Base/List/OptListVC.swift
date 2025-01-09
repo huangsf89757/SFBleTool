@@ -28,10 +28,20 @@ class OptListVC: SFViewController {
             reloadData()
         }
     }
+    private var models_saved = [OptModel]()
+    private var models_delete = [OptModel]()
+    
     var isEdit = false {
         didSet  {
+            if isEdit {
+                models_saved = models
+                models_delete.removeAll()
+            } else {
+                models_saved.removeAll()
+            }
+            configEditBtn()
             configHeaderRefresh()
-            showOrHideEditView()
+            configEditView()
             reloadData()
         }
     }
@@ -42,8 +52,9 @@ class OptListVC: SFViewController {
         navigationItem.title = typeEnum.list
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: editBtn)
         customUI()
+        configEditBtn()
         configHeaderRefresh()
-        showOrHideEditView()
+        configEditView()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -76,6 +87,19 @@ class OptListVC: SFViewController {
                 [weak self] isSelectAll in
                 self?.selectAllOrNot(isSelectAll)
             }
+            view.deleteBlcok = {
+                [weak self] in
+                var models_delete = [OptModel]()
+                self?.models.removeAll { model in
+                    let isSelected = model.isSelected
+                    if isSelected {
+                        models_delete.append(model)
+                    }
+                    return isSelected
+                }
+                self?.models_delete.append(contentsOf: models_delete)
+                self?.reloadData()
+            }
         }
     }()
     
@@ -95,10 +119,30 @@ class OptListVC: SFViewController {
             make.bottom.equalToSuperview()
         }
     }
+    
+    // MARK: back
+    override func willBack() -> (will: Bool, animated: Bool) {
+        if isEdit {
+            saveAlert(cancel: { [weak self] alertView in
+                self?.goBack(animated: true)
+                return true
+            }, sure: { [weak self] alertView in
+                self?.goBack(animated: true)
+                return true
+            })
+            return (false, false)
+        } else {
+            return super.willBack()
+        }
+    }
 }
 
 // MARK: - Func
 extension OptListVC {
+    private func configEditBtn() {
+        editBtn.isSelected = isEdit
+    }
+    
     private func configHeaderRefresh() {
         if isEdit {
             tableView.headerRefreshBlock = nil
@@ -111,7 +155,15 @@ extension OptListVC {
         }
     }
     
-    private func showOrHideEditView() {
+    private func configEditView() {
+        if isEdit {
+            models.forEach { model in
+                model.isSelected = false
+            }
+            editView.selectable = models.count > 0
+            editView.deletable = false
+        }
+        checkSelectAllOrNot()
         editView.isHidden = !isEdit
         editView.snp.updateConstraints { make in
             make.bottom.equalToSuperview().offset(isEdit ? 0 : 60)
@@ -119,6 +171,11 @@ extension OptListVC {
     }
     
     private func editBtnEnable(_ enable: Bool) {
+        if isEdit {
+            editBtn.isHidden = false
+        } else {
+            editBtn.isHidden = models.count == 0
+        }
         editBtn.isUserInteractionEnabled = enable
         editBtn.alpha = enable ? 1 : 0.3
     }
@@ -128,19 +185,23 @@ extension OptListVC {
 extension OptListVC {
     private func checkSelectAllOrNot() {
         var isSelectAll = true
+        var deletable = false
         for model in models {
-            if !model.isSelected {
+            if model.isSelected {
+                deletable = true
+            } else {
                 isSelectAll = false
-                break
             }
         }
         editView.isSelectAll = isSelectAll
+        editView.deletable = deletable
     }
     
     private func selectAllOrNot(_ isSelected: Bool) {
         models.forEach { model in
             model.isSelected = isSelected
         }
+        editView.deletable = isSelected
         tableView.reloadData()
     }
 }
@@ -231,7 +292,7 @@ extension OptListVC: UITableViewDelegate, UITableViewDataSource {
         return nil
     }
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 10
+        return 0.1
     }
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 0.1
@@ -240,9 +301,40 @@ extension OptListVC: UITableViewDelegate, UITableViewDataSource {
 
 // MARK: - Action
 extension OptListVC {
-    @objc func editBtnClicked() {
-        editBtn.isSelected.toggle()
-        isEdit = editBtn.isSelected
+    @objc private func editBtnClicked() {
+        if isEdit {
+            saveAlert(cancel: nil, sure: nil)
+        } else {
+            isEdit = true
+        }
+    }
+    
+    private func saveAlert(cancel: ((SFAlertView) -> Bool)?, sure: ((SFAlertView) -> Bool)?) {
+        SFAlert.config(title: SFText.UI.com_save, msg: SFText.Main.opt_list_save_msg)
+        SFAlert.addCancelAction(title: SFText.UI.com_cancel) { [weak self] alertView in
+            self?.models = self?.models_saved ?? []
+            self?.isEdit = false
+            if let cancel = cancel {
+                return cancel(alertView)
+            } else {
+                return true
+            }
+        }
+        SFAlert.addConfirmAction(title: SFText.UI.com_sure) { [weak self] alertView in
+            let success = self?.database_remove() ?? false
+            if success {
+                SFHud.show(.success, msg: SFText.UI.com_save_success, stay: 2)
+                self?.isEdit = false
+            } else {
+                SFHud.show(.failure, msg: SFText.UI.com_save_failure, stay: 2)
+            }
+            if let sure = sure {
+                return sure(alertView)
+            } else {
+                return true
+            }
+        }
+        SFAlert.show()
     }
 }
 
@@ -283,6 +375,40 @@ extension OptListVC {
             self.reloadData()
         } catch let error {
             SFDatabaseLogger.info(port: .client ,tag: logTag, step: .failure, type: .find, msgs: error.localizedDescription)
+        }
+    }
+    
+    private func database_remove() -> Bool {
+        let logTag = "删除OptModels"
+        SFDatabaseLogger.info(port: .client, tag: logTag, step: .begin, type: .delete, msgs: models)
+        let idLs = models_delete.map { model in
+            model.idL
+        }
+        guard idLs.count > 0 else {
+            SFDatabaseLogger.info(port: .client ,tag: logTag, step: .success, type: .delete, msgs: "idLs.count=0")
+            return true
+        }
+        guard let activeUser = UserModel.active else {
+            SFDatabaseLogger.info(port: .client ,tag: logTag, step: .failure, type: .delete, msgs: "activeUser=nil")
+            return false
+        }
+        let uid = activeUser.uid
+        guard let userDb = SFClientDatabase.getUserDb(with: uid) else {
+            SFDatabaseLogger.info(port: .client ,tag: logTag, step: .failure, type: .delete, msgs: "userDb=nil")
+            return false
+        }
+        guard typeEnum != .none else {
+            SFDatabaseLogger.info(port: .client ,tag: logTag, step: .failure, type: .delete, msgs: "type=none")
+            return false
+        }
+        do {
+            let condition = OptModel.Properties.idL.in(idLs)
+            try userDb.delete(fromTable: OptModel.table, where: condition)
+            SFDatabaseLogger.info(port: .client ,tag: logTag, step: .success, type: .delete, msgs: "models.count=\(models.count)")
+            return true
+        } catch let error {
+            SFDatabaseLogger.info(port: .client ,tag: logTag, step: .failure, type: .delete, msgs: error.localizedDescription)
+            return false
         }
     }
 }

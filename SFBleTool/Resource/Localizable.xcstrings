@@ -496,6 +496,17 @@
         }
       }
     },
+    "opt_list_save_msg" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "是否保存编辑内容？"
+          }
+        }
+      }
+    },
     "opt_list_using" : {
       "extractionState" : "manual",
       "localizations" : {

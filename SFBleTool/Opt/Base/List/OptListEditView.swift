@@ -21,7 +21,17 @@ class OptListEditView: SFView {
     // MARK: - data
     var isSelectAll = false {
         didSet {
-            selectBtn.isSelected = isSelectAll
+            updateSelectUI()
+        }
+    }
+    var selectable = false {
+        didSet {
+            updateSelectUI()
+        }
+    }
+    var deletable = false {
+        didSet {
+            updateDeleteUI()
         }
     }
     
@@ -29,6 +39,8 @@ class OptListEditView: SFView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         customUI()
+        updateSelectUI()
+        updateDeleteUI()
     }
     
     // MARK: ui
@@ -49,7 +61,7 @@ class OptListEditView: SFView {
     }()
     private lazy var deleteBtn: SFButton = {
         return SFButton().then { view in
-            view.backgroundColor = .red
+            view.backgroundColor = SFColor.UI.delete
             view.setTitleColor(.white, for: .normal)
             view.setTitle(SFText.UI.com_delete, for: .normal)
             view.hitInsets = UIEdgeInsets(top: -10, left: -10, bottom: -10, right: -10)
@@ -86,6 +98,18 @@ class OptListEditView: SFView {
     }
 }
 
+// MARK: - Func
+extension OptListEditView {
+    private func updateSelectUI() {
+        selectBtn.isUserInteractionEnabled = selectable
+        selectBtn.isSelected = isSelectAll
+    }
+    private func updateDeleteUI() {
+        deleteBtn.isUserInteractionEnabled = deletable
+        deleteBtn.backgroundColor = deletable ? SFColor.UI.delete : SFColor.UI.disabled
+    }
+}
+
 // MARK: - Action
 extension OptListEditView {
     @objc private func selectBtnClicked() {
@@ -94,6 +118,6 @@ extension OptListEditView {
     }
     
     @objc private func deleteBtnClicked() {
-        
+        deleteBlcok?()
     }
 }
