@@ -143,7 +143,7 @@ extension BTUserModel: CustomStringConvertible {
         let idL = idL
         let uid = uid
         let account = account ?? "<account>"
-        return "[BTUserModel]{\(idL): \(account) \(uid)}"
+        return "[BTUserModel]{idL:\(idL) account:\(account) uid:\(uid)}"
     }
 }
 

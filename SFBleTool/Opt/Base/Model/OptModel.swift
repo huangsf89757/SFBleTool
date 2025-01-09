@@ -90,7 +90,7 @@ extension OptModel: CustomStringConvertible {
         let name = name ?? "<name>"
         let code = typeEnum.code
         let itemValues = String(describing: itemValues ?? [:])
-        return "[OptModel]{\(idL): \(name) \(code) \(itemValues)}"
+        return "[OptModel]{idL:\(idL) name:\(name) code:\(code) itemValues:\(itemValues)}"
     }
 }
 
