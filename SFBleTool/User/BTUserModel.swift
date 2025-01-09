@@ -85,16 +85,9 @@ final class BTUserModel: UserDatanable, WCDBSwift.TableCodable {
         case page
         
         public static let objectRelationalMapping = TableBinding(CodingKeys.self) {
-            BindColumnConstraint(orderL, isPrimary: true, orderBy: .ascending, isAutoIncrement: true, isNotNull: true, defaultTo: 0)
-            BindColumnConstraint(idL, isUnique: true, defaultTo: UUID().uuidString)
+            BindColumnConstraint(orderL, isPrimary: true, orderBy: .ascending, isAutoIncrement: true, isNotNull: true)
+            BindColumnConstraint(idL, isUnique: true)
             BindIndex(uid, namedWith: "_uidIndex", isUnique: true)
-            // default
-            BindColumnConstraint(createTimeL, defaultTo: SFDateFormatter.yyyyMMddHHmmssZ.string(from: Date()))
-            BindColumnConstraint(updateTimeL, defaultTo: SFDateFormatter.yyyyMMddHHmmssZ.string(from: Date()))
-            BindColumnConstraint(uid, defaultTo: UUID().uuidString)
-            BindColumnConstraint(state, defaultTo: 0)
-            BindColumnConstraint(gender, defaultTo: 0)
-            BindColumnConstraint(page, defaultTo: 0)
         }
     }
 }

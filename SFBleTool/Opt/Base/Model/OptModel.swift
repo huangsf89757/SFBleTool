@@ -72,13 +72,9 @@ final class OptModel: SFLocalDatanable, SFRemoteDatanable, WCDBSwift.TableCodabl
         case isActive
         
         public static let objectRelationalMapping = TableBinding(CodingKeys.self)  {
-            BindColumnConstraint(orderL, isPrimary: true, orderBy: .ascending, isAutoIncrement: true, isNotNull: true, defaultTo: 0)
-            BindColumnConstraint(idL, isUnique: true, defaultTo: UUID().uuidString)
+            BindColumnConstraint(orderL, isPrimary: true, orderBy: .ascending, isAutoIncrement: true, isNotNull: true)
+            BindColumnConstraint(idL, isUnique: true)
             BindIndex(name, namedWith: "_nameIndex")
-            // default
-            BindColumnConstraint(createTimeL, defaultTo: SFDateFormatter.yyyyMMddHHmmssZ.string(from: Date()))
-            BindColumnConstraint(updateTimeL, defaultTo: SFDateFormatter.yyyyMMddHHmmssZ.string(from: Date()))
-            BindColumnConstraint(isActive, defaultTo: false)
         }
     }
 }
