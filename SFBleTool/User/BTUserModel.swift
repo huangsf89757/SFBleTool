@@ -28,7 +28,7 @@ final class BTUserModel: UserDatanable, WCDBSwift.TableCodable {
     var lastInsertedRowID: Int64 = 0
     
     // MARK: SFLocalDatanable
-    var orderL: Int = 0
+    var orderL: Int?
     var idL: String = UUID().uuidString
     var createTimeL: String = SFDateFormatter.yyyyMMddHHmmssZ.string(from: Date())
     var updateTimeL: String = SFDateFormatter.yyyyMMddHHmmssZ.string(from: Date())

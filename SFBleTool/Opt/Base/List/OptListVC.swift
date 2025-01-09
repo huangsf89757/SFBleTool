@@ -124,7 +124,7 @@ extension OptListVC {
     }
 }
 
-// MARK: - Seletc
+// MARK: - Select
 extension OptListVC {
     private func checkSelectAllOrNot() {
         var isSelectAll = true
@@ -150,7 +150,6 @@ extension OptListVC {
    private func addNewOpt() {
        let vc = OptDetailVC()
        let optModel = OptModel()
-       optModel.defaultL()
        optModel.typeEnum = typeEnum
        
         switch typeEnum {
@@ -202,7 +201,7 @@ extension OptListVC: UITableViewDelegate, UITableViewDataSource {
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(for: indexPath, cellType: OptListCell.self)
-            let model = models[indexPath.section]
+            let model = models[indexPath.row]
             cell.model = model
             cell.isEdit = isEdit
             cell.selectBlcok = {

@@ -22,7 +22,7 @@ final class OptModel: SFLocalDatanable, SFRemoteDatanable, WCDBSwift.TableCodabl
     var lastInsertedRowID: Int64 = 0
     
     // MARK: SFLocalDatanable
-    var orderL: Int = 0
+    var orderL: Int?
     var idL: String = UUID().uuidString
     var createTimeL: String = SFDateFormatter.yyyyMMddHHmmssZ.string(from: Date())
     var updateTimeL: String = SFDateFormatter.yyyyMMddHHmmssZ.string(from: Date())
@@ -70,8 +70,8 @@ final class OptModel: SFLocalDatanable, SFRemoteDatanable, WCDBSwift.TableCodabl
         case itemValues
         case isActive
         
-        public static let objectRelationalMapping = TableBinding(CodingKeys.self)  {
-            BindColumnConstraint(orderL, isPrimary: true, orderBy: .ascending, isAutoIncrement: true, isNotNull: true)
+        public static let objectRelationalMapping = TableBinding(CodingKeys.self) {
+            BindColumnConstraint(orderL, isPrimary: true, isAutoIncrement: true)
             BindColumnConstraint(idL, isUnique: true)
             BindIndex(name, namedWith: "_nameIndex")
         }
@@ -141,17 +141,14 @@ extension OptModel {
 // MARK: - default
 extension OptModel {
     func default_clientInitial() {
-        defaultL()
         typeEnum = .client(.initial)
         valuesToModels()
     }
     func default_clientScan() {
-        defaultL()
         typeEnum = .client(.scan)
         valuesToModels()
     }
     func default_clientConnect() {
-        defaultL()
         typeEnum = .client(.connect)
         valuesToModels()
     }

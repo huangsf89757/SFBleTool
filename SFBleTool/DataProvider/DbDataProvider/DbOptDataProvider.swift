@@ -122,7 +122,6 @@ extension DbDataProvider: OptApi {
             return (success: false, code: .badRequest, data: nil, message: nil)
         }
         let model = OptModel()
-        model.defaultL()
         model.typeEnum = typeEnum
         model.name = name
         if let itemValues = opt["itemValues"] as? [Int: String] {

@@ -58,7 +58,7 @@ extension OptModel {
         let json = JSON(dict as Any)
         if json.isEmpty { return }
         
-        orderL = json[OptKey.orderL].intValue
+        orderL = json[OptKey.orderL].int
         idL = json[OptKey.idL].stringValue
         createTimeL = json[OptKey.createTimeL].stringValue
         updateTimeL = json[OptKey.updateTimeL].stringValue
@@ -78,7 +78,7 @@ extension OptModel {
     public func toDict() -> [String: Any] {
         var json = JSON()
         
-        json[OptKey.orderL].intValue = orderL
+        json[OptKey.orderL].int = orderL
         json[OptKey.idL].stringValue = idL
         json[OptKey.createTimeL].stringValue = createTimeL
         json[OptKey.updateTimeL].stringValue = updateTimeL

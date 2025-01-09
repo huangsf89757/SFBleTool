@@ -28,7 +28,6 @@ extension SFDatabase {
             return
         }
         let user = BTUserModel()
-        user.defaultL()
         user.defaultR()
         user.uid = UUID().uuidString
         user.account = "SF0001"

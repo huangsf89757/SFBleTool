@@ -73,7 +73,7 @@ extension BTUserModel {
         let json = JSON(dict as Any)
         if json.isEmpty { return }
         
-        orderL = json[BTUserKey.orderL].intValue
+        orderL = json[BTUserKey.orderL].int
         idL = json[BTUserKey.idL].stringValue
         createTimeL = json[BTUserKey.createTimeL].stringValue
         updateTimeL = json[BTUserKey.updateTimeL].stringValue
@@ -102,7 +102,7 @@ extension BTUserModel {
     public func toDict() -> [String: Any] {
         var json = JSON()
         
-        json[BTUserKey.orderL].intValue = orderL
+        json[BTUserKey.orderL].int = orderL
         json[BTUserKey.idL].stringValue = idL
         json[BTUserKey.createTimeL].stringValue = createTimeL
         json[BTUserKey.updateTimeL].stringValue = updateTimeL
