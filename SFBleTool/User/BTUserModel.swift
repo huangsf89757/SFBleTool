@@ -30,10 +30,10 @@ final class BTUserModel: UserDatanable, WCDBSwift.TableCodable {
     var lastInsertedRowID: Int64 = 0
     
     // MARK: SFLocalDatanable
-    var orderL: Int?
-    var idL: String?
-    var createTimeL: String?
-    var updateTimeL: String?
+    var orderL: Int = 0
+    var idL: String = UUID().uuidString
+    var createTimeL: String = SFDateFormatter.yyyyMMddHHmmssZ.string(from: Date())
+    var updateTimeL: String = SFDateFormatter.yyyyMMddHHmmssZ.string(from: Date())
     
     // MARK: SFRemoteDatanable
     var orderR: Int?
@@ -42,12 +42,12 @@ final class BTUserModel: UserDatanable, WCDBSwift.TableCodable {
     var updateTimeR: String?
     
     // MARK: UserDatanable
-    var uid: String? = UUID().uuidString
+    var uid: String = UUID().uuidString
     var account: String?
-    var state: Int?
+    var state: Int = 0
     var pwd: String?
     var nickname: String?
-    var gender: Int? = 0
+    var gender: Int = 0
     var avatar: String?
     var motto: String?
     var phone: String?
@@ -60,21 +60,14 @@ final class BTUserModel: UserDatanable, WCDBSwift.TableCodable {
     /// 0：entrance
     /// 1：client
     /// 2：server
-    var page: Int? = 0
+    var page: Int = 0
     
     /// CodingKeys
     enum CodingKeys: String, CodingTableKey {
         public typealias Root = BTUserModel
         
-        case orderL
-        case idL
-        case createTimeL
-        case updateTimeL
-        
-        case orderR
-        case idR
-        case createTimeR
-        case updateTimeR
+        case orderL, idL, createTimeL, updateTimeL
+        case orderR, idR, createTimeR, updateTimeR
         
         case uid
         case account
@@ -93,8 +86,15 @@ final class BTUserModel: UserDatanable, WCDBSwift.TableCodable {
         
         public static let objectRelationalMapping = TableBinding(CodingKeys.self) {
             BindColumnConstraint(orderL, isPrimary: true, orderBy: .ascending, isAutoIncrement: true, isNotNull: true, defaultTo: 0)
-            BindColumnConstraint(idL, isUnique: true)
+            BindColumnConstraint(idL, isUnique: true, defaultTo: UUID().uuidString)
             BindIndex(uid, namedWith: "_uidIndex", isUnique: true)
+            // default
+            BindColumnConstraint(createTimeL, defaultTo: SFDateFormatter.yyyyMMddHHmmssZ.string(from: Date()))
+            BindColumnConstraint(updateTimeL, defaultTo: SFDateFormatter.yyyyMMddHHmmssZ.string(from: Date()))
+            BindColumnConstraint(uid, defaultTo: UUID().uuidString)
+            BindColumnConstraint(state, defaultTo: 0)
+            BindColumnConstraint(gender, defaultTo: 0)
+            BindColumnConstraint(page, defaultTo: 0)
         }
     }
 }
@@ -140,8 +140,8 @@ extension BTUserModel {
 // MARK: - Describable
 extension BTUserModel: Describable {
     var description: String {
-        let idL = idL ?? "<idL>"
-        let uid = uid ?? "<uid>"
+        let idL = idL
+        let uid = uid
         let account = account ?? "<account>"
         return "BTUserModel=>\(idL): \(account) \(uid)"
     }

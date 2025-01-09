@@ -6,6 +6,8 @@
 //
 
 import Foundation
+// Basic
+import SFBase
 // Business
 import SFBusiness
 // Third
@@ -21,10 +23,10 @@ final class OptModel: SFLocalDatanable, SFRemoteDatanable, WCDBSwift.TableCodabl
     var lastInsertedRowID: Int64 = 0
     
     // MARK: SFLocalDatanable
-    var orderL: Int?
-    var idL: String?
-    var createTimeL: String?
-    var updateTimeL: String?
+    var orderL: Int = 0
+    var idL: String = UUID().uuidString
+    var createTimeL: String = SFDateFormatter.yyyyMMddHHmmssZ.string(from: Date())
+    var updateTimeL: String = SFDateFormatter.yyyyMMddHHmmssZ.string(from: Date())
     
     // MARK: SFRemoteDatanable
     var orderR: Int?
@@ -36,8 +38,9 @@ final class OptModel: SFLocalDatanable, SFRemoteDatanable, WCDBSwift.TableCodabl
     var type: Int?
     var name: String?
     var itemValues: [Int: String]?
-    var isActive: Bool? = false
+    var isActive: Bool = false
     
+    // MARK: Select
     var selectable: Bool = true
     var isSelected: Bool = false
 
@@ -60,15 +63,8 @@ final class OptModel: SFLocalDatanable, SFRemoteDatanable, WCDBSwift.TableCodabl
     enum CodingKeys: String, CodingTableKey {
         public typealias Root = OptModel
         
-        case orderL
-        case idL
-        case createTimeL
-        case updateTimeL
-        
-        case orderR
-        case idR
-        case createTimeR
-        case updateTimeR
+        case orderL, idL, createTimeL, updateTimeL
+        case orderR, idR, createTimeR, updateTimeR
         
         case type
         case name
@@ -77,8 +73,12 @@ final class OptModel: SFLocalDatanable, SFRemoteDatanable, WCDBSwift.TableCodabl
         
         public static let objectRelationalMapping = TableBinding(CodingKeys.self)  {
             BindColumnConstraint(orderL, isPrimary: true, orderBy: .ascending, isAutoIncrement: true, isNotNull: true, defaultTo: 0)
-            BindColumnConstraint(idL, isUnique: true)
+            BindColumnConstraint(idL, isUnique: true, defaultTo: UUID().uuidString)
             BindIndex(name, namedWith: "_nameIndex")
+            // default
+            BindColumnConstraint(createTimeL, defaultTo: SFDateFormatter.yyyyMMddHHmmssZ.string(from: Date()))
+            BindColumnConstraint(updateTimeL, defaultTo: SFDateFormatter.yyyyMMddHHmmssZ.string(from: Date()))
+            BindColumnConstraint(isActive, defaultTo: false)
         }
     }
 }

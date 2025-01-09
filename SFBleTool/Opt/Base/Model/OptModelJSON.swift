@@ -58,10 +58,10 @@ extension OptModel {
         let json = JSON(dict as Any)
         if json.isEmpty { return }
         
-        orderL = json[OptKey.orderL].int
-        idL = json[OptKey.idL].string
-        createTimeL = json[OptKey.createTimeL].string
-        updateTimeL = json[OptKey.updateTimeL].string
+        orderL = json[OptKey.orderL].intValue
+        idL = json[OptKey.idL].stringValue
+        createTimeL = json[OptKey.createTimeL].stringValue
+        updateTimeL = json[OptKey.updateTimeL].stringValue
         
         orderR = json[OptKey.orderR].int
         idR = json[OptKey.idR].string
@@ -70,7 +70,7 @@ extension OptModel {
         
         type = json[OptKey.type].int
         name = json[OptKey.name].string
-        isActive = json[OptKey.isActive].bool
+        isActive = json[OptKey.isActive].boolValue
 //        itemValues = json[OptKey.itemValues].string // FIXME
     }
     
@@ -78,10 +78,10 @@ extension OptModel {
     public func toDict() -> [String: Any] {
         var json = JSON()
         
-        json[OptKey.orderL].int = orderL
-        json[OptKey.idL].string = idL
-        json[OptKey.createTimeL].string = createTimeL
-        json[OptKey.updateTimeL].string = updateTimeL
+        json[OptKey.orderL].intValue = orderL
+        json[OptKey.idL].stringValue = idL
+        json[OptKey.createTimeL].stringValue = createTimeL
+        json[OptKey.updateTimeL].stringValue = updateTimeL
 
         json[OptKey.orderR].int = orderR
         json[OptKey.idR].string = idR
@@ -90,7 +90,7 @@ extension OptModel {
 
         json[OptKey.type].int = type
         json[OptKey.name].string = name
-        json[OptKey.isActive].bool = isActive
+        json[OptKey.isActive].boolValue = isActive
         
         return json.dictionaryObject ?? [:]
     }

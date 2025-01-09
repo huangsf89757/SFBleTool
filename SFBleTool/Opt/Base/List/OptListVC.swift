@@ -263,10 +263,7 @@ extension OptListVC {
             SFDatabaseLogger.info(port: .client ,tag: logTag, step: .failure, type: .find, msgs: "activeUser=nil")
             return
         }
-        guard let uid = activeUser.uid else {
-            SFDatabaseLogger.info(port: .client ,tag: logTag, step: .failure, type: .find, msgs: "uid=nil")
-            return
-        }
+        let uid = activeUser.uid
         guard let userDb = SFClientDatabase.getUserDb(with: uid) else {
             SFDatabaseLogger.info(port: .client ,tag: logTag, step: .failure, type: .find, msgs: "userDb=nil")
             return

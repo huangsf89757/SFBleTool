@@ -41,7 +41,8 @@ extension SceneDelegate {
             let vc = SFUser.SignVC()
             vc.signInSuccessBlock = {
                 [weak self] user in
-                guard let user = user as? BTUserModel, let uid = user.uid else { return }
+                guard let user = user as? BTUserModel else { return }
+                let uid = user.uid
                 let success = SFClientDatabase.setActiveUser(user)
                 if success {
                     SFServerDatabase.createUserTables(with: uid)

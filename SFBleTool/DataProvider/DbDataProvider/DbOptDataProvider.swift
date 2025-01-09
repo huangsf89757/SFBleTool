@@ -31,10 +31,7 @@ extension DbDataProvider: OptApi {
             SFDpLogger.debug(port: .client ,tag: logTag, step: .failure, msgs: "activeUser=nil")
             return (success: false, code: .unauthorized, data: nil, message: nil)
         }
-        guard let uid = activeUser.uid else {
-            SFDpLogger.debug(port: .client ,tag: logTag, step: .failure, msgs: "uid=nil")
-            return (success: false, code: .unauthorized, data: nil, message: nil)
-        }
+        let uid = activeUser.uid
         guard let userDb = SFClientDatabase.getUserDb(with: uid) else {
             SFDpLogger.debug(port: .client ,tag: logTag, step: .failure, msgs: "userDb=nil")
             return (success: false, code: .serverError, data: nil, message: nil)
@@ -72,10 +69,7 @@ extension DbDataProvider: OptApi {
             SFDpLogger.debug(port: .client ,tag: logTag, step: .failure, msgs: "activeUser=nil")
             return (success: false, code: .unauthorized, data: nil, message: nil)
         }
-        guard let uid = activeUser.uid else {
-            SFDpLogger.debug(port: .client ,tag: logTag, step: .failure, msgs: "uid=nil")
-            return (success: false, code: .unauthorized, data: nil, message: nil)
-        }
+        let uid = activeUser.uid
         guard let userDb = SFClientDatabase.getUserDb(with: uid) else {
             SFDpLogger.debug(port: .client ,tag: logTag, step: .failure, msgs: "userDb=nil")
             return (success: false, code: .serverError, data: nil, message: nil)
@@ -110,10 +104,7 @@ extension DbDataProvider: OptApi {
             SFDpLogger.debug(port: .client ,tag: logTag, step: .failure, msgs: "activeUser=nil")
             return (success: false, code: .unauthorized, data: nil, message: nil)
         }
-        guard let uid = activeUser.uid else {
-            SFDpLogger.debug(port: .client ,tag: logTag, step: .failure, msgs: "uid=nil")
-            return (success: false, code: .unauthorized, data: nil, message: nil)
-        }
+        let uid = activeUser.uid
         guard let userDb = SFClientDatabase.getUserDb(with: uid) else {
             SFDpLogger.debug(port: .client ,tag: logTag, step: .failure, msgs: "userDb=nil")
             return (success: false, code: .serverError, data: nil, message: nil)
@@ -161,10 +152,7 @@ extension DbDataProvider: OptApi {
             SFDpLogger.debug(port: .client ,tag: logTag, step: .failure, msgs: "activeUser=nil")
             return (success: false, code: .unauthorized, data: nil, message: nil)
         }
-        guard let uid = activeUser.uid else {
-            SFDpLogger.debug(port: .client ,tag: logTag, step: .failure, msgs: "uid=nil")
-            return (success: false, code: .unauthorized, data: nil, message: nil)
-        }
+        let uid = activeUser.uid
         guard let userDb = SFClientDatabase.getUserDb(with: uid) else {
             SFDpLogger.debug(port: .client ,tag: logTag, step: .failure, msgs: "userDb=nil")
             return (success: false, code: .serverError, data: nil, message: nil)

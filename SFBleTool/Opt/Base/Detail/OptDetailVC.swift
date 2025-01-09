@@ -206,10 +206,7 @@ extension OptDetailVC {
             SFDatabaseLogger.info(port: .client ,tag: logTag, step: .failure, type: .add, msgs: "activeUser=nil")
             return false
         }
-        guard let uid = activeUser.uid else {
-            SFDatabaseLogger.info(port: .client ,tag: logTag, step: .failure, type: .add, msgs: "uid=nil")
-            return false
-        }
+        let uid = activeUser.uid
         guard let userDb = SFClientDatabase.getUserDb(with: uid) else {
             SFDatabaseLogger.info(port: .client ,tag: logTag, step: .failure, type: .add, msgs: "userDb=nil")
             return false
@@ -235,10 +232,7 @@ extension OptDetailVC {
             SFDatabaseLogger.info(port: .client ,tag: logTag, step: .failure, type: .update, msgs: "activeUser=nil")
             return false
         }
-        guard let uid = activeUser.uid else {
-            SFDatabaseLogger.info(port: .client ,tag: logTag, step: .failure, type: .update, msgs: "uid=nil")
-            return false
-        }
+        let uid = activeUser.uid
         guard let userDb = SFClientDatabase.getUserDb(with: uid) else {
             SFDatabaseLogger.info(port: .client ,tag: logTag, step: .failure, type: .update, msgs: "userDb=nil")
             return false
@@ -247,10 +241,7 @@ extension OptDetailVC {
             SFDatabaseLogger.info(port: .client ,tag: logTag, step: .failure, type: .update, msgs: "type=none")
             return false
         }
-        guard let idL = model.idL else {
-            SFDatabaseLogger.info(port: .client ,tag: logTag, step: .failure, type: .update, msgs: "idL=nil")
-            return false
-        }
+        let idL = model.idL
         do {
             let condition = OptModel.Properties.idL.is(idL)
             try userDb.update(table: OptModel.table, on: OptModel.Properties.all, with: model, where: condition)

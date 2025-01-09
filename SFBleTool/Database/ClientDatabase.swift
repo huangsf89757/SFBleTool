@@ -93,10 +93,7 @@ extension SFClientDatabase {
     static func updateUser(_ user: BTUserModel) -> Bool {
         let logTag = "更新当前登录用户"
         SFDatabaseLogger.info(port: .client, tag: logTag, step: .begin, type: .update, msgs: "")
-        guard let uid = user.uid else {
-            SFDatabaseLogger.error(port: .client, tag: logTag, step: .failure, type: .update, msgs: "uid=nil")
-            return false
-        }
+        let uid = user.uid
         guard let appDb = getAppDb() else {
             SFDatabaseLogger.error(port: .client, tag: logTag, step: .failure, type: .update, msgs: "appDb=nil")
             return false
