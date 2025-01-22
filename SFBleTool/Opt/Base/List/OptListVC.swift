@@ -282,7 +282,7 @@ extension OptListVC: UITableViewDelegate, UITableViewDataSource {
         }
     }
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        self.tableView.card(cell: cell, at: indexPath)
+        SFCardStyleManager.updateCardPath(for: cell, at: indexPath, in: tableView)
     }
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         return nil

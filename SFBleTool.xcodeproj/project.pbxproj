@@ -46,6 +46,7 @@
 		DD6C32272D100098009AE2D1 /* DbOptDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6C32262D100098009AE2D1 /* DbOptDataProvider.swift */; };
 		DD7CE2062D2FB54200DF7742 /* OptConfigVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7CE2052D2FB54200DF7742 /* OptConfigVC.swift */; };
 		DD7CE2082D2FB55000DF7742 /* OptConfigCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7CE2072D2FB55000DF7742 /* OptConfigCell.swift */; };
+		DD95EA322D324B93009551A4 /* OptListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD95EA312D324B93009551A4 /* OptListViewController.swift */; };
 		DDA6489D2C619F5100F01858 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA6489C2C619F5100F01858 /* AppDelegate.swift */; };
 		DDA6489F2C619F5100F01858 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA6489E2C619F5100F01858 /* SceneDelegate.swift */; };
 		DDA648A42C619F5100F01858 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = DDA648A32C619F5100F01858 /* Base */; };
@@ -58,6 +59,8 @@
 		DDA648CF2C61A3DE00F01858 /* PeripheralListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA648CE2C61A3DE00F01858 /* PeripheralListVC.swift */; };
 		DDA648D12C61A3F000F01858 /* CentralListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA648D02C61A3F000F01858 /* CentralListVC.swift */; };
 		DDA648D62C61A86D00F01858 /* SFEntranceOptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA648D52C61A86D00F01858 /* SFEntranceOptView.swift */; };
+		DDABDC992D40B8F9009DE367 /* OptListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDABDC982D40B8F9009DE367 /* OptListModel.swift */; };
+		DDABDC9B2D40BDAC009DE367 /* OptionListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDABDC9A2D40BDAC009DE367 /* OptionListCell.swift */; };
 		DDAC3D642C6DF66300AA87B4 /* SFCMPeripheralAdvDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDAC3D632C6DF66300AA87B4 /* SFCMPeripheralAdvDetailCell.swift */; };
 		DDAC3D712C6F47F700AA87B4 /* SFCMPeripheralDetailTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDAC3D702C6F47F700AA87B4 /* SFCMPeripheralDetailTitleView.swift */; };
 		DDAC3D732C6F512700AA87B4 /* SFCMPeripheralLogCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDAC3D722C6F512700AA87B4 /* SFCMPeripheralLogCell.swift */; };
@@ -150,6 +153,7 @@
 		DD6C32262D100098009AE2D1 /* DbOptDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DbOptDataProvider.swift; sourceTree = "<group>"; };
 		DD7CE2052D2FB54200DF7742 /* OptConfigVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptConfigVC.swift; sourceTree = "<group>"; };
 		DD7CE2072D2FB55000DF7742 /* OptConfigCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptConfigCell.swift; sourceTree = "<group>"; };
+		DD95EA312D324B93009551A4 /* OptListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptListViewController.swift; sourceTree = "<group>"; };
 		DDA648992C619F5100F01858 /* SFBleTool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SFBleTool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDA6489C2C619F5100F01858 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DDA6489E2C619F5100F01858 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -166,6 +170,8 @@
 		DDA648CE2C61A3DE00F01858 /* PeripheralListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeripheralListVC.swift; sourceTree = "<group>"; };
 		DDA648D02C61A3F000F01858 /* CentralListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CentralListVC.swift; sourceTree = "<group>"; };
 		DDA648D52C61A86D00F01858 /* SFEntranceOptView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFEntranceOptView.swift; sourceTree = "<group>"; };
+		DDABDC982D40B8F9009DE367 /* OptListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptListModel.swift; sourceTree = "<group>"; };
+		DDABDC9A2D40BDAC009DE367 /* OptionListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionListCell.swift; sourceTree = "<group>"; };
 		DDAC3D632C6DF66300AA87B4 /* SFCMPeripheralAdvDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFCMPeripheralAdvDetailCell.swift; sourceTree = "<group>"; };
 		DDAC3D702C6F47F700AA87B4 /* SFCMPeripheralDetailTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFCMPeripheralDetailTitleView.swift; sourceTree = "<group>"; };
 		DDAC3D722C6F512700AA87B4 /* SFCMPeripheralLogCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFCMPeripheralLogCell.swift; sourceTree = "<group>"; };
@@ -360,6 +366,7 @@
 				DDB895C42CF0810F00376F37 /* OptListCell.swift */,
 				DD6BC2BF2D199D7E00BFFD0A /* OptAddCell.swift */,
 				DD6BC2D32D1D832900BFFD0A /* OptListEditView.swift */,
+				DDABDC972D40B8B3009DE367 /* New Group */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -509,6 +516,16 @@
 				DDA648D52C61A86D00F01858 /* SFEntranceOptView.swift */,
 			);
 			path = Entrance;
+			sourceTree = "<group>";
+		};
+		DDABDC972D40B8B3009DE367 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				DD95EA312D324B93009551A4 /* OptListViewController.swift */,
+				DDABDC982D40B8F9009DE367 /* OptListModel.swift */,
+				DDABDC9A2D40BDAC009DE367 /* OptionListCell.swift */,
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 		DDB518F52C6C4AA400A049DE /* PeripheralList */ = {
@@ -826,6 +843,7 @@
 				DDB518FE2C6C728300A049DE /* SFCMPeripheralAdvDetailVC.swift in Sources */,
 				DDA648D12C61A3F000F01858 /* CentralListVC.swift in Sources */,
 				DD2D06192D12D4AB002F02E8 /* OptModelJSON.swift in Sources */,
+				DD95EA322D324B93009551A4 /* OptListViewController.swift in Sources */,
 				DDAC3D712C6F47F700AA87B4 /* SFCMPeripheralDetailTitleView.swift in Sources */,
 				DDB895DB2CF08B3300376F37 /* UserCenterItem.swift in Sources */,
 				DDA6489D2C619F5100F01858 /* AppDelegate.swift in Sources */,
@@ -846,6 +864,7 @@
 				51A6139F2C74C25A005990FC /* PeripheralModel.swift in Sources */,
 				DDB895DD2CF08C8F00376F37 /* UserCenterCell.swift in Sources */,
 				DD5952DB2D09377D003F5781 /* LaunchConfig.swift in Sources */,
+				DDABDC992D40B8F9009DE367 /* OptListModel.swift in Sources */,
 				51DF13A62CF1CF1400838578 /* SFColor.swift in Sources */,
 				DDB895D62CF0878D00376F37 /* ClientConnectOptModel.swift in Sources */,
 				5175ADAE2C64F4AF00C9260A /* PeripheralListCell.swift in Sources */,
@@ -885,6 +904,7 @@
 				DDB895C52CF0810F00376F37 /* OptListCell.swift in Sources */,
 				DDB895C32CF0807200376F37 /* OptItemModel.swift in Sources */,
 				DD6BC2C02D199D7E00BFFD0A /* OptAddCell.swift in Sources */,
+				DDABDC9B2D40BDAC009DE367 /* OptionListCell.swift in Sources */,
 				51DF13C42CF8B63B00838578 /* OptType.swift in Sources */,
 				DDA648D62C61A86D00F01858 /* SFEntranceOptView.swift in Sources */,
 				DD7CE2082D2FB55000DF7742 /* OptConfigCell.swift in Sources */,

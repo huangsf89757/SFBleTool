@@ -13,14 +13,14 @@ import SFBase
 // UI
 import SFUI
 
-class OptAddCell: SFCardTableViewCell {
+class OptAddCell: SFTableViewCardCell {
     
     
     // MARK: life cycle
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        cardInset = UIEdgeInsets(top: 10, left: 10, bottom: 0, right: 10)
-        cardJoin = false
+//        cardInset = UIEdgeInsets(top: 10, left: 10, bottom: 0, right: 10)
+//        cardJoin = false
         customUI()
     }
     override func draw(_ rect: CGRect) {

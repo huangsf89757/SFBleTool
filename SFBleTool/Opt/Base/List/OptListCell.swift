@@ -14,7 +14,7 @@ import SFBase
 import SFUI
 
 // MARK: - OptListCell
-class OptListCell: SFCardTableViewCell {
+class OptListCell: SFTableViewCardCell {
     // MARK: block
     var selectBlcok: ((OptModel)->())?
     
@@ -34,8 +34,8 @@ class OptListCell: SFCardTableViewCell {
     // MARK: life cycle
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        cardInset = UIEdgeInsets(top: 10, left: 10, bottom: 0, right: 10)
-        cardJoin = false
+//        cardInset = UIEdgeInsets(top: 10, left: 10, bottom: 0, right: 10)
+//        cardJoin = false
         customUI()
     }
     
@@ -113,23 +113,23 @@ class OptListCell: SFCardTableViewCell {
         usingLabel.isHidden = !model.isActive
     }
     func isEditDidChanged() {
-        if isEdit {
-            cardInset = UIEdgeInsets(top: 10, left: 60, bottom: 0, right: 10)
-            cardView.isUserInteractionEnabled = false
-            selectBtn.isHidden = false
-            detailIcon.isHidden = true
-            detailIcon.snp.updateConstraints { make in
-                make.trailing.equalToSuperview().offset(20)
-            }
-        } else {
-            cardInset = UIEdgeInsets(top: 10, left: 10, bottom: 0, right: 10)
-            cardView.isUserInteractionEnabled = true
-            selectBtn.isHidden = true
-            detailIcon.isHidden = false
-            detailIcon.snp.updateConstraints { make in
-                make.trailing.equalToSuperview().offset(-10)
-            }
-        }
+//        if isEdit {
+//            cardInset = UIEdgeInsets(top: 10, left: 60, bottom: 0, right: 10)
+//            cardView.isUserInteractionEnabled = false
+//            selectBtn.isHidden = false
+//            detailIcon.isHidden = true
+//            detailIcon.snp.updateConstraints { make in
+//                make.trailing.equalToSuperview().offset(20)
+//            }
+//        } else {
+//            cardInset = UIEdgeInsets(top: 10, left: 10, bottom: 0, right: 10)
+//            cardView.isUserInteractionEnabled = true
+//            selectBtn.isHidden = true
+//            detailIcon.isHidden = false
+//            detailIcon.snp.updateConstraints { make in
+//                make.trailing.equalToSuperview().offset(-10)
+//            }
+//        }
     }
     func updateIsSelected() {
         model?.isSelected.toggle()
